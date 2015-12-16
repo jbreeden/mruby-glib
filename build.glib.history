@@ -1,0 +1,500 @@
+   79  git diff
+   80  git add -u
+   81  git commit -m "Require list_deployment_client for page view"
+   82  git status
+   83  git push origin
+   84  cd ~/projects/
+   85  irb
+   86  ruby -e 't_start = Time.now; puts Dir["**/*"].length; puts "Time: #{Time.now - t_start}"'
+   87  mruby -e 't_start = Time.now; puts Dir["**/*"].length; puts "Time: #{Time.now - t_start}"'
+   88  ruby -e 't_start = Time.now; puts Dir["**/*"].length; puts "Time: #{Time.now - t_start}"'
+   89  mruby -e 't_start = Time.now; puts Dir["**/*"].length; puts "Time: #{Time.now - t_start}"'
+   90  atom mruby-apr
+   91  cd $SPLUNK_SOURCE
+   92  find cfg/bundles/search/default/data/ui/manager -name "*.xml" | xargs -n 1 grep <read>
+   93  find cfg/bundles/search/default/data/ui/manager -name "*.xml" | xargs -n 1 grep "<read>"
+   94  find cfg/bundles/search/default/data/ui/manager -name "*.xml" | xargs -n 1 grep "<read>"
+   95  irb
+   96  irb
+   97  irb
+   98  ruby check_perms.rb 
+   99  ruby check_perms.rb 
+  100  ruby check_perms.rb restmap
+  101  ruby check_perms.rb restmap
+  102  ruby check_perms.rb restmap
+  103  ruby check_perms.rb restmap
+  104  ruby check_perms.rb restmap
+  105  ruby check_perms.rb restmap
+  106  ruby check_perms.rb restmap
+  107  ruby check_perms.rb restmap
+  108  ruby check_perms.rb restmap
+  109  ruby check_perms.rb restmap
+  110  ruby check_perms.rb restmap
+  111  ruby check_perms.rb restmap
+  112  ruby check_perms.rb restmap
+  113  ruby check_perms.rb restmap
+  114  ruby check_perms.rb restmap
+  115  ruby check_perms.rb restmap
+  116  ruby check_perms.rb restmap
+  117  ruby check_perms.rb restmap
+  118  ruby check_perms.rb restmap
+  119  ruby check_perms.rb restmap
+  120  ruby check_perms.rb xml
+  121  ruby check_perms.rb xml
+  122  ruby check_perms.rb xml
+  123  ruby check_perms.rb xml
+  124  ruby check_perms.rb pairs
+  125  ruby check_perms.rb xml
+  126  ruby check_perms.rb pairs
+  127  ruby check_perms.rb xml
+  128  rake chrome user=user
+  129  rake rainmkr:uninstall
+  130  rake cloud_admin:uninstall
+  131  rake atom:conf
+  132  rake start
+  133  find $SPLUNK_HOME -name "data_outputs_tcp_default.xml" | xargs cat
+  134  atom /Users/jared/splunk/Source/feature/check_perms.rb 
+  135  tail -f /Users/jared/splunk/Builds/feature/var/log/splunk/splunkd_access.log 
+  136  ruby check_perms.rb xml
+  137  ruby check_perms.rb xml
+  138  tail -f /Users/jared/splunk/Builds/feature/var/log/splunk/splunkd_access.log 
+  139  git status
+  140  git diff
+  141  cd cfg/bundles/
+  142  make install
+  143  rake start
+  144  make install
+  145  rake start
+  146  cd ../../
+  147  ruby check_perms.rb xml
+  148  ruby check_perms.rb xml
+  149  ruby check_perms.rb xml
+  150  ruby check_perms.rb xml
+  151  git show origin/develop:python-site/splunk/appserver/mrsparkle/controllers/admin.py | less
+  152  git show origin/develop:web/search_mrsparkle/templates/admin/systemsettings.html | less
+  153  git status
+  154  ruby check_perms.rb 
+  155  rake -T license
+  156  ls ~/splunk/licenses/
+  157  mv /Users/jared/splunk/Builds/feature/etc/licenses/enterprise/ ~/splunk/licenses/
+  158  mv ~/splunk/licenses/lite/ /Users/jared/splunk/Builds/feature/etc/licenses/
+  159  ls -R /Users/jared/splunk/Builds/feature/etc/licenses
+  160  rake start
+  161  rake start
+  162  cd /Users/jared/splunk/Builds/feature/etc/licenses/lite/
+  163  ls
+  164  rm Splunk_Light_NFR_Q3FY16.lic 
+  165  rake start
+  166  ls
+  167  rm Splunk_Light_NFR_Q4FY16.lic 
+  168  rake start
+  169  CD ../../
+  170  cd ../../
+  171  cd system/local/
+  172  cat authorize.conf 
+  173  rake start
+  174  cd $SPLUNK_SOURCE
+  175  cd cfg/bundles/
+  176  make install
+  177  rake start
+  178  make install && rake
+  179  make install && rake start
+  180  cat /Users/jared/splunk/Builds/feature/etc/system/default/authorize.conf 
+  181  make install
+  182  cd $SPLUNK_HOME
+  183  git diff
+  184  cd $SPLUNK_SOURCE
+  185  git diff
+  186  cd $SPLUNK_HOME
+  187  cd etc/licenses/
+  188  ls
+  189  mv lite ~/splunk/licenses/
+  190  mv ~/splunk/licenses/enterprise/ .
+  191  ls
+  192  rake start
+  193  git diff
+  194  cd $SPLUNK_SOURCE 
+  195  git diff
+  196  git diff
+  197  git diff
+  198  git diff
+  199  git add -u
+  200  git diff --cached
+  201  git commit -m "Require list_* capabilities for all manager pages"
+  202  git push origin `git branch-name`
+  203  cd ~/splunk
+  204  rake chrome user=user
+  205  cd ~/projects/mruby
+  206  rake
+  207  rake
+  208  top
+  209  rake clean default CFLAGS="-DMRUBY_APR_DEBUG_GC"
+  210  rake clean default CFLAGS="-DMRUBY_APR_DEBUG_GC"
+  211  top
+  212  rake
+  213  rake
+  214  rake clean default CFLAGS="-DMRUBY_APR_DEBUG_GC"
+  215  top
+  216  rake clean default CFLAGS="-DMRUBY_APR_DEBUG_GC"
+  217  top
+  218  rake clean default CFLAGS="-DMRUBY_APR_DEBUG_GC"
+  219  top
+  220  rake clean default CFLAGS="-DMRUBY_APR_DEBUG_GC"
+  221  top
+  222  rake clean default CFLAGS="-DMRUBY_APR_DEBUG_GC"
+  223  rake clean default
+  224  cd mruby-apr
+  225  git pull origin c_glob
+  226  cd ../mruby
+  227  rake
+  228  cd ..
+  229  time mruby mruby-apr/test/glob.rb '**/*'
+  230  time mruby mruby-apr/test/glob.rb '**/*'
+  231  time mruby mruby-apr/test/glob.rb '**/*'
+  232  time mruby mruby-apr/test/glob.rb '**/*'
+  233  time mruby mruby-apr/test/glob.rb '**/*'
+  234  ruby -e "puts Dir['**/*'].length"
+  235  time ruby -e "puts Dir['**/*'].length"
+  236  time mruby mruby-apr/test/glob.rb '**/*'
+  237  atom mruby-apr
+  238  time mruby mruby-apr/test/glob.rb '**/*'
+  239  time mruby mruby-apr/test/glob.rb '**/*'
+  240  time mruby mruby-apr/test/glob.rb '**/*'
+  241  time ruby -e "puts Dir['**/*'].length"
+  242  time mruby mruby-apr/test/glob.rb '**/*'
+  243  time mruby mruby-apr/test/glob.rb '**/*'
+  244  time mruby mruby-apr/test/glob.rb '**/*'
+  245  time mruby mruby-apr/test/glob.rb '**/*'
+  246  time mruby mruby-apr/test/glob.rb '**/*'
+  247  time mruby mruby-apr/test/glob.rb '**/*'
+  248  time mruby mruby-apr/test/glob.rb '**/*'
+  249  time mruby mruby-apr/test/glob.rb '**/*'
+  250  time mruby mruby-apr/test/glob.rb '**/*'
+  251  mruby mruby-apr/test/glob.rb '**/*'
+  252  mruby mruby-apr/test/glob.rb '**/*'
+  253  mruby mruby-apr/test/glob.rb '**/*'
+  254  mruby mruby-apr/test/glob.rb './**/*'
+  255  mruby mruby-apr/test/glob.rb './**/*.c'
+  256  mruby mruby-apr/test/glob.rb './**/*.c'
+  257  mruby mruby-apr/test/glob.rb './**/*.c'
+  258  mruby mruby-apr/test/glob.rb './**/*.c'
+  259  mruby mruby-apr/test/glob.rb '../../jared/projects/**/*.c'
+  260  mruby mruby-apr/test/glob.rb '../../jared/projects/**/*.{c,h}'
+  261  cd mruby
+  262  rake
+  263  cd ..
+  264  mruby mruby-apr/test/glob.rb '../../jared/projects/**/*.{c,h}'
+  265  git status
+  266  cd mruby-apr
+  267  git status
+  268  git add -u
+  269  git add mrblib/glob
+  270  git add mrblib/glob.rb 
+  271  git status
+  272  git commit -m "Move glob implementation into gem"
+  273  git checkout master
+  274  git pull origin master
+  275  git merge c_glob
+  276  cd ../mruby
+  277  rake
+  278  cd ..
+  279  mruby mruby-apr/test/glob.rb '../../jared/projects/**/mruby_{apr,sqlite}*'
+  280  mruby mruby-apr/test/glob.rb '../../jared/projects/**/mruby_{s[d,q]}*'
+  281  mruby mruby-apr/test/glob.rb '../../jared/projects/**/mruby_{s[dq]}*'
+  282  mruby mruby-apr/test/glob.rb '../../jared/projects/**/mruby_{s[dq]}*'
+  283  mruby mruby-apr/test/glob.rb '../../jared/projects/**/mruby_{s[dq]}*'
+  284  mruby mruby-apr/test/glob.rb '../../jared/projects/**/mruby_{s[dq]}*'
+  285  mruby mruby-apr/test/glob.rb '../../jared/projects/**/mruby_{s[dq,]}*'
+  286  mruby mruby-apr/test/glob.rb '../../jared/projects/**/mruby_{s[dq]}*'
+  287  mruby mruby-apr/test/glob.rb '../../jared/projects/**/mruby_{s[dq,]}*'
+  288  mruby mruby-apr/test/glob.rb '../../jared/projects/**/mruby_{s[dq,]}*'
+  289  ruby -e 'puts Dir["../../jared/projects/**/mruby_{s[dq,]}*"]'
+  290  ruby -e 'puts Dir["../../jared/projects/**/mruby_{s[dq]}*"]'
+  291  ruby -e 'puts Dir["../../jared/projects/**/mruby_{s[dq,]}*"]'
+  292  ruby -e 'puts Dir["../../jared/projects/**/mruby_{s[dq]}*"]'
+  293  ruby -e 'puts Dir["../../jared/projects/**/mruby_{s[dq,]}*"]'
+  294  mruby mruby-apr/test/glob.rb '../../jared/projects/**/mruby_{s[dq,]}*'
+  295  mruby mruby-apr/test/glob.rb '../../jared/projects/**/mruby_{s[dq,]}*'
+  296  mruby mruby-apr/test/glob.rb '../../jared/projects/**/mruby_s[dq,]*'
+  297  ruby -e 'puts Dir["../../jared/projects/**/mruby_s[dq,]*"]'
+  298  ruby -e 'puts Dir["../../jared/projects/**/mruby_s[dq,]*"].length'
+  299  mruby mruby-apr/test/glob.rb '../../jared/projects/**/mruby_s[dq,]*'
+  300  mruby mruby-apr/test/glob.rb '../../jared/projects/**/mruby_{s[dq\,]}*'
+  301  ruby -e 'puts Dir["../../jared/projects/**/mruby_{s[dq\,]}*"]'
+  302  ruby -e 'puts Dir["../../jared/projects/**/mruby_{s[dq\\,]}*"]'
+  303  ruby -e 'puts Dir["../../jared/projects/**/mruby_{s[dq\\,]}*"].length'
+  304  cd mruby-apr
+  305  git status
+  306  git diff
+  307  git push origin master
+  308  cd ../mruby
+  309  rake
+  310  mirb
+  311  mirb
+  312  cd ../mruby-apr
+  313  git diff
+  314  git add -u
+  315  git commit -m "Remove old glob"
+  316  git push origin master
+  317  mirb
+  318  cd ~/splunk/
+  319  rake shell:feature
+  320  cd mruby
+  321  cd ../projects/
+  322  cd mruby-apr
+  323  cd test
+  324  ls
+  325  cat glob.rb 
+  326  ls
+  327  cat lex.rb 
+  328  rm lex.rb 
+  329  ls
+  330  ls pools.rb 
+  331  touch files.rb
+  332  mv files.rb file_allocation.rb
+  333  atom ..
+  334  mruby file_allocation.rb 
+  335  mruby file_allocation.rb 
+  336  mruby file_allocation.rb 
+  337  mruby file_allocation.rb 
+  338  mruby file_allocation.rb 
+  339  mruby file_allocation.rb 
+  340  mruby file_allocation.rb 
+  341  mruby file_allocation.rb 
+  342  mruby file_allocation.rb 
+  343  mruby file_allocation.rb 
+  344  mruby file_allocation.rb 
+  345  mruby file_allocation.rb 
+  346  mruby file_allocation.rb 
+  347  mruby file_allocation.rb 
+  348  mruby file_allocation.rb 
+  349  mruby file_allocation.rb 
+  350  mruby file_allocation.rb 
+  351  mruby file_allocation.rb 
+  352  mruby file_allocation.rb 
+  353  mruby file_allocation.rb 
+  354  mruby file_allocation.rb 
+  355  mirb
+  356  mruby pools.rb 
+  357  mirb
+  358  atom ~/projects/apr-1.5.2/
+  359  mruby file_allocation.rb 
+  360  mruby file_allocation.rb 
+  361  mruby file_allocation.rb 
+  362  mruby file_allocation.rb 
+  363  mruby file_allocation.rb 
+  364  cd ../
+  365  rake test:summary
+  366  cd $SPLUNK_HOME 
+  367  git branch
+  368  cd ~/projects/mruby-apr
+  369  atom .
+  370  cd ../apr-1.5.2/
+  371  make clean
+  372  make CFLAGS="-DALLOC_USE_MALLOC"
+  373  make install
+  374  cd -
+  375  mirb
+  376  irb
+  377  cd ../mruby
+  378  rake
+  379  mirb
+  380  rake
+  381  mirb
+  382  rake
+  383  mirb
+  384  mirb
+  385  rake
+  386  mirb
+  387  rake
+  388  mirb
+  389  rake
+  390  mirb
+  391  rake
+  392  mirb
+  393  rake
+  394  mirb
+  395  rake
+  396  mirb
+  397  cd ../mruby-apr
+  398  git status
+  399  git diff
+  400  git status
+  401  git diff src/mruby_APR_boxing.c 
+  402  git checkout src/mruby_APR_boxing.c 
+  403  git status
+  404  git diff
+  405  git status
+  406  git add -u
+  407  git commit -m "Adding Kernel#sleep"
+  408  git push origin master
+  409  git add -u
+  410  git diff --cached
+  411  git push origin master "Add Kernel#sleep to api.md"
+  412  git status
+  413  git commit -m "Add Kernel#sleep to api.md"
+  414  git push origin master
+  415  cd ../mruby
+  416  rake clean default
+  417  cd projects/mruby-apr
+  418  ls
+  419  git status
+  420  git diff
+  421  git status
+  422  git branch
+  423  git branch -D globv2
+  424  git branch -D c_glog
+  425  git branch
+  426  git stauts
+  427  git status
+  428  brew install --HEAD valgrind
+  429  cd ../mruby
+  430  rake clean default
+  431  cd ..
+  432  pwd
+  433  cd mruby-apr/test/
+  434  ls
+  435  emacs -nw ./file_allocation.rb 
+  436  emacs -nw ./file_allocation.rb 
+  437  cd ~/splunk/
+  438  rake shell:feature
+  439  cd projects/
+  440  cd mruby-apr/
+  441  ls
+  442  atom .
+  443  cd ../apr-1.5.2/
+  444  make clean build
+  445  make
+  446  make instal
+  447  make install
+  448  cd ../mruby
+  449  rake clean default
+  450  cd ~/projects/
+  451  which bunzip
+  452  which bzip
+  453  apropos bzip
+  454  which bzip2
+  455  bzip2 --help
+  456  bunzip2 valgrind-3.11.0.tar.bz2 
+  457  ls
+  458  tar xf valgrind-3.11.0.tar 
+  459  ls
+  460  cd valgrind-3.11.0
+  461  ls
+  462  ./configure
+  463  make
+  464  make install
+  465  which valgrind
+  466  cd ../mruby
+  467  ls
+  468  cd ..mruby-apr/te
+  469  cd ../mruby-apr/test/
+  470  ls
+  471  valgrind mruby file_allocation.rb 
+  472  valgrind --tool=massif mruby file_allocation.rb 
+  473  brew search massif
+  474  brew search massif-visualizer
+  475  brew search massif-visualizor
+  476  ls
+  477  cat massif.out.22745 
+  478  ls
+  479  apropos massif
+  480  which ms_print
+  481  ms_print massif.out.22745 
+  482  ms_print massif.out.22745 | atom
+  483  ms_print massif.out.22745 > massif.print.txt
+  484  atom massif.print.txt 
+  485  valgrind --tool=massif mruby file_allocation.rb 
+  486  ls
+  487  rm ./massif.*
+  488  valgrind --tool=massif mruby file_allocation.rb 
+  489  ms_print massif.out.22894 
+  490  ls
+  491  ms_print massif.out.22894 > massif.print.22894
+  492  cat massif.print.22894 | grep apr
+  493  cat massif.print.22894 | grep apr | less
+  494  cd ../../apr-1.5.2/
+  495  make clean
+  496  make CFLAGS="-DALLOC_USE_MALLOC"
+  497  cd ../mruby-apr/test/
+  498  valgrind --tool=massif mruby file_allocation.rb 
+  499  ms_print massif.out.24592 > massif.print.24592
+  500  irb
+  501  man open
+  502  man 3 open
+  503  man fopen
+  504  atom mruby-apr
+  505  irb
+  506  git status
+  507  cd mruby
+  508  cd ../mruby-apr
+  509  git status
+  510  cd ../mruby
+  511  rake clean default
+  512  cd ../glib/
+  513  autoconf --version
+  514  autoconf
+  515  brew install automake
+  516  rm ./configure
+  517  autoconf
+  518  which pkg-config
+  519  which gmake
+  520  brew install gmake
+  521  brew update
+  522  autoreconf
+  523  which glibtoolize
+  524  which libtoolize
+  525  glibtoolize
+  526  autoreconf
+  527  man autoconf
+  528  autoconf
+  529  rm ./configure
+  530  autoconf
+  531  ./configure
+  532  automake --add-missing
+  533  autoreconf
+  534  ./autogen.sh 
+  535  brew install libffi
+  536  which libffi
+  537  find /usr -iname "libffi*"
+  538  export PKG_CONFIG_PATH=/usr/local/Cellar/libffi/3.0.13/lib/pkgconfig
+  539  ./autogen.sh 
+  540  brew search gettext
+  541  brew update gettext
+  542  brew upgrade gettext
+  543  find /usr -iname "gettext.pc"
+  544  find /usr -iname "gettext"
+  545  man gettext
+  546  ./autogen.sh 
+  547  ls
+  548  which gettext
+  549  find /usr -iname "gettext"
+  550  /usr/local/Cellar/gettext/0.19.5.1/bin/gettext --help
+  551  export PATH=/usr/local/Cellar/gettext/0.19.5.1/bin:$PATH
+  552  ./autogen.sh 
+  553  find /usr -iname "gettext"
+  554  find /usr/local/Cellar/gettext -name "*.pc"
+  555  find /usr/local/Cellar/gettext -name "*.h"
+  556  ./autogen.sh CFLAGS=-I/usr/local/Cellar/gettext/0.19.6/include
+  557  ./configure CFLAGS=-I/usr/local/Cellar/gettext/0.19.6/include
+  558  find /usr/local/Cellar -iname "*intl.*"
+  559  ./configure CFLAGS=-I/usr/local/Cellar/gettext/0.19.6/include LDFLAGS=-L/usr/local/Cellar/gettext/0.19.6/lib/
+  560  make
+  561  ls
+  562  find . -iname "*.a"
+  563  find . -iname "*.dylib"
+  564  find . -iname "*.a"
+  565  ls -lh glib/.libs/
+  566  ./configure --help
+  567  ./configure --help | less
+  568  ./configure --enable-static=yes
+  569  ./configure CFLAGS=-I/usr/local/Cellar/gettext/0.19.6/include LDFLAGS=-L/usr/local/Cellar/gettext/0.19.6/lib/ --enable-static=yes
+  570  make
+  571  find . -iname "*.a"
+  572  make clean
+  573  make
+  574  find . -iname "*.a"
+  575  find . -iname "*.a"
+  576  history
+  577  mkdir ../mruby-stdlib
+  578  history > ../mruby-stdlib/build.glib.history
