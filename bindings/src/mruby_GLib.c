@@ -24,7 +24,6 @@ mrb_GLib__g_async_queue_get_mutex(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &queue);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, queue, GAsyncQueue_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GAsyncQueue expected");
@@ -88,7 +87,6 @@ mrb_GLib__g_gnulib_fprintf(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oz!", &file, &native_format);
-
 
   /* Type checking */
   TODO_type_check___sFILE_PTR(file);
@@ -161,7 +159,6 @@ mrb_GLib__g_gnulib_snprintf(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oiz!", &string, &native_n, &native_format);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, string, mrb->string_class)) {
     mrb_raise(mrb, E_TYPE_ERROR, "String expected");
@@ -215,7 +212,6 @@ mrb_GLib__g_gnulib_sprintf(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oz!", &string, &native_format);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, string, mrb->string_class)) {
@@ -273,7 +269,6 @@ mrb_GLib__g_gnulib_vasprintf(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oz!o", &result, &native_format, &args);
 
-
   /* Type checking */
   TODO_type_check_char_PTR_PTR(result);
   TODO_type_check___va_list_tag_[1](args);
@@ -317,7 +312,6 @@ mrb_GLib__g_gnulib_vfprintf(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oz!o", &file, &native_format, &args);
 
-
   /* Type checking */
   TODO_type_check___sFILE_PTR(file);
   TODO_type_check___va_list_tag_[1](args);
@@ -358,7 +352,6 @@ mrb_GLib__g_gnulib_vprintf(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!o", &native_format, &args);
-
 
   /* Type checking */
   TODO_type_check___va_list_tag_[1](args);
@@ -401,7 +394,6 @@ mrb_GLib__g_gnulib_vsnprintf(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oiz!o", &string, &native_n, &native_format, &args);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, string, mrb->string_class)) {
@@ -461,7 +453,6 @@ mrb_GLib__g_gnulib_vsprintf(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oz!o", &string, &native_format, &args);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, string, mrb->string_class)) {
@@ -523,7 +514,6 @@ mrb_GLib__g_log_fallback_handler(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!oz!o", &native_log_domain, &log_level, &native_message, &unused_data);
-
 
   /* Type checking */
   TODO_type_check_GLogLevelFlags(log_level);
@@ -635,7 +625,6 @@ mrb_GLib__GLIB_CHECKED_ADD_U32(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oii", &dest, &native_a, &native_b);
 
-
   /* Type checking */
   TODO_type_check_unsigned_int_PTR(dest);
 
@@ -675,7 +664,6 @@ mrb_GLib__GLIB_CHECKED_ADD_U64(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oii", &dest, &native_a, &native_b);
-
 
   /* Type checking */
   TODO_type_check_unsigned_long_PTR(dest);
@@ -717,7 +705,6 @@ mrb_GLib__GLIB_CHECKED_MUL_U32(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oii", &dest, &native_a, &native_b);
 
-
   /* Type checking */
   TODO_type_check_unsigned_int_PTR(dest);
 
@@ -758,7 +745,6 @@ mrb_GLib__GLIB_CHECKED_MUL_U64(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oii", &dest, &native_a, &native_b);
 
-
   /* Type checking */
   TODO_type_check_unsigned_long_PTR(dest);
 
@@ -798,7 +784,6 @@ mrb_GLib_asnprintf(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "ooz!", &resultbuf, &lengthp, &native_format);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, resultbuf, mrb->string_class)) {
@@ -888,7 +873,6 @@ mrb_GLib_g_array_append_vals(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "ooi", &array, &data, &native_len);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, array, GArray_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GArray expected");
@@ -929,7 +913,6 @@ mrb_GLib_g_array_free(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &array, &native_free_segment);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, array, GArray_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GArray expected");
@@ -964,7 +947,6 @@ mrb_GLib_g_array_get_element_size(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &array);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, array, GArray_class(mrb))) {
@@ -1010,7 +992,6 @@ mrb_GLib_g_array_insert_vals(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oioi", &array, &native_index_, &data, &native_len);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, array, GArray_class(mrb))) {
@@ -1085,7 +1066,6 @@ mrb_GLib_g_array_prepend_vals(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "ooi", &array, &data, &native_len);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, array, GArray_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GArray expected");
@@ -1124,7 +1104,6 @@ mrb_GLib_g_array_ref(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &array);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, array, GArray_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GArray expected");
@@ -1162,7 +1141,6 @@ mrb_GLib_g_array_remove_index(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &array, &native_index_);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, array, GArray_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GArray expected");
@@ -1199,7 +1177,6 @@ mrb_GLib_g_array_remove_index_fast(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &array, &native_index_);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, array, GArray_class(mrb))) {
@@ -1240,7 +1217,6 @@ mrb_GLib_g_array_remove_range(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oii", &array, &native_index_, &native_length);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, array, GArray_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GArray expected");
@@ -1278,7 +1254,6 @@ mrb_GLib_g_array_set_clear_func(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &array, &clear_func);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, array, GArray_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GArray expected");
@@ -1315,7 +1290,6 @@ mrb_GLib_g_array_set_size(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &array, &native_length);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, array, GArray_class(mrb))) {
@@ -1387,7 +1361,6 @@ mrb_GLib_g_array_sort(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &array, &compare_func);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, array, GArray_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GArray expected");
@@ -1427,7 +1400,6 @@ mrb_GLib_g_array_sort_with_data(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "ooo", &array, &compare_func, &user_data);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, array, GArray_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GArray expected");
@@ -1465,7 +1437,6 @@ mrb_GLib_g_array_unref(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &array);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, array, GArray_class(mrb))) {
@@ -1534,7 +1505,6 @@ mrb_GLib_g_ascii_dtostr(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oif", &buffer, &native_buf_len, &native_d);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, buffer, mrb->string_class)) {
     mrb_raise(mrb, E_TYPE_ERROR, "String expected");
@@ -1588,7 +1558,6 @@ mrb_GLib_g_ascii_formatd(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oiz!f", &buffer, &native_buf_len, &native_format, &native_d);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, buffer, mrb->string_class)) {
@@ -1737,7 +1706,6 @@ mrb_GLib_g_ascii_strtod(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "z!o", &native_nptr, &endptr);
 
-
   /* Type checking */
   TODO_type_check_char_PTR_PTR(endptr);
 
@@ -1773,7 +1741,6 @@ mrb_GLib_g_ascii_strtoll(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!oi", &native_nptr, &endptr, &native_base);
-
 
   /* Type checking */
   TODO_type_check_char_PTR_PTR(endptr);
@@ -1814,7 +1781,6 @@ mrb_GLib_g_ascii_strtoull(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!oi", &native_nptr, &endptr, &native_base);
-
 
   /* Type checking */
   TODO_type_check_char_PTR_PTR(endptr);
@@ -2054,7 +2020,6 @@ mrb_GLib_g_assertion_message_cmpnum(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "z!z!iz!z!oz!oi", &native_domain, &native_file, &native_line, &native_func, &native_expr, &arg1, &native_cmp, &arg2, &native_numtype);
 
-
   /* Type checking */
   TODO_type_check_long_double(arg1);
   TODO_type_check_long_double(arg2);
@@ -2139,7 +2104,6 @@ mrb_GLib_g_assertion_message_error(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "z!z!iz!z!oii", &native_domain, &native_file, &native_line, &native_func, &native_expr, &error, &native_error_domain, &native_error_code);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, error, GError_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GError expected");
@@ -2204,7 +2168,6 @@ mrb_GLib_g_async_queue_length(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &queue);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, queue, GAsyncQueue_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GAsyncQueue expected");
@@ -2244,7 +2207,6 @@ mrb_GLib_g_async_queue_length_unlocked(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &queue);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, queue, GAsyncQueue_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GAsyncQueue expected");
@@ -2283,7 +2245,6 @@ mrb_GLib_g_async_queue_lock(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &queue);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, queue, GAsyncQueue_class(mrb))) {
@@ -2337,7 +2298,6 @@ mrb_GLib_g_async_queue_new_full(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &item_free_func);
 
-
   /* Type checking */
   TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_void_PTR_RPAREN(item_free_func);
 
@@ -2369,7 +2329,6 @@ mrb_GLib_g_async_queue_pop(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &queue);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, queue, GAsyncQueue_class(mrb))) {
@@ -2405,7 +2364,6 @@ mrb_GLib_g_async_queue_pop_unlocked(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &queue);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, queue, GAsyncQueue_class(mrb))) {
@@ -2444,7 +2402,6 @@ mrb_GLib_g_async_queue_push(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &queue, &data);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, queue, GAsyncQueue_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GAsyncQueue expected");
@@ -2482,7 +2439,6 @@ mrb_GLib_g_async_queue_push_front(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &queue, &item);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, queue, GAsyncQueue_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GAsyncQueue expected");
@@ -2519,7 +2475,6 @@ mrb_GLib_g_async_queue_push_front_unlocked(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &queue, &item);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, queue, GAsyncQueue_class(mrb))) {
@@ -2561,7 +2516,6 @@ mrb_GLib_g_async_queue_push_sorted(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oooo", &queue, &data, &func, &user_data);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, queue, GAsyncQueue_class(mrb))) {
@@ -2610,7 +2564,6 @@ mrb_GLib_g_async_queue_push_sorted_unlocked(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oooo", &queue, &data, &func, &user_data);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, queue, GAsyncQueue_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GAsyncQueue expected");
@@ -2654,7 +2607,6 @@ mrb_GLib_g_async_queue_push_unlocked(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &queue, &data);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, queue, GAsyncQueue_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GAsyncQueue expected");
@@ -2689,7 +2641,6 @@ mrb_GLib_g_async_queue_ref(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &queue);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, queue, GAsyncQueue_class(mrb))) {
@@ -2726,7 +2677,6 @@ mrb_GLib_g_async_queue_ref_unlocked(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &queue);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, queue, GAsyncQueue_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GAsyncQueue expected");
@@ -2760,7 +2710,6 @@ mrb_GLib_g_async_queue_remove(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &queue, &item);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, queue, GAsyncQueue_class(mrb))) {
@@ -2805,7 +2754,6 @@ mrb_GLib_g_async_queue_remove_unlocked(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &queue, &item);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, queue, GAsyncQueue_class(mrb))) {
@@ -2853,7 +2801,6 @@ mrb_GLib_g_async_queue_sort(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "ooo", &queue, &func, &user_data);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, queue, GAsyncQueue_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GAsyncQueue expected");
@@ -2896,7 +2843,6 @@ mrb_GLib_g_async_queue_sort_unlocked(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "ooo", &queue, &func, &user_data);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, queue, GAsyncQueue_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GAsyncQueue expected");
@@ -2936,7 +2882,6 @@ mrb_GLib_g_async_queue_timed_pop(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &queue, &end_time);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, queue, GAsyncQueue_class(mrb))) {
@@ -2981,7 +2926,6 @@ mrb_GLib_g_async_queue_timed_pop_unlocked(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &queue, &end_time);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, queue, GAsyncQueue_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GAsyncQueue expected");
@@ -3025,7 +2969,6 @@ mrb_GLib_g_async_queue_timeout_pop(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &queue, &native_timeout);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, queue, GAsyncQueue_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GAsyncQueue expected");
@@ -3063,7 +3006,6 @@ mrb_GLib_g_async_queue_timeout_pop_unlocked(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &queue, &native_timeout);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, queue, GAsyncQueue_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GAsyncQueue expected");
@@ -3098,7 +3040,6 @@ mrb_GLib_g_async_queue_try_pop(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &queue);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, queue, GAsyncQueue_class(mrb))) {
@@ -3135,7 +3076,6 @@ mrb_GLib_g_async_queue_try_pop_unlocked(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &queue);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, queue, GAsyncQueue_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GAsyncQueue expected");
@@ -3171,7 +3111,6 @@ mrb_GLib_g_async_queue_unlock(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &queue);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, queue, GAsyncQueue_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GAsyncQueue expected");
@@ -3203,7 +3142,6 @@ mrb_GLib_g_async_queue_unref(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &queue);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, queue, GAsyncQueue_class(mrb))) {
@@ -3237,7 +3175,6 @@ mrb_GLib_g_async_queue_unref_and_unlock(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &queue);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, queue, GAsyncQueue_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GAsyncQueue expected");
@@ -3270,7 +3207,6 @@ mrb_GLib_g_atexit(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &func);
 
-
   /* Type checking */
   TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_void_RPAREN(func);
 
@@ -3301,7 +3237,6 @@ mrb_GLib_g_atomic_int_add(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &atomic, &native_val);
-
 
   /* Type checking */
   TODO_type_check_volatile_int_PTR(atomic);
@@ -3340,7 +3275,6 @@ mrb_GLib_g_atomic_int_and(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &atomic, &native_val);
-
 
   /* Type checking */
   TODO_type_check_volatile_unsigned_int_PTR(atomic);
@@ -3382,7 +3316,6 @@ mrb_GLib_g_atomic_int_compare_and_exchange(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oii", &atomic, &native_oldval, &native_newval);
 
-
   /* Type checking */
   TODO_type_check_volatile_int_PTR(atomic);
 
@@ -3418,7 +3351,6 @@ mrb_GLib_g_atomic_int_dec_and_test(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &atomic);
-
 
   /* Type checking */
   TODO_type_check_volatile_int_PTR(atomic);
@@ -3458,7 +3390,6 @@ mrb_GLib_g_atomic_int_exchange_and_add(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &atomic, &native_val);
 
-
   /* Type checking */
   TODO_type_check_volatile_int_PTR(atomic);
 
@@ -3494,7 +3425,6 @@ mrb_GLib_g_atomic_int_get(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &atomic);
-
 
   /* Type checking */
   TODO_type_check_volatile_int_PTR(atomic);
@@ -3532,7 +3462,6 @@ mrb_GLib_g_atomic_int_inc(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &atomic);
 
-
   /* Type checking */
   TODO_type_check_volatile_int_PTR(atomic);
 
@@ -3563,7 +3492,6 @@ mrb_GLib_g_atomic_int_or(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &atomic, &native_val);
-
 
   /* Type checking */
   TODO_type_check_volatile_unsigned_int_PTR(atomic);
@@ -3603,7 +3531,6 @@ mrb_GLib_g_atomic_int_set(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &atomic, &native_newval);
 
-
   /* Type checking */
   TODO_type_check_volatile_int_PTR(atomic);
 
@@ -3634,7 +3561,6 @@ mrb_GLib_g_atomic_int_xor(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &atomic, &native_val);
-
 
   /* Type checking */
   TODO_type_check_volatile_unsigned_int_PTR(atomic);
@@ -3674,7 +3600,6 @@ mrb_GLib_g_atomic_pointer_add(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &atomic, &native_val);
 
-
   /* Type checking */
   TODO_type_check_volatile_void_PTR(atomic);
 
@@ -3712,7 +3637,6 @@ mrb_GLib_g_atomic_pointer_and(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &atomic, &native_val);
-
 
   /* Type checking */
   TODO_type_check_volatile_void_PTR(atomic);
@@ -3753,7 +3677,6 @@ mrb_GLib_g_atomic_pointer_compare_and_exchange(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "ooo", &atomic, &oldval, &newval);
-
 
   /* Type checking */
   TODO_type_check_volatile_void_PTR(atomic);
@@ -3797,7 +3720,6 @@ mrb_GLib_g_atomic_pointer_get(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &atomic);
 
-
   /* Type checking */
   TODO_type_check_volatile_void_PTR(atomic);
 
@@ -3831,7 +3753,6 @@ mrb_GLib_g_atomic_pointer_or(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &atomic, &native_val);
-
 
   /* Type checking */
   TODO_type_check_volatile_void_PTR(atomic);
@@ -3871,7 +3792,6 @@ mrb_GLib_g_atomic_pointer_set(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &atomic, &newval);
 
-
   /* Type checking */
   TODO_type_check_volatile_void_PTR(atomic);
   TODO_type_check_void_PTR(newval);
@@ -3905,7 +3825,6 @@ mrb_GLib_g_atomic_pointer_xor(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &atomic, &native_val);
-
 
   /* Type checking */
   TODO_type_check_volatile_void_PTR(atomic);
@@ -3943,7 +3862,6 @@ mrb_GLib_g_autoptr_cleanup_generic_gfree(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &p);
 
-
   /* Type checking */
   TODO_type_check_void_PTR(p);
 
@@ -3972,7 +3890,6 @@ mrb_GLib_g_autoptr_cleanup_gstring_free(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &string);
-
 
   /* Type checking */
   TODO_type_check_int_PTR(string);
@@ -4004,7 +3921,6 @@ mrb_GLib_g_base64_decode(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!o", &native_text, &out_len);
-
 
   /* Type checking */
   TODO_type_check_unsigned_long_PTR(out_len);
@@ -4039,7 +3955,6 @@ mrb_GLib_g_base64_decode_inplace(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &text, &out_len);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, text, mrb->string_class)) {
@@ -4100,7 +4015,6 @@ mrb_GLib_g_base64_decode_step(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "z!iooo", &native_in, &native_len, &out, &state, &save);
 
-
   /* Type checking */
   TODO_type_check_unsigned_char_PTR(out);
   TODO_type_check_int_PTR(state);
@@ -4145,7 +4059,6 @@ mrb_GLib_g_base64_encode(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &data, &native_len);
 
-
   /* Type checking */
   TODO_type_check_unsigned_char_PTR(data);
 
@@ -4183,7 +4096,6 @@ mrb_GLib_g_base64_encode_close(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "iooo", &native_break_lines, &out, &state, &save);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, out, mrb->string_class)) {
@@ -4252,7 +4164,6 @@ mrb_GLib_g_base64_encode_step(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oiiooo", &in, &native_len, &native_break_lines, &out, &state, &save);
-
 
   /* Type checking */
   TODO_type_check_unsigned_char_PTR(in);
@@ -4343,7 +4254,6 @@ mrb_GLib_g_bit_lock(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &address, &native_lock_bit);
-
 
   /* Type checking */
   TODO_type_check_volatile_int_PTR(address);
@@ -4570,7 +4480,6 @@ mrb_GLib_g_bit_trylock(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &address, &native_lock_bit);
 
-
   /* Type checking */
   TODO_type_check_volatile_int_PTR(address);
 
@@ -4609,7 +4518,6 @@ mrb_GLib_g_bit_unlock(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &address, &native_lock_bit);
 
-
   /* Type checking */
   TODO_type_check_volatile_int_PTR(address);
 
@@ -4644,7 +4552,6 @@ mrb_GLib_g_bookmark_file_add_application(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oz!z!z!", &bookmark, &native_uri, &native_name, &native_exec);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, bookmark, GBookmarkFile_class(mrb))) {
@@ -4681,7 +4588,6 @@ mrb_GLib_g_bookmark_file_add_group(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oz!z!", &bookmark, &native_uri, &native_group);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, bookmark, GBookmarkFile_class(mrb))) {
@@ -4739,7 +4645,6 @@ mrb_GLib_g_bookmark_file_free(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &bookmark);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, bookmark, GBookmarkFile_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GBookmarkFile expected");
@@ -4775,7 +4680,6 @@ mrb_GLib_g_bookmark_file_get_added(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oz!o", &bookmark, &native_uri, &error);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, bookmark, GBookmarkFile_class(mrb))) {
@@ -4826,7 +4730,6 @@ mrb_GLib_g_bookmark_file_get_app_info(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oz!z!oooo", &bookmark, &native_uri, &native_name, &exec, &count, &stamp, &error);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, bookmark, GBookmarkFile_class(mrb))) {
@@ -4885,7 +4788,6 @@ mrb_GLib_g_bookmark_file_get_applications(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oz!oo", &bookmark, &native_uri, &length, &error);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, bookmark, GBookmarkFile_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GBookmarkFile expected");
@@ -4931,7 +4833,6 @@ mrb_GLib_g_bookmark_file_get_description(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oz!o", &bookmark, &native_uri, &error);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, bookmark, GBookmarkFile_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GBookmarkFile expected");
@@ -4975,7 +4876,6 @@ mrb_GLib_g_bookmark_file_get_groups(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oz!oo", &bookmark, &native_uri, &length, &error);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, bookmark, GBookmarkFile_class(mrb))) {
@@ -5025,7 +4925,6 @@ mrb_GLib_g_bookmark_file_get_icon(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oz!ooo", &bookmark, &native_uri, &href, &mime_type, &error);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, bookmark, GBookmarkFile_class(mrb))) {
@@ -5079,7 +4978,6 @@ mrb_GLib_g_bookmark_file_get_is_private(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oz!o", &bookmark, &native_uri, &error);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, bookmark, GBookmarkFile_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GBookmarkFile expected");
@@ -5126,7 +5024,6 @@ mrb_GLib_g_bookmark_file_get_mime_type(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oz!o", &bookmark, &native_uri, &error);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, bookmark, GBookmarkFile_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GBookmarkFile expected");
@@ -5169,7 +5066,6 @@ mrb_GLib_g_bookmark_file_get_modified(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oz!o", &bookmark, &native_uri, &error);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, bookmark, GBookmarkFile_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GBookmarkFile expected");
@@ -5207,7 +5103,6 @@ mrb_GLib_g_bookmark_file_get_size(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &bookmark);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, bookmark, GBookmarkFile_class(mrb))) {
@@ -5252,7 +5147,6 @@ mrb_GLib_g_bookmark_file_get_title(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oz!o", &bookmark, &native_uri, &error);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, bookmark, GBookmarkFile_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GBookmarkFile expected");
@@ -5292,7 +5186,6 @@ mrb_GLib_g_bookmark_file_get_uris(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &bookmark, &length);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, bookmark, GBookmarkFile_class(mrb))) {
@@ -5335,7 +5228,6 @@ mrb_GLib_g_bookmark_file_get_visited(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oz!o", &bookmark, &native_uri, &error);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, bookmark, GBookmarkFile_class(mrb))) {
@@ -5380,7 +5272,6 @@ mrb_GLib_g_bookmark_file_has_application(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oz!z!o", &bookmark, &native_uri, &native_name, &error);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, bookmark, GBookmarkFile_class(mrb))) {
@@ -5430,7 +5321,6 @@ mrb_GLib_g_bookmark_file_has_group(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oz!z!o", &bookmark, &native_uri, &native_group, &error);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, bookmark, GBookmarkFile_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GBookmarkFile expected");
@@ -5474,7 +5364,6 @@ mrb_GLib_g_bookmark_file_has_item(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oz!", &bookmark, &native_uri);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, bookmark, GBookmarkFile_class(mrb))) {
@@ -5520,7 +5409,6 @@ mrb_GLib_g_bookmark_file_load_from_data(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oz!io", &bookmark, &native_data, &native_length, &error);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, bookmark, GBookmarkFile_class(mrb))) {
@@ -5569,7 +5457,6 @@ mrb_GLib_g_bookmark_file_load_from_data_dirs(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oz!oo", &bookmark, &native_file, &full_path, &error);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, bookmark, GBookmarkFile_class(mrb))) {
@@ -5620,7 +5507,6 @@ mrb_GLib_g_bookmark_file_load_from_file(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oz!o", &bookmark, &native_filename, &error);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, bookmark, GBookmarkFile_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GBookmarkFile expected");
@@ -5668,7 +5554,6 @@ mrb_GLib_g_bookmark_file_move_item(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oz!z!o", &bookmark, &native_old_uri, &native_new_uri, &error);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, bookmark, GBookmarkFile_class(mrb))) {
@@ -5738,7 +5623,6 @@ mrb_GLib_g_bookmark_file_remove_application(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oz!z!o", &bookmark, &native_uri, &native_name, &error);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, bookmark, GBookmarkFile_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GBookmarkFile expected");
@@ -5787,7 +5671,6 @@ mrb_GLib_g_bookmark_file_remove_group(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oz!z!o", &bookmark, &native_uri, &native_group, &error);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, bookmark, GBookmarkFile_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GBookmarkFile expected");
@@ -5833,7 +5716,6 @@ mrb_GLib_g_bookmark_file_remove_item(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oz!o", &bookmark, &native_uri, &error);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, bookmark, GBookmarkFile_class(mrb))) {
@@ -5881,7 +5763,6 @@ mrb_GLib_g_bookmark_file_set_added(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oz!i", &bookmark, &native_uri, &native_added);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, bookmark, GBookmarkFile_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GBookmarkFile expected");
@@ -5925,7 +5806,6 @@ mrb_GLib_g_bookmark_file_set_app_info(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oz!z!z!iio", &bookmark, &native_uri, &native_name, &native_exec, &native_count, &native_stamp, &error);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, bookmark, GBookmarkFile_class(mrb))) {
@@ -5973,7 +5853,6 @@ mrb_GLib_g_bookmark_file_set_description(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oz!z!", &bookmark, &native_uri, &native_description);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, bookmark, GBookmarkFile_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GBookmarkFile expected");
@@ -6011,7 +5890,6 @@ mrb_GLib_g_bookmark_file_set_groups(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oz!oi", &bookmark, &native_uri, &groups, &native_length);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, bookmark, GBookmarkFile_class(mrb))) {
@@ -6054,7 +5932,6 @@ mrb_GLib_g_bookmark_file_set_icon(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oz!z!z!", &bookmark, &native_uri, &native_href, &native_mime_type);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, bookmark, GBookmarkFile_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GBookmarkFile expected");
@@ -6090,7 +5967,6 @@ mrb_GLib_g_bookmark_file_set_is_private(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oz!i", &bookmark, &native_uri, &native_is_private);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, bookmark, GBookmarkFile_class(mrb))) {
@@ -6128,7 +6004,6 @@ mrb_GLib_g_bookmark_file_set_mime_type(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oz!z!", &bookmark, &native_uri, &native_mime_type);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, bookmark, GBookmarkFile_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GBookmarkFile expected");
@@ -6164,7 +6039,6 @@ mrb_GLib_g_bookmark_file_set_modified(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oz!i", &bookmark, &native_uri, &native_modified);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, bookmark, GBookmarkFile_class(mrb))) {
@@ -6202,7 +6076,6 @@ mrb_GLib_g_bookmark_file_set_title(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oz!z!", &bookmark, &native_uri, &native_title);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, bookmark, GBookmarkFile_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GBookmarkFile expected");
@@ -6239,7 +6112,6 @@ mrb_GLib_g_bookmark_file_set_visited(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oz!i", &bookmark, &native_uri, &native_visited);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, bookmark, GBookmarkFile_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GBookmarkFile expected");
@@ -6275,7 +6147,6 @@ mrb_GLib_g_bookmark_file_to_data(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "ooo", &bookmark, &length, &error);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, bookmark, GBookmarkFile_class(mrb))) {
@@ -6322,7 +6193,6 @@ mrb_GLib_g_bookmark_file_to_file(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oz!o", &bookmark, &native_filename, &error);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, bookmark, GBookmarkFile_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GBookmarkFile expected");
@@ -6365,7 +6235,6 @@ mrb_GLib_g_bsearch_array_create(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &bconfig);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, bconfig, GBSearchConfig_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GBSearchConfig expected");
@@ -6402,7 +6271,6 @@ mrb_GLib_g_bsearch_array_free(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &barray, &bconfig);
-
 
   /* Type checking */
   TODO_type_check_GBSearchArray_PTR(barray);
@@ -6442,7 +6310,6 @@ mrb_GLib_g_bsearch_array_get_index(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "ooo", &barray, &bconfig, &node_in_array);
-
 
   /* Type checking */
   TODO_type_check_GBSearchArray_PTR(barray);
@@ -6493,7 +6360,6 @@ mrb_GLib_g_bsearch_array_get_nth(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "ooi", &barray, &bconfig, &native_nth);
 
-
   /* Type checking */
   TODO_type_check_GBSearchArray_PTR(barray);
   if (!mrb_obj_is_kind_of(mrb, bconfig, GBSearchConfig_class(mrb))) {
@@ -6536,7 +6402,6 @@ mrb_GLib_g_bsearch_array_grow(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "ooi", &barray, &bconfig, &native_index_);
 
-
   /* Type checking */
   TODO_type_check_GBSearchArray_PTR(barray);
   if (!mrb_obj_is_kind_of(mrb, bconfig, GBSearchConfig_class(mrb))) {
@@ -6578,7 +6443,6 @@ mrb_GLib_g_bsearch_array_insert(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "ooo", &barray, &bconfig, &key_node);
-
 
   /* Type checking */
   TODO_type_check_GBSearchArray_PTR(barray);
@@ -6627,7 +6491,6 @@ mrb_GLib_g_bsearch_array_lookup_fuzzy(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oooi", &barray, &bconfig, &key_node, &native_sibling_or_after);
 
-
   /* Type checking */
   TODO_type_check_GBSearchArray_PTR(barray);
   if (!mrb_obj_is_kind_of(mrb, bconfig, GBSearchConfig_class(mrb))) {
@@ -6673,7 +6536,6 @@ mrb_GLib_g_bsearch_array_remove(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "ooi", &barray, &bconfig, &native_index_);
 
-
   /* Type checking */
   TODO_type_check_GBSearchArray_PTR(barray);
   if (!mrb_obj_is_kind_of(mrb, bconfig, GBSearchConfig_class(mrb))) {
@@ -6715,7 +6577,6 @@ mrb_GLib_g_bsearch_array_replace(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "ooo", &barray, &bconfig, &key_node);
-
 
   /* Type checking */
   TODO_type_check_GBSearchArray_PTR(barray);
@@ -6785,7 +6646,6 @@ mrb_GLib_g_build_filenamev(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &args);
 
-
   /* Type checking */
   TODO_type_check_char_PTR_PTR(args);
 
@@ -6849,7 +6709,6 @@ mrb_GLib_g_build_pathv(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "z!o", &native_separator, &args);
 
-
   /* Type checking */
   TODO_type_check_char_PTR_PTR(args);
 
@@ -6885,7 +6744,6 @@ mrb_GLib_g_byte_array_append(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "ooi", &array, &data, &native_len);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, array, GByteArray_class(mrb))) {
@@ -6927,7 +6785,6 @@ mrb_GLib_g_byte_array_free(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &array, &native_free_segment);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, array, GByteArray_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GByteArray expected");
@@ -6962,7 +6819,6 @@ mrb_GLib_g_byte_array_free_to_bytes(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &array);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, array, GByteArray_class(mrb))) {
@@ -7021,7 +6877,6 @@ mrb_GLib_g_byte_array_new_take(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &data, &native_len);
 
-
   /* Type checking */
   TODO_type_check_unsigned_char_PTR(data);
 
@@ -7057,7 +6912,6 @@ mrb_GLib_g_byte_array_prepend(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "ooi", &array, &data, &native_len);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, array, GByteArray_class(mrb))) {
@@ -7097,7 +6951,6 @@ mrb_GLib_g_byte_array_ref(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &array);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, array, GByteArray_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GByteArray expected");
@@ -7135,7 +6988,6 @@ mrb_GLib_g_byte_array_remove_index(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &array, &native_index_);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, array, GByteArray_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GByteArray expected");
@@ -7172,7 +7024,6 @@ mrb_GLib_g_byte_array_remove_index_fast(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &array, &native_index_);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, array, GByteArray_class(mrb))) {
@@ -7213,7 +7064,6 @@ mrb_GLib_g_byte_array_remove_range(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oii", &array, &native_index_, &native_length);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, array, GByteArray_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GByteArray expected");
@@ -7250,7 +7100,6 @@ mrb_GLib_g_byte_array_set_size(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &array, &native_length);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, array, GByteArray_class(mrb))) {
@@ -7316,7 +7165,6 @@ mrb_GLib_g_byte_array_sort(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &array, &compare_func);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, array, GByteArray_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GByteArray expected");
@@ -7356,7 +7204,6 @@ mrb_GLib_g_byte_array_sort_with_data(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "ooo", &array, &compare_func, &user_data);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, array, GByteArray_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GByteArray expected");
@@ -7395,7 +7242,6 @@ mrb_GLib_g_byte_array_unref(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &array);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, array, GByteArray_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GByteArray expected");
@@ -7429,7 +7275,6 @@ mrb_GLib_g_bytes_compare(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &bytes1, &bytes2);
-
 
   /* Type checking */
   TODO_type_check_void_PTR(bytes1);
@@ -7472,7 +7317,6 @@ mrb_GLib_g_bytes_equal(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &bytes1, &bytes2);
 
-
   /* Type checking */
   TODO_type_check_void_PTR(bytes1);
   TODO_type_check_void_PTR(bytes2);
@@ -7514,7 +7358,6 @@ mrb_GLib_g_bytes_get_data(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &bytes, &size);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, bytes, GBytes_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GBytes expected");
@@ -7552,7 +7395,6 @@ mrb_GLib_g_bytes_get_size(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &bytes);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, bytes, GBytes_class(mrb))) {
@@ -7593,7 +7435,6 @@ mrb_GLib_g_bytes_hash(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &bytes);
 
-
   /* Type checking */
   TODO_type_check_void_PTR(bytes);
 
@@ -7632,7 +7473,6 @@ mrb_GLib_g_bytes_new(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &data, &native_size);
 
-
   /* Type checking */
   TODO_type_check_void_PTR(data);
 
@@ -7668,7 +7508,6 @@ mrb_GLib_g_bytes_new_from_bytes(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oii", &bytes, &native_offset, &native_length);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, bytes, GBytes_class(mrb))) {
@@ -7707,7 +7546,6 @@ mrb_GLib_g_bytes_new_static(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &data, &native_size);
 
-
   /* Type checking */
   TODO_type_check_void_PTR(data);
 
@@ -7741,7 +7579,6 @@ mrb_GLib_g_bytes_new_take(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &data, &native_size);
-
 
   /* Type checking */
   TODO_type_check_void_PTR(data);
@@ -7781,7 +7618,6 @@ mrb_GLib_g_bytes_new_with_free_func(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oioo", &data, &native_size, &free_func, &user_data);
 
-
   /* Type checking */
   TODO_type_check_void_PTR(data);
   TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_void_PTR_RPAREN(free_func);
@@ -7820,7 +7656,6 @@ mrb_GLib_g_bytes_ref(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &bytes);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, bytes, GBytes_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GBytes expected");
@@ -7856,7 +7691,6 @@ mrb_GLib_g_bytes_unref(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &bytes);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, bytes, GBytes_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GBytes expected");
@@ -7888,7 +7722,6 @@ mrb_GLib_g_bytes_unref_to_array(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &bytes);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, bytes, GBytes_class(mrb))) {
@@ -7926,7 +7759,6 @@ mrb_GLib_g_bytes_unref_to_data(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &bytes, &size);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, bytes, GBytes_class(mrb))) {
@@ -8021,7 +7853,6 @@ mrb_GLib_g_checksum_copy(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &checksum);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, checksum, GChecksum_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GChecksum expected");
@@ -8056,7 +7887,6 @@ mrb_GLib_g_checksum_free(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &checksum);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, checksum, GChecksum_class(mrb))) {
@@ -8093,7 +7923,6 @@ mrb_GLib_g_checksum_get_digest(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "ooo", &checksum, &buffer, &digest_len);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, checksum, GChecksum_class(mrb))) {
@@ -8133,7 +7962,6 @@ mrb_GLib_g_checksum_get_string(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &checksum);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, checksum, GChecksum_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GChecksum expected");
@@ -8169,7 +7997,6 @@ mrb_GLib_g_checksum_new(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &checksum_type);
 
-
   /* Type checking */
   TODO_type_check_GChecksumType(checksum_type);
 
@@ -8202,7 +8029,6 @@ mrb_GLib_g_checksum_reset(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &checksum);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, checksum, GChecksum_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GChecksum expected");
@@ -8234,7 +8060,6 @@ mrb_GLib_g_checksum_type_get_length(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &checksum_type);
-
 
   /* Type checking */
   TODO_type_check_GChecksumType(checksum_type);
@@ -8276,7 +8101,6 @@ mrb_GLib_g_checksum_update(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "ooi", &checksum, &data, &native_length);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, checksum, GChecksum_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GChecksum expected");
@@ -8315,7 +8139,6 @@ mrb_GLib_g_child_watch_add(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "ioo", &native_pid, &function, &data);
-
 
   /* Type checking */
   TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_intCOMMA_intCOMMA_void_PTR_RPAREN(function);
@@ -8363,7 +8186,6 @@ mrb_GLib_g_child_watch_add_full(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "iiooo", &native_priority, &native_pid, &function, &data, &notify);
-
 
   /* Type checking */
   TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_intCOMMA_intCOMMA_void_PTR_RPAREN(function);
@@ -8434,7 +8256,6 @@ mrb_GLib_g_clear_error(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &err);
 
-
   /* Type checking */
   TODO_type_check__GError_PTR_PTR(err);
 
@@ -8465,7 +8286,6 @@ mrb_GLib_g_clear_pointer(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &pp, &destroy);
-
 
   /* Type checking */
   TODO_type_check_void_PTR_PTR(pp);
@@ -8500,7 +8320,6 @@ mrb_GLib_g_close(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "io", &native_fd, &error);
-
 
   /* Type checking */
   TODO_type_check__GError_PTR_PTR(error);
@@ -8539,7 +8358,6 @@ mrb_GLib_g_compute_checksum_for_bytes(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &checksum_type, &data);
-
 
   /* Type checking */
   TODO_type_check_GChecksumType(checksum_type);
@@ -8583,7 +8401,6 @@ mrb_GLib_g_compute_checksum_for_data(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "ooi", &checksum_type, &data, &native_length);
 
-
   /* Type checking */
   TODO_type_check_GChecksumType(checksum_type);
   TODO_type_check_unsigned_char_PTR(data);
@@ -8622,7 +8439,6 @@ mrb_GLib_g_compute_checksum_for_string(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oz!i", &checksum_type, &native_str, &native_length);
-
 
   /* Type checking */
   TODO_type_check_GChecksumType(checksum_type);
@@ -8663,7 +8479,6 @@ mrb_GLib_g_compute_hmac_for_data(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "ooioi", &digest_type, &key, &native_key_len, &data, &native_length);
-
 
   /* Type checking */
   TODO_type_check_GChecksumType(digest_type);
@@ -8711,7 +8526,6 @@ mrb_GLib_g_compute_hmac_for_string(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "ooiz!i", &digest_type, &key, &native_key_len, &native_str, &native_length);
 
-
   /* Type checking */
   TODO_type_check_GChecksumType(digest_type);
   TODO_type_check_unsigned_char_PTR(key);
@@ -8747,7 +8561,6 @@ mrb_GLib_g_cond_broadcast(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &cond);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, cond, GCond_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GCond expected");
@@ -8779,7 +8592,6 @@ mrb_GLib_g_cond_clear(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &cond);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, cond, GCond_class(mrb))) {
@@ -8813,7 +8625,6 @@ mrb_GLib_g_cond_init(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &cond);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, cond, GCond_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GCond expected");
@@ -8845,7 +8656,6 @@ mrb_GLib_g_cond_signal(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &cond);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, cond, GCond_class(mrb))) {
@@ -8880,7 +8690,6 @@ mrb_GLib_g_cond_wait(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &cond, &mutex);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, cond, GCond_class(mrb))) {
@@ -8920,7 +8729,6 @@ mrb_GLib_g_cond_wait_until(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "ooi", &cond, &mutex, &native_end_time);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, cond, GCond_class(mrb))) {
@@ -8975,7 +8783,6 @@ mrb_GLib_g_convert(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!iz!z!ooo", &native_str, &native_len, &native_to_codeset, &native_from_codeset, &bytes_read, &bytes_written, &error);
-
 
   /* Type checking */
   TODO_type_check_unsigned_long_PTR(bytes_read);
@@ -9053,7 +8860,6 @@ mrb_GLib_g_convert_with_fallback(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "z!iz!z!z!ooo", &native_str, &native_len, &native_to_codeset, &native_from_codeset, &native_fallback, &bytes_read, &bytes_written, &error);
 
-
   /* Type checking */
   TODO_type_check_unsigned_long_PTR(bytes_read);
   TODO_type_check_unsigned_long_PTR(bytes_written);
@@ -9102,7 +8908,6 @@ mrb_GLib_g_convert_with_iconv(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "z!ioooo", &native_str, &native_len, &converter, &bytes_read, &bytes_written, &error);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, converter, GIConv_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GIConv expected");
@@ -9147,7 +8952,6 @@ mrb_GLib_g_datalist_clear(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &datalist);
 
-
   /* Type checking */
   TODO_type_check__GData_PTR_PTR(datalist);
 
@@ -9180,7 +8984,6 @@ mrb_GLib_g_datalist_foreach(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "ooo", &datalist, &func, &user_data);
-
 
   /* Type checking */
   TODO_type_check__GData_PTR_PTR(datalist);
@@ -9219,7 +9022,6 @@ mrb_GLib_g_datalist_get_data(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oz!", &datalist, &native_key);
 
-
   /* Type checking */
   TODO_type_check__GData_PTR_PTR(datalist);
 
@@ -9251,7 +9053,6 @@ mrb_GLib_g_datalist_get_flags(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &datalist);
-
 
   /* Type checking */
   TODO_type_check__GData_PTR_PTR(datalist);
@@ -9295,7 +9096,6 @@ mrb_GLib_g_datalist_id_dup_data(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oioo", &datalist, &native_key_id, &dup_func, &user_data);
 
-
   /* Type checking */
   TODO_type_check__GData_PTR_PTR(datalist);
   TODO_type_check_void_PTR_LPAREN_PTR_RPAREN_LPAREN_void_PTR_COMMA_void_PTR_RPAREN(dup_func);
@@ -9336,7 +9136,6 @@ mrb_GLib_g_datalist_id_get_data(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &datalist, &native_key_id);
 
-
   /* Type checking */
   TODO_type_check__GData_PTR_PTR(datalist);
 
@@ -9370,7 +9169,6 @@ mrb_GLib_g_datalist_id_remove_no_notify(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &datalist, &native_key_id);
-
 
   /* Type checking */
   TODO_type_check__GData_PTR_PTR(datalist);
@@ -9413,7 +9211,6 @@ mrb_GLib_g_datalist_id_replace_data(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oioooo", &datalist, &native_key_id, &oldval, &newval, &destroy, &old_destroy);
-
 
   /* Type checking */
   TODO_type_check__GData_PTR_PTR(datalist);
@@ -9469,7 +9266,6 @@ mrb_GLib_g_datalist_id_set_data_full(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oioo", &datalist, &native_key_id, &data, &destroy_func);
 
-
   /* Type checking */
   TODO_type_check__GData_PTR_PTR(datalist);
   TODO_type_check_void_PTR(data);
@@ -9505,7 +9301,6 @@ mrb_GLib_g_datalist_init(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &datalist);
 
-
   /* Type checking */
   TODO_type_check__GData_PTR_PTR(datalist);
 
@@ -9536,7 +9331,6 @@ mrb_GLib_g_datalist_set_flags(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &datalist, &native_flags);
-
 
   /* Type checking */
   TODO_type_check__GData_PTR_PTR(datalist);
@@ -9569,7 +9363,6 @@ mrb_GLib_g_datalist_unset_flags(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &datalist, &native_flags);
 
-
   /* Type checking */
   TODO_type_check__GData_PTR_PTR(datalist);
 
@@ -9598,7 +9391,6 @@ mrb_GLib_g_dataset_destroy(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &dataset_location);
-
 
   /* Type checking */
   TODO_type_check_void_PTR(dataset_location);
@@ -9632,7 +9424,6 @@ mrb_GLib_g_dataset_foreach(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "ooo", &dataset_location, &func, &user_data);
-
 
   /* Type checking */
   TODO_type_check_void_PTR(dataset_location);
@@ -9671,7 +9462,6 @@ mrb_GLib_g_dataset_id_get_data(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &dataset_location, &native_key_id);
 
-
   /* Type checking */
   TODO_type_check_void_PTR(dataset_location);
 
@@ -9705,7 +9495,6 @@ mrb_GLib_g_dataset_id_remove_no_notify(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &dataset_location, &native_key_id);
-
 
   /* Type checking */
   TODO_type_check_void_PTR(dataset_location);
@@ -9745,7 +9534,6 @@ mrb_GLib_g_dataset_id_set_data_full(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oioo", &dataset_location, &native_key_id, &data, &destroy_func);
 
-
   /* Type checking */
   TODO_type_check_void_PTR(dataset_location);
   TODO_type_check_void_PTR(data);
@@ -9783,7 +9571,6 @@ mrb_GLib_g_date_add_days(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &date, &native_n_days);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, date, GDate_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GDate expected");
@@ -9818,7 +9605,6 @@ mrb_GLib_g_date_add_months(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &date, &native_n_months);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, date, GDate_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GDate expected");
@@ -9852,7 +9638,6 @@ mrb_GLib_g_date_add_years(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &date, &native_n_years);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, date, GDate_class(mrb))) {
@@ -9889,7 +9674,6 @@ mrb_GLib_g_date_clamp(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "ooo", &date, &min_date, &max_date);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, date, GDate_class(mrb))) {
@@ -9937,7 +9721,6 @@ mrb_GLib_g_date_clear(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &date, &native_n_dates);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, date, GDate_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GDate expected");
@@ -9971,7 +9754,6 @@ mrb_GLib_g_date_compare(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &lhs, &rhs);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, lhs, GDate_class(mrb))) {
@@ -10020,7 +9802,6 @@ mrb_GLib_g_date_days_between(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &date1, &date2);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, date1, GDate_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GDate expected");
@@ -10066,7 +9847,6 @@ mrb_GLib_g_date_free(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &date);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, date, GDate_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GDate expected");
@@ -10098,7 +9878,6 @@ mrb_GLib_g_date_get_day(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &date);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, date, GDate_class(mrb))) {
@@ -10138,7 +9917,6 @@ mrb_GLib_g_date_get_day_of_year(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &date);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, date, GDate_class(mrb))) {
@@ -10181,7 +9959,6 @@ mrb_GLib_g_date_get_days_in_month(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &month, &native_year);
 
-
   /* Type checking */
   TODO_type_check_GDateMonth(month);
 
@@ -10217,7 +9994,6 @@ mrb_GLib_g_date_get_iso8601_week_of_year(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &date);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, date, GDate_class(mrb))) {
@@ -10258,7 +10034,6 @@ mrb_GLib_g_date_get_julian(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &date);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, date, GDate_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GDate expected");
@@ -10297,7 +10072,6 @@ mrb_GLib_g_date_get_monday_week_of_year(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &date);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, date, GDate_class(mrb))) {
@@ -10369,7 +10143,6 @@ mrb_GLib_g_date_get_month(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &date);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, date, GDate_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GDate expected");
@@ -10404,7 +10177,6 @@ mrb_GLib_g_date_get_sunday_week_of_year(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &date);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, date, GDate_class(mrb))) {
@@ -10476,7 +10248,6 @@ mrb_GLib_g_date_get_weekday(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &date);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, date, GDate_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GDate expected");
@@ -10511,7 +10282,6 @@ mrb_GLib_g_date_get_year(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &date);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, date, GDate_class(mrb))) {
@@ -10552,7 +10322,6 @@ mrb_GLib_g_date_is_first_of_month(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &date);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, date, GDate_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GDate expected");
@@ -10591,7 +10360,6 @@ mrb_GLib_g_date_is_last_of_month(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &date);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, date, GDate_class(mrb))) {
@@ -10687,7 +10455,6 @@ mrb_GLib_g_date_new_dmy(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "ioi", &native_day, &month, &native_year);
 
-
   /* Type checking */
   TODO_type_check_GDateMonth(month);
 
@@ -10749,7 +10516,6 @@ mrb_GLib_g_date_order(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &date1, &date2);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, date1, GDate_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GDate expected");
@@ -10790,7 +10556,6 @@ mrb_GLib_g_date_set_day(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &date, &native_day);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, date, GDate_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GDate expected");
@@ -10829,7 +10594,6 @@ mrb_GLib_g_date_set_dmy(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oioi", &date, &native_day, &month, &native_y);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, date, GDate_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GDate expected");
@@ -10867,7 +10631,6 @@ mrb_GLib_g_date_set_julian(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &date, &native_julian_date);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, date, GDate_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GDate expected");
@@ -10901,7 +10664,6 @@ mrb_GLib_g_date_set_month(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &date, &month);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, date, GDate_class(mrb))) {
@@ -10940,7 +10702,6 @@ mrb_GLib_g_date_set_parse(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oz!", &date, &native_str);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, date, GDate_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GDate expected");
@@ -10974,7 +10735,6 @@ mrb_GLib_g_date_set_time(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &date, &native_time_);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, date, GDate_class(mrb))) {
@@ -11010,7 +10770,6 @@ mrb_GLib_g_date_set_time_t(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &date, &native_timet);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, date, GDate_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GDate expected");
@@ -11044,7 +10803,6 @@ mrb_GLib_g_date_set_time_val(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &date, &timeval);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, date, GDate_class(mrb))) {
@@ -11086,7 +10844,6 @@ mrb_GLib_g_date_set_year(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &date, &native_year);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, date, GDate_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GDate expected");
@@ -11124,7 +10881,6 @@ mrb_GLib_g_date_strftime(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oiz!o", &s, &native_slen, &native_format, &date);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, s, mrb->string_class)) {
@@ -11186,7 +10942,6 @@ mrb_GLib_g_date_subtract_days(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &date, &native_n_days);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, date, GDate_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GDate expected");
@@ -11220,7 +10975,6 @@ mrb_GLib_g_date_subtract_months(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &date, &native_n_months);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, date, GDate_class(mrb))) {
@@ -11256,7 +11010,6 @@ mrb_GLib_g_date_subtract_years(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &date, &native_n_years);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, date, GDate_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GDate expected");
@@ -11290,7 +11043,6 @@ mrb_GLib_g_date_time_add(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &datetime, &native_timespan);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, datetime, GDateTime_class(mrb))) {
@@ -11328,7 +11080,6 @@ mrb_GLib_g_date_time_add_days(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &datetime, &native_days);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, datetime, GDateTime_class(mrb))) {
@@ -11377,7 +11128,6 @@ mrb_GLib_g_date_time_add_full(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oiiiiif", &datetime, &native_years, &native_months, &native_days, &native_hours, &native_minutes, &native_seconds);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, datetime, GDateTime_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GDateTime expected");
@@ -11414,7 +11164,6 @@ mrb_GLib_g_date_time_add_hours(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &datetime, &native_hours);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, datetime, GDateTime_class(mrb))) {
@@ -11453,7 +11202,6 @@ mrb_GLib_g_date_time_add_minutes(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &datetime, &native_minutes);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, datetime, GDateTime_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GDateTime expected");
@@ -11490,7 +11238,6 @@ mrb_GLib_g_date_time_add_months(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &datetime, &native_months);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, datetime, GDateTime_class(mrb))) {
@@ -11529,7 +11276,6 @@ mrb_GLib_g_date_time_add_seconds(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "of", &datetime, &native_seconds);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, datetime, GDateTime_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GDateTime expected");
@@ -11566,7 +11312,6 @@ mrb_GLib_g_date_time_add_weeks(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &datetime, &native_weeks);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, datetime, GDateTime_class(mrb))) {
@@ -11605,7 +11350,6 @@ mrb_GLib_g_date_time_add_years(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &datetime, &native_years);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, datetime, GDateTime_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GDateTime expected");
@@ -11642,7 +11386,6 @@ mrb_GLib_g_date_time_compare(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &dt1, &dt2);
-
 
   /* Type checking */
   TODO_type_check_void_PTR(dt1);
@@ -11684,7 +11427,6 @@ mrb_GLib_g_date_time_difference(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &end, &begin);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, end, GDateTime_class(mrb))) {
@@ -11733,7 +11475,6 @@ mrb_GLib_g_date_time_equal(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &dt1, &dt2);
 
-
   /* Type checking */
   TODO_type_check_void_PTR(dt1);
   TODO_type_check_void_PTR(dt2);
@@ -11775,7 +11516,6 @@ mrb_GLib_g_date_time_format(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oz!", &datetime, &native_format);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, datetime, GDateTime_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GDateTime expected");
@@ -11810,7 +11550,6 @@ mrb_GLib_g_date_time_get_day_of_month(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &datetime);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, datetime, GDateTime_class(mrb))) {
@@ -11851,7 +11590,6 @@ mrb_GLib_g_date_time_get_day_of_week(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &datetime);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, datetime, GDateTime_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GDateTime expected");
@@ -11890,7 +11628,6 @@ mrb_GLib_g_date_time_get_day_of_year(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &datetime);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, datetime, GDateTime_class(mrb))) {
@@ -11931,7 +11668,6 @@ mrb_GLib_g_date_time_get_hour(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &datetime);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, datetime, GDateTime_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GDateTime expected");
@@ -11970,7 +11706,6 @@ mrb_GLib_g_date_time_get_microsecond(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &datetime);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, datetime, GDateTime_class(mrb))) {
@@ -12011,7 +11746,6 @@ mrb_GLib_g_date_time_get_minute(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &datetime);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, datetime, GDateTime_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GDateTime expected");
@@ -12050,7 +11784,6 @@ mrb_GLib_g_date_time_get_month(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &datetime);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, datetime, GDateTime_class(mrb))) {
@@ -12091,7 +11824,6 @@ mrb_GLib_g_date_time_get_second(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &datetime);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, datetime, GDateTime_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GDateTime expected");
@@ -12131,7 +11863,6 @@ mrb_GLib_g_date_time_get_seconds(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &datetime);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, datetime, GDateTime_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GDateTime expected");
@@ -12167,7 +11898,6 @@ mrb_GLib_g_date_time_get_timezone_abbreviation(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &datetime);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, datetime, GDateTime_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GDateTime expected");
@@ -12202,7 +11932,6 @@ mrb_GLib_g_date_time_get_utc_offset(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &datetime);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, datetime, GDateTime_class(mrb))) {
@@ -12243,7 +11972,6 @@ mrb_GLib_g_date_time_get_week_numbering_year(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &datetime);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, datetime, GDateTime_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GDateTime expected");
@@ -12283,7 +12011,6 @@ mrb_GLib_g_date_time_get_week_of_year(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &datetime);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, datetime, GDateTime_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GDateTime expected");
@@ -12322,7 +12049,6 @@ mrb_GLib_g_date_time_get_year(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &datetime);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, datetime, GDateTime_class(mrb))) {
@@ -12369,7 +12095,6 @@ mrb_GLib_g_date_time_get_ymd(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oooo", &datetime, &year, &month, &day);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, datetime, GDateTime_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GDateTime expected");
@@ -12411,7 +12136,6 @@ mrb_GLib_g_date_time_hash(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &datetime);
 
-
   /* Type checking */
   TODO_type_check_void_PTR(datetime);
 
@@ -12447,7 +12171,6 @@ mrb_GLib_g_date_time_is_daylight_savings(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &datetime);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, datetime, GDateTime_class(mrb))) {
@@ -12500,7 +12223,6 @@ mrb_GLib_g_date_time_new(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oiiiiif", &tz, &native_year, &native_month, &native_day, &native_hour, &native_minute, &native_seconds);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, tz, GTimeZone_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GTimeZone expected");
@@ -12536,7 +12258,6 @@ mrb_GLib_g_date_time_new_from_timeval_local(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &tv);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, tv, GTimeVal_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GTimeVal expected");
@@ -12571,7 +12292,6 @@ mrb_GLib_g_date_time_new_from_timeval_utc(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &tv);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, tv, GTimeVal_class(mrb))) {
@@ -12699,7 +12419,6 @@ mrb_GLib_g_date_time_new_now(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &tz);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, tz, GTimeZone_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GTimeZone expected");
@@ -12812,7 +12531,6 @@ mrb_GLib_g_date_time_ref(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &datetime);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, datetime, GDateTime_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GDateTime expected");
@@ -12847,7 +12565,6 @@ mrb_GLib_g_date_time_to_local(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &datetime);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, datetime, GDateTime_class(mrb))) {
@@ -12885,7 +12602,6 @@ mrb_GLib_g_date_time_to_timeval(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &datetime, &tv);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, datetime, GDateTime_class(mrb))) {
@@ -12934,7 +12650,6 @@ mrb_GLib_g_date_time_to_timezone(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &datetime, &tz);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, datetime, GDateTime_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GDateTime expected");
@@ -12976,7 +12691,6 @@ mrb_GLib_g_date_time_to_unix(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &datetime);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, datetime, GDateTime_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GDateTime expected");
@@ -13016,7 +12730,6 @@ mrb_GLib_g_date_time_to_utc(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &datetime);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, datetime, GDateTime_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GDateTime expected");
@@ -13052,7 +12765,6 @@ mrb_GLib_g_date_time_unref(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &datetime);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, datetime, GDateTime_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GDateTime expected");
@@ -13086,7 +12798,6 @@ mrb_GLib_g_date_to_struct_tm(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &date, &tm);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, date, GDate_class(mrb))) {
@@ -13122,7 +12833,6 @@ mrb_GLib_g_date_valid(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &date);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, date, GDate_class(mrb))) {
@@ -13198,7 +12908,6 @@ mrb_GLib_g_date_valid_dmy(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "ioi", &native_day, &month, &native_year);
 
-
   /* Type checking */
   TODO_type_check_GDateMonth(month);
 
@@ -13266,7 +12975,6 @@ mrb_GLib_g_date_valid_month(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &month);
 
-
   /* Type checking */
   TODO_type_check_GDateMonth(month);
 
@@ -13302,7 +13010,6 @@ mrb_GLib_g_date_valid_weekday(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &weekday);
-
 
   /* Type checking */
   TODO_type_check_GDateWeekday(weekday);
@@ -13431,7 +13138,6 @@ mrb_GLib_g_dir_close(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &dir);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, dir, GDir_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GDir expected");
@@ -13466,7 +13172,6 @@ mrb_GLib_g_dir_make_tmp(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "z!o", &native_tmpl, &error);
 
-
   /* Type checking */
   TODO_type_check__GError_PTR_PTR(error);
 
@@ -13498,7 +13203,6 @@ mrb_GLib_g_dir_new_from_dirp(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &dirp);
-
 
   /* Type checking */
   TODO_type_check_void_PTR(dirp);
@@ -13535,7 +13239,6 @@ mrb_GLib_g_dir_open(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!io", &native_path, &native_flags, &error);
-
 
   /* Type checking */
   TODO_type_check__GError_PTR_PTR(error);
@@ -13598,7 +13301,6 @@ mrb_GLib_g_dir_read_name(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &dir);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, dir, GDir_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GDir expected");
@@ -13634,7 +13336,6 @@ mrb_GLib_g_dir_rewind(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &dir);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, dir, GDir_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GDir expected");
@@ -13668,7 +13369,6 @@ mrb_GLib_g_direct_equal(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &v1, &v2);
-
 
   /* Type checking */
   TODO_type_check_void_PTR(v1);
@@ -13708,7 +13408,6 @@ mrb_GLib_g_direct_hash(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &v);
-
 
   /* Type checking */
   TODO_type_check_void_PTR(v);
@@ -13781,7 +13480,6 @@ mrb_GLib_g_double_equal(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &v1, &v2);
 
-
   /* Type checking */
   TODO_type_check_void_PTR(v1);
   TODO_type_check_void_PTR(v2);
@@ -13820,7 +13518,6 @@ mrb_GLib_g_double_hash(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &v);
-
 
   /* Type checking */
   TODO_type_check_void_PTR(v);
@@ -13922,7 +13619,6 @@ mrb_GLib_g_environ_getenv(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oz!", &envp, &native_variable);
 
-
   /* Type checking */
   TODO_type_check_char_PTR_PTR(envp);
 
@@ -13961,7 +13657,6 @@ mrb_GLib_g_environ_setenv(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oz!z!i", &envp, &native_variable, &native_value, &native_overwrite);
 
-
   /* Type checking */
   TODO_type_check_char_PTR_PTR(envp);
 
@@ -13996,7 +13691,6 @@ mrb_GLib_g_environ_unsetenv(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oz!", &envp, &native_variable);
 
-
   /* Type checking */
   TODO_type_check_char_PTR_PTR(envp);
 
@@ -14028,7 +13722,6 @@ mrb_GLib_g_error_copy(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &error);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, error, GError_class(mrb))) {
@@ -14065,7 +13758,6 @@ mrb_GLib_g_error_free(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &error);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, error, GError_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GError expected");
@@ -14101,7 +13793,6 @@ mrb_GLib_g_error_matches(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oii", &error, &native_domain, &native_code);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, error, GError_class(mrb))) {
@@ -14294,7 +13985,6 @@ mrb_GLib_g_file_get_contents(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "z!ooo", &native_filename, &contents, &length, &error);
 
-
   /* Type checking */
   TODO_type_check_char_PTR_PTR(contents);
   TODO_type_check_unsigned_long_PTR(length);
@@ -14341,7 +14031,6 @@ mrb_GLib_g_file_open_tmp(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "z!oo", &native_tmpl, &name_used, &error);
 
-
   /* Type checking */
   TODO_type_check_char_PTR_PTR(name_used);
   TODO_type_check__GError_PTR_PTR(error);
@@ -14383,7 +14072,6 @@ mrb_GLib_g_file_read_link(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "z!o", &native_filename, &error);
 
-
   /* Type checking */
   TODO_type_check__GError_PTR_PTR(error);
 
@@ -14422,7 +14110,6 @@ mrb_GLib_g_file_set_contents(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "z!z!io", &native_filename, &native_contents, &native_length, &error);
 
-
   /* Type checking */
   TODO_type_check__GError_PTR_PTR(error);
 
@@ -14460,7 +14147,6 @@ mrb_GLib_g_file_test(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!o", &native_filename, &test);
-
 
   /* Type checking */
   TODO_type_check_GFileTest(test);
@@ -14556,7 +14242,6 @@ mrb_GLib_g_filename_from_uri(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "z!oo", &native_uri, &hostname, &error);
 
-
   /* Type checking */
   TODO_type_check_char_PTR_PTR(hostname);
   TODO_type_check__GError_PTR_PTR(error);
@@ -14600,7 +14285,6 @@ mrb_GLib_g_filename_from_utf8(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "z!iooo", &native_utf8string, &native_len, &bytes_read, &bytes_written, &error);
 
-
   /* Type checking */
   TODO_type_check_unsigned_long_PTR(bytes_read);
   TODO_type_check_unsigned_long_PTR(bytes_written);
@@ -14643,7 +14327,6 @@ mrb_GLib_g_filename_to_uri(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "z!z!o", &native_filename, &native_hostname, &error);
 
-
   /* Type checking */
   TODO_type_check__GError_PTR_PTR(error);
 
@@ -14683,7 +14366,6 @@ mrb_GLib_g_filename_to_utf8(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!iooo", &native_opsysstring, &native_len, &bytes_read, &bytes_written, &error);
-
 
   /* Type checking */
   TODO_type_check_unsigned_long_PTR(bytes_read);
@@ -14806,7 +14488,6 @@ mrb_GLib_g_format_size_full(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "io", &native_size, &flags);
 
-
   /* Type checking */
   TODO_type_check_GFormatSizeFlags(flags);
 
@@ -14840,7 +14521,6 @@ mrb_GLib_g_fprintf(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oz!", &file, &native_format);
-
 
   /* Type checking */
   TODO_type_check___sFILE_PTR(file);
@@ -14877,7 +14557,6 @@ mrb_GLib_g_free(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &mem);
-
 
   /* Type checking */
   TODO_type_check_void_PTR(mem);
@@ -14927,7 +14606,6 @@ mrb_GLib_g_get_charset(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &charset);
-
 
   /* Type checking */
   TODO_type_check_char_PTR_PTR(charset);
@@ -15005,7 +14683,6 @@ mrb_GLib_g_get_current_time(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &result);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, result, GTimeVal_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GTimeVal expected");
@@ -15057,7 +14734,6 @@ mrb_GLib_g_get_filename_charsets(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &charsets);
-
 
   /* Type checking */
   TODO_type_check_char_PTR_PTR_PTR(charsets);
@@ -15454,7 +15130,6 @@ mrb_GLib_g_get_user_special_dir(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &directory);
 
-
   /* Type checking */
   TODO_type_check_GUserDirectory(directory);
 
@@ -15536,7 +15211,6 @@ mrb_GLib_g_hash_table_add(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &hash_table, &key);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, hash_table, GHashTable_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GHashTable expected");
@@ -15581,7 +15255,6 @@ mrb_GLib_g_hash_table_contains(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &hash_table, &key);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, hash_table, GHashTable_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GHashTable expected");
@@ -15624,7 +15297,6 @@ mrb_GLib_g_hash_table_destroy(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &hash_table);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, hash_table, GHashTable_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GHashTable expected");
@@ -15660,7 +15332,6 @@ mrb_GLib_g_hash_table_find(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "ooo", &hash_table, &predicate, &user_data);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, hash_table, GHashTable_class(mrb))) {
@@ -15707,7 +15378,6 @@ mrb_GLib_g_hash_table_foreach(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "ooo", &hash_table, &func, &user_data);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, hash_table, GHashTable_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GHashTable expected");
@@ -15749,7 +15419,6 @@ mrb_GLib_g_hash_table_foreach_remove(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "ooo", &hash_table, &func, &user_data);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, hash_table, GHashTable_class(mrb))) {
@@ -15800,7 +15469,6 @@ mrb_GLib_g_hash_table_foreach_steal(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "ooo", &hash_table, &func, &user_data);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, hash_table, GHashTable_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GHashTable expected");
@@ -15846,7 +15514,6 @@ mrb_GLib_g_hash_table_get_keys(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &hash_table);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, hash_table, GHashTable_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GHashTable expected");
@@ -15883,7 +15550,6 @@ mrb_GLib_g_hash_table_get_keys_as_array(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &hash_table, &length);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, hash_table, GHashTable_class(mrb))) {
@@ -15923,7 +15589,6 @@ mrb_GLib_g_hash_table_get_values(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &hash_table);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, hash_table, GHashTable_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GHashTable expected");
@@ -15962,7 +15627,6 @@ mrb_GLib_g_hash_table_insert(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "ooo", &hash_table, &key, &value);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, hash_table, GHashTable_class(mrb))) {
@@ -16009,7 +15673,6 @@ mrb_GLib_g_hash_table_iter_get_hash_table(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &iter);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, iter, GHashTableIter_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GHashTableIter expected");
@@ -16046,7 +15709,6 @@ mrb_GLib_g_hash_table_iter_init(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &iter, &hash_table);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, iter, GHashTableIter_class(mrb))) {
@@ -16089,7 +15751,6 @@ mrb_GLib_g_hash_table_iter_next(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "ooo", &iter, &key, &value);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, iter, GHashTableIter_class(mrb))) {
@@ -16136,7 +15797,6 @@ mrb_GLib_g_hash_table_iter_remove(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &iter);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, iter, GHashTableIter_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GHashTableIter expected");
@@ -16170,7 +15830,6 @@ mrb_GLib_g_hash_table_iter_replace(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &iter, &value);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, iter, GHashTableIter_class(mrb))) {
@@ -16207,7 +15866,6 @@ mrb_GLib_g_hash_table_iter_steal(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &iter);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, iter, GHashTableIter_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GHashTableIter expected");
@@ -16241,7 +15899,6 @@ mrb_GLib_g_hash_table_lookup(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &hash_table, &key);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, hash_table, GHashTable_class(mrb))) {
@@ -16286,7 +15943,6 @@ mrb_GLib_g_hash_table_lookup_extended(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oooo", &hash_table, &lookup_key, &orig_key, &value);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, hash_table, GHashTable_class(mrb))) {
@@ -16338,7 +15994,6 @@ mrb_GLib_g_hash_table_new(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &hash_func, &key_equal_func);
 
-
   /* Type checking */
   TODO_type_check_unsigned_int_LPAREN_PTR_RPAREN_LPAREN_void_PTR_RPAREN(hash_func);
   TODO_type_check_int_LPAREN_PTR_RPAREN_LPAREN_void_PTR_COMMA_const_void_PTR_RPAREN(key_equal_func);
@@ -16379,7 +16034,6 @@ mrb_GLib_g_hash_table_new_full(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oooo", &hash_func, &key_equal_func, &key_destroy_func, &value_destroy_func);
-
 
   /* Type checking */
   TODO_type_check_unsigned_int_LPAREN_PTR_RPAREN_LPAREN_void_PTR_RPAREN(hash_func);
@@ -16422,7 +16076,6 @@ mrb_GLib_g_hash_table_ref(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &hash_table);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, hash_table, GHashTable_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GHashTable expected");
@@ -16459,7 +16112,6 @@ mrb_GLib_g_hash_table_remove(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &hash_table, &key);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, hash_table, GHashTable_class(mrb))) {
@@ -16503,7 +16155,6 @@ mrb_GLib_g_hash_table_remove_all(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &hash_table);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, hash_table, GHashTable_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GHashTable expected");
@@ -16539,7 +16190,6 @@ mrb_GLib_g_hash_table_replace(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "ooo", &hash_table, &key, &value);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, hash_table, GHashTable_class(mrb))) {
@@ -16586,7 +16236,6 @@ mrb_GLib_g_hash_table_size(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &hash_table);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, hash_table, GHashTable_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GHashTable expected");
@@ -16627,7 +16276,6 @@ mrb_GLib_g_hash_table_steal(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &hash_table, &key);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, hash_table, GHashTable_class(mrb))) {
@@ -16671,7 +16319,6 @@ mrb_GLib_g_hash_table_steal_all(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &hash_table);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, hash_table, GHashTable_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GHashTable expected");
@@ -16704,7 +16351,6 @@ mrb_GLib_g_hash_table_unref(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &hash_table);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, hash_table, GHashTable_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GHashTable expected");
@@ -16736,7 +16382,6 @@ mrb_GLib_g_hmac_copy(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &hmac);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, hmac, GHmac_class(mrb))) {
@@ -16777,7 +16422,6 @@ mrb_GLib_g_hmac_get_digest(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "ooo", &hmac, &buffer, &digest_len);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, hmac, GHmac_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GHmac expected");
@@ -16815,7 +16459,6 @@ mrb_GLib_g_hmac_get_string(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &hmac);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, hmac, GHmac_class(mrb))) {
@@ -16856,7 +16499,6 @@ mrb_GLib_g_hmac_new(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "ooi", &digest_type, &key, &native_key_len);
 
-
   /* Type checking */
   TODO_type_check_GChecksumType(digest_type);
   TODO_type_check_unsigned_char_PTR(key);
@@ -16892,7 +16534,6 @@ mrb_GLib_g_hmac_ref(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &hmac);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, hmac, GHmac_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GHmac expected");
@@ -16927,7 +16568,6 @@ mrb_GLib_g_hmac_unref(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &hmac);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, hmac, GHmac_class(mrb))) {
@@ -16965,7 +16605,6 @@ mrb_GLib_g_hmac_update(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "ooi", &hmac, &data, &native_length);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, hmac, GHmac_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GHmac expected");
@@ -17000,7 +16639,6 @@ mrb_GLib_g_hook_alloc(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &hook_list);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, hook_list, GHookList_class(mrb))) {
@@ -17038,7 +16676,6 @@ mrb_GLib_g_hook_compare_ids(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &new_hook, &sibling);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, new_hook, GHook_class(mrb))) {
@@ -17087,7 +16724,6 @@ mrb_GLib_g_hook_destroy(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &hook_list, &native_hook_id);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, hook_list, GHookList_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GHookList expected");
@@ -17128,7 +16764,6 @@ mrb_GLib_g_hook_destroy_link(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &hook_list, &hook);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, hook_list, GHookList_class(mrb))) {
@@ -17173,7 +16808,6 @@ mrb_GLib_g_hook_find(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oioo", &hook_list, &native_need_valids, &func, &data);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, hook_list, GHookList_class(mrb))) {
@@ -17220,7 +16854,6 @@ mrb_GLib_g_hook_find_data(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oio", &hook_list, &native_need_valids, &data);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, hook_list, GHookList_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GHookList expected");
@@ -17262,7 +16895,6 @@ mrb_GLib_g_hook_find_func(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oio", &hook_list, &native_need_valids, &func);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, hook_list, GHookList_class(mrb))) {
@@ -17308,7 +16940,6 @@ mrb_GLib_g_hook_find_func_data(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oioo", &hook_list, &native_need_valids, &func, &data);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, hook_list, GHookList_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GHookList expected");
@@ -17352,7 +16983,6 @@ mrb_GLib_g_hook_first_valid(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &hook_list, &native_may_be_in_call);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, hook_list, GHookList_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GHookList expected");
@@ -17389,7 +17019,6 @@ mrb_GLib_g_hook_free(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &hook_list, &hook);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, hook_list, GHookList_class(mrb))) {
@@ -17431,7 +17060,6 @@ mrb_GLib_g_hook_get(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &hook_list, &native_hook_id);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, hook_list, GHookList_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GHookList expected");
@@ -17470,7 +17098,6 @@ mrb_GLib_g_hook_insert_before(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "ooo", &hook_list, &sibling, &hook);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, hook_list, GHookList_class(mrb))) {
@@ -17520,7 +17147,6 @@ mrb_GLib_g_hook_insert_sorted(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "ooo", &hook_list, &hook, &func);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, hook_list, GHookList_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GHookList expected");
@@ -17562,7 +17188,6 @@ mrb_GLib_g_hook_list_clear(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &hook_list);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, hook_list, GHookList_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GHookList expected");
@@ -17596,7 +17221,6 @@ mrb_GLib_g_hook_list_init(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &hook_list, &native_hook_size);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, hook_list, GHookList_class(mrb))) {
@@ -17632,7 +17256,6 @@ mrb_GLib_g_hook_list_invoke(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &hook_list, &native_may_recurse);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, hook_list, GHookList_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GHookList expected");
@@ -17666,7 +17289,6 @@ mrb_GLib_g_hook_list_invoke_check(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &hook_list, &native_may_recurse);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, hook_list, GHookList_class(mrb))) {
@@ -17705,7 +17327,6 @@ mrb_GLib_g_hook_list_marshal(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oioo", &hook_list, &native_may_recurse, &marshaller, &marshal_data);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, hook_list, GHookList_class(mrb))) {
@@ -17751,7 +17372,6 @@ mrb_GLib_g_hook_list_marshal_check(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oioo", &hook_list, &native_may_recurse, &marshaller, &marshal_data);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, hook_list, GHookList_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GHookList expected");
@@ -17793,7 +17413,6 @@ mrb_GLib_g_hook_next_valid(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "ooi", &hook_list, &hook, &native_may_be_in_call);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, hook_list, GHookList_class(mrb))) {
@@ -17838,7 +17457,6 @@ mrb_GLib_g_hook_prepend(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &hook_list, &hook);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, hook_list, GHookList_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GHookList expected");
@@ -17878,7 +17496,6 @@ mrb_GLib_g_hook_ref(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &hook_list, &hook);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, hook_list, GHookList_class(mrb))) {
@@ -17922,7 +17539,6 @@ mrb_GLib_g_hook_unref(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &hook_list, &hook);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, hook_list, GHookList_class(mrb))) {
@@ -18117,7 +17733,6 @@ mrb_GLib_g_iconv(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "ooooo", &converter, &inbuf, &inbytes_left, &outbuf, &outbytes_left);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, converter, GIConv_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GIConv expected");
@@ -18168,7 +17783,6 @@ mrb_GLib_g_iconv_close(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &converter);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, converter, GIConv_class(mrb))) {
@@ -18240,7 +17854,6 @@ mrb_GLib_g_idle_add(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &function, &data);
 
-
   /* Type checking */
   TODO_type_check_int_LPAREN_PTR_RPAREN_LPAREN_void_PTR_RPAREN(function);
   TODO_type_check_void_PTR(data);
@@ -18286,7 +17899,6 @@ mrb_GLib_g_idle_add_full(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "iooo", &native_priority, &function, &data, &notify);
 
-
   /* Type checking */
   TODO_type_check_int_LPAREN_PTR_RPAREN_LPAREN_void_PTR_RPAREN(function);
   TODO_type_check_void_PTR(data);
@@ -18328,7 +17940,6 @@ mrb_GLib_g_idle_remove_by_data(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &data);
-
 
   /* Type checking */
   TODO_type_check_void_PTR(data);
@@ -18388,7 +17999,6 @@ mrb_GLib_g_int64_equal(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &v1, &v2);
 
-
   /* Type checking */
   TODO_type_check_void_PTR(v1);
   TODO_type_check_void_PTR(v2);
@@ -18428,7 +18038,6 @@ mrb_GLib_g_int64_hash(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &v);
 
-
   /* Type checking */
   TODO_type_check_void_PTR(v);
 
@@ -18466,7 +18075,6 @@ mrb_GLib_g_int_equal(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &v1, &v2);
-
 
   /* Type checking */
   TODO_type_check_void_PTR(v1);
@@ -18506,7 +18114,6 @@ mrb_GLib_g_int_hash(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &v);
-
 
   /* Type checking */
   TODO_type_check_void_PTR(v);
@@ -18604,7 +18211,6 @@ mrb_GLib_g_io_add_watch(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oooo", &channel, &condition, &func, &user_data);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, channel, GIOChannel_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GIOChannel expected");
@@ -18663,7 +18269,6 @@ mrb_GLib_g_io_add_watch_full(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oioooo", &channel, &native_priority, &condition, &func, &user_data, &notify);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, channel, GIOChannel_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GIOChannel expected");
@@ -18714,7 +18319,6 @@ mrb_GLib_g_io_channel_close(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &channel);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, channel, GIOChannel_class(mrb))) {
@@ -18801,7 +18405,6 @@ mrb_GLib_g_io_channel_flush(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &channel, &error);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, channel, GIOChannel_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GIOChannel expected");
@@ -18840,7 +18443,6 @@ mrb_GLib_g_io_channel_get_buffer_condition(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &channel);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, channel, GIOChannel_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GIOChannel expected");
@@ -18875,7 +18477,6 @@ mrb_GLib_g_io_channel_get_buffer_size(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &channel);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, channel, GIOChannel_class(mrb))) {
@@ -18916,7 +18517,6 @@ mrb_GLib_g_io_channel_get_buffered(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &channel);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, channel, GIOChannel_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GIOChannel expected");
@@ -18955,7 +18555,6 @@ mrb_GLib_g_io_channel_get_close_on_unref(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &channel);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, channel, GIOChannel_class(mrb))) {
@@ -18996,7 +18595,6 @@ mrb_GLib_g_io_channel_get_encoding(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &channel);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, channel, GIOChannel_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GIOChannel expected");
@@ -19031,7 +18629,6 @@ mrb_GLib_g_io_channel_get_flags(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &channel);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, channel, GIOChannel_class(mrb))) {
@@ -19069,7 +18666,6 @@ mrb_GLib_g_io_channel_get_line_term(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &channel, &length);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, channel, GIOChannel_class(mrb))) {
@@ -19109,7 +18705,6 @@ mrb_GLib_g_io_channel_init(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &channel);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, channel, GIOChannel_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GIOChannel expected");
@@ -19145,7 +18740,6 @@ mrb_GLib_g_io_channel_new_file(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!z!o", &native_filename, &native_mode, &error);
-
 
   /* Type checking */
   TODO_type_check__GError_PTR_PTR(error);
@@ -19184,7 +18778,6 @@ mrb_GLib_g_io_channel_read(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "ooio", &channel, &buf, &native_count, &bytes_read);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, channel, GIOChannel_class(mrb))) {
@@ -19250,7 +18843,6 @@ mrb_GLib_g_io_channel_read_chars(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "ooioo", &channel, &buf, &native_count, &bytes_read, &error);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, channel, GIOChannel_class(mrb))) {
@@ -19320,7 +18912,6 @@ mrb_GLib_g_io_channel_read_line(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "ooooo", &channel, &str_return, &length, &terminator_pos, &error);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, channel, GIOChannel_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GIOChannel expected");
@@ -19373,7 +18964,6 @@ mrb_GLib_g_io_channel_read_line_string(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oooo", &channel, &buffer, &terminator_pos, &error);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, channel, GIOChannel_class(mrb))) {
@@ -19428,7 +19018,6 @@ mrb_GLib_g_io_channel_read_to_end(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oooo", &channel, &str_return, &length, &error);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, channel, GIOChannel_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GIOChannel expected");
@@ -19477,7 +19066,6 @@ mrb_GLib_g_io_channel_read_unichar(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "ooo", &channel, &thechar, &error);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, channel, GIOChannel_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GIOChannel expected");
@@ -19519,7 +19107,6 @@ mrb_GLib_g_io_channel_ref(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &channel);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, channel, GIOChannel_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GIOChannel expected");
@@ -19558,7 +19145,6 @@ mrb_GLib_g_io_channel_seek(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oio", &channel, &native_offset, &type);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, channel, GIOChannel_class(mrb))) {
@@ -19604,7 +19190,6 @@ mrb_GLib_g_io_channel_seek_position(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oioo", &channel, &native_offset, &type, &error);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, channel, GIOChannel_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GIOChannel expected");
@@ -19648,7 +19233,6 @@ mrb_GLib_g_io_channel_set_buffer_size(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &channel, &native_size);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, channel, GIOChannel_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GIOChannel expected");
@@ -19683,7 +19267,6 @@ mrb_GLib_g_io_channel_set_buffered(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &channel, &native_buffered);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, channel, GIOChannel_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GIOChannel expected");
@@ -19717,7 +19300,6 @@ mrb_GLib_g_io_channel_set_close_on_unref(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &channel, &native_do_close);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, channel, GIOChannel_class(mrb))) {
@@ -19754,7 +19336,6 @@ mrb_GLib_g_io_channel_set_encoding(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oz!o", &channel, &native_encoding, &error);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, channel, GIOChannel_class(mrb))) {
@@ -19797,7 +19378,6 @@ mrb_GLib_g_io_channel_set_flags(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "ooo", &channel, &flags, &error);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, channel, GIOChannel_class(mrb))) {
@@ -19844,7 +19424,6 @@ mrb_GLib_g_io_channel_set_line_term(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oz!i", &channel, &native_line_term, &native_length);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, channel, GIOChannel_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GIOChannel expected");
@@ -19880,7 +19459,6 @@ mrb_GLib_g_io_channel_shutdown(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oio", &channel, &native_flush, &err);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, channel, GIOChannel_class(mrb))) {
@@ -19919,7 +19497,6 @@ mrb_GLib_g_io_channel_unix_get_fd(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &channel);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, channel, GIOChannel_class(mrb))) {
@@ -19987,7 +19564,6 @@ mrb_GLib_g_io_channel_unref(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &channel);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, channel, GIOChannel_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GIOChannel expected");
@@ -20025,7 +19601,6 @@ mrb_GLib_g_io_channel_write(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oz!io", &channel, &native_buf, &native_count, &bytes_written);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, channel, GIOChannel_class(mrb))) {
@@ -20073,7 +19648,6 @@ mrb_GLib_g_io_channel_write_chars(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oz!ioo", &channel, &native_buf, &native_count, &bytes_written, &error);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, channel, GIOChannel_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GIOChannel expected");
@@ -20119,7 +19693,6 @@ mrb_GLib_g_io_channel_write_unichar(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oio", &channel, &native_thechar, &error);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, channel, GIOChannel_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GIOChannel expected");
@@ -20159,7 +19732,6 @@ mrb_GLib_g_io_create_watch(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &channel, &condition);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, channel, GIOChannel_class(mrb))) {
@@ -20223,7 +19795,6 @@ mrb_GLib_g_key_file_free(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &key_file);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, key_file, GKeyFile_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GKeyFile expected");
@@ -20261,7 +19832,6 @@ mrb_GLib_g_key_file_get_boolean(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oz!z!o", &key_file, &native_group_name, &native_key, &error);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, key_file, GKeyFile_class(mrb))) {
@@ -20313,7 +19883,6 @@ mrb_GLib_g_key_file_get_boolean_list(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oz!z!oo", &key_file, &native_group_name, &native_key, &length, &error);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, key_file, GKeyFile_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GKeyFile expected");
@@ -20361,7 +19930,6 @@ mrb_GLib_g_key_file_get_comment(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oz!z!o", &key_file, &native_group_name, &native_key, &error);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, key_file, GKeyFile_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GKeyFile expected");
@@ -20405,7 +19973,6 @@ mrb_GLib_g_key_file_get_double(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oz!z!o", &key_file, &native_group_name, &native_key, &error);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, key_file, GKeyFile_class(mrb))) {
@@ -20453,7 +20020,6 @@ mrb_GLib_g_key_file_get_double_list(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oz!z!oo", &key_file, &native_group_name, &native_key, &length, &error);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, key_file, GKeyFile_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GKeyFile expected");
@@ -20496,7 +20062,6 @@ mrb_GLib_g_key_file_get_groups(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &key_file, &length);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, key_file, GKeyFile_class(mrb))) {
@@ -20541,7 +20106,6 @@ mrb_GLib_g_key_file_get_int64(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oz!z!o", &key_file, &native_group_name, &native_key, &error);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, key_file, GKeyFile_class(mrb))) {
@@ -20590,7 +20154,6 @@ mrb_GLib_g_key_file_get_integer(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oz!z!o", &key_file, &native_group_name, &native_key, &error);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, key_file, GKeyFile_class(mrb))) {
@@ -20642,7 +20205,6 @@ mrb_GLib_g_key_file_get_integer_list(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oz!z!oo", &key_file, &native_group_name, &native_key, &length, &error);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, key_file, GKeyFile_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GKeyFile expected");
@@ -20689,7 +20251,6 @@ mrb_GLib_g_key_file_get_keys(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oz!oo", &key_file, &native_group_name, &length, &error);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, key_file, GKeyFile_class(mrb))) {
@@ -20740,7 +20301,6 @@ mrb_GLib_g_key_file_get_locale_string(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oz!z!z!o", &key_file, &native_group_name, &native_key, &native_locale, &error);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, key_file, GKeyFile_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GKeyFile expected");
@@ -20789,7 +20349,6 @@ mrb_GLib_g_key_file_get_locale_string_list(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oz!z!z!oo", &key_file, &native_group_name, &native_key, &native_locale, &length, &error);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, key_file, GKeyFile_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GKeyFile expected");
@@ -20831,7 +20390,6 @@ mrb_GLib_g_key_file_get_start_group(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &key_file);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, key_file, GKeyFile_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GKeyFile expected");
@@ -20872,7 +20430,6 @@ mrb_GLib_g_key_file_get_string(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oz!z!o", &key_file, &native_group_name, &native_key, &error);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, key_file, GKeyFile_class(mrb))) {
@@ -20920,7 +20477,6 @@ mrb_GLib_g_key_file_get_string_list(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oz!z!oo", &key_file, &native_group_name, &native_key, &length, &error);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, key_file, GKeyFile_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GKeyFile expected");
@@ -20967,7 +20523,6 @@ mrb_GLib_g_key_file_get_uint64(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oz!z!o", &key_file, &native_group_name, &native_key, &error);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, key_file, GKeyFile_class(mrb))) {
@@ -21017,7 +20572,6 @@ mrb_GLib_g_key_file_get_value(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oz!z!o", &key_file, &native_group_name, &native_key, &error);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, key_file, GKeyFile_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GKeyFile expected");
@@ -21057,7 +20611,6 @@ mrb_GLib_g_key_file_has_group(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oz!", &key_file, &native_group_name);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, key_file, GKeyFile_class(mrb))) {
@@ -21103,7 +20656,6 @@ mrb_GLib_g_key_file_has_key(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oz!z!o", &key_file, &native_group_name, &native_key, &error);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, key_file, GKeyFile_class(mrb))) {
@@ -21154,7 +20706,6 @@ mrb_GLib_g_key_file_load_from_data(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oz!ioo", &key_file, &native_data, &native_length, &flags, &error);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, key_file, GKeyFile_class(mrb))) {
@@ -21208,7 +20759,6 @@ mrb_GLib_g_key_file_load_from_data_dirs(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oz!ooo", &key_file, &native_file, &full_path, &flags, &error);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, key_file, GKeyFile_class(mrb))) {
@@ -21268,7 +20818,6 @@ mrb_GLib_g_key_file_load_from_dirs(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oz!oooo", &key_file, &native_file, &search_dirs, &full_path, &flags, &error);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, key_file, GKeyFile_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GKeyFile expected");
@@ -21325,7 +20874,6 @@ mrb_GLib_g_key_file_load_from_file(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oz!oo", &key_file, &native_file, &flags, &error);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, key_file, GKeyFile_class(mrb))) {
@@ -21392,7 +20940,6 @@ mrb_GLib_g_key_file_ref(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &key_file);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, key_file, GKeyFile_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GKeyFile expected");
@@ -21433,7 +20980,6 @@ mrb_GLib_g_key_file_remove_comment(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oz!z!o", &key_file, &native_group_name, &native_key, &error);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, key_file, GKeyFile_class(mrb))) {
@@ -21480,7 +21026,6 @@ mrb_GLib_g_key_file_remove_group(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oz!o", &key_file, &native_group_name, &error);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, key_file, GKeyFile_class(mrb))) {
@@ -21530,7 +21075,6 @@ mrb_GLib_g_key_file_remove_key(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oz!z!o", &key_file, &native_group_name, &native_key, &error);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, key_file, GKeyFile_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GKeyFile expected");
@@ -21576,7 +21120,6 @@ mrb_GLib_g_key_file_save_to_file(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oz!o", &key_file, &native_filename, &error);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, key_file, GKeyFile_class(mrb))) {
@@ -21626,7 +21169,6 @@ mrb_GLib_g_key_file_set_boolean(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oz!z!i", &key_file, &native_group_name, &native_key, &native_value);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, key_file, GKeyFile_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GKeyFile expected");
@@ -21666,7 +21208,6 @@ mrb_GLib_g_key_file_set_boolean_list(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oz!z!oi", &key_file, &native_group_name, &native_key, &list, &native_length);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, key_file, GKeyFile_class(mrb))) {
@@ -21710,7 +21251,6 @@ mrb_GLib_g_key_file_set_comment(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oz!z!z!o", &key_file, &native_group_name, &native_key, &native_comment, &error);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, key_file, GKeyFile_class(mrb))) {
@@ -21760,7 +21300,6 @@ mrb_GLib_g_key_file_set_double(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oz!z!f", &key_file, &native_group_name, &native_key, &native_value);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, key_file, GKeyFile_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GKeyFile expected");
@@ -21800,7 +21339,6 @@ mrb_GLib_g_key_file_set_double_list(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oz!z!oi", &key_file, &native_group_name, &native_key, &list, &native_length);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, key_file, GKeyFile_class(mrb))) {
@@ -21843,7 +21381,6 @@ mrb_GLib_g_key_file_set_int64(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oz!z!i", &key_file, &native_group_name, &native_key, &native_value);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, key_file, GKeyFile_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GKeyFile expected");
@@ -21881,7 +21418,6 @@ mrb_GLib_g_key_file_set_integer(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oz!z!i", &key_file, &native_group_name, &native_key, &native_value);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, key_file, GKeyFile_class(mrb))) {
@@ -21923,7 +21459,6 @@ mrb_GLib_g_key_file_set_integer_list(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oz!z!oi", &key_file, &native_group_name, &native_key, &list, &native_length);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, key_file, GKeyFile_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GKeyFile expected");
@@ -21960,7 +21495,6 @@ mrb_GLib_g_key_file_set_list_separator(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &key_file, &native_separator);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, key_file, GKeyFile_class(mrb))) {
@@ -22001,7 +21535,6 @@ mrb_GLib_g_key_file_set_locale_string(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oz!z!z!z!", &key_file, &native_group_name, &native_key, &native_locale, &native_string);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, key_file, GKeyFile_class(mrb))) {
@@ -22045,7 +21578,6 @@ mrb_GLib_g_key_file_set_locale_string_list(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oz!z!z!oi", &key_file, &native_group_name, &native_key, &native_locale, &list, &native_length);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, key_file, GKeyFile_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GKeyFile expected");
@@ -22087,7 +21619,6 @@ mrb_GLib_g_key_file_set_string(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oz!z!z!", &key_file, &native_group_name, &native_key, &native_string);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, key_file, GKeyFile_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GKeyFile expected");
@@ -22127,7 +21658,6 @@ mrb_GLib_g_key_file_set_string_list(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oz!z!oi", &key_file, &native_group_name, &native_key, &list, &native_length);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, key_file, GKeyFile_class(mrb))) {
@@ -22170,7 +21700,6 @@ mrb_GLib_g_key_file_set_uint64(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oz!z!i", &key_file, &native_group_name, &native_key, &native_value);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, key_file, GKeyFile_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GKeyFile expected");
@@ -22209,7 +21738,6 @@ mrb_GLib_g_key_file_set_value(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oz!z!z!", &key_file, &native_group_name, &native_key, &native_value);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, key_file, GKeyFile_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GKeyFile expected");
@@ -22245,7 +21773,6 @@ mrb_GLib_g_key_file_to_data(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "ooo", &key_file, &length, &error);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, key_file, GKeyFile_class(mrb))) {
@@ -22287,7 +21814,6 @@ mrb_GLib_g_key_file_unref(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &key_file);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, key_file, GKeyFile_class(mrb))) {
@@ -22343,7 +21869,6 @@ mrb_GLib_g_list_append(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &list, &data);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, list, GList_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GList expected");
@@ -22383,7 +21908,6 @@ mrb_GLib_g_list_concat(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &list1, &list2);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, list1, GList_class(mrb))) {
@@ -22426,7 +21950,6 @@ mrb_GLib_g_list_copy(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &list);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, list, GList_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GList expected");
@@ -22465,7 +21988,6 @@ mrb_GLib_g_list_copy_deep(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "ooo", &list, &func, &user_data);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, list, GList_class(mrb))) {
@@ -22510,7 +22032,6 @@ mrb_GLib_g_list_delete_link(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &list, &link_);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, list, GList_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GList expected");
@@ -22554,7 +22075,6 @@ mrb_GLib_g_list_find(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &list, &data);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, list, GList_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GList expected");
@@ -22597,7 +22117,6 @@ mrb_GLib_g_list_find_custom(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "ooo", &list, &data, &func);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, list, GList_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GList expected");
@@ -22639,7 +22158,6 @@ mrb_GLib_g_list_first(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &list);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, list, GList_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GList expected");
@@ -22679,7 +22197,6 @@ mrb_GLib_g_list_foreach(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "ooo", &list, &func, &user_data);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, list, GList_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GList expected");
@@ -22718,7 +22235,6 @@ mrb_GLib_g_list_free(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &list);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, list, GList_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GList expected");
@@ -22750,7 +22266,6 @@ mrb_GLib_g_list_free_1(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &list);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, list, GList_class(mrb))) {
@@ -22785,7 +22300,6 @@ mrb_GLib_g_list_free_full(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &list, &free_func);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, list, GList_class(mrb))) {
@@ -22823,7 +22337,6 @@ mrb_GLib_g_list_index(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &list, &data);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, list, GList_class(mrb))) {
@@ -22871,7 +22384,6 @@ mrb_GLib_g_list_insert(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "ooi", &list, &data, &native_position);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, list, GList_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GList expected");
@@ -22913,7 +22425,6 @@ mrb_GLib_g_list_insert_before(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "ooo", &list, &sibling, &data);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, list, GList_class(mrb))) {
@@ -22963,7 +22474,6 @@ mrb_GLib_g_list_insert_sorted(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "ooo", &list, &data, &func);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, list, GList_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GList expected");
@@ -23011,7 +22521,6 @@ mrb_GLib_g_list_insert_sorted_with_data(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oooo", &list, &data, &func, &user_data);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, list, GList_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GList expected");
@@ -23056,7 +22565,6 @@ mrb_GLib_g_list_last(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &list);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, list, GList_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GList expected");
@@ -23091,7 +22599,6 @@ mrb_GLib_g_list_length(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &list);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, list, GList_class(mrb))) {
@@ -23134,7 +22641,6 @@ mrb_GLib_g_list_nth(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &list, &native_n);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, list, GList_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GList expected");
@@ -23171,7 +22677,6 @@ mrb_GLib_g_list_nth_data(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &list, &native_n);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, list, GList_class(mrb))) {
@@ -23210,7 +22715,6 @@ mrb_GLib_g_list_nth_prev(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &list, &native_n);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, list, GList_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GList expected");
@@ -23247,7 +22751,6 @@ mrb_GLib_g_list_position(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &list, &llink);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, list, GList_class(mrb))) {
@@ -23296,7 +22799,6 @@ mrb_GLib_g_list_prepend(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &list, &data);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, list, GList_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GList expected");
@@ -23336,7 +22838,6 @@ mrb_GLib_g_list_remove(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &list, &data);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, list, GList_class(mrb))) {
@@ -23378,7 +22879,6 @@ mrb_GLib_g_list_remove_all(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &list, &data);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, list, GList_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GList expected");
@@ -23418,7 +22918,6 @@ mrb_GLib_g_list_remove_link(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &list, &llink);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, list, GList_class(mrb))) {
@@ -23461,7 +22960,6 @@ mrb_GLib_g_list_reverse(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &list);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, list, GList_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GList expected");
@@ -23498,7 +22996,6 @@ mrb_GLib_g_list_sort(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &list, &compare_func);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, list, GList_class(mrb))) {
@@ -23541,7 +23038,6 @@ mrb_GLib_g_list_sort_with_data(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "ooo", &list, &compare_func, &user_data);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, list, GList_class(mrb))) {
@@ -23612,7 +23108,6 @@ mrb_GLib_g_locale_from_utf8(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "z!iooo", &native_utf8string, &native_len, &bytes_read, &bytes_written, &error);
 
-
   /* Type checking */
   TODO_type_check_unsigned_long_PTR(bytes_read);
   TODO_type_check_unsigned_long_PTR(bytes_written);
@@ -23659,7 +23154,6 @@ mrb_GLib_g_locale_to_utf8(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "z!iooo", &native_opsysstring, &native_len, &bytes_read, &bytes_written, &error);
 
-
   /* Type checking */
   TODO_type_check_unsigned_long_PTR(bytes_read);
   TODO_type_check_unsigned_long_PTR(bytes_written);
@@ -23702,7 +23196,6 @@ mrb_GLib_g_log(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "z!oz!", &native_log_domain, &log_level, &native_format);
 
-
   /* Type checking */
   TODO_type_check_GLogLevelFlags(log_level);
 
@@ -23737,7 +23230,6 @@ mrb_GLib_g_log_default_handler(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!oz!o", &native_log_domain, &log_level, &native_message, &unused_data);
-
 
   /* Type checking */
   TODO_type_check_GLogLevelFlags(log_level);
@@ -23797,7 +23289,6 @@ mrb_GLib_g_log_set_always_fatal(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &fatal_mask);
 
-
   /* Type checking */
   TODO_type_check_GLogLevelFlags(fatal_mask);
 
@@ -23831,7 +23322,6 @@ mrb_GLib_g_log_set_default_handler(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &log_func, &user_data);
-
 
   /* Type checking */
   TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_char_PTR_COMMA_GLogLevelFlagsCOMMA_const_char_PTR_COMMA_void_PTR_RPAREN(log_func);
@@ -23870,7 +23360,6 @@ mrb_GLib_g_log_set_fatal_mask(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "z!o", &native_log_domain, &fatal_mask);
 
-
   /* Type checking */
   TODO_type_check_GLogLevelFlags(fatal_mask);
 
@@ -23908,7 +23397,6 @@ mrb_GLib_g_log_set_handler(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!ooo", &native_log_domain, &log_levels, &log_func, &user_data);
-
 
   /* Type checking */
   TODO_type_check_GLogLevelFlags(log_levels);
@@ -23959,7 +23447,6 @@ mrb_GLib_g_log_set_handler_full(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!oooo", &native_log_domain, &log_levels, &log_func, &user_data, &destroy);
-
 
   /* Type checking */
   TODO_type_check_GLogLevelFlags(log_levels);
@@ -24012,7 +23499,6 @@ mrb_GLib_g_logv(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "z!oz!i", &native_log_domain, &log_level, &native_format, &native_args);
 
-
   /* Type checking */
   TODO_type_check_GLogLevelFlags(log_level);
 
@@ -24041,7 +23527,6 @@ mrb_GLib_g_main_context_acquire(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &context);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, context, GMainContext_class(mrb))) {
@@ -24086,7 +23571,6 @@ mrb_GLib_g_main_context_add_poll(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "ooi", &context, &fd, &native_priority);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, context, GMainContext_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GMainContext expected");
@@ -24130,7 +23614,6 @@ mrb_GLib_g_main_context_check(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oioi", &context, &native_max_priority, &fds, &native_n_fds);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, context, GMainContext_class(mrb))) {
@@ -24197,7 +23680,6 @@ mrb_GLib_g_main_context_dispatch(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &context);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, context, GMainContext_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GMainContext expected");
@@ -24233,7 +23715,6 @@ mrb_GLib_g_main_context_find_source_by_funcs_user_data(mrb_state* mrb, mrb_value
 
   /* Fetch the args */
   mrb_get_args(mrb, "ooo", &context, &funcs, &user_data);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, context, GMainContext_class(mrb))) {
@@ -24281,7 +23762,6 @@ mrb_GLib_g_main_context_find_source_by_id(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &context, &native_source_id);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, context, GMainContext_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GMainContext expected");
@@ -24318,7 +23798,6 @@ mrb_GLib_g_main_context_find_source_by_user_data(mrb_state* mrb, mrb_value self)
 
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &context, &user_data);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, context, GMainContext_class(mrb))) {
@@ -24357,7 +23836,6 @@ mrb_GLib_g_main_context_get_poll_func(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &context);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, context, GMainContext_class(mrb))) {
@@ -24418,7 +23896,6 @@ mrb_GLib_g_main_context_invoke(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "ooo", &context, &function, &data);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, context, GMainContext_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GMainContext expected");
@@ -24465,7 +23942,6 @@ mrb_GLib_g_main_context_invoke_full(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oiooo", &context, &native_priority, &function, &data, &notify);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, context, GMainContext_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GMainContext expected");
@@ -24507,7 +23983,6 @@ mrb_GLib_g_main_context_is_owner(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &context);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, context, GMainContext_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GMainContext expected");
@@ -24548,7 +24023,6 @@ mrb_GLib_g_main_context_iteration(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &context, &native_may_block);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, context, GMainContext_class(mrb))) {
@@ -24636,7 +24110,6 @@ mrb_GLib_g_main_context_pending(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &context);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, context, GMainContext_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GMainContext expected");
@@ -24676,7 +24149,6 @@ mrb_GLib_g_main_context_pop_thread_default(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &context);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, context, GMainContext_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GMainContext expected");
@@ -24710,7 +24182,6 @@ mrb_GLib_g_main_context_prepare(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &context, &priority);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, context, GMainContext_class(mrb))) {
@@ -24754,7 +24225,6 @@ mrb_GLib_g_main_context_push_thread_default(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &context);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, context, GMainContext_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GMainContext expected");
@@ -24794,7 +24264,6 @@ mrb_GLib_g_main_context_query(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oiooi", &context, &native_max_priority, &timeout_, &fds, &native_n_fds);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, context, GMainContext_class(mrb))) {
@@ -24843,7 +24312,6 @@ mrb_GLib_g_main_context_ref(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &context);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, context, GMainContext_class(mrb))) {
@@ -24900,7 +24368,6 @@ mrb_GLib_g_main_context_release(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &context);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, context, GMainContext_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GMainContext expected");
@@ -24934,7 +24401,6 @@ mrb_GLib_g_main_context_remove_poll(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &context, &fd);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, context, GMainContext_class(mrb))) {
@@ -24976,7 +24442,6 @@ mrb_GLib_g_main_context_set_poll_func(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &context, &func);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, context, GMainContext_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GMainContext expected");
@@ -25011,7 +24476,6 @@ mrb_GLib_g_main_context_unref(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &context);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, context, GMainContext_class(mrb))) {
@@ -25048,7 +24512,6 @@ mrb_GLib_g_main_context_wait(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "ooo", &context, &cond, &mutex);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, context, GMainContext_class(mrb))) {
@@ -25097,7 +24560,6 @@ mrb_GLib_g_main_context_wakeup(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &context);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, context, GMainContext_class(mrb))) {
@@ -25175,7 +24637,6 @@ mrb_GLib_g_main_loop_get_context(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &loop);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, loop, GMainLoop_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GMainLoop expected");
@@ -25210,7 +24671,6 @@ mrb_GLib_g_main_loop_is_running(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &loop);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, loop, GMainLoop_class(mrb))) {
@@ -25253,7 +24713,6 @@ mrb_GLib_g_main_loop_new(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &context, &native_is_running);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, context, GMainContext_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GMainContext expected");
@@ -25289,7 +24748,6 @@ mrb_GLib_g_main_loop_quit(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &loop);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, loop, GMainLoop_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GMainLoop expected");
@@ -25321,7 +24779,6 @@ mrb_GLib_g_main_loop_ref(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &loop);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, loop, GMainLoop_class(mrb))) {
@@ -25358,7 +24815,6 @@ mrb_GLib_g_main_loop_run(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &loop);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, loop, GMainLoop_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GMainLoop expected");
@@ -25390,7 +24846,6 @@ mrb_GLib_g_main_loop_unref(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &loop);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, loop, GMainLoop_class(mrb))) {
@@ -25536,7 +24991,6 @@ mrb_GLib_g_mapped_file_free(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &file);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, file, GMappedFile_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GMappedFile expected");
@@ -25568,7 +25022,6 @@ mrb_GLib_g_mapped_file_get_bytes(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &file);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, file, GMappedFile_class(mrb))) {
@@ -25605,7 +25058,6 @@ mrb_GLib_g_mapped_file_get_contents(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &file);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, file, GMappedFile_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GMappedFile expected");
@@ -25640,7 +25092,6 @@ mrb_GLib_g_mapped_file_get_length(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &file);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, file, GMappedFile_class(mrb))) {
@@ -25685,7 +25136,6 @@ mrb_GLib_g_mapped_file_new(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "z!io", &native_filename, &native_writable, &error);
 
-
   /* Type checking */
   TODO_type_check__GError_PTR_PTR(error);
 
@@ -25722,7 +25172,6 @@ mrb_GLib_g_mapped_file_new_from_fd(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "iio", &native_fd, &native_writable, &error);
 
-
   /* Type checking */
   TODO_type_check__GError_PTR_PTR(error);
 
@@ -25754,7 +25203,6 @@ mrb_GLib_g_mapped_file_ref(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &file);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, file, GMappedFile_class(mrb))) {
@@ -25790,7 +25238,6 @@ mrb_GLib_g_mapped_file_unref(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &file);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, file, GMappedFile_class(mrb))) {
@@ -25833,7 +25280,6 @@ mrb_GLib_g_markup_collect_attributes(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!ooooz!", &native_element_name, &attribute_names, &attribute_values, &error, &first_type, &native_first_attr);
-
 
   /* Type checking */
   TODO_type_check_char_PTR_PTR(attribute_names);
@@ -25935,7 +25381,6 @@ mrb_GLib_g_markup_parse_context_end_parse(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &context, &error);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, context, GMarkupParseContext_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GMarkupParseContext expected");
@@ -25978,7 +25423,6 @@ mrb_GLib_g_markup_parse_context_free(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &context);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, context, GMarkupParseContext_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GMarkupParseContext expected");
@@ -26010,7 +25454,6 @@ mrb_GLib_g_markup_parse_context_get_element(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &context);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, context, GMarkupParseContext_class(mrb))) {
@@ -26046,7 +25489,6 @@ mrb_GLib_g_markup_parse_context_get_element_stack(mrb_state* mrb, mrb_value self
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &context);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, context, GMarkupParseContext_class(mrb))) {
@@ -26087,7 +25529,6 @@ mrb_GLib_g_markup_parse_context_get_position(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "ooo", &context, &line_number, &char_number);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, context, GMarkupParseContext_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GMarkupParseContext expected");
@@ -26125,7 +25566,6 @@ mrb_GLib_g_markup_parse_context_get_user_data(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &context);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, context, GMarkupParseContext_class(mrb))) {
@@ -26167,7 +25607,6 @@ mrb_GLib_g_markup_parse_context_new(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oooo", &parser, &flags, &user_data, &user_data_dnotify);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, parser, GMarkupParser_class(mrb))) {
@@ -26219,7 +25658,6 @@ mrb_GLib_g_markup_parse_context_parse(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oz!io", &context, &native_text, &native_text_len, &error);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, context, GMarkupParseContext_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GMarkupParseContext expected");
@@ -26262,7 +25700,6 @@ mrb_GLib_g_markup_parse_context_pop(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &context);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, context, GMarkupParseContext_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GMarkupParseContext expected");
@@ -26301,7 +25738,6 @@ mrb_GLib_g_markup_parse_context_push(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "ooo", &context, &parser, &user_data);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, context, GMarkupParseContext_class(mrb))) {
@@ -26344,7 +25780,6 @@ mrb_GLib_g_markup_parse_context_ref(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &context);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, context, GMarkupParseContext_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GMarkupParseContext expected");
@@ -26379,7 +25814,6 @@ mrb_GLib_g_markup_parse_context_unref(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &context);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, context, GMarkupParseContext_class(mrb))) {
@@ -26473,7 +25907,6 @@ mrb_GLib_g_match_info_expand_references(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oz!o", &match_info, &native_string_to_expand, &error);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, match_info, GMatchInfo_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GMatchInfo expected");
@@ -26514,7 +25947,6 @@ mrb_GLib_g_match_info_fetch(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &match_info, &native_match_num);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, match_info, GMatchInfo_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GMatchInfo expected");
@@ -26549,7 +25981,6 @@ mrb_GLib_g_match_info_fetch_all(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &match_info);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, match_info, GMatchInfo_class(mrb))) {
@@ -26587,7 +26018,6 @@ mrb_GLib_g_match_info_fetch_named(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oz!", &match_info, &native_name);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, match_info, GMatchInfo_class(mrb))) {
@@ -26629,7 +26059,6 @@ mrb_GLib_g_match_info_fetch_named_pos(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oz!oo", &match_info, &native_name, &start_pos, &end_pos);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, match_info, GMatchInfo_class(mrb))) {
@@ -26682,7 +26111,6 @@ mrb_GLib_g_match_info_fetch_pos(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oioo", &match_info, &native_match_num, &start_pos, &end_pos);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, match_info, GMatchInfo_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GMatchInfo expected");
@@ -26728,7 +26156,6 @@ mrb_GLib_g_match_info_free(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &match_info);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, match_info, GMatchInfo_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GMatchInfo expected");
@@ -26760,7 +26187,6 @@ mrb_GLib_g_match_info_get_match_count(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &match_info);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, match_info, GMatchInfo_class(mrb))) {
@@ -26801,7 +26227,6 @@ mrb_GLib_g_match_info_get_regex(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &match_info);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, match_info, GMatchInfo_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GMatchInfo expected");
@@ -26837,7 +26262,6 @@ mrb_GLib_g_match_info_get_string(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &match_info);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, match_info, GMatchInfo_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GMatchInfo expected");
@@ -26872,7 +26296,6 @@ mrb_GLib_g_match_info_is_partial_match(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &match_info);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, match_info, GMatchInfo_class(mrb))) {
@@ -26912,7 +26335,6 @@ mrb_GLib_g_match_info_matches(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &match_info);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, match_info, GMatchInfo_class(mrb))) {
@@ -26954,7 +26376,6 @@ mrb_GLib_g_match_info_next(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &match_info, &error);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, match_info, GMatchInfo_class(mrb))) {
@@ -26998,7 +26419,6 @@ mrb_GLib_g_match_info_ref(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &match_info);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, match_info, GMatchInfo_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GMatchInfo expected");
@@ -27033,7 +26453,6 @@ mrb_GLib_g_match_info_unref(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &match_info);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, match_info, GMatchInfo_class(mrb))) {
@@ -27108,7 +26527,6 @@ mrb_GLib_g_mem_set_vtable(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &vtable);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, vtable, GMemVTable_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GMemVTable expected");
@@ -27142,7 +26560,6 @@ mrb_GLib_g_memdup(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &mem, &native_byte_size);
-
 
   /* Type checking */
   TODO_type_check_void_PTR(mem);
@@ -27209,7 +26626,6 @@ mrb_GLib_g_mkdtemp(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &tmpl);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, tmpl, mrb->string_class)) {
     mrb_raise(mrb, E_TYPE_ERROR, "String expected");
@@ -27260,7 +26676,6 @@ mrb_GLib_g_mkdtemp_full(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &tmpl, &native_mode);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, tmpl, mrb->string_class)) {
     mrb_raise(mrb, E_TYPE_ERROR, "String expected");
@@ -27308,7 +26723,6 @@ mrb_GLib_g_mkstemp(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &tmpl);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, tmpl, mrb->string_class)) {
@@ -27366,7 +26780,6 @@ mrb_GLib_g_mkstemp_full(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oii", &tmpl, &native_flags, &native_mode);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, tmpl, mrb->string_class)) {
     mrb_raise(mrb, E_TYPE_ERROR, "String expected");
@@ -27419,7 +26832,6 @@ mrb_GLib_g_mutex_clear(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &mutex);
 
-
   /* Type checking */
   TODO_type_check_union__GMutex_PTR(mutex);
 
@@ -27448,7 +26860,6 @@ mrb_GLib_g_mutex_init(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &mutex);
-
 
   /* Type checking */
   TODO_type_check_union__GMutex_PTR(mutex);
@@ -27479,7 +26890,6 @@ mrb_GLib_g_mutex_lock(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &mutex);
 
-
   /* Type checking */
   TODO_type_check_union__GMutex_PTR(mutex);
 
@@ -27509,7 +26919,6 @@ mrb_GLib_g_mutex_locker_free(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &locker);
 
-
   /* Type checking */
   TODO_type_check_void_PTR(locker);
 
@@ -27538,7 +26947,6 @@ mrb_GLib_g_mutex_locker_new(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &mutex);
-
 
   /* Type checking */
   TODO_type_check_union__GMutex_PTR(mutex);
@@ -27571,7 +26979,6 @@ mrb_GLib_g_mutex_trylock(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &mutex);
-
 
   /* Type checking */
   TODO_type_check_union__GMutex_PTR(mutex);
@@ -27609,7 +27016,6 @@ mrb_GLib_g_mutex_unlock(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &mutex);
 
-
   /* Type checking */
   TODO_type_check_union__GMutex_PTR(mutex);
 
@@ -27640,7 +27046,6 @@ mrb_GLib_g_node_child_index(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &node, &data);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, node, GNode_class(mrb))) {
@@ -27685,7 +27090,6 @@ mrb_GLib_g_node_child_position(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &node, &child);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, node, GNode_class(mrb))) {
@@ -27738,7 +27142,6 @@ mrb_GLib_g_node_children_foreach(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oooo", &node, &flags, &func, &data);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, node, GNode_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GNode expected");
@@ -27780,7 +27183,6 @@ mrb_GLib_g_node_copy(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &node);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, node, GNode_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GNode expected");
@@ -27819,7 +27221,6 @@ mrb_GLib_g_node_copy_deep(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "ooo", &node, &copy_func, &data);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, node, GNode_class(mrb))) {
@@ -27862,7 +27263,6 @@ mrb_GLib_g_node_depth(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &node);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, node, GNode_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GNode expected");
@@ -27902,7 +27302,6 @@ mrb_GLib_g_node_destroy(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &root);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, root, GNode_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GNode expected");
@@ -27940,7 +27339,6 @@ mrb_GLib_g_node_find(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oooo", &root, &order, &flags, &data);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, root, GNode_class(mrb))) {
@@ -27990,7 +27388,6 @@ mrb_GLib_g_node_find_child(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "ooo", &node, &flags, &data);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, node, GNode_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GNode expected");
@@ -28032,7 +27429,6 @@ mrb_GLib_g_node_first_sibling(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &node);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, node, GNode_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GNode expected");
@@ -28067,7 +27463,6 @@ mrb_GLib_g_node_get_root(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &node);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, node, GNode_class(mrb))) {
@@ -28107,7 +27502,6 @@ mrb_GLib_g_node_insert(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oio", &parent, &native_position, &node);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, parent, GNode_class(mrb))) {
@@ -28153,7 +27547,6 @@ mrb_GLib_g_node_insert_after(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "ooo", &parent, &sibling, &node);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, parent, GNode_class(mrb))) {
@@ -28206,7 +27599,6 @@ mrb_GLib_g_node_insert_before(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "ooo", &parent, &sibling, &node);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, parent, GNode_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GNode expected");
@@ -28256,7 +27648,6 @@ mrb_GLib_g_node_is_ancestor(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &node, &descendant);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, node, GNode_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GNode expected");
@@ -28302,7 +27693,6 @@ mrb_GLib_g_node_last_child(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &node);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, node, GNode_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GNode expected");
@@ -28338,7 +27728,6 @@ mrb_GLib_g_node_last_sibling(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &node);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, node, GNode_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GNode expected");
@@ -28373,7 +27762,6 @@ mrb_GLib_g_node_max_height(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &root);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, root, GNode_class(mrb))) {
@@ -28413,7 +27801,6 @@ mrb_GLib_g_node_n_children(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &node);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, node, GNode_class(mrb))) {
@@ -28455,7 +27842,6 @@ mrb_GLib_g_node_n_nodes(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &root, &flags);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, root, GNode_class(mrb))) {
@@ -28499,7 +27885,6 @@ mrb_GLib_g_node_new(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &data);
 
-
   /* Type checking */
   TODO_type_check_void_PTR(data);
 
@@ -28533,7 +27918,6 @@ mrb_GLib_g_node_nth_child(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &node, &native_n);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, node, GNode_class(mrb))) {
@@ -28571,7 +27955,6 @@ mrb_GLib_g_node_prepend(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &parent, &node);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, parent, GNode_class(mrb))) {
@@ -28614,7 +27997,6 @@ mrb_GLib_g_node_reverse_children(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &node);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, node, GNode_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GNode expected");
@@ -28656,7 +28038,6 @@ mrb_GLib_g_node_traverse(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oooioo", &root, &order, &flags, &native_max_depth, &func, &data);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, root, GNode_class(mrb))) {
@@ -28702,7 +28083,6 @@ mrb_GLib_g_node_unlink(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &node);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, node, GNode_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GNode expected");
@@ -28734,7 +28114,6 @@ mrb_GLib_g_nullify_pointer(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &nullify_location);
-
 
   /* Type checking */
   TODO_type_check_void_PTR_PTR(nullify_location);
@@ -28817,7 +28196,6 @@ mrb_GLib_g_once_impl(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "ooo", &once, &func, &arg);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, once, GOnce_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GOnce expected");
@@ -28859,7 +28237,6 @@ mrb_GLib_g_once_init_enter(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &location);
 
-
   /* Type checking */
   TODO_type_check_volatile_void_PTR(location);
 
@@ -28898,7 +28275,6 @@ mrb_GLib_g_once_init_leave(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &location, &native_result);
 
-
   /* Type checking */
   TODO_type_check_volatile_void_PTR(location);
 
@@ -28929,7 +28305,6 @@ mrb_GLib_g_option_context_add_group(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &context, &group);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, context, GOptionContext_class(mrb))) {
@@ -28973,7 +28348,6 @@ mrb_GLib_g_option_context_add_main_entries(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "ooz!", &context, &entries, &native_translation_domain);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, context, GOptionContext_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GOptionContext expected");
@@ -29012,7 +28386,6 @@ mrb_GLib_g_option_context_free(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &context);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, context, GOptionContext_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GOptionContext expected");
@@ -29044,7 +28417,6 @@ mrb_GLib_g_option_context_get_description(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &context);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, context, GOptionContext_class(mrb))) {
@@ -29084,7 +28456,6 @@ mrb_GLib_g_option_context_get_help(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oio", &context, &native_main_help, &group);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, context, GOptionContext_class(mrb))) {
@@ -29127,7 +28498,6 @@ mrb_GLib_g_option_context_get_help_enabled(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &context);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, context, GOptionContext_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GOptionContext expected");
@@ -29166,7 +28536,6 @@ mrb_GLib_g_option_context_get_ignore_unknown_options(mrb_state* mrb, mrb_value s
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &context);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, context, GOptionContext_class(mrb))) {
@@ -29207,7 +28576,6 @@ mrb_GLib_g_option_context_get_main_group(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &context);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, context, GOptionContext_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GOptionContext expected");
@@ -29242,7 +28610,6 @@ mrb_GLib_g_option_context_get_strict_posix(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &context);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, context, GOptionContext_class(mrb))) {
@@ -29282,7 +28649,6 @@ mrb_GLib_g_option_context_get_summary(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &context);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, context, GOptionContext_class(mrb))) {
@@ -29352,7 +28718,6 @@ mrb_GLib_g_option_context_parse(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oooo", &context, &argc, &argv, &error);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, context, GOptionContext_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GOptionContext expected");
@@ -29405,7 +28770,6 @@ mrb_GLib_g_option_context_parse_strv(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "ooo", &context, &arguments, &error);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, context, GOptionContext_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GOptionContext expected");
@@ -29453,7 +28817,6 @@ mrb_GLib_g_option_context_set_description(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oz!", &context, &native_description);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, context, GOptionContext_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GOptionContext expected");
@@ -29487,7 +28850,6 @@ mrb_GLib_g_option_context_set_help_enabled(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &context, &native_help_enabled);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, context, GOptionContext_class(mrb))) {
@@ -29523,7 +28885,6 @@ mrb_GLib_g_option_context_set_ignore_unknown_options(mrb_state* mrb, mrb_value s
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &context, &native_ignore_unknown);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, context, GOptionContext_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GOptionContext expected");
@@ -29557,7 +28918,6 @@ mrb_GLib_g_option_context_set_main_group(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &context, &group);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, context, GOptionContext_class(mrb))) {
@@ -29599,7 +28959,6 @@ mrb_GLib_g_option_context_set_strict_posix(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &context, &native_strict_posix);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, context, GOptionContext_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GOptionContext expected");
@@ -29633,7 +28992,6 @@ mrb_GLib_g_option_context_set_summary(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oz!", &context, &native_summary);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, context, GOptionContext_class(mrb))) {
@@ -29672,7 +29030,6 @@ mrb_GLib_g_option_context_set_translate_func(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oooo", &context, &func, &data, &destroy_notify);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, context, GOptionContext_class(mrb))) {
@@ -29716,7 +29073,6 @@ mrb_GLib_g_option_context_set_translation_domain(mrb_state* mrb, mrb_value self)
 
   /* Fetch the args */
   mrb_get_args(mrb, "oz!", &context, &native_domain);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, context, GOptionContext_class(mrb))) {
@@ -29776,7 +29132,6 @@ mrb_GLib_g_option_group_add_entries(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &group, &entries);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, group, GOptionGroup_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GOptionGroup expected");
@@ -29814,7 +29169,6 @@ mrb_GLib_g_option_group_free(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &group);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, group, GOptionGroup_class(mrb))) {
@@ -29856,7 +29210,6 @@ mrb_GLib_g_option_group_new(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "z!z!z!oo", &native_name, &native_description, &native_help_description, &user_data, &destroy);
 
-
   /* Type checking */
   TODO_type_check_void_PTR(user_data);
   TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_void_PTR_RPAREN(destroy);
@@ -29891,7 +29244,6 @@ mrb_GLib_g_option_group_ref(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &group);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, group, GOptionGroup_class(mrb))) {
@@ -29929,7 +29281,6 @@ mrb_GLib_g_option_group_set_error_hook(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &group, &error_func);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, group, GOptionGroup_class(mrb))) {
@@ -29969,7 +29320,6 @@ mrb_GLib_g_option_group_set_parse_hooks(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "ooo", &group, &pre_parse_func, &post_parse_func);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, group, GOptionGroup_class(mrb))) {
@@ -30015,7 +29365,6 @@ mrb_GLib_g_option_group_set_translate_func(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oooo", &group, &func, &data, &destroy_notify);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, group, GOptionGroup_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GOptionGroup expected");
@@ -30059,7 +29408,6 @@ mrb_GLib_g_option_group_set_translation_domain(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oz!", &group, &native_domain);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, group, GOptionGroup_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GOptionGroup expected");
@@ -30091,7 +29439,6 @@ mrb_GLib_g_option_group_unref(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &group);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, group, GOptionGroup_class(mrb))) {
@@ -30128,7 +29475,6 @@ mrb_GLib_g_parse_debug_string(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!oi", &native_string, &keys, &native_nkeys);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, keys, GDebugKey_class(mrb))) {
@@ -30287,7 +29633,6 @@ mrb_GLib_g_pattern_match(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oiz!z!", &pspec, &native_string_length, &native_string, &native_string_reversed);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, pspec, GPatternSpec_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GPatternSpec expected");
@@ -30362,7 +29707,6 @@ mrb_GLib_g_pattern_match_string(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oz!", &pspec, &native_string);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, pspec, GPatternSpec_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GPatternSpec expected");
@@ -30403,7 +29747,6 @@ mrb_GLib_g_pattern_spec_equal(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &pspec1, &pspec2);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, pspec1, GPatternSpec_class(mrb))) {
@@ -30449,7 +29792,6 @@ mrb_GLib_g_pattern_spec_free(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &pspec);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, pspec, GPatternSpec_class(mrb))) {
@@ -30512,7 +29854,6 @@ mrb_GLib_g_pointer_bit_lock(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &address, &native_lock_bit);
 
-
   /* Type checking */
   TODO_type_check_volatile_void_PTR(address);
 
@@ -30543,7 +29884,6 @@ mrb_GLib_g_pointer_bit_trylock(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &address, &native_lock_bit);
-
 
   /* Type checking */
   TODO_type_check_volatile_void_PTR(address);
@@ -30583,7 +29923,6 @@ mrb_GLib_g_pointer_bit_unlock(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &address, &native_lock_bit);
 
-
   /* Type checking */
   TODO_type_check_volatile_void_PTR(address);
 
@@ -30616,7 +29955,6 @@ mrb_GLib_g_poll(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oii", &fds, &native_nfds, &native_timeout);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, fds, GPollFD_class(mrb))) {
@@ -30658,7 +29996,6 @@ mrb_GLib_g_prefix_error(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oz!", &err, &native_format);
-
 
   /* Type checking */
   TODO_type_check__GError_PTR_PTR(err);
@@ -30801,7 +30138,6 @@ mrb_GLib_g_private_get(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &key);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, key, GPrivate_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GPrivate expected");
@@ -30838,7 +30174,6 @@ mrb_GLib_g_private_replace(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &key, &value);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, key, GPrivate_class(mrb))) {
@@ -30877,7 +30212,6 @@ mrb_GLib_g_private_set(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &key, &value);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, key, GPrivate_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GPrivate expected");
@@ -30914,7 +30248,6 @@ mrb_GLib_g_propagate_error(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &dest, &src);
-
 
   /* Type checking */
   TODO_type_check__GError_PTR_PTR(dest);
@@ -30955,7 +30288,6 @@ mrb_GLib_g_propagate_prefixed_error(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "ooz!", &dest, &src, &native_format);
 
-
   /* Type checking */
   TODO_type_check__GError_PTR_PTR(dest);
   if (!mrb_obj_is_kind_of(mrb, src, GError_class(mrb))) {
@@ -30992,7 +30324,6 @@ mrb_GLib_g_ptr_array_add(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &array, &data);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, array, GPtrArray_class(mrb))) {
@@ -31032,7 +30363,6 @@ mrb_GLib_g_ptr_array_foreach(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "ooo", &array, &func, &user_data);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, array, GPtrArray_class(mrb))) {
@@ -31074,7 +30404,6 @@ mrb_GLib_g_ptr_array_free(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &array, &native_free_seg);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, array, GPtrArray_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GPtrArray expected");
@@ -31113,7 +30442,6 @@ mrb_GLib_g_ptr_array_insert(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oio", &array, &native_index_, &data);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, array, GPtrArray_class(mrb))) {
@@ -31172,7 +30500,6 @@ mrb_GLib_g_ptr_array_new_full(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "io", &native_reserved_size, &element_free_func);
 
-
   /* Type checking */
   TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_void_PTR_RPAREN(element_free_func);
 
@@ -31205,7 +30532,6 @@ mrb_GLib_g_ptr_array_new_with_free_func(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &element_free_func);
 
-
   /* Type checking */
   TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_void_PTR_RPAREN(element_free_func);
 
@@ -31237,7 +30563,6 @@ mrb_GLib_g_ptr_array_ref(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &array);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, array, GPtrArray_class(mrb))) {
@@ -31275,7 +30600,6 @@ mrb_GLib_g_ptr_array_remove(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &array, &data);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, array, GPtrArray_class(mrb))) {
@@ -31321,7 +30645,6 @@ mrb_GLib_g_ptr_array_remove_fast(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &array, &data);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, array, GPtrArray_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GPtrArray expected");
@@ -31366,7 +30689,6 @@ mrb_GLib_g_ptr_array_remove_index(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &array, &native_index_);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, array, GPtrArray_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GPtrArray expected");
@@ -31403,7 +30725,6 @@ mrb_GLib_g_ptr_array_remove_index_fast(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &array, &native_index_);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, array, GPtrArray_class(mrb))) {
@@ -31444,7 +30765,6 @@ mrb_GLib_g_ptr_array_remove_range(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oii", &array, &native_index_, &native_length);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, array, GPtrArray_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GPtrArray expected");
@@ -31482,7 +30802,6 @@ mrb_GLib_g_ptr_array_set_free_func(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &array, &element_free_func);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, array, GPtrArray_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GPtrArray expected");
@@ -31519,7 +30838,6 @@ mrb_GLib_g_ptr_array_set_size(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &array, &native_length);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, array, GPtrArray_class(mrb))) {
@@ -31582,7 +30900,6 @@ mrb_GLib_g_ptr_array_sort(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &array, &compare_func);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, array, GPtrArray_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GPtrArray expected");
@@ -31622,7 +30939,6 @@ mrb_GLib_g_ptr_array_sort_with_data(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "ooo", &array, &compare_func, &user_data);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, array, GPtrArray_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GPtrArray expected");
@@ -31660,7 +30976,6 @@ mrb_GLib_g_ptr_array_unref(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &array);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, array, GPtrArray_class(mrb))) {
@@ -31701,7 +31016,6 @@ mrb_GLib_g_qsort_with_data(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oiioo", &pbase, &native_total_elems, &native_size, &compare_func, &user_data);
-
 
   /* Type checking */
   TODO_type_check_void_PTR(pbase);
@@ -31875,7 +31189,6 @@ mrb_GLib_g_queue_clear(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &queue);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, queue, GQueue_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GQueue expected");
@@ -31907,7 +31220,6 @@ mrb_GLib_g_queue_copy(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &queue);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, queue, GQueue_class(mrb))) {
@@ -31945,7 +31257,6 @@ mrb_GLib_g_queue_delete_link(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &queue, &link_);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, queue, GQueue_class(mrb))) {
@@ -31986,7 +31297,6 @@ mrb_GLib_g_queue_find(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &queue, &data);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, queue, GQueue_class(mrb))) {
@@ -32029,7 +31339,6 @@ mrb_GLib_g_queue_find_custom(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "ooo", &queue, &data, &func);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, queue, GQueue_class(mrb))) {
@@ -32076,7 +31385,6 @@ mrb_GLib_g_queue_foreach(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "ooo", &queue, &func, &user_data);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, queue, GQueue_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GQueue expected");
@@ -32115,7 +31423,6 @@ mrb_GLib_g_queue_free(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &queue);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, queue, GQueue_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GQueue expected");
@@ -32149,7 +31456,6 @@ mrb_GLib_g_queue_free_full(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &queue, &free_func);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, queue, GQueue_class(mrb))) {
@@ -32185,7 +31491,6 @@ mrb_GLib_g_queue_get_length(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &queue);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, queue, GQueue_class(mrb))) {
@@ -32227,7 +31532,6 @@ mrb_GLib_g_queue_index(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &queue, &data);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, queue, GQueue_class(mrb))) {
@@ -32271,7 +31575,6 @@ mrb_GLib_g_queue_init(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &queue);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, queue, GQueue_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GQueue expected");
@@ -32307,7 +31610,6 @@ mrb_GLib_g_queue_insert_after(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "ooo", &queue, &sibling, &data);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, queue, GQueue_class(mrb))) {
@@ -32353,7 +31655,6 @@ mrb_GLib_g_queue_insert_before(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "ooo", &queue, &sibling, &data);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, queue, GQueue_class(mrb))) {
@@ -32402,7 +31703,6 @@ mrb_GLib_g_queue_insert_sorted(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oooo", &queue, &data, &func, &user_data);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, queue, GQueue_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GQueue expected");
@@ -32444,7 +31744,6 @@ mrb_GLib_g_queue_is_empty(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &queue);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, queue, GQueue_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GQueue expected");
@@ -32485,7 +31784,6 @@ mrb_GLib_g_queue_link_index(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &queue, &link_);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, queue, GQueue_class(mrb))) {
@@ -32552,7 +31850,6 @@ mrb_GLib_g_queue_peek_head(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &queue);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, queue, GQueue_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GQueue expected");
@@ -32587,7 +31884,6 @@ mrb_GLib_g_queue_peek_head_link(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &queue);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, queue, GQueue_class(mrb))) {
@@ -32626,7 +31922,6 @@ mrb_GLib_g_queue_peek_nth(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &queue, &native_n);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, queue, GQueue_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GQueue expected");
@@ -32664,7 +31959,6 @@ mrb_GLib_g_queue_peek_nth_link(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &queue, &native_n);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, queue, GQueue_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GQueue expected");
@@ -32699,7 +31993,6 @@ mrb_GLib_g_queue_peek_tail(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &queue);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, queue, GQueue_class(mrb))) {
@@ -32736,7 +32029,6 @@ mrb_GLib_g_queue_peek_tail_link(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &queue);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, queue, GQueue_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GQueue expected");
@@ -32772,7 +32064,6 @@ mrb_GLib_g_queue_pop_head(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &queue);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, queue, GQueue_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GQueue expected");
@@ -32807,7 +32098,6 @@ mrb_GLib_g_queue_pop_head_link(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &queue);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, queue, GQueue_class(mrb))) {
@@ -32846,7 +32136,6 @@ mrb_GLib_g_queue_pop_nth(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &queue, &native_n);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, queue, GQueue_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GQueue expected");
@@ -32884,7 +32173,6 @@ mrb_GLib_g_queue_pop_nth_link(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &queue, &native_n);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, queue, GQueue_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GQueue expected");
@@ -32920,7 +32208,6 @@ mrb_GLib_g_queue_pop_tail(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &queue);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, queue, GQueue_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GQueue expected");
@@ -32955,7 +32242,6 @@ mrb_GLib_g_queue_pop_tail_link(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &queue);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, queue, GQueue_class(mrb))) {
@@ -32994,7 +32280,6 @@ mrb_GLib_g_queue_push_head(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &queue, &data);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, queue, GQueue_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GQueue expected");
@@ -33031,7 +32316,6 @@ mrb_GLib_g_queue_push_head_link(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &queue, &link_);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, queue, GQueue_class(mrb))) {
@@ -33075,7 +32359,6 @@ mrb_GLib_g_queue_push_nth(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "ooi", &queue, &data, &native_n);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, queue, GQueue_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GQueue expected");
@@ -33114,7 +32397,6 @@ mrb_GLib_g_queue_push_nth_link(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oio", &queue, &native_n, &link_);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, queue, GQueue_class(mrb))) {
@@ -33156,7 +32438,6 @@ mrb_GLib_g_queue_push_tail(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &queue, &data);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, queue, GQueue_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GQueue expected");
@@ -33193,7 +32474,6 @@ mrb_GLib_g_queue_push_tail_link(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &queue, &link_);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, queue, GQueue_class(mrb))) {
@@ -33234,7 +32514,6 @@ mrb_GLib_g_queue_remove(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &queue, &data);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, queue, GQueue_class(mrb))) {
@@ -33280,7 +32559,6 @@ mrb_GLib_g_queue_remove_all(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &queue, &data);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, queue, GQueue_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GQueue expected");
@@ -33323,7 +32601,6 @@ mrb_GLib_g_queue_reverse(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &queue);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, queue, GQueue_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GQueue expected");
@@ -33359,7 +32636,6 @@ mrb_GLib_g_queue_sort(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "ooo", &queue, &compare_func, &user_data);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, queue, GQueue_class(mrb))) {
@@ -33401,7 +32677,6 @@ mrb_GLib_g_queue_unlink(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &queue, &link_);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, queue, GQueue_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GQueue expected");
@@ -33440,7 +32715,6 @@ mrb_GLib_g_rand_copy(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &rand_);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, rand_, GRand_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GRand expected");
@@ -33475,7 +32749,6 @@ mrb_GLib_g_rand_double(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &rand_);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, rand_, GRand_class(mrb))) {
@@ -33516,7 +32789,6 @@ mrb_GLib_g_rand_double_range(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "off", &rand_, &native_begin, &native_end);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, rand_, GRand_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GRand expected");
@@ -33552,7 +32824,6 @@ mrb_GLib_g_rand_free(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &rand_);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, rand_, GRand_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GRand expected");
@@ -33584,7 +32855,6 @@ mrb_GLib_g_rand_int(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &rand_);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, rand_, GRand_class(mrb))) {
@@ -33628,7 +32898,6 @@ mrb_GLib_g_rand_int_range(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oii", &rand_, &native_begin, &native_end);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, rand_, GRand_class(mrb))) {
@@ -33718,7 +32987,6 @@ mrb_GLib_g_rand_new_with_seed_array(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &seed, &native_seed_length);
 
-
   /* Type checking */
   TODO_type_check_unsigned_int_PTR(seed);
 
@@ -33752,7 +33020,6 @@ mrb_GLib_g_rand_set_seed(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &rand_, &native_seed);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, rand_, GRand_class(mrb))) {
@@ -33789,7 +33056,6 @@ mrb_GLib_g_rand_set_seed_array(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "ooi", &rand_, &seed, &native_seed_length);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, rand_, GRand_class(mrb))) {
@@ -33958,7 +33224,6 @@ mrb_GLib_g_realloc(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &mem, &native_n_bytes);
 
-
   /* Type checking */
   TODO_type_check_void_PTR(mem);
 
@@ -33995,7 +33260,6 @@ mrb_GLib_g_realloc_n(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oii", &mem, &native_n_blocks, &native_n_block_bytes);
 
-
   /* Type checking */
   TODO_type_check_void_PTR(mem);
 
@@ -34027,7 +33291,6 @@ mrb_GLib_g_rec_mutex_clear(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &rec_mutex);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, rec_mutex, GRecMutex_class(mrb))) {
@@ -34061,7 +33324,6 @@ mrb_GLib_g_rec_mutex_init(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &rec_mutex);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, rec_mutex, GRecMutex_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GRecMutex expected");
@@ -34094,7 +33356,6 @@ mrb_GLib_g_rec_mutex_lock(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &rec_mutex);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, rec_mutex, GRecMutex_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GRecMutex expected");
@@ -34126,7 +33387,6 @@ mrb_GLib_g_rec_mutex_trylock(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &rec_mutex);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, rec_mutex, GRecMutex_class(mrb))) {
@@ -34167,7 +33427,6 @@ mrb_GLib_g_rec_mutex_unlock(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &rec_mutex);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, rec_mutex, GRecMutex_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GRecMutex expected");
@@ -34203,7 +33462,6 @@ mrb_GLib_g_regex_check_replacement(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!oo", &native_replacement, &has_references, &error);
-
 
   /* Type checking */
   TODO_type_check_int_PTR(has_references);
@@ -34326,7 +33584,6 @@ mrb_GLib_g_regex_get_capture_count(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &regex);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, regex, GRegex_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GRegex expected");
@@ -34366,7 +33623,6 @@ mrb_GLib_g_regex_get_compile_flags(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &regex);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, regex, GRegex_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GRegex expected");
@@ -34401,7 +33657,6 @@ mrb_GLib_g_regex_get_has_cr_or_lf(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &regex);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, regex, GRegex_class(mrb))) {
@@ -34442,7 +33697,6 @@ mrb_GLib_g_regex_get_match_flags(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &regex);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, regex, GRegex_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GRegex expected");
@@ -34477,7 +33731,6 @@ mrb_GLib_g_regex_get_max_backref(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &regex);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, regex, GRegex_class(mrb))) {
@@ -34518,7 +33771,6 @@ mrb_GLib_g_regex_get_max_lookbehind(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &regex);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, regex, GRegex_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GRegex expected");
@@ -34558,7 +33810,6 @@ mrb_GLib_g_regex_get_pattern(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &regex);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, regex, GRegex_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GRegex expected");
@@ -34595,7 +33846,6 @@ mrb_GLib_g_regex_get_string_number(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oz!", &regex, &native_name);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, regex, GRegex_class(mrb))) {
@@ -34641,7 +33891,6 @@ mrb_GLib_g_regex_match(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oz!oo", &regex, &native_string, &match_options, &match_info);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, regex, GRegex_class(mrb))) {
@@ -34693,7 +33942,6 @@ mrb_GLib_g_regex_match_all(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oz!oo", &regex, &native_string, &match_options, &match_info);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, regex, GRegex_class(mrb))) {
@@ -34751,7 +33999,6 @@ mrb_GLib_g_regex_match_all_full(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oz!iiooo", &regex, &native_string, &native_string_len, &native_start_position, &match_options, &match_info, &error);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, regex, GRegex_class(mrb))) {
@@ -34813,7 +34060,6 @@ mrb_GLib_g_regex_match_full(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oz!iiooo", &regex, &native_string, &native_string_len, &native_start_position, &match_options, &match_info, &error);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, regex, GRegex_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GRegex expected");
@@ -34868,7 +34114,6 @@ mrb_GLib_g_regex_match_simple(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "z!z!oo", &native_pattern, &native_string, &compile_options, &match_options);
 
-
   /* Type checking */
   TODO_type_check_GRegexCompileFlags(compile_options);
   TODO_type_check_GRegexMatchFlags(match_options);
@@ -34914,7 +34159,6 @@ mrb_GLib_g_regex_new(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "z!ooo", &native_pattern, &compile_options, &match_options, &error);
 
-
   /* Type checking */
   TODO_type_check_GRegexCompileFlags(compile_options);
   TODO_type_check_GRegexMatchFlags(match_options);
@@ -34952,7 +34196,6 @@ mrb_GLib_g_regex_ref(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &regex);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, regex, GRegex_class(mrb))) {
@@ -35000,7 +34243,6 @@ mrb_GLib_g_regex_replace(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oz!iiz!oo", &regex, &native_string, &native_string_len, &native_start_position, &native_replacement, &match_options, &error);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, regex, GRegex_class(mrb))) {
@@ -35056,7 +34298,6 @@ mrb_GLib_g_regex_replace_eval(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oz!iioooo", &regex, &native_string, &native_string_len, &native_start_position, &match_options, &eval, &user_data, &error);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, regex, GRegex_class(mrb))) {
@@ -35117,7 +34358,6 @@ mrb_GLib_g_regex_replace_literal(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oz!iiz!oo", &regex, &native_string, &native_string_len, &native_start_position, &native_replacement, &match_options, &error);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, regex, GRegex_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GRegex expected");
@@ -35162,7 +34402,6 @@ mrb_GLib_g_regex_split(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oz!o", &regex, &native_string, &match_options);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, regex, GRegex_class(mrb))) {
@@ -35214,7 +34453,6 @@ mrb_GLib_g_regex_split_full(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oz!iioio", &regex, &native_string, &native_string_len, &native_start_position, &match_options, &native_max_tokens, &error);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, regex, GRegex_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GRegex expected");
@@ -35262,7 +34500,6 @@ mrb_GLib_g_regex_split_simple(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "z!z!oo", &native_pattern, &native_string, &compile_options, &match_options);
 
-
   /* Type checking */
   TODO_type_check_GRegexCompileFlags(compile_options);
   TODO_type_check_GRegexMatchFlags(match_options);
@@ -35297,7 +34534,6 @@ mrb_GLib_g_regex_unref(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &regex);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, regex, GRegex_class(mrb))) {
@@ -35407,7 +34643,6 @@ mrb_GLib_g_rw_lock_clear(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &rw_lock);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, rw_lock, GRWLock_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GRWLock expected");
@@ -35439,7 +34674,6 @@ mrb_GLib_g_rw_lock_init(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &rw_lock);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, rw_lock, GRWLock_class(mrb))) {
@@ -35473,7 +34707,6 @@ mrb_GLib_g_rw_lock_reader_lock(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &rw_lock);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, rw_lock, GRWLock_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GRWLock expected");
@@ -35505,7 +34738,6 @@ mrb_GLib_g_rw_lock_reader_trylock(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &rw_lock);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, rw_lock, GRWLock_class(mrb))) {
@@ -35546,7 +34778,6 @@ mrb_GLib_g_rw_lock_reader_unlock(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &rw_lock);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, rw_lock, GRWLock_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GRWLock expected");
@@ -35579,7 +34810,6 @@ mrb_GLib_g_rw_lock_writer_lock(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &rw_lock);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, rw_lock, GRWLock_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GRWLock expected");
@@ -35611,7 +34841,6 @@ mrb_GLib_g_rw_lock_writer_trylock(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &rw_lock);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, rw_lock, GRWLock_class(mrb))) {
@@ -35652,7 +34881,6 @@ mrb_GLib_g_rw_lock_writer_unlock(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &rw_lock);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, rw_lock, GRWLock_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GRWLock expected");
@@ -35684,7 +34912,6 @@ mrb_GLib_g_scanner_cur_line(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &scanner);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, scanner, GScanner_class(mrb))) {
@@ -35725,7 +34952,6 @@ mrb_GLib_g_scanner_cur_position(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &scanner);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, scanner, GScanner_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GScanner expected");
@@ -35765,7 +34991,6 @@ mrb_GLib_g_scanner_cur_token(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &scanner);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, scanner, GScanner_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GScanner expected");
@@ -35800,7 +35025,6 @@ mrb_GLib_g_scanner_cur_value(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &scanner);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, scanner, GScanner_class(mrb))) {
@@ -35837,7 +35061,6 @@ mrb_GLib_g_scanner_destroy(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &scanner);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, scanner, GScanner_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GScanner expected");
@@ -35869,7 +35092,6 @@ mrb_GLib_g_scanner_eof(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &scanner);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, scanner, GScanner_class(mrb))) {
@@ -35912,7 +35134,6 @@ mrb_GLib_g_scanner_error(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oz!", &scanner, &native_format);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, scanner, GScanner_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GScanner expected");
@@ -35944,7 +35165,6 @@ mrb_GLib_g_scanner_get_next_token(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &scanner);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, scanner, GScanner_class(mrb))) {
@@ -35983,7 +35203,6 @@ mrb_GLib_g_scanner_input_file(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &scanner, &native_input_fd);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, scanner, GScanner_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GScanner expected");
@@ -36020,7 +35239,6 @@ mrb_GLib_g_scanner_input_text(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oz!i", &scanner, &native_text, &native_text_len);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, scanner, GScanner_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GScanner expected");
@@ -36054,7 +35272,6 @@ mrb_GLib_g_scanner_lookup_symbol(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oz!", &scanner, &native_symbol);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, scanner, GScanner_class(mrb))) {
@@ -36091,7 +35308,6 @@ mrb_GLib_g_scanner_new(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &config_templ);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, config_templ, GScannerConfig_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GScannerConfig expected");
@@ -36126,7 +35342,6 @@ mrb_GLib_g_scanner_peek_next_token(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &scanner);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, scanner, GScanner_class(mrb))) {
@@ -36169,7 +35384,6 @@ mrb_GLib_g_scanner_scope_add_symbol(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oiz!o", &scanner, &native_scope_id, &native_symbol, &value);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, scanner, GScanner_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GScanner expected");
@@ -36210,7 +35424,6 @@ mrb_GLib_g_scanner_scope_foreach_symbol(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oioo", &scanner, &native_scope_id, &func, &user_data);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, scanner, GScanner_class(mrb))) {
@@ -36254,7 +35467,6 @@ mrb_GLib_g_scanner_scope_lookup_symbol(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oiz!", &scanner, &native_scope_id, &native_symbol);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, scanner, GScanner_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GScanner expected");
@@ -36294,7 +35506,6 @@ mrb_GLib_g_scanner_scope_remove_symbol(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oiz!", &scanner, &native_scope_id, &native_symbol);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, scanner, GScanner_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GScanner expected");
@@ -36328,7 +35539,6 @@ mrb_GLib_g_scanner_set_scope(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &scanner, &native_scope_id);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, scanner, GScanner_class(mrb))) {
@@ -36368,7 +35578,6 @@ mrb_GLib_g_scanner_sync_file_offset(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &scanner);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, scanner, GScanner_class(mrb))) {
@@ -36414,7 +35623,6 @@ mrb_GLib_g_scanner_unexp_token(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "ooz!z!z!z!i", &scanner, &expected_token, &native_identifier_spec, &native_symbol_spec, &native_symbol_name, &native_message, &native_is_error);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, scanner, GScanner_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GScanner expected");
@@ -36452,7 +35660,6 @@ mrb_GLib_g_scanner_warn(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oz!", &scanner, &native_format);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, scanner, GScanner_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GScanner expected");
@@ -36486,7 +35693,6 @@ mrb_GLib_g_sequence_append(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &seq, &data);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, seq, GSequence_class(mrb))) {
@@ -36529,7 +35735,6 @@ mrb_GLib_g_sequence_foreach(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "ooo", &seq, &func, &user_data);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, seq, GSequence_class(mrb))) {
@@ -36575,7 +35780,6 @@ mrb_GLib_g_sequence_foreach_range(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oooo", &begin, &end, &func, &user_data);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, begin, GSequenceNode_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GSequenceNode expected");
@@ -36620,7 +35824,6 @@ mrb_GLib_g_sequence_free(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &seq);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, seq, GSequence_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GSequence expected");
@@ -36652,7 +35855,6 @@ mrb_GLib_g_sequence_get(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &iter);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, iter, GSequenceNode_class(mrb))) {
@@ -36689,7 +35891,6 @@ mrb_GLib_g_sequence_get_begin_iter(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &seq);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, seq, GSequence_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GSequence expected");
@@ -36724,7 +35925,6 @@ mrb_GLib_g_sequence_get_end_iter(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &seq);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, seq, GSequence_class(mrb))) {
@@ -36763,7 +35963,6 @@ mrb_GLib_g_sequence_get_iter_at_pos(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &seq, &native_pos);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, seq, GSequence_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GSequence expected");
@@ -36798,7 +35997,6 @@ mrb_GLib_g_sequence_get_length(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &seq);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, seq, GSequence_class(mrb))) {
@@ -36840,7 +36038,6 @@ mrb_GLib_g_sequence_insert_before(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &iter, &data);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, iter, GSequenceNode_class(mrb))) {
@@ -36885,7 +36082,6 @@ mrb_GLib_g_sequence_insert_sorted(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oooo", &seq, &data, &cmp_func, &cmp_data);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, seq, GSequence_class(mrb))) {
@@ -36937,7 +36133,6 @@ mrb_GLib_g_sequence_insert_sorted_iter(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oooo", &seq, &data, &iter_cmp, &cmp_data);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, seq, GSequence_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GSequence expected");
@@ -36982,7 +36177,6 @@ mrb_GLib_g_sequence_is_empty(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &seq);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, seq, GSequence_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GSequence expected");
@@ -37023,7 +36217,6 @@ mrb_GLib_g_sequence_iter_compare(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &a, &b);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, a, GSequenceNode_class(mrb))) {
@@ -37070,7 +36263,6 @@ mrb_GLib_g_sequence_iter_get_position(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &iter);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, iter, GSequenceNode_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GSequenceNode expected");
@@ -37110,7 +36302,6 @@ mrb_GLib_g_sequence_iter_get_sequence(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &iter);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, iter, GSequenceNode_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GSequenceNode expected");
@@ -37145,7 +36336,6 @@ mrb_GLib_g_sequence_iter_is_begin(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &iter);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, iter, GSequenceNode_class(mrb))) {
@@ -37185,7 +36375,6 @@ mrb_GLib_g_sequence_iter_is_end(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &iter);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, iter, GSequenceNode_class(mrb))) {
@@ -37228,7 +36417,6 @@ mrb_GLib_g_sequence_iter_move(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &iter, &native_delta);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, iter, GSequenceNode_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GSequenceNode expected");
@@ -37264,7 +36452,6 @@ mrb_GLib_g_sequence_iter_next(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &iter);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, iter, GSequenceNode_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GSequenceNode expected");
@@ -37299,7 +36486,6 @@ mrb_GLib_g_sequence_iter_prev(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &iter);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, iter, GSequenceNode_class(mrb))) {
@@ -37341,7 +36527,6 @@ mrb_GLib_g_sequence_lookup(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oooo", &seq, &data, &cmp_func, &cmp_data);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, seq, GSequence_class(mrb))) {
@@ -37393,7 +36578,6 @@ mrb_GLib_g_sequence_lookup_iter(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oooo", &seq, &data, &iter_cmp, &cmp_data);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, seq, GSequence_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GSequence expected");
@@ -37440,7 +36624,6 @@ mrb_GLib_g_sequence_move(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &src, &dest);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, src, GSequenceNode_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GSequenceNode expected");
@@ -37482,7 +36665,6 @@ mrb_GLib_g_sequence_move_range(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "ooo", &dest, &begin, &end);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, dest, GSequenceNode_class(mrb))) {
@@ -37528,7 +36710,6 @@ mrb_GLib_g_sequence_new(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &data_destroy);
 
-
   /* Type checking */
   TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_void_PTR_RPAREN(data_destroy);
 
@@ -37562,7 +36743,6 @@ mrb_GLib_g_sequence_prepend(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &seq, &data);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, seq, GSequence_class(mrb))) {
@@ -37603,7 +36783,6 @@ mrb_GLib_g_sequence_range_get_midpoint(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &begin, &end);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, begin, GSequenceNode_class(mrb))) {
@@ -37646,7 +36825,6 @@ mrb_GLib_g_sequence_remove(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &iter);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, iter, GSequenceNode_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GSequenceNode expected");
@@ -37680,7 +36858,6 @@ mrb_GLib_g_sequence_remove_range(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &begin, &end);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, begin, GSequenceNode_class(mrb))) {
@@ -37725,7 +36902,6 @@ mrb_GLib_g_sequence_search(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oooo", &seq, &data, &cmp_func, &cmp_data);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, seq, GSequence_class(mrb))) {
@@ -37777,7 +36953,6 @@ mrb_GLib_g_sequence_search_iter(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oooo", &seq, &data, &iter_cmp, &cmp_data);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, seq, GSequence_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GSequence expected");
@@ -37824,7 +36999,6 @@ mrb_GLib_g_sequence_set(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &iter, &data);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, iter, GSequenceNode_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GSequenceNode expected");
@@ -37863,7 +37037,6 @@ mrb_GLib_g_sequence_sort(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "ooo", &seq, &cmp_func, &cmp_data);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, seq, GSequence_class(mrb))) {
@@ -37907,7 +37080,6 @@ mrb_GLib_g_sequence_sort_changed(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "ooo", &iter, &cmp_func, &cmp_data);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, iter, GSequenceNode_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GSequenceNode expected");
@@ -37949,7 +37121,6 @@ mrb_GLib_g_sequence_sort_changed_iter(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "ooo", &iter, &iter_cmp, &cmp_data);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, iter, GSequenceNode_class(mrb))) {
@@ -37993,7 +37164,6 @@ mrb_GLib_g_sequence_sort_iter(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "ooo", &seq, &cmp_func, &cmp_data);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, seq, GSequence_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GSequence expected");
@@ -38033,7 +37203,6 @@ mrb_GLib_g_sequence_swap(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &a, &b);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, a, GSequenceNode_class(mrb))) {
@@ -38103,7 +37272,6 @@ mrb_GLib_g_set_error(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oiiz!", &err, &native_domain, &native_code, &native_format);
 
-
   /* Type checking */
   TODO_type_check__GError_PTR_PTR(err);
 
@@ -38138,7 +37306,6 @@ mrb_GLib_g_set_error_literal(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oiiz!", &err, &native_domain, &native_code, &native_message);
-
 
   /* Type checking */
   TODO_type_check__GError_PTR_PTR(err);
@@ -38193,7 +37360,6 @@ mrb_GLib_g_set_print_handler(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &func);
 
-
   /* Type checking */
   TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_char_PTR_RPAREN(func);
 
@@ -38225,7 +37391,6 @@ mrb_GLib_g_set_printerr_handler(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &func);
-
 
   /* Type checking */
   TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_char_PTR_RPAREN(func);
@@ -38324,7 +37489,6 @@ mrb_GLib_g_shell_parse_argv(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "z!ooo", &native_command_line, &argcp, &argvp, &error);
 
-
   /* Type checking */
   TODO_type_check_int_PTR(argcp);
   TODO_type_check_char_PTR_PTR_PTR(argvp);
@@ -38395,7 +37559,6 @@ mrb_GLib_g_shell_unquote(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!o", &native_quoted_string, &error);
-
 
   /* Type checking */
   TODO_type_check__GError_PTR_PTR(error);
@@ -38485,7 +37648,6 @@ mrb_GLib_g_slice_copy(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "io", &native_block_size, &mem_block);
 
-
   /* Type checking */
   TODO_type_check_void_PTR(mem_block);
 
@@ -38520,7 +37682,6 @@ mrb_GLib_g_slice_free1(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "io", &native_block_size, &mem_block);
 
-
   /* Type checking */
   TODO_type_check_void_PTR(mem_block);
 
@@ -38554,7 +37715,6 @@ mrb_GLib_g_slice_free_chain_with_offset(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "ioi", &native_block_size, &mem_chain, &native_next_offset);
 
-
   /* Type checking */
   TODO_type_check_void_PTR(mem_chain);
 
@@ -38583,7 +37743,6 @@ mrb_GLib_g_slice_get_config(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &ckey);
-
 
   /* Type checking */
   TODO_type_check_GSliceConfig(ckey);
@@ -38625,7 +37784,6 @@ mrb_GLib_g_slice_get_config_state(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oio", &ckey, &native_address, &n_values);
 
-
   /* Type checking */
   TODO_type_check_GSliceConfig(ckey);
   TODO_type_check_unsigned_int_PTR(n_values);
@@ -38662,7 +37820,6 @@ mrb_GLib_g_slice_set_config(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &ckey, &native_value);
-
 
   /* Type checking */
   TODO_type_check_GSliceConfig(ckey);
@@ -38715,7 +37872,6 @@ mrb_GLib_g_slist_append(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &list, &data);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, list, GSList_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GSList expected");
@@ -38755,7 +37911,6 @@ mrb_GLib_g_slist_concat(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &list1, &list2);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, list1, GSList_class(mrb))) {
@@ -38798,7 +37953,6 @@ mrb_GLib_g_slist_copy(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &list);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, list, GSList_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GSList expected");
@@ -38837,7 +37991,6 @@ mrb_GLib_g_slist_copy_deep(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "ooo", &list, &func, &user_data);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, list, GSList_class(mrb))) {
@@ -38882,7 +38035,6 @@ mrb_GLib_g_slist_delete_link(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &list, &link_);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, list, GSList_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GSList expected");
@@ -38926,7 +38078,6 @@ mrb_GLib_g_slist_find(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &list, &data);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, list, GSList_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GSList expected");
@@ -38968,7 +38119,6 @@ mrb_GLib_g_slist_find_custom(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "ooo", &list, &data, &func);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, list, GSList_class(mrb))) {
@@ -39015,7 +38165,6 @@ mrb_GLib_g_slist_foreach(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "ooo", &list, &func, &user_data);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, list, GSList_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GSList expected");
@@ -39054,7 +38203,6 @@ mrb_GLib_g_slist_free(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &list);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, list, GSList_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GSList expected");
@@ -39086,7 +38234,6 @@ mrb_GLib_g_slist_free_1(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &list);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, list, GSList_class(mrb))) {
@@ -39121,7 +38268,6 @@ mrb_GLib_g_slist_free_full(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &list, &free_func);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, list, GSList_class(mrb))) {
@@ -39159,7 +38305,6 @@ mrb_GLib_g_slist_index(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &list, &data);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, list, GSList_class(mrb))) {
@@ -39207,7 +38352,6 @@ mrb_GLib_g_slist_insert(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "ooi", &list, &data, &native_position);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, list, GSList_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GSList expected");
@@ -39249,7 +38393,6 @@ mrb_GLib_g_slist_insert_before(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "ooo", &slist, &sibling, &data);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, slist, GSList_class(mrb))) {
@@ -39299,7 +38442,6 @@ mrb_GLib_g_slist_insert_sorted(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "ooo", &list, &data, &func);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, list, GSList_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GSList expected");
@@ -39347,7 +38489,6 @@ mrb_GLib_g_slist_insert_sorted_with_data(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oooo", &list, &data, &func, &user_data);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, list, GSList_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GSList expected");
@@ -39392,7 +38533,6 @@ mrb_GLib_g_slist_last(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &list);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, list, GSList_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GSList expected");
@@ -39427,7 +38567,6 @@ mrb_GLib_g_slist_length(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &list);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, list, GSList_class(mrb))) {
@@ -39470,7 +38609,6 @@ mrb_GLib_g_slist_nth(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &list, &native_n);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, list, GSList_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GSList expected");
@@ -39508,7 +38646,6 @@ mrb_GLib_g_slist_nth_data(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &list, &native_n);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, list, GSList_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GSList expected");
@@ -39545,7 +38682,6 @@ mrb_GLib_g_slist_position(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &list, &llink);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, list, GSList_class(mrb))) {
@@ -39594,7 +38730,6 @@ mrb_GLib_g_slist_prepend(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &list, &data);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, list, GSList_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GSList expected");
@@ -39634,7 +38769,6 @@ mrb_GLib_g_slist_remove(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &list, &data);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, list, GSList_class(mrb))) {
@@ -39676,7 +38810,6 @@ mrb_GLib_g_slist_remove_all(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &list, &data);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, list, GSList_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GSList expected");
@@ -39716,7 +38849,6 @@ mrb_GLib_g_slist_remove_link(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &list, &link_);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, list, GSList_class(mrb))) {
@@ -39759,7 +38891,6 @@ mrb_GLib_g_slist_reverse(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &list);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, list, GSList_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GSList expected");
@@ -39796,7 +38927,6 @@ mrb_GLib_g_slist_sort(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &list, &compare_func);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, list, GSList_class(mrb))) {
@@ -39839,7 +38969,6 @@ mrb_GLib_g_slist_sort_with_data(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "ooo", &list, &compare_func, &user_data);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, list, GSList_class(mrb))) {
@@ -39885,7 +39014,6 @@ mrb_GLib_g_snprintf(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oiz!", &string, &native_n, &native_format);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, string, mrb->string_class)) {
@@ -39941,7 +39069,6 @@ mrb_GLib_g_source_add_child_source(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &source, &child_source);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, source, GSource_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GSource expected");
@@ -39981,7 +39108,6 @@ mrb_GLib_g_source_add_poll(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &source, &fd);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, source, GSource_class(mrb))) {
@@ -40025,7 +39151,6 @@ mrb_GLib_g_source_add_unix_fd(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oio", &source, &native_fd, &events);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, source, GSource_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GSource expected");
@@ -40065,7 +39190,6 @@ mrb_GLib_g_source_attach(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &source, &context);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, source, GSource_class(mrb))) {
@@ -40112,7 +39236,6 @@ mrb_GLib_g_source_destroy(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &source);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, source, GSource_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GSource expected");
@@ -40144,7 +39267,6 @@ mrb_GLib_g_source_get_can_recurse(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &source);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, source, GSource_class(mrb))) {
@@ -40185,7 +39307,6 @@ mrb_GLib_g_source_get_context(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &source);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, source, GSource_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GSource expected");
@@ -40222,7 +39343,6 @@ mrb_GLib_g_source_get_current_time(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &source, &timeval);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, source, GSource_class(mrb))) {
@@ -40261,7 +39381,6 @@ mrb_GLib_g_source_get_id(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &source);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, source, GSource_class(mrb))) {
@@ -40302,7 +39421,6 @@ mrb_GLib_g_source_get_name(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &source);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, source, GSource_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GSource expected");
@@ -40337,7 +39455,6 @@ mrb_GLib_g_source_get_priority(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &source);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, source, GSource_class(mrb))) {
@@ -40378,7 +39495,6 @@ mrb_GLib_g_source_get_ready_time(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &source);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, source, GSource_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GSource expected");
@@ -40418,7 +39534,6 @@ mrb_GLib_g_source_get_time(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &source);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, source, GSource_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GSource expected");
@@ -40457,7 +39572,6 @@ mrb_GLib_g_source_is_destroyed(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &source);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, source, GSource_class(mrb))) {
@@ -40502,7 +39616,6 @@ mrb_GLib_g_source_modify_unix_fd(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "ooo", &source, &tag, &new_events);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, source, GSource_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GSource expected");
@@ -40543,7 +39656,6 @@ mrb_GLib_g_source_new(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &source_funcs, &native_struct_size);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, source_funcs, GSourceFuncs_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GSourceFuncs expected");
@@ -40580,7 +39692,6 @@ mrb_GLib_g_source_query_unix_fd(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &source, &tag);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, source, GSource_class(mrb))) {
@@ -40619,7 +39730,6 @@ mrb_GLib_g_source_ref(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &source);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, source, GSource_class(mrb))) {
@@ -40689,7 +39799,6 @@ mrb_GLib_g_source_remove_by_funcs_user_data(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &funcs, &user_data);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, funcs, GSourceFuncs_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GSourceFuncs expected");
@@ -40732,7 +39841,6 @@ mrb_GLib_g_source_remove_by_user_data(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &user_data);
 
-
   /* Type checking */
   TODO_type_check_void_PTR(user_data);
 
@@ -40770,7 +39878,6 @@ mrb_GLib_g_source_remove_child_source(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &source, &child_source);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, source, GSource_class(mrb))) {
@@ -40812,7 +39919,6 @@ mrb_GLib_g_source_remove_poll(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &source, &fd);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, source, GSource_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GSource expected");
@@ -40852,7 +39958,6 @@ mrb_GLib_g_source_remove_unix_fd(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &source, &tag);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, source, GSource_class(mrb))) {
@@ -40894,7 +39999,6 @@ mrb_GLib_g_source_set_callback(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oooo", &source, &func, &data, &notify);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, source, GSource_class(mrb))) {
@@ -40941,7 +40045,6 @@ mrb_GLib_g_source_set_callback_indirect(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "ooo", &source, &callback_data, &callback_funcs);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, source, GSource_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GSource expected");
@@ -40985,7 +40088,6 @@ mrb_GLib_g_source_set_can_recurse(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &source, &native_can_recurse);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, source, GSource_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GSource expected");
@@ -41019,7 +40121,6 @@ mrb_GLib_g_source_set_funcs(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &source, &funcs);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, source, GSource_class(mrb))) {
@@ -41060,7 +40161,6 @@ mrb_GLib_g_source_set_name(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oz!", &source, &native_name);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, source, GSource_class(mrb))) {
@@ -41122,7 +40222,6 @@ mrb_GLib_g_source_set_priority(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &source, &native_priority);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, source, GSource_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GSource expected");
@@ -41157,7 +40256,6 @@ mrb_GLib_g_source_set_ready_time(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &source, &native_ready_time);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, source, GSource_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GSource expected");
@@ -41189,7 +40287,6 @@ mrb_GLib_g_source_unref(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &source);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, source, GSource_class(mrb))) {
@@ -41268,7 +40365,6 @@ mrb_GLib_g_spawn_async(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "z!ooooooo", &native_working_directory, &argv, &envp, &flags, &child_setup, &user_data, &child_pid, &error);
 
-
   /* Type checking */
   TODO_type_check_char_PTR_PTR(argv);
   TODO_type_check_char_PTR_PTR(envp);
@@ -41343,7 +40439,6 @@ mrb_GLib_g_spawn_async_with_pipes(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "z!oooooooooo", &native_working_directory, &argv, &envp, &flags, &child_setup, &user_data, &child_pid, &standard_input, &standard_output, &standard_error, &error);
 
-
   /* Type checking */
   TODO_type_check_char_PTR_PTR(argv);
   TODO_type_check_char_PTR_PTR(envp);
@@ -41409,7 +40504,6 @@ mrb_GLib_g_spawn_check_exit_status(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "io", &native_exit_status, &error);
 
-
   /* Type checking */
   TODO_type_check__GError_PTR_PTR(error);
 
@@ -41472,7 +40566,6 @@ mrb_GLib_g_spawn_command_line_async(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "z!o", &native_command_line, &error);
 
-
   /* Type checking */
   TODO_type_check__GError_PTR_PTR(error);
 
@@ -41516,7 +40609,6 @@ mrb_GLib_g_spawn_command_line_sync(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!oooo", &native_command_line, &standard_output, &standard_error, &exit_status, &error);
-
 
   /* Type checking */
   TODO_type_check_char_PTR_PTR(standard_output);
@@ -41629,7 +40721,6 @@ mrb_GLib_g_spawn_sync(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "z!ooooooooo", &native_working_directory, &argv, &envp, &flags, &child_setup, &user_data, &standard_output, &standard_error, &exit_status, &error);
 
-
   /* Type checking */
   TODO_type_check_char_PTR_PTR(argv);
   TODO_type_check_char_PTR_PTR(envp);
@@ -41692,7 +40783,6 @@ mrb_GLib_g_sprintf(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oz!", &string, &native_format);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, string, mrb->string_class)) {
     mrb_raise(mrb, E_TYPE_ERROR, "String expected");
@@ -41745,7 +40835,6 @@ mrb_GLib_g_steal_pointer(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &pp);
 
-
   /* Type checking */
   TODO_type_check_void_PTR(pp);
 
@@ -41779,7 +40868,6 @@ mrb_GLib_g_stpcpy(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oz!", &dest, &native_src);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, dest, mrb->string_class)) {
@@ -41830,7 +40918,6 @@ mrb_GLib_g_str_equal(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &v1, &v2);
-
 
   /* Type checking */
   TODO_type_check_void_PTR(v1);
@@ -41936,7 +41023,6 @@ mrb_GLib_g_str_hash(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &v);
-
 
   /* Type checking */
   TODO_type_check_void_PTR(v);
@@ -42073,7 +41159,6 @@ mrb_GLib_g_str_tokenize_and_fold(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "z!z!o", &native_string, &native_translit_locale, &ascii_alternates);
 
-
   /* Type checking */
   TODO_type_check_char_PTR_PTR_PTR(ascii_alternates);
 
@@ -42109,7 +41194,6 @@ mrb_GLib_g_strcanon(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oz!i", &string, &native_valid_chars, &native_substitutor);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, string, mrb->string_class)) {
@@ -42192,7 +41276,6 @@ mrb_GLib_g_strchomp(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &string);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, string, mrb->string_class)) {
     mrb_raise(mrb, E_TYPE_ERROR, "String expected");
@@ -42240,7 +41323,6 @@ mrb_GLib_g_strchug(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &string);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, string, mrb->string_class)) {
@@ -42381,7 +41463,6 @@ mrb_GLib_g_strdelimit(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oz!i", &string, &native_delimiters, &native_new_delimiter);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, string, mrb->string_class)) {
     mrb_raise(mrb, E_TYPE_ERROR, "String expected");
@@ -42429,7 +41510,6 @@ mrb_GLib_g_strdown(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &string);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, string, mrb->string_class)) {
@@ -42562,7 +41642,6 @@ mrb_GLib_g_strdupv(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &str_array);
 
-
   /* Type checking */
   TODO_type_check_char_PTR_PTR(str_array);
 
@@ -42651,7 +41730,6 @@ mrb_GLib_g_strfreev(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &str_array);
 
-
   /* Type checking */
   TODO_type_check_char_PTR_PTR(str_array);
 
@@ -42682,7 +41760,6 @@ mrb_GLib_g_string_append(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oz!", &string, &native_val);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, string, GString_class(mrb))) {
@@ -42721,7 +41798,6 @@ mrb_GLib_g_string_append_c(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &string, &native_c);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, string, GString_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GString expected");
@@ -42758,7 +41834,6 @@ mrb_GLib_g_string_append_c_inline(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &gstring, &native_c);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, gstring, GString_class(mrb))) {
@@ -42799,7 +41874,6 @@ mrb_GLib_g_string_append_len(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oz!i", &string, &native_val, &native_len);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, string, GString_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GString expected");
@@ -42837,7 +41911,6 @@ mrb_GLib_g_string_append_printf(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oz!", &string, &native_format);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, string, GString_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GString expected");
@@ -42871,7 +41944,6 @@ mrb_GLib_g_string_append_unichar(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &string, &native_wc);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, string, GString_class(mrb))) {
@@ -42914,7 +41986,6 @@ mrb_GLib_g_string_append_uri_escaped(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oz!z!i", &string, &native_unescaped, &native_reserved_chars_allowed, &native_allow_utf8);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, string, GString_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GString expected");
@@ -42954,7 +42025,6 @@ mrb_GLib_g_string_append_vprintf(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oz!i", &string, &native_format, &native_args);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, string, GString_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GString expected");
@@ -42986,7 +42056,6 @@ mrb_GLib_g_string_ascii_down(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &string);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, string, GString_class(mrb))) {
@@ -43022,7 +42091,6 @@ mrb_GLib_g_string_ascii_up(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &string);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, string, GString_class(mrb))) {
@@ -43061,7 +42129,6 @@ mrb_GLib_g_string_assign(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oz!", &string, &native_rval);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, string, GString_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GString expected");
@@ -43097,7 +42164,6 @@ mrb_GLib_g_string_chunk_clear(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &chunk);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, chunk, GStringChunk_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GStringChunk expected");
@@ -43129,7 +42195,6 @@ mrb_GLib_g_string_chunk_free(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &chunk);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, chunk, GStringChunk_class(mrb))) {
@@ -43164,7 +42229,6 @@ mrb_GLib_g_string_chunk_insert(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oz!", &chunk, &native_string);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, chunk, GStringChunk_class(mrb))) {
@@ -43202,7 +42266,6 @@ mrb_GLib_g_string_chunk_insert_const(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oz!", &chunk, &native_string);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, chunk, GStringChunk_class(mrb))) {
@@ -43242,7 +42305,6 @@ mrb_GLib_g_string_chunk_insert_len(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oz!i", &chunk, &native_string, &native_len);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, chunk, GStringChunk_class(mrb))) {
@@ -43306,7 +42368,6 @@ mrb_GLib_g_string_down(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &string);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, string, GString_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GString expected");
@@ -43343,7 +42404,6 @@ mrb_GLib_g_string_equal(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &v, &v2);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, v, GString_class(mrb))) {
@@ -43394,7 +42454,6 @@ mrb_GLib_g_string_erase(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oii", &string, &native_pos, &native_len);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, string, GString_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GString expected");
@@ -43432,7 +42491,6 @@ mrb_GLib_g_string_free(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &string, &native_free_segment);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, string, GString_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GString expected");
@@ -43468,7 +42526,6 @@ mrb_GLib_g_string_free_to_bytes(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &string);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, string, GString_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GString expected");
@@ -43503,7 +42560,6 @@ mrb_GLib_g_string_hash(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &str);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, str, GString_class(mrb))) {
@@ -43548,7 +42604,6 @@ mrb_GLib_g_string_insert(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oiz!", &string, &native_pos, &native_val);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, string, GString_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GString expected");
@@ -43587,7 +42642,6 @@ mrb_GLib_g_string_insert_c(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oii", &string, &native_pos, &native_c);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, string, GString_class(mrb))) {
@@ -43630,7 +42684,6 @@ mrb_GLib_g_string_insert_len(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oiz!i", &string, &native_pos, &native_val, &native_len);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, string, GString_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GString expected");
@@ -43669,7 +42722,6 @@ mrb_GLib_g_string_insert_unichar(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oii", &string, &native_pos, &native_wc);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, string, GString_class(mrb))) {
@@ -43766,7 +42818,6 @@ mrb_GLib_g_string_overwrite(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oiz!", &string, &native_pos, &native_val);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, string, GString_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GString expected");
@@ -43808,7 +42859,6 @@ mrb_GLib_g_string_overwrite_len(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oiz!i", &string, &native_pos, &native_val, &native_len);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, string, GString_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GString expected");
@@ -43846,7 +42896,6 @@ mrb_GLib_g_string_prepend(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oz!", &string, &native_val);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, string, GString_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GString expected");
@@ -43883,7 +42932,6 @@ mrb_GLib_g_string_prepend_c(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &string, &native_c);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, string, GString_class(mrb))) {
@@ -43924,7 +42972,6 @@ mrb_GLib_g_string_prepend_len(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oz!i", &string, &native_val, &native_len);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, string, GString_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GString expected");
@@ -43961,7 +43008,6 @@ mrb_GLib_g_string_prepend_unichar(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &string, &native_wc);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, string, GString_class(mrb))) {
@@ -44000,7 +43046,6 @@ mrb_GLib_g_string_printf(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oz!", &string, &native_format);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, string, GString_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GString expected");
@@ -44034,7 +43079,6 @@ mrb_GLib_g_string_set_size(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &string, &native_len);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, string, GString_class(mrb))) {
@@ -44100,7 +43144,6 @@ mrb_GLib_g_string_truncate(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &string, &native_len);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, string, GString_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GString expected");
@@ -44135,7 +43178,6 @@ mrb_GLib_g_string_up(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &string);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, string, GString_class(mrb))) {
@@ -44175,7 +43217,6 @@ mrb_GLib_g_string_vprintf(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oz!i", &string, &native_format, &native_args);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, string, GString_class(mrb))) {
@@ -44267,7 +43308,6 @@ mrb_GLib_g_strjoinv(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "z!o", &native_separator, &str_array);
 
-
   /* Type checking */
   TODO_type_check_char_PTR_PTR(str_array);
 
@@ -44303,7 +43343,6 @@ mrb_GLib_g_strlcat(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oz!i", &dest, &native_src, &native_dest_size);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, dest, mrb->string_class)) {
@@ -44360,7 +43399,6 @@ mrb_GLib_g_strlcpy(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oz!i", &dest, &native_src, &native_dest_size);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, dest, mrb->string_class)) {
@@ -44506,7 +43544,6 @@ mrb_GLib_g_strreverse(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &string);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, string, mrb->string_class)) {
@@ -44738,7 +43775,6 @@ mrb_GLib_g_strtod(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "z!o", &native_nptr, &endptr);
 
-
   /* Type checking */
   TODO_type_check_char_PTR_PTR(endptr);
 
@@ -44770,7 +43806,6 @@ mrb_GLib_g_strup(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &string);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, string, mrb->string_class)) {
@@ -44822,7 +43857,6 @@ mrb_GLib_g_strv_contains(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oz!", &strv, &native_str);
 
-
   /* Type checking */
   TODO_type_check_char_PTR_const_PTR(strv);
 
@@ -44858,7 +43892,6 @@ mrb_GLib_g_strv_length(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &str_array);
-
 
   /* Type checking */
   TODO_type_check_char_PTR_PTR(str_array);
@@ -44913,7 +43946,6 @@ mrb_GLib_g_system_thread_free(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &thread);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, thread, GRealThread_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GRealThread expected");
@@ -44949,7 +43981,6 @@ mrb_GLib_g_system_thread_new(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oio", &func, &native_stack_size, &error);
-
 
   /* Type checking */
   TODO_type_check_void_PTR_LPAREN_PTR_RPAREN_LPAREN_void_PTR_RPAREN(func);
@@ -45010,7 +44041,6 @@ mrb_GLib_g_system_thread_wait(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &thread);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, thread, GRealThread_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GRealThread expected");
@@ -45046,7 +44076,6 @@ mrb_GLib_g_test_add_data_func(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!oo", &native_testpath, &test_data, &test_func);
-
 
   /* Type checking */
   TODO_type_check_void_PTR(test_data);
@@ -45086,7 +44115,6 @@ mrb_GLib_g_test_add_data_func_full(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "z!ooo", &native_testpath, &test_data, &test_func, &data_free_func);
 
-
   /* Type checking */
   TODO_type_check_void_PTR(test_data);
   TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_void_PTR_RPAREN(test_func);
@@ -45123,7 +44151,6 @@ mrb_GLib_g_test_add_func(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!o", &native_testpath, &test_func);
-
 
   /* Type checking */
   TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_void_RPAREN(test_func);
@@ -45163,7 +44190,6 @@ mrb_GLib_g_test_add_vtable(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!ioooo", &native_testpath, &native_data_size, &test_data, &data_setup, &data_test, &data_teardown);
-
 
   /* Type checking */
   TODO_type_check_void_PTR(test_data);
@@ -45283,7 +44309,6 @@ mrb_GLib_g_test_build_filename(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oz!", &file_type, &native_first_path);
 
-
   /* Type checking */
   TODO_type_check_GTestFileType(file_type);
 
@@ -45325,7 +44350,6 @@ mrb_GLib_g_test_create_case(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!ioooo", &native_test_name, &native_data_size, &test_data, &data_setup, &data_test, &data_teardown);
-
 
   /* Type checking */
   TODO_type_check_void_PTR(test_data);
@@ -45399,7 +44423,6 @@ mrb_GLib_g_test_expect_message(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "z!oz!", &native_log_domain, &log_level, &native_pattern);
 
-
   /* Type checking */
   TODO_type_check_GLogLevelFlags(log_level);
 
@@ -45470,7 +44493,6 @@ mrb_GLib_g_test_get_dir(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &file_type);
 
-
   /* Type checking */
   TODO_type_check_GTestFileType(file_type);
 
@@ -45504,7 +44526,6 @@ mrb_GLib_g_test_get_filename(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oz!", &file_type, &native_first_path);
-
 
   /* Type checking */
   TODO_type_check_GTestFileType(file_type);
@@ -45584,7 +44605,6 @@ mrb_GLib_g_test_init(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &argc, &argv);
 
-
   /* Type checking */
   TODO_type_check_int_PTR(argc);
   TODO_type_check_char_PTR_PTR_PTR(argv);
@@ -45616,7 +44636,6 @@ mrb_GLib_g_test_log_buffer_free(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &tbuffer);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, tbuffer, GTestLogBuffer_class(mrb))) {
@@ -45670,7 +44689,6 @@ mrb_GLib_g_test_log_buffer_pop(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &tbuffer);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, tbuffer, GTestLogBuffer_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GTestLogBuffer expected");
@@ -45710,7 +44728,6 @@ mrb_GLib_g_test_log_buffer_push(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oio", &tbuffer, &native_n_bytes, &bytes);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, tbuffer, GTestLogBuffer_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GTestLogBuffer expected");
@@ -45746,7 +44763,6 @@ mrb_GLib_g_test_log_msg_free(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &tmsg);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, tmsg, GTestLogMsg_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GTestLogMsg expected");
@@ -45781,7 +44797,6 @@ mrb_GLib_g_test_log_set_fatal_handler(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &log_func, &user_data);
 
-
   /* Type checking */
   TODO_type_check_int_LPAREN_PTR_RPAREN_LPAREN_char_PTR_COMMA_GLogLevelFlagsCOMMA_const_char_PTR_COMMA_void_PTR_RPAREN(log_func);
   TODO_type_check_void_PTR(user_data);
@@ -45813,7 +44828,6 @@ mrb_GLib_g_test_log_type_name(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &log_type);
-
 
   /* Type checking */
   TODO_type_check_GTestLogType(log_type);
@@ -45925,7 +44939,6 @@ mrb_GLib_g_test_queue_destroy(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &destroy_func, &destroy_data);
 
-
   /* Type checking */
   TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_void_PTR_RPAREN(destroy_func);
   TODO_type_check_void_PTR(destroy_data);
@@ -45957,7 +44970,6 @@ mrb_GLib_g_test_queue_free(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &gfree_pointer);
-
 
   /* Type checking */
   TODO_type_check_void_PTR(gfree_pointer);
@@ -46118,7 +45130,6 @@ mrb_GLib_g_test_run_suite(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &suite);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, suite, GTestSuite_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GTestSuite expected");
@@ -46225,7 +45236,6 @@ mrb_GLib_g_test_suite_add(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &suite, &test_case);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, suite, GTestSuite_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GTestSuite expected");
@@ -46265,7 +45275,6 @@ mrb_GLib_g_test_suite_add_suite(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &suite, &nestedsuite);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, suite, GTestSuite_class(mrb))) {
@@ -46398,7 +45407,6 @@ mrb_GLib_g_test_trap_fork(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "io", &native_usec_timeout, &test_trap_flags);
 
-
   /* Type checking */
   TODO_type_check_GTestTrapFlags(test_trap_flags);
 
@@ -46487,7 +45495,6 @@ mrb_GLib_g_test_trap_subprocess(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "z!io", &native_test_path, &native_usec_timeout, &test_flags);
 
-
   /* Type checking */
   TODO_type_check_GTestSubprocessFlags(test_flags);
 
@@ -46541,7 +45548,6 @@ mrb_GLib_g_thread_exit(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &retval);
 
-
   /* Type checking */
   TODO_type_check_void_PTR(retval);
 
@@ -46570,7 +45576,6 @@ mrb_GLib_g_thread_join(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &thread);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, thread, GThread_class(mrb))) {
@@ -46610,7 +45615,6 @@ mrb_GLib_g_thread_new(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!oo", &native_name, &func, &data);
-
 
   /* Type checking */
   TODO_type_check_void_PTR_LPAREN_PTR_RPAREN_LPAREN_void_PTR_RPAREN(func);
@@ -46657,7 +45661,6 @@ mrb_GLib_g_thread_new_internal(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "z!oooio", &native_name, &proxy, &func, &data, &native_stack_size, &error);
 
-
   /* Type checking */
   TODO_type_check_void_PTR_LPAREN_PTR_RPAREN_LPAREN_void_PTR_RPAREN(proxy);
   TODO_type_check_void_PTR_LPAREN_PTR_RPAREN_LPAREN_void_PTR_RPAREN(func);
@@ -46702,7 +45705,6 @@ mrb_GLib_g_thread_pool_free(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oii", &pool, &native_immediate, &native_wait_);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, pool, GThreadPool_class(mrb))) {
@@ -46759,7 +45761,6 @@ mrb_GLib_g_thread_pool_get_max_threads(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &pool);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, pool, GThreadPool_class(mrb))) {
@@ -46823,7 +45824,6 @@ mrb_GLib_g_thread_pool_get_num_threads(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &pool);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, pool, GThreadPool_class(mrb))) {
@@ -46890,7 +45890,6 @@ mrb_GLib_g_thread_pool_move_to_front(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &pool, &data);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, pool, GThreadPool_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GThreadPool expected");
@@ -46941,7 +45940,6 @@ mrb_GLib_g_thread_pool_new(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "ooiio", &func, &user_data, &native_max_threads, &native_exclusive, &error);
 
-
   /* Type checking */
   TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_void_PTR_COMMA_void_PTR_RPAREN(func);
   TODO_type_check_void_PTR(user_data);
@@ -46983,7 +45981,6 @@ mrb_GLib_g_thread_pool_push(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "ooo", &pool, &data, &error);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, pool, GThreadPool_class(mrb))) {
@@ -47058,7 +46055,6 @@ mrb_GLib_g_thread_pool_set_max_threads(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oio", &pool, &native_max_threads, &error);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, pool, GThreadPool_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GThreadPool expected");
@@ -47129,7 +46125,6 @@ mrb_GLib_g_thread_pool_set_sort_function(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "ooo", &pool, &func, &user_data);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, pool, GThreadPool_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GThreadPool expected");
@@ -47185,7 +46180,6 @@ mrb_GLib_g_thread_pool_unprocessed(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &pool);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, pool, GThreadPool_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GThreadPool expected");
@@ -47225,7 +46219,6 @@ mrb_GLib_g_thread_proxy(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &thread);
 
-
   /* Type checking */
   TODO_type_check_void_PTR(thread);
 
@@ -47257,7 +46250,6 @@ mrb_GLib_g_thread_ref(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &thread);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, thread, GThread_class(mrb))) {
@@ -47320,7 +46312,6 @@ mrb_GLib_g_thread_try_new(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "z!ooo", &native_name, &func, &data, &error);
 
-
   /* Type checking */
   TODO_type_check_void_PTR_LPAREN_PTR_RPAREN_LPAREN_void_PTR_RPAREN(func);
   TODO_type_check_void_PTR(data);
@@ -47358,7 +46349,6 @@ mrb_GLib_g_thread_unref(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &thread);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, thread, GThread_class(mrb))) {
@@ -47411,7 +46401,6 @@ mrb_GLib_g_time_val_add(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &time_, &native_microseconds);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, time_, GTimeVal_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GTimeVal expected");
@@ -47445,7 +46434,6 @@ mrb_GLib_g_time_val_from_iso8601(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!o", &native_iso_date, &time_);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, time_, GTimeVal_class(mrb))) {
@@ -47486,7 +46474,6 @@ mrb_GLib_g_time_val_to_iso8601(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &time_);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, time_, GTimeVal_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GTimeVal expected");
@@ -47525,7 +46512,6 @@ mrb_GLib_g_time_zone_adjust_time(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "ooo", &tz, &type, &time_);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, tz, GTimeZone_class(mrb))) {
@@ -47576,7 +46562,6 @@ mrb_GLib_g_time_zone_find_interval(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "ooi", &tz, &type, &native_time_);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, tz, GTimeZone_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GTimeZone expected");
@@ -47621,7 +46606,6 @@ mrb_GLib_g_time_zone_get_abbreviation(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &tz, &native_interval);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, tz, GTimeZone_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GTimeZone expected");
@@ -47658,7 +46642,6 @@ mrb_GLib_g_time_zone_get_offset(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &tz, &native_interval);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, tz, GTimeZone_class(mrb))) {
@@ -47700,7 +46683,6 @@ mrb_GLib_g_time_zone_is_dst(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &tz, &native_interval);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, tz, GTimeZone_class(mrb))) {
@@ -47808,7 +46790,6 @@ mrb_GLib_g_time_zone_ref(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &tz);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, tz, GTimeZone_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GTimeZone expected");
@@ -47843,7 +46824,6 @@ mrb_GLib_g_time_zone_unref(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &tz);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, tz, GTimeZone_class(mrb))) {
@@ -47880,7 +46860,6 @@ mrb_GLib_g_timeout_add(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "ioo", &native_interval, &function, &data);
-
 
   /* Type checking */
   TODO_type_check_int_LPAREN_PTR_RPAREN_LPAREN_void_PTR_RPAREN(function);
@@ -47929,7 +46908,6 @@ mrb_GLib_g_timeout_add_full(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "iiooo", &native_priority, &native_interval, &function, &data, &notify);
 
-
   /* Type checking */
   TODO_type_check_int_LPAREN_PTR_RPAREN_LPAREN_void_PTR_RPAREN(function);
   TODO_type_check_void_PTR(data);
@@ -47975,7 +46953,6 @@ mrb_GLib_g_timeout_add_seconds(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "ioo", &native_interval, &function, &data);
-
 
   /* Type checking */
   TODO_type_check_int_LPAREN_PTR_RPAREN_LPAREN_void_PTR_RPAREN(function);
@@ -48023,7 +47000,6 @@ mrb_GLib_g_timeout_add_seconds_full(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "iiooo", &native_priority, &native_interval, &function, &data, &notify);
-
 
   /* Type checking */
   TODO_type_check_int_LPAREN_PTR_RPAREN_LPAREN_void_PTR_RPAREN(function);
@@ -48121,7 +47097,6 @@ mrb_GLib_g_timer_continue(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &timer);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, timer, GTimer_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GTimer expected");
@@ -48153,7 +47128,6 @@ mrb_GLib_g_timer_destroy(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &timer);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, timer, GTimer_class(mrb))) {
@@ -48188,7 +47162,6 @@ mrb_GLib_g_timer_elapsed(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &timer, &microseconds);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, timer, GTimer_class(mrb))) {
@@ -48248,7 +47221,6 @@ mrb_GLib_g_timer_reset(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &timer);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, timer, GTimer_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GTimer expected");
@@ -48280,7 +47252,6 @@ mrb_GLib_g_timer_start(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &timer);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, timer, GTimer_class(mrb))) {
@@ -48314,7 +47285,6 @@ mrb_GLib_g_timer_stop(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &timer);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, timer, GTimer_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GTimer expected");
@@ -48346,7 +47316,6 @@ mrb_GLib_g_trash_stack_height(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &stack_p);
-
 
   /* Type checking */
   TODO_type_check__GTrashStack_PTR_PTR(stack_p);
@@ -48384,7 +47353,6 @@ mrb_GLib_g_trash_stack_peek(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &stack_p);
 
-
   /* Type checking */
   TODO_type_check__GTrashStack_PTR_PTR(stack_p);
 
@@ -48416,7 +47384,6 @@ mrb_GLib_g_trash_stack_pop(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &stack_p);
-
 
   /* Type checking */
   TODO_type_check__GTrashStack_PTR_PTR(stack_p);
@@ -48452,7 +47419,6 @@ mrb_GLib_g_trash_stack_push(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &stack_p, &data_p);
 
-
   /* Type checking */
   TODO_type_check__GTrashStack_PTR_PTR(stack_p);
   TODO_type_check_void_PTR(data_p);
@@ -48484,7 +47450,6 @@ mrb_GLib_g_tree_destroy(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &tree);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, tree, GTree_class(mrb))) {
@@ -48521,7 +47486,6 @@ mrb_GLib_g_tree_foreach(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "ooo", &tree, &func, &user_data);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, tree, GTree_class(mrb))) {
@@ -48560,7 +47524,6 @@ mrb_GLib_g_tree_height(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &tree);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, tree, GTree_class(mrb))) {
@@ -48605,7 +47568,6 @@ mrb_GLib_g_tree_insert(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "ooo", &tree, &key, &value);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, tree, GTree_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GTree expected");
@@ -48645,7 +47607,6 @@ mrb_GLib_g_tree_lookup(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &tree, &key);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, tree, GTree_class(mrb))) {
@@ -48690,7 +47651,6 @@ mrb_GLib_g_tree_lookup_extended(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oooo", &tree, &lookup_key, &orig_key, &value);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, tree, GTree_class(mrb))) {
@@ -48740,7 +47700,6 @@ mrb_GLib_g_tree_new(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &key_compare_func);
 
-
   /* Type checking */
   TODO_type_check_int_LPAREN_PTR_RPAREN_LPAREN_void_PTR_COMMA_const_void_PTR_RPAREN(key_compare_func);
 
@@ -48778,7 +47737,6 @@ mrb_GLib_g_tree_new_full(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oooo", &key_compare_func, &key_compare_data, &key_destroy_func, &value_destroy_func);
-
 
   /* Type checking */
   TODO_type_check_int_LPAREN_PTR_RPAREN_LPAREN_void_PTR_COMMA_const_void_PTR_COMMA_void_PTR_RPAREN(key_compare_func);
@@ -48823,7 +47781,6 @@ mrb_GLib_g_tree_new_with_data(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &key_compare_func, &key_compare_data);
 
-
   /* Type checking */
   TODO_type_check_int_LPAREN_PTR_RPAREN_LPAREN_void_PTR_COMMA_const_void_PTR_COMMA_void_PTR_RPAREN(key_compare_func);
   TODO_type_check_void_PTR(key_compare_data);
@@ -48858,7 +47815,6 @@ mrb_GLib_g_tree_nnodes(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &tree);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, tree, GTree_class(mrb))) {
@@ -48899,7 +47855,6 @@ mrb_GLib_g_tree_ref(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &tree);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, tree, GTree_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GTree expected");
@@ -48936,7 +47891,6 @@ mrb_GLib_g_tree_remove(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &tree, &key);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, tree, GTree_class(mrb))) {
@@ -48984,7 +47938,6 @@ mrb_GLib_g_tree_replace(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "ooo", &tree, &key, &value);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, tree, GTree_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GTree expected");
@@ -49026,7 +47979,6 @@ mrb_GLib_g_tree_search(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "ooo", &tree, &search_func, &user_data);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, tree, GTree_class(mrb))) {
@@ -49070,7 +48022,6 @@ mrb_GLib_g_tree_steal(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &tree, &key);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, tree, GTree_class(mrb))) {
@@ -49120,7 +48071,6 @@ mrb_GLib_g_tree_traverse(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oooo", &tree, &traverse_func, &traverse_type, &user_data);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, tree, GTree_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GTree expected");
@@ -49161,7 +48111,6 @@ mrb_GLib_g_tree_unref(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &tree);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, tree, GTree_class(mrb))) {
@@ -49309,7 +48258,6 @@ mrb_GLib_g_try_realloc(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &mem, &native_n_bytes);
 
-
   /* Type checking */
   TODO_type_check_void_PTR(mem);
 
@@ -49345,7 +48293,6 @@ mrb_GLib_g_try_realloc_n(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oii", &mem, &native_n_blocks, &native_n_block_bytes);
-
 
   /* Type checking */
   TODO_type_check_void_PTR(mem);
@@ -49386,7 +48333,6 @@ mrb_GLib_g_ucs4_to_utf16(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oiooo", &str, &native_len, &items_read, &items_written, &error);
-
 
   /* Type checking */
   TODO_type_check_unsigned_int_PTR(str);
@@ -49436,7 +48382,6 @@ mrb_GLib_g_ucs4_to_utf8(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oiooo", &str, &native_len, &items_read, &items_written, &error);
-
 
   /* Type checking */
   TODO_type_check_unsigned_int_PTR(str);
@@ -49541,7 +48486,6 @@ mrb_GLib_g_unichar_compose(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "iio", &native_a, &native_b, &ch);
 
-
   /* Type checking */
   TODO_type_check_unsigned_int_PTR(ch);
 
@@ -49581,7 +48525,6 @@ mrb_GLib_g_unichar_decompose(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "ioo", &native_ch, &a, &b);
-
 
   /* Type checking */
   TODO_type_check_unsigned_int_PTR(a);
@@ -49659,7 +48602,6 @@ mrb_GLib_g_unichar_fully_decompose(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "iioi", &native_ch, &native_compat, &result, &native_result_len);
 
-
   /* Type checking */
   TODO_type_check_unsigned_int_PTR(result);
 
@@ -49697,7 +48639,6 @@ mrb_GLib_g_unichar_get_mirror_char(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "io", &native_ch, &mirrored_ch);
-
 
   /* Type checking */
   TODO_type_check_unsigned_int_PTR(mirrored_ch);
@@ -50291,7 +49232,6 @@ mrb_GLib_g_unichar_to_utf8(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "io", &native_c, &outbuf);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, outbuf, mrb->string_class)) {
     mrb_raise(mrb, E_TYPE_ERROR, "String expected");
@@ -50528,7 +49468,6 @@ mrb_GLib_g_unicode_canonical_decomposition(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "io", &native_ch, &result_len);
 
-
   /* Type checking */
   TODO_type_check_unsigned_long_PTR(result_len);
 
@@ -50562,7 +49501,6 @@ mrb_GLib_g_unicode_canonical_ordering(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &string, &native_len);
-
 
   /* Type checking */
   TODO_type_check_unsigned_int_PTR(string);
@@ -50619,7 +49557,6 @@ mrb_GLib_g_unicode_script_to_iso15924(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &script);
-
 
   /* Type checking */
   TODO_type_check_GUnicodeScript(script);
@@ -50687,7 +49624,6 @@ mrb_GLib_g_unix_fd_add(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "iooo", &native_fd, &condition, &function, &user_data);
 
-
   /* Type checking */
   TODO_type_check_GIOCondition(condition);
   TODO_type_check_int_LPAREN_PTR_RPAREN_LPAREN_intCOMMA_GIOConditionCOMMA_void_PTR_RPAREN(function);
@@ -50740,7 +49676,6 @@ mrb_GLib_g_unix_fd_add_full(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "iioooo", &native_priority, &native_fd, &condition, &function, &user_data, &notify);
 
-
   /* Type checking */
   TODO_type_check_GIOCondition(condition);
   TODO_type_check_int_LPAREN_PTR_RPAREN_LPAREN_intCOMMA_GIOConditionCOMMA_void_PTR_RPAREN(function);
@@ -50788,7 +49723,6 @@ mrb_GLib_g_unix_fd_source_new(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "io", &native_fd, &condition);
 
-
   /* Type checking */
   TODO_type_check_GIOCondition(condition);
 
@@ -50824,7 +49758,6 @@ mrb_GLib_g_unix_open_pipe(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oio", &fds, &native_flags, &error);
-
 
   /* Type checking */
   TODO_type_check_int_PTR(fds);
@@ -50869,7 +49802,6 @@ mrb_GLib_g_unix_set_fd_nonblocking(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "iio", &native_fd, &native_nonblock, &error);
 
-
   /* Type checking */
   TODO_type_check__GError_PTR_PTR(error);
 
@@ -50909,7 +49841,6 @@ mrb_GLib_g_unix_signal_add(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "ioo", &native_signum, &handler, &user_data);
-
 
   /* Type checking */
   TODO_type_check_int_LPAREN_PTR_RPAREN_LPAREN_void_PTR_RPAREN(handler);
@@ -50957,7 +49888,6 @@ mrb_GLib_g_unix_signal_add_full(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "iiooo", &native_priority, &native_signum, &handler, &user_data, &notify);
-
 
   /* Type checking */
   TODO_type_check_int_LPAREN_PTR_RPAREN_LPAREN_void_PTR_RPAREN(handler);
@@ -51260,7 +50190,6 @@ mrb_GLib_g_utf16_to_ucs4(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oiooo", &str, &native_len, &items_read, &items_written, &error);
 
-
   /* Type checking */
   TODO_type_check_unsigned_short_PTR(str);
   TODO_type_check_long_PTR(items_read);
@@ -51309,7 +50238,6 @@ mrb_GLib_g_utf16_to_utf8(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oiooo", &str, &native_len, &items_read, &items_written, &error);
-
 
   /* Type checking */
   TODO_type_check_unsigned_short_PTR(str);
@@ -51598,7 +50526,6 @@ mrb_GLib_g_utf8_normalize(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "z!io", &native_str, &native_len, &mode);
 
-
   /* Type checking */
   TODO_type_check_GNormalizeMode(mode);
 
@@ -51817,7 +50744,6 @@ mrb_GLib_g_utf8_strncpy(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oz!i", &dest, &native_src, &native_n);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, dest, mrb->string_class)) {
     mrb_raise(mrb, E_TYPE_ERROR, "String expected");
@@ -51994,7 +50920,6 @@ mrb_GLib_g_utf8_to_ucs4(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "z!iooo", &native_str, &native_len, &items_read, &items_written, &error);
 
-
   /* Type checking */
   TODO_type_check_long_PTR(items_read);
   TODO_type_check_long_PTR(items_written);
@@ -52037,7 +50962,6 @@ mrb_GLib_g_utf8_to_ucs4_fast(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "z!io", &native_str, &native_len, &items_written);
 
-
   /* Type checking */
   TODO_type_check_long_PTR(items_written);
 
@@ -52077,7 +51001,6 @@ mrb_GLib_g_utf8_to_utf16(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!iooo", &native_str, &native_len, &items_read, &items_written, &error);
-
 
   /* Type checking */
   TODO_type_check_long_PTR(items_read);
@@ -52121,7 +51044,6 @@ mrb_GLib_g_utf8_validate(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "z!io", &native_str, &native_max_len, &end);
 
-
   /* Type checking */
   TODO_type_check_char_PTR_PTR(end);
 
@@ -52160,7 +51082,6 @@ mrb_GLib_g_variant_builder_add(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oz!", &builder, &native_format_string);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, builder, GVariantBuilder_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GVariantBuilder expected");
@@ -52195,7 +51116,6 @@ mrb_GLib_g_variant_builder_add_parsed(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oz!", &builder, &native_format);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, builder, GVariantBuilder_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GVariantBuilder expected");
@@ -52229,7 +51149,6 @@ mrb_GLib_g_variant_builder_add_value(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &builder, &value);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, builder, GVariantBuilder_class(mrb))) {
@@ -52269,7 +51188,6 @@ mrb_GLib_g_variant_builder_clear(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &builder);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, builder, GVariantBuilder_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GVariantBuilder expected");
@@ -52302,7 +51220,6 @@ mrb_GLib_g_variant_builder_close(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &builder);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, builder, GVariantBuilder_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GVariantBuilder expected");
@@ -52334,7 +51251,6 @@ mrb_GLib_g_variant_builder_end(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &builder);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, builder, GVariantBuilder_class(mrb))) {
@@ -52372,7 +51288,6 @@ mrb_GLib_g_variant_builder_init(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &builder, &type);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, builder, GVariantBuilder_class(mrb))) {
@@ -52412,7 +51327,6 @@ mrb_GLib_g_variant_builder_new(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &type);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, type, GVariantType_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GVariantType expected");
@@ -52449,7 +51363,6 @@ mrb_GLib_g_variant_builder_open(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &builder, &type);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, builder, GVariantBuilder_class(mrb))) {
@@ -52489,7 +51402,6 @@ mrb_GLib_g_variant_builder_ref(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &builder);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, builder, GVariantBuilder_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GVariantBuilder expected");
@@ -52525,7 +51437,6 @@ mrb_GLib_g_variant_builder_unref(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &builder);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, builder, GVariantBuilder_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GVariantBuilder expected");
@@ -52557,7 +51468,6 @@ mrb_GLib_g_variant_byteswap(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &value);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, value, GVariant_class(mrb))) {
@@ -52598,7 +51508,6 @@ mrb_GLib_g_variant_check_format_string(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oz!i", &value, &native_format_string, &native_copy_only);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, value, GVariant_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GVariant expected");
@@ -52638,7 +51547,6 @@ mrb_GLib_g_variant_classify(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &value);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, value, GVariant_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GVariant expected");
@@ -52675,7 +51583,6 @@ mrb_GLib_g_variant_compare(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &one, &two);
-
 
   /* Type checking */
   TODO_type_check_void_PTR(one);
@@ -52716,7 +51623,6 @@ mrb_GLib_g_variant_dict_clear(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &dict);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, dict, GVariantDict_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GVariantDict expected");
@@ -52750,7 +51656,6 @@ mrb_GLib_g_variant_dict_contains(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oz!", &dict, &native_key);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, dict, GVariantDict_class(mrb))) {
@@ -52791,7 +51696,6 @@ mrb_GLib_g_variant_dict_end(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &dict);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, dict, GVariantDict_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GVariantDict expected");
@@ -52828,7 +51732,6 @@ mrb_GLib_g_variant_dict_init(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &dict, &from_asv);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, dict, GVariantDict_class(mrb))) {
@@ -52872,7 +51775,6 @@ mrb_GLib_g_variant_dict_insert(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oz!z!", &dict, &native_key, &native_format_string);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, dict, GVariantDict_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GVariantDict expected");
@@ -52908,7 +51810,6 @@ mrb_GLib_g_variant_dict_insert_value(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oz!o", &dict, &native_key, &value);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, dict, GVariantDict_class(mrb))) {
@@ -52951,7 +51852,6 @@ mrb_GLib_g_variant_dict_lookup(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oz!z!", &dict, &native_key, &native_format_string);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, dict, GVariantDict_class(mrb))) {
@@ -52996,7 +51896,6 @@ mrb_GLib_g_variant_dict_lookup_value(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oz!o", &dict, &native_key, &expected_type);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, dict, GVariantDict_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GVariantDict expected");
@@ -53038,7 +51937,6 @@ mrb_GLib_g_variant_dict_new(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &from_asv);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, from_asv, GVariant_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GVariant expected");
@@ -53073,7 +51971,6 @@ mrb_GLib_g_variant_dict_ref(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &dict);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, dict, GVariantDict_class(mrb))) {
@@ -53111,7 +52008,6 @@ mrb_GLib_g_variant_dict_remove(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oz!", &dict, &native_key);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, dict, GVariantDict_class(mrb))) {
@@ -53152,7 +52048,6 @@ mrb_GLib_g_variant_dict_unref(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &dict);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, dict, GVariantDict_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GVariantDict expected");
@@ -53186,7 +52081,6 @@ mrb_GLib_g_variant_dup_bytestring(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &value, &length);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, value, GVariant_class(mrb))) {
@@ -53228,7 +52122,6 @@ mrb_GLib_g_variant_dup_bytestring_array(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &value, &length);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, value, GVariant_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GVariant expected");
@@ -53268,7 +52161,6 @@ mrb_GLib_g_variant_dup_objv(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &value, &length);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, value, GVariant_class(mrb))) {
@@ -53310,7 +52202,6 @@ mrb_GLib_g_variant_dup_string(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &value, &length);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, value, GVariant_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GVariant expected");
@@ -53351,7 +52242,6 @@ mrb_GLib_g_variant_dup_strv(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &value, &length);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, value, GVariant_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GVariant expected");
@@ -53391,7 +52281,6 @@ mrb_GLib_g_variant_equal(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &one, &two);
-
 
   /* Type checking */
   TODO_type_check_void_PTR(one);
@@ -53436,7 +52325,6 @@ mrb_GLib_g_variant_format_string_scan(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "z!z!o", &native_string, &native_limit, &endptr);
 
-
   /* Type checking */
   TODO_type_check_char_PTR_PTR(endptr);
 
@@ -53477,7 +52365,6 @@ mrb_GLib_g_variant_format_string_scan_type(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "z!z!o", &native_string, &native_limit, &endptr);
 
-
   /* Type checking */
   TODO_type_check_char_PTR_PTR(endptr);
 
@@ -53512,7 +52399,6 @@ mrb_GLib_g_variant_get(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oz!", &value, &native_format_string);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, value, GVariant_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GVariant expected");
@@ -53544,7 +52430,6 @@ mrb_GLib_g_variant_get_boolean(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &value);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, value, GVariant_class(mrb))) {
@@ -53585,7 +52470,6 @@ mrb_GLib_g_variant_get_byte(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &value);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, value, GVariant_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GVariant expected");
@@ -53625,7 +52509,6 @@ mrb_GLib_g_variant_get_bytestring(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &value);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, value, GVariant_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GVariant expected");
@@ -53662,7 +52545,6 @@ mrb_GLib_g_variant_get_bytestring_array(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &value, &length);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, value, GVariant_class(mrb))) {
@@ -53706,7 +52588,6 @@ mrb_GLib_g_variant_get_child(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oiz!", &value, &native_index_, &native_format_string);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, value, GVariant_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GVariant expected");
@@ -53740,7 +52621,6 @@ mrb_GLib_g_variant_get_child_value(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &value, &native_index_);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, value, GVariant_class(mrb))) {
@@ -53777,7 +52657,6 @@ mrb_GLib_g_variant_get_data(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &value);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, value, GVariant_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GVariant expected");
@@ -53813,7 +52692,6 @@ mrb_GLib_g_variant_get_data_as_bytes(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &value);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, value, GVariant_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GVariant expected");
@@ -53848,7 +52726,6 @@ mrb_GLib_g_variant_get_double(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &value);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, value, GVariant_class(mrb))) {
@@ -53889,7 +52766,6 @@ mrb_GLib_g_variant_get_fixed_array(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "ooi", &value, &n_elements, &native_element_size);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, value, GVariant_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GVariant expected");
@@ -53927,7 +52803,6 @@ mrb_GLib_g_variant_get_handle(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &value);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, value, GVariant_class(mrb))) {
@@ -53968,7 +52843,6 @@ mrb_GLib_g_variant_get_int16(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &value);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, value, GVariant_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GVariant expected");
@@ -54007,7 +52881,6 @@ mrb_GLib_g_variant_get_int32(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &value);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, value, GVariant_class(mrb))) {
@@ -54048,7 +52921,6 @@ mrb_GLib_g_variant_get_int64(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &value);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, value, GVariant_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GVariant expected");
@@ -54088,7 +52960,6 @@ mrb_GLib_g_variant_get_maybe(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &value);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, value, GVariant_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GVariant expected");
@@ -54123,7 +52994,6 @@ mrb_GLib_g_variant_get_normal_form(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &value);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, value, GVariant_class(mrb))) {
@@ -54162,7 +53032,6 @@ mrb_GLib_g_variant_get_objv(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &value, &length);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, value, GVariant_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GVariant expected");
@@ -54200,7 +53069,6 @@ mrb_GLib_g_variant_get_size(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &value);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, value, GVariant_class(mrb))) {
@@ -54243,7 +53111,6 @@ mrb_GLib_g_variant_get_string(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &value, &length);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, value, GVariant_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GVariant expected");
@@ -54284,7 +53151,6 @@ mrb_GLib_g_variant_get_strv(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &value, &length);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, value, GVariant_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GVariant expected");
@@ -54323,7 +53189,6 @@ mrb_GLib_g_variant_get_type(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &value);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, value, GVariant_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GVariant expected");
@@ -54358,7 +53223,6 @@ mrb_GLib_g_variant_get_type_info(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &value);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, value, GVariant_class(mrb))) {
@@ -54395,7 +53259,6 @@ mrb_GLib_g_variant_get_type_string(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &value);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, value, GVariant_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GVariant expected");
@@ -54430,7 +53293,6 @@ mrb_GLib_g_variant_get_uint16(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &value);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, value, GVariant_class(mrb))) {
@@ -54471,7 +53333,6 @@ mrb_GLib_g_variant_get_uint32(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &value);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, value, GVariant_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GVariant expected");
@@ -54510,7 +53371,6 @@ mrb_GLib_g_variant_get_uint64(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &value);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, value, GVariant_class(mrb))) {
@@ -54557,7 +53417,6 @@ mrb_GLib_g_variant_get_va(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oz!oo", &value, &native_format_string, &endptr, &app);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, value, GVariant_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GVariant expected");
@@ -54596,7 +53455,6 @@ mrb_GLib_g_variant_get_variant(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &value);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, value, GVariant_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GVariant expected");
@@ -54631,7 +53489,6 @@ mrb_GLib_g_variant_hash(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &value);
-
 
   /* Type checking */
   TODO_type_check_void_PTR(value);
@@ -54668,7 +53525,6 @@ mrb_GLib_g_variant_is_container(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &value);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, value, GVariant_class(mrb))) {
@@ -54709,7 +53565,6 @@ mrb_GLib_g_variant_is_floating(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &value);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, value, GVariant_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GVariant expected");
@@ -54748,7 +53603,6 @@ mrb_GLib_g_variant_is_normal_form(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &value);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, value, GVariant_class(mrb))) {
@@ -54821,7 +53675,6 @@ mrb_GLib_g_variant_is_of_type(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &value, &type);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, value, GVariant_class(mrb))) {
@@ -54899,7 +53752,6 @@ mrb_GLib_g_variant_is_trusted(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &value);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, value, GVariant_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GVariant expected");
@@ -54939,7 +53791,6 @@ mrb_GLib_g_variant_iter_copy(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &iter);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, iter, GVariantIter_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GVariantIter expected");
@@ -54975,7 +53826,6 @@ mrb_GLib_g_variant_iter_free(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &iter);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, iter, GVariantIter_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GVariantIter expected");
@@ -55009,7 +53859,6 @@ mrb_GLib_g_variant_iter_init(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &iter, &value);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, iter, GVariantIter_class(mrb))) {
@@ -55058,7 +53907,6 @@ mrb_GLib_g_variant_iter_loop(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oz!", &iter, &native_format_string);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, iter, GVariantIter_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GVariantIter expected");
@@ -55097,7 +53945,6 @@ mrb_GLib_g_variant_iter_n_children(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &iter);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, iter, GVariantIter_class(mrb))) {
@@ -55138,7 +53985,6 @@ mrb_GLib_g_variant_iter_new(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &value);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, value, GVariant_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GVariant expected");
@@ -55175,7 +54021,6 @@ mrb_GLib_g_variant_iter_next(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oz!", &iter, &native_format_string);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, iter, GVariantIter_class(mrb))) {
@@ -55216,7 +54061,6 @@ mrb_GLib_g_variant_iter_next_value(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &iter);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, iter, GVariantIter_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GVariantIter expected");
@@ -55255,7 +54099,6 @@ mrb_GLib_g_variant_lookup(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oz!z!", &dictionary, &native_key, &native_format_string);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, dictionary, GVariant_class(mrb))) {
@@ -55300,7 +54143,6 @@ mrb_GLib_g_variant_lookup_value(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oz!o", &dictionary, &native_key, &expected_type);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, dictionary, GVariant_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GVariant expected");
@@ -55341,7 +54183,6 @@ mrb_GLib_g_variant_n_children(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &value);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, value, GVariant_class(mrb))) {
@@ -55412,7 +54253,6 @@ mrb_GLib_g_variant_new_array(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "ooi", &child_type, &children, &native_n_children);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, child_type, GVariantType_class(mrb))) {
@@ -55535,7 +54375,6 @@ mrb_GLib_g_variant_new_bytestring_array(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &strv, &native_length);
 
-
   /* Type checking */
   TODO_type_check_char_PTR_const_PTR(strv);
 
@@ -55569,7 +54408,6 @@ mrb_GLib_g_variant_new_dict_entry(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &key, &value);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, key, GVariant_class(mrb))) {
@@ -55645,7 +54483,6 @@ mrb_GLib_g_variant_new_fixed_array(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "ooii", &element_type, &elements, &native_n_elements, &native_element_size);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, element_type, GVariantType_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GVariantType expected");
@@ -55687,7 +54524,6 @@ mrb_GLib_g_variant_new_from_bytes(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "ooi", &type, &bytes, &native_trusted);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, type, GVariantType_class(mrb))) {
@@ -55736,7 +54572,6 @@ mrb_GLib_g_variant_new_from_children(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "ooii", &type, &children, &native_n_children, &native_trusted);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, type, GVariantType_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GVariantType expected");
@@ -55784,7 +54619,6 @@ mrb_GLib_g_variant_new_from_data(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "ooiioo", &type, &data, &native_size, &native_trusted, &notify, &user_data);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, type, GVariantType_class(mrb))) {
@@ -55940,7 +54774,6 @@ mrb_GLib_g_variant_new_maybe(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &child_type, &child);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, child_type, GVariantType_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GVariantType expected");
@@ -56011,7 +54844,6 @@ mrb_GLib_g_variant_new_objv(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &strv, &native_length);
 
-
   /* Type checking */
   TODO_type_check_char_PTR_const_PTR(strv);
 
@@ -56072,7 +54904,6 @@ mrb_GLib_g_variant_new_parsed_va(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!o", &native_format, &app);
-
 
   /* Type checking */
   TODO_type_check_int_PTR(app);
@@ -56189,7 +55020,6 @@ mrb_GLib_g_variant_new_strv(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &strv, &native_length);
 
-
   /* Type checking */
   TODO_type_check_char_PTR_const_PTR(strv);
 
@@ -56221,7 +55051,6 @@ mrb_GLib_g_variant_new_take_string(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &string);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, string, mrb->string_class)) {
@@ -56272,7 +55101,6 @@ mrb_GLib_g_variant_new_tuple(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &children, &native_n_children);
-
 
   /* Type checking */
   TODO_type_check__GVariant_PTR_PTR(children);
@@ -56391,7 +55219,6 @@ mrb_GLib_g_variant_new_va(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "z!oo", &native_format_string, &endptr, &app);
 
-
   /* Type checking */
   TODO_type_check_char_PTR_PTR(endptr);
   TODO_type_check_int_PTR(app);
@@ -56426,7 +55253,6 @@ mrb_GLib_g_variant_new_variant(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &value);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, value, GVariant_class(mrb))) {
@@ -56471,7 +55297,6 @@ mrb_GLib_g_variant_parse(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oz!z!oo", &type, &native_text, &native_limit, &endptr, &error);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, type, GVariantType_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GVariantType expected");
@@ -56514,7 +55339,6 @@ mrb_GLib_g_variant_parse_error_print_context(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oz!", &error, &native_source_str);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, error, GError_class(mrb))) {
@@ -56601,7 +55425,6 @@ mrb_GLib_g_variant_print(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &value, &native_type_annotate);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, value, GVariant_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GVariant expected");
@@ -56640,7 +55463,6 @@ mrb_GLib_g_variant_print_string(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "ooi", &value, &string, &native_type_annotate);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, value, GVariant_class(mrb))) {
@@ -56683,7 +55505,6 @@ mrb_GLib_g_variant_ref(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &value);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, value, GVariant_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GVariant expected");
@@ -56718,7 +55539,6 @@ mrb_GLib_g_variant_ref_sink(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &value);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, value, GVariant_class(mrb))) {
@@ -56755,7 +55575,6 @@ mrb_GLib_g_variant_serialised_byteswap(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &value);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, value, GVariantSerialised_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GVariantSerialised expected");
@@ -56789,7 +55608,6 @@ mrb_GLib_g_variant_serialised_get_child(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &container, &native_index);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, container, GVariantSerialised_class(mrb))) {
@@ -56831,7 +55649,6 @@ mrb_GLib_g_variant_serialised_is_normal(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &value);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, value, GVariantSerialised_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GVariantSerialised expected");
@@ -56870,7 +55687,6 @@ mrb_GLib_g_variant_serialised_n_children(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &container);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, container, GVariantSerialised_class(mrb))) {
@@ -56913,7 +55729,6 @@ mrb_GLib_g_variant_serialiser_is_object_path(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &data, &native_size);
 
-
   /* Type checking */
   TODO_type_check_void_PTR(data);
 
@@ -56952,7 +55767,6 @@ mrb_GLib_g_variant_serialiser_is_signature(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &data, &native_size);
 
-
   /* Type checking */
   TODO_type_check_void_PTR(data);
 
@@ -56990,7 +55804,6 @@ mrb_GLib_g_variant_serialiser_is_string(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &data, &native_size);
-
 
   /* Type checking */
   TODO_type_check_void_PTR(data);
@@ -57033,7 +55846,6 @@ mrb_GLib_g_variant_serialiser_needed_size(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oooi", &info, &gsv_filler, &children, &native_n_children);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, info, GVariantTypeInfo_class(mrb))) {
@@ -57086,7 +55898,6 @@ mrb_GLib_g_variant_serialiser_serialise(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oooi", &container, &gsv_filler, &children, &native_n_children);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, container, GVariantSerialised_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GVariantSerialised expected");
@@ -57127,7 +55938,6 @@ mrb_GLib_g_variant_store(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &value, &data);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, value, GVariant_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GVariant expected");
@@ -57162,7 +55972,6 @@ mrb_GLib_g_variant_take_ref(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &value);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, value, GVariant_class(mrb))) {
@@ -57226,7 +56035,6 @@ mrb_GLib_g_variant_type_copy(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &type);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, type, GVariantType_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GVariantType expected");
@@ -57262,7 +56070,6 @@ mrb_GLib_g_variant_type_dup_string(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &type);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, type, GVariantType_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GVariantType expected");
@@ -57297,7 +56104,6 @@ mrb_GLib_g_variant_type_element(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &type);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, type, GVariantType_class(mrb))) {
@@ -57335,7 +56141,6 @@ mrb_GLib_g_variant_type_equal(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &type1, &type2);
-
 
   /* Type checking */
   TODO_type_check_void_PTR(type1);
@@ -57376,7 +56181,6 @@ mrb_GLib_g_variant_type_first(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &type);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, type, GVariantType_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GVariantType expected");
@@ -57412,7 +56216,6 @@ mrb_GLib_g_variant_type_free(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &type);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, type, GVariantType_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GVariantType expected");
@@ -57444,7 +56247,6 @@ mrb_GLib_g_variant_type_get_string_length(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &type);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, type, GVariantType_class(mrb))) {
@@ -57484,7 +56286,6 @@ mrb_GLib_g_variant_type_hash(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &type);
-
 
   /* Type checking */
   TODO_type_check_void_PTR(type);
@@ -57539,7 +56340,6 @@ mrb_GLib_g_variant_type_info_element(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &typeinfo);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, typeinfo, GVariantTypeInfo_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GVariantTypeInfo expected");
@@ -57575,7 +56375,6 @@ mrb_GLib_g_variant_type_info_get(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &type);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, type, GVariantType_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GVariantType expected");
@@ -57610,7 +56409,6 @@ mrb_GLib_g_variant_type_info_get_type_string(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &typeinfo);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, typeinfo, GVariantTypeInfo_class(mrb))) {
@@ -57649,7 +56447,6 @@ mrb_GLib_g_variant_type_info_member_info(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &typeinfo, &native_index);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, typeinfo, GVariantTypeInfo_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GVariantTypeInfo expected");
@@ -57684,7 +56481,6 @@ mrb_GLib_g_variant_type_info_n_members(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &typeinfo);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, typeinfo, GVariantTypeInfo_class(mrb))) {
@@ -57729,7 +56525,6 @@ mrb_GLib_g_variant_type_info_query(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "ooo", &typeinfo, &alignment, &size);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, typeinfo, GVariantTypeInfo_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GVariantTypeInfo expected");
@@ -57772,7 +56567,6 @@ mrb_GLib_g_variant_type_info_query_element(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "ooo", &typeinfo, &alignment, &size);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, typeinfo, GVariantTypeInfo_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GVariantTypeInfo expected");
@@ -57811,7 +56605,6 @@ mrb_GLib_g_variant_type_info_ref(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &typeinfo);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, typeinfo, GVariantTypeInfo_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GVariantTypeInfo expected");
@@ -57847,7 +56640,6 @@ mrb_GLib_g_variant_type_info_unref(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &typeinfo);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, typeinfo, GVariantTypeInfo_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GVariantTypeInfo expected");
@@ -57879,7 +56671,6 @@ mrb_GLib_g_variant_type_is_array(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &type);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, type, GVariantType_class(mrb))) {
@@ -57920,7 +56711,6 @@ mrb_GLib_g_variant_type_is_basic(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &type);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, type, GVariantType_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GVariantType expected");
@@ -57959,7 +56749,6 @@ mrb_GLib_g_variant_type_is_container(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &type);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, type, GVariantType_class(mrb))) {
@@ -58000,7 +56789,6 @@ mrb_GLib_g_variant_type_is_definite(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &type);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, type, GVariantType_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GVariantType expected");
@@ -58040,7 +56828,6 @@ mrb_GLib_g_variant_type_is_dict_entry(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &type);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, type, GVariantType_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GVariantType expected");
@@ -58079,7 +56866,6 @@ mrb_GLib_g_variant_type_is_maybe(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &type);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, type, GVariantType_class(mrb))) {
@@ -58121,7 +56907,6 @@ mrb_GLib_g_variant_type_is_subtype_of(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &type, &supertype);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, type, GVariantType_class(mrb))) {
@@ -58168,7 +56953,6 @@ mrb_GLib_g_variant_type_is_tuple(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &type);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, type, GVariantType_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GVariantType expected");
@@ -58207,7 +56991,6 @@ mrb_GLib_g_variant_type_is_variant(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &type);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, type, GVariantType_class(mrb))) {
@@ -58248,7 +57031,6 @@ mrb_GLib_g_variant_type_key(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &type);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, type, GVariantType_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GVariantType expected");
@@ -58283,7 +57065,6 @@ mrb_GLib_g_variant_type_n_items(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &type);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, type, GVariantType_class(mrb))) {
@@ -58351,7 +57132,6 @@ mrb_GLib_g_variant_type_new_array(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &element);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, element, GVariantType_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GVariantType expected");
@@ -58388,7 +57168,6 @@ mrb_GLib_g_variant_type_new_dict_entry(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &key, &value);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, key, GVariantType_class(mrb))) {
@@ -58431,7 +57210,6 @@ mrb_GLib_g_variant_type_new_maybe(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &element);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, element, GVariantType_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GVariantType expected");
@@ -58469,7 +57247,6 @@ mrb_GLib_g_variant_type_new_tuple(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &items, &native_length);
 
-
   /* Type checking */
   TODO_type_check__GVariantType_PTR_const_PTR(items);
 
@@ -58501,7 +57278,6 @@ mrb_GLib_g_variant_type_next(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &type);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, type, GVariantType_class(mrb))) {
@@ -58537,7 +57313,6 @@ mrb_GLib_g_variant_type_peek_string(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &type);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, type, GVariantType_class(mrb))) {
@@ -58609,7 +57384,6 @@ mrb_GLib_g_variant_type_string_scan(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "z!z!o", &native_string, &native_limit, &endptr);
 
-
   /* Type checking */
   TODO_type_check_char_PTR_PTR(endptr);
 
@@ -58646,7 +57420,6 @@ mrb_GLib_g_variant_type_value(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &type);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, type, GVariantType_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GVariantType expected");
@@ -58681,7 +57454,6 @@ mrb_GLib_g_variant_unref(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &value);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, value, GVariant_class(mrb))) {
@@ -58718,7 +57490,6 @@ mrb_GLib_g_vasprintf(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oz!o", &string, &native_format, &args);
-
 
   /* Type checking */
   TODO_type_check_char_PTR_PTR(string);
@@ -58763,7 +57534,6 @@ mrb_GLib_g_vfprintf(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oz!o", &file, &native_format, &args);
 
-
   /* Type checking */
   TODO_type_check___sFILE_PTR(file);
   TODO_type_check___va_list_tag_[1](args);
@@ -58804,7 +57574,6 @@ mrb_GLib_g_vprintf(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!o", &native_format, &args);
-
 
   /* Type checking */
   TODO_type_check___va_list_tag_[1](args);
@@ -58847,7 +57616,6 @@ mrb_GLib_g_vsnprintf(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oiz!i", &string, &native_n, &native_format, &native_args);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, string, mrb->string_class)) {
@@ -58905,7 +57673,6 @@ mrb_GLib_g_vsprintf(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oz!o", &string, &native_format, &args);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, string, mrb->string_class)) {
     mrb_raise(mrb, E_TYPE_ERROR, "String expected");
@@ -58961,7 +57728,6 @@ mrb_GLib_g_wakeup_acknowledge(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &wakeup);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, wakeup, GWakeup_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GWakeup expected");
@@ -58993,7 +57759,6 @@ mrb_GLib_g_wakeup_free(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &wakeup);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, wakeup, GWakeup_class(mrb))) {
@@ -59028,7 +57793,6 @@ mrb_GLib_g_wakeup_get_pollfd(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &wakeup, &poll_fd);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, wakeup, GWakeup_class(mrb))) {
@@ -59087,7 +57851,6 @@ mrb_GLib_g_wakeup_signal(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "o", &wakeup);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, wakeup, GWakeup_class(mrb))) {
@@ -59241,7 +58004,6 @@ mrb_GLib_pack_table(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oiiiiioz!z!z!o", &base, &native_key_num, &native_key_size, &native_default_key, &native_max_depth, &native_tab_width, &name, &native_key_type_name, &native_table_name, &native_macro_name, &out);
 
-
   /* Type checking */
   TODO_type_check_int_PTR(base);
   TODO_type_check_char_PTR_const_PTR(name);
@@ -59287,7 +58049,6 @@ mrb_GLib_printf_parse(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!oo", &native_format, &d, &a);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, d, CharDirectives_class(mrb))) {
@@ -59339,7 +58100,6 @@ mrb_GLib_vasnprintf(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "ooz!i", &resultbuf, &lengthp, &native_format, &native_args);
-
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, resultbuf, mrb->string_class)) {
