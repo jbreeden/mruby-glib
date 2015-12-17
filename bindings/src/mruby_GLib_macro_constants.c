@@ -251,7 +251,7 @@ mruby_GLib_define_macro_constants(mrb_state* mrb) {
 #endif
 #ifdef _GLIB_EXTERN
   /* _GLIB_EXTERN assumed to be an integer value */
-  // mrb_define_const(mrb, GLib_module(mrb), "_GLIB_EXTERN", mrb_fixnum_value(_GLIB_EXTERN));
+  mrb_define_const(mrb, GLib_module(mrb), "_GLIB_EXTERN", mrb_fixnum_value(_GLIB_EXTERN));
 #endif
 #ifdef ABS
   /* Ignoring function-like macro: ABS(a) */
@@ -426,7 +426,7 @@ mruby_GLib_define_macro_constants(mrb_state* mrb) {
 #endif
 #ifdef g_autofree
   /* g_autofree assumed to be an integer value */
-  // mrb_define_const(mrb, GLib_module(mrb), "g_autofree", mrb_fixnum_value(g_autofree));
+  mrb_define_const(mrb, GLib_module(mrb), "g_autofree", mrb_fixnum_value(g_autofree));
 #endif
 #ifdef g_autoptr
   /* Ignoring function-like macro: g_autoptr(TypeName) */
@@ -447,22 +447,22 @@ mruby_GLib_define_macro_constants(mrb_state* mrb) {
 #endif
 #ifdef g_chmod
   /* g_chmod assumed to be an integer value */
-  // mrb_define_const(mrb, GLib_module(mrb), "g_chmod", mrb_fixnum_value(g_chmod));
+  mrb_define_const(mrb, GLib_module(mrb), "g_chmod", mrb_fixnum_value(g_chmod));
 #endif
 #ifdef g_clear_pointer
   /* Ignoring function-like macro: g_clear_pointer(pp, destroy) */
 #endif
 #ifdef G_CONST_RETURN
   /* G_CONST_RETURN assumed to be an integer value */
-  // mrb_define_const(mrb, GLib_module(mrb), "G_CONST_RETURN", mrb_fixnum_value(G_CONST_RETURN));
+  mrb_define_const(mrb, GLib_module(mrb), "G_CONST_RETURN", mrb_fixnum_value(G_CONST_RETURN));
 #endif
 #ifdef G_CONVERT_ERROR
   /* G_CONVERT_ERROR assumed to be an integer value */
-  // mrb_define_const(mrb, GLib_module(mrb), "G_CONVERT_ERROR", mrb_fixnum_value(G_CONVERT_ERROR));
+  mrb_define_const(mrb, GLib_module(mrb), "G_CONVERT_ERROR", mrb_fixnum_value(G_CONVERT_ERROR));
 #endif
 #ifdef g_creat
   /* g_creat assumed to be an integer value */
-  // mrb_define_const(mrb, GLib_module(mrb), "g_creat", mrb_fixnum_value(g_creat));
+  mrb_define_const(mrb, GLib_module(mrb), "g_creat", mrb_fixnum_value(g_creat));
 #endif
 #ifdef g_critical
   /* Ignoring function-like macro: g_critical(...) */
@@ -544,47 +544,47 @@ mruby_GLib_define_macro_constants(mrb_state* mrb) {
 #endif
 #ifdef g_date_day
   /* g_date_day assumed to be an integer value */
-  // mrb_define_const(mrb, GLib_module(mrb), "g_date_day", mrb_fixnum_value(g_date_day));
+  mrb_define_const(mrb, GLib_module(mrb), "g_date_day", mrb_fixnum_value(g_date_day));
 #endif
 #ifdef g_date_day_of_year
   /* g_date_day_of_year assumed to be an integer value */
-  // mrb_define_const(mrb, GLib_module(mrb), "g_date_day_of_year", mrb_fixnum_value(g_date_day_of_year));
+  mrb_define_const(mrb, GLib_module(mrb), "g_date_day_of_year", mrb_fixnum_value(g_date_day_of_year));
 #endif
 #ifdef g_date_days_in_month
   /* g_date_days_in_month assumed to be an integer value */
-  // mrb_define_const(mrb, GLib_module(mrb), "g_date_days_in_month", mrb_fixnum_value(g_date_days_in_month));
+  mrb_define_const(mrb, GLib_module(mrb), "g_date_days_in_month", mrb_fixnum_value(g_date_days_in_month));
 #endif
 #ifdef g_date_julian
   /* g_date_julian assumed to be an integer value */
-  // mrb_define_const(mrb, GLib_module(mrb), "g_date_julian", mrb_fixnum_value(g_date_julian));
+  mrb_define_const(mrb, GLib_module(mrb), "g_date_julian", mrb_fixnum_value(g_date_julian));
 #endif
 #ifdef g_date_monday_week_of_year
   /* g_date_monday_week_of_year assumed to be an integer value */
-  // mrb_define_const(mrb, GLib_module(mrb), "g_date_monday_week_of_year", mrb_fixnum_value(g_date_monday_week_of_year));
+  mrb_define_const(mrb, GLib_module(mrb), "g_date_monday_week_of_year", mrb_fixnum_value(g_date_monday_week_of_year));
 #endif
 #ifdef g_date_monday_weeks_in_year
   /* g_date_monday_weeks_in_year assumed to be an integer value */
-  // mrb_define_const(mrb, GLib_module(mrb), "g_date_monday_weeks_in_year", mrb_fixnum_value(g_date_monday_weeks_in_year));
+  mrb_define_const(mrb, GLib_module(mrb), "g_date_monday_weeks_in_year", mrb_fixnum_value(g_date_monday_weeks_in_year));
 #endif
 #ifdef g_date_month
   /* g_date_month assumed to be an integer value */
-  // mrb_define_const(mrb, GLib_module(mrb), "g_date_month", mrb_fixnum_value(g_date_month));
+  mrb_define_const(mrb, GLib_module(mrb), "g_date_month", mrb_fixnum_value(g_date_month));
 #endif
 #ifdef g_date_sunday_week_of_year
   /* g_date_sunday_week_of_year assumed to be an integer value */
-  // mrb_define_const(mrb, GLib_module(mrb), "g_date_sunday_week_of_year", mrb_fixnum_value(g_date_sunday_week_of_year));
+  mrb_define_const(mrb, GLib_module(mrb), "g_date_sunday_week_of_year", mrb_fixnum_value(g_date_sunday_week_of_year));
 #endif
 #ifdef g_date_sunday_weeks_in_year
   /* g_date_sunday_weeks_in_year assumed to be an integer value */
-  // mrb_define_const(mrb, GLib_module(mrb), "g_date_sunday_weeks_in_year", mrb_fixnum_value(g_date_sunday_weeks_in_year));
+  mrb_define_const(mrb, GLib_module(mrb), "g_date_sunday_weeks_in_year", mrb_fixnum_value(g_date_sunday_weeks_in_year));
 #endif
 #ifdef g_date_weekday
   /* g_date_weekday assumed to be an integer value */
-  // mrb_define_const(mrb, GLib_module(mrb), "g_date_weekday", mrb_fixnum_value(g_date_weekday));
+  mrb_define_const(mrb, GLib_module(mrb), "g_date_weekday", mrb_fixnum_value(g_date_weekday));
 #endif
 #ifdef g_date_year
   /* g_date_year assumed to be an integer value */
-  // mrb_define_const(mrb, GLib_module(mrb), "g_date_year", mrb_fixnum_value(g_date_year));
+  mrb_define_const(mrb, GLib_module(mrb), "g_date_year", mrb_fixnum_value(g_date_year));
 #endif
 #ifdef g_debug
   /* Ignoring function-like macro: g_debug(...) */
@@ -603,7 +603,7 @@ mruby_GLib_define_macro_constants(mrb_state* mrb) {
 #endif
 #ifdef G_DEPRECATED
   /* G_DEPRECATED assumed to be an integer value */
-  // mrb_define_const(mrb, GLib_module(mrb), "G_DEPRECATED", mrb_fixnum_value(G_DEPRECATED));
+  mrb_define_const(mrb, GLib_module(mrb), "G_DEPRECATED", mrb_fixnum_value(G_DEPRECATED));
 #endif
 #ifdef G_DEPRECATED_FOR
   /* Ignoring function-like macro: G_DEPRECATED_FOR(f) */
@@ -618,7 +618,7 @@ mruby_GLib_define_macro_constants(mrb_state* mrb) {
 #endif
 #ifdef g_dirname
   /* g_dirname assumed to be an integer value */
-  // mrb_define_const(mrb, GLib_module(mrb), "g_dirname", mrb_fixnum_value(g_dirname));
+  mrb_define_const(mrb, GLib_module(mrb), "g_dirname", mrb_fixnum_value(g_dirname));
 #endif
 #ifdef G_E
   /* G_E appears to be a floating point number */
@@ -635,15 +635,15 @@ mruby_GLib_define_macro_constants(mrb_state* mrb) {
 #endif
 #ifdef G_FILE_ERROR
   /* G_FILE_ERROR assumed to be an integer value */
-  // mrb_define_const(mrb, GLib_module(mrb), "G_FILE_ERROR", mrb_fixnum_value(G_FILE_ERROR));
+  mrb_define_const(mrb, GLib_module(mrb), "G_FILE_ERROR", mrb_fixnum_value(G_FILE_ERROR));
 #endif
 #ifdef g_fopen
   /* g_fopen assumed to be an integer value */
-  // mrb_define_const(mrb, GLib_module(mrb), "g_fopen", mrb_fixnum_value(g_fopen));
+  mrb_define_const(mrb, GLib_module(mrb), "g_fopen", mrb_fixnum_value(g_fopen));
 #endif
 #ifdef g_freopen
   /* g_freopen assumed to be an integer value */
-  // mrb_define_const(mrb, GLib_module(mrb), "g_freopen", mrb_fixnum_value(g_freopen));
+  mrb_define_const(mrb, GLib_module(mrb), "g_freopen", mrb_fixnum_value(g_freopen));
 #endif
 #ifdef G_GNUC_ALLOC_SIZE
   /* Ignoring macro with no expansion: G_GNUC_ALLOC_SIZE */
@@ -653,26 +653,26 @@ mruby_GLib_define_macro_constants(mrb_state* mrb) {
 #endif
 #ifdef G_GNUC_BEGIN_IGNORE_DEPRECATIONS
   /* G_GNUC_BEGIN_IGNORE_DEPRECATIONS appears to be a string */
-  // mrb_define_const(mrb, GLib_module(mrb), "G_GNUC_BEGIN_IGNORE_DEPRECATIONS", mrb_str_new_cstr(mrb, G_GNUC_BEGIN_IGNORE_DEPRECATIONS));
+  mrb_define_const(mrb, GLib_module(mrb), "G_GNUC_BEGIN_IGNORE_DEPRECATIONS", mrb_str_new_cstr(mrb, G_GNUC_BEGIN_IGNORE_DEPRECATIONS));
 #endif
 #ifdef G_GNUC_CONST
   /* G_GNUC_CONST assumed to be an integer value */
-  // mrb_define_const(mrb, GLib_module(mrb), "G_GNUC_CONST", mrb_fixnum_value(G_GNUC_CONST));
+  mrb_define_const(mrb, GLib_module(mrb), "G_GNUC_CONST", mrb_fixnum_value(G_GNUC_CONST));
 #endif
 #ifdef G_GNUC_DEPRECATED
   /* G_GNUC_DEPRECATED assumed to be an integer value */
-  // mrb_define_const(mrb, GLib_module(mrb), "G_GNUC_DEPRECATED", mrb_fixnum_value(G_GNUC_DEPRECATED));
+  mrb_define_const(mrb, GLib_module(mrb), "G_GNUC_DEPRECATED", mrb_fixnum_value(G_GNUC_DEPRECATED));
 #endif
 #ifdef G_GNUC_DEPRECATED_FOR
   /* Ignoring function-like macro: G_GNUC_DEPRECATED_FOR(f) */
 #endif
 #ifdef G_GNUC_END_IGNORE_DEPRECATIONS
   /* G_GNUC_END_IGNORE_DEPRECATIONS appears to be a string */
-  // mrb_define_const(mrb, GLib_module(mrb), "G_GNUC_END_IGNORE_DEPRECATIONS", mrb_str_new_cstr(mrb, G_GNUC_END_IGNORE_DEPRECATIONS));
+  mrb_define_const(mrb, GLib_module(mrb), "G_GNUC_END_IGNORE_DEPRECATIONS", mrb_str_new_cstr(mrb, G_GNUC_END_IGNORE_DEPRECATIONS));
 #endif
 #ifdef G_GNUC_EXTENSION
   /* G_GNUC_EXTENSION assumed to be an integer value */
-  // mrb_define_const(mrb, GLib_module(mrb), "G_GNUC_EXTENSION", mrb_fixnum_value(G_GNUC_EXTENSION));
+  mrb_define_const(mrb, GLib_module(mrb), "G_GNUC_EXTENSION", mrb_fixnum_value(G_GNUC_EXTENSION));
 #endif
 #ifdef G_GNUC_FORMAT
   /* Ignoring function-like macro: G_GNUC_FORMAT(arg_idx) */
@@ -683,23 +683,23 @@ mruby_GLib_define_macro_constants(mrb_state* mrb) {
 #endif
 #ifdef G_GNUC_MALLOC
   /* G_GNUC_MALLOC assumed to be an integer value */
-  // mrb_define_const(mrb, GLib_module(mrb), "G_GNUC_MALLOC", mrb_fixnum_value(G_GNUC_MALLOC));
+  mrb_define_const(mrb, GLib_module(mrb), "G_GNUC_MALLOC", mrb_fixnum_value(G_GNUC_MALLOC));
 #endif
 #ifdef G_GNUC_MAY_ALIAS
   /* G_GNUC_MAY_ALIAS assumed to be an integer value */
-  // mrb_define_const(mrb, GLib_module(mrb), "G_GNUC_MAY_ALIAS", mrb_fixnum_value(G_GNUC_MAY_ALIAS));
+  mrb_define_const(mrb, GLib_module(mrb), "G_GNUC_MAY_ALIAS", mrb_fixnum_value(G_GNUC_MAY_ALIAS));
 #endif
 #ifdef G_GNUC_NO_INSTRUMENT
   /* G_GNUC_NO_INSTRUMENT assumed to be an integer value */
-  // mrb_define_const(mrb, GLib_module(mrb), "G_GNUC_NO_INSTRUMENT", mrb_fixnum_value(G_GNUC_NO_INSTRUMENT));
+  mrb_define_const(mrb, GLib_module(mrb), "G_GNUC_NO_INSTRUMENT", mrb_fixnum_value(G_GNUC_NO_INSTRUMENT));
 #endif
 #ifdef G_GNUC_NORETURN
   /* G_GNUC_NORETURN assumed to be an integer value */
-  // mrb_define_const(mrb, GLib_module(mrb), "G_GNUC_NORETURN", mrb_fixnum_value(G_GNUC_NORETURN));
+  mrb_define_const(mrb, GLib_module(mrb), "G_GNUC_NORETURN", mrb_fixnum_value(G_GNUC_NORETURN));
 #endif
 #ifdef G_GNUC_NULL_TERMINATED
   /* G_GNUC_NULL_TERMINATED assumed to be an integer value */
-  // mrb_define_const(mrb, GLib_module(mrb), "G_GNUC_NULL_TERMINATED", mrb_fixnum_value(G_GNUC_NULL_TERMINATED));
+  mrb_define_const(mrb, GLib_module(mrb), "G_GNUC_NULL_TERMINATED", mrb_fixnum_value(G_GNUC_NULL_TERMINATED));
 #endif
 #ifdef G_GNUC_PRETTY_FUNCTION
   /* G_GNUC_PRETTY_FUNCTION appears to be a string */
@@ -710,18 +710,18 @@ mruby_GLib_define_macro_constants(mrb_state* mrb) {
 #endif
 #ifdef G_GNUC_PURE
   /* G_GNUC_PURE assumed to be an integer value */
-  // mrb_define_const(mrb, GLib_module(mrb), "G_GNUC_PURE", mrb_fixnum_value(G_GNUC_PURE));
+  mrb_define_const(mrb, GLib_module(mrb), "G_GNUC_PURE", mrb_fixnum_value(G_GNUC_PURE));
 #endif
 #ifdef G_GNUC_SCANF
   /* Ignoring function-like macro: G_GNUC_SCANF(format_idx, arg_idx) */
 #endif
 #ifdef G_GNUC_UNUSED
   /* G_GNUC_UNUSED assumed to be an integer value */
-  // mrb_define_const(mrb, GLib_module(mrb), "G_GNUC_UNUSED", mrb_fixnum_value(G_GNUC_UNUSED));
+  mrb_define_const(mrb, GLib_module(mrb), "G_GNUC_UNUSED", mrb_fixnum_value(G_GNUC_UNUSED));
 #endif
 #ifdef G_GNUC_WARN_UNUSED_RESULT
   /* G_GNUC_WARN_UNUSED_RESULT assumed to be an integer value */
-  // mrb_define_const(mrb, GLib_module(mrb), "G_GNUC_WARN_UNUSED_RESULT", mrb_fixnum_value(G_GNUC_WARN_UNUSED_RESULT));
+  mrb_define_const(mrb, GLib_module(mrb), "G_GNUC_WARN_UNUSED_RESULT", mrb_fixnum_value(G_GNUC_WARN_UNUSED_RESULT));
 #endif
 #ifdef g_hash_table_freeze
   /* Ignoring function-like macro: g_hash_table_freeze(hash_table) */
@@ -773,11 +773,11 @@ mruby_GLib_define_macro_constants(mrb_state* mrb) {
 #endif
 #ifdef G_INLINE_FUNC
   /* G_INLINE_FUNC assumed to be an integer value */
-  // mrb_define_const(mrb, GLib_module(mrb), "G_INLINE_FUNC", mrb_fixnum_value(G_INLINE_FUNC));
+  mrb_define_const(mrb, GLib_module(mrb), "G_INLINE_FUNC", mrb_fixnum_value(G_INLINE_FUNC));
 #endif
 #ifdef G_IO_CHANNEL_ERROR
   /* G_IO_CHANNEL_ERROR assumed to be an integer value */
-  // mrb_define_const(mrb, GLib_module(mrb), "G_IO_CHANNEL_ERROR", mrb_fixnum_value(G_IO_CHANNEL_ERROR));
+  mrb_define_const(mrb, GLib_module(mrb), "G_IO_CHANNEL_ERROR", mrb_fixnum_value(G_IO_CHANNEL_ERROR));
 #endif
 #ifdef G_IS_DIR_SEPARATOR
   /* Ignoring function-like macro: G_IS_DIR_SEPARATOR(c) */
@@ -891,7 +891,7 @@ mruby_GLib_define_macro_constants(mrb_state* mrb) {
 #endif
 #ifdef g_list_free1
   /* g_list_free1 assumed to be an integer value */
-  // mrb_define_const(mrb, GLib_module(mrb), "g_list_free1", mrb_fixnum_value(g_list_free1));
+  mrb_define_const(mrb, GLib_module(mrb), "g_list_free1", mrb_fixnum_value(g_list_free1));
 #endif
 #ifdef g_list_next
   /* Ignoring function-like macro: g_list_next(list) */
@@ -932,7 +932,7 @@ mruby_GLib_define_macro_constants(mrb_state* mrb) {
 #endif
 #ifdef G_LOG_DOMAIN
   /* G_LOG_DOMAIN assumed to be an integer value */
-  mrb_define_const(mrb, GLib_module(mrb), "G_LOG_DOMAIN", mrb_nil_value());
+  mrb_define_const(mrb, GLib_module(mrb), "G_LOG_DOMAIN", mrb_fixnum_value(G_LOG_DOMAIN));
 #endif
 #ifdef G_LOG_FATAL_MASK
   /* G_LOG_FATAL_MASK assumed to be an integer value */
@@ -944,11 +944,11 @@ mruby_GLib_define_macro_constants(mrb_state* mrb) {
 #endif
 #ifdef g_lstat
   /* g_lstat assumed to be an integer value */
-  // mrb_define_const(mrb, GLib_module(mrb), "g_lstat", mrb_fixnum_value(g_lstat));
+  mrb_define_const(mrb, GLib_module(mrb), "g_lstat", mrb_fixnum_value(g_lstat));
 #endif
 #ifdef G_MARKUP_ERROR
   /* G_MARKUP_ERROR assumed to be an integer value */
-  // mrb_define_const(mrb, GLib_module(mrb), "G_MARKUP_ERROR", mrb_fixnum_value(G_MARKUP_ERROR));
+  mrb_define_const(mrb, GLib_module(mrb), "G_MARKUP_ERROR", mrb_fixnum_value(G_MARKUP_ERROR));
 #endif
 #ifdef G_MAXINT16
   /* G_MAXINT16 assumed to be an integer value */
@@ -1007,7 +1007,7 @@ mruby_GLib_define_macro_constants(mrb_state* mrb) {
 #endif
 #ifdef g_mkdir
   /* g_mkdir assumed to be an integer value */
-  // mrb_define_const(mrb, GLib_module(mrb), "g_mkdir", mrb_fixnum_value(g_mkdir));
+  mrb_define_const(mrb, GLib_module(mrb), "g_mkdir", mrb_fixnum_value(g_mkdir));
 #endif
 #ifdef G_N_ELEMENTS
   /* Ignoring function-like macro: G_N_ELEMENTS(arr) */
@@ -1065,7 +1065,7 @@ mruby_GLib_define_macro_constants(mrb_state* mrb) {
 #endif
 #ifdef G_ONCE_INIT
   /* G_ONCE_INIT assumed to be an integer value */
-  // mrb_define_const(mrb, GLib_module(mrb), "G_ONCE_INIT", mrb_fixnum_value(G_ONCE_INIT));
+  mrb_define_const(mrb, GLib_module(mrb), "G_ONCE_INIT", mrb_fixnum_value(G_ONCE_INIT));
 #endif
 #ifdef g_once_init_enter
   /* Ignoring function-like macro: g_once_init_enter(location) */
@@ -1075,7 +1075,7 @@ mruby_GLib_define_macro_constants(mrb_state* mrb) {
 #endif
 #ifdef g_open
   /* g_open assumed to be an integer value */
-  // mrb_define_const(mrb, GLib_module(mrb), "g_open", mrb_fixnum_value(g_open));
+  mrb_define_const(mrb, GLib_module(mrb), "g_open", mrb_fixnum_value(g_open));
 #endif
 #ifdef G_OPTION_ERROR
   /* G_OPTION_ERROR assumed to be an integer value */
@@ -1148,7 +1148,7 @@ mruby_GLib_define_macro_constants(mrb_state* mrb) {
 #endif
 #ifdef G_QUEUE_INIT
   /* G_QUEUE_INIT assumed to be an integer value */
-  // mrb_define_const(mrb, GLib_module(mrb), "G_QUEUE_INIT", mrb_fixnum_value(G_QUEUE_INIT));
+  mrb_define_const(mrb, GLib_module(mrb), "G_QUEUE_INIT", mrb_fixnum_value(G_QUEUE_INIT));
 #endif
 #ifdef g_rand_boolean
   /* Ignoring function-like macro: g_rand_boolean(rand_) */
@@ -1162,11 +1162,11 @@ mruby_GLib_define_macro_constants(mrb_state* mrb) {
 #endif
 #ifdef g_remove
   /* g_remove assumed to be an integer value */
-  // mrb_define_const(mrb, GLib_module(mrb), "g_remove", mrb_fixnum_value(g_remove));
+  mrb_define_const(mrb, GLib_module(mrb), "g_remove", mrb_fixnum_value(g_remove));
 #endif
 #ifdef g_rename
   /* g_rename assumed to be an integer value */
-  // mrb_define_const(mrb, GLib_module(mrb), "g_rename", mrb_fixnum_value(g_rename));
+  mrb_define_const(mrb, GLib_module(mrb), "g_rename", mrb_fixnum_value(g_rename));
 #endif
 #ifdef g_renew
   /* Ignoring function-like macro: g_renew(struct_type, mem, n_structs) */
@@ -1227,7 +1227,7 @@ mruby_GLib_define_macro_constants(mrb_state* mrb) {
 #endif
 #ifdef g_slist_free1
   /* g_slist_free1 assumed to be an integer value */
-  // mrb_define_const(mrb, GLib_module(mrb), "g_slist_free1", mrb_fixnum_value(g_slist_free1));
+  mrb_define_const(mrb, GLib_module(mrb), "g_slist_free1", mrb_fixnum_value(g_slist_free1));
 #endif
 #ifdef g_slist_next
   /* Ignoring function-like macro: g_slist_next(slist) */
@@ -1254,7 +1254,7 @@ mruby_GLib_define_macro_constants(mrb_state* mrb) {
 #endif
 #ifdef g_stat
   /* g_stat assumed to be an integer value */
-  // mrb_define_const(mrb, GLib_module(mrb), "g_stat", mrb_fixnum_value(g_stat));
+  mrb_define_const(mrb, GLib_module(mrb), "g_stat", mrb_fixnum_value(g_stat));
 #endif
 #ifdef G_STATIC_ASSERT
   /* Ignoring function-like macro: G_STATIC_ASSERT(expr) */
@@ -1267,11 +1267,11 @@ mruby_GLib_define_macro_constants(mrb_state* mrb) {
 #endif
 #ifdef G_STMT_END
   /* G_STMT_END assumed to be an integer value */
-  // mrb_define_const(mrb, GLib_module(mrb), "G_STMT_END", mrb_fixnum_value(G_STMT_END));
+  mrb_define_const(mrb, GLib_module(mrb), "G_STMT_END", mrb_fixnum_value(G_STMT_END));
 #endif
 #ifdef G_STMT_START
   /* G_STMT_START assumed to be an integer value */
-  // mrb_define_const(mrb, GLib_module(mrb), "G_STMT_START", mrb_fixnum_value(G_STMT_START));
+  mrb_define_const(mrb, GLib_module(mrb), "G_STMT_START", mrb_fixnum_value(G_STMT_START));
 #endif
 #ifdef G_STR_DELIMITERS
   /* G_STR_DELIMITERS appears to be a string */
@@ -1279,18 +1279,18 @@ mruby_GLib_define_macro_constants(mrb_state* mrb) {
 #endif
 #ifdef G_STRFUNC
   /* G_STRFUNC assumed to be an integer value */
-  // mrb_define_const(mrb, GLib_module(mrb), "G_STRFUNC", mrb_fixnum_value(G_STRFUNC));
+  mrb_define_const(mrb, GLib_module(mrb), "G_STRFUNC", mrb_fixnum_value(G_STRFUNC));
 #endif
 #ifdef g_string_append_c
   /* Ignoring function-like macro: g_string_append_c(gstr, c) */
 #endif
 #ifdef g_string_sprintf
   /* g_string_sprintf assumed to be an integer value */
-  // mrb_define_const(mrb, GLib_module(mrb), "g_string_sprintf", mrb_fixnum_value(g_string_sprintf));
+  mrb_define_const(mrb, GLib_module(mrb), "g_string_sprintf", mrb_fixnum_value(g_string_sprintf));
 #endif
 #ifdef g_string_sprintfa
   /* g_string_sprintfa assumed to be an integer value */
-  // mrb_define_const(mrb, GLib_module(mrb), "g_string_sprintfa", mrb_fixnum_value(g_string_sprintfa));
+  mrb_define_const(mrb, GLib_module(mrb), "g_string_sprintfa", mrb_fixnum_value(g_string_sprintfa));
 #endif
 #ifdef G_STRINGIFY
   /* Ignoring function-like macro: G_STRINGIFY(macro_or_string) */
@@ -1300,7 +1300,7 @@ mruby_GLib_define_macro_constants(mrb_state* mrb) {
 #endif
 #ifdef G_STRLOC
   /* G_STRLOC appears to be a string */
-  // mrb_define_const(mrb, GLib_module(mrb), "G_STRLOC", mrb_str_new_cstr(mrb, G_STRLOC));
+  mrb_define_const(mrb, GLib_module(mrb), "G_STRLOC", mrb_str_new_cstr(mrb, G_STRLOC));
 #endif
 #ifdef g_strstrip
   /* Ignoring function-like macro: g_strstrip(string) */
@@ -1450,7 +1450,7 @@ mruby_GLib_define_macro_constants(mrb_state* mrb) {
 #endif
 #ifdef g_utime
   /* g_utime assumed to be an integer value */
-  // mrb_define_const(mrb, GLib_module(mrb), "g_utime", mrb_fixnum_value(g_utime));
+  mrb_define_const(mrb, GLib_module(mrb), "g_utime", mrb_fixnum_value(g_utime));
 #endif
 #ifdef G_VARIANT_PARSE_ERROR
   /* G_VARIANT_PARSE_ERROR assumed to be an integer value */
@@ -1461,111 +1461,111 @@ mruby_GLib_define_macro_constants(mrb_state* mrb) {
 #endif
 #ifdef G_VARIANT_TYPE_ANY
   /* G_VARIANT_TYPE_ANY appears to be a string */
-  // mrb_define_const(mrb, GLib_module(mrb), "G_VARIANT_TYPE_ANY", mrb_str_new_cstr(mrb, G_VARIANT_TYPE_ANY));
+  mrb_define_const(mrb, GLib_module(mrb), "G_VARIANT_TYPE_ANY", mrb_str_new_cstr(mrb, G_VARIANT_TYPE_ANY));
 #endif
 #ifdef G_VARIANT_TYPE_ARRAY
   /* G_VARIANT_TYPE_ARRAY appears to be a string */
-  // mrb_define_const(mrb, GLib_module(mrb), "G_VARIANT_TYPE_ARRAY", mrb_str_new_cstr(mrb, G_VARIANT_TYPE_ARRAY));
+  mrb_define_const(mrb, GLib_module(mrb), "G_VARIANT_TYPE_ARRAY", mrb_str_new_cstr(mrb, G_VARIANT_TYPE_ARRAY));
 #endif
 #ifdef G_VARIANT_TYPE_BASIC
   /* G_VARIANT_TYPE_BASIC appears to be a string */
-  // mrb_define_const(mrb, GLib_module(mrb), "G_VARIANT_TYPE_BASIC", mrb_str_new_cstr(mrb, G_VARIANT_TYPE_BASIC));
+  mrb_define_const(mrb, GLib_module(mrb), "G_VARIANT_TYPE_BASIC", mrb_str_new_cstr(mrb, G_VARIANT_TYPE_BASIC));
 #endif
 #ifdef G_VARIANT_TYPE_BOOLEAN
   /* G_VARIANT_TYPE_BOOLEAN appears to be a string */
-  // mrb_define_const(mrb, GLib_module(mrb), "G_VARIANT_TYPE_BOOLEAN", mrb_str_new_cstr(mrb, G_VARIANT_TYPE_BOOLEAN));
+  mrb_define_const(mrb, GLib_module(mrb), "G_VARIANT_TYPE_BOOLEAN", mrb_str_new_cstr(mrb, G_VARIANT_TYPE_BOOLEAN));
 #endif
 #ifdef G_VARIANT_TYPE_BYTE
   /* G_VARIANT_TYPE_BYTE appears to be a string */
-  // mrb_define_const(mrb, GLib_module(mrb), "G_VARIANT_TYPE_BYTE", mrb_str_new_cstr(mrb, G_VARIANT_TYPE_BYTE));
+  mrb_define_const(mrb, GLib_module(mrb), "G_VARIANT_TYPE_BYTE", mrb_str_new_cstr(mrb, G_VARIANT_TYPE_BYTE));
 #endif
 #ifdef G_VARIANT_TYPE_BYTESTRING
   /* G_VARIANT_TYPE_BYTESTRING appears to be a string */
-  // mrb_define_const(mrb, GLib_module(mrb), "G_VARIANT_TYPE_BYTESTRING", mrb_str_new_cstr(mrb, G_VARIANT_TYPE_BYTESTRING));
+  mrb_define_const(mrb, GLib_module(mrb), "G_VARIANT_TYPE_BYTESTRING", mrb_str_new_cstr(mrb, G_VARIANT_TYPE_BYTESTRING));
 #endif
 #ifdef G_VARIANT_TYPE_BYTESTRING_ARRAY
   /* G_VARIANT_TYPE_BYTESTRING_ARRAY appears to be a string */
-  // mrb_define_const(mrb, GLib_module(mrb), "G_VARIANT_TYPE_BYTESTRING_ARRAY", mrb_str_new_cstr(mrb, G_VARIANT_TYPE_BYTESTRING_ARRAY));
+  mrb_define_const(mrb, GLib_module(mrb), "G_VARIANT_TYPE_BYTESTRING_ARRAY", mrb_str_new_cstr(mrb, G_VARIANT_TYPE_BYTESTRING_ARRAY));
 #endif
 #ifdef G_VARIANT_TYPE_DICT_ENTRY
   /* G_VARIANT_TYPE_DICT_ENTRY appears to be a string */
-  // mrb_define_const(mrb, GLib_module(mrb), "G_VARIANT_TYPE_DICT_ENTRY", mrb_str_new_cstr(mrb, G_VARIANT_TYPE_DICT_ENTRY));
+  mrb_define_const(mrb, GLib_module(mrb), "G_VARIANT_TYPE_DICT_ENTRY", mrb_str_new_cstr(mrb, G_VARIANT_TYPE_DICT_ENTRY));
 #endif
 #ifdef G_VARIANT_TYPE_DICTIONARY
   /* G_VARIANT_TYPE_DICTIONARY appears to be a string */
-  // mrb_define_const(mrb, GLib_module(mrb), "G_VARIANT_TYPE_DICTIONARY", mrb_str_new_cstr(mrb, G_VARIANT_TYPE_DICTIONARY));
+  mrb_define_const(mrb, GLib_module(mrb), "G_VARIANT_TYPE_DICTIONARY", mrb_str_new_cstr(mrb, G_VARIANT_TYPE_DICTIONARY));
 #endif
 #ifdef G_VARIANT_TYPE_DOUBLE
   /* G_VARIANT_TYPE_DOUBLE appears to be a string */
-  // mrb_define_const(mrb, GLib_module(mrb), "G_VARIANT_TYPE_DOUBLE", mrb_str_new_cstr(mrb, G_VARIANT_TYPE_DOUBLE));
+  mrb_define_const(mrb, GLib_module(mrb), "G_VARIANT_TYPE_DOUBLE", mrb_str_new_cstr(mrb, G_VARIANT_TYPE_DOUBLE));
 #endif
 #ifdef G_VARIANT_TYPE_HANDLE
   /* G_VARIANT_TYPE_HANDLE appears to be a string */
-  // mrb_define_const(mrb, GLib_module(mrb), "G_VARIANT_TYPE_HANDLE", mrb_str_new_cstr(mrb, G_VARIANT_TYPE_HANDLE));
+  mrb_define_const(mrb, GLib_module(mrb), "G_VARIANT_TYPE_HANDLE", mrb_str_new_cstr(mrb, G_VARIANT_TYPE_HANDLE));
 #endif
 #ifdef G_VARIANT_TYPE_INT16
   /* G_VARIANT_TYPE_INT16 appears to be a string */
-  // mrb_define_const(mrb, GLib_module(mrb), "G_VARIANT_TYPE_INT16", mrb_str_new_cstr(mrb, G_VARIANT_TYPE_INT16));
+  mrb_define_const(mrb, GLib_module(mrb), "G_VARIANT_TYPE_INT16", mrb_str_new_cstr(mrb, G_VARIANT_TYPE_INT16));
 #endif
 #ifdef G_VARIANT_TYPE_INT32
   /* G_VARIANT_TYPE_INT32 appears to be a string */
-  // mrb_define_const(mrb, GLib_module(mrb), "G_VARIANT_TYPE_INT32", mrb_str_new_cstr(mrb, G_VARIANT_TYPE_INT32));
+  mrb_define_const(mrb, GLib_module(mrb), "G_VARIANT_TYPE_INT32", mrb_str_new_cstr(mrb, G_VARIANT_TYPE_INT32));
 #endif
 #ifdef G_VARIANT_TYPE_INT64
   /* G_VARIANT_TYPE_INT64 appears to be a string */
-  // mrb_define_const(mrb, GLib_module(mrb), "G_VARIANT_TYPE_INT64", mrb_str_new_cstr(mrb, G_VARIANT_TYPE_INT64));
+  mrb_define_const(mrb, GLib_module(mrb), "G_VARIANT_TYPE_INT64", mrb_str_new_cstr(mrb, G_VARIANT_TYPE_INT64));
 #endif
 #ifdef G_VARIANT_TYPE_MAYBE
   /* G_VARIANT_TYPE_MAYBE appears to be a string */
-  // mrb_define_const(mrb, GLib_module(mrb), "G_VARIANT_TYPE_MAYBE", mrb_str_new_cstr(mrb, G_VARIANT_TYPE_MAYBE));
+  mrb_define_const(mrb, GLib_module(mrb), "G_VARIANT_TYPE_MAYBE", mrb_str_new_cstr(mrb, G_VARIANT_TYPE_MAYBE));
 #endif
 #ifdef G_VARIANT_TYPE_OBJECT_PATH
   /* G_VARIANT_TYPE_OBJECT_PATH appears to be a string */
-  // mrb_define_const(mrb, GLib_module(mrb), "G_VARIANT_TYPE_OBJECT_PATH", mrb_str_new_cstr(mrb, G_VARIANT_TYPE_OBJECT_PATH));
+  mrb_define_const(mrb, GLib_module(mrb), "G_VARIANT_TYPE_OBJECT_PATH", mrb_str_new_cstr(mrb, G_VARIANT_TYPE_OBJECT_PATH));
 #endif
 #ifdef G_VARIANT_TYPE_OBJECT_PATH_ARRAY
   /* G_VARIANT_TYPE_OBJECT_PATH_ARRAY appears to be a string */
-  // mrb_define_const(mrb, GLib_module(mrb), "G_VARIANT_TYPE_OBJECT_PATH_ARRAY", mrb_str_new_cstr(mrb, G_VARIANT_TYPE_OBJECT_PATH_ARRAY));
+  mrb_define_const(mrb, GLib_module(mrb), "G_VARIANT_TYPE_OBJECT_PATH_ARRAY", mrb_str_new_cstr(mrb, G_VARIANT_TYPE_OBJECT_PATH_ARRAY));
 #endif
 #ifdef G_VARIANT_TYPE_SIGNATURE
   /* G_VARIANT_TYPE_SIGNATURE appears to be a string */
-  // mrb_define_const(mrb, GLib_module(mrb), "G_VARIANT_TYPE_SIGNATURE", mrb_str_new_cstr(mrb, G_VARIANT_TYPE_SIGNATURE));
+  mrb_define_const(mrb, GLib_module(mrb), "G_VARIANT_TYPE_SIGNATURE", mrb_str_new_cstr(mrb, G_VARIANT_TYPE_SIGNATURE));
 #endif
 #ifdef G_VARIANT_TYPE_STRING
   /* G_VARIANT_TYPE_STRING appears to be a string */
-  // mrb_define_const(mrb, GLib_module(mrb), "G_VARIANT_TYPE_STRING", mrb_str_new_cstr(mrb, G_VARIANT_TYPE_STRING));
+  mrb_define_const(mrb, GLib_module(mrb), "G_VARIANT_TYPE_STRING", mrb_str_new_cstr(mrb, G_VARIANT_TYPE_STRING));
 #endif
 #ifdef G_VARIANT_TYPE_STRING_ARRAY
   /* G_VARIANT_TYPE_STRING_ARRAY appears to be a string */
-  // mrb_define_const(mrb, GLib_module(mrb), "G_VARIANT_TYPE_STRING_ARRAY", mrb_str_new_cstr(mrb, G_VARIANT_TYPE_STRING_ARRAY));
+  mrb_define_const(mrb, GLib_module(mrb), "G_VARIANT_TYPE_STRING_ARRAY", mrb_str_new_cstr(mrb, G_VARIANT_TYPE_STRING_ARRAY));
 #endif
 #ifdef G_VARIANT_TYPE_TUPLE
   /* G_VARIANT_TYPE_TUPLE appears to be a string */
-  // mrb_define_const(mrb, GLib_module(mrb), "G_VARIANT_TYPE_TUPLE", mrb_str_new_cstr(mrb, G_VARIANT_TYPE_TUPLE));
+  mrb_define_const(mrb, GLib_module(mrb), "G_VARIANT_TYPE_TUPLE", mrb_str_new_cstr(mrb, G_VARIANT_TYPE_TUPLE));
 #endif
 #ifdef G_VARIANT_TYPE_UINT16
   /* G_VARIANT_TYPE_UINT16 appears to be a string */
-  // mrb_define_const(mrb, GLib_module(mrb), "G_VARIANT_TYPE_UINT16", mrb_str_new_cstr(mrb, G_VARIANT_TYPE_UINT16));
+  mrb_define_const(mrb, GLib_module(mrb), "G_VARIANT_TYPE_UINT16", mrb_str_new_cstr(mrb, G_VARIANT_TYPE_UINT16));
 #endif
 #ifdef G_VARIANT_TYPE_UINT32
   /* G_VARIANT_TYPE_UINT32 appears to be a string */
-  // mrb_define_const(mrb, GLib_module(mrb), "G_VARIANT_TYPE_UINT32", mrb_str_new_cstr(mrb, G_VARIANT_TYPE_UINT32));
+  mrb_define_const(mrb, GLib_module(mrb), "G_VARIANT_TYPE_UINT32", mrb_str_new_cstr(mrb, G_VARIANT_TYPE_UINT32));
 #endif
 #ifdef G_VARIANT_TYPE_UINT64
   /* G_VARIANT_TYPE_UINT64 appears to be a string */
-  // mrb_define_const(mrb, GLib_module(mrb), "G_VARIANT_TYPE_UINT64", mrb_str_new_cstr(mrb, G_VARIANT_TYPE_UINT64));
+  mrb_define_const(mrb, GLib_module(mrb), "G_VARIANT_TYPE_UINT64", mrb_str_new_cstr(mrb, G_VARIANT_TYPE_UINT64));
 #endif
 #ifdef G_VARIANT_TYPE_UNIT
   /* G_VARIANT_TYPE_UNIT appears to be a string */
-  // mrb_define_const(mrb, GLib_module(mrb), "G_VARIANT_TYPE_UNIT", mrb_str_new_cstr(mrb, G_VARIANT_TYPE_UNIT));
+  mrb_define_const(mrb, GLib_module(mrb), "G_VARIANT_TYPE_UNIT", mrb_str_new_cstr(mrb, G_VARIANT_TYPE_UNIT));
 #endif
 #ifdef G_VARIANT_TYPE_VARDICT
   /* G_VARIANT_TYPE_VARDICT appears to be a string */
-  // mrb_define_const(mrb, GLib_module(mrb), "G_VARIANT_TYPE_VARDICT", mrb_str_new_cstr(mrb, G_VARIANT_TYPE_VARDICT));
+  mrb_define_const(mrb, GLib_module(mrb), "G_VARIANT_TYPE_VARDICT", mrb_str_new_cstr(mrb, G_VARIANT_TYPE_VARDICT));
 #endif
 #ifdef G_VARIANT_TYPE_VARIANT
   /* G_VARIANT_TYPE_VARIANT appears to be a string */
-  // mrb_define_const(mrb, GLib_module(mrb), "G_VARIANT_TYPE_VARIANT", mrb_str_new_cstr(mrb, G_VARIANT_TYPE_VARIANT));
+  mrb_define_const(mrb, GLib_module(mrb), "G_VARIANT_TYPE_VARIANT", mrb_str_new_cstr(mrb, G_VARIANT_TYPE_VARIANT));
 #endif
 #ifdef g_warn_if_fail
   /* Ignoring function-like macro: g_warn_if_fail(expr) */
@@ -1605,135 +1605,135 @@ mruby_GLib_define_macro_constants(mrb_state* mrb) {
 #endif
 #ifdef GLIB_AVAILABLE_IN_2_26
   /* GLIB_AVAILABLE_IN_2_26 assumed to be an integer value */
-  // mrb_define_const(mrb, GLib_module(mrb), "GLIB_AVAILABLE_IN_2_26", mrb_fixnum_value(GLIB_AVAILABLE_IN_2_26));
+  mrb_define_const(mrb, GLib_module(mrb), "GLIB_AVAILABLE_IN_2_26", mrb_fixnum_value(GLIB_AVAILABLE_IN_2_26));
 #endif
 #ifdef GLIB_AVAILABLE_IN_2_28
   /* GLIB_AVAILABLE_IN_2_28 assumed to be an integer value */
-  // mrb_define_const(mrb, GLib_module(mrb), "GLIB_AVAILABLE_IN_2_28", mrb_fixnum_value(GLIB_AVAILABLE_IN_2_28));
+  mrb_define_const(mrb, GLib_module(mrb), "GLIB_AVAILABLE_IN_2_28", mrb_fixnum_value(GLIB_AVAILABLE_IN_2_28));
 #endif
 #ifdef GLIB_AVAILABLE_IN_2_30
   /* GLIB_AVAILABLE_IN_2_30 assumed to be an integer value */
-  // mrb_define_const(mrb, GLib_module(mrb), "GLIB_AVAILABLE_IN_2_30", mrb_fixnum_value(GLIB_AVAILABLE_IN_2_30));
+  mrb_define_const(mrb, GLib_module(mrb), "GLIB_AVAILABLE_IN_2_30", mrb_fixnum_value(GLIB_AVAILABLE_IN_2_30));
 #endif
 #ifdef GLIB_AVAILABLE_IN_2_32
   /* GLIB_AVAILABLE_IN_2_32 assumed to be an integer value */
-  // mrb_define_const(mrb, GLib_module(mrb), "GLIB_AVAILABLE_IN_2_32", mrb_fixnum_value(GLIB_AVAILABLE_IN_2_32));
+  mrb_define_const(mrb, GLib_module(mrb), "GLIB_AVAILABLE_IN_2_32", mrb_fixnum_value(GLIB_AVAILABLE_IN_2_32));
 #endif
 #ifdef GLIB_AVAILABLE_IN_2_34
   /* GLIB_AVAILABLE_IN_2_34 assumed to be an integer value */
-  // mrb_define_const(mrb, GLib_module(mrb), "GLIB_AVAILABLE_IN_2_34", mrb_fixnum_value(GLIB_AVAILABLE_IN_2_34));
+  mrb_define_const(mrb, GLib_module(mrb), "GLIB_AVAILABLE_IN_2_34", mrb_fixnum_value(GLIB_AVAILABLE_IN_2_34));
 #endif
 #ifdef GLIB_AVAILABLE_IN_2_36
   /* GLIB_AVAILABLE_IN_2_36 assumed to be an integer value */
-  // mrb_define_const(mrb, GLib_module(mrb), "GLIB_AVAILABLE_IN_2_36", mrb_fixnum_value(GLIB_AVAILABLE_IN_2_36));
+  mrb_define_const(mrb, GLib_module(mrb), "GLIB_AVAILABLE_IN_2_36", mrb_fixnum_value(GLIB_AVAILABLE_IN_2_36));
 #endif
 #ifdef GLIB_AVAILABLE_IN_2_38
   /* GLIB_AVAILABLE_IN_2_38 assumed to be an integer value */
-  // mrb_define_const(mrb, GLib_module(mrb), "GLIB_AVAILABLE_IN_2_38", mrb_fixnum_value(GLIB_AVAILABLE_IN_2_38));
+  mrb_define_const(mrb, GLib_module(mrb), "GLIB_AVAILABLE_IN_2_38", mrb_fixnum_value(GLIB_AVAILABLE_IN_2_38));
 #endif
 #ifdef GLIB_AVAILABLE_IN_2_40
   /* GLIB_AVAILABLE_IN_2_40 assumed to be an integer value */
-  // mrb_define_const(mrb, GLib_module(mrb), "GLIB_AVAILABLE_IN_2_40", mrb_fixnum_value(GLIB_AVAILABLE_IN_2_40));
+  mrb_define_const(mrb, GLib_module(mrb), "GLIB_AVAILABLE_IN_2_40", mrb_fixnum_value(GLIB_AVAILABLE_IN_2_40));
 #endif
 #ifdef GLIB_AVAILABLE_IN_2_42
   /* GLIB_AVAILABLE_IN_2_42 assumed to be an integer value */
-  // mrb_define_const(mrb, GLib_module(mrb), "GLIB_AVAILABLE_IN_2_42", mrb_fixnum_value(GLIB_AVAILABLE_IN_2_42));
+  mrb_define_const(mrb, GLib_module(mrb), "GLIB_AVAILABLE_IN_2_42", mrb_fixnum_value(GLIB_AVAILABLE_IN_2_42));
 #endif
 #ifdef GLIB_AVAILABLE_IN_2_44
   /* GLIB_AVAILABLE_IN_2_44 assumed to be an integer value */
-  // mrb_define_const(mrb, GLib_module(mrb), "GLIB_AVAILABLE_IN_2_44", mrb_fixnum_value(GLIB_AVAILABLE_IN_2_44));
+  mrb_define_const(mrb, GLib_module(mrb), "GLIB_AVAILABLE_IN_2_44", mrb_fixnum_value(GLIB_AVAILABLE_IN_2_44));
 #endif
 #ifdef GLIB_AVAILABLE_IN_2_46
   /* GLIB_AVAILABLE_IN_2_46 assumed to be an integer value */
-  // mrb_define_const(mrb, GLib_module(mrb), "GLIB_AVAILABLE_IN_2_46", mrb_fixnum_value(GLIB_AVAILABLE_IN_2_46));
+  mrb_define_const(mrb, GLib_module(mrb), "GLIB_AVAILABLE_IN_2_46", mrb_fixnum_value(GLIB_AVAILABLE_IN_2_46));
 #endif
 #ifdef GLIB_AVAILABLE_IN_ALL
   /* GLIB_AVAILABLE_IN_ALL assumed to be an integer value */
-  // mrb_define_const(mrb, GLib_module(mrb), "GLIB_AVAILABLE_IN_ALL", mrb_fixnum_value(GLIB_AVAILABLE_IN_ALL));
+  mrb_define_const(mrb, GLib_module(mrb), "GLIB_AVAILABLE_IN_ALL", mrb_fixnum_value(GLIB_AVAILABLE_IN_ALL));
 #endif
 #ifdef GLIB_CHECK_VERSION
   /* Ignoring function-like macro: GLIB_CHECK_VERSION(major, minor, micro) */
 #endif
 #ifdef GLIB_DEPRECATED
   /* GLIB_DEPRECATED assumed to be an integer value */
-  // mrb_define_const(mrb, GLib_module(mrb), "GLIB_DEPRECATED", mrb_fixnum_value(GLIB_DEPRECATED));
+  mrb_define_const(mrb, GLib_module(mrb), "GLIB_DEPRECATED", mrb_fixnum_value(GLIB_DEPRECATED));
 #endif
 #ifdef GLIB_DEPRECATED_FOR
   /* Ignoring function-like macro: GLIB_DEPRECATED_FOR(f) */
 #endif
 #ifdef GLIB_DEPRECATED_IN_2_26
   /* GLIB_DEPRECATED_IN_2_26 assumed to be an integer value */
-  // mrb_define_const(mrb, GLib_module(mrb), "GLIB_DEPRECATED_IN_2_26", mrb_fixnum_value(GLIB_DEPRECATED_IN_2_26));
+  mrb_define_const(mrb, GLib_module(mrb), "GLIB_DEPRECATED_IN_2_26", mrb_fixnum_value(GLIB_DEPRECATED_IN_2_26));
 #endif
 #ifdef GLIB_DEPRECATED_IN_2_26_FOR
   /* Ignoring function-like macro: GLIB_DEPRECATED_IN_2_26_FOR(f) */
 #endif
 #ifdef GLIB_DEPRECATED_IN_2_28
   /* GLIB_DEPRECATED_IN_2_28 assumed to be an integer value */
-  // mrb_define_const(mrb, GLib_module(mrb), "GLIB_DEPRECATED_IN_2_28", mrb_fixnum_value(GLIB_DEPRECATED_IN_2_28));
+  mrb_define_const(mrb, GLib_module(mrb), "GLIB_DEPRECATED_IN_2_28", mrb_fixnum_value(GLIB_DEPRECATED_IN_2_28));
 #endif
 #ifdef GLIB_DEPRECATED_IN_2_28_FOR
   /* Ignoring function-like macro: GLIB_DEPRECATED_IN_2_28_FOR(f) */
 #endif
 #ifdef GLIB_DEPRECATED_IN_2_30
   /* GLIB_DEPRECATED_IN_2_30 assumed to be an integer value */
-  // mrb_define_const(mrb, GLib_module(mrb), "GLIB_DEPRECATED_IN_2_30", mrb_fixnum_value(GLIB_DEPRECATED_IN_2_30));
+  mrb_define_const(mrb, GLib_module(mrb), "GLIB_DEPRECATED_IN_2_30", mrb_fixnum_value(GLIB_DEPRECATED_IN_2_30));
 #endif
 #ifdef GLIB_DEPRECATED_IN_2_30_FOR
   /* Ignoring function-like macro: GLIB_DEPRECATED_IN_2_30_FOR(f) */
 #endif
 #ifdef GLIB_DEPRECATED_IN_2_32
   /* GLIB_DEPRECATED_IN_2_32 assumed to be an integer value */
-  // mrb_define_const(mrb, GLib_module(mrb), "GLIB_DEPRECATED_IN_2_32", mrb_fixnum_value(GLIB_DEPRECATED_IN_2_32));
+  mrb_define_const(mrb, GLib_module(mrb), "GLIB_DEPRECATED_IN_2_32", mrb_fixnum_value(GLIB_DEPRECATED_IN_2_32));
 #endif
 #ifdef GLIB_DEPRECATED_IN_2_32_FOR
   /* Ignoring function-like macro: GLIB_DEPRECATED_IN_2_32_FOR(f) */
 #endif
 #ifdef GLIB_DEPRECATED_IN_2_34
   /* GLIB_DEPRECATED_IN_2_34 assumed to be an integer value */
-  // mrb_define_const(mrb, GLib_module(mrb), "GLIB_DEPRECATED_IN_2_34", mrb_fixnum_value(GLIB_DEPRECATED_IN_2_34));
+  mrb_define_const(mrb, GLib_module(mrb), "GLIB_DEPRECATED_IN_2_34", mrb_fixnum_value(GLIB_DEPRECATED_IN_2_34));
 #endif
 #ifdef GLIB_DEPRECATED_IN_2_34_FOR
   /* Ignoring function-like macro: GLIB_DEPRECATED_IN_2_34_FOR(f) */
 #endif
 #ifdef GLIB_DEPRECATED_IN_2_36
   /* GLIB_DEPRECATED_IN_2_36 assumed to be an integer value */
-  // mrb_define_const(mrb, GLib_module(mrb), "GLIB_DEPRECATED_IN_2_36", mrb_fixnum_value(GLIB_DEPRECATED_IN_2_36));
+  mrb_define_const(mrb, GLib_module(mrb), "GLIB_DEPRECATED_IN_2_36", mrb_fixnum_value(GLIB_DEPRECATED_IN_2_36));
 #endif
 #ifdef GLIB_DEPRECATED_IN_2_36_FOR
   /* Ignoring function-like macro: GLIB_DEPRECATED_IN_2_36_FOR(f) */
 #endif
 #ifdef GLIB_DEPRECATED_IN_2_38
   /* GLIB_DEPRECATED_IN_2_38 assumed to be an integer value */
-  // mrb_define_const(mrb, GLib_module(mrb), "GLIB_DEPRECATED_IN_2_38", mrb_fixnum_value(GLIB_DEPRECATED_IN_2_38));
+  mrb_define_const(mrb, GLib_module(mrb), "GLIB_DEPRECATED_IN_2_38", mrb_fixnum_value(GLIB_DEPRECATED_IN_2_38));
 #endif
 #ifdef GLIB_DEPRECATED_IN_2_38_FOR
   /* Ignoring function-like macro: GLIB_DEPRECATED_IN_2_38_FOR(f) */
 #endif
 #ifdef GLIB_DEPRECATED_IN_2_40
   /* GLIB_DEPRECATED_IN_2_40 assumed to be an integer value */
-  // mrb_define_const(mrb, GLib_module(mrb), "GLIB_DEPRECATED_IN_2_40", mrb_fixnum_value(GLIB_DEPRECATED_IN_2_40));
+  mrb_define_const(mrb, GLib_module(mrb), "GLIB_DEPRECATED_IN_2_40", mrb_fixnum_value(GLIB_DEPRECATED_IN_2_40));
 #endif
 #ifdef GLIB_DEPRECATED_IN_2_40_FOR
   /* Ignoring function-like macro: GLIB_DEPRECATED_IN_2_40_FOR(f) */
 #endif
 #ifdef GLIB_DEPRECATED_IN_2_42
   /* GLIB_DEPRECATED_IN_2_42 assumed to be an integer value */
-  // mrb_define_const(mrb, GLib_module(mrb), "GLIB_DEPRECATED_IN_2_42", mrb_fixnum_value(GLIB_DEPRECATED_IN_2_42));
+  mrb_define_const(mrb, GLib_module(mrb), "GLIB_DEPRECATED_IN_2_42", mrb_fixnum_value(GLIB_DEPRECATED_IN_2_42));
 #endif
 #ifdef GLIB_DEPRECATED_IN_2_42_FOR
   /* Ignoring function-like macro: GLIB_DEPRECATED_IN_2_42_FOR(f) */
 #endif
 #ifdef GLIB_DEPRECATED_IN_2_44
   /* GLIB_DEPRECATED_IN_2_44 assumed to be an integer value */
-  // mrb_define_const(mrb, GLib_module(mrb), "GLIB_DEPRECATED_IN_2_44", mrb_fixnum_value(GLIB_DEPRECATED_IN_2_44));
+  mrb_define_const(mrb, GLib_module(mrb), "GLIB_DEPRECATED_IN_2_44", mrb_fixnum_value(GLIB_DEPRECATED_IN_2_44));
 #endif
 #ifdef GLIB_DEPRECATED_IN_2_44_FOR
   /* Ignoring function-like macro: GLIB_DEPRECATED_IN_2_44_FOR(f) */
 #endif
 #ifdef GLIB_DEPRECATED_IN_2_46
   /* GLIB_DEPRECATED_IN_2_46 assumed to be an integer value */
-  // mrb_define_const(mrb, GLib_module(mrb), "GLIB_DEPRECATED_IN_2_46", mrb_fixnum_value(GLIB_DEPRECATED_IN_2_46));
+  mrb_define_const(mrb, GLib_module(mrb), "GLIB_DEPRECATED_IN_2_46", mrb_fixnum_value(GLIB_DEPRECATED_IN_2_46));
 #endif
 #ifdef GLIB_DEPRECATED_IN_2_46_FOR
   /* Ignoring function-like macro: GLIB_DEPRECATED_IN_2_46_FOR(f) */
@@ -1743,67 +1743,67 @@ mruby_GLib_define_macro_constants(mrb_state* mrb) {
 #endif
 #ifdef GLIB_VAR
   /* GLIB_VAR assumed to be an integer value */
-  // mrb_define_const(mrb, GLib_module(mrb), "GLIB_VAR", mrb_fixnum_value(GLIB_VAR));
+  mrb_define_const(mrb, GLib_module(mrb), "GLIB_VAR", mrb_fixnum_value(GLIB_VAR));
 #endif
 #ifdef GLIB_VERSION_2_26
   /* GLIB_VERSION_2_26 assumed to be an integer value */
-  // mrb_define_const(mrb, GLib_module(mrb), "GLIB_VERSION_2_26", mrb_fixnum_value(GLIB_VERSION_2_26));
+  mrb_define_const(mrb, GLib_module(mrb), "GLIB_VERSION_2_26", mrb_fixnum_value(GLIB_VERSION_2_26));
 #endif
 #ifdef GLIB_VERSION_2_28
   /* GLIB_VERSION_2_28 assumed to be an integer value */
-  // mrb_define_const(mrb, GLib_module(mrb), "GLIB_VERSION_2_28", mrb_fixnum_value(GLIB_VERSION_2_28));
+  mrb_define_const(mrb, GLib_module(mrb), "GLIB_VERSION_2_28", mrb_fixnum_value(GLIB_VERSION_2_28));
 #endif
 #ifdef GLIB_VERSION_2_30
   /* GLIB_VERSION_2_30 assumed to be an integer value */
-  // mrb_define_const(mrb, GLib_module(mrb), "GLIB_VERSION_2_30", mrb_fixnum_value(GLIB_VERSION_2_30));
+  mrb_define_const(mrb, GLib_module(mrb), "GLIB_VERSION_2_30", mrb_fixnum_value(GLIB_VERSION_2_30));
 #endif
 #ifdef GLIB_VERSION_2_32
   /* GLIB_VERSION_2_32 assumed to be an integer value */
-  // mrb_define_const(mrb, GLib_module(mrb), "GLIB_VERSION_2_32", mrb_fixnum_value(GLIB_VERSION_2_32));
+  mrb_define_const(mrb, GLib_module(mrb), "GLIB_VERSION_2_32", mrb_fixnum_value(GLIB_VERSION_2_32));
 #endif
 #ifdef GLIB_VERSION_2_34
   /* GLIB_VERSION_2_34 assumed to be an integer value */
-  // mrb_define_const(mrb, GLib_module(mrb), "GLIB_VERSION_2_34", mrb_fixnum_value(GLIB_VERSION_2_34));
+  mrb_define_const(mrb, GLib_module(mrb), "GLIB_VERSION_2_34", mrb_fixnum_value(GLIB_VERSION_2_34));
 #endif
 #ifdef GLIB_VERSION_2_36
   /* GLIB_VERSION_2_36 assumed to be an integer value */
-  // mrb_define_const(mrb, GLib_module(mrb), "GLIB_VERSION_2_36", mrb_fixnum_value(GLIB_VERSION_2_36));
+  mrb_define_const(mrb, GLib_module(mrb), "GLIB_VERSION_2_36", mrb_fixnum_value(GLIB_VERSION_2_36));
 #endif
 #ifdef GLIB_VERSION_2_38
   /* GLIB_VERSION_2_38 assumed to be an integer value */
-  // mrb_define_const(mrb, GLib_module(mrb), "GLIB_VERSION_2_38", mrb_fixnum_value(GLIB_VERSION_2_38));
+  mrb_define_const(mrb, GLib_module(mrb), "GLIB_VERSION_2_38", mrb_fixnum_value(GLIB_VERSION_2_38));
 #endif
 #ifdef GLIB_VERSION_2_40
   /* GLIB_VERSION_2_40 assumed to be an integer value */
-  // mrb_define_const(mrb, GLib_module(mrb), "GLIB_VERSION_2_40", mrb_fixnum_value(GLIB_VERSION_2_40));
+  mrb_define_const(mrb, GLib_module(mrb), "GLIB_VERSION_2_40", mrb_fixnum_value(GLIB_VERSION_2_40));
 #endif
 #ifdef GLIB_VERSION_2_42
   /* GLIB_VERSION_2_42 assumed to be an integer value */
-  // mrb_define_const(mrb, GLib_module(mrb), "GLIB_VERSION_2_42", mrb_fixnum_value(GLIB_VERSION_2_42));
+  mrb_define_const(mrb, GLib_module(mrb), "GLIB_VERSION_2_42", mrb_fixnum_value(GLIB_VERSION_2_42));
 #endif
 #ifdef GLIB_VERSION_2_44
   /* GLIB_VERSION_2_44 assumed to be an integer value */
-  // mrb_define_const(mrb, GLib_module(mrb), "GLIB_VERSION_2_44", mrb_fixnum_value(GLIB_VERSION_2_44));
+  mrb_define_const(mrb, GLib_module(mrb), "GLIB_VERSION_2_44", mrb_fixnum_value(GLIB_VERSION_2_44));
 #endif
 #ifdef GLIB_VERSION_2_46
   /* GLIB_VERSION_2_46 assumed to be an integer value */
-  // mrb_define_const(mrb, GLib_module(mrb), "GLIB_VERSION_2_46", mrb_fixnum_value(GLIB_VERSION_2_46));
+  mrb_define_const(mrb, GLib_module(mrb), "GLIB_VERSION_2_46", mrb_fixnum_value(GLIB_VERSION_2_46));
 #endif
 #ifdef GLIB_VERSION_CUR_STABLE
   /* GLIB_VERSION_CUR_STABLE assumed to be an integer value */
-  // mrb_define_const(mrb, GLib_module(mrb), "GLIB_VERSION_CUR_STABLE", mrb_fixnum_value(GLIB_VERSION_CUR_STABLE));
+  mrb_define_const(mrb, GLib_module(mrb), "GLIB_VERSION_CUR_STABLE", mrb_fixnum_value(GLIB_VERSION_CUR_STABLE));
 #endif
 #ifdef GLIB_VERSION_MAX_ALLOWED
   /* GLIB_VERSION_MAX_ALLOWED assumed to be an integer value */
-  // mrb_define_const(mrb, GLib_module(mrb), "GLIB_VERSION_MAX_ALLOWED", mrb_fixnum_value(GLIB_VERSION_MAX_ALLOWED));
+  mrb_define_const(mrb, GLib_module(mrb), "GLIB_VERSION_MAX_ALLOWED", mrb_fixnum_value(GLIB_VERSION_MAX_ALLOWED));
 #endif
 #ifdef GLIB_VERSION_MIN_REQUIRED
   /* GLIB_VERSION_MIN_REQUIRED assumed to be an integer value */
-  // mrb_define_const(mrb, GLib_module(mrb), "GLIB_VERSION_MIN_REQUIRED", mrb_fixnum_value(GLIB_VERSION_MIN_REQUIRED));
+  mrb_define_const(mrb, GLib_module(mrb), "GLIB_VERSION_MIN_REQUIRED", mrb_fixnum_value(GLIB_VERSION_MIN_REQUIRED));
 #endif
 #ifdef GLIB_VERSION_PREV_STABLE
   /* GLIB_VERSION_PREV_STABLE assumed to be an integer value */
-  // mrb_define_const(mrb, GLib_module(mrb), "GLIB_VERSION_PREV_STABLE", mrb_fixnum_value(GLIB_VERSION_PREV_STABLE));
+  mrb_define_const(mrb, GLib_module(mrb), "GLIB_VERSION_PREV_STABLE", mrb_fixnum_value(GLIB_VERSION_PREV_STABLE));
 #endif
 #ifdef GLONG_FROM_BE
   /* Ignoring function-like macro: GLONG_FROM_BE(val) */
@@ -1906,6 +1906,6 @@ mruby_GLib_define_macro_constants(mrb_state* mrb) {
 #endif
 #ifdef TRUE
   /* TRUE assumed to be an integer value */
-  // mrb_define_const(mrb, GLib_module(mrb), "TRUE", mrb_fixnum_value(TRUE));
+  mrb_define_const(mrb, GLib_module(mrb), "TRUE", mrb_fixnum_value(TRUE));
 #endif
 }

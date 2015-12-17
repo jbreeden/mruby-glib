@@ -6,8 +6,8 @@
   - TODO_mruby_unbox_void_PTR
   - TODO_type_check_void_PTR
 */
-#define BIND__g_utf8_make_valid_FUNCTION FALSE
-#define BIND_g_access_FUNCTION FALSE
+#define BIND__g_utf8_make_valid_FUNCTION TRUE
+#define BIND_g_access_FUNCTION TRUE
 #define BIND_g_array_append_vals_FUNCTION FALSE
 /* Couln't complete binding for g_array_append_vals
   - TODO_mruby_unbox_void_PTR
@@ -2902,11 +2902,9 @@
 #define BIND_g_spaced_primes_closest_FUNCTION TRUE
 #define BIND_g_spawn_async_FUNCTION FALSE
 /* Couln't complete binding for g_spawn_async
-  - TODO_mruby_unbox_char_PTR_PTR
   - TODO_mruby_unbox_int_PTR
   - TODO_mruby_unbox_void_LPAREN_PTR_RPAREN_LPAREN_void_PTR_RPAREN
   - TODO_mruby_unbox_void_PTR
-  - TODO_type_check_char_PTR_PTR
   - TODO_type_check_int_PTR
   - TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_void_PTR_RPAREN
   - TODO_type_check_void_PTR

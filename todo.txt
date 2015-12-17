@@ -1,19 +1,62 @@
-- Update header generation...
+#define BIND_g_atexit_FUNCTION FALSE
 
-#include <stdlib.h>
-#include "mruby.h"
-#include "mruby/array.h"
-#include "mruby/class.h"
-#include "mruby/data.h"
-#include "mruby/string.h"
-#include "mruby/value.h"
-#include "mruby/variable.h"
+#define BIND_g_atomic_int_add_FUNCTION FALSE
+#define BIND_g_atomic_int_and_FUNCTION FALSE
+#define BIND_g_atomic_int_compare_and_exchange_FUNCTION FALSE
+#define BIND_g_atomic_int_dec_and_test_FUNCTION FALSE
+#define BIND_g_atomic_int_exchange_and_add_FUNCTION FALSE
+#define BIND_g_atomic_int_get_FUNCTION FALSE
+#define BIND_g_atomic_int_inc_FUNCTION FALSE
+#define BIND_g_atomic_int_or_FUNCTION FALSE
+#define BIND_g_atomic_int_set_FUNCTION FALSE
+#define BIND_g_atomic_int_xor_FUNCTION FALSE
+#define BIND_g_atomic_pointer_add_FUNCTION FALSE
+#define BIND_g_atomic_pointer_and_FUNCTION FALSE
+#define BIND_g_atomic_pointer_compare_and_exchange_FUNCTION FALSE
+#define BIND_g_atomic_pointer_get_FUNCTION FALSE
+#define BIND_g_atomic_pointer_or_FUNCTION FALSE
+#define BIND_g_atomic_pointer_set_FUNCTION FALSE
+#define BIND_g_atomic_pointer_xor_FUNCTION FALSE
 
-#include "glib.h"
-#include "glib/gi18n.h"
-#include "glib/gprintf.h"
-#include "glib/gstdio.h"
+#define BIND_g_base64_decode_FUNCTION FALSE
+#define BIND_g_base64_decode_inplace_FUNCTION FALSE
+#define BIND_g_base64_decode_step_FUNCTION FALSE
+#define BIND_g_base64_encode_FUNCTION FALSE
+#define BIND_g_base64_encode_close_FUNCTION FALSE
+#define BIND_g_base64_encode_step_FUNCTION FALSE
 
-#include "mruby_GLib_functions.h"
-#include "mruby_GLib_classes.h"
-#include "mruby_GLib_boxing.h"
+#define BIND_g_checksum_get_digest_FUNCTION FALSE
+#define BIND_g_checksum_type_get_length_FUNCTION FALSE
+#define BIND_g_checksum_update_FUNCTION FALSE
+
+
+#define BIND_g_environ_getenv_FUNCTION FALSE
+#define BIND_g_environ_setenv_FUNCTION FALSE
+#define BIND_g_environ_unsetenv_FUNCTION FALSE
+
+#define BIND_g_file_error_quark_FUNCTION FALSE
+#define BIND_g_file_get_contents_FUNCTION FALSE
+#define BIND_g_file_open_tmp_FUNCTION FALSE
+#define BIND_g_filename_from_uri_FUNCTION FALSE
+#define BIND_g_filename_from_utf8_FUNCTION FALSE
+#define BIND_g_filename_to_utf8_FUNCTION FALSE
+#define BIND_g_fprintf_FUNCTION FALSE
+#define BIND_g_free_FUNCTION FALSE
+#define BIND_g_get_charset_FUNCTION FALSE
+#define BIND_g_get_environ_FUNCTION FALSE
+
+#define BIND_g_iconv_FUNCTION FALSE
+#define BIND_g_iconv_open_FUNCTION FALSE
+
+#define BIND_g_malloc_FUNCTION FALSE
+#define BIND_g_rand_int_FUNCTION FALSE
+#define BIND_g_random_int_FUNCTION FALSE
+#define BIND_g_shell_error_quark_FUNCTION FALSE
+#define BIND_g_shell_parse_argv_FUNCTION FALSE
+
+#define BIND_g_spawn_async_FUNCTION FALSE
+#define BIND_g_spawn_async_with_pipes_FUNCTION FALSE
+#define BIND_g_spawn_command_line_sync_FUNCTION FALSE
+#define BIND_g_spawn_error_quark_FUNCTION FALSE
+#define BIND_g_spawn_exit_error_quark_FUNCTION FALSE
+#define BIND_g_spawn_sync_FUNCTION FALSE
