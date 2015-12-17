@@ -1,4 +1,6 @@
 CTypes.typedef('char *', 'gchar *')
+CTypes['gchar *'].return_cleanup = "g_free(%{value});"
+CTypes.typedef('const char *', 'const gchar *')
 
 CTypes.define('struct _GError **') do
   self.recv_type = "struct GError *"
