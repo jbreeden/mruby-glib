@@ -5,5 +5,5 @@ end
 
 desc 'Generate bindings'
 task :bindings do
-  sh "ruby ~/projects/mruby-bindings/mruby_bindings.rb --input declarations.json --gem mruby-glib --module GLib --force --verbose"
+  sh "ruby ~/projects/mruby-bindings/mruby_bindings.rb -l ctypes.rb --input declarations.json --gem mruby-glib --module GLib --force --verbose"
 end

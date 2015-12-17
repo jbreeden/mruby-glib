@@ -38,7 +38,6 @@ TODO_mruby_box_guint8_PTR
 TODO_mruby_box_gunichar2_PTR
 TODO_mruby_box_gunichar_PTR
 TODO_mruby_box_int_PTR
-TODO_mruby_box_size_t
 TODO_mruby_box_time_t
 TODO_mruby_box_void_PTR
 TODO_mruby_unbox_GBSearchArray_PTR

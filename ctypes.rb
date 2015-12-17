@@ -1,0 +1,1 @@
+CTypes.typedef('char *', 'gchar *')

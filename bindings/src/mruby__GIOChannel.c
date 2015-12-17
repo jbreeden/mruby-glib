@@ -163,7 +163,7 @@ mrb_GLib_GIOChannel_get_encoding(mrb_state* mrb, mrb_value self) {
 
   gchar * native_field = native_self->encoding;
 
-  mrb_value ruby_field = TODO_mruby_box_gchar_PTR(mrb, native_field);
+  mrb_value ruby_field = mrb_str_new_cstr(mrb, native_field);
 
   return ruby_field;
 }
@@ -183,9 +183,17 @@ mrb_GLib_GIOChannel_set_encoding(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "o", &ruby_field);
 
   /* type checking */
-  TODO_type_check_gchar_PTR(ruby_field);
+  if (!mrb_obj_is_kind_of(mrb, ruby_field, mrb->string_class)) {
+    mrb_raise(mrb, E_TYPE_ERROR, "String expected");
+    return mrb_nil_value();
+  }
 
-  gchar * native_field = TODO_mruby_unbox_gchar_PTR(ruby_field);
+  /* WARNING: Allocating new memory to create 'char *' from 'const char *'.
+   *          Please verify that this memory is cleaned up correctly.
+   *
+   *          Has this been verified? [No]
+   */
+  char * native_field = strdup(mrb_string_value_cstr(mrb, &ruby_field));
 
   native_self->encoding = native_field;
 
@@ -286,7 +294,7 @@ mrb_GLib_GIOChannel_get_line_term(mrb_state* mrb, mrb_value self) {
 
   gchar * native_field = native_self->line_term;
 
-  mrb_value ruby_field = TODO_mruby_box_gchar_PTR(mrb, native_field);
+  mrb_value ruby_field = mrb_str_new_cstr(mrb, native_field);
 
   return ruby_field;
 }
@@ -306,9 +314,17 @@ mrb_GLib_GIOChannel_set_line_term(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "o", &ruby_field);
 
   /* type checking */
-  TODO_type_check_gchar_PTR(ruby_field);
+  if (!mrb_obj_is_kind_of(mrb, ruby_field, mrb->string_class)) {
+    mrb_raise(mrb, E_TYPE_ERROR, "String expected");
+    return mrb_nil_value();
+  }
 
-  gchar * native_field = TODO_mruby_unbox_gchar_PTR(ruby_field);
+  /* WARNING: Allocating new memory to create 'char *' from 'const char *'.
+   *          Please verify that this memory is cleaned up correctly.
+   *
+   *          Has this been verified? [No]
+   */
+  char * native_field = strdup(mrb_string_value_cstr(mrb, &ruby_field));
 
   native_self->line_term = native_field;
 
