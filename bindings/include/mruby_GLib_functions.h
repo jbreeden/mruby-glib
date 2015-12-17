@@ -441,16 +441,12 @@
 #define BIND_g_bookmark_file_get_added_FUNCTION FALSE
 /* Couln't complete binding for g_bookmark_file_get_added
   - TODO_mruby_box_time_t
-  - TODO_mruby_unbox__GError_PTR_PTR
-  - TODO_type_check__GError_PTR_PTR
 */
 #define BIND_g_bookmark_file_get_app_info_FUNCTION FALSE
 /* Couln't complete binding for g_bookmark_file_get_app_info
-  - TODO_mruby_unbox__GError_PTR_PTR
   - TODO_mruby_unbox_char_PTR_PTR
   - TODO_mruby_unbox_long_PTR
   - TODO_mruby_unbox_unsigned_int_PTR
-  - TODO_type_check__GError_PTR_PTR
   - TODO_type_check_char_PTR_PTR
   - TODO_type_check_long_PTR
   - TODO_type_check_unsigned_int_PTR
@@ -458,53 +454,29 @@
 #define BIND_g_bookmark_file_get_applications_FUNCTION FALSE
 /* Couln't complete binding for g_bookmark_file_get_applications
   - TODO_mruby_box_gchar_PTR_PTR
-  - TODO_mruby_unbox__GError_PTR_PTR
   - TODO_mruby_unbox_unsigned_long_PTR
-  - TODO_type_check__GError_PTR_PTR
   - TODO_type_check_unsigned_long_PTR
 */
-#define BIND_g_bookmark_file_get_description_FUNCTION FALSE
-/* Couln't complete binding for g_bookmark_file_get_description
-  - TODO_mruby_unbox__GError_PTR_PTR
-  - TODO_type_check__GError_PTR_PTR
-*/
+#define BIND_g_bookmark_file_get_description_FUNCTION TRUE
 #define BIND_g_bookmark_file_get_groups_FUNCTION FALSE
 /* Couln't complete binding for g_bookmark_file_get_groups
   - TODO_mruby_box_gchar_PTR_PTR
-  - TODO_mruby_unbox__GError_PTR_PTR
   - TODO_mruby_unbox_unsigned_long_PTR
-  - TODO_type_check__GError_PTR_PTR
   - TODO_type_check_unsigned_long_PTR
 */
 #define BIND_g_bookmark_file_get_icon_FUNCTION FALSE
 /* Couln't complete binding for g_bookmark_file_get_icon
-  - TODO_mruby_unbox__GError_PTR_PTR
   - TODO_mruby_unbox_char_PTR_PTR
-  - TODO_type_check__GError_PTR_PTR
   - TODO_type_check_char_PTR_PTR
 */
-#define BIND_g_bookmark_file_get_is_private_FUNCTION FALSE
-/* Couln't complete binding for g_bookmark_file_get_is_private
-  - TODO_mruby_unbox__GError_PTR_PTR
-  - TODO_type_check__GError_PTR_PTR
-*/
-#define BIND_g_bookmark_file_get_mime_type_FUNCTION FALSE
-/* Couln't complete binding for g_bookmark_file_get_mime_type
-  - TODO_mruby_unbox__GError_PTR_PTR
-  - TODO_type_check__GError_PTR_PTR
-*/
+#define BIND_g_bookmark_file_get_is_private_FUNCTION TRUE
+#define BIND_g_bookmark_file_get_mime_type_FUNCTION TRUE
 #define BIND_g_bookmark_file_get_modified_FUNCTION FALSE
 /* Couln't complete binding for g_bookmark_file_get_modified
   - TODO_mruby_box_time_t
-  - TODO_mruby_unbox__GError_PTR_PTR
-  - TODO_type_check__GError_PTR_PTR
 */
 #define BIND_g_bookmark_file_get_size_FUNCTION TRUE
-#define BIND_g_bookmark_file_get_title_FUNCTION FALSE
-/* Couln't complete binding for g_bookmark_file_get_title
-  - TODO_mruby_unbox__GError_PTR_PTR
-  - TODO_type_check__GError_PTR_PTR
-*/
+#define BIND_g_bookmark_file_get_title_FUNCTION TRUE
 #define BIND_g_bookmark_file_get_uris_FUNCTION FALSE
 /* Couln't complete binding for g_bookmark_file_get_uris
   - TODO_mruby_box_gchar_PTR_PTR
@@ -514,64 +486,24 @@
 #define BIND_g_bookmark_file_get_visited_FUNCTION FALSE
 /* Couln't complete binding for g_bookmark_file_get_visited
   - TODO_mruby_box_time_t
-  - TODO_mruby_unbox__GError_PTR_PTR
-  - TODO_type_check__GError_PTR_PTR
 */
-#define BIND_g_bookmark_file_has_application_FUNCTION FALSE
-/* Couln't complete binding for g_bookmark_file_has_application
-  - TODO_mruby_unbox__GError_PTR_PTR
-  - TODO_type_check__GError_PTR_PTR
-*/
-#define BIND_g_bookmark_file_has_group_FUNCTION FALSE
-/* Couln't complete binding for g_bookmark_file_has_group
-  - TODO_mruby_unbox__GError_PTR_PTR
-  - TODO_type_check__GError_PTR_PTR
-*/
+#define BIND_g_bookmark_file_has_application_FUNCTION TRUE
+#define BIND_g_bookmark_file_has_group_FUNCTION TRUE
 #define BIND_g_bookmark_file_has_item_FUNCTION TRUE
-#define BIND_g_bookmark_file_load_from_data_FUNCTION FALSE
-/* Couln't complete binding for g_bookmark_file_load_from_data
-  - TODO_mruby_unbox__GError_PTR_PTR
-  - TODO_type_check__GError_PTR_PTR
-*/
+#define BIND_g_bookmark_file_load_from_data_FUNCTION TRUE
 #define BIND_g_bookmark_file_load_from_data_dirs_FUNCTION FALSE
 /* Couln't complete binding for g_bookmark_file_load_from_data_dirs
-  - TODO_mruby_unbox__GError_PTR_PTR
   - TODO_mruby_unbox_char_PTR_PTR
-  - TODO_type_check__GError_PTR_PTR
   - TODO_type_check_char_PTR_PTR
 */
-#define BIND_g_bookmark_file_load_from_file_FUNCTION FALSE
-/* Couln't complete binding for g_bookmark_file_load_from_file
-  - TODO_mruby_unbox__GError_PTR_PTR
-  - TODO_type_check__GError_PTR_PTR
-*/
-#define BIND_g_bookmark_file_move_item_FUNCTION FALSE
-/* Couln't complete binding for g_bookmark_file_move_item
-  - TODO_mruby_unbox__GError_PTR_PTR
-  - TODO_type_check__GError_PTR_PTR
-*/
+#define BIND_g_bookmark_file_load_from_file_FUNCTION TRUE
+#define BIND_g_bookmark_file_move_item_FUNCTION TRUE
 #define BIND_g_bookmark_file_new_FUNCTION TRUE
-#define BIND_g_bookmark_file_remove_application_FUNCTION FALSE
-/* Couln't complete binding for g_bookmark_file_remove_application
-  - TODO_mruby_unbox__GError_PTR_PTR
-  - TODO_type_check__GError_PTR_PTR
-*/
-#define BIND_g_bookmark_file_remove_group_FUNCTION FALSE
-/* Couln't complete binding for g_bookmark_file_remove_group
-  - TODO_mruby_unbox__GError_PTR_PTR
-  - TODO_type_check__GError_PTR_PTR
-*/
-#define BIND_g_bookmark_file_remove_item_FUNCTION FALSE
-/* Couln't complete binding for g_bookmark_file_remove_item
-  - TODO_mruby_unbox__GError_PTR_PTR
-  - TODO_type_check__GError_PTR_PTR
-*/
+#define BIND_g_bookmark_file_remove_application_FUNCTION TRUE
+#define BIND_g_bookmark_file_remove_group_FUNCTION TRUE
+#define BIND_g_bookmark_file_remove_item_FUNCTION TRUE
 #define BIND_g_bookmark_file_set_added_FUNCTION TRUE
-#define BIND_g_bookmark_file_set_app_info_FUNCTION FALSE
-/* Couln't complete binding for g_bookmark_file_set_app_info
-  - TODO_mruby_unbox__GError_PTR_PTR
-  - TODO_type_check__GError_PTR_PTR
-*/
+#define BIND_g_bookmark_file_set_app_info_FUNCTION TRUE
 #define BIND_g_bookmark_file_set_description_FUNCTION TRUE
 #define BIND_g_bookmark_file_set_groups_FUNCTION FALSE
 /* Couln't complete binding for g_bookmark_file_set_groups
@@ -586,16 +518,10 @@
 #define BIND_g_bookmark_file_set_visited_FUNCTION TRUE
 #define BIND_g_bookmark_file_to_data_FUNCTION FALSE
 /* Couln't complete binding for g_bookmark_file_to_data
-  - TODO_mruby_unbox__GError_PTR_PTR
   - TODO_mruby_unbox_unsigned_long_PTR
-  - TODO_type_check__GError_PTR_PTR
   - TODO_type_check_unsigned_long_PTR
 */
-#define BIND_g_bookmark_file_to_file_FUNCTION FALSE
-/* Couln't complete binding for g_bookmark_file_to_file
-  - TODO_mruby_unbox__GError_PTR_PTR
-  - TODO_type_check__GError_PTR_PTR
-*/
+#define BIND_g_bookmark_file_to_file_FUNCTION TRUE
 #define BIND_g_bsearch_array_create_FUNCTION FALSE
 /* Couln't complete binding for g_bsearch_array_create
   - TODO_mruby_box_GBSearchArray_PTR
@@ -808,11 +734,7 @@
   - TODO_type_check_void_PTR
 */
 #define BIND_g_child_watch_source_new_FUNCTION TRUE
-#define BIND_g_clear_error_FUNCTION FALSE
-/* Couln't complete binding for g_clear_error
-  - TODO_mruby_unbox__GError_PTR_PTR
-  - TODO_type_check__GError_PTR_PTR
-*/
+#define BIND_g_clear_error_FUNCTION TRUE
 #define BIND_g_clear_pointer_FUNCTION FALSE
 /* Couln't complete binding for g_clear_pointer
   - TODO_mruby_unbox_void_LPAREN_PTR_RPAREN_LPAREN_void_PTR_RPAREN
@@ -820,11 +742,7 @@
   - TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_void_PTR_RPAREN
   - TODO_type_check_void_PTR_PTR
 */
-#define BIND_g_close_FUNCTION FALSE
-/* Couln't complete binding for g_close
-  - TODO_mruby_unbox__GError_PTR_PTR
-  - TODO_type_check__GError_PTR_PTR
-*/
+#define BIND_g_close_FUNCTION TRUE
 #define BIND_g_compute_checksum_for_bytes_FUNCTION FALSE
 /* Couln't complete binding for g_compute_checksum_for_bytes
   - TODO_mruby_unbox_GChecksumType
@@ -872,24 +790,18 @@
 */
 #define BIND_g_convert_FUNCTION FALSE
 /* Couln't complete binding for g_convert
-  - TODO_mruby_unbox__GError_PTR_PTR
   - TODO_mruby_unbox_unsigned_long_PTR
-  - TODO_type_check__GError_PTR_PTR
   - TODO_type_check_unsigned_long_PTR
 */
 #define BIND_g_convert_error_quark_FUNCTION TRUE
 #define BIND_g_convert_with_fallback_FUNCTION FALSE
 /* Couln't complete binding for g_convert_with_fallback
-  - TODO_mruby_unbox__GError_PTR_PTR
   - TODO_mruby_unbox_unsigned_long_PTR
-  - TODO_type_check__GError_PTR_PTR
   - TODO_type_check_unsigned_long_PTR
 */
 #define BIND_g_convert_with_iconv_FUNCTION FALSE
 /* Couln't complete binding for g_convert_with_iconv
-  - TODO_mruby_unbox__GError_PTR_PTR
   - TODO_mruby_unbox_unsigned_long_PTR
-  - TODO_type_check__GError_PTR_PTR
   - TODO_type_check_unsigned_long_PTR
 */
 #define BIND_g_datalist_clear_FUNCTION FALSE
@@ -1166,21 +1078,13 @@
   - TODO_mruby_box_gchar_PTR
 */
 #define BIND_g_dir_close_FUNCTION TRUE
-#define BIND_g_dir_make_tmp_FUNCTION FALSE
-/* Couln't complete binding for g_dir_make_tmp
-  - TODO_mruby_unbox__GError_PTR_PTR
-  - TODO_type_check__GError_PTR_PTR
-*/
+#define BIND_g_dir_make_tmp_FUNCTION TRUE
 #define BIND_g_dir_new_from_dirp_FUNCTION FALSE
 /* Couln't complete binding for g_dir_new_from_dirp
   - TODO_mruby_unbox_void_PTR
   - TODO_type_check_void_PTR
 */
-#define BIND_g_dir_open_FUNCTION FALSE
-/* Couln't complete binding for g_dir_open
-  - TODO_mruby_unbox__GError_PTR_PTR
-  - TODO_type_check__GError_PTR_PTR
-*/
+#define BIND_g_dir_open_FUNCTION TRUE
 #define BIND_g_dir_open_with_errno_FUNCTION TRUE
 #define BIND_g_dir_read_name_FUNCTION FALSE
 /* Couln't complete binding for g_dir_read_name
@@ -1250,30 +1154,18 @@
 #define BIND_g_file_error_quark_FUNCTION TRUE
 #define BIND_g_file_get_contents_FUNCTION FALSE
 /* Couln't complete binding for g_file_get_contents
-  - TODO_mruby_unbox__GError_PTR_PTR
   - TODO_mruby_unbox_char_PTR_PTR
   - TODO_mruby_unbox_unsigned_long_PTR
-  - TODO_type_check__GError_PTR_PTR
   - TODO_type_check_char_PTR_PTR
   - TODO_type_check_unsigned_long_PTR
 */
 #define BIND_g_file_open_tmp_FUNCTION FALSE
 /* Couln't complete binding for g_file_open_tmp
-  - TODO_mruby_unbox__GError_PTR_PTR
   - TODO_mruby_unbox_char_PTR_PTR
-  - TODO_type_check__GError_PTR_PTR
   - TODO_type_check_char_PTR_PTR
 */
-#define BIND_g_file_read_link_FUNCTION FALSE
-/* Couln't complete binding for g_file_read_link
-  - TODO_mruby_unbox__GError_PTR_PTR
-  - TODO_type_check__GError_PTR_PTR
-*/
-#define BIND_g_file_set_contents_FUNCTION FALSE
-/* Couln't complete binding for g_file_set_contents
-  - TODO_mruby_unbox__GError_PTR_PTR
-  - TODO_type_check__GError_PTR_PTR
-*/
+#define BIND_g_file_read_link_FUNCTION TRUE
+#define BIND_g_file_set_contents_FUNCTION TRUE
 #define BIND_g_file_test_FUNCTION FALSE
 /* Couln't complete binding for g_file_test
   - TODO_mruby_unbox_GFileTest
@@ -1283,28 +1175,18 @@
 #define BIND_g_filename_display_name_FUNCTION TRUE
 #define BIND_g_filename_from_uri_FUNCTION FALSE
 /* Couln't complete binding for g_filename_from_uri
-  - TODO_mruby_unbox__GError_PTR_PTR
   - TODO_mruby_unbox_char_PTR_PTR
-  - TODO_type_check__GError_PTR_PTR
   - TODO_type_check_char_PTR_PTR
 */
 #define BIND_g_filename_from_utf8_FUNCTION FALSE
 /* Couln't complete binding for g_filename_from_utf8
-  - TODO_mruby_unbox__GError_PTR_PTR
   - TODO_mruby_unbox_unsigned_long_PTR
-  - TODO_type_check__GError_PTR_PTR
   - TODO_type_check_unsigned_long_PTR
 */
-#define BIND_g_filename_to_uri_FUNCTION FALSE
-/* Couln't complete binding for g_filename_to_uri
-  - TODO_mruby_unbox__GError_PTR_PTR
-  - TODO_type_check__GError_PTR_PTR
-*/
+#define BIND_g_filename_to_uri_FUNCTION TRUE
 #define BIND_g_filename_to_utf8_FUNCTION FALSE
 /* Couln't complete binding for g_filename_to_utf8
-  - TODO_mruby_unbox__GError_PTR_PTR
   - TODO_mruby_unbox_unsigned_long_PTR
-  - TODO_type_check__GError_PTR_PTR
   - TODO_type_check_unsigned_long_PTR
 */
 #define BIND_g_find_program_in_path_FUNCTION TRUE
@@ -1711,8 +1593,6 @@
 #define BIND_g_io_channel_flush_FUNCTION FALSE
 /* Couln't complete binding for g_io_channel_flush
   - TODO_mruby_box_GIOStatus
-  - TODO_mruby_unbox__GError_PTR_PTR
-  - TODO_type_check__GError_PTR_PTR
 */
 #define BIND_g_io_channel_get_buffer_condition_FUNCTION FALSE
 /* Couln't complete binding for g_io_channel_get_buffer_condition
@@ -1736,11 +1616,7 @@
   - TODO_type_check_int_PTR
 */
 #define BIND_g_io_channel_init_FUNCTION TRUE
-#define BIND_g_io_channel_new_file_FUNCTION FALSE
-/* Couln't complete binding for g_io_channel_new_file
-  - TODO_mruby_unbox__GError_PTR_PTR
-  - TODO_type_check__GError_PTR_PTR
-*/
+#define BIND_g_io_channel_new_file_FUNCTION TRUE
 #define BIND_g_io_channel_read_FUNCTION FALSE
 /* Couln't complete binding for g_io_channel_read
   - TODO_mruby_box_GIOError
@@ -1750,45 +1626,35 @@
 #define BIND_g_io_channel_read_chars_FUNCTION FALSE
 /* Couln't complete binding for g_io_channel_read_chars
   - TODO_mruby_box_GIOStatus
-  - TODO_mruby_unbox__GError_PTR_PTR
   - TODO_mruby_unbox_unsigned_long_PTR
-  - TODO_type_check__GError_PTR_PTR
   - TODO_type_check_unsigned_long_PTR
 */
 #define BIND_g_io_channel_read_line_FUNCTION FALSE
 /* Couln't complete binding for g_io_channel_read_line
   - TODO_mruby_box_GIOStatus
-  - TODO_mruby_unbox__GError_PTR_PTR
   - TODO_mruby_unbox_char_PTR_PTR
   - TODO_mruby_unbox_unsigned_long_PTR
-  - TODO_type_check__GError_PTR_PTR
   - TODO_type_check_char_PTR_PTR
   - TODO_type_check_unsigned_long_PTR
 */
 #define BIND_g_io_channel_read_line_string_FUNCTION FALSE
 /* Couln't complete binding for g_io_channel_read_line_string
   - TODO_mruby_box_GIOStatus
-  - TODO_mruby_unbox__GError_PTR_PTR
   - TODO_mruby_unbox_unsigned_long_PTR
-  - TODO_type_check__GError_PTR_PTR
   - TODO_type_check_unsigned_long_PTR
 */
 #define BIND_g_io_channel_read_to_end_FUNCTION FALSE
 /* Couln't complete binding for g_io_channel_read_to_end
   - TODO_mruby_box_GIOStatus
-  - TODO_mruby_unbox__GError_PTR_PTR
   - TODO_mruby_unbox_char_PTR_PTR
   - TODO_mruby_unbox_unsigned_long_PTR
-  - TODO_type_check__GError_PTR_PTR
   - TODO_type_check_char_PTR_PTR
   - TODO_type_check_unsigned_long_PTR
 */
 #define BIND_g_io_channel_read_unichar_FUNCTION FALSE
 /* Couln't complete binding for g_io_channel_read_unichar
   - TODO_mruby_box_GIOStatus
-  - TODO_mruby_unbox__GError_PTR_PTR
   - TODO_mruby_unbox_unsigned_int_PTR
-  - TODO_type_check__GError_PTR_PTR
   - TODO_type_check_unsigned_int_PTR
 */
 #define BIND_g_io_channel_ref_FUNCTION TRUE
@@ -1802,9 +1668,7 @@
 /* Couln't complete binding for g_io_channel_seek_position
   - TODO_mruby_box_GIOStatus
   - TODO_mruby_unbox_GSeekType
-  - TODO_mruby_unbox__GError_PTR_PTR
   - TODO_type_check_GSeekType
-  - TODO_type_check__GError_PTR_PTR
 */
 #define BIND_g_io_channel_set_buffer_size_FUNCTION TRUE
 #define BIND_g_io_channel_set_buffered_FUNCTION TRUE
@@ -1812,23 +1676,17 @@
 #define BIND_g_io_channel_set_encoding_FUNCTION FALSE
 /* Couln't complete binding for g_io_channel_set_encoding
   - TODO_mruby_box_GIOStatus
-  - TODO_mruby_unbox__GError_PTR_PTR
-  - TODO_type_check__GError_PTR_PTR
 */
 #define BIND_g_io_channel_set_flags_FUNCTION FALSE
 /* Couln't complete binding for g_io_channel_set_flags
   - TODO_mruby_box_GIOStatus
   - TODO_mruby_unbox_GIOFlags
-  - TODO_mruby_unbox__GError_PTR_PTR
   - TODO_type_check_GIOFlags
-  - TODO_type_check__GError_PTR_PTR
 */
 #define BIND_g_io_channel_set_line_term_FUNCTION TRUE
 #define BIND_g_io_channel_shutdown_FUNCTION FALSE
 /* Couln't complete binding for g_io_channel_shutdown
   - TODO_mruby_box_GIOStatus
-  - TODO_mruby_unbox__GError_PTR_PTR
-  - TODO_type_check__GError_PTR_PTR
 */
 #define BIND_g_io_channel_unix_get_fd_FUNCTION TRUE
 #define BIND_g_io_channel_unix_new_FUNCTION TRUE
@@ -1842,16 +1700,12 @@
 #define BIND_g_io_channel_write_chars_FUNCTION FALSE
 /* Couln't complete binding for g_io_channel_write_chars
   - TODO_mruby_box_GIOStatus
-  - TODO_mruby_unbox__GError_PTR_PTR
   - TODO_mruby_unbox_unsigned_long_PTR
-  - TODO_type_check__GError_PTR_PTR
   - TODO_type_check_unsigned_long_PTR
 */
 #define BIND_g_io_channel_write_unichar_FUNCTION FALSE
 /* Couln't complete binding for g_io_channel_write_unichar
   - TODO_mruby_box_GIOStatus
-  - TODO_mruby_unbox__GError_PTR_PTR
-  - TODO_type_check__GError_PTR_PTR
 */
 #define BIND_g_io_create_watch_FUNCTION FALSE
 /* Couln't complete binding for g_io_create_watch
@@ -1860,35 +1714,19 @@
 */
 #define BIND_g_key_file_error_quark_FUNCTION TRUE
 #define BIND_g_key_file_free_FUNCTION TRUE
-#define BIND_g_key_file_get_boolean_FUNCTION FALSE
-/* Couln't complete binding for g_key_file_get_boolean
-  - TODO_mruby_unbox__GError_PTR_PTR
-  - TODO_type_check__GError_PTR_PTR
-*/
+#define BIND_g_key_file_get_boolean_FUNCTION TRUE
 #define BIND_g_key_file_get_boolean_list_FUNCTION FALSE
 /* Couln't complete binding for g_key_file_get_boolean_list
   - TODO_mruby_box_gboolean_PTR
-  - TODO_mruby_unbox__GError_PTR_PTR
   - TODO_mruby_unbox_unsigned_long_PTR
-  - TODO_type_check__GError_PTR_PTR
   - TODO_type_check_unsigned_long_PTR
 */
-#define BIND_g_key_file_get_comment_FUNCTION FALSE
-/* Couln't complete binding for g_key_file_get_comment
-  - TODO_mruby_unbox__GError_PTR_PTR
-  - TODO_type_check__GError_PTR_PTR
-*/
-#define BIND_g_key_file_get_double_FUNCTION FALSE
-/* Couln't complete binding for g_key_file_get_double
-  - TODO_mruby_unbox__GError_PTR_PTR
-  - TODO_type_check__GError_PTR_PTR
-*/
+#define BIND_g_key_file_get_comment_FUNCTION TRUE
+#define BIND_g_key_file_get_double_FUNCTION TRUE
 #define BIND_g_key_file_get_double_list_FUNCTION FALSE
 /* Couln't complete binding for g_key_file_get_double_list
   - TODO_mruby_box_gdouble_PTR
-  - TODO_mruby_unbox__GError_PTR_PTR
   - TODO_mruby_unbox_unsigned_long_PTR
-  - TODO_type_check__GError_PTR_PTR
   - TODO_type_check_unsigned_long_PTR
 */
 #define BIND_g_key_file_get_groups_FUNCTION FALSE
@@ -1897,140 +1735,76 @@
   - TODO_mruby_unbox_unsigned_long_PTR
   - TODO_type_check_unsigned_long_PTR
 */
-#define BIND_g_key_file_get_int64_FUNCTION FALSE
-/* Couln't complete binding for g_key_file_get_int64
-  - TODO_mruby_unbox__GError_PTR_PTR
-  - TODO_type_check__GError_PTR_PTR
-*/
-#define BIND_g_key_file_get_integer_FUNCTION FALSE
-/* Couln't complete binding for g_key_file_get_integer
-  - TODO_mruby_unbox__GError_PTR_PTR
-  - TODO_type_check__GError_PTR_PTR
-*/
+#define BIND_g_key_file_get_int64_FUNCTION TRUE
+#define BIND_g_key_file_get_integer_FUNCTION TRUE
 #define BIND_g_key_file_get_integer_list_FUNCTION FALSE
 /* Couln't complete binding for g_key_file_get_integer_list
   - TODO_mruby_box_gint_PTR
-  - TODO_mruby_unbox__GError_PTR_PTR
   - TODO_mruby_unbox_unsigned_long_PTR
-  - TODO_type_check__GError_PTR_PTR
   - TODO_type_check_unsigned_long_PTR
 */
 #define BIND_g_key_file_get_keys_FUNCTION FALSE
 /* Couln't complete binding for g_key_file_get_keys
   - TODO_mruby_box_gchar_PTR_PTR
-  - TODO_mruby_unbox__GError_PTR_PTR
   - TODO_mruby_unbox_unsigned_long_PTR
-  - TODO_type_check__GError_PTR_PTR
   - TODO_type_check_unsigned_long_PTR
 */
-#define BIND_g_key_file_get_locale_string_FUNCTION FALSE
-/* Couln't complete binding for g_key_file_get_locale_string
-  - TODO_mruby_unbox__GError_PTR_PTR
-  - TODO_type_check__GError_PTR_PTR
-*/
+#define BIND_g_key_file_get_locale_string_FUNCTION TRUE
 #define BIND_g_key_file_get_locale_string_list_FUNCTION FALSE
 /* Couln't complete binding for g_key_file_get_locale_string_list
   - TODO_mruby_box_gchar_PTR_PTR
-  - TODO_mruby_unbox__GError_PTR_PTR
   - TODO_mruby_unbox_unsigned_long_PTR
-  - TODO_type_check__GError_PTR_PTR
   - TODO_type_check_unsigned_long_PTR
 */
 #define BIND_g_key_file_get_start_group_FUNCTION TRUE
-#define BIND_g_key_file_get_string_FUNCTION FALSE
-/* Couln't complete binding for g_key_file_get_string
-  - TODO_mruby_unbox__GError_PTR_PTR
-  - TODO_type_check__GError_PTR_PTR
-*/
+#define BIND_g_key_file_get_string_FUNCTION TRUE
 #define BIND_g_key_file_get_string_list_FUNCTION FALSE
 /* Couln't complete binding for g_key_file_get_string_list
   - TODO_mruby_box_gchar_PTR_PTR
-  - TODO_mruby_unbox__GError_PTR_PTR
   - TODO_mruby_unbox_unsigned_long_PTR
-  - TODO_type_check__GError_PTR_PTR
   - TODO_type_check_unsigned_long_PTR
 */
-#define BIND_g_key_file_get_uint64_FUNCTION FALSE
-/* Couln't complete binding for g_key_file_get_uint64
-  - TODO_mruby_unbox__GError_PTR_PTR
-  - TODO_type_check__GError_PTR_PTR
-*/
-#define BIND_g_key_file_get_value_FUNCTION FALSE
-/* Couln't complete binding for g_key_file_get_value
-  - TODO_mruby_unbox__GError_PTR_PTR
-  - TODO_type_check__GError_PTR_PTR
-*/
+#define BIND_g_key_file_get_uint64_FUNCTION TRUE
+#define BIND_g_key_file_get_value_FUNCTION TRUE
 #define BIND_g_key_file_has_group_FUNCTION TRUE
-#define BIND_g_key_file_has_key_FUNCTION FALSE
-/* Couln't complete binding for g_key_file_has_key
-  - TODO_mruby_unbox__GError_PTR_PTR
-  - TODO_type_check__GError_PTR_PTR
-*/
+#define BIND_g_key_file_has_key_FUNCTION TRUE
 #define BIND_g_key_file_load_from_data_FUNCTION FALSE
 /* Couln't complete binding for g_key_file_load_from_data
   - TODO_mruby_unbox_GKeyFileFlags
-  - TODO_mruby_unbox__GError_PTR_PTR
   - TODO_type_check_GKeyFileFlags
-  - TODO_type_check__GError_PTR_PTR
 */
 #define BIND_g_key_file_load_from_data_dirs_FUNCTION FALSE
 /* Couln't complete binding for g_key_file_load_from_data_dirs
   - TODO_mruby_unbox_GKeyFileFlags
-  - TODO_mruby_unbox__GError_PTR_PTR
   - TODO_mruby_unbox_char_PTR_PTR
   - TODO_type_check_GKeyFileFlags
-  - TODO_type_check__GError_PTR_PTR
   - TODO_type_check_char_PTR_PTR
 */
 #define BIND_g_key_file_load_from_dirs_FUNCTION FALSE
 /* Couln't complete binding for g_key_file_load_from_dirs
   - TODO_mruby_unbox_GKeyFileFlags
-  - TODO_mruby_unbox__GError_PTR_PTR
   - TODO_mruby_unbox_char_PTR_PTR
   - TODO_type_check_GKeyFileFlags
-  - TODO_type_check__GError_PTR_PTR
   - TODO_type_check_char_PTR_PTR
 */
 #define BIND_g_key_file_load_from_file_FUNCTION FALSE
 /* Couln't complete binding for g_key_file_load_from_file
   - TODO_mruby_unbox_GKeyFileFlags
-  - TODO_mruby_unbox__GError_PTR_PTR
   - TODO_type_check_GKeyFileFlags
-  - TODO_type_check__GError_PTR_PTR
 */
 #define BIND_g_key_file_new_FUNCTION TRUE
 #define BIND_g_key_file_ref_FUNCTION TRUE
-#define BIND_g_key_file_remove_comment_FUNCTION FALSE
-/* Couln't complete binding for g_key_file_remove_comment
-  - TODO_mruby_unbox__GError_PTR_PTR
-  - TODO_type_check__GError_PTR_PTR
-*/
-#define BIND_g_key_file_remove_group_FUNCTION FALSE
-/* Couln't complete binding for g_key_file_remove_group
-  - TODO_mruby_unbox__GError_PTR_PTR
-  - TODO_type_check__GError_PTR_PTR
-*/
-#define BIND_g_key_file_remove_key_FUNCTION FALSE
-/* Couln't complete binding for g_key_file_remove_key
-  - TODO_mruby_unbox__GError_PTR_PTR
-  - TODO_type_check__GError_PTR_PTR
-*/
-#define BIND_g_key_file_save_to_file_FUNCTION FALSE
-/* Couln't complete binding for g_key_file_save_to_file
-  - TODO_mruby_unbox__GError_PTR_PTR
-  - TODO_type_check__GError_PTR_PTR
-*/
+#define BIND_g_key_file_remove_comment_FUNCTION TRUE
+#define BIND_g_key_file_remove_group_FUNCTION TRUE
+#define BIND_g_key_file_remove_key_FUNCTION TRUE
+#define BIND_g_key_file_save_to_file_FUNCTION TRUE
 #define BIND_g_key_file_set_boolean_FUNCTION TRUE
 #define BIND_g_key_file_set_boolean_list_FUNCTION FALSE
 /* Couln't complete binding for g_key_file_set_boolean_list
   - TODO_mruby_unbox_int_[]
   - TODO_type_check_int_[]
 */
-#define BIND_g_key_file_set_comment_FUNCTION FALSE
-/* Couln't complete binding for g_key_file_set_comment
-  - TODO_mruby_unbox__GError_PTR_PTR
-  - TODO_type_check__GError_PTR_PTR
-*/
+#define BIND_g_key_file_set_comment_FUNCTION TRUE
 #define BIND_g_key_file_set_double_FUNCTION TRUE
 #define BIND_g_key_file_set_double_list_FUNCTION FALSE
 /* Couln't complete binding for g_key_file_set_double_list
@@ -2061,9 +1835,7 @@
 #define BIND_g_key_file_set_value_FUNCTION TRUE
 #define BIND_g_key_file_to_data_FUNCTION FALSE
 /* Couln't complete binding for g_key_file_to_data
-  - TODO_mruby_unbox__GError_PTR_PTR
   - TODO_mruby_unbox_unsigned_long_PTR
-  - TODO_type_check__GError_PTR_PTR
   - TODO_type_check_unsigned_long_PTR
 */
 #define BIND_g_key_file_unref_FUNCTION TRUE
@@ -2183,16 +1955,12 @@
 */
 #define BIND_g_locale_from_utf8_FUNCTION FALSE
 /* Couln't complete binding for g_locale_from_utf8
-  - TODO_mruby_unbox__GError_PTR_PTR
   - TODO_mruby_unbox_unsigned_long_PTR
-  - TODO_type_check__GError_PTR_PTR
   - TODO_type_check_unsigned_long_PTR
 */
 #define BIND_g_locale_to_utf8_FUNCTION FALSE
 /* Couln't complete binding for g_locale_to_utf8
-  - TODO_mruby_unbox__GError_PTR_PTR
   - TODO_mruby_unbox_unsigned_long_PTR
-  - TODO_type_check__GError_PTR_PTR
   - TODO_type_check_unsigned_long_PTR
 */
 #define BIND_g_log_FUNCTION FALSE
@@ -2352,34 +2120,20 @@
 #define BIND_g_mapped_file_get_bytes_FUNCTION TRUE
 #define BIND_g_mapped_file_get_contents_FUNCTION TRUE
 #define BIND_g_mapped_file_get_length_FUNCTION TRUE
-#define BIND_g_mapped_file_new_FUNCTION FALSE
-/* Couln't complete binding for g_mapped_file_new
-  - TODO_mruby_unbox__GError_PTR_PTR
-  - TODO_type_check__GError_PTR_PTR
-*/
-#define BIND_g_mapped_file_new_from_fd_FUNCTION FALSE
-/* Couln't complete binding for g_mapped_file_new_from_fd
-  - TODO_mruby_unbox__GError_PTR_PTR
-  - TODO_type_check__GError_PTR_PTR
-*/
+#define BIND_g_mapped_file_new_FUNCTION TRUE
+#define BIND_g_mapped_file_new_from_fd_FUNCTION TRUE
 #define BIND_g_mapped_file_ref_FUNCTION TRUE
 #define BIND_g_mapped_file_unref_FUNCTION TRUE
 #define BIND_g_markup_collect_attributes_FUNCTION FALSE
 /* Couln't complete binding for g_markup_collect_attributes
   - TODO_mruby_unbox_GMarkupCollectType
-  - TODO_mruby_unbox__GError_PTR_PTR
   - TODO_mruby_unbox_char_PTR_PTR
   - TODO_type_check_GMarkupCollectType
-  - TODO_type_check__GError_PTR_PTR
   - TODO_type_check_char_PTR_PTR
 */
 #define BIND_g_markup_error_quark_FUNCTION TRUE
 #define BIND_g_markup_escape_text_FUNCTION TRUE
-#define BIND_g_markup_parse_context_end_parse_FUNCTION FALSE
-/* Couln't complete binding for g_markup_parse_context_end_parse
-  - TODO_mruby_unbox__GError_PTR_PTR
-  - TODO_type_check__GError_PTR_PTR
-*/
+#define BIND_g_markup_parse_context_end_parse_FUNCTION TRUE
 #define BIND_g_markup_parse_context_free_FUNCTION TRUE
 #define BIND_g_markup_parse_context_get_element_FUNCTION FALSE
 /* Couln't complete binding for g_markup_parse_context_get_element
@@ -2404,11 +2158,7 @@
   - TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_void_PTR_RPAREN
   - TODO_type_check_void_PTR
 */
-#define BIND_g_markup_parse_context_parse_FUNCTION FALSE
-/* Couln't complete binding for g_markup_parse_context_parse
-  - TODO_mruby_unbox__GError_PTR_PTR
-  - TODO_type_check__GError_PTR_PTR
-*/
+#define BIND_g_markup_parse_context_parse_FUNCTION TRUE
 #define BIND_g_markup_parse_context_pop_FUNCTION FALSE
 /* Couln't complete binding for g_markup_parse_context_pop
   - TODO_mruby_box_gpointer
@@ -2422,11 +2172,7 @@
 #define BIND_g_markup_parse_context_unref_FUNCTION TRUE
 #define BIND_g_markup_printf_escaped_FUNCTION TRUE
 #define BIND_g_markup_vprintf_escaped_FUNCTION TRUE
-#define BIND_g_match_info_expand_references_FUNCTION FALSE
-/* Couln't complete binding for g_match_info_expand_references
-  - TODO_mruby_unbox__GError_PTR_PTR
-  - TODO_type_check__GError_PTR_PTR
-*/
+#define BIND_g_match_info_expand_references_FUNCTION TRUE
 #define BIND_g_match_info_fetch_FUNCTION TRUE
 #define BIND_g_match_info_fetch_all_FUNCTION FALSE
 /* Couln't complete binding for g_match_info_fetch_all
@@ -2452,11 +2198,7 @@
 */
 #define BIND_g_match_info_is_partial_match_FUNCTION TRUE
 #define BIND_g_match_info_matches_FUNCTION TRUE
-#define BIND_g_match_info_next_FUNCTION FALSE
-/* Couln't complete binding for g_match_info_next
-  - TODO_mruby_unbox__GError_PTR_PTR
-  - TODO_type_check__GError_PTR_PTR
-*/
+#define BIND_g_match_info_next_FUNCTION TRUE
 #define BIND_g_match_info_ref_FUNCTION TRUE
 #define BIND_g_match_info_unref_FUNCTION TRUE
 #define BIND_g_mem_is_system_malloc_FUNCTION TRUE
@@ -2629,18 +2371,14 @@
 #define BIND_g_option_context_new_FUNCTION TRUE
 #define BIND_g_option_context_parse_FUNCTION FALSE
 /* Couln't complete binding for g_option_context_parse
-  - TODO_mruby_unbox__GError_PTR_PTR
   - TODO_mruby_unbox_char_PTR_PTR_PTR
   - TODO_mruby_unbox_int_PTR
-  - TODO_type_check__GError_PTR_PTR
   - TODO_type_check_char_PTR_PTR_PTR
   - TODO_type_check_int_PTR
 */
 #define BIND_g_option_context_parse_strv_FUNCTION FALSE
 /* Couln't complete binding for g_option_context_parse_strv
-  - TODO_mruby_unbox__GError_PTR_PTR
   - TODO_mruby_unbox_char_PTR_PTR_PTR
-  - TODO_type_check__GError_PTR_PTR
   - TODO_type_check_char_PTR_PTR_PTR
 */
 #define BIND_g_option_context_set_description_FUNCTION TRUE
@@ -2721,11 +2459,7 @@
   - TODO_type_check_volatile_void_PTR
 */
 #define BIND_g_poll_FUNCTION TRUE
-#define BIND_g_prefix_error_FUNCTION FALSE
-/* Couln't complete binding for g_prefix_error
-  - TODO_mruby_unbox__GError_PTR_PTR
-  - TODO_type_check__GError_PTR_PTR
-*/
+#define BIND_g_prefix_error_FUNCTION TRUE
 #define BIND_g_print_FUNCTION TRUE
 #define BIND_g_printerr_FUNCTION TRUE
 #define BIND_g_printf_FUNCTION TRUE
@@ -2744,16 +2478,8 @@
   - TODO_mruby_unbox_void_PTR
   - TODO_type_check_void_PTR
 */
-#define BIND_g_propagate_error_FUNCTION FALSE
-/* Couln't complete binding for g_propagate_error
-  - TODO_mruby_unbox__GError_PTR_PTR
-  - TODO_type_check__GError_PTR_PTR
-*/
-#define BIND_g_propagate_prefixed_error_FUNCTION FALSE
-/* Couln't complete binding for g_propagate_prefixed_error
-  - TODO_mruby_unbox__GError_PTR_PTR
-  - TODO_type_check__GError_PTR_PTR
-*/
+#define BIND_g_propagate_error_FUNCTION TRUE
+#define BIND_g_propagate_prefixed_error_FUNCTION TRUE
 #define BIND_g_ptr_array_add_FUNCTION FALSE
 /* Couln't complete binding for g_ptr_array_add
   - TODO_mruby_unbox_void_PTR
@@ -3006,9 +2732,7 @@
 #define BIND_g_rec_mutex_unlock_FUNCTION TRUE
 #define BIND_g_regex_check_replacement_FUNCTION FALSE
 /* Couln't complete binding for g_regex_check_replacement
-  - TODO_mruby_unbox__GError_PTR_PTR
   - TODO_mruby_unbox_int_PTR
-  - TODO_type_check__GError_PTR_PTR
   - TODO_type_check_int_PTR
 */
 #define BIND_g_regex_error_quark_FUNCTION TRUE
@@ -3048,19 +2772,15 @@
 #define BIND_g_regex_match_all_full_FUNCTION FALSE
 /* Couln't complete binding for g_regex_match_all_full
   - TODO_mruby_unbox_GRegexMatchFlags
-  - TODO_mruby_unbox__GError_PTR_PTR
   - TODO_mruby_unbox__GMatchInfo_PTR_PTR
   - TODO_type_check_GRegexMatchFlags
-  - TODO_type_check__GError_PTR_PTR
   - TODO_type_check__GMatchInfo_PTR_PTR
 */
 #define BIND_g_regex_match_full_FUNCTION FALSE
 /* Couln't complete binding for g_regex_match_full
   - TODO_mruby_unbox_GRegexMatchFlags
-  - TODO_mruby_unbox__GError_PTR_PTR
   - TODO_mruby_unbox__GMatchInfo_PTR_PTR
   - TODO_type_check_GRegexMatchFlags
-  - TODO_type_check__GError_PTR_PTR
   - TODO_type_check__GMatchInfo_PTR_PTR
 */
 #define BIND_g_regex_match_simple_FUNCTION FALSE
@@ -3074,36 +2794,28 @@
 /* Couln't complete binding for g_regex_new
   - TODO_mruby_unbox_GRegexCompileFlags
   - TODO_mruby_unbox_GRegexMatchFlags
-  - TODO_mruby_unbox__GError_PTR_PTR
   - TODO_type_check_GRegexCompileFlags
   - TODO_type_check_GRegexMatchFlags
-  - TODO_type_check__GError_PTR_PTR
 */
 #define BIND_g_regex_ref_FUNCTION TRUE
 #define BIND_g_regex_replace_FUNCTION FALSE
 /* Couln't complete binding for g_regex_replace
   - TODO_mruby_unbox_GRegexMatchFlags
-  - TODO_mruby_unbox__GError_PTR_PTR
   - TODO_type_check_GRegexMatchFlags
-  - TODO_type_check__GError_PTR_PTR
 */
 #define BIND_g_regex_replace_eval_FUNCTION FALSE
 /* Couln't complete binding for g_regex_replace_eval
   - TODO_mruby_unbox_GRegexMatchFlags
-  - TODO_mruby_unbox__GError_PTR_PTR
   - TODO_mruby_unbox_int_LPAREN_PTR_RPAREN_LPAREN__GMatchInfo_PTR_COMMA_struct__GString_PTR_COMMA_void_PTR_RPAREN
   - TODO_mruby_unbox_void_PTR
   - TODO_type_check_GRegexMatchFlags
-  - TODO_type_check__GError_PTR_PTR
   - TODO_type_check_int_LPAREN_PTR_RPAREN_LPAREN__GMatchInfo_PTR_COMMA_struct__GString_PTR_COMMA_void_PTR_RPAREN
   - TODO_type_check_void_PTR
 */
 #define BIND_g_regex_replace_literal_FUNCTION FALSE
 /* Couln't complete binding for g_regex_replace_literal
   - TODO_mruby_unbox_GRegexMatchFlags
-  - TODO_mruby_unbox__GError_PTR_PTR
   - TODO_type_check_GRegexMatchFlags
-  - TODO_type_check__GError_PTR_PTR
 */
 #define BIND_g_regex_split_FUNCTION FALSE
 /* Couln't complete binding for g_regex_split
@@ -3115,9 +2827,7 @@
 /* Couln't complete binding for g_regex_split_full
   - TODO_mruby_box_gchar_PTR_PTR
   - TODO_mruby_unbox_GRegexMatchFlags
-  - TODO_mruby_unbox__GError_PTR_PTR
   - TODO_type_check_GRegexMatchFlags
-  - TODO_type_check__GError_PTR_PTR
 */
 #define BIND_g_regex_split_simple_FUNCTION FALSE
 /* Couln't complete binding for g_regex_split_simple
@@ -3326,16 +3036,8 @@
 */
 #define BIND_g_sequence_swap_FUNCTION TRUE
 #define BIND_g_set_application_name_FUNCTION TRUE
-#define BIND_g_set_error_FUNCTION FALSE
-/* Couln't complete binding for g_set_error
-  - TODO_mruby_unbox__GError_PTR_PTR
-  - TODO_type_check__GError_PTR_PTR
-*/
-#define BIND_g_set_error_literal_FUNCTION FALSE
-/* Couln't complete binding for g_set_error_literal
-  - TODO_mruby_unbox__GError_PTR_PTR
-  - TODO_type_check__GError_PTR_PTR
-*/
+#define BIND_g_set_error_FUNCTION TRUE
+#define BIND_g_set_error_literal_FUNCTION TRUE
 #define BIND_g_set_prgname_FUNCTION TRUE
 #define BIND_g_set_print_handler_FUNCTION FALSE
 /* Couln't complete binding for g_set_print_handler
@@ -3353,19 +3055,13 @@
 #define BIND_g_shell_error_quark_FUNCTION TRUE
 #define BIND_g_shell_parse_argv_FUNCTION FALSE
 /* Couln't complete binding for g_shell_parse_argv
-  - TODO_mruby_unbox__GError_PTR_PTR
   - TODO_mruby_unbox_char_PTR_PTR_PTR
   - TODO_mruby_unbox_int_PTR
-  - TODO_type_check__GError_PTR_PTR
   - TODO_type_check_char_PTR_PTR_PTR
   - TODO_type_check_int_PTR
 */
 #define BIND_g_shell_quote_FUNCTION TRUE
-#define BIND_g_shell_unquote_FUNCTION FALSE
-/* Couln't complete binding for g_shell_unquote
-  - TODO_mruby_unbox__GError_PTR_PTR
-  - TODO_type_check__GError_PTR_PTR
-*/
+#define BIND_g_shell_unquote_FUNCTION TRUE
 #define BIND_g_slice_alloc_FUNCTION FALSE
 /* Couln't complete binding for g_slice_alloc
   - TODO_mruby_box_gpointer
@@ -3594,13 +3290,11 @@
 #define BIND_g_spawn_async_FUNCTION FALSE
 /* Couln't complete binding for g_spawn_async
   - TODO_mruby_unbox_GSpawnFlags
-  - TODO_mruby_unbox__GError_PTR_PTR
   - TODO_mruby_unbox_char_PTR_PTR
   - TODO_mruby_unbox_int_PTR
   - TODO_mruby_unbox_void_LPAREN_PTR_RPAREN_LPAREN_void_PTR_RPAREN
   - TODO_mruby_unbox_void_PTR
   - TODO_type_check_GSpawnFlags
-  - TODO_type_check__GError_PTR_PTR
   - TODO_type_check_char_PTR_PTR
   - TODO_type_check_int_PTR
   - TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_void_PTR_RPAREN
@@ -3609,35 +3303,23 @@
 #define BIND_g_spawn_async_with_pipes_FUNCTION FALSE
 /* Couln't complete binding for g_spawn_async_with_pipes
   - TODO_mruby_unbox_GSpawnFlags
-  - TODO_mruby_unbox__GError_PTR_PTR
   - TODO_mruby_unbox_char_PTR_PTR
   - TODO_mruby_unbox_int_PTR
   - TODO_mruby_unbox_void_LPAREN_PTR_RPAREN_LPAREN_void_PTR_RPAREN
   - TODO_mruby_unbox_void_PTR
   - TODO_type_check_GSpawnFlags
-  - TODO_type_check__GError_PTR_PTR
   - TODO_type_check_char_PTR_PTR
   - TODO_type_check_int_PTR
   - TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_void_PTR_RPAREN
   - TODO_type_check_void_PTR
 */
-#define BIND_g_spawn_check_exit_status_FUNCTION FALSE
-/* Couln't complete binding for g_spawn_check_exit_status
-  - TODO_mruby_unbox__GError_PTR_PTR
-  - TODO_type_check__GError_PTR_PTR
-*/
+#define BIND_g_spawn_check_exit_status_FUNCTION TRUE
 #define BIND_g_spawn_close_pid_FUNCTION TRUE
-#define BIND_g_spawn_command_line_async_FUNCTION FALSE
-/* Couln't complete binding for g_spawn_command_line_async
-  - TODO_mruby_unbox__GError_PTR_PTR
-  - TODO_type_check__GError_PTR_PTR
-*/
+#define BIND_g_spawn_command_line_async_FUNCTION TRUE
 #define BIND_g_spawn_command_line_sync_FUNCTION FALSE
 /* Couln't complete binding for g_spawn_command_line_sync
-  - TODO_mruby_unbox__GError_PTR_PTR
   - TODO_mruby_unbox_char_PTR_PTR
   - TODO_mruby_unbox_int_PTR
-  - TODO_type_check__GError_PTR_PTR
   - TODO_type_check_char_PTR_PTR
   - TODO_type_check_int_PTR
 */
@@ -3646,13 +3328,11 @@
 #define BIND_g_spawn_sync_FUNCTION FALSE
 /* Couln't complete binding for g_spawn_sync
   - TODO_mruby_unbox_GSpawnFlags
-  - TODO_mruby_unbox__GError_PTR_PTR
   - TODO_mruby_unbox_char_PTR_PTR
   - TODO_mruby_unbox_int_PTR
   - TODO_mruby_unbox_void_LPAREN_PTR_RPAREN_LPAREN_void_PTR_RPAREN
   - TODO_mruby_unbox_void_PTR
   - TODO_type_check_GSpawnFlags
-  - TODO_type_check__GError_PTR_PTR
   - TODO_type_check_char_PTR_PTR
   - TODO_type_check_int_PTR
   - TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_void_PTR_RPAREN
@@ -3807,9 +3487,7 @@
 #define BIND_g_system_thread_free_FUNCTION TRUE
 #define BIND_g_system_thread_new_FUNCTION FALSE
 /* Couln't complete binding for g_system_thread_new
-  - TODO_mruby_unbox__GError_PTR_PTR
   - TODO_mruby_unbox_void_PTR_LPAREN_PTR_RPAREN_LPAREN_void_PTR_RPAREN
-  - TODO_type_check__GError_PTR_PTR
   - TODO_type_check_void_PTR_LPAREN_PTR_RPAREN_LPAREN_void_PTR_RPAREN
 */
 #define BIND_g_system_thread_set_name_FUNCTION TRUE
@@ -3966,10 +3644,8 @@
 */
 #define BIND_g_thread_new_internal_FUNCTION FALSE
 /* Couln't complete binding for g_thread_new_internal
-  - TODO_mruby_unbox__GError_PTR_PTR
   - TODO_mruby_unbox_void_PTR
   - TODO_mruby_unbox_void_PTR_LPAREN_PTR_RPAREN_LPAREN_void_PTR_RPAREN
-  - TODO_type_check__GError_PTR_PTR
   - TODO_type_check_void_PTR
   - TODO_type_check_void_PTR_LPAREN_PTR_RPAREN_LPAREN_void_PTR_RPAREN
 */
@@ -3986,26 +3662,18 @@
 */
 #define BIND_g_thread_pool_new_FUNCTION FALSE
 /* Couln't complete binding for g_thread_pool_new
-  - TODO_mruby_unbox__GError_PTR_PTR
   - TODO_mruby_unbox_void_LPAREN_PTR_RPAREN_LPAREN_void_PTR_COMMA_void_PTR_RPAREN
   - TODO_mruby_unbox_void_PTR
-  - TODO_type_check__GError_PTR_PTR
   - TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_void_PTR_COMMA_void_PTR_RPAREN
   - TODO_type_check_void_PTR
 */
 #define BIND_g_thread_pool_push_FUNCTION FALSE
 /* Couln't complete binding for g_thread_pool_push
-  - TODO_mruby_unbox__GError_PTR_PTR
   - TODO_mruby_unbox_void_PTR
-  - TODO_type_check__GError_PTR_PTR
   - TODO_type_check_void_PTR
 */
 #define BIND_g_thread_pool_set_max_idle_time_FUNCTION TRUE
-#define BIND_g_thread_pool_set_max_threads_FUNCTION FALSE
-/* Couln't complete binding for g_thread_pool_set_max_threads
-  - TODO_mruby_unbox__GError_PTR_PTR
-  - TODO_type_check__GError_PTR_PTR
-*/
+#define BIND_g_thread_pool_set_max_threads_FUNCTION TRUE
 #define BIND_g_thread_pool_set_max_unused_threads_FUNCTION TRUE
 #define BIND_g_thread_pool_set_sort_function_FUNCTION FALSE
 /* Couln't complete binding for g_thread_pool_set_sort_function
@@ -4026,10 +3694,8 @@
 #define BIND_g_thread_self_FUNCTION TRUE
 #define BIND_g_thread_try_new_FUNCTION FALSE
 /* Couln't complete binding for g_thread_try_new
-  - TODO_mruby_unbox__GError_PTR_PTR
   - TODO_mruby_unbox_void_PTR
   - TODO_mruby_unbox_void_PTR_LPAREN_PTR_RPAREN_LPAREN_void_PTR_RPAREN
-  - TODO_type_check__GError_PTR_PTR
   - TODO_type_check_void_PTR
   - TODO_type_check_void_PTR_LPAREN_PTR_RPAREN_LPAREN_void_PTR_RPAREN
 */
@@ -4244,19 +3910,15 @@
 #define BIND_g_ucs4_to_utf16_FUNCTION FALSE
 /* Couln't complete binding for g_ucs4_to_utf16
   - TODO_mruby_box_gunichar2_PTR
-  - TODO_mruby_unbox__GError_PTR_PTR
   - TODO_mruby_unbox_long_PTR
   - TODO_mruby_unbox_unsigned_int_PTR
-  - TODO_type_check__GError_PTR_PTR
   - TODO_type_check_long_PTR
   - TODO_type_check_unsigned_int_PTR
 */
 #define BIND_g_ucs4_to_utf8_FUNCTION FALSE
 /* Couln't complete binding for g_ucs4_to_utf8
-  - TODO_mruby_unbox__GError_PTR_PTR
   - TODO_mruby_unbox_long_PTR
   - TODO_mruby_unbox_unsigned_int_PTR
-  - TODO_type_check__GError_PTR_PTR
   - TODO_type_check_long_PTR
   - TODO_type_check_unsigned_int_PTR
 */
@@ -4365,16 +4027,10 @@
 */
 #define BIND_g_unix_open_pipe_FUNCTION FALSE
 /* Couln't complete binding for g_unix_open_pipe
-  - TODO_mruby_unbox__GError_PTR_PTR
   - TODO_mruby_unbox_int_PTR
-  - TODO_type_check__GError_PTR_PTR
   - TODO_type_check_int_PTR
 */
-#define BIND_g_unix_set_fd_nonblocking_FUNCTION FALSE
-/* Couln't complete binding for g_unix_set_fd_nonblocking
-  - TODO_mruby_unbox__GError_PTR_PTR
-  - TODO_type_check__GError_PTR_PTR
-*/
+#define BIND_g_unix_set_fd_nonblocking_FUNCTION TRUE
 #define BIND_g_unix_signal_add_FUNCTION FALSE
 /* Couln't complete binding for g_unix_signal_add
   - TODO_mruby_unbox_int_LPAREN_PTR_RPAREN_LPAREN_void_PTR_RPAREN
@@ -4406,19 +4062,15 @@
 #define BIND_g_utf16_to_ucs4_FUNCTION FALSE
 /* Couln't complete binding for g_utf16_to_ucs4
   - TODO_mruby_box_gunichar_PTR
-  - TODO_mruby_unbox__GError_PTR_PTR
   - TODO_mruby_unbox_long_PTR
   - TODO_mruby_unbox_unsigned_short_PTR
-  - TODO_type_check__GError_PTR_PTR
   - TODO_type_check_long_PTR
   - TODO_type_check_unsigned_short_PTR
 */
 #define BIND_g_utf16_to_utf8_FUNCTION FALSE
 /* Couln't complete binding for g_utf16_to_utf8
-  - TODO_mruby_unbox__GError_PTR_PTR
   - TODO_mruby_unbox_long_PTR
   - TODO_mruby_unbox_unsigned_short_PTR
-  - TODO_type_check__GError_PTR_PTR
   - TODO_type_check_long_PTR
   - TODO_type_check_unsigned_short_PTR
 */
@@ -4449,9 +4101,7 @@
 #define BIND_g_utf8_to_ucs4_FUNCTION FALSE
 /* Couln't complete binding for g_utf8_to_ucs4
   - TODO_mruby_box_gunichar_PTR
-  - TODO_mruby_unbox__GError_PTR_PTR
   - TODO_mruby_unbox_long_PTR
-  - TODO_type_check__GError_PTR_PTR
   - TODO_type_check_long_PTR
 */
 #define BIND_g_utf8_to_ucs4_fast_FUNCTION FALSE
@@ -4463,9 +4113,7 @@
 #define BIND_g_utf8_to_utf16_FUNCTION FALSE
 /* Couln't complete binding for g_utf8_to_utf16
   - TODO_mruby_box_gunichar2_PTR
-  - TODO_mruby_unbox__GError_PTR_PTR
   - TODO_mruby_unbox_long_PTR
-  - TODO_type_check__GError_PTR_PTR
   - TODO_type_check_long_PTR
 */
 #define BIND_g_utf8_validate_FUNCTION FALSE
@@ -4720,9 +4368,7 @@
 #define BIND_g_variant_new_variant_FUNCTION TRUE
 #define BIND_g_variant_parse_FUNCTION FALSE
 /* Couln't complete binding for g_variant_parse
-  - TODO_mruby_unbox__GError_PTR_PTR
   - TODO_mruby_unbox_char_PTR_PTR
-  - TODO_type_check__GError_PTR_PTR
   - TODO_type_check_char_PTR_PTR
 */
 #define BIND_g_variant_parse_error_print_context_FUNCTION TRUE
