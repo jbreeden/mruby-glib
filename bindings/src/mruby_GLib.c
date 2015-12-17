@@ -59,7 +59,6 @@ mrb_GLib__g_charset_get_aliases(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_canonical_name);
 
-
   /* Invocation */
   const char ** result = _g_charset_get_aliases(native_canonical_name);
 
@@ -123,7 +122,6 @@ mrb_GLib__g_gnulib_printf(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_format);
-
 
   /* Invocation */
   int result = _g_gnulib_printf(native_format);
@@ -547,7 +545,6 @@ mrb_GLib__g_main_create_unix_signal_watch(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "i", &native_signum);
 
-
   /* Invocation */
   GSource * result = _g_main_create_unix_signal_watch(native_signum);
 
@@ -573,7 +570,6 @@ mrb_GLib__g_utf8_make_valid(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_name);
-
 
   /* Invocation */
   gchar * result = _g_utf8_make_valid(native_name);
@@ -838,7 +834,6 @@ mrb_GLib_g_access(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "z!i", &native_filename, &native_mode);
 
-
   /* Invocation */
   int result = g_access(native_filename, native_mode);
 
@@ -1034,7 +1029,6 @@ mrb_GLib_g_array_new(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "iii", &native_zero_terminated, &native_clear_, &native_element_size);
-
 
   /* Invocation */
   GArray * result = g_array_new(native_zero_terminated, native_clear_, native_element_size);
@@ -1332,7 +1326,6 @@ mrb_GLib_g_array_sized_new(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "iiii", &native_zero_terminated, &native_clear_, &native_element_size, &native_reserved_size);
 
-
   /* Invocation */
   GArray * result = g_array_sized_new(native_zero_terminated, native_clear_, native_element_size, native_reserved_size);
 
@@ -1469,7 +1462,6 @@ mrb_GLib_g_ascii_digit_value(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "i", &native_c);
-
 
   /* Invocation */
   gint result = g_ascii_digit_value(native_c);
@@ -1609,7 +1601,6 @@ mrb_GLib_g_ascii_strcasecmp(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "z!z!", &native_s1, &native_s2);
 
-
   /* Invocation */
   gint result = g_ascii_strcasecmp(native_s1, native_s2);
 
@@ -1642,7 +1633,6 @@ mrb_GLib_g_ascii_strdown(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "z!i", &native_str, &native_len);
 
-
   /* Invocation */
   gchar * result = g_ascii_strdown(native_str, native_len);
 
@@ -1672,7 +1662,6 @@ mrb_GLib_g_ascii_strncasecmp(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!z!i", &native_s1, &native_s2, &native_n);
-
 
   /* Invocation */
   gint result = g_ascii_strncasecmp(native_s1, native_s2, native_n);
@@ -1820,7 +1809,6 @@ mrb_GLib_g_ascii_strup(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "z!i", &native_str, &native_len);
 
-
   /* Invocation */
   gchar * result = g_ascii_strup(native_str, native_len);
 
@@ -1846,7 +1834,6 @@ mrb_GLib_g_ascii_tolower(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "i", &native_c);
-
 
   /* Invocation */
   gchar result = g_ascii_tolower(native_c);
@@ -1878,7 +1865,6 @@ mrb_GLib_g_ascii_toupper(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "i", &native_c);
 
-
   /* Invocation */
   gchar result = g_ascii_toupper(native_c);
 
@@ -1908,7 +1894,6 @@ mrb_GLib_g_ascii_xdigit_value(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "i", &native_c);
-
 
   /* Invocation */
   gint result = g_ascii_xdigit_value(native_c);
@@ -1948,7 +1933,6 @@ mrb_GLib_g_assert_warning(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "z!z!iz!z!", &native_log_domain, &native_file, &native_line, &native_pretty_function, &native_expression);
 
-
   /* Invocation */
   g_assert_warning(native_log_domain, native_file, native_line, native_pretty_function, native_expression);
 
@@ -1979,7 +1963,6 @@ mrb_GLib_g_assertion_message(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!z!iz!z!", &native_domain, &native_file, &native_line, &native_func, &native_message);
-
 
   /* Invocation */
   g_assertion_message(native_domain, native_file, native_line, native_func, native_message);
@@ -2066,7 +2049,6 @@ mrb_GLib_g_assertion_message_cmpstr(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "z!z!iz!z!z!z!z!", &native_domain, &native_file, &native_line, &native_func, &native_expr, &native_arg1, &native_cmp, &native_arg2);
 
-
   /* Invocation */
   g_assertion_message_cmpstr(native_domain, native_file, native_line, native_func, native_expr, native_arg1, native_cmp, native_arg2);
 
@@ -2143,7 +2125,6 @@ mrb_GLib_g_assertion_message_expr(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!z!iz!z!", &native_domain, &native_file, &native_line, &native_func, &native_expr);
-
 
   /* Invocation */
   g_assertion_message_expr(native_domain, native_file, native_line, native_func, native_expr);
@@ -4226,7 +4207,6 @@ mrb_GLib_g_basename(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_file_name);
 
-
   /* Invocation */
   const gchar * result = g_basename(native_file_name);
 
@@ -4286,7 +4266,6 @@ mrb_GLib_g_bit_nth_lsf(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "ii", &native_mask, &native_nth_bit);
 
-
   /* Invocation */
   gint result = g_bit_nth_lsf(native_mask, native_nth_bit);
 
@@ -4318,7 +4297,6 @@ mrb_GLib_g_bit_nth_lsf_impl(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "ii", &native_mask, &native_nth_bit);
-
 
   /* Invocation */
   gint result = g_bit_nth_lsf_impl(native_mask, native_nth_bit);
@@ -4352,7 +4330,6 @@ mrb_GLib_g_bit_nth_msf(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "ii", &native_mask, &native_nth_bit);
 
-
   /* Invocation */
   gint result = g_bit_nth_msf(native_mask, native_nth_bit);
 
@@ -4385,7 +4362,6 @@ mrb_GLib_g_bit_nth_msf_impl(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "ii", &native_mask, &native_nth_bit);
 
-
   /* Invocation */
   gint result = g_bit_nth_msf_impl(native_mask, native_nth_bit);
 
@@ -4416,7 +4392,6 @@ mrb_GLib_g_bit_storage(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "i", &native_number);
 
-
   /* Invocation */
   guint result = g_bit_storage(native_number);
 
@@ -4446,7 +4421,6 @@ mrb_GLib_g_bit_storage_impl(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "i", &native_number);
-
 
   /* Invocation */
   guint result = g_bit_storage_impl(native_number);
@@ -6619,7 +6593,6 @@ mrb_GLib_g_build_filename(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_first_element);
 
-
   /* Invocation */
   gchar * result = g_build_filename(native_first_element);
 
@@ -6679,7 +6652,6 @@ mrb_GLib_g_build_path(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!z!", &native_separator, &native_first_element);
-
 
   /* Invocation */
   gchar * result = g_build_path(native_separator, native_first_element);
@@ -7135,7 +7107,6 @@ mrb_GLib_g_byte_array_sized_new(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "i", &native_reserved_size);
-
 
   /* Invocation */
   GByteArray * result = g_byte_array_sized_new(native_reserved_size);
@@ -7798,7 +7769,6 @@ mrb_GLib_g_chdir(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_path);
 
-
   /* Invocation */
   int result = g_chdir(native_path);
 
@@ -8228,7 +8198,6 @@ mrb_GLib_g_child_watch_source_new(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "i", &native_pid);
-
 
   /* Invocation */
   GSource * result = g_child_watch_source_new(native_pid);
@@ -10112,7 +10081,6 @@ mrb_GLib_g_date_get_monday_weeks_in_year(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "i", &native_year);
 
-
   /* Invocation */
   guint8 result = g_date_get_monday_weeks_in_year(native_year);
 
@@ -10216,7 +10184,6 @@ mrb_GLib_g_date_get_sunday_weeks_in_year(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "i", &native_year);
-
 
   /* Invocation */
   guint8 result = g_date_get_sunday_weeks_in_year(native_year);
@@ -10400,7 +10367,6 @@ mrb_GLib_g_date_is_leap_year(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "i", &native_year);
 
-
   /* Invocation */
   gboolean result = g_date_is_leap_year(native_year);
 
@@ -10486,7 +10452,6 @@ mrb_GLib_g_date_new_julian(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "i", &native_julian_day);
-
 
   /* Invocation */
   GDate * result = g_date_new_julian(native_julian_day);
@@ -12328,7 +12293,6 @@ mrb_GLib_g_date_time_new_from_unix_local(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "i", &native_t);
 
-
   /* Invocation */
   GDateTime * result = g_date_time_new_from_unix_local(native_t);
 
@@ -12354,7 +12318,6 @@ mrb_GLib_g_date_time_new_from_unix_utc(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "i", &native_t);
-
 
   /* Invocation */
   GDateTime * result = g_date_time_new_from_unix_utc(native_t);
@@ -12391,7 +12354,6 @@ mrb_GLib_g_date_time_new_local(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "iiiiif", &native_year, &native_month, &native_day, &native_hour, &native_minute, &native_seconds);
-
 
   /* Invocation */
   GDateTime * result = g_date_time_new_local(native_year, native_month, native_day, native_hour, native_minute, native_seconds);
@@ -12503,7 +12465,6 @@ mrb_GLib_g_date_time_new_utc(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "iiiiif", &native_year, &native_month, &native_day, &native_hour, &native_minute, &native_seconds);
-
 
   /* Invocation */
   GDateTime * result = g_date_time_new_utc(native_year, native_month, native_day, native_hour, native_minute, native_seconds);
@@ -12873,7 +12834,6 @@ mrb_GLib_g_date_valid_day(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "i", &native_day);
 
-
   /* Invocation */
   gboolean result = g_date_valid_day(native_day);
 
@@ -12943,7 +12903,6 @@ mrb_GLib_g_date_valid_julian(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "i", &native_julian_date);
-
 
   /* Invocation */
   gboolean result = g_date_valid_julian(native_julian_date);
@@ -13047,7 +13006,6 @@ mrb_GLib_g_date_valid_year(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "i", &native_year);
 
-
   /* Invocation */
   gboolean result = g_date_valid_year(native_year);
 
@@ -13082,7 +13040,6 @@ mrb_GLib_g_dcgettext(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "z!z!i", &native_domain, &native_msgid, &native_category);
 
-
   /* Invocation */
   const gchar * result = g_dcgettext(native_domain, native_msgid, native_category);
 
@@ -13110,7 +13067,6 @@ mrb_GLib_g_dgettext(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!z!", &native_domain, &native_msgid);
-
 
   /* Invocation */
   const gchar * result = g_dgettext(native_domain, native_msgid);
@@ -13273,7 +13229,6 @@ mrb_GLib_g_dir_open_with_errno(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!i", &native_path, &native_flags);
-
 
   /* Invocation */
   GDir * result = g_dir_open_with_errno(native_path, native_flags);
@@ -13451,7 +13406,6 @@ mrb_GLib_g_dngettext(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "z!z!z!i", &native_domain, &native_msgid, &native_msgid_plural, &native_n);
 
-
   /* Invocation */
   const gchar * result = g_dngettext(native_domain, native_msgid, native_msgid_plural, native_n);
 
@@ -13559,7 +13513,6 @@ mrb_GLib_g_dpgettext(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "z!z!i", &native_domain, &native_msgctxtid, &native_msgidoffset);
 
-
   /* Invocation */
   const gchar * result = g_dpgettext(native_domain, native_msgctxtid, native_msgidoffset);
 
@@ -13589,7 +13542,6 @@ mrb_GLib_g_dpgettext2(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!z!z!", &native_domain, &native_context, &native_msgid);
-
 
   /* Invocation */
   const gchar * result = g_dpgettext2(native_domain, native_context, native_msgid);
@@ -13837,7 +13789,6 @@ mrb_GLib_g_error_new(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "iiz!", &native_domain, &native_code, &native_format);
 
-
   /* Invocation */
   GError * result = g_error_new(native_domain, native_code, native_format);
 
@@ -13867,7 +13818,6 @@ mrb_GLib_g_error_new_literal(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "iiz!", &native_domain, &native_code, &native_message);
-
 
   /* Invocation */
   GError * result = g_error_new_literal(native_domain, native_code, native_message);
@@ -13901,7 +13851,6 @@ mrb_GLib_g_error_new_valist(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "iiz!i", &native_domain, &native_code, &native_format, &native_args);
 
-
   /* Invocation */
   GError * result = g_error_new_valist(native_domain, native_code, native_format, native_args);
 
@@ -13927,7 +13876,6 @@ mrb_GLib_g_file_error_from_errno(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "i", &native_err_no);
-
 
   /* Invocation */
   GFileError result = g_file_error_from_errno(native_err_no);
@@ -14184,7 +14132,6 @@ mrb_GLib_g_filename_display_basename(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_filename);
 
-
   /* Invocation */
   gchar * result = g_filename_display_basename(native_filename);
 
@@ -14210,7 +14157,6 @@ mrb_GLib_g_filename_display_name(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_filename);
-
 
   /* Invocation */
   gchar * result = g_filename_display_name(native_filename);
@@ -14405,7 +14351,6 @@ mrb_GLib_g_find_program_in_path(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_program);
 
-
   /* Invocation */
   gchar * result = g_find_program_in_path(native_program);
 
@@ -14432,7 +14377,6 @@ mrb_GLib_g_format_size(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "i", &native_size);
 
-
   /* Invocation */
   gchar * result = g_format_size(native_size);
 
@@ -14458,7 +14402,6 @@ mrb_GLib_g_format_size_for_display(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "i", &native_size);
-
 
   /* Invocation */
   gchar * result = g_format_size_for_display(native_size);
@@ -14831,7 +14774,6 @@ mrb_GLib_g_get_locale_variants(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_locale);
 
-
   /* Invocation */
   gchar ** result = g_get_locale_variants(native_locale);
 
@@ -15181,7 +15123,6 @@ mrb_GLib_g_getenv(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_variable);
-
 
   /* Invocation */
   const gchar * result = g_getenv(native_variable);
@@ -17578,7 +17519,6 @@ mrb_GLib_g_hostname_is_ascii_encoded(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_hostname);
 
-
   /* Invocation */
   gboolean result = g_hostname_is_ascii_encoded(native_hostname);
 
@@ -17608,7 +17548,6 @@ mrb_GLib_g_hostname_is_ip_address(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_hostname);
-
 
   /* Invocation */
   gboolean result = g_hostname_is_ip_address(native_hostname);
@@ -17640,7 +17579,6 @@ mrb_GLib_g_hostname_is_non_ascii(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_hostname);
 
-
   /* Invocation */
   gboolean result = g_hostname_is_non_ascii(native_hostname);
 
@@ -17671,7 +17609,6 @@ mrb_GLib_g_hostname_to_ascii(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_hostname);
 
-
   /* Invocation */
   gchar * result = g_hostname_to_ascii(native_hostname);
 
@@ -17697,7 +17634,6 @@ mrb_GLib_g_hostname_to_unicode(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_hostname);
-
 
   /* Invocation */
   gchar * result = g_hostname_to_unicode(native_hostname);
@@ -17824,7 +17760,6 @@ mrb_GLib_g_iconv_open(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!z!", &native_to_codeset, &native_from_codeset);
-
 
   /* Invocation */
   GIConv result = g_iconv_open(native_to_codeset, native_from_codeset);
@@ -18151,7 +18086,6 @@ mrb_GLib_g_intern_static_string(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_string);
 
-
   /* Invocation */
   const gchar * result = g_intern_static_string(native_string);
 
@@ -18177,7 +18111,6 @@ mrb_GLib_g_intern_string(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_string);
-
 
   /* Invocation */
   const gchar * result = g_intern_string(native_string);
@@ -18351,7 +18284,6 @@ mrb_GLib_g_io_channel_error_from_errno(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "i", &native_en);
-
 
   /* Invocation */
   GIOChannelError result = g_io_channel_error_from_errno(native_en);
@@ -19536,7 +19468,6 @@ mrb_GLib_g_io_channel_unix_new(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "i", &native_fd);
-
 
   /* Invocation */
   GIOChannel * result = g_io_channel_unix_new(native_fd);
@@ -23265,7 +23196,6 @@ mrb_GLib_g_log_remove_handler(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "z!i", &native_log_domain, &native_handler_id);
 
-
   /* Invocation */
   g_log_remove_handler(native_log_domain, native_handler_id);
 
@@ -24083,7 +24013,6 @@ mrb_GLib_g_main_context_new_with_next_id(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "i", &native_next_id);
 
-
   /* Invocation */
   GMainContext * result = g_main_context_new_with_next_id(native_next_id);
 
@@ -24879,7 +24808,6 @@ mrb_GLib_g_malloc(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "i", &native_n_bytes);
 
-
   /* Invocation */
   gpointer result = g_malloc(native_n_bytes);
 
@@ -24905,7 +24833,6 @@ mrb_GLib_g_malloc0(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "i", &native_n_bytes);
-
 
   /* Invocation */
   gpointer result = g_malloc0(native_n_bytes);
@@ -24935,7 +24862,6 @@ mrb_GLib_g_malloc0_n(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "ii", &native_n_blocks, &native_n_block_bytes);
 
-
   /* Invocation */
   gpointer result = g_malloc0_n(native_n_blocks, native_n_block_bytes);
 
@@ -24963,7 +24889,6 @@ mrb_GLib_g_malloc_n(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "ii", &native_n_blocks, &native_n_block_bytes);
-
 
   /* Invocation */
   gpointer result = g_malloc_n(native_n_blocks, native_n_block_bytes);
@@ -25351,7 +25276,6 @@ mrb_GLib_g_markup_escape_text(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!i", &native_text, &native_length);
-
 
   /* Invocation */
   gchar * result = g_markup_escape_text(native_text, native_length);
@@ -25847,7 +25771,6 @@ mrb_GLib_g_markup_printf_escaped(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_format);
 
-
   /* Invocation */
   gchar * result = g_markup_printf_escaped(native_format);
 
@@ -25875,7 +25798,6 @@ mrb_GLib_g_markup_vprintf_escaped(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!i", &native_format, &native_args);
-
 
   /* Invocation */
   gchar * result = g_markup_vprintf_escaped(native_format, native_args);
@@ -26594,7 +26516,6 @@ mrb_GLib_g_mkdir_with_parents(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!i", &native_pathname, &native_mode);
-
 
   /* Invocation */
   gint result = g_mkdir_with_parents(native_pathname, native_mode);
@@ -28144,7 +28065,6 @@ mrb_GLib_g_on_error_query(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_prg_name);
 
-
   /* Invocation */
   g_on_error_query(native_prg_name);
 
@@ -28167,7 +28087,6 @@ mrb_GLib_g_on_error_stack_trace(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_prg_name);
-
 
   /* Invocation */
   g_on_error_stack_trace(native_prg_name);
@@ -28684,7 +28603,6 @@ mrb_GLib_g_option_context_new(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_parameter_string);
-
 
   /* Invocation */
   GOptionContext * result = g_option_context_new(native_parameter_string);
@@ -29515,7 +29433,6 @@ mrb_GLib_g_path_get_basename(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_file_name);
 
-
   /* Invocation */
   gchar * result = g_path_get_basename(native_file_name);
 
@@ -29542,7 +29459,6 @@ mrb_GLib_g_path_get_dirname(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_file_name);
 
-
   /* Invocation */
   gchar * result = g_path_get_dirname(native_file_name);
 
@@ -29568,7 +29484,6 @@ mrb_GLib_g_path_is_absolute(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_file_name);
-
 
   /* Invocation */
   gboolean result = g_path_is_absolute(native_file_name);
@@ -29599,7 +29514,6 @@ mrb_GLib_g_path_skip_root(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_file_name);
-
 
   /* Invocation */
   const gchar * result = g_path_skip_root(native_file_name);
@@ -29673,7 +29587,6 @@ mrb_GLib_g_pattern_match_simple(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!z!", &native_pattern, &native_string);
-
 
   /* Invocation */
   gboolean result = g_pattern_match_simple(native_pattern, native_string);
@@ -29824,7 +29737,6 @@ mrb_GLib_g_pattern_spec_new(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_pattern);
-
 
   /* Invocation */
   GPatternSpec * result = g_pattern_spec_new(native_pattern);
@@ -30026,7 +29938,6 @@ mrb_GLib_g_print(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_format);
 
-
   /* Invocation */
   g_print(native_format);
 
@@ -30050,7 +29961,6 @@ mrb_GLib_g_printerr(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_format);
 
-
   /* Invocation */
   g_printerr(native_format);
 
@@ -30073,7 +29983,6 @@ mrb_GLib_g_printf(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_format);
-
 
   /* Invocation */
   gint result = g_printf(native_format);
@@ -30106,7 +30015,6 @@ mrb_GLib_g_printf_string_upper_bound(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!i", &native_format, &native_args);
-
 
   /* Invocation */
   gsize result = g_printf_string_upper_bound(native_format, native_args);
@@ -30871,7 +30779,6 @@ mrb_GLib_g_ptr_array_sized_new(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "i", &native_reserved_size);
 
-
   /* Invocation */
   GPtrArray * result = g_ptr_array_sized_new(native_reserved_size);
 
@@ -31052,7 +30959,6 @@ mrb_GLib_g_quark_from_static_string(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_string);
 
-
   /* Invocation */
   GQuark result = g_quark_from_static_string(native_string);
 
@@ -31082,7 +30988,6 @@ mrb_GLib_g_quark_from_string(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_string);
-
 
   /* Invocation */
   GQuark result = g_quark_from_string(native_string);
@@ -31131,7 +31036,6 @@ mrb_GLib_g_quark_to_string(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "i", &native_quark);
 
-
   /* Invocation */
   const gchar * result = g_quark_to_string(native_quark);
 
@@ -31157,7 +31061,6 @@ mrb_GLib_g_quark_try_string(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_string);
-
 
   /* Invocation */
   GQuark result = g_quark_try_string(native_string);
@@ -32958,7 +32861,6 @@ mrb_GLib_g_rand_new_with_seed(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "i", &native_seed);
 
-
   /* Invocation */
   GRand * result = g_rand_new_with_seed(native_seed);
 
@@ -33114,7 +33016,6 @@ mrb_GLib_g_random_double_range(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "ff", &native_begin, &native_end);
 
-
   /* Invocation */
   gdouble result = g_random_double_range(native_begin, native_end);
 
@@ -33167,7 +33068,6 @@ mrb_GLib_g_random_int_range(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "ii", &native_begin, &native_end);
 
-
   /* Invocation */
   gint32 result = g_random_int_range(native_begin, native_end);
 
@@ -33197,7 +33097,6 @@ mrb_GLib_g_random_set_seed(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "i", &native_seed);
-
 
   /* Invocation */
   g_random_set_seed(native_seed);
@@ -33528,7 +33427,6 @@ mrb_GLib_g_regex_escape_nul(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "z!i", &native_string, &native_length);
 
-
   /* Invocation */
   gchar * result = g_regex_escape_nul(native_string, native_length);
 
@@ -33556,7 +33454,6 @@ mrb_GLib_g_regex_escape_string(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!i", &native_string, &native_length);
-
 
   /* Invocation */
   gchar * result = g_regex_escape_string(native_string, native_length);
@@ -34588,7 +34485,6 @@ mrb_GLib_g_return_if_fail_warning(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "z!z!z!", &native_log_domain, &native_pretty_function, &native_expression);
 
-
   /* Invocation */
   g_return_if_fail_warning(native_log_domain, native_pretty_function, native_expression);
 
@@ -34611,7 +34507,6 @@ mrb_GLib_g_rmdir(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_filename);
-
 
   /* Invocation */
   int result = g_rmdir(native_filename);
@@ -37242,7 +37137,6 @@ mrb_GLib_g_set_application_name(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_application_name);
 
-
   /* Invocation */
   g_set_application_name(native_application_name);
 
@@ -37336,7 +37230,6 @@ mrb_GLib_g_set_prgname(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_prgname);
 
-
   /* Invocation */
   g_set_prgname(native_prgname);
 
@@ -37427,7 +37320,6 @@ mrb_GLib_g_setenv(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!z!i", &native_variable, &native_value, &native_overwrite);
-
 
   /* Invocation */
   gboolean result = g_setenv(native_variable, native_value, native_overwrite);
@@ -37531,7 +37423,6 @@ mrb_GLib_g_shell_quote(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_unquoted_string);
 
-
   /* Invocation */
   gchar * result = g_shell_quote(native_unquoted_string);
 
@@ -37592,7 +37483,6 @@ mrb_GLib_g_slice_alloc(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "i", &native_block_size);
 
-
   /* Invocation */
   gpointer result = g_slice_alloc(native_block_size);
 
@@ -37618,7 +37508,6 @@ mrb_GLib_g_slice_alloc0(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "i", &native_block_size);
-
 
   /* Invocation */
   gpointer result = g_slice_alloc0(native_block_size);
@@ -39766,7 +39655,6 @@ mrb_GLib_g_source_remove(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "i", &native_tag);
 
-
   /* Invocation */
   gboolean result = g_source_remove(native_tag);
 
@@ -40196,7 +40084,6 @@ mrb_GLib_g_source_set_name_by_id(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "iz!", &native_tag, &native_name);
 
-
   /* Invocation */
   g_source_set_name_by_id(native_tag, native_name);
 
@@ -40319,7 +40206,6 @@ mrb_GLib_g_spaced_primes_closest(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "i", &native_num);
-
 
   /* Invocation */
   guint result = g_spaced_primes_closest(native_num);
@@ -40539,7 +40425,6 @@ mrb_GLib_g_spawn_close_pid(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "i", &native_pid);
-
 
   /* Invocation */
   g_spawn_close_pid(native_pid);
@@ -40960,7 +40845,6 @@ mrb_GLib_g_str_has_prefix(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "z!z!", &native_str, &native_prefix);
 
-
   /* Invocation */
   gboolean result = g_str_has_prefix(native_str, native_prefix);
 
@@ -40992,7 +40876,6 @@ mrb_GLib_g_str_has_suffix(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!z!", &native_str, &native_suffix);
-
 
   /* Invocation */
   gboolean result = g_str_has_suffix(native_str, native_suffix);
@@ -41060,7 +40943,6 @@ mrb_GLib_g_str_is_ascii(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_str);
 
-
   /* Invocation */
   gboolean result = g_str_is_ascii(native_str);
 
@@ -41095,7 +40977,6 @@ mrb_GLib_g_str_match_string(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "z!z!i", &native_search_term, &native_potential_hit, &native_accept_alternates);
 
-
   /* Invocation */
   gboolean result = g_str_match_string(native_search_term, native_potential_hit, native_accept_alternates);
 
@@ -41127,7 +41008,6 @@ mrb_GLib_g_str_to_ascii(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!z!", &native_str, &native_from_locale);
-
 
   /* Invocation */
   gchar * result = g_str_to_ascii(native_str, native_from_locale);
@@ -41244,7 +41124,6 @@ mrb_GLib_g_strcasecmp(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!z!", &native_s1, &native_s2);
-
 
   /* Invocation */
   gint result = g_strcasecmp(native_s1, native_s2);
@@ -41374,7 +41253,6 @@ mrb_GLib_g_strcmp0(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "z!z!", &native_str1, &native_str2);
 
-
   /* Invocation */
   int result = g_strcmp0(native_str1, native_str2);
 
@@ -41405,7 +41283,6 @@ mrb_GLib_g_strcompress(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_source);
 
-
   /* Invocation */
   gchar * result = g_strcompress(native_source);
 
@@ -41431,7 +41308,6 @@ mrb_GLib_g_strconcat(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_string1);
-
 
   /* Invocation */
   gchar * result = g_strconcat(native_string1);
@@ -41559,7 +41435,6 @@ mrb_GLib_g_strdup(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_str);
 
-
   /* Invocation */
   gchar * result = g_strdup(native_str);
 
@@ -41585,7 +41460,6 @@ mrb_GLib_g_strdup_printf(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_format);
-
 
   /* Invocation */
   gchar * result = g_strdup_printf(native_format);
@@ -41614,7 +41488,6 @@ mrb_GLib_g_strdup_vprintf(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!i", &native_format, &native_args);
-
 
   /* Invocation */
   gchar * result = g_strdup_vprintf(native_format, native_args);
@@ -41674,7 +41547,6 @@ mrb_GLib_g_strerror(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "i", &native_errnum);
 
-
   /* Invocation */
   const gchar * result = g_strerror(native_errnum);
 
@@ -41702,7 +41574,6 @@ mrb_GLib_g_strescape(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!z!", &native_source, &native_exceptions);
-
 
   /* Invocation */
   gchar * result = g_strescape(native_source, native_exceptions);
@@ -42341,7 +42212,6 @@ mrb_GLib_g_string_chunk_new(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "i", &native_size);
 
-
   /* Invocation */
   GStringChunk * result = g_string_chunk_new(native_size);
 
@@ -42758,7 +42628,6 @@ mrb_GLib_g_string_new(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_init);
 
-
   /* Invocation */
   GString * result = g_string_new(native_init);
 
@@ -42786,7 +42655,6 @@ mrb_GLib_g_string_new_len(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!i", &native_init, &native_len);
-
 
   /* Invocation */
   GString * result = g_string_new_len(native_init, native_len);
@@ -43115,7 +42983,6 @@ mrb_GLib_g_string_sized_new(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "i", &native_dfl_size);
 
-
   /* Invocation */
   GString * result = g_string_sized_new(native_dfl_size);
 
@@ -43252,7 +43119,6 @@ mrb_GLib_g_strip_context(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "z!z!", &native_msgid, &native_msgval);
 
-
   /* Invocation */
   const gchar * result = g_strip_context(native_msgid, native_msgval);
 
@@ -43278,7 +43144,6 @@ mrb_GLib_g_strjoin(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_separator);
-
 
   /* Invocation */
   gchar * result = g_strjoin(native_separator);
@@ -43456,7 +43321,6 @@ mrb_GLib_g_strncasecmp(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "z!z!i", &native_s1, &native_s2, &native_n);
 
-
   /* Invocation */
   gint result = g_strncasecmp(native_s1, native_s2, native_n);
 
@@ -43489,7 +43353,6 @@ mrb_GLib_g_strndup(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "z!i", &native_str, &native_n);
 
-
   /* Invocation */
   gchar * result = g_strndup(native_str, native_n);
 
@@ -43517,7 +43380,6 @@ mrb_GLib_g_strnfill(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "ii", &native_length, &native_fill_char);
-
 
   /* Invocation */
   gchar * result = g_strnfill(native_length, native_fill_char);
@@ -43595,7 +43457,6 @@ mrb_GLib_g_strrstr(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "z!z!", &native_haystack, &native_needle);
 
-
   /* Invocation */
   gchar * result = g_strrstr(native_haystack, native_needle);
 
@@ -43626,7 +43487,6 @@ mrb_GLib_g_strrstr_len(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "z!iz!", &native_haystack, &native_haystack_len, &native_needle);
 
-
   /* Invocation */
   gchar * result = g_strrstr_len(native_haystack, native_haystack_len, native_needle);
 
@@ -43652,7 +43512,6 @@ mrb_GLib_g_strsignal(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "i", &native_signum);
-
 
   /* Invocation */
   const gchar * result = g_strsignal(native_signum);
@@ -43684,7 +43543,6 @@ mrb_GLib_g_strsplit(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "z!z!i", &native_string, &native_delimiter, &native_max_tokens);
 
-
   /* Invocation */
   gchar ** result = g_strsplit(native_string, native_delimiter, native_max_tokens);
 
@@ -43715,7 +43573,6 @@ mrb_GLib_g_strsplit_set(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "z!z!i", &native_string, &native_delimiters, &native_max_tokens);
 
-
   /* Invocation */
   gchar ** result = g_strsplit_set(native_string, native_delimiters, native_max_tokens);
 
@@ -43745,7 +43602,6 @@ mrb_GLib_g_strstr_len(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!iz!", &native_haystack, &native_haystack_len, &native_needle);
-
 
   /* Invocation */
   gchar * result = g_strstr_len(native_haystack, native_haystack_len, native_needle);
@@ -44017,7 +43873,6 @@ mrb_GLib_g_system_thread_set_name(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_name);
 
-
   /* Invocation */
   g_system_thread_set_name(native_name);
 
@@ -44235,7 +44090,6 @@ mrb_GLib_g_test_assert_expected_messages_internal(mrb_state* mrb, mrb_value self
   /* Fetch the args */
   mrb_get_args(mrb, "z!z!iz!", &native_domain, &native_file, &native_line, &native_func);
 
-
   /* Invocation */
   g_test_assert_expected_messages_internal(native_domain, native_file, native_line, native_func);
 
@@ -44259,7 +44113,6 @@ mrb_GLib_g_test_bug(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_bug_uri_snippet);
 
-
   /* Invocation */
   g_test_bug(native_bug_uri_snippet);
 
@@ -44282,7 +44135,6 @@ mrb_GLib_g_test_bug_base(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_uri_pattern);
-
 
   /* Invocation */
   g_test_bug_base(native_uri_pattern);
@@ -44391,7 +44243,6 @@ mrb_GLib_g_test_create_suite(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_suite_name);
-
 
   /* Invocation */
   GTestSuite * result = g_test_create_suite(native_suite_name);
@@ -44578,7 +44429,6 @@ mrb_GLib_g_test_incomplete(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_msg);
-
 
   /* Invocation */
   g_test_incomplete(native_msg);
@@ -44863,7 +44713,6 @@ mrb_GLib_g_test_maximized_result(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "fz!", &native_maximized_quantity, &native_format);
 
-
   /* Invocation */
   g_test_maximized_result(native_maximized_quantity, native_format);
 
@@ -44886,7 +44735,6 @@ mrb_GLib_g_test_message(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_format);
-
 
   /* Invocation */
   g_test_message(native_format);
@@ -44912,7 +44760,6 @@ mrb_GLib_g_test_minimized_result(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "fz!", &native_minimized_quantity, &native_format);
-
 
   /* Invocation */
   g_test_minimized_result(native_minimized_quantity, native_format);
@@ -45022,7 +44869,6 @@ mrb_GLib_g_test_rand_double_range(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "ff", &native_range_start, &native_range_end);
 
-
   /* Invocation */
   double result = g_test_rand_double_range(native_range_start, native_range_end);
 
@@ -45074,7 +44920,6 @@ mrb_GLib_g_test_rand_int_range(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "ii", &native_begin, &native_end);
-
 
   /* Invocation */
   gint32 result = g_test_rand_int_range(native_begin, native_end);
@@ -45185,7 +45030,6 @@ mrb_GLib_g_test_skip(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_msg);
-
 
   /* Invocation */
   g_test_skip(native_msg);
@@ -45380,7 +45224,6 @@ mrb_GLib_g_test_trap_assertions(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!z!iz!iz!", &native_domain, &native_file, &native_line, &native_func, &native_assertion_flags, &native_pattern);
-
 
   /* Invocation */
   g_test_trap_assertions(native_domain, native_file, native_line, native_func, native_assertion_flags, native_pattern);
@@ -46027,7 +45870,6 @@ mrb_GLib_g_thread_pool_set_max_idle_time(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "i", &native_interval);
 
-
   /* Invocation */
   g_thread_pool_set_max_idle_time(native_interval);
 
@@ -46096,7 +45938,6 @@ mrb_GLib_g_thread_pool_set_max_unused_threads(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "i", &native_max_threads);
-
 
   /* Invocation */
   g_thread_pool_set_max_unused_threads(native_max_threads);
@@ -46723,7 +46564,6 @@ mrb_GLib_g_time_zone_new(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_identifier);
 
-
   /* Invocation */
   GTimeZone * result = g_time_zone_new(native_identifier);
 
@@ -47043,7 +46883,6 @@ mrb_GLib_g_timeout_source_new(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "i", &native_interval);
 
-
   /* Invocation */
   GSource * result = g_timeout_source_new(native_interval);
 
@@ -47069,7 +46908,6 @@ mrb_GLib_g_timeout_source_new_seconds(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "i", &native_interval);
-
 
   /* Invocation */
   GSource * result = g_timeout_source_new_seconds(native_interval);
@@ -48144,7 +47982,6 @@ mrb_GLib_g_try_malloc(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "i", &native_n_bytes);
 
-
   /* Invocation */
   gpointer result = g_try_malloc(native_n_bytes);
 
@@ -48170,7 +48007,6 @@ mrb_GLib_g_try_malloc0(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "i", &native_n_bytes);
-
 
   /* Invocation */
   gpointer result = g_try_malloc0(native_n_bytes);
@@ -48200,7 +48036,6 @@ mrb_GLib_g_try_malloc0_n(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "ii", &native_n_blocks, &native_n_block_bytes);
 
-
   /* Invocation */
   gpointer result = g_try_malloc0_n(native_n_blocks, native_n_block_bytes);
 
@@ -48228,7 +48063,6 @@ mrb_GLib_g_try_malloc_n(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "ii", &native_n_blocks, &native_n_block_bytes);
-
 
   /* Invocation */
   gpointer result = g_try_malloc_n(native_n_blocks, native_n_block_bytes);
@@ -48424,7 +48258,6 @@ mrb_GLib_g_unichar_break_type(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "i", &native_c);
 
-
   /* Invocation */
   GUnicodeBreakType result = g_unichar_break_type(native_c);
 
@@ -48450,7 +48283,6 @@ mrb_GLib_g_unichar_combining_class(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "i", &native_uc);
-
 
   /* Invocation */
   gint result = g_unichar_combining_class(native_uc);
@@ -48565,7 +48397,6 @@ mrb_GLib_g_unichar_digit_value(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "i", &native_c);
 
-
   /* Invocation */
   gint result = g_unichar_digit_value(native_c);
 
@@ -48676,7 +48507,6 @@ mrb_GLib_g_unichar_get_script(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "i", &native_ch);
 
-
   /* Invocation */
   GUnicodeScript result = g_unichar_get_script(native_ch);
 
@@ -48702,7 +48532,6 @@ mrb_GLib_g_unichar_isalnum(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "i", &native_c);
-
 
   /* Invocation */
   gboolean result = g_unichar_isalnum(native_c);
@@ -48734,7 +48563,6 @@ mrb_GLib_g_unichar_isalpha(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "i", &native_c);
 
-
   /* Invocation */
   gboolean result = g_unichar_isalpha(native_c);
 
@@ -48764,7 +48592,6 @@ mrb_GLib_g_unichar_iscntrl(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "i", &native_c);
-
 
   /* Invocation */
   gboolean result = g_unichar_iscntrl(native_c);
@@ -48796,7 +48623,6 @@ mrb_GLib_g_unichar_isdefined(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "i", &native_c);
 
-
   /* Invocation */
   gboolean result = g_unichar_isdefined(native_c);
 
@@ -48826,7 +48652,6 @@ mrb_GLib_g_unichar_isdigit(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "i", &native_c);
-
 
   /* Invocation */
   gboolean result = g_unichar_isdigit(native_c);
@@ -48858,7 +48683,6 @@ mrb_GLib_g_unichar_isgraph(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "i", &native_c);
 
-
   /* Invocation */
   gboolean result = g_unichar_isgraph(native_c);
 
@@ -48888,7 +48712,6 @@ mrb_GLib_g_unichar_islower(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "i", &native_c);
-
 
   /* Invocation */
   gboolean result = g_unichar_islower(native_c);
@@ -48920,7 +48743,6 @@ mrb_GLib_g_unichar_ismark(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "i", &native_c);
 
-
   /* Invocation */
   gboolean result = g_unichar_ismark(native_c);
 
@@ -48950,7 +48772,6 @@ mrb_GLib_g_unichar_isprint(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "i", &native_c);
-
 
   /* Invocation */
   gboolean result = g_unichar_isprint(native_c);
@@ -48982,7 +48803,6 @@ mrb_GLib_g_unichar_ispunct(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "i", &native_c);
 
-
   /* Invocation */
   gboolean result = g_unichar_ispunct(native_c);
 
@@ -49012,7 +48832,6 @@ mrb_GLib_g_unichar_isspace(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "i", &native_c);
-
 
   /* Invocation */
   gboolean result = g_unichar_isspace(native_c);
@@ -49044,7 +48863,6 @@ mrb_GLib_g_unichar_istitle(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "i", &native_c);
 
-
   /* Invocation */
   gboolean result = g_unichar_istitle(native_c);
 
@@ -49074,7 +48892,6 @@ mrb_GLib_g_unichar_isupper(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "i", &native_c);
-
 
   /* Invocation */
   gboolean result = g_unichar_isupper(native_c);
@@ -49106,7 +48923,6 @@ mrb_GLib_g_unichar_iswide(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "i", &native_c);
 
-
   /* Invocation */
   gboolean result = g_unichar_iswide(native_c);
 
@@ -49136,7 +48952,6 @@ mrb_GLib_g_unichar_iswide_cjk(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "i", &native_c);
-
 
   /* Invocation */
   gboolean result = g_unichar_iswide_cjk(native_c);
@@ -49168,7 +48983,6 @@ mrb_GLib_g_unichar_isxdigit(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "i", &native_c);
 
-
   /* Invocation */
   gboolean result = g_unichar_isxdigit(native_c);
 
@@ -49198,7 +49012,6 @@ mrb_GLib_g_unichar_iszerowidth(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "i", &native_c);
-
 
   /* Invocation */
   gboolean result = g_unichar_iszerowidth(native_c);
@@ -49284,7 +49097,6 @@ mrb_GLib_g_unichar_tolower(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "i", &native_c);
 
-
   /* Invocation */
   gunichar result = g_unichar_tolower(native_c);
 
@@ -49314,7 +49126,6 @@ mrb_GLib_g_unichar_totitle(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "i", &native_c);
-
 
   /* Invocation */
   gunichar result = g_unichar_totitle(native_c);
@@ -49346,7 +49157,6 @@ mrb_GLib_g_unichar_toupper(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "i", &native_c);
 
-
   /* Invocation */
   gunichar result = g_unichar_toupper(native_c);
 
@@ -49377,7 +49187,6 @@ mrb_GLib_g_unichar_type(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "i", &native_c);
 
-
   /* Invocation */
   GUnicodeType result = g_unichar_type(native_c);
 
@@ -49403,7 +49212,6 @@ mrb_GLib_g_unichar_validate(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "i", &native_ch);
-
 
   /* Invocation */
   gboolean result = g_unichar_validate(native_ch);
@@ -49434,7 +49242,6 @@ mrb_GLib_g_unichar_xdigit_value(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "i", &native_c);
-
 
   /* Invocation */
   gint result = g_unichar_xdigit_value(native_c);
@@ -49530,7 +49337,6 @@ mrb_GLib_g_unicode_script_from_iso15924(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "i", &native_iso15924);
-
 
   /* Invocation */
   GUnicodeScript result = g_unicode_script_from_iso15924(native_iso15924);
@@ -49931,7 +49737,6 @@ mrb_GLib_g_unix_signal_source_new(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "i", &native_signum);
 
-
   /* Invocation */
   GSource * result = g_unix_signal_source_new(native_signum);
 
@@ -49957,7 +49762,6 @@ mrb_GLib_g_unlink(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_filename);
-
 
   /* Invocation */
   int result = g_unlink(native_filename);
@@ -49989,7 +49793,6 @@ mrb_GLib_g_unsetenv(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_variable);
 
-
   /* Invocation */
   g_unsetenv(native_variable);
 
@@ -50017,7 +49820,6 @@ mrb_GLib_g_uri_escape_string(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "z!z!i", &native_unescaped, &native_reserved_chars_allowed, &native_allow_utf8);
 
-
   /* Invocation */
   char * result = g_uri_escape_string(native_unescaped, native_reserved_chars_allowed, native_allow_utf8);
 
@@ -50044,7 +49846,6 @@ mrb_GLib_g_uri_list_extract_uris(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_uri_list);
 
-
   /* Invocation */
   gchar ** result = g_uri_list_extract_uris(native_uri_list);
 
@@ -50070,7 +49871,6 @@ mrb_GLib_g_uri_parse_scheme(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_uri);
-
 
   /* Invocation */
   char * result = g_uri_parse_scheme(native_uri);
@@ -50102,7 +49902,6 @@ mrb_GLib_g_uri_unescape_segment(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "z!z!z!", &native_escaped_string, &native_escaped_string_end, &native_illegal_characters);
 
-
   /* Invocation */
   char * result = g_uri_unescape_segment(native_escaped_string, native_escaped_string_end, native_illegal_characters);
 
@@ -50131,7 +49930,6 @@ mrb_GLib_g_uri_unescape_string(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "z!z!", &native_escaped_string, &native_illegal_characters);
 
-
   /* Invocation */
   char * result = g_uri_unescape_string(native_escaped_string, native_illegal_characters);
 
@@ -50157,7 +49955,6 @@ mrb_GLib_g_usleep(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "i", &native_microseconds);
-
 
   /* Invocation */
   g_usleep(native_microseconds);
@@ -50282,7 +50079,6 @@ mrb_GLib_g_utf8_casefold(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "z!i", &native_str, &native_len);
 
-
   /* Invocation */
   gchar * result = g_utf8_casefold(native_str, native_len);
 
@@ -50310,7 +50106,6 @@ mrb_GLib_g_utf8_collate(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!z!", &native_str1, &native_str2);
-
 
   /* Invocation */
   gint result = g_utf8_collate(native_str1, native_str2);
@@ -50344,7 +50139,6 @@ mrb_GLib_g_utf8_collate_key(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "z!i", &native_str, &native_len);
 
-
   /* Invocation */
   gchar * result = g_utf8_collate_key(native_str, native_len);
 
@@ -50372,7 +50166,6 @@ mrb_GLib_g_utf8_collate_key_for_filename(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!i", &native_str, &native_len);
-
 
   /* Invocation */
   gchar * result = g_utf8_collate_key_for_filename(native_str, native_len);
@@ -50402,7 +50195,6 @@ mrb_GLib_g_utf8_find_next_char(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "z!z!", &native_p, &native_end);
 
-
   /* Invocation */
   gchar * result = g_utf8_find_next_char(native_p, native_end);
 
@@ -50431,7 +50223,6 @@ mrb_GLib_g_utf8_find_prev_char(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "z!z!", &native_str, &native_p);
 
-
   /* Invocation */
   gchar * result = g_utf8_find_prev_char(native_str, native_p);
 
@@ -50457,7 +50248,6 @@ mrb_GLib_g_utf8_get_char(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_p);
-
 
   /* Invocation */
   gunichar result = g_utf8_get_char(native_p);
@@ -50490,7 +50280,6 @@ mrb_GLib_g_utf8_get_char_validated(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!i", &native_p, &native_max_len);
-
 
   /* Invocation */
   gunichar result = g_utf8_get_char_validated(native_p, native_max_len);
@@ -50560,7 +50349,6 @@ mrb_GLib_g_utf8_offset_to_pointer(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "z!i", &native_str, &native_offset);
 
-
   /* Invocation */
   gchar * result = g_utf8_offset_to_pointer(native_str, native_offset);
 
@@ -50588,7 +50376,6 @@ mrb_GLib_g_utf8_pointer_to_offset(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!z!", &native_str, &native_pos);
-
 
   /* Invocation */
   glong result = g_utf8_pointer_to_offset(native_str, native_pos);
@@ -50620,7 +50407,6 @@ mrb_GLib_g_utf8_prev_char(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_p);
 
-
   /* Invocation */
   gchar * result = g_utf8_prev_char(native_p);
 
@@ -50651,7 +50437,6 @@ mrb_GLib_g_utf8_strchr(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "z!ii", &native_p, &native_len, &native_c);
 
-
   /* Invocation */
   gchar * result = g_utf8_strchr(native_p, native_len, native_c);
 
@@ -50680,7 +50465,6 @@ mrb_GLib_g_utf8_strdown(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "z!i", &native_str, &native_len);
 
-
   /* Invocation */
   gchar * result = g_utf8_strdown(native_str, native_len);
 
@@ -50708,7 +50492,6 @@ mrb_GLib_g_utf8_strlen(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!i", &native_p, &native_max);
-
 
   /* Invocation */
   glong result = g_utf8_strlen(native_p, native_max);
@@ -50796,7 +50579,6 @@ mrb_GLib_g_utf8_strrchr(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "z!ii", &native_p, &native_len, &native_c);
 
-
   /* Invocation */
   gchar * result = g_utf8_strrchr(native_p, native_len, native_c);
 
@@ -50825,7 +50607,6 @@ mrb_GLib_g_utf8_strreverse(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "z!i", &native_str, &native_len);
 
-
   /* Invocation */
   gchar * result = g_utf8_strreverse(native_str, native_len);
 
@@ -50853,7 +50634,6 @@ mrb_GLib_g_utf8_strup(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!i", &native_str, &native_len);
-
 
   /* Invocation */
   gchar * result = g_utf8_strup(native_str, native_len);
@@ -50884,7 +50664,6 @@ mrb_GLib_g_utf8_substring(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!ii", &native_str, &native_start_pos, &native_end_pos);
-
 
   /* Invocation */
   gchar * result = g_utf8_substring(native_str, native_start_pos, native_end_pos);
@@ -53643,7 +53422,6 @@ mrb_GLib_g_variant_is_object_path(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_string);
 
-
   /* Invocation */
   gboolean result = g_variant_is_object_path(native_string);
 
@@ -53720,7 +53498,6 @@ mrb_GLib_g_variant_is_signature(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_string);
-
 
   /* Invocation */
   gboolean result = g_variant_is_signature(native_string);
@@ -54223,7 +54000,6 @@ mrb_GLib_g_variant_new(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_format_string);
 
-
   /* Invocation */
   GVariant * result = g_variant_new(native_format_string);
 
@@ -54292,7 +54068,6 @@ mrb_GLib_g_variant_new_boolean(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "i", &native_value);
 
-
   /* Invocation */
   GVariant * result = g_variant_new_boolean(native_value);
 
@@ -54319,7 +54094,6 @@ mrb_GLib_g_variant_new_byte(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "i", &native_value);
 
-
   /* Invocation */
   GVariant * result = g_variant_new_byte(native_value);
 
@@ -54345,7 +54119,6 @@ mrb_GLib_g_variant_new_bytestring(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_string);
-
 
   /* Invocation */
   GVariant * result = g_variant_new_bytestring(native_string);
@@ -54449,7 +54222,6 @@ mrb_GLib_g_variant_new_double(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "f", &native_value);
-
 
   /* Invocation */
   GVariant * result = g_variant_new_double(native_value);
@@ -54664,7 +54436,6 @@ mrb_GLib_g_variant_new_handle(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "i", &native_value);
 
-
   /* Invocation */
   GVariant * result = g_variant_new_handle(native_value);
 
@@ -54690,7 +54461,6 @@ mrb_GLib_g_variant_new_int16(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "i", &native_value);
-
 
   /* Invocation */
   GVariant * result = g_variant_new_int16(native_value);
@@ -54718,7 +54488,6 @@ mrb_GLib_g_variant_new_int32(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "i", &native_value);
 
-
   /* Invocation */
   GVariant * result = g_variant_new_int32(native_value);
 
@@ -54744,7 +54513,6 @@ mrb_GLib_g_variant_new_int64(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "i", &native_value);
-
 
   /* Invocation */
   GVariant * result = g_variant_new_int64(native_value);
@@ -54815,7 +54583,6 @@ mrb_GLib_g_variant_new_object_path(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_object_path);
 
-
   /* Invocation */
   GVariant * result = g_variant_new_object_path(native_object_path);
 
@@ -54875,7 +54642,6 @@ mrb_GLib_g_variant_new_parsed(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_format);
-
 
   /* Invocation */
   GVariant * result = g_variant_new_parsed(native_format);
@@ -54937,7 +54703,6 @@ mrb_GLib_g_variant_new_printf(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_format_string);
 
-
   /* Invocation */
   GVariant * result = g_variant_new_printf(native_format_string);
 
@@ -54964,7 +54729,6 @@ mrb_GLib_g_variant_new_signature(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_signature);
 
-
   /* Invocation */
   GVariant * result = g_variant_new_signature(native_signature);
 
@@ -54990,7 +54754,6 @@ mrb_GLib_g_variant_new_string(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_string);
-
 
   /* Invocation */
   GVariant * result = g_variant_new_string(native_string);
@@ -55134,7 +54897,6 @@ mrb_GLib_g_variant_new_uint16(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "i", &native_value);
 
-
   /* Invocation */
   GVariant * result = g_variant_new_uint16(native_value);
 
@@ -55161,7 +54923,6 @@ mrb_GLib_g_variant_new_uint32(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "i", &native_value);
 
-
   /* Invocation */
   GVariant * result = g_variant_new_uint32(native_value);
 
@@ -55187,7 +54948,6 @@ mrb_GLib_g_variant_new_uint64(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "i", &native_value);
-
 
   /* Invocation */
   GVariant * result = g_variant_new_uint64(native_value);
@@ -56007,7 +55767,6 @@ mrb_GLib_g_variant_type_checked_(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_arg1);
-
 
   /* Invocation */
   const GVariantType * result = g_variant_type_checked_(native_arg1);
@@ -57105,7 +56864,6 @@ mrb_GLib_g_variant_type_new(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_type_string);
 
-
   /* Invocation */
   GVariantType * result = g_variant_type_new(native_type_string);
 
@@ -57348,7 +57106,6 @@ mrb_GLib_g_variant_type_string_is_valid(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_type_string);
-
 
   /* Invocation */
   gboolean result = g_variant_type_string_is_valid(native_type_string);
@@ -57892,7 +57649,6 @@ mrb_GLib_g_warn_message(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "z!z!iz!z!", &native_domain, &native_file, &native_line, &native_func, &native_warnexpr);
 
-
   /* Invocation */
   g_warn_message(native_domain, native_file, native_line, native_func, native_warnexpr);
 
@@ -57939,7 +57695,6 @@ mrb_GLib_glib_check_version(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "iii", &native_required_major, &native_required_minor, &native_required_micro);
-
 
   /* Invocation */
   const gchar * result = glib_check_version(native_required_major, native_required_minor, native_required_micro);
@@ -58154,7 +57909,6 @@ mrb_GLib_xmax(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "ii", &native_size1, &native_size2);
 
-
   /* Invocation */
   size_t result = xmax(native_size1, native_size2);
 
@@ -58186,7 +57940,6 @@ mrb_GLib_xsum(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "ii", &native_size1, &native_size2);
-
 
   /* Invocation */
   size_t result = xsum(native_size1, native_size2);
@@ -58221,7 +57974,6 @@ mrb_GLib_xsum3(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "iii", &native_size1, &native_size2, &native_size3);
-
 
   /* Invocation */
   size_t result = xsum3(native_size1, native_size2, native_size3);
@@ -58258,7 +58010,6 @@ mrb_GLib_xsum4(mrb_state* mrb, mrb_value self) {
 
   /* Fetch the args */
   mrb_get_args(mrb, "iiii", &native_size1, &native_size2, &native_size3, &native_size4);
-
 
   /* Invocation */
   size_t result = xsum4(native_size1, native_size2, native_size3, native_size4);
