@@ -179,7 +179,7 @@ mrb_GLib__g_gnulib_printf(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib__g_gnulib_snprintf(mrb_state* mrb, mrb_value self) {
   mrb_value string;
-  mrb_int n;
+  unsigned long native_n;
   mrb_value format;
 
   /* Fetch the args */
@@ -449,7 +449,7 @@ mrb_GLib__g_gnulib_vprintf(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib__g_gnulib_vsnprintf(mrb_state* mrb, mrb_value self) {
   mrb_value string;
-  mrb_int n;
+  unsigned long native_n;
   mrb_value format;
   mrb_value args;
 
@@ -630,7 +630,7 @@ mrb_GLib__g_log_fallback_handler(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib__g_main_create_unix_signal_watch(mrb_state* mrb, mrb_value self) {
-  mrb_int signum;
+  int native_signum;
 
   /* Fetch the args */
   mrb_get_args(mrb, "i", &signum);
@@ -716,8 +716,8 @@ mrb_GLib__g_utf8_normalize_wc(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib__GLIB_CHECKED_ADD_U32(mrb_state* mrb, mrb_value self) {
   mrb_value dest;
-  mrb_int a;
-  mrb_int b;
+  unsigned int native_a;
+  unsigned int native_b;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oii", &dest, &a, &b);
@@ -757,8 +757,8 @@ mrb_GLib__GLIB_CHECKED_ADD_U32(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib__GLIB_CHECKED_ADD_U64(mrb_state* mrb, mrb_value self) {
   mrb_value dest;
-  mrb_int a;
-  mrb_int b;
+  unsigned long native_a;
+  unsigned long native_b;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oii", &dest, &a, &b);
@@ -798,8 +798,8 @@ mrb_GLib__GLIB_CHECKED_ADD_U64(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib__GLIB_CHECKED_MUL_U32(mrb_state* mrb, mrb_value self) {
   mrb_value dest;
-  mrb_int a;
-  mrb_int b;
+  unsigned int native_a;
+  unsigned int native_b;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oii", &dest, &a, &b);
@@ -839,8 +839,8 @@ mrb_GLib__GLIB_CHECKED_MUL_U32(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib__GLIB_CHECKED_MUL_U64(mrb_state* mrb, mrb_value self) {
   mrb_value dest;
-  mrb_int a;
-  mrb_int b;
+  unsigned long native_a;
+  unsigned long native_b;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oii", &dest, &a, &b);
@@ -941,7 +941,7 @@ mrb_GLib_asnprintf(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_access(mrb_state* mrb, mrb_value self) {
   mrb_value filename;
-  mrb_int mode;
+  int native_mode;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &filename, &mode);
@@ -985,7 +985,7 @@ mrb_value
 mrb_GLib_g_array_append_vals(mrb_state* mrb, mrb_value self) {
   mrb_value array;
   mrb_value data;
-  mrb_int len;
+  unsigned int native_len;
 
   /* Fetch the args */
   mrb_get_args(mrb, "ooi", &array, &data, &len);
@@ -1026,7 +1026,7 @@ mrb_GLib_g_array_append_vals(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_array_free(mrb_state* mrb, mrb_value self) {
   mrb_value array;
-  mrb_int free_segment;
+  int native_free_segment;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &array, &free_segment);
@@ -1106,9 +1106,9 @@ mrb_GLib_g_array_get_element_size(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_array_insert_vals(mrb_state* mrb, mrb_value self) {
   mrb_value array;
-  mrb_int index_;
+  unsigned int native_index_;
   mrb_value data;
-  mrb_int len;
+  unsigned int native_len;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oioi", &array, &index_, &data, &len);
@@ -1149,9 +1149,9 @@ mrb_GLib_g_array_insert_vals(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_array_new(mrb_state* mrb, mrb_value self) {
-  mrb_int zero_terminated;
-  mrb_int clear_;
-  mrb_int element_size;
+  int native_zero_terminated;
+  int native_clear_;
+  unsigned int native_element_size;
 
   /* Fetch the args */
   mrb_get_args(mrb, "iii", &zero_terminated, &clear_, &element_size);
@@ -1182,7 +1182,7 @@ mrb_value
 mrb_GLib_g_array_prepend_vals(mrb_state* mrb, mrb_value self) {
   mrb_value array;
   mrb_value data;
-  mrb_int len;
+  unsigned int native_len;
 
   /* Fetch the args */
   mrb_get_args(mrb, "ooi", &array, &data, &len);
@@ -1259,7 +1259,7 @@ mrb_GLib_g_array_ref(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_array_remove_index(mrb_state* mrb, mrb_value self) {
   mrb_value array;
-  mrb_int index_;
+  unsigned int native_index_;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &array, &index_);
@@ -1297,7 +1297,7 @@ mrb_GLib_g_array_remove_index(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_array_remove_index_fast(mrb_state* mrb, mrb_value self) {
   mrb_value array;
-  mrb_int index_;
+  unsigned int native_index_;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &array, &index_);
@@ -1336,8 +1336,8 @@ mrb_GLib_g_array_remove_index_fast(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_array_remove_range(mrb_state* mrb, mrb_value self) {
   mrb_value array;
-  mrb_int index_;
-  mrb_int length;
+  unsigned int native_index_;
+  unsigned int native_length;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oii", &array, &index_, &length);
@@ -1413,7 +1413,7 @@ mrb_GLib_g_array_set_clear_func(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_array_set_size(mrb_state* mrb, mrb_value self) {
   mrb_value array;
-  mrb_int length;
+  unsigned int native_length;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &array, &length);
@@ -1452,10 +1452,10 @@ mrb_GLib_g_array_set_size(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_array_sized_new(mrb_state* mrb, mrb_value self) {
-  mrb_int zero_terminated;
-  mrb_int clear_;
-  mrb_int element_size;
-  mrb_int reserved_size;
+  int native_zero_terminated;
+  int native_clear_;
+  unsigned int native_element_size;
+  unsigned int native_reserved_size;
 
   /* Fetch the args */
   mrb_get_args(mrb, "iiii", &zero_terminated, &clear_, &element_size, &reserved_size);
@@ -1596,7 +1596,7 @@ mrb_GLib_g_array_unref(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_ascii_digit_value(mrb_state* mrb, mrb_value self) {
-  mrb_int c;
+  char native_c;
 
   /* Fetch the args */
   mrb_get_args(mrb, "i", &c);
@@ -1630,20 +1630,16 @@ mrb_GLib_g_ascii_digit_value(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_ascii_dtostr(mrb_state* mrb, mrb_value self) {
   mrb_value buffer;
-  mrb_int buf_len;
-  mrb_value d;
+  int native_buf_len;
+  double native_d;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "oio", &buffer, &buf_len, &d);
+  mrb_get_args(mrb, "oif", &buffer, &buf_len, &d);
 
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, buffer, mrb->string_class)) {
     mrb_raise(mrb, E_TYPE_ERROR, "String expected");
-    return mrb_nil_value();
-  }
-  if (!mrb_obj_is_kind_of(mrb, d, mrb->float_class)) {
-    mrb_raise(mrb, E_TYPE_ERROR, "Float expected");
     return mrb_nil_value();
   }
 
@@ -1654,8 +1650,6 @@ mrb_GLib_g_ascii_dtostr(mrb_state* mrb, mrb_value self) {
    *          Has this been verified? [No]
    */
   char * native_buffer = strdup(mrb_string_value_cstr(mrb, &buffer));
-
-  double native_d = mrb_float(d);
 
   /* Invocation */
   gchar * result = g_ascii_dtostr(native_buffer, native_buf_len, native_d);
@@ -1690,12 +1684,12 @@ mrb_GLib_g_ascii_dtostr(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_ascii_formatd(mrb_state* mrb, mrb_value self) {
   mrb_value buffer;
-  mrb_int buf_len;
+  int native_buf_len;
   mrb_value format;
-  mrb_value d;
+  double native_d;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "oioo", &buffer, &buf_len, &format, &d);
+  mrb_get_args(mrb, "oiof", &buffer, &buf_len, &format, &d);
 
 
   /* Type checking */
@@ -1705,10 +1699,6 @@ mrb_GLib_g_ascii_formatd(mrb_state* mrb, mrb_value self) {
   }
   if (!mrb_obj_is_kind_of(mrb, format, mrb->string_class)) {
     mrb_raise(mrb, E_TYPE_ERROR, "String expected");
-    return mrb_nil_value();
-  }
-  if (!mrb_obj_is_kind_of(mrb, d, mrb->float_class)) {
-    mrb_raise(mrb, E_TYPE_ERROR, "Float expected");
     return mrb_nil_value();
   }
 
@@ -1721,8 +1711,6 @@ mrb_GLib_g_ascii_formatd(mrb_state* mrb, mrb_value self) {
   char * native_buffer = strdup(mrb_string_value_cstr(mrb, &buffer));
 
   const char * native_format = mrb_string_value_cstr(mrb, &format);
-
-  double native_d = mrb_float(d);
 
   /* Invocation */
   gchar * result = g_ascii_formatd(native_buffer, native_buf_len, native_format, native_d);
@@ -1803,7 +1791,7 @@ mrb_GLib_g_ascii_strcasecmp(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_ascii_strdown(mrb_state* mrb, mrb_value self) {
   mrb_value str;
-  mrb_int len;
+  long native_len;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &str, &len);
@@ -1843,7 +1831,7 @@ mrb_value
 mrb_GLib_g_ascii_strncasecmp(mrb_state* mrb, mrb_value self) {
   mrb_value s1;
   mrb_value s2;
-  mrb_int n;
+  unsigned long native_n;
 
   /* Fetch the args */
   mrb_get_args(mrb, "ooi", &s1, &s2, &n);
@@ -1934,7 +1922,7 @@ mrb_value
 mrb_GLib_g_ascii_strtoll(mrb_state* mrb, mrb_value self) {
   mrb_value nptr;
   mrb_value endptr;
-  mrb_int base;
+  unsigned int native_base;
 
   /* Fetch the args */
   mrb_get_args(mrb, "ooi", &nptr, &endptr, &base);
@@ -1981,7 +1969,7 @@ mrb_value
 mrb_GLib_g_ascii_strtoull(mrb_state* mrb, mrb_value self) {
   mrb_value nptr;
   mrb_value endptr;
-  mrb_int base;
+  unsigned int native_base;
 
   /* Fetch the args */
   mrb_get_args(mrb, "ooi", &nptr, &endptr, &base);
@@ -2026,7 +2014,7 @@ mrb_GLib_g_ascii_strtoull(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_ascii_strup(mrb_state* mrb, mrb_value self) {
   mrb_value str;
-  mrb_int len;
+  long native_len;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &str, &len);
@@ -2062,7 +2050,7 @@ mrb_GLib_g_ascii_strup(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_ascii_tolower(mrb_state* mrb, mrb_value self) {
-  mrb_int c;
+  char native_c;
 
   /* Fetch the args */
   mrb_get_args(mrb, "i", &c);
@@ -2093,7 +2081,7 @@ mrb_GLib_g_ascii_tolower(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_ascii_toupper(mrb_state* mrb, mrb_value self) {
-  mrb_int c;
+  char native_c;
 
   /* Fetch the args */
   mrb_get_args(mrb, "i", &c);
@@ -2124,7 +2112,7 @@ mrb_GLib_g_ascii_toupper(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_ascii_xdigit_value(mrb_state* mrb, mrb_value self) {
-  mrb_int c;
+  char native_c;
 
   /* Fetch the args */
   mrb_get_args(mrb, "i", &c);
@@ -2161,7 +2149,7 @@ mrb_value
 mrb_GLib_g_assert_warning(mrb_state* mrb, mrb_value self) {
   mrb_value log_domain;
   mrb_value file;
-  mrb_int line;
+  const int native_line;
   mrb_value pretty_function;
   mrb_value expression;
 
@@ -2220,7 +2208,7 @@ mrb_value
 mrb_GLib_g_assertion_message(mrb_state* mrb, mrb_value self) {
   mrb_value domain;
   mrb_value file;
-  mrb_int line;
+  int native_line;
   mrb_value func;
   mrb_value message;
 
@@ -2283,13 +2271,13 @@ mrb_value
 mrb_GLib_g_assertion_message_cmpnum(mrb_state* mrb, mrb_value self) {
   mrb_value domain;
   mrb_value file;
-  mrb_int line;
+  int native_line;
   mrb_value func;
   mrb_value expr;
   mrb_value arg1;
   mrb_value cmp;
   mrb_value arg2;
-  mrb_int numtype;
+  char native_numtype;
 
   /* Fetch the args */
   mrb_get_args(mrb, "ooioooooi", &domain, &file, &line, &func, &expr, &arg1, &cmp, &arg2, &numtype);
@@ -2361,7 +2349,7 @@ mrb_value
 mrb_GLib_g_assertion_message_cmpstr(mrb_state* mrb, mrb_value self) {
   mrb_value domain;
   mrb_value file;
-  mrb_int line;
+  int native_line;
   mrb_value func;
   mrb_value expr;
   mrb_value arg1;
@@ -2444,12 +2432,12 @@ mrb_value
 mrb_GLib_g_assertion_message_error(mrb_state* mrb, mrb_value self) {
   mrb_value domain;
   mrb_value file;
-  mrb_int line;
+  int native_line;
   mrb_value func;
   mrb_value expr;
   mrb_value error;
-  mrb_int error_domain;
-  mrb_int error_code;
+  unsigned int native_error_domain;
+  int native_error_code;
 
   /* Fetch the args */
   mrb_get_args(mrb, "ooioooii", &domain, &file, &line, &func, &expr, &error, &error_domain, &error_code);
@@ -2512,7 +2500,7 @@ mrb_value
 mrb_GLib_g_assertion_message_expr(mrb_state* mrb, mrb_value self) {
   mrb_value domain;
   mrb_value file;
-  mrb_int line;
+  int native_line;
   mrb_value func;
   mrb_value expr;
 
@@ -3386,7 +3374,7 @@ mrb_GLib_g_async_queue_timed_pop_unlocked(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_async_queue_timeout_pop(mrb_state* mrb, mrb_value self) {
   mrb_value queue;
-  mrb_int timeout;
+  unsigned long native_timeout;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &queue, &timeout);
@@ -3424,7 +3412,7 @@ mrb_GLib_g_async_queue_timeout_pop(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_async_queue_timeout_pop_unlocked(mrb_state* mrb, mrb_value self) {
   mrb_value queue;
-  mrb_int timeout;
+  unsigned long native_timeout;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &queue, &timeout);
@@ -3663,7 +3651,7 @@ mrb_GLib_g_atexit(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_atomic_int_add(mrb_state* mrb, mrb_value self) {
   mrb_value atomic;
-  mrb_int val;
+  int native_val;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &atomic, &val);
@@ -3702,7 +3690,7 @@ mrb_GLib_g_atomic_int_add(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_atomic_int_and(mrb_state* mrb, mrb_value self) {
   mrb_value atomic;
-  mrb_int val;
+  unsigned int native_val;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &atomic, &val);
@@ -3742,8 +3730,8 @@ mrb_GLib_g_atomic_int_and(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_atomic_int_compare_and_exchange(mrb_state* mrb, mrb_value self) {
   mrb_value atomic;
-  mrb_int oldval;
-  mrb_int newval;
+  int native_oldval;
+  int native_newval;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oii", &atomic, &oldval, &newval);
@@ -3819,7 +3807,7 @@ mrb_GLib_g_atomic_int_dec_and_test(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_atomic_int_exchange_and_add(mrb_state* mrb, mrb_value self) {
   mrb_value atomic;
-  mrb_int val;
+  int native_val;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &atomic, &val);
@@ -3925,7 +3913,7 @@ mrb_GLib_g_atomic_int_inc(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_atomic_int_or(mrb_state* mrb, mrb_value self) {
   mrb_value atomic;
-  mrb_int val;
+  unsigned int native_val;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &atomic, &val);
@@ -3964,7 +3952,7 @@ mrb_GLib_g_atomic_int_or(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_atomic_int_set(mrb_state* mrb, mrb_value self) {
   mrb_value atomic;
-  mrb_int newval;
+  int native_newval;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &atomic, &newval);
@@ -3996,7 +3984,7 @@ mrb_GLib_g_atomic_int_set(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_atomic_int_xor(mrb_state* mrb, mrb_value self) {
   mrb_value atomic;
-  mrb_int val;
+  unsigned int native_val;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &atomic, &val);
@@ -4035,7 +4023,7 @@ mrb_GLib_g_atomic_int_xor(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_atomic_pointer_add(mrb_state* mrb, mrb_value self) {
   mrb_value atomic;
-  mrb_int val;
+  long native_val;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &atomic, &val);
@@ -4074,7 +4062,7 @@ mrb_GLib_g_atomic_pointer_add(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_atomic_pointer_and(mrb_state* mrb, mrb_value self) {
   mrb_value atomic;
-  mrb_int val;
+  unsigned long native_val;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &atomic, &val);
@@ -4193,7 +4181,7 @@ mrb_GLib_g_atomic_pointer_get(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_atomic_pointer_or(mrb_state* mrb, mrb_value self) {
   mrb_value atomic;
-  mrb_int val;
+  unsigned long native_val;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &atomic, &val);
@@ -4267,7 +4255,7 @@ mrb_GLib_g_atomic_pointer_set(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_atomic_pointer_xor(mrb_state* mrb, mrb_value self) {
   mrb_value atomic;
-  mrb_int val;
+  unsigned long native_val;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &atomic, &val);
@@ -4464,7 +4452,7 @@ mrb_GLib_g_base64_decode_inplace(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_base64_decode_step(mrb_state* mrb, mrb_value self) {
   mrb_value in;
-  mrb_int len;
+  unsigned long native_len;
   mrb_value out;
   mrb_value state;
   mrb_value save;
@@ -4518,7 +4506,7 @@ mrb_GLib_g_base64_decode_step(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_base64_encode(mrb_state* mrb, mrb_value self) {
   mrb_value data;
-  mrb_int len;
+  unsigned long native_len;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &data, &len);
@@ -4554,7 +4542,7 @@ mrb_GLib_g_base64_encode(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_base64_encode_close(mrb_state* mrb, mrb_value self) {
-  mrb_int break_lines;
+  int native_break_lines;
   mrb_value out;
   mrb_value state;
   mrb_value save;
@@ -4622,8 +4610,8 @@ mrb_GLib_g_base64_encode_close(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_base64_encode_step(mrb_state* mrb, mrb_value self) {
   mrb_value in;
-  mrb_int len;
-  mrb_int break_lines;
+  unsigned long native_len;
+  int native_break_lines;
   mrb_value out;
   mrb_value state;
   mrb_value save;
@@ -4726,7 +4714,7 @@ mrb_GLib_g_basename(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_bit_lock(mrb_state* mrb, mrb_value self) {
   mrb_value address;
-  mrb_int lock_bit;
+  int native_lock_bit;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &address, &lock_bit);
@@ -4757,8 +4745,8 @@ mrb_GLib_g_bit_lock(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_bit_nth_lsf(mrb_state* mrb, mrb_value self) {
-  mrb_int mask;
-  mrb_int nth_bit;
+  unsigned long native_mask;
+  int native_nth_bit;
 
   /* Fetch the args */
   mrb_get_args(mrb, "ii", &mask, &nth_bit);
@@ -4790,8 +4778,8 @@ mrb_GLib_g_bit_nth_lsf(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_bit_nth_lsf_impl(mrb_state* mrb, mrb_value self) {
-  mrb_int mask;
-  mrb_int nth_bit;
+  unsigned long native_mask;
+  int native_nth_bit;
 
   /* Fetch the args */
   mrb_get_args(mrb, "ii", &mask, &nth_bit);
@@ -4823,8 +4811,8 @@ mrb_GLib_g_bit_nth_lsf_impl(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_bit_nth_msf(mrb_state* mrb, mrb_value self) {
-  mrb_int mask;
-  mrb_int nth_bit;
+  unsigned long native_mask;
+  int native_nth_bit;
 
   /* Fetch the args */
   mrb_get_args(mrb, "ii", &mask, &nth_bit);
@@ -4856,8 +4844,8 @@ mrb_GLib_g_bit_nth_msf(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_bit_nth_msf_impl(mrb_state* mrb, mrb_value self) {
-  mrb_int mask;
-  mrb_int nth_bit;
+  unsigned long native_mask;
+  int native_nth_bit;
 
   /* Fetch the args */
   mrb_get_args(mrb, "ii", &mask, &nth_bit);
@@ -4888,7 +4876,7 @@ mrb_GLib_g_bit_nth_msf_impl(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_bit_storage(mrb_state* mrb, mrb_value self) {
-  mrb_int number;
+  unsigned long native_number;
 
   /* Fetch the args */
   mrb_get_args(mrb, "i", &number);
@@ -4919,7 +4907,7 @@ mrb_GLib_g_bit_storage(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_bit_storage_impl(mrb_state* mrb, mrb_value self) {
-  mrb_int number;
+  unsigned long native_number;
 
   /* Fetch the args */
   mrb_get_args(mrb, "i", &number);
@@ -4952,7 +4940,7 @@ mrb_GLib_g_bit_storage_impl(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_bit_trylock(mrb_state* mrb, mrb_value self) {
   mrb_value address;
-  mrb_int lock_bit;
+  int native_lock_bit;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &address, &lock_bit);
@@ -4991,7 +4979,7 @@ mrb_GLib_g_bit_trylock(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_bit_unlock(mrb_state* mrb, mrb_value self) {
   mrb_value address;
-  mrb_int lock_bit;
+  int native_lock_bit;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &address, &lock_bit);
@@ -6034,7 +6022,7 @@ mrb_value
 mrb_GLib_g_bookmark_file_load_from_data(mrb_state* mrb, mrb_value self) {
   mrb_value bookmark;
   mrb_value data;
-  mrb_int length;
+  unsigned long native_length;
   mrb_value error;
 
   /* Fetch the args */
@@ -6455,7 +6443,7 @@ mrb_value
 mrb_GLib_g_bookmark_file_set_added(mrb_state* mrb, mrb_value self) {
   mrb_value bookmark;
   mrb_value uri;
-  mrb_int added;
+  long native_added;
 
   /* Fetch the args */
   mrb_get_args(mrb, "ooi", &bookmark, &uri, &added);
@@ -6504,8 +6492,8 @@ mrb_GLib_g_bookmark_file_set_app_info(mrb_state* mrb, mrb_value self) {
   mrb_value uri;
   mrb_value name;
   mrb_value exec;
-  mrb_int count;
-  mrb_int stamp;
+  int native_count;
+  long native_stamp;
   mrb_value error;
 
   /* Fetch the args */
@@ -6622,7 +6610,7 @@ mrb_GLib_g_bookmark_file_set_groups(mrb_state* mrb, mrb_value self) {
   mrb_value bookmark;
   mrb_value uri;
   mrb_value groups;
-  mrb_int length;
+  unsigned long native_length;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oooi", &bookmark, &uri, &groups, &length);
@@ -6725,7 +6713,7 @@ mrb_value
 mrb_GLib_g_bookmark_file_set_is_private(mrb_state* mrb, mrb_value self) {
   mrb_value bookmark;
   mrb_value uri;
-  mrb_int is_private;
+  int native_is_private;
 
   /* Fetch the args */
   mrb_get_args(mrb, "ooi", &bookmark, &uri, &is_private);
@@ -6817,7 +6805,7 @@ mrb_value
 mrb_GLib_g_bookmark_file_set_modified(mrb_state* mrb, mrb_value self) {
   mrb_value bookmark;
   mrb_value uri;
-  mrb_int modified;
+  long native_modified;
 
   /* Fetch the args */
   mrb_get_args(mrb, "ooi", &bookmark, &uri, &modified);
@@ -6909,7 +6897,7 @@ mrb_value
 mrb_GLib_g_bookmark_file_set_visited(mrb_state* mrb, mrb_value self) {
   mrb_value bookmark;
   mrb_value uri;
-  mrb_int visited;
+  long native_visited;
 
   /* Fetch the args */
   mrb_get_args(mrb, "ooi", &bookmark, &uri, &visited);
@@ -7175,7 +7163,7 @@ mrb_value
 mrb_GLib_g_bsearch_array_get_nth(mrb_state* mrb, mrb_value self) {
   mrb_value barray;
   mrb_value bconfig;
-  mrb_int nth;
+  unsigned int native_nth;
 
   /* Fetch the args */
   mrb_get_args(mrb, "ooi", &barray, &bconfig, &nth);
@@ -7218,7 +7206,7 @@ mrb_value
 mrb_GLib_g_bsearch_array_grow(mrb_state* mrb, mrb_value self) {
   mrb_value barray;
   mrb_value bconfig;
-  mrb_int index_;
+  unsigned int native_index_;
 
   /* Fetch the args */
   mrb_get_args(mrb, "ooi", &barray, &bconfig, &index_);
@@ -7309,7 +7297,7 @@ mrb_GLib_g_bsearch_array_lookup_fuzzy(mrb_state* mrb, mrb_value self) {
   mrb_value barray;
   mrb_value bconfig;
   mrb_value key_node;
-  mrb_int sibling_or_after;
+  const unsigned int native_sibling_or_after;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oooi", &barray, &bconfig, &key_node, &sibling_or_after);
@@ -7355,7 +7343,7 @@ mrb_value
 mrb_GLib_g_bsearch_array_remove(mrb_state* mrb, mrb_value self) {
   mrb_value barray;
   mrb_value bconfig;
-  mrb_int index_;
+  unsigned int native_index_;
 
   /* Fetch the args */
   mrb_get_args(mrb, "ooi", &barray, &bconfig, &index_);
@@ -7598,7 +7586,7 @@ mrb_value
 mrb_GLib_g_byte_array_append(mrb_state* mrb, mrb_value self) {
   mrb_value array;
   mrb_value data;
-  mrb_int len;
+  unsigned int native_len;
 
   /* Fetch the args */
   mrb_get_args(mrb, "ooi", &array, &data, &len);
@@ -7639,7 +7627,7 @@ mrb_GLib_g_byte_array_append(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_byte_array_free(mrb_state* mrb, mrb_value self) {
   mrb_value array;
-  mrb_int free_segment;
+  int native_free_segment;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &array, &free_segment);
@@ -7733,7 +7721,7 @@ mrb_GLib_g_byte_array_new(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_byte_array_new_take(mrb_state* mrb, mrb_value self) {
   mrb_value data;
-  mrb_int len;
+  unsigned long native_len;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &data, &len);
@@ -7770,7 +7758,7 @@ mrb_value
 mrb_GLib_g_byte_array_prepend(mrb_state* mrb, mrb_value self) {
   mrb_value array;
   mrb_value data;
-  mrb_int len;
+  unsigned int native_len;
 
   /* Fetch the args */
   mrb_get_args(mrb, "ooi", &array, &data, &len);
@@ -7847,7 +7835,7 @@ mrb_GLib_g_byte_array_ref(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_byte_array_remove_index(mrb_state* mrb, mrb_value self) {
   mrb_value array;
-  mrb_int index_;
+  unsigned int native_index_;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &array, &index_);
@@ -7885,7 +7873,7 @@ mrb_GLib_g_byte_array_remove_index(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_byte_array_remove_index_fast(mrb_state* mrb, mrb_value self) {
   mrb_value array;
-  mrb_int index_;
+  unsigned int native_index_;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &array, &index_);
@@ -7924,8 +7912,8 @@ mrb_GLib_g_byte_array_remove_index_fast(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_byte_array_remove_range(mrb_state* mrb, mrb_value self) {
   mrb_value array;
-  mrb_int index_;
-  mrb_int length;
+  unsigned int native_index_;
+  unsigned int native_length;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oii", &array, &index_, &length);
@@ -7963,7 +7951,7 @@ mrb_GLib_g_byte_array_remove_range(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_byte_array_set_size(mrb_state* mrb, mrb_value self) {
   mrb_value array;
-  mrb_int length;
+  unsigned int native_length;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &array, &length);
@@ -7999,7 +7987,7 @@ mrb_GLib_g_byte_array_set_size(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_byte_array_sized_new(mrb_state* mrb, mrb_value self) {
-  mrb_int reserved_size;
+  unsigned int native_reserved_size;
 
   /* Fetch the args */
   mrb_get_args(mrb, "i", &reserved_size);
@@ -8344,7 +8332,7 @@ mrb_GLib_g_bytes_hash(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_bytes_new(mrb_state* mrb, mrb_value self) {
   mrb_value data;
-  mrb_int size;
+  unsigned long native_size;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &data, &size);
@@ -8380,8 +8368,8 @@ mrb_GLib_g_bytes_new(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_bytes_new_from_bytes(mrb_state* mrb, mrb_value self) {
   mrb_value bytes;
-  mrb_int offset;
-  mrb_int length;
+  unsigned long native_offset;
+  unsigned long native_length;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oii", &bytes, &offset, &length);
@@ -8419,7 +8407,7 @@ mrb_GLib_g_bytes_new_from_bytes(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_bytes_new_static(mrb_state* mrb, mrb_value self) {
   mrb_value data;
-  mrb_int size;
+  unsigned long native_size;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &data, &size);
@@ -8454,7 +8442,7 @@ mrb_GLib_g_bytes_new_static(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_bytes_new_take(mrb_state* mrb, mrb_value self) {
   mrb_value data;
-  mrb_int size;
+  unsigned long native_size;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &data, &size);
@@ -8491,7 +8479,7 @@ mrb_GLib_g_bytes_new_take(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_bytes_new_with_free_func(mrb_state* mrb, mrb_value self) {
   mrb_value data;
-  mrb_int size;
+  unsigned long native_size;
   mrb_value free_func;
   mrb_value user_data;
 
@@ -8997,7 +8985,7 @@ mrb_value
 mrb_GLib_g_checksum_update(mrb_state* mrb, mrb_value self) {
   mrb_value checksum;
   mrb_value data;
-  mrb_int length;
+  long native_length;
 
   /* Fetch the args */
   mrb_get_args(mrb, "ooi", &checksum, &data, &length);
@@ -9035,7 +9023,7 @@ mrb_GLib_g_checksum_update(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_child_watch_add(mrb_state* mrb, mrb_value self) {
-  mrb_int pid;
+  int native_pid;
   mrb_value function;
   mrb_value data;
 
@@ -9081,8 +9069,8 @@ mrb_GLib_g_child_watch_add(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_child_watch_add_full(mrb_state* mrb, mrb_value self) {
-  mrb_int priority;
-  mrb_int pid;
+  int native_priority;
+  int native_pid;
   mrb_value function;
   mrb_value data;
   mrb_value notify;
@@ -9128,7 +9116,7 @@ mrb_GLib_g_child_watch_add_full(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_child_watch_source_new(mrb_state* mrb, mrb_value self) {
-  mrb_int pid;
+  int native_pid;
 
   /* Fetch the args */
   mrb_get_args(mrb, "i", &pid);
@@ -9221,7 +9209,7 @@ mrb_GLib_g_clear_pointer(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_close(mrb_state* mrb, mrb_value self) {
-  mrb_int fd;
+  int native_fd;
   mrb_value error;
 
   /* Fetch the args */
@@ -9304,7 +9292,7 @@ mrb_value
 mrb_GLib_g_compute_checksum_for_data(mrb_state* mrb, mrb_value self) {
   mrb_value checksum_type;
   mrb_value data;
-  mrb_int length;
+  unsigned long native_length;
 
   /* Fetch the args */
   mrb_get_args(mrb, "ooi", &checksum_type, &data, &length);
@@ -9344,7 +9332,7 @@ mrb_value
 mrb_GLib_g_compute_checksum_for_string(mrb_state* mrb, mrb_value self) {
   mrb_value checksum_type;
   mrb_value str;
-  mrb_int length;
+  long native_length;
 
   /* Fetch the args */
   mrb_get_args(mrb, "ooi", &checksum_type, &str, &length);
@@ -9389,9 +9377,9 @@ mrb_value
 mrb_GLib_g_compute_hmac_for_data(mrb_state* mrb, mrb_value self) {
   mrb_value digest_type;
   mrb_value key;
-  mrb_int key_len;
+  unsigned long native_key_len;
   mrb_value data;
-  mrb_int length;
+  unsigned long native_length;
 
   /* Fetch the args */
   mrb_get_args(mrb, "ooioi", &digest_type, &key, &key_len, &data, &length);
@@ -9436,9 +9424,9 @@ mrb_value
 mrb_GLib_g_compute_hmac_for_string(mrb_state* mrb, mrb_value self) {
   mrb_value digest_type;
   mrb_value key;
-  mrb_int key_len;
+  unsigned long native_key_len;
   mrb_value str;
-  mrb_int length;
+  long native_length;
 
   /* Fetch the args */
   mrb_get_args(mrb, "ooioi", &digest_type, &key, &key_len, &str, &length);
@@ -9654,7 +9642,7 @@ mrb_value
 mrb_GLib_g_cond_wait_until(mrb_state* mrb, mrb_value self) {
   mrb_value cond;
   mrb_value mutex;
-  mrb_int end_time;
+  long native_end_time;
 
   /* Fetch the args */
   mrb_get_args(mrb, "ooi", &cond, &mutex, &end_time);
@@ -9704,7 +9692,7 @@ mrb_GLib_g_cond_wait_until(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_convert(mrb_state* mrb, mrb_value self) {
   mrb_value str;
-  mrb_int len;
+  long native_len;
   mrb_value to_codeset;
   mrb_value from_codeset;
   mrb_value bytes_read;
@@ -9798,7 +9786,7 @@ mrb_GLib_g_convert_error_quark(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_convert_with_fallback(mrb_state* mrb, mrb_value self) {
   mrb_value str;
-  mrb_int len;
+  long native_len;
   mrb_value to_codeset;
   mrb_value from_codeset;
   mrb_value fallback;
@@ -9873,7 +9861,7 @@ mrb_GLib_g_convert_with_fallback(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_convert_with_iconv(mrb_state* mrb, mrb_value self) {
   mrb_value str;
-  mrb_int len;
+  long native_len;
   mrb_value converter;
   mrb_value bytes_read;
   mrb_value bytes_written;
@@ -10080,7 +10068,7 @@ mrb_GLib_g_datalist_get_flags(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_datalist_id_dup_data(mrb_state* mrb, mrb_value self) {
   mrb_value datalist;
-  mrb_int key_id;
+  unsigned int native_key_id;
   mrb_value dup_func;
   mrb_value user_data;
 
@@ -10123,7 +10111,7 @@ mrb_GLib_g_datalist_id_dup_data(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_datalist_id_get_data(mrb_state* mrb, mrb_value self) {
   mrb_value datalist;
-  mrb_int key_id;
+  unsigned int native_key_id;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &datalist, &key_id);
@@ -10158,7 +10146,7 @@ mrb_GLib_g_datalist_id_get_data(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_datalist_id_remove_no_notify(mrb_state* mrb, mrb_value self) {
   mrb_value datalist;
-  mrb_int key_id;
+  unsigned int native_key_id;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &datalist, &key_id);
@@ -10197,7 +10185,7 @@ mrb_GLib_g_datalist_id_remove_no_notify(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_datalist_id_replace_data(mrb_state* mrb, mrb_value self) {
   mrb_value datalist;
-  mrb_int key_id;
+  unsigned int native_key_id;
   mrb_value oldval;
   mrb_value newval;
   mrb_value destroy;
@@ -10254,7 +10242,7 @@ mrb_GLib_g_datalist_id_replace_data(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_datalist_id_set_data_full(mrb_state* mrb, mrb_value self) {
   mrb_value datalist;
-  mrb_int key_id;
+  unsigned int native_key_id;
   mrb_value data;
   mrb_value destroy_func;
 
@@ -10324,7 +10312,7 @@ mrb_GLib_g_datalist_init(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_datalist_set_flags(mrb_state* mrb, mrb_value self) {
   mrb_value datalist;
-  mrb_int flags;
+  unsigned int native_flags;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &datalist, &flags);
@@ -10356,7 +10344,7 @@ mrb_GLib_g_datalist_set_flags(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_datalist_unset_flags(mrb_state* mrb, mrb_value self) {
   mrb_value datalist;
-  mrb_int flags;
+  unsigned int native_flags;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &datalist, &flags);
@@ -10458,7 +10446,7 @@ mrb_GLib_g_dataset_foreach(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_dataset_id_get_data(mrb_state* mrb, mrb_value self) {
   mrb_value dataset_location;
-  mrb_int key_id;
+  unsigned int native_key_id;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &dataset_location, &key_id);
@@ -10493,7 +10481,7 @@ mrb_GLib_g_dataset_id_get_data(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_dataset_id_remove_no_notify(mrb_state* mrb, mrb_value self) {
   mrb_value dataset_location;
-  mrb_int key_id;
+  unsigned int native_key_id;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &dataset_location, &key_id);
@@ -10530,7 +10518,7 @@ mrb_GLib_g_dataset_id_remove_no_notify(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_dataset_id_set_data_full(mrb_state* mrb, mrb_value self) {
   mrb_value dataset_location;
-  mrb_int key_id;
+  unsigned int native_key_id;
   mrb_value data;
   mrb_value destroy_func;
 
@@ -10570,7 +10558,7 @@ mrb_GLib_g_dataset_id_set_data_full(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_date_add_days(mrb_state* mrb, mrb_value self) {
   mrb_value date;
-  mrb_int n_days;
+  unsigned int native_n_days;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &date, &n_days);
@@ -10605,7 +10593,7 @@ mrb_GLib_g_date_add_days(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_date_add_months(mrb_state* mrb, mrb_value self) {
   mrb_value date;
-  mrb_int n_months;
+  unsigned int native_n_months;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &date, &n_months);
@@ -10640,7 +10628,7 @@ mrb_GLib_g_date_add_months(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_date_add_years(mrb_state* mrb, mrb_value self) {
   mrb_value date;
-  mrb_int n_years;
+  unsigned int native_n_years;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &date, &n_years);
@@ -10724,7 +10712,7 @@ mrb_GLib_g_date_clamp(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_date_clear(mrb_state* mrb, mrb_value self) {
   mrb_value date;
-  mrb_int n_dates;
+  unsigned int native_n_dates;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &date, &n_dates);
@@ -10968,7 +10956,7 @@ mrb_GLib_g_date_get_day_of_year(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_date_get_days_in_month(mrb_state* mrb, mrb_value self) {
   mrb_value month;
-  mrb_int year;
+  unsigned short native_year;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &month, &year);
@@ -11125,7 +11113,7 @@ mrb_GLib_g_date_get_monday_week_of_year(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_date_get_monday_weeks_in_year(mrb_state* mrb, mrb_value self) {
-  mrb_int year;
+  unsigned short native_year;
 
   /* Fetch the args */
   mrb_get_args(mrb, "i", &year);
@@ -11232,7 +11220,7 @@ mrb_GLib_g_date_get_sunday_week_of_year(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_date_get_sunday_weeks_in_year(mrb_state* mrb, mrb_value self) {
-  mrb_int year;
+  unsigned short native_year;
 
   /* Fetch the args */
   mrb_get_args(mrb, "i", &year);
@@ -11419,7 +11407,7 @@ mrb_GLib_g_date_is_last_of_month(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_date_is_leap_year(mrb_state* mrb, mrb_value self) {
-  mrb_int year;
+  unsigned short native_year;
 
   /* Fetch the args */
   mrb_get_args(mrb, "i", &year);
@@ -11472,9 +11460,9 @@ mrb_GLib_g_date_new(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_date_new_dmy(mrb_state* mrb, mrb_value self) {
-  mrb_int day;
+  unsigned char native_day;
   mrb_value month;
-  mrb_int year;
+  unsigned short native_year;
 
   /* Fetch the args */
   mrb_get_args(mrb, "ioi", &day, &month, &year);
@@ -11507,7 +11495,7 @@ mrb_GLib_g_date_new_dmy(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_date_new_julian(mrb_state* mrb, mrb_value self) {
-  mrb_int julian_day;
+  unsigned int native_julian_day;
 
   /* Fetch the args */
   mrb_get_args(mrb, "i", &julian_day);
@@ -11577,7 +11565,7 @@ mrb_GLib_g_date_order(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_date_set_day(mrb_state* mrb, mrb_value self) {
   mrb_value date;
-  mrb_int day;
+  unsigned char native_day;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &date, &day);
@@ -11614,9 +11602,9 @@ mrb_GLib_g_date_set_day(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_date_set_dmy(mrb_state* mrb, mrb_value self) {
   mrb_value date;
-  mrb_int day;
+  unsigned char native_day;
   mrb_value month;
-  mrb_int y;
+  unsigned short native_y;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oioi", &date, &day, &month, &y);
@@ -11654,7 +11642,7 @@ mrb_GLib_g_date_set_dmy(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_date_set_julian(mrb_state* mrb, mrb_value self) {
   mrb_value date;
-  mrb_int julian_date;
+  unsigned int native_julian_date;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &date, &julian_date);
@@ -11768,7 +11756,7 @@ mrb_GLib_g_date_set_parse(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_date_set_time(mrb_state* mrb, mrb_value self) {
   mrb_value date;
-  mrb_int time_;
+  int native_time_;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &date, &time_);
@@ -11803,7 +11791,7 @@ mrb_GLib_g_date_set_time(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_date_set_time_t(mrb_state* mrb, mrb_value self) {
   mrb_value date;
-  mrb_int timet;
+  long native_timet;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &date, &timet);
@@ -11879,7 +11867,7 @@ mrb_GLib_g_date_set_time_val(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_date_set_year(mrb_state* mrb, mrb_value self) {
   mrb_value date;
-  mrb_int year;
+  unsigned short native_year;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &date, &year);
@@ -11916,7 +11904,7 @@ mrb_GLib_g_date_set_year(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_date_strftime(mrb_state* mrb, mrb_value self) {
   mrb_value s;
-  mrb_int slen;
+  unsigned long native_slen;
   mrb_value format;
   mrb_value date;
 
@@ -11985,7 +11973,7 @@ mrb_GLib_g_date_strftime(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_date_subtract_days(mrb_state* mrb, mrb_value self) {
   mrb_value date;
-  mrb_int n_days;
+  unsigned int native_n_days;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &date, &n_days);
@@ -12020,7 +12008,7 @@ mrb_GLib_g_date_subtract_days(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_date_subtract_months(mrb_state* mrb, mrb_value self) {
   mrb_value date;
-  mrb_int n_months;
+  unsigned int native_n_months;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &date, &n_months);
@@ -12055,7 +12043,7 @@ mrb_GLib_g_date_subtract_months(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_date_subtract_years(mrb_state* mrb, mrb_value self) {
   mrb_value date;
-  mrb_int n_years;
+  unsigned int native_n_years;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &date, &n_years);
@@ -12090,7 +12078,7 @@ mrb_GLib_g_date_subtract_years(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_date_time_add(mrb_state* mrb, mrb_value self) {
   mrb_value datetime;
-  mrb_int timespan;
+  long native_timespan;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &datetime, &timespan);
@@ -12128,7 +12116,7 @@ mrb_GLib_g_date_time_add(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_date_time_add_days(mrb_state* mrb, mrb_value self) {
   mrb_value datetime;
-  mrb_int days;
+  int native_days;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &datetime, &days);
@@ -12171,15 +12159,15 @@ mrb_GLib_g_date_time_add_days(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_date_time_add_full(mrb_state* mrb, mrb_value self) {
   mrb_value datetime;
-  mrb_int years;
-  mrb_int months;
-  mrb_int days;
-  mrb_int hours;
-  mrb_int minutes;
-  mrb_value seconds;
+  int native_years;
+  int native_months;
+  int native_days;
+  int native_hours;
+  int native_minutes;
+  double native_seconds;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "oiiiiio", &datetime, &years, &months, &days, &hours, &minutes, &seconds);
+  mrb_get_args(mrb, "oiiiiif", &datetime, &years, &months, &days, &hours, &minutes, &seconds);
 
 
   /* Type checking */
@@ -12187,15 +12175,9 @@ mrb_GLib_g_date_time_add_full(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GDateTime expected");
     return mrb_nil_value();
   }
-  if (!mrb_obj_is_kind_of(mrb, seconds, mrb->float_class)) {
-    mrb_raise(mrb, E_TYPE_ERROR, "Float expected");
-    return mrb_nil_value();
-  }
 
   /* Unbox parameters */
   struct _GDateTime * native_datetime = (mrb_nil_p(datetime) ? NULL : mruby_unbox__GDateTime(datetime));
-
-  double native_seconds = mrb_float(seconds);
 
   /* Invocation */
   GDateTime * result = g_date_time_add_full(native_datetime, native_years, native_months, native_days, native_hours, native_minutes, native_seconds);
@@ -12220,7 +12202,7 @@ mrb_GLib_g_date_time_add_full(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_date_time_add_hours(mrb_state* mrb, mrb_value self) {
   mrb_value datetime;
-  mrb_int hours;
+  int native_hours;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &datetime, &hours);
@@ -12258,7 +12240,7 @@ mrb_GLib_g_date_time_add_hours(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_date_time_add_minutes(mrb_state* mrb, mrb_value self) {
   mrb_value datetime;
-  mrb_int minutes;
+  int native_minutes;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &datetime, &minutes);
@@ -12296,7 +12278,7 @@ mrb_GLib_g_date_time_add_minutes(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_date_time_add_months(mrb_state* mrb, mrb_value self) {
   mrb_value datetime;
-  mrb_int months;
+  int native_months;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &datetime, &months);
@@ -12334,10 +12316,10 @@ mrb_GLib_g_date_time_add_months(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_date_time_add_seconds(mrb_state* mrb, mrb_value self) {
   mrb_value datetime;
-  mrb_value seconds;
+  double native_seconds;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "oo", &datetime, &seconds);
+  mrb_get_args(mrb, "of", &datetime, &seconds);
 
 
   /* Type checking */
@@ -12345,15 +12327,9 @@ mrb_GLib_g_date_time_add_seconds(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GDateTime expected");
     return mrb_nil_value();
   }
-  if (!mrb_obj_is_kind_of(mrb, seconds, mrb->float_class)) {
-    mrb_raise(mrb, E_TYPE_ERROR, "Float expected");
-    return mrb_nil_value();
-  }
 
   /* Unbox parameters */
   struct _GDateTime * native_datetime = (mrb_nil_p(datetime) ? NULL : mruby_unbox__GDateTime(datetime));
-
-  double native_seconds = mrb_float(seconds);
 
   /* Invocation */
   GDateTime * result = g_date_time_add_seconds(native_datetime, native_seconds);
@@ -12378,7 +12354,7 @@ mrb_GLib_g_date_time_add_seconds(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_date_time_add_weeks(mrb_state* mrb, mrb_value self) {
   mrb_value datetime;
-  mrb_int weeks;
+  int native_weeks;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &datetime, &weeks);
@@ -12416,7 +12392,7 @@ mrb_GLib_g_date_time_add_weeks(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_date_time_add_years(mrb_state* mrb, mrb_value self) {
   mrb_value datetime;
-  mrb_int years;
+  int native_years;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &datetime, &years);
@@ -13312,15 +13288,15 @@ mrb_GLib_g_date_time_is_daylight_savings(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_date_time_new(mrb_state* mrb, mrb_value self) {
   mrb_value tz;
-  mrb_int year;
-  mrb_int month;
-  mrb_int day;
-  mrb_int hour;
-  mrb_int minute;
-  mrb_value seconds;
+  int native_year;
+  int native_month;
+  int native_day;
+  int native_hour;
+  int native_minute;
+  double native_seconds;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "oiiiiio", &tz, &year, &month, &day, &hour, &minute, &seconds);
+  mrb_get_args(mrb, "oiiiiif", &tz, &year, &month, &day, &hour, &minute, &seconds);
 
 
   /* Type checking */
@@ -13328,15 +13304,9 @@ mrb_GLib_g_date_time_new(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GTimeZone expected");
     return mrb_nil_value();
   }
-  if (!mrb_obj_is_kind_of(mrb, seconds, mrb->float_class)) {
-    mrb_raise(mrb, E_TYPE_ERROR, "Float expected");
-    return mrb_nil_value();
-  }
 
   /* Unbox parameters */
   struct _GTimeZone * native_tz = (mrb_nil_p(tz) ? NULL : mruby_unbox__GTimeZone(tz));
-
-  double native_seconds = mrb_float(seconds);
 
   /* Invocation */
   GDateTime * result = g_date_time_new(native_tz, native_year, native_month, native_day, native_hour, native_minute, native_seconds);
@@ -13431,7 +13401,7 @@ mrb_GLib_g_date_time_new_from_timeval_utc(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_date_time_new_from_unix_local(mrb_state* mrb, mrb_value self) {
-  mrb_int t;
+  long native_t;
 
   /* Fetch the args */
   mrb_get_args(mrb, "i", &t);
@@ -13458,7 +13428,7 @@ mrb_GLib_g_date_time_new_from_unix_local(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_date_time_new_from_unix_utc(mrb_state* mrb, mrb_value self) {
-  mrb_int t;
+  long native_t;
 
   /* Fetch the args */
   mrb_get_args(mrb, "i", &t);
@@ -13490,25 +13460,16 @@ mrb_GLib_g_date_time_new_from_unix_utc(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_date_time_new_local(mrb_state* mrb, mrb_value self) {
-  mrb_int year;
-  mrb_int month;
-  mrb_int day;
-  mrb_int hour;
-  mrb_int minute;
-  mrb_value seconds;
+  int native_year;
+  int native_month;
+  int native_day;
+  int native_hour;
+  int native_minute;
+  double native_seconds;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "iiiiio", &year, &month, &day, &hour, &minute, &seconds);
+  mrb_get_args(mrb, "iiiiif", &year, &month, &day, &hour, &minute, &seconds);
 
-
-  /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, seconds, mrb->float_class)) {
-    mrb_raise(mrb, E_TYPE_ERROR, "Float expected");
-    return mrb_nil_value();
-  }
-
-  /* Unbox parameters */
-  double native_seconds = mrb_float(seconds);
 
   /* Invocation */
   GDateTime * result = g_date_time_new_local(native_year, native_month, native_day, native_hour, native_minute, native_seconds);
@@ -13612,25 +13573,16 @@ mrb_GLib_g_date_time_new_now_utc(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_date_time_new_utc(mrb_state* mrb, mrb_value self) {
-  mrb_int year;
-  mrb_int month;
-  mrb_int day;
-  mrb_int hour;
-  mrb_int minute;
-  mrb_value seconds;
+  int native_year;
+  int native_month;
+  int native_day;
+  int native_hour;
+  int native_minute;
+  double native_seconds;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "iiiiio", &year, &month, &day, &hour, &minute, &seconds);
+  mrb_get_args(mrb, "iiiiif", &year, &month, &day, &hour, &minute, &seconds);
 
-
-  /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, seconds, mrb->float_class)) {
-    mrb_raise(mrb, E_TYPE_ERROR, "Float expected");
-    return mrb_nil_value();
-  }
-
-  /* Unbox parameters */
-  double native_seconds = mrb_float(seconds);
 
   /* Invocation */
   GDateTime * result = g_date_time_new_utc(native_year, native_month, native_day, native_hour, native_minute, native_seconds);
@@ -14004,7 +13956,7 @@ mrb_GLib_g_date_valid(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_date_valid_day(mrb_state* mrb, mrb_value self) {
-  mrb_int day;
+  unsigned char native_day;
 
   /* Fetch the args */
   mrb_get_args(mrb, "i", &day);
@@ -14037,9 +13989,9 @@ mrb_GLib_g_date_valid_day(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_date_valid_dmy(mrb_state* mrb, mrb_value self) {
-  mrb_int day;
+  unsigned char native_day;
   mrb_value month;
-  mrb_int year;
+  unsigned short native_year;
 
   /* Fetch the args */
   mrb_get_args(mrb, "ioi", &day, &month, &year);
@@ -14076,7 +14028,7 @@ mrb_GLib_g_date_valid_dmy(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_date_valid_julian(mrb_state* mrb, mrb_value self) {
-  mrb_int julian_date;
+  unsigned int native_julian_date;
 
   /* Fetch the args */
   mrb_get_args(mrb, "i", &julian_date);
@@ -14181,7 +14133,7 @@ mrb_GLib_g_date_valid_weekday(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_date_valid_year(mrb_state* mrb, mrb_value self) {
-  mrb_int year;
+  unsigned short native_year;
 
   /* Fetch the args */
   mrb_get_args(mrb, "i", &year);
@@ -14216,7 +14168,7 @@ mrb_value
 mrb_GLib_g_dcgettext(mrb_state* mrb, mrb_value self) {
   mrb_value domain;
   mrb_value msgid;
-  mrb_int category;
+  int native_category;
 
   /* Fetch the args */
   mrb_get_args(mrb, "ooi", &domain, &msgid, &category);
@@ -14412,7 +14364,7 @@ mrb_GLib_g_dir_new_from_dirp(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_dir_open(mrb_state* mrb, mrb_value self) {
   mrb_value path;
-  mrb_int flags;
+  unsigned int native_flags;
   mrb_value error;
 
   /* Fetch the args */
@@ -14454,7 +14406,7 @@ mrb_GLib_g_dir_open(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_dir_open_with_errno(mrb_state* mrb, mrb_value self) {
   mrb_value path;
-  mrb_int flags;
+  unsigned int native_flags;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &path, &flags);
@@ -14644,7 +14596,7 @@ mrb_GLib_g_dngettext(mrb_state* mrb, mrb_value self) {
   mrb_value domain;
   mrb_value msgid;
   mrb_value msgid_plural;
-  mrb_int n;
+  unsigned long native_n;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oooi", &domain, &msgid, &msgid_plural, &n);
@@ -14775,7 +14727,7 @@ mrb_value
 mrb_GLib_g_dpgettext(mrb_state* mrb, mrb_value self) {
   mrb_value domain;
   mrb_value msgctxtid;
-  mrb_int msgidoffset;
+  unsigned long native_msgidoffset;
 
   /* Fetch the args */
   mrb_get_args(mrb, "ooi", &domain, &msgctxtid, &msgidoffset);
@@ -14916,7 +14868,7 @@ mrb_GLib_g_environ_setenv(mrb_state* mrb, mrb_value self) {
   mrb_value envp;
   mrb_value variable;
   mrb_value value;
-  mrb_int overwrite;
+  int native_overwrite;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oooi", &envp, &variable, &value, &overwrite);
@@ -15074,8 +15026,8 @@ mrb_GLib_g_error_free(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_error_matches(mrb_state* mrb, mrb_value self) {
   mrb_value error;
-  mrb_int domain;
-  mrb_int code;
+  unsigned int native_domain;
+  int native_code;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oii", &error, &domain, &code);
@@ -15117,8 +15069,8 @@ mrb_GLib_g_error_matches(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_error_new(mrb_state* mrb, mrb_value self) {
-  mrb_int domain;
-  mrb_int code;
+  unsigned int native_domain;
+  int native_code;
   mrb_value format;
 
   /* Fetch the args */
@@ -15157,8 +15109,8 @@ mrb_GLib_g_error_new(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_error_new_literal(mrb_state* mrb, mrb_value self) {
-  mrb_int domain;
-  mrb_int code;
+  unsigned int native_domain;
+  int native_code;
   mrb_value message;
 
   /* Fetch the args */
@@ -15198,10 +15150,10 @@ mrb_GLib_g_error_new_literal(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_error_new_valist(mrb_state* mrb, mrb_value self) {
-  mrb_int domain;
-  mrb_int code;
+  unsigned int native_domain;
+  int native_code;
   mrb_value format;
-  mrb_int args;
+  int native_args;
 
   /* Fetch the args */
   mrb_get_args(mrb, "iioi", &domain, &code, &format, &args);
@@ -15237,7 +15189,7 @@ mrb_GLib_g_error_new_valist(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_file_error_from_errno(mrb_state* mrb, mrb_value self) {
-  mrb_int err_no;
+  int native_err_no;
 
   /* Fetch the args */
   mrb_get_args(mrb, "i", &err_no);
@@ -15439,7 +15391,7 @@ mrb_value
 mrb_GLib_g_file_set_contents(mrb_state* mrb, mrb_value self) {
   mrb_value filename;
   mrb_value contents;
-  mrb_int length;
+  long native_length;
   mrb_value error;
 
   /* Fetch the args */
@@ -15657,7 +15609,7 @@ mrb_GLib_g_filename_from_uri(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_filename_from_utf8(mrb_state* mrb, mrb_value self) {
   mrb_value utf8string;
-  mrb_int len;
+  long native_len;
   mrb_value bytes_read;
   mrb_value bytes_written;
   mrb_value error;
@@ -15759,7 +15711,7 @@ mrb_GLib_g_filename_to_uri(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_filename_to_utf8(mrb_state* mrb, mrb_value self) {
   mrb_value opsysstring;
-  mrb_int len;
+  long native_len;
   mrb_value bytes_read;
   mrb_value bytes_written;
   mrb_value error;
@@ -15843,7 +15795,7 @@ mrb_GLib_g_find_program_in_path(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_format_size(mrb_state* mrb, mrb_value self) {
-  mrb_int size;
+  unsigned long native_size;
 
   /* Fetch the args */
   mrb_get_args(mrb, "i", &size);
@@ -15870,7 +15822,7 @@ mrb_GLib_g_format_size(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_format_size_for_display(mrb_state* mrb, mrb_value self) {
-  mrb_int size;
+  long native_size;
 
   /* Fetch the args */
   mrb_get_args(mrb, "i", &size);
@@ -15898,7 +15850,7 @@ mrb_GLib_g_format_size_for_display(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_format_size_full(mrb_state* mrb, mrb_value self) {
-  mrb_int size;
+  unsigned long native_size;
   mrb_value flags;
 
   /* Fetch the args */
@@ -17973,7 +17925,7 @@ mrb_value
 mrb_GLib_g_hmac_new(mrb_state* mrb, mrb_value self) {
   mrb_value digest_type;
   mrb_value key;
-  mrb_int key_len;
+  unsigned long native_key_len;
 
   /* Fetch the args */
   mrb_get_args(mrb, "ooi", &digest_type, &key, &key_len);
@@ -18082,7 +18034,7 @@ mrb_value
 mrb_GLib_g_hmac_update(mrb_state* mrb, mrb_value self) {
   mrb_value hmac;
   mrb_value data;
-  mrb_int length;
+  long native_length;
 
   /* Fetch the args */
   mrb_get_args(mrb, "ooi", &hmac, &data, &length);
@@ -18204,7 +18156,7 @@ mrb_GLib_g_hook_compare_ids(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_hook_destroy(mrb_state* mrb, mrb_value self) {
   mrb_value hook_list;
-  mrb_int hook_id;
+  unsigned long native_hook_id;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &hook_list, &hook_id);
@@ -18289,7 +18241,7 @@ mrb_GLib_g_hook_destroy_link(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_hook_find(mrb_state* mrb, mrb_value self) {
   mrb_value hook_list;
-  mrb_int need_valids;
+  int native_need_valids;
   mrb_value func;
   mrb_value data;
 
@@ -18336,7 +18288,7 @@ mrb_GLib_g_hook_find(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_hook_find_data(mrb_state* mrb, mrb_value self) {
   mrb_value hook_list;
-  mrb_int need_valids;
+  int native_need_valids;
   mrb_value data;
 
   /* Fetch the args */
@@ -18379,7 +18331,7 @@ mrb_GLib_g_hook_find_data(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_hook_find_func(mrb_state* mrb, mrb_value self) {
   mrb_value hook_list;
-  mrb_int need_valids;
+  int native_need_valids;
   mrb_value func;
 
   /* Fetch the args */
@@ -18423,7 +18375,7 @@ mrb_GLib_g_hook_find_func(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_hook_find_func_data(mrb_state* mrb, mrb_value self) {
   mrb_value hook_list;
-  mrb_int need_valids;
+  int native_need_valids;
   mrb_value func;
   mrb_value data;
 
@@ -18469,7 +18421,7 @@ mrb_GLib_g_hook_find_func_data(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_hook_first_valid(mrb_state* mrb, mrb_value self) {
   mrb_value hook_list;
-  mrb_int may_be_in_call;
+  int native_may_be_in_call;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &hook_list, &may_be_in_call);
@@ -18548,7 +18500,7 @@ mrb_GLib_g_hook_free(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_hook_get(mrb_state* mrb, mrb_value self) {
   mrb_value hook_list;
-  mrb_int hook_id;
+  unsigned long native_hook_id;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &hook_list, &hook_id);
@@ -18714,7 +18666,7 @@ mrb_GLib_g_hook_list_clear(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_hook_list_init(mrb_state* mrb, mrb_value self) {
   mrb_value hook_list;
-  mrb_int hook_size;
+  unsigned int native_hook_size;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &hook_list, &hook_size);
@@ -18749,7 +18701,7 @@ mrb_GLib_g_hook_list_init(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_hook_list_invoke(mrb_state* mrb, mrb_value self) {
   mrb_value hook_list;
-  mrb_int may_recurse;
+  int native_may_recurse;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &hook_list, &may_recurse);
@@ -18784,7 +18736,7 @@ mrb_GLib_g_hook_list_invoke(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_hook_list_invoke_check(mrb_state* mrb, mrb_value self) {
   mrb_value hook_list;
-  mrb_int may_recurse;
+  int native_may_recurse;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &hook_list, &may_recurse);
@@ -18821,7 +18773,7 @@ mrb_GLib_g_hook_list_invoke_check(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_hook_list_marshal(mrb_state* mrb, mrb_value self) {
   mrb_value hook_list;
-  mrb_int may_recurse;
+  int native_may_recurse;
   mrb_value marshaller;
   mrb_value marshal_data;
 
@@ -18866,7 +18818,7 @@ mrb_GLib_g_hook_list_marshal(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_hook_list_marshal_check(mrb_state* mrb, mrb_value self) {
   mrb_value hook_list;
-  mrb_int may_recurse;
+  int native_may_recurse;
   mrb_value marshaller;
   mrb_value marshal_data;
 
@@ -18911,7 +18863,7 @@ mrb_value
 mrb_GLib_g_hook_next_valid(mrb_state* mrb, mrb_value self) {
   mrb_value hook_list;
   mrb_value hook;
-  mrb_int may_be_in_call;
+  int native_may_be_in_call;
 
   /* Fetch the args */
   mrb_get_args(mrb, "ooi", &hook_list, &hook, &may_be_in_call);
@@ -19460,7 +19412,7 @@ mrb_GLib_g_idle_add(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_idle_add_full(mrb_state* mrb, mrb_value self) {
-  mrb_int priority;
+  int native_priority;
   mrb_value function;
   mrb_value data;
   mrb_value notify;
@@ -19854,7 +19806,7 @@ mrb_GLib_g_io_add_watch(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_io_add_watch_full(mrb_state* mrb, mrb_value self) {
   mrb_value channel;
-  mrb_int priority;
+  int native_priority;
   mrb_value condition;
   mrb_value func;
   mrb_value user_data;
@@ -19943,7 +19895,7 @@ mrb_GLib_g_io_channel_close(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_io_channel_error_from_errno(mrb_state* mrb, mrb_value self) {
-  mrb_int en;
+  int native_en;
 
   /* Fetch the args */
   mrb_get_args(mrb, "i", &en);
@@ -20391,7 +20343,7 @@ mrb_value
 mrb_GLib_g_io_channel_read(mrb_state* mrb, mrb_value self) {
   mrb_value channel;
   mrb_value buf;
-  mrb_int count;
+  unsigned long native_count;
   mrb_value bytes_read;
 
   /* Fetch the args */
@@ -20456,7 +20408,7 @@ mrb_value
 mrb_GLib_g_io_channel_read_chars(mrb_state* mrb, mrb_value self) {
   mrb_value channel;
   mrb_value buf;
-  mrb_int count;
+  unsigned long native_count;
   mrb_value bytes_read;
   mrb_value error;
 
@@ -20765,7 +20717,7 @@ mrb_GLib_g_io_channel_ref(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_io_channel_seek(mrb_state* mrb, mrb_value self) {
   mrb_value channel;
-  mrb_int offset;
+  long native_offset;
   mrb_value type;
 
   /* Fetch the args */
@@ -20809,7 +20761,7 @@ mrb_GLib_g_io_channel_seek(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_io_channel_seek_position(mrb_state* mrb, mrb_value self) {
   mrb_value channel;
-  mrb_int offset;
+  long native_offset;
   mrb_value type;
   mrb_value error;
 
@@ -20855,7 +20807,7 @@ mrb_GLib_g_io_channel_seek_position(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_io_channel_set_buffer_size(mrb_state* mrb, mrb_value self) {
   mrb_value channel;
-  mrb_int size;
+  unsigned long native_size;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &channel, &size);
@@ -20890,7 +20842,7 @@ mrb_GLib_g_io_channel_set_buffer_size(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_io_channel_set_buffered(mrb_state* mrb, mrb_value self) {
   mrb_value channel;
-  mrb_int buffered;
+  int native_buffered;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &channel, &buffered);
@@ -20925,7 +20877,7 @@ mrb_GLib_g_io_channel_set_buffered(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_io_channel_set_close_on_unref(mrb_state* mrb, mrb_value self) {
   mrb_value channel;
-  mrb_int do_close;
+  int native_do_close;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &channel, &do_close);
@@ -21057,7 +21009,7 @@ mrb_value
 mrb_GLib_g_io_channel_set_line_term(mrb_state* mrb, mrb_value self) {
   mrb_value channel;
   mrb_value line_term;
-  mrb_int length;
+  int native_length;
 
   /* Fetch the args */
   mrb_get_args(mrb, "ooi", &channel, &line_term, &length);
@@ -21099,7 +21051,7 @@ mrb_GLib_g_io_channel_set_line_term(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_io_channel_shutdown(mrb_state* mrb, mrb_value self) {
   mrb_value channel;
-  mrb_int flush;
+  int native_flush;
   mrb_value err;
 
   /* Fetch the args */
@@ -21179,7 +21131,7 @@ mrb_GLib_g_io_channel_unix_get_fd(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_io_channel_unix_new(mrb_state* mrb, mrb_value self) {
-  mrb_int fd;
+  int native_fd;
 
   /* Fetch the args */
   mrb_get_args(mrb, "i", &fd);
@@ -21244,7 +21196,7 @@ mrb_value
 mrb_GLib_g_io_channel_write(mrb_state* mrb, mrb_value self) {
   mrb_value channel;
   mrb_value buf;
-  mrb_int count;
+  unsigned long native_count;
   mrb_value bytes_written;
 
   /* Fetch the args */
@@ -21296,7 +21248,7 @@ mrb_value
 mrb_GLib_g_io_channel_write_chars(mrb_state* mrb, mrb_value self) {
   mrb_value channel;
   mrb_value buf;
-  mrb_int count;
+  long native_count;
   mrb_value bytes_written;
   mrb_value error;
 
@@ -21349,7 +21301,7 @@ mrb_GLib_g_io_channel_write_chars(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_io_channel_write_unichar(mrb_state* mrb, mrb_value self) {
   mrb_value channel;
-  mrb_int thechar;
+  unsigned int native_thechar;
   mrb_value error;
 
   /* Fetch the args */
@@ -22588,7 +22540,7 @@ mrb_value
 mrb_GLib_g_key_file_load_from_data(mrb_state* mrb, mrb_value self) {
   mrb_value key_file;
   mrb_value data;
-  mrb_int length;
+  unsigned long native_length;
   mrb_value flags;
   mrb_value error;
 
@@ -23121,7 +23073,7 @@ mrb_GLib_g_key_file_set_boolean(mrb_state* mrb, mrb_value self) {
   mrb_value key_file;
   mrb_value group_name;
   mrb_value key;
-  mrb_int value;
+  int native_value;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oooi", &key_file, &group_name, &key, &value);
@@ -23174,7 +23126,7 @@ mrb_GLib_g_key_file_set_boolean_list(mrb_state* mrb, mrb_value self) {
   mrb_value group_name;
   mrb_value key;
   mrb_value list;
-  mrb_int length;
+  unsigned long native_length;
 
   /* Fetch the args */
   mrb_get_args(mrb, "ooooi", &key_file, &group_name, &key, &list, &length);
@@ -23297,10 +23249,10 @@ mrb_GLib_g_key_file_set_double(mrb_state* mrb, mrb_value self) {
   mrb_value key_file;
   mrb_value group_name;
   mrb_value key;
-  mrb_value value;
+  double native_value;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "oooo", &key_file, &group_name, &key, &value);
+  mrb_get_args(mrb, "ooof", &key_file, &group_name, &key, &value);
 
 
   /* Type checking */
@@ -23316,10 +23268,6 @@ mrb_GLib_g_key_file_set_double(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "String expected");
     return mrb_nil_value();
   }
-  if (!mrb_obj_is_kind_of(mrb, value, mrb->float_class)) {
-    mrb_raise(mrb, E_TYPE_ERROR, "Float expected");
-    return mrb_nil_value();
-  }
 
   /* Unbox parameters */
   struct _GKeyFile * native_key_file = (mrb_nil_p(key_file) ? NULL : mruby_unbox__GKeyFile(key_file));
@@ -23327,8 +23275,6 @@ mrb_GLib_g_key_file_set_double(mrb_state* mrb, mrb_value self) {
   const char * native_group_name = mrb_string_value_cstr(mrb, &group_name);
 
   const char * native_key = mrb_string_value_cstr(mrb, &key);
-
-  double native_value = mrb_float(value);
 
   /* Invocation */
   g_key_file_set_double(native_key_file, native_group_name, native_key, native_value);
@@ -23356,7 +23302,7 @@ mrb_GLib_g_key_file_set_double_list(mrb_state* mrb, mrb_value self) {
   mrb_value group_name;
   mrb_value key;
   mrb_value list;
-  mrb_int length;
+  unsigned long native_length;
 
   /* Fetch the args */
   mrb_get_args(mrb, "ooooi", &key_file, &group_name, &key, &list, &length);
@@ -23410,7 +23356,7 @@ mrb_GLib_g_key_file_set_int64(mrb_state* mrb, mrb_value self) {
   mrb_value key_file;
   mrb_value group_name;
   mrb_value key;
-  mrb_int value;
+  long native_value;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oooi", &key_file, &group_name, &key, &value);
@@ -23461,7 +23407,7 @@ mrb_GLib_g_key_file_set_integer(mrb_state* mrb, mrb_value self) {
   mrb_value key_file;
   mrb_value group_name;
   mrb_value key;
-  mrb_int value;
+  int native_value;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oooi", &key_file, &group_name, &key, &value);
@@ -23514,7 +23460,7 @@ mrb_GLib_g_key_file_set_integer_list(mrb_state* mrb, mrb_value self) {
   mrb_value group_name;
   mrb_value key;
   mrb_value list;
-  mrb_int length;
+  unsigned long native_length;
 
   /* Fetch the args */
   mrb_get_args(mrb, "ooooi", &key_file, &group_name, &key, &list, &length);
@@ -23564,7 +23510,7 @@ mrb_GLib_g_key_file_set_integer_list(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_key_file_set_list_separator(mrb_state* mrb, mrb_value self) {
   mrb_value key_file;
-  mrb_int separator;
+  char native_separator;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &key_file, &separator);
@@ -23672,7 +23618,7 @@ mrb_GLib_g_key_file_set_locale_string_list(mrb_state* mrb, mrb_value self) {
   mrb_value key;
   mrb_value locale;
   mrb_value list;
-  mrb_int length;
+  unsigned long native_length;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oooooi", &key_file, &group_name, &key, &locale, &list, &length);
@@ -23791,7 +23737,7 @@ mrb_GLib_g_key_file_set_string_list(mrb_state* mrb, mrb_value self) {
   mrb_value group_name;
   mrb_value key;
   mrb_value list;
-  mrb_int length;
+  unsigned long native_length;
 
   /* Fetch the args */
   mrb_get_args(mrb, "ooooi", &key_file, &group_name, &key, &list, &length);
@@ -23845,7 +23791,7 @@ mrb_GLib_g_key_file_set_uint64(mrb_state* mrb, mrb_value self) {
   mrb_value key_file;
   mrb_value group_name;
   mrb_value key;
-  mrb_int value;
+  unsigned long native_value;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oooi", &key_file, &group_name, &key, &value);
@@ -24576,7 +24522,7 @@ mrb_value
 mrb_GLib_g_list_insert(mrb_state* mrb, mrb_value self) {
   mrb_value list;
   mrb_value data;
-  mrb_int position;
+  int native_position;
 
   /* Fetch the args */
   mrb_get_args(mrb, "ooi", &list, &data, &position);
@@ -24839,7 +24785,7 @@ mrb_GLib_g_list_length(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_list_nth(mrb_state* mrb, mrb_value self) {
   mrb_value list;
-  mrb_int n;
+  unsigned int native_n;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &list, &n);
@@ -24877,7 +24823,7 @@ mrb_GLib_g_list_nth(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_list_nth_data(mrb_state* mrb, mrb_value self) {
   mrb_value list;
-  mrb_int n;
+  unsigned int native_n;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &list, &n);
@@ -24915,7 +24861,7 @@ mrb_GLib_g_list_nth_data(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_list_nth_prev(mrb_state* mrb, mrb_value self) {
   mrb_value list;
-  mrb_int n;
+  unsigned int native_n;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &list, &n);
@@ -25314,7 +25260,7 @@ mrb_GLib_g_listenv(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_locale_from_utf8(mrb_state* mrb, mrb_value self) {
   mrb_value utf8string;
-  mrb_int len;
+  long native_len;
   mrb_value bytes_read;
   mrb_value bytes_written;
   mrb_value error;
@@ -25367,7 +25313,7 @@ mrb_GLib_g_locale_from_utf8(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_locale_to_utf8(mrb_state* mrb, mrb_value self) {
   mrb_value opsysstring;
-  mrb_int len;
+  long native_len;
   mrb_value bytes_read;
   mrb_value bytes_written;
   mrb_value error;
@@ -25514,7 +25460,7 @@ mrb_GLib_g_log_default_handler(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_log_remove_handler(mrb_state* mrb, mrb_value self) {
   mrb_value log_domain;
-  mrb_int handler_id;
+  unsigned int native_handler_id;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &log_domain, &handler_id);
@@ -25780,7 +25726,7 @@ mrb_GLib_g_logv(mrb_state* mrb, mrb_value self) {
   mrb_value log_domain;
   mrb_value log_level;
   mrb_value format;
-  mrb_int args;
+  int native_args;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oooi", &log_domain, &log_level, &format, &args);
@@ -25866,7 +25812,7 @@ mrb_value
 mrb_GLib_g_main_context_add_poll(mrb_state* mrb, mrb_value self) {
   mrb_value context;
   mrb_value fd;
-  mrb_int priority;
+  int native_priority;
 
   /* Fetch the args */
   mrb_get_args(mrb, "ooi", &context, &fd, &priority);
@@ -25909,9 +25855,9 @@ mrb_GLib_g_main_context_add_poll(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_main_context_check(mrb_state* mrb, mrb_value self) {
   mrb_value context;
-  mrb_int max_priority;
+  int native_max_priority;
   mrb_value fds;
-  mrb_int n_fds;
+  int native_n_fds;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oioi", &context, &max_priority, &fds, &n_fds);
@@ -26061,7 +26007,7 @@ mrb_GLib_g_main_context_find_source_by_funcs_user_data(mrb_state* mrb, mrb_value
 mrb_value
 mrb_GLib_g_main_context_find_source_by_id(mrb_state* mrb, mrb_value self) {
   mrb_value context;
-  mrb_int source_id;
+  unsigned int native_source_id;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &context, &source_id);
@@ -26242,7 +26188,7 @@ mrb_GLib_g_main_context_invoke(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_main_context_invoke_full(mrb_state* mrb, mrb_value self) {
   mrb_value context;
-  mrb_int priority;
+  int native_priority;
   mrb_value function;
   mrb_value data;
   mrb_value notify;
@@ -26329,7 +26275,7 @@ mrb_GLib_g_main_context_is_owner(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_main_context_iteration(mrb_state* mrb, mrb_value self) {
   mrb_value context;
-  mrb_int may_block;
+  int native_may_block;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &context, &may_block);
@@ -26389,7 +26335,7 @@ mrb_GLib_g_main_context_new(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_main_context_new_with_next_id(mrb_state* mrb, mrb_value self) {
-  mrb_int next_id;
+  unsigned int native_next_id;
 
   /* Fetch the args */
   mrb_get_args(mrb, "i", &next_id);
@@ -26572,10 +26518,10 @@ mrb_GLib_g_main_context_push_thread_default(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_main_context_query(mrb_state* mrb, mrb_value self) {
   mrb_value context;
-  mrb_int max_priority;
+  int native_max_priority;
   mrb_value timeout_;
   mrb_value fds;
-  mrb_int n_fds;
+  int native_n_fds;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oiooi", &context, &max_priority, &timeout_, &fds, &n_fds);
@@ -27033,7 +26979,7 @@ mrb_GLib_g_main_loop_is_running(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_main_loop_new(mrb_state* mrb, mrb_value self) {
   mrb_value context;
-  mrb_int is_running;
+  int native_is_running;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &context, &is_running);
@@ -27204,7 +27150,7 @@ mrb_GLib_g_main_loop_unref(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_malloc(mrb_state* mrb, mrb_value self) {
-  mrb_int n_bytes;
+  unsigned long native_n_bytes;
 
   /* Fetch the args */
   mrb_get_args(mrb, "i", &n_bytes);
@@ -27231,7 +27177,7 @@ mrb_GLib_g_malloc(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_malloc0(mrb_state* mrb, mrb_value self) {
-  mrb_int n_bytes;
+  unsigned long native_n_bytes;
 
   /* Fetch the args */
   mrb_get_args(mrb, "i", &n_bytes);
@@ -27259,8 +27205,8 @@ mrb_GLib_g_malloc0(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_malloc0_n(mrb_state* mrb, mrb_value self) {
-  mrb_int n_blocks;
-  mrb_int n_block_bytes;
+  unsigned long native_n_blocks;
+  unsigned long native_n_block_bytes;
 
   /* Fetch the args */
   mrb_get_args(mrb, "ii", &n_blocks, &n_block_bytes);
@@ -27288,8 +27234,8 @@ mrb_GLib_g_malloc0_n(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_malloc_n(mrb_state* mrb, mrb_value self) {
-  mrb_int n_blocks;
-  mrb_int n_block_bytes;
+  unsigned long native_n_blocks;
+  unsigned long native_n_block_bytes;
 
   /* Fetch the args */
   mrb_get_args(mrb, "ii", &n_blocks, &n_block_bytes);
@@ -27464,7 +27410,7 @@ mrb_GLib_g_mapped_file_get_length(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_mapped_file_new(mrb_state* mrb, mrb_value self) {
   mrb_value filename;
-  mrb_int writable;
+  int native_writable;
   mrb_value error;
 
   /* Fetch the args */
@@ -27506,8 +27452,8 @@ mrb_GLib_g_mapped_file_new(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_mapped_file_new_from_fd(mrb_state* mrb, mrb_value self) {
-  mrb_int fd;
-  mrb_int writable;
+  int native_fd;
+  int native_writable;
   mrb_value error;
 
   /* Fetch the args */
@@ -27704,7 +27650,7 @@ mrb_GLib_g_markup_error_quark(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_markup_escape_text(mrb_state* mrb, mrb_value self) {
   mrb_value text;
-  mrb_int length;
+  long native_length;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &text, &length);
@@ -28025,7 +27971,7 @@ mrb_value
 mrb_GLib_g_markup_parse_context_parse(mrb_state* mrb, mrb_value self) {
   mrb_value context;
   mrb_value text;
-  mrb_int text_len;
+  long native_text_len;
   mrb_value error;
 
   /* Fetch the args */
@@ -28264,7 +28210,7 @@ mrb_GLib_g_markup_printf_escaped(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_markup_vprintf_escaped(mrb_state* mrb, mrb_value self) {
   mrb_value format;
-  mrb_int args;
+  int native_args;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &format, &args);
@@ -28351,7 +28297,7 @@ mrb_GLib_g_match_info_expand_references(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_match_info_fetch(mrb_state* mrb, mrb_value self) {
   mrb_value match_info;
-  mrb_int match_num;
+  int native_match_num;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &match_info, &match_num);
@@ -28529,7 +28475,7 @@ mrb_GLib_g_match_info_fetch_named_pos(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_match_info_fetch_pos(mrb_state* mrb, mrb_value self) {
   mrb_value match_info;
-  mrb_int match_num;
+  int native_match_num;
   mrb_value start_pos;
   mrb_value end_pos;
 
@@ -28992,7 +28938,7 @@ mrb_GLib_g_mem_set_vtable(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_memdup(mrb_state* mrb, mrb_value self) {
   mrb_value mem;
-  mrb_int byte_size;
+  unsigned int native_byte_size;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &mem, &byte_size);
@@ -29027,7 +28973,7 @@ mrb_GLib_g_memdup(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_mkdir_with_parents(mrb_state* mrb, mrb_value self) {
   mrb_value pathname;
-  mrb_int mode;
+  int native_mode;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &pathname, &mode);
@@ -29118,7 +29064,7 @@ mrb_GLib_g_mkdtemp(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_mkdtemp_full(mrb_state* mrb, mrb_value self) {
   mrb_value tmpl;
-  mrb_int mode;
+  int native_mode;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &tmpl, &mode);
@@ -29223,8 +29169,8 @@ mrb_GLib_g_mkstemp(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_mkstemp_full(mrb_state* mrb, mrb_value self) {
   mrb_value tmpl;
-  mrb_int flags;
-  mrb_int mode;
+  int native_flags;
+  int native_mode;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oii", &tmpl, &flags, &mode);
@@ -29965,7 +29911,7 @@ mrb_GLib_g_node_get_root(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_node_insert(mrb_state* mrb, mrb_value self) {
   mrb_value parent;
-  mrb_int position;
+  int native_position;
   mrb_value node;
 
   /* Fetch the args */
@@ -30392,7 +30338,7 @@ mrb_GLib_g_node_new(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_node_nth_child(mrb_state* mrb, mrb_value self) {
   mrb_value node;
-  mrb_int n;
+  unsigned int native_n;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &node, &n);
@@ -30513,7 +30459,7 @@ mrb_GLib_g_node_traverse(mrb_state* mrb, mrb_value self) {
   mrb_value root;
   mrb_value order;
   mrb_value flags;
-  mrb_int max_depth;
+  int native_max_depth;
   mrb_value func;
   mrb_value data;
 
@@ -30774,7 +30720,7 @@ mrb_GLib_g_once_init_enter(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_once_init_leave(mrb_state* mrb, mrb_value self) {
   mrb_value location;
-  mrb_int result;
+  unsigned long native_result;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &location, &result);
@@ -30966,7 +30912,7 @@ mrb_GLib_g_option_context_get_description(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_option_context_get_help(mrb_state* mrb, mrb_value self) {
   mrb_value context;
-  mrb_int main_help;
+  int native_main_help;
   mrb_value group;
 
   /* Fetch the args */
@@ -31385,7 +31331,7 @@ mrb_GLib_g_option_context_set_description(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_option_context_set_help_enabled(mrb_state* mrb, mrb_value self) {
   mrb_value context;
-  mrb_int help_enabled;
+  int native_help_enabled;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &context, &help_enabled);
@@ -31420,7 +31366,7 @@ mrb_GLib_g_option_context_set_help_enabled(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_option_context_set_ignore_unknown_options(mrb_state* mrb, mrb_value self) {
   mrb_value context;
-  mrb_int ignore_unknown;
+  int native_ignore_unknown;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &context, &ignore_unknown);
@@ -31496,7 +31442,7 @@ mrb_GLib_g_option_context_set_main_group(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_option_context_set_strict_posix(mrb_state* mrb, mrb_value self) {
   mrb_value context;
-  mrb_int strict_posix;
+  int native_strict_posix;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &context, &strict_posix);
@@ -32062,7 +32008,7 @@ mrb_value
 mrb_GLib_g_parse_debug_string(mrb_state* mrb, mrb_value self) {
   mrb_value string;
   mrb_value keys;
-  mrb_int nkeys;
+  unsigned int native_nkeys;
 
   /* Fetch the args */
   mrb_get_args(mrb, "ooi", &string, &keys, &nkeys);
@@ -32260,7 +32206,7 @@ mrb_GLib_g_path_skip_root(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_pattern_match(mrb_state* mrb, mrb_value self) {
   mrb_value pspec;
-  mrb_int string_length;
+  unsigned int native_string_length;
   mrb_value string;
   mrb_value string_reversed;
 
@@ -32529,7 +32475,7 @@ mrb_GLib_g_pattern_spec_new(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_pointer_bit_lock(mrb_state* mrb, mrb_value self) {
   mrb_value address;
-  mrb_int lock_bit;
+  int native_lock_bit;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &address, &lock_bit);
@@ -32561,7 +32507,7 @@ mrb_GLib_g_pointer_bit_lock(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_pointer_bit_trylock(mrb_state* mrb, mrb_value self) {
   mrb_value address;
-  mrb_int lock_bit;
+  int native_lock_bit;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &address, &lock_bit);
@@ -32600,7 +32546,7 @@ mrb_GLib_g_pointer_bit_trylock(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_pointer_bit_unlock(mrb_state* mrb, mrb_value self) {
   mrb_value address;
-  mrb_int lock_bit;
+  int native_lock_bit;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &address, &lock_bit);
@@ -32633,8 +32579,8 @@ mrb_GLib_g_pointer_bit_unlock(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_poll(mrb_state* mrb, mrb_value self) {
   mrb_value fds;
-  mrb_int nfds;
-  mrb_int timeout;
+  unsigned int native_nfds;
+  int native_timeout;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oii", &fds, &nfds, &timeout);
@@ -32820,7 +32766,7 @@ mrb_GLib_g_printf(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_printf_string_upper_bound(mrb_state* mrb, mrb_value self) {
   mrb_value format;
-  mrb_int args;
+  int native_args;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &format, &args);
@@ -33139,7 +33085,7 @@ mrb_GLib_g_ptr_array_foreach(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_ptr_array_free(mrb_state* mrb, mrb_value self) {
   mrb_value array;
-  mrb_int free_seg;
+  int native_free_seg;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &array, &free_seg);
@@ -33178,7 +33124,7 @@ mrb_GLib_g_ptr_array_free(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_ptr_array_insert(mrb_state* mrb, mrb_value self) {
   mrb_value array;
-  mrb_int index_;
+  int native_index_;
   mrb_value data;
 
   /* Fetch the args */
@@ -33236,7 +33182,7 @@ mrb_GLib_g_ptr_array_new(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_ptr_array_new_full(mrb_state* mrb, mrb_value self) {
-  mrb_int reserved_size;
+  unsigned int native_reserved_size;
   mrb_value element_free_func;
 
   /* Fetch the args */
@@ -33431,7 +33377,7 @@ mrb_GLib_g_ptr_array_remove_fast(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_ptr_array_remove_index(mrb_state* mrb, mrb_value self) {
   mrb_value array;
-  mrb_int index_;
+  unsigned int native_index_;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &array, &index_);
@@ -33469,7 +33415,7 @@ mrb_GLib_g_ptr_array_remove_index(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_ptr_array_remove_index_fast(mrb_state* mrb, mrb_value self) {
   mrb_value array;
-  mrb_int index_;
+  unsigned int native_index_;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &array, &index_);
@@ -33508,8 +33454,8 @@ mrb_GLib_g_ptr_array_remove_index_fast(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_ptr_array_remove_range(mrb_state* mrb, mrb_value self) {
   mrb_value array;
-  mrb_int index_;
-  mrb_int length;
+  unsigned int native_index_;
+  unsigned int native_length;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oii", &array, &index_, &length);
@@ -33585,7 +33531,7 @@ mrb_GLib_g_ptr_array_set_free_func(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_ptr_array_set_size(mrb_state* mrb, mrb_value self) {
   mrb_value array;
-  mrb_int length;
+  int native_length;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &array, &length);
@@ -33618,7 +33564,7 @@ mrb_GLib_g_ptr_array_set_size(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_ptr_array_sized_new(mrb_state* mrb, mrb_value self) {
-  mrb_int reserved_size;
+  unsigned int native_reserved_size;
 
   /* Fetch the args */
   mrb_get_args(mrb, "i", &reserved_size);
@@ -33764,8 +33710,8 @@ mrb_GLib_g_ptr_array_unref(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_qsort_with_data(mrb_state* mrb, mrb_value self) {
   mrb_value pbase;
-  mrb_int total_elems;
-  mrb_int size;
+  int native_total_elems;
+  unsigned long native_size;
   mrb_value compare_func;
   mrb_value user_data;
 
@@ -33900,7 +33846,7 @@ mrb_GLib_g_quark_init(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_quark_to_string(mrb_state* mrb, mrb_value self) {
-  mrb_int quark;
+  unsigned int native_quark;
 
   /* Fetch the args */
   mrb_get_args(mrb, "i", &quark);
@@ -34718,7 +34664,7 @@ mrb_GLib_g_queue_peek_head_link(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_queue_peek_nth(mrb_state* mrb, mrb_value self) {
   mrb_value queue;
-  mrb_int n;
+  unsigned int native_n;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &queue, &n);
@@ -34756,7 +34702,7 @@ mrb_GLib_g_queue_peek_nth(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_queue_peek_nth_link(mrb_state* mrb, mrb_value self) {
   mrb_value queue;
-  mrb_int n;
+  unsigned int native_n;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &queue, &n);
@@ -34938,7 +34884,7 @@ mrb_GLib_g_queue_pop_head_link(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_queue_pop_nth(mrb_state* mrb, mrb_value self) {
   mrb_value queue;
-  mrb_int n;
+  unsigned int native_n;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &queue, &n);
@@ -34976,7 +34922,7 @@ mrb_GLib_g_queue_pop_nth(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_queue_pop_nth_link(mrb_state* mrb, mrb_value self) {
   mrb_value queue;
-  mrb_int n;
+  unsigned int native_n;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &queue, &n);
@@ -35167,7 +35113,7 @@ mrb_value
 mrb_GLib_g_queue_push_nth(mrb_state* mrb, mrb_value self) {
   mrb_value queue;
   mrb_value data;
-  mrb_int n;
+  int native_n;
 
   /* Fetch the args */
   mrb_get_args(mrb, "ooi", &queue, &data, &n);
@@ -35206,7 +35152,7 @@ mrb_GLib_g_queue_push_nth(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_queue_push_nth_link(mrb_state* mrb, mrb_value self) {
   mrb_value queue;
-  mrb_int n;
+  int native_n;
   mrb_value link_;
 
   /* Fetch the args */
@@ -35607,11 +35553,11 @@ mrb_GLib_g_rand_double(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_rand_double_range(mrb_state* mrb, mrb_value self) {
   mrb_value rand_;
-  mrb_value begin;
-  mrb_value end;
+  double native_begin;
+  double native_end;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "ooo", &rand_, &begin, &end);
+  mrb_get_args(mrb, "off", &rand_, &begin, &end);
 
 
   /* Type checking */
@@ -35619,21 +35565,9 @@ mrb_GLib_g_rand_double_range(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GRand expected");
     return mrb_nil_value();
   }
-  if (!mrb_obj_is_kind_of(mrb, begin, mrb->float_class)) {
-    mrb_raise(mrb, E_TYPE_ERROR, "Float expected");
-    return mrb_nil_value();
-  }
-  if (!mrb_obj_is_kind_of(mrb, end, mrb->float_class)) {
-    mrb_raise(mrb, E_TYPE_ERROR, "Float expected");
-    return mrb_nil_value();
-  }
 
   /* Unbox parameters */
   struct _GRand * native_rand_ = (mrb_nil_p(rand_) ? NULL : mruby_unbox__GRand(rand_));
-
-  double native_begin = mrb_float(begin);
-
-  double native_end = mrb_float(end);
 
   /* Invocation */
   gdouble result = g_rand_double_range(native_rand_, native_begin, native_end);
@@ -35732,8 +35666,8 @@ mrb_GLib_g_rand_int(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_rand_int_range(mrb_state* mrb, mrb_value self) {
   mrb_value rand_;
-  mrb_int begin;
-  mrb_int end;
+  int native_begin;
+  int native_end;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oii", &rand_, &begin, &end);
@@ -35793,7 +35727,7 @@ mrb_GLib_g_rand_new(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_rand_new_with_seed(mrb_state* mrb, mrb_value self) {
-  mrb_int seed;
+  unsigned int native_seed;
 
   /* Fetch the args */
   mrb_get_args(mrb, "i", &seed);
@@ -35822,7 +35756,7 @@ mrb_GLib_g_rand_new_with_seed(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_rand_new_with_seed_array(mrb_state* mrb, mrb_value self) {
   mrb_value seed;
-  mrb_int seed_length;
+  unsigned int native_seed_length;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &seed, &seed_length);
@@ -35857,7 +35791,7 @@ mrb_GLib_g_rand_new_with_seed_array(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_rand_set_seed(mrb_state* mrb, mrb_value self) {
   mrb_value rand_;
-  mrb_int seed;
+  unsigned int native_seed;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &rand_, &seed);
@@ -35894,7 +35828,7 @@ mrb_value
 mrb_GLib_g_rand_set_seed_array(mrb_state* mrb, mrb_value self) {
   mrb_value rand_;
   mrb_value seed;
-  mrb_int seed_length;
+  unsigned int native_seed_length;
 
   /* Fetch the args */
   mrb_get_args(mrb, "ooi", &rand_, &seed, &seed_length);
@@ -35951,27 +35885,12 @@ mrb_GLib_g_random_double(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_random_double_range(mrb_state* mrb, mrb_value self) {
-  mrb_value begin;
-  mrb_value end;
+  double native_begin;
+  double native_end;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "oo", &begin, &end);
+  mrb_get_args(mrb, "ff", &begin, &end);
 
-
-  /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, begin, mrb->float_class)) {
-    mrb_raise(mrb, E_TYPE_ERROR, "Float expected");
-    return mrb_nil_value();
-  }
-  if (!mrb_obj_is_kind_of(mrb, end, mrb->float_class)) {
-    mrb_raise(mrb, E_TYPE_ERROR, "Float expected");
-    return mrb_nil_value();
-  }
-
-  /* Unbox parameters */
-  double native_begin = mrb_float(begin);
-
-  double native_end = mrb_float(end);
 
   /* Invocation */
   gdouble result = g_random_double_range(native_begin, native_end);
@@ -36019,8 +35938,8 @@ mrb_GLib_g_random_int(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_random_int_range(mrb_state* mrb, mrb_value self) {
-  mrb_int begin;
-  mrb_int end;
+  int native_begin;
+  int native_end;
 
   /* Fetch the args */
   mrb_get_args(mrb, "ii", &begin, &end);
@@ -36051,7 +35970,7 @@ mrb_GLib_g_random_int_range(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_random_set_seed(mrb_state* mrb, mrb_value self) {
-  mrb_int seed;
+  unsigned int native_seed;
 
   /* Fetch the args */
   mrb_get_args(mrb, "i", &seed);
@@ -36077,7 +35996,7 @@ mrb_GLib_g_random_set_seed(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_realloc(mrb_state* mrb, mrb_value self) {
   mrb_value mem;
-  mrb_int n_bytes;
+  unsigned long native_n_bytes;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &mem, &n_bytes);
@@ -36113,8 +36032,8 @@ mrb_GLib_g_realloc(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_realloc_n(mrb_state* mrb, mrb_value self) {
   mrb_value mem;
-  mrb_int n_blocks;
-  mrb_int n_block_bytes;
+  unsigned long native_n_blocks;
+  unsigned long native_n_block_bytes;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oii", &mem, &n_blocks, &n_block_bytes);
@@ -36395,7 +36314,7 @@ mrb_GLib_g_regex_error_quark(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_regex_escape_nul(mrb_state* mrb, mrb_value self) {
   mrb_value string;
-  mrb_int length;
+  int native_length;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &string, &length);
@@ -36433,7 +36352,7 @@ mrb_GLib_g_regex_escape_nul(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_regex_escape_string(mrb_state* mrb, mrb_value self) {
   mrb_value string;
-  mrb_int length;
+  int native_length;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &string, &length);
@@ -36909,8 +36828,8 @@ mrb_value
 mrb_GLib_g_regex_match_all_full(mrb_state* mrb, mrb_value self) {
   mrb_value regex;
   mrb_value string;
-  mrb_int string_len;
-  mrb_int start_position;
+  long native_string_len;
+  int native_start_position;
   mrb_value match_options;
   mrb_value match_info;
   mrb_value error;
@@ -36976,8 +36895,8 @@ mrb_value
 mrb_GLib_g_regex_match_full(mrb_state* mrb, mrb_value self) {
   mrb_value regex;
   mrb_value string;
-  mrb_int string_len;
-  mrb_int start_position;
+  long native_string_len;
+  int native_start_position;
   mrb_value match_options;
   mrb_value match_info;
   mrb_value error;
@@ -37188,8 +37107,8 @@ mrb_value
 mrb_GLib_g_regex_replace(mrb_state* mrb, mrb_value self) {
   mrb_value regex;
   mrb_value string;
-  mrb_int string_len;
-  mrb_int start_position;
+  long native_string_len;
+  int native_start_position;
   mrb_value replacement;
   mrb_value match_options;
   mrb_value error;
@@ -37255,8 +37174,8 @@ mrb_value
 mrb_GLib_g_regex_replace_eval(mrb_state* mrb, mrb_value self) {
   mrb_value regex;
   mrb_value string;
-  mrb_int string_len;
-  mrb_int start_position;
+  long native_string_len;
+  int native_start_position;
   mrb_value match_options;
   mrb_value eval;
   mrb_value user_data;
@@ -37322,8 +37241,8 @@ mrb_value
 mrb_GLib_g_regex_replace_literal(mrb_state* mrb, mrb_value self) {
   mrb_value regex;
   mrb_value string;
-  mrb_int string_len;
-  mrb_int start_position;
+  long native_string_len;
+  int native_start_position;
   mrb_value replacement;
   mrb_value match_options;
   mrb_value error;
@@ -37437,10 +37356,10 @@ mrb_value
 mrb_GLib_g_regex_split_full(mrb_state* mrb, mrb_value self) {
   mrb_value regex;
   mrb_value string;
-  mrb_int string_len;
-  mrb_int start_position;
+  long native_string_len;
+  int native_start_position;
   mrb_value match_options;
-  mrb_int max_tokens;
+  int native_max_tokens;
   mrb_value error;
 
   /* Fetch the args */
@@ -38264,7 +38183,7 @@ mrb_GLib_g_scanner_get_next_token(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_scanner_input_file(mrb_state* mrb, mrb_value self) {
   mrb_value scanner;
-  mrb_int input_fd;
+  int native_input_fd;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &scanner, &input_fd);
@@ -38301,7 +38220,7 @@ mrb_value
 mrb_GLib_g_scanner_input_text(mrb_state* mrb, mrb_value self) {
   mrb_value scanner;
   mrb_value text;
-  mrb_int text_len;
+  unsigned int native_text_len;
 
   /* Fetch the args */
   mrb_get_args(mrb, "ooi", &scanner, &text, &text_len);
@@ -38460,7 +38379,7 @@ mrb_GLib_g_scanner_peek_next_token(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_scanner_scope_add_symbol(mrb_state* mrb, mrb_value self) {
   mrb_value scanner;
-  mrb_int scope_id;
+  unsigned int native_scope_id;
   mrb_value symbol;
   mrb_value value;
 
@@ -38508,7 +38427,7 @@ mrb_GLib_g_scanner_scope_add_symbol(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_scanner_scope_foreach_symbol(mrb_state* mrb, mrb_value self) {
   mrb_value scanner;
-  mrb_int scope_id;
+  unsigned int native_scope_id;
   mrb_value func;
   mrb_value user_data;
 
@@ -38552,7 +38471,7 @@ mrb_GLib_g_scanner_scope_foreach_symbol(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_scanner_scope_lookup_symbol(mrb_state* mrb, mrb_value self) {
   mrb_value scanner;
-  mrb_int scope_id;
+  unsigned int native_scope_id;
   mrb_value symbol;
 
   /* Fetch the args */
@@ -38598,7 +38517,7 @@ mrb_GLib_g_scanner_scope_lookup_symbol(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_scanner_scope_remove_symbol(mrb_state* mrb, mrb_value self) {
   mrb_value scanner;
-  mrb_int scope_id;
+  unsigned int native_scope_id;
   mrb_value symbol;
 
   /* Fetch the args */
@@ -38640,7 +38559,7 @@ mrb_GLib_g_scanner_scope_remove_symbol(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_scanner_set_scope(mrb_state* mrb, mrb_value self) {
   mrb_value scanner;
-  mrb_int scope_id;
+  unsigned int native_scope_id;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &scanner, &scope_id);
@@ -38725,7 +38644,7 @@ mrb_GLib_g_scanner_unexp_token(mrb_state* mrb, mrb_value self) {
   mrb_value symbol_spec;
   mrb_value symbol_name;
   mrb_value message;
-  mrb_int is_error;
+  int native_is_error;
 
   /* Fetch the args */
   mrb_get_args(mrb, "ooooooi", &scanner, &expected_token, &identifier_spec, &symbol_spec, &symbol_name, &message, &is_error);
@@ -39104,7 +39023,7 @@ mrb_GLib_g_sequence_get_end_iter(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_sequence_get_iter_at_pos(mrb_state* mrb, mrb_value self) {
   mrb_value seq;
-  mrb_int pos;
+  int native_pos;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &seq, &pos);
@@ -39569,7 +39488,7 @@ mrb_GLib_g_sequence_iter_is_end(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_sequence_iter_move(mrb_state* mrb, mrb_value self) {
   mrb_value iter;
-  mrb_int delta;
+  int native_delta;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &iter, &delta);
@@ -40451,8 +40370,8 @@ mrb_GLib_g_set_application_name(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_set_error(mrb_state* mrb, mrb_value self) {
   mrb_value err;
-  mrb_int domain;
-  mrb_int code;
+  unsigned int native_domain;
+  int native_code;
   mrb_value format;
 
   /* Fetch the args */
@@ -40493,8 +40412,8 @@ mrb_GLib_g_set_error(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_set_error_literal(mrb_state* mrb, mrb_value self) {
   mrb_value err;
-  mrb_int domain;
-  mrb_int code;
+  unsigned int native_domain;
+  int native_code;
   mrb_value message;
 
   /* Fetch the args */
@@ -40634,7 +40553,7 @@ mrb_value
 mrb_GLib_g_setenv(mrb_state* mrb, mrb_value self) {
   mrb_value variable;
   mrb_value value;
-  mrb_int overwrite;
+  int native_overwrite;
 
   /* Fetch the args */
   mrb_get_args(mrb, "ooi", &variable, &value, &overwrite);
@@ -40836,7 +40755,7 @@ mrb_GLib_g_shell_unquote(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_slice_alloc(mrb_state* mrb, mrb_value self) {
-  mrb_int block_size;
+  unsigned long native_block_size;
 
   /* Fetch the args */
   mrb_get_args(mrb, "i", &block_size);
@@ -40863,7 +40782,7 @@ mrb_GLib_g_slice_alloc(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_slice_alloc0(mrb_state* mrb, mrb_value self) {
-  mrb_int block_size;
+  unsigned long native_block_size;
 
   /* Fetch the args */
   mrb_get_args(mrb, "i", &block_size);
@@ -40891,7 +40810,7 @@ mrb_GLib_g_slice_alloc0(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_slice_copy(mrb_state* mrb, mrb_value self) {
-  mrb_int block_size;
+  unsigned long native_block_size;
   mrb_value mem_block;
 
   /* Fetch the args */
@@ -40926,7 +40845,7 @@ mrb_GLib_g_slice_copy(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_slice_free1(mrb_state* mrb, mrb_value self) {
-  mrb_int block_size;
+  unsigned long native_block_size;
   mrb_value mem_block;
 
   /* Fetch the args */
@@ -40959,9 +40878,9 @@ mrb_GLib_g_slice_free1(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_slice_free_chain_with_offset(mrb_state* mrb, mrb_value self) {
-  mrb_int block_size;
+  unsigned long native_block_size;
   mrb_value mem_chain;
-  mrb_int next_offset;
+  unsigned long native_next_offset;
 
   /* Fetch the args */
   mrb_get_args(mrb, "ioi", &block_size, &mem_chain, &next_offset);
@@ -41031,7 +40950,7 @@ mrb_GLib_g_slice_get_config(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_slice_get_config_state(mrb_state* mrb, mrb_value self) {
   mrb_value ckey;
-  mrb_int address;
+  long native_address;
   mrb_value n_values;
 
   /* Fetch the args */
@@ -41070,7 +40989,7 @@ mrb_GLib_g_slice_get_config_state(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_slice_set_config(mrb_state* mrb, mrb_value self) {
   mrb_value ckey;
-  mrb_int value;
+  long native_value;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &ckey, &value);
@@ -41614,7 +41533,7 @@ mrb_value
 mrb_GLib_g_slist_insert(mrb_state* mrb, mrb_value self) {
   mrb_value list;
   mrb_value data;
-  mrb_int position;
+  int native_position;
 
   /* Fetch the args */
   mrb_get_args(mrb, "ooi", &list, &data, &position);
@@ -41877,7 +41796,7 @@ mrb_GLib_g_slist_length(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_slist_nth(mrb_state* mrb, mrb_value self) {
   mrb_value list;
-  mrb_int n;
+  unsigned int native_n;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &list, &n);
@@ -41915,7 +41834,7 @@ mrb_GLib_g_slist_nth(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_slist_nth_data(mrb_state* mrb, mrb_value self) {
   mrb_value list;
-  mrb_int n;
+  unsigned int native_n;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &list, &n);
@@ -42292,7 +42211,7 @@ mrb_GLib_g_slist_sort_with_data(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_snprintf(mrb_state* mrb, mrb_value self) {
   mrb_value string;
-  mrb_int n;
+  unsigned long native_n;
   mrb_value format;
 
   /* Fetch the args */
@@ -42437,7 +42356,7 @@ mrb_GLib_g_source_add_poll(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_source_add_unix_fd(mrb_state* mrb, mrb_value self) {
   mrb_value source;
-  mrb_int fd;
+  int native_fd;
   mrb_value events;
 
   /* Fetch the args */
@@ -42956,7 +42875,7 @@ mrb_GLib_g_source_modify_unix_fd(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_source_new(mrb_state* mrb, mrb_value self) {
   mrb_value source_funcs;
-  mrb_int struct_size;
+  unsigned int native_struct_size;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &source_funcs, &struct_size);
@@ -43069,7 +42988,7 @@ mrb_GLib_g_source_ref(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_source_remove(mrb_state* mrb, mrb_value self) {
-  mrb_int tag;
+  unsigned int native_tag;
 
   /* Fetch the args */
   mrb_get_args(mrb, "i", &tag);
@@ -43398,7 +43317,7 @@ mrb_GLib_g_source_set_callback_indirect(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_source_set_can_recurse(mrb_state* mrb, mrb_value self) {
   mrb_value source;
-  mrb_int can_recurse;
+  int native_can_recurse;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &source, &can_recurse);
@@ -43514,7 +43433,7 @@ mrb_GLib_g_source_set_name(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_source_set_name_by_id(mrb_state* mrb, mrb_value self) {
-  mrb_int tag;
+  unsigned int native_tag;
   mrb_value name;
 
   /* Fetch the args */
@@ -43550,7 +43469,7 @@ mrb_GLib_g_source_set_name_by_id(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_source_set_priority(mrb_state* mrb, mrb_value self) {
   mrb_value source;
-  mrb_int priority;
+  int native_priority;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &source, &priority);
@@ -43585,7 +43504,7 @@ mrb_GLib_g_source_set_priority(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_source_set_ready_time(mrb_state* mrb, mrb_value self) {
   mrb_value source;
-  mrb_int ready_time;
+  long native_ready_time;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &source, &ready_time);
@@ -43651,7 +43570,7 @@ mrb_GLib_g_source_unref(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_spaced_primes_closest(mrb_state* mrb, mrb_value self) {
-  mrb_int num;
+  unsigned int native_num;
 
   /* Fetch the args */
   mrb_get_args(mrb, "i", &num);
@@ -43848,7 +43767,7 @@ mrb_GLib_g_spawn_async_with_pipes(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_spawn_check_exit_status(mrb_state* mrb, mrb_value self) {
-  mrb_int exit_status;
+  int native_exit_status;
   mrb_value error;
 
   /* Fetch the args */
@@ -43886,7 +43805,7 @@ mrb_GLib_g_spawn_check_exit_status(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_spawn_close_pid(mrb_state* mrb, mrb_value self) {
-  mrb_int pid;
+  int native_pid;
 
   /* Fetch the args */
   mrb_get_args(mrb, "i", &pid);
@@ -44518,7 +44437,7 @@ mrb_value
 mrb_GLib_g_str_match_string(mrb_state* mrb, mrb_value self) {
   mrb_value search_term;
   mrb_value potential_hit;
-  mrb_int accept_alternates;
+  int native_accept_alternates;
 
   /* Fetch the args */
   mrb_get_args(mrb, "ooi", &search_term, &potential_hit, &accept_alternates);
@@ -44661,7 +44580,7 @@ mrb_value
 mrb_GLib_g_strcanon(mrb_state* mrb, mrb_value self) {
   mrb_value string;
   mrb_value valid_chars;
-  mrb_int substitutor;
+  char native_substitutor;
 
   /* Fetch the args */
   mrb_get_args(mrb, "ooi", &string, &valid_chars, &substitutor);
@@ -44986,7 +44905,7 @@ mrb_value
 mrb_GLib_g_strdelimit(mrb_state* mrb, mrb_value self) {
   mrb_value string;
   mrb_value delimiters;
-  mrb_int new_delimiter;
+  char native_new_delimiter;
 
   /* Fetch the args */
   mrb_get_args(mrb, "ooi", &string, &delimiters, &new_delimiter);
@@ -45164,7 +45083,7 @@ mrb_GLib_g_strdup_printf(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_strdup_vprintf(mrb_state* mrb, mrb_value self) {
   mrb_value format;
-  mrb_int args;
+  int native_args;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &format, &args);
@@ -45233,7 +45152,7 @@ mrb_GLib_g_strdupv(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_strerror(mrb_state* mrb, mrb_value self) {
-  mrb_int errnum;
+  int native_errnum;
 
   /* Fetch the args */
   mrb_get_args(mrb, "i", &errnum);
@@ -45380,7 +45299,7 @@ mrb_GLib_g_string_append(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_string_append_c(mrb_state* mrb, mrb_value self) {
   mrb_value string;
-  mrb_int c;
+  char native_c;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &string, &c);
@@ -45418,7 +45337,7 @@ mrb_GLib_g_string_append_c(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_string_append_c_inline(mrb_state* mrb, mrb_value self) {
   mrb_value gstring;
-  mrb_int c;
+  char native_c;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &gstring, &c);
@@ -45458,7 +45377,7 @@ mrb_value
 mrb_GLib_g_string_append_len(mrb_state* mrb, mrb_value self) {
   mrb_value string;
   mrb_value val;
-  mrb_int len;
+  long native_len;
 
   /* Fetch the args */
   mrb_get_args(mrb, "ooi", &string, &val, &len);
@@ -45543,7 +45462,7 @@ mrb_GLib_g_string_append_printf(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_string_append_unichar(mrb_state* mrb, mrb_value self) {
   mrb_value string;
-  mrb_int wc;
+  unsigned int native_wc;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &string, &wc);
@@ -45585,7 +45504,7 @@ mrb_GLib_g_string_append_uri_escaped(mrb_state* mrb, mrb_value self) {
   mrb_value string;
   mrb_value unescaped;
   mrb_value reserved_chars_allowed;
-  mrb_int allow_utf8;
+  int native_allow_utf8;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oooi", &string, &unescaped, &reserved_chars_allowed, &allow_utf8);
@@ -45637,7 +45556,7 @@ mrb_value
 mrb_GLib_g_string_append_vprintf(mrb_state* mrb, mrb_value self) {
   mrb_value string;
   mrb_value format;
-  mrb_int args;
+  int native_args;
 
   /* Fetch the args */
   mrb_get_args(mrb, "ooi", &string, &format, &args);
@@ -45950,7 +45869,7 @@ mrb_value
 mrb_GLib_g_string_chunk_insert_len(mrb_state* mrb, mrb_value self) {
   mrb_value chunk;
   mrb_value string;
-  mrb_int len;
+  long native_len;
 
   /* Fetch the args */
   mrb_get_args(mrb, "ooi", &chunk, &string, &len);
@@ -45992,7 +45911,7 @@ mrb_GLib_g_string_chunk_insert_len(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_string_chunk_new(mrb_state* mrb, mrb_value self) {
-  mrb_int size;
+  unsigned long native_size;
 
   /* Fetch the args */
   mrb_get_args(mrb, "i", &size);
@@ -46106,8 +46025,8 @@ mrb_GLib_g_string_equal(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_string_erase(mrb_state* mrb, mrb_value self) {
   mrb_value string;
-  mrb_int pos;
-  mrb_int len;
+  long native_pos;
+  long native_len;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oii", &string, &pos, &len);
@@ -46145,7 +46064,7 @@ mrb_GLib_g_string_erase(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_string_free(mrb_state* mrb, mrb_value self) {
   mrb_value string;
-  mrb_int free_segment;
+  int native_free_segment;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &string, &free_segment);
@@ -46260,7 +46179,7 @@ mrb_GLib_g_string_hash(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_string_insert(mrb_state* mrb, mrb_value self) {
   mrb_value string;
-  mrb_int pos;
+  long native_pos;
   mrb_value val;
 
   /* Fetch the args */
@@ -46306,8 +46225,8 @@ mrb_GLib_g_string_insert(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_string_insert_c(mrb_state* mrb, mrb_value self) {
   mrb_value string;
-  mrb_int pos;
-  mrb_int c;
+  long native_pos;
+  char native_c;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oii", &string, &pos, &c);
@@ -46347,9 +46266,9 @@ mrb_GLib_g_string_insert_c(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_string_insert_len(mrb_state* mrb, mrb_value self) {
   mrb_value string;
-  mrb_int pos;
+  long native_pos;
   mrb_value val;
-  mrb_int len;
+  long native_len;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oioi", &string, &pos, &val, &len);
@@ -46394,8 +46313,8 @@ mrb_GLib_g_string_insert_len(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_string_insert_unichar(mrb_state* mrb, mrb_value self) {
   mrb_value string;
-  mrb_int pos;
-  mrb_int wc;
+  long native_pos;
+  unsigned int native_wc;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oii", &string, &pos, &wc);
@@ -46469,7 +46388,7 @@ mrb_GLib_g_string_new(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_string_new_len(mrb_state* mrb, mrb_value self) {
   mrb_value init;
-  mrb_int len;
+  long native_len;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &init, &len);
@@ -46508,7 +46427,7 @@ mrb_GLib_g_string_new_len(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_string_overwrite(mrb_state* mrb, mrb_value self) {
   mrb_value string;
-  mrb_int pos;
+  unsigned long native_pos;
   mrb_value val;
 
   /* Fetch the args */
@@ -46555,9 +46474,9 @@ mrb_GLib_g_string_overwrite(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_string_overwrite_len(mrb_state* mrb, mrb_value self) {
   mrb_value string;
-  mrb_int pos;
+  unsigned long native_pos;
   mrb_value val;
-  mrb_int len;
+  long native_len;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oioi", &string, &pos, &val, &len);
@@ -46645,7 +46564,7 @@ mrb_GLib_g_string_prepend(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_string_prepend_c(mrb_state* mrb, mrb_value self) {
   mrb_value string;
-  mrb_int c;
+  char native_c;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &string, &c);
@@ -46685,7 +46604,7 @@ mrb_value
 mrb_GLib_g_string_prepend_len(mrb_state* mrb, mrb_value self) {
   mrb_value string;
   mrb_value val;
-  mrb_int len;
+  long native_len;
 
   /* Fetch the args */
   mrb_get_args(mrb, "ooi", &string, &val, &len);
@@ -46729,7 +46648,7 @@ mrb_GLib_g_string_prepend_len(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_string_prepend_unichar(mrb_state* mrb, mrb_value self) {
   mrb_value string;
-  mrb_int wc;
+  unsigned int native_wc;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &string, &wc);
@@ -46808,7 +46727,7 @@ mrb_GLib_g_string_printf(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_string_set_size(mrb_state* mrb, mrb_value self) {
   mrb_value string;
-  mrb_int len;
+  unsigned long native_len;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &string, &len);
@@ -46844,7 +46763,7 @@ mrb_GLib_g_string_set_size(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_string_sized_new(mrb_state* mrb, mrb_value self) {
-  mrb_int dfl_size;
+  unsigned long native_dfl_size;
 
   /* Fetch the args */
   mrb_get_args(mrb, "i", &dfl_size);
@@ -46873,7 +46792,7 @@ mrb_GLib_g_string_sized_new(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_string_truncate(mrb_state* mrb, mrb_value self) {
   mrb_value string;
-  mrb_int len;
+  unsigned long native_len;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &string, &len);
@@ -46949,7 +46868,7 @@ mrb_value
 mrb_GLib_g_string_vprintf(mrb_state* mrb, mrb_value self) {
   mrb_value string;
   mrb_value format;
-  mrb_int args;
+  int native_args;
 
   /* Fetch the args */
   mrb_get_args(mrb, "ooi", &string, &format, &args);
@@ -47113,7 +47032,7 @@ mrb_value
 mrb_GLib_g_strlcat(mrb_state* mrb, mrb_value self) {
   mrb_value dest;
   mrb_value src;
-  mrb_int dest_size;
+  unsigned long native_dest_size;
 
   /* Fetch the args */
   mrb_get_args(mrb, "ooi", &dest, &src, &dest_size);
@@ -47176,7 +47095,7 @@ mrb_value
 mrb_GLib_g_strlcpy(mrb_state* mrb, mrb_value self) {
   mrb_value dest;
   mrb_value src;
-  mrb_int dest_size;
+  unsigned long native_dest_size;
 
   /* Fetch the args */
   mrb_get_args(mrb, "ooi", &dest, &src, &dest_size);
@@ -47239,7 +47158,7 @@ mrb_value
 mrb_GLib_g_strncasecmp(mrb_state* mrb, mrb_value self) {
   mrb_value s1;
   mrb_value s2;
-  mrb_int n;
+  unsigned int native_n;
 
   /* Fetch the args */
   mrb_get_args(mrb, "ooi", &s1, &s2, &n);
@@ -47287,7 +47206,7 @@ mrb_GLib_g_strncasecmp(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_strndup(mrb_state* mrb, mrb_value self) {
   mrb_value str;
-  mrb_int n;
+  unsigned long native_n;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &str, &n);
@@ -47324,8 +47243,8 @@ mrb_GLib_g_strndup(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_strnfill(mrb_state* mrb, mrb_value self) {
-  mrb_int length;
-  mrb_int fill_char;
+  unsigned long native_length;
+  char native_fill_char;
 
   /* Fetch the args */
   mrb_get_args(mrb, "ii", &length, &fill_char);
@@ -47448,7 +47367,7 @@ mrb_GLib_g_strrstr(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_strrstr_len(mrb_state* mrb, mrb_value self) {
   mrb_value haystack;
-  mrb_int haystack_len;
+  long native_haystack_len;
   mrb_value needle;
 
   /* Fetch the args */
@@ -47491,7 +47410,7 @@ mrb_GLib_g_strrstr_len(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_strsignal(mrb_state* mrb, mrb_value self) {
-  mrb_int signum;
+  int native_signum;
 
   /* Fetch the args */
   mrb_get_args(mrb, "i", &signum);
@@ -47522,7 +47441,7 @@ mrb_value
 mrb_GLib_g_strsplit(mrb_state* mrb, mrb_value self) {
   mrb_value string;
   mrb_value delimiter;
-  mrb_int max_tokens;
+  int native_max_tokens;
 
   /* Fetch the args */
   mrb_get_args(mrb, "ooi", &string, &delimiter, &max_tokens);
@@ -47568,7 +47487,7 @@ mrb_value
 mrb_GLib_g_strsplit_set(mrb_state* mrb, mrb_value self) {
   mrb_value string;
   mrb_value delimiters;
-  mrb_int max_tokens;
+  int native_max_tokens;
 
   /* Fetch the args */
   mrb_get_args(mrb, "ooi", &string, &delimiters, &max_tokens);
@@ -47613,7 +47532,7 @@ mrb_GLib_g_strsplit_set(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_strstr_len(mrb_state* mrb, mrb_value self) {
   mrb_value haystack;
-  mrb_int haystack_len;
+  long native_haystack_len;
   mrb_value needle;
 
   /* Fetch the args */
@@ -47881,7 +47800,7 @@ mrb_GLib_g_system_thread_free(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_system_thread_new(mrb_state* mrb, mrb_value self) {
   mrb_value func;
-  mrb_int stack_size;
+  unsigned long native_stack_size;
   mrb_value error;
 
   /* Fetch the args */
@@ -48119,7 +48038,7 @@ mrb_GLib_g_test_add_func(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_test_add_vtable(mrb_state* mrb, mrb_value self) {
   mrb_value testpath;
-  mrb_int data_size;
+  unsigned long native_data_size;
   mrb_value test_data;
   mrb_value data_setup;
   mrb_value data_test;
@@ -48173,7 +48092,7 @@ mrb_value
 mrb_GLib_g_test_assert_expected_messages_internal(mrb_state* mrb, mrb_value self) {
   mrb_value domain;
   mrb_value file;
-  mrb_int line;
+  int native_line;
   mrb_value func;
 
   /* Fetch the args */
@@ -48332,7 +48251,7 @@ mrb_GLib_g_test_build_filename(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_test_create_case(mrb_state* mrb, mrb_value self) {
   mrb_value test_name;
-  mrb_int data_size;
+  unsigned long native_data_size;
   mrb_value test_data;
   mrb_value data_setup;
   mrb_value data_test;
@@ -48761,7 +48680,7 @@ mrb_GLib_g_test_log_buffer_pop(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_test_log_buffer_push(mrb_state* mrb, mrb_value self) {
   mrb_value tbuffer;
-  mrb_int n_bytes;
+  unsigned int native_n_bytes;
   mrb_value bytes;
 
   /* Fetch the args */
@@ -48900,26 +48819,20 @@ mrb_GLib_g_test_log_type_name(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_test_maximized_result(mrb_state* mrb, mrb_value self) {
-  mrb_value maximized_quantity;
+  double native_maximized_quantity;
   mrb_value format;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "oo", &maximized_quantity, &format);
+  mrb_get_args(mrb, "fo", &maximized_quantity, &format);
 
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, maximized_quantity, mrb->float_class)) {
-    mrb_raise(mrb, E_TYPE_ERROR, "Float expected");
-    return mrb_nil_value();
-  }
   if (!mrb_obj_is_kind_of(mrb, format, mrb->string_class)) {
     mrb_raise(mrb, E_TYPE_ERROR, "String expected");
     return mrb_nil_value();
   }
 
   /* Unbox parameters */
-  double native_maximized_quantity = mrb_float(maximized_quantity);
-
   const char * native_format = mrb_string_value_cstr(mrb, &format);
 
   /* Invocation */
@@ -48974,26 +48887,20 @@ mrb_GLib_g_test_message(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_test_minimized_result(mrb_state* mrb, mrb_value self) {
-  mrb_value minimized_quantity;
+  double native_minimized_quantity;
   mrb_value format;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "oo", &minimized_quantity, &format);
+  mrb_get_args(mrb, "fo", &minimized_quantity, &format);
 
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, minimized_quantity, mrb->float_class)) {
-    mrb_raise(mrb, E_TYPE_ERROR, "Float expected");
-    return mrb_nil_value();
-  }
   if (!mrb_obj_is_kind_of(mrb, format, mrb->string_class)) {
     mrb_raise(mrb, E_TYPE_ERROR, "String expected");
     return mrb_nil_value();
   }
 
   /* Unbox parameters */
-  double native_minimized_quantity = mrb_float(minimized_quantity);
-
   const char * native_format = mrb_string_value_cstr(mrb, &format);
 
   /* Invocation */
@@ -49100,27 +49007,12 @@ mrb_GLib_g_test_rand_double(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_test_rand_double_range(mrb_state* mrb, mrb_value self) {
-  mrb_value range_start;
-  mrb_value range_end;
+  double native_range_start;
+  double native_range_end;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "oo", &range_start, &range_end);
+  mrb_get_args(mrb, "ff", &range_start, &range_end);
 
-
-  /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, range_start, mrb->float_class)) {
-    mrb_raise(mrb, E_TYPE_ERROR, "Float expected");
-    return mrb_nil_value();
-  }
-  if (!mrb_obj_is_kind_of(mrb, range_end, mrb->float_class)) {
-    mrb_raise(mrb, E_TYPE_ERROR, "Float expected");
-    return mrb_nil_value();
-  }
-
-  /* Unbox parameters */
-  double native_range_start = mrb_float(range_start);
-
-  double native_range_end = mrb_float(range_end);
 
   /* Invocation */
   double result = g_test_rand_double_range(native_range_start, native_range_end);
@@ -49168,8 +49060,8 @@ mrb_GLib_g_test_rand_int(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_test_rand_int_range(mrb_state* mrb, mrb_value self) {
-  mrb_int begin;
-  mrb_int end;
+  int native_begin;
+  int native_end;
 
   /* Fetch the args */
   mrb_get_args(mrb, "ii", &begin, &end);
@@ -49484,9 +49376,9 @@ mrb_value
 mrb_GLib_g_test_trap_assertions(mrb_state* mrb, mrb_value self) {
   mrb_value domain;
   mrb_value file;
-  mrb_int line;
+  int native_line;
   mrb_value func;
-  mrb_int assertion_flags;
+  unsigned long native_assertion_flags;
   mrb_value pattern;
 
   /* Fetch the args */
@@ -49539,7 +49431,7 @@ mrb_GLib_g_test_trap_assertions(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_test_trap_fork(mrb_state* mrb, mrb_value self) {
-  mrb_int usec_timeout;
+  unsigned long native_usec_timeout;
   mrb_value test_trap_flags;
 
   /* Fetch the args */
@@ -49628,7 +49520,7 @@ mrb_GLib_g_test_trap_reached_timeout(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_test_trap_subprocess(mrb_state* mrb, mrb_value self) {
   mrb_value test_path;
-  mrb_int usec_timeout;
+  unsigned long native_usec_timeout;
   mrb_value test_flags;
 
   /* Fetch the args */
@@ -49810,7 +49702,7 @@ mrb_GLib_g_thread_new_internal(mrb_state* mrb, mrb_value self) {
   mrb_value proxy;
   mrb_value func;
   mrb_value data;
-  mrb_int stack_size;
+  unsigned long native_stack_size;
   mrb_value error;
 
   /* Fetch the args */
@@ -49862,8 +49754,8 @@ mrb_GLib_g_thread_new_internal(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_thread_pool_free(mrb_state* mrb, mrb_value self) {
   mrb_value pool;
-  mrb_int immediate;
-  mrb_int wait_;
+  int native_immediate;
+  int native_wait_;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oii", &pool, &immediate, &wait_);
@@ -50099,8 +49991,8 @@ mrb_value
 mrb_GLib_g_thread_pool_new(mrb_state* mrb, mrb_value self) {
   mrb_value func;
   mrb_value user_data;
-  mrb_int max_threads;
-  mrb_int exclusive;
+  int native_max_threads;
+  int native_exclusive;
   mrb_value error;
 
   /* Fetch the args */
@@ -50190,7 +50082,7 @@ mrb_GLib_g_thread_pool_push(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_thread_pool_set_max_idle_time(mrb_state* mrb, mrb_value self) {
-  mrb_int interval;
+  unsigned int native_interval;
 
   /* Fetch the args */
   mrb_get_args(mrb, "i", &interval);
@@ -50217,7 +50109,7 @@ mrb_GLib_g_thread_pool_set_max_idle_time(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_thread_pool_set_max_threads(mrb_state* mrb, mrb_value self) {
   mrb_value pool;
-  mrb_int max_threads;
+  int native_max_threads;
   mrb_value error;
 
   /* Fetch the args */
@@ -50261,7 +50153,7 @@ mrb_GLib_g_thread_pool_set_max_threads(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_thread_pool_set_max_unused_threads(mrb_state* mrb, mrb_value self) {
-  mrb_int max_threads;
+  int native_max_threads;
 
   /* Fetch the args */
   mrb_get_args(mrb, "i", &max_threads);
@@ -50577,7 +50469,7 @@ mrb_GLib_g_thread_yield(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_time_val_add(mrb_state* mrb, mrb_value self) {
   mrb_value time_;
-  mrb_int microseconds;
+  long native_microseconds;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &time_, &microseconds);
@@ -50748,7 +50640,7 @@ mrb_value
 mrb_GLib_g_time_zone_find_interval(mrb_state* mrb, mrb_value self) {
   mrb_value tz;
   mrb_value type;
-  mrb_int time_;
+  long native_time_;
 
   /* Fetch the args */
   mrb_get_args(mrb, "ooi", &tz, &type, &time_);
@@ -50793,7 +50685,7 @@ mrb_GLib_g_time_zone_find_interval(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_time_zone_get_abbreviation(mrb_state* mrb, mrb_value self) {
   mrb_value tz;
-  mrb_int interval;
+  int native_interval;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &tz, &interval);
@@ -50831,7 +50723,7 @@ mrb_GLib_g_time_zone_get_abbreviation(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_time_zone_get_offset(mrb_state* mrb, mrb_value self) {
   mrb_value tz;
-  mrb_int interval;
+  int native_interval;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &tz, &interval);
@@ -50873,7 +50765,7 @@ mrb_GLib_g_time_zone_get_offset(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_time_zone_is_dst(mrb_state* mrb, mrb_value self) {
   mrb_value tz;
-  mrb_int interval;
+  int native_interval;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &tz, &interval);
@@ -51060,7 +50952,7 @@ mrb_GLib_g_time_zone_unref(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_timeout_add(mrb_state* mrb, mrb_value self) {
-  mrb_int interval;
+  unsigned int native_interval;
   mrb_value function;
   mrb_value data;
 
@@ -51106,8 +50998,8 @@ mrb_GLib_g_timeout_add(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_timeout_add_full(mrb_state* mrb, mrb_value self) {
-  mrb_int priority;
-  mrb_int interval;
+  int native_priority;
+  unsigned int native_interval;
   mrb_value function;
   mrb_value data;
   mrb_value notify;
@@ -51155,7 +51047,7 @@ mrb_GLib_g_timeout_add_full(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_timeout_add_seconds(mrb_state* mrb, mrb_value self) {
-  mrb_int interval;
+  unsigned int native_interval;
   mrb_value function;
   mrb_value data;
 
@@ -51201,8 +51093,8 @@ mrb_GLib_g_timeout_add_seconds(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_timeout_add_seconds_full(mrb_state* mrb, mrb_value self) {
-  mrb_int priority;
-  mrb_int interval;
+  int native_priority;
+  unsigned int native_interval;
   mrb_value function;
   mrb_value data;
   mrb_value notify;
@@ -51248,7 +51140,7 @@ mrb_GLib_g_timeout_add_seconds_full(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_timeout_source_new(mrb_state* mrb, mrb_value self) {
-  mrb_int interval;
+  unsigned int native_interval;
 
   /* Fetch the args */
   mrb_get_args(mrb, "i", &interval);
@@ -51275,7 +51167,7 @@ mrb_GLib_g_timeout_source_new(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_timeout_source_new_seconds(mrb_state* mrb, mrb_value self) {
-  mrb_int interval;
+  unsigned int native_interval;
 
   /* Fetch the args */
   mrb_get_args(mrb, "i", &interval);
@@ -52376,7 +52268,7 @@ mrb_GLib_g_tree_unref(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_try_malloc(mrb_state* mrb, mrb_value self) {
-  mrb_int n_bytes;
+  unsigned long native_n_bytes;
 
   /* Fetch the args */
   mrb_get_args(mrb, "i", &n_bytes);
@@ -52403,7 +52295,7 @@ mrb_GLib_g_try_malloc(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_try_malloc0(mrb_state* mrb, mrb_value self) {
-  mrb_int n_bytes;
+  unsigned long native_n_bytes;
 
   /* Fetch the args */
   mrb_get_args(mrb, "i", &n_bytes);
@@ -52431,8 +52323,8 @@ mrb_GLib_g_try_malloc0(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_try_malloc0_n(mrb_state* mrb, mrb_value self) {
-  mrb_int n_blocks;
-  mrb_int n_block_bytes;
+  unsigned long native_n_blocks;
+  unsigned long native_n_block_bytes;
 
   /* Fetch the args */
   mrb_get_args(mrb, "ii", &n_blocks, &n_block_bytes);
@@ -52460,8 +52352,8 @@ mrb_GLib_g_try_malloc0_n(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_try_malloc_n(mrb_state* mrb, mrb_value self) {
-  mrb_int n_blocks;
-  mrb_int n_block_bytes;
+  unsigned long native_n_blocks;
+  unsigned long native_n_block_bytes;
 
   /* Fetch the args */
   mrb_get_args(mrb, "ii", &n_blocks, &n_block_bytes);
@@ -52490,7 +52382,7 @@ mrb_GLib_g_try_malloc_n(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_try_realloc(mrb_state* mrb, mrb_value self) {
   mrb_value mem;
-  mrb_int n_bytes;
+  unsigned long native_n_bytes;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &mem, &n_bytes);
@@ -52526,8 +52418,8 @@ mrb_GLib_g_try_realloc(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_try_realloc_n(mrb_state* mrb, mrb_value self) {
   mrb_value mem;
-  mrb_int n_blocks;
-  mrb_int n_block_bytes;
+  unsigned long native_n_blocks;
+  unsigned long native_n_block_bytes;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oii", &mem, &n_blocks, &n_block_bytes);
@@ -52565,7 +52457,7 @@ mrb_GLib_g_try_realloc_n(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_ucs4_to_utf16(mrb_state* mrb, mrb_value self) {
   mrb_value str;
-  mrb_int len;
+  long native_len;
   mrb_value items_read;
   mrb_value items_written;
   mrb_value error;
@@ -52615,7 +52507,7 @@ mrb_GLib_g_ucs4_to_utf16(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_ucs4_to_utf8(mrb_state* mrb, mrb_value self) {
   mrb_value str;
-  mrb_int len;
+  long native_len;
   mrb_value items_read;
   mrb_value items_written;
   mrb_value error;
@@ -52660,7 +52552,7 @@ mrb_GLib_g_ucs4_to_utf8(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_unichar_break_type(mrb_state* mrb, mrb_value self) {
-  mrb_int c;
+  unsigned int native_c;
 
   /* Fetch the args */
   mrb_get_args(mrb, "i", &c);
@@ -52687,7 +52579,7 @@ mrb_GLib_g_unichar_break_type(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_unichar_combining_class(mrb_state* mrb, mrb_value self) {
-  mrb_int uc;
+  unsigned int native_uc;
 
   /* Fetch the args */
   mrb_get_args(mrb, "i", &uc);
@@ -52720,8 +52612,8 @@ mrb_GLib_g_unichar_combining_class(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_unichar_compose(mrb_state* mrb, mrb_value self) {
-  mrb_int a;
-  mrb_int b;
+  unsigned int native_a;
+  unsigned int native_b;
   mrb_value ch;
 
   /* Fetch the args */
@@ -52761,7 +52653,7 @@ mrb_GLib_g_unichar_compose(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_unichar_decompose(mrb_state* mrb, mrb_value self) {
-  mrb_int ch;
+  unsigned int native_ch;
   mrb_value a;
   mrb_value b;
 
@@ -52803,7 +52695,7 @@ mrb_GLib_g_unichar_decompose(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_unichar_digit_value(mrb_state* mrb, mrb_value self) {
-  mrb_int c;
+  unsigned int native_c;
 
   /* Fetch the args */
   mrb_get_args(mrb, "i", &c);
@@ -52837,10 +52729,10 @@ mrb_GLib_g_unichar_digit_value(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_unichar_fully_decompose(mrb_state* mrb, mrb_value self) {
-  mrb_int ch;
-  mrb_int compat;
+  unsigned int native_ch;
+  int native_compat;
   mrb_value result;
-  mrb_int result_len;
+  unsigned long native_result_len;
 
   /* Fetch the args */
   mrb_get_args(mrb, "iioi", &ch, &compat, &result, &result_len);
@@ -52878,7 +52770,7 @@ mrb_GLib_g_unichar_fully_decompose(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_unichar_get_mirror_char(mrb_state* mrb, mrb_value self) {
-  mrb_int ch;
+  unsigned int native_ch;
   mrb_value mirrored_ch;
 
   /* Fetch the args */
@@ -52916,7 +52808,7 @@ mrb_GLib_g_unichar_get_mirror_char(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_unichar_get_script(mrb_state* mrb, mrb_value self) {
-  mrb_int ch;
+  unsigned int native_ch;
 
   /* Fetch the args */
   mrb_get_args(mrb, "i", &ch);
@@ -52943,7 +52835,7 @@ mrb_GLib_g_unichar_get_script(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_unichar_isalnum(mrb_state* mrb, mrb_value self) {
-  mrb_int c;
+  unsigned int native_c;
 
   /* Fetch the args */
   mrb_get_args(mrb, "i", &c);
@@ -52974,7 +52866,7 @@ mrb_GLib_g_unichar_isalnum(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_unichar_isalpha(mrb_state* mrb, mrb_value self) {
-  mrb_int c;
+  unsigned int native_c;
 
   /* Fetch the args */
   mrb_get_args(mrb, "i", &c);
@@ -53005,7 +52897,7 @@ mrb_GLib_g_unichar_isalpha(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_unichar_iscntrl(mrb_state* mrb, mrb_value self) {
-  mrb_int c;
+  unsigned int native_c;
 
   /* Fetch the args */
   mrb_get_args(mrb, "i", &c);
@@ -53036,7 +52928,7 @@ mrb_GLib_g_unichar_iscntrl(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_unichar_isdefined(mrb_state* mrb, mrb_value self) {
-  mrb_int c;
+  unsigned int native_c;
 
   /* Fetch the args */
   mrb_get_args(mrb, "i", &c);
@@ -53067,7 +52959,7 @@ mrb_GLib_g_unichar_isdefined(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_unichar_isdigit(mrb_state* mrb, mrb_value self) {
-  mrb_int c;
+  unsigned int native_c;
 
   /* Fetch the args */
   mrb_get_args(mrb, "i", &c);
@@ -53098,7 +52990,7 @@ mrb_GLib_g_unichar_isdigit(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_unichar_isgraph(mrb_state* mrb, mrb_value self) {
-  mrb_int c;
+  unsigned int native_c;
 
   /* Fetch the args */
   mrb_get_args(mrb, "i", &c);
@@ -53129,7 +53021,7 @@ mrb_GLib_g_unichar_isgraph(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_unichar_islower(mrb_state* mrb, mrb_value self) {
-  mrb_int c;
+  unsigned int native_c;
 
   /* Fetch the args */
   mrb_get_args(mrb, "i", &c);
@@ -53160,7 +53052,7 @@ mrb_GLib_g_unichar_islower(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_unichar_ismark(mrb_state* mrb, mrb_value self) {
-  mrb_int c;
+  unsigned int native_c;
 
   /* Fetch the args */
   mrb_get_args(mrb, "i", &c);
@@ -53191,7 +53083,7 @@ mrb_GLib_g_unichar_ismark(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_unichar_isprint(mrb_state* mrb, mrb_value self) {
-  mrb_int c;
+  unsigned int native_c;
 
   /* Fetch the args */
   mrb_get_args(mrb, "i", &c);
@@ -53222,7 +53114,7 @@ mrb_GLib_g_unichar_isprint(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_unichar_ispunct(mrb_state* mrb, mrb_value self) {
-  mrb_int c;
+  unsigned int native_c;
 
   /* Fetch the args */
   mrb_get_args(mrb, "i", &c);
@@ -53253,7 +53145,7 @@ mrb_GLib_g_unichar_ispunct(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_unichar_isspace(mrb_state* mrb, mrb_value self) {
-  mrb_int c;
+  unsigned int native_c;
 
   /* Fetch the args */
   mrb_get_args(mrb, "i", &c);
@@ -53284,7 +53176,7 @@ mrb_GLib_g_unichar_isspace(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_unichar_istitle(mrb_state* mrb, mrb_value self) {
-  mrb_int c;
+  unsigned int native_c;
 
   /* Fetch the args */
   mrb_get_args(mrb, "i", &c);
@@ -53315,7 +53207,7 @@ mrb_GLib_g_unichar_istitle(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_unichar_isupper(mrb_state* mrb, mrb_value self) {
-  mrb_int c;
+  unsigned int native_c;
 
   /* Fetch the args */
   mrb_get_args(mrb, "i", &c);
@@ -53346,7 +53238,7 @@ mrb_GLib_g_unichar_isupper(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_unichar_iswide(mrb_state* mrb, mrb_value self) {
-  mrb_int c;
+  unsigned int native_c;
 
   /* Fetch the args */
   mrb_get_args(mrb, "i", &c);
@@ -53377,7 +53269,7 @@ mrb_GLib_g_unichar_iswide(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_unichar_iswide_cjk(mrb_state* mrb, mrb_value self) {
-  mrb_int c;
+  unsigned int native_c;
 
   /* Fetch the args */
   mrb_get_args(mrb, "i", &c);
@@ -53408,7 +53300,7 @@ mrb_GLib_g_unichar_iswide_cjk(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_unichar_isxdigit(mrb_state* mrb, mrb_value self) {
-  mrb_int c;
+  unsigned int native_c;
 
   /* Fetch the args */
   mrb_get_args(mrb, "i", &c);
@@ -53439,7 +53331,7 @@ mrb_GLib_g_unichar_isxdigit(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_unichar_iszerowidth(mrb_state* mrb, mrb_value self) {
-  mrb_int c;
+  unsigned int native_c;
 
   /* Fetch the args */
   mrb_get_args(mrb, "i", &c);
@@ -53471,7 +53363,7 @@ mrb_GLib_g_unichar_iszerowidth(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_unichar_to_utf8(mrb_state* mrb, mrb_value self) {
-  mrb_int c;
+  unsigned int native_c;
   mrb_value outbuf;
 
   /* Fetch the args */
@@ -53525,7 +53417,7 @@ mrb_GLib_g_unichar_to_utf8(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_unichar_tolower(mrb_state* mrb, mrb_value self) {
-  mrb_int c;
+  unsigned int native_c;
 
   /* Fetch the args */
   mrb_get_args(mrb, "i", &c);
@@ -53556,7 +53448,7 @@ mrb_GLib_g_unichar_tolower(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_unichar_totitle(mrb_state* mrb, mrb_value self) {
-  mrb_int c;
+  unsigned int native_c;
 
   /* Fetch the args */
   mrb_get_args(mrb, "i", &c);
@@ -53587,7 +53479,7 @@ mrb_GLib_g_unichar_totitle(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_unichar_toupper(mrb_state* mrb, mrb_value self) {
-  mrb_int c;
+  unsigned int native_c;
 
   /* Fetch the args */
   mrb_get_args(mrb, "i", &c);
@@ -53618,7 +53510,7 @@ mrb_GLib_g_unichar_toupper(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_unichar_type(mrb_state* mrb, mrb_value self) {
-  mrb_int c;
+  unsigned int native_c;
 
   /* Fetch the args */
   mrb_get_args(mrb, "i", &c);
@@ -53645,7 +53537,7 @@ mrb_GLib_g_unichar_type(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_unichar_validate(mrb_state* mrb, mrb_value self) {
-  mrb_int ch;
+  unsigned int native_ch;
 
   /* Fetch the args */
   mrb_get_args(mrb, "i", &ch);
@@ -53676,7 +53568,7 @@ mrb_GLib_g_unichar_validate(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_unichar_xdigit_value(mrb_state* mrb, mrb_value self) {
-  mrb_int c;
+  unsigned int native_c;
 
   /* Fetch the args */
   mrb_get_args(mrb, "i", &c);
@@ -53708,7 +53600,7 @@ mrb_GLib_g_unichar_xdigit_value(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_unicode_canonical_decomposition(mrb_state* mrb, mrb_value self) {
-  mrb_int ch;
+  unsigned int native_ch;
   mrb_value result_len;
 
   /* Fetch the args */
@@ -53744,7 +53636,7 @@ mrb_GLib_g_unicode_canonical_decomposition(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_unicode_canonical_ordering(mrb_state* mrb, mrb_value self) {
   mrb_value string;
-  mrb_int len;
+  unsigned long native_len;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &string, &len);
@@ -53774,7 +53666,7 @@ mrb_GLib_g_unicode_canonical_ordering(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_unicode_script_from_iso15924(mrb_state* mrb, mrb_value self) {
-  mrb_int iso15924;
+  unsigned int native_iso15924;
 
   /* Fetch the args */
   mrb_get_args(mrb, "i", &iso15924);
@@ -53865,7 +53757,7 @@ mrb_GLib_g_unix_error_quark(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_unix_fd_add(mrb_state* mrb, mrb_value self) {
-  mrb_int fd;
+  int native_fd;
   mrb_value condition;
   mrb_value function;
   mrb_value user_data;
@@ -53916,8 +53808,8 @@ mrb_GLib_g_unix_fd_add(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_unix_fd_add_full(mrb_state* mrb, mrb_value self) {
-  mrb_int priority;
-  mrb_int fd;
+  int native_priority;
+  int native_fd;
   mrb_value condition;
   mrb_value function;
   mrb_value user_data;
@@ -53968,7 +53860,7 @@ mrb_GLib_g_unix_fd_add_full(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_unix_fd_source_new(mrb_state* mrb, mrb_value self) {
-  mrb_int fd;
+  int native_fd;
   mrb_value condition;
 
   /* Fetch the args */
@@ -54005,7 +53897,7 @@ mrb_GLib_g_unix_fd_source_new(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_unix_open_pipe(mrb_state* mrb, mrb_value self) {
   mrb_value fds;
-  mrb_int flags;
+  int native_flags;
   mrb_value error;
 
   /* Fetch the args */
@@ -54048,8 +53940,8 @@ mrb_GLib_g_unix_open_pipe(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_unix_set_fd_nonblocking(mrb_state* mrb, mrb_value self) {
-  mrb_int fd;
-  mrb_int nonblock;
+  int native_fd;
+  int native_nonblock;
   mrb_value error;
 
   /* Fetch the args */
@@ -54089,7 +53981,7 @@ mrb_GLib_g_unix_set_fd_nonblocking(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_unix_signal_add(mrb_state* mrb, mrb_value self) {
-  mrb_int signum;
+  int native_signum;
   mrb_value handler;
   mrb_value user_data;
 
@@ -54135,8 +54027,8 @@ mrb_GLib_g_unix_signal_add(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_unix_signal_add_full(mrb_state* mrb, mrb_value self) {
-  mrb_int priority;
-  mrb_int signum;
+  int native_priority;
+  int native_signum;
   mrb_value handler;
   mrb_value user_data;
   mrb_value notify;
@@ -54182,7 +54074,7 @@ mrb_GLib_g_unix_signal_add_full(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_unix_signal_source_new(mrb_state* mrb, mrb_value self) {
-  mrb_int signum;
+  int native_signum;
 
   /* Fetch the args */
   mrb_get_args(mrb, "i", &signum);
@@ -54286,7 +54178,7 @@ mrb_value
 mrb_GLib_g_uri_escape_string(mrb_state* mrb, mrb_value self) {
   mrb_value unescaped;
   mrb_value reserved_chars_allowed;
-  mrb_int allow_utf8;
+  int native_allow_utf8;
 
   /* Fetch the args */
   mrb_get_args(mrb, "ooi", &unescaped, &reserved_chars_allowed, &allow_utf8);
@@ -54496,7 +54388,7 @@ mrb_GLib_g_uri_unescape_string(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_usleep(mrb_state* mrb, mrb_value self) {
-  mrb_int microseconds;
+  unsigned long native_microseconds;
 
   /* Fetch the args */
   mrb_get_args(mrb, "i", &microseconds);
@@ -54525,7 +54417,7 @@ mrb_GLib_g_usleep(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_utf16_to_ucs4(mrb_state* mrb, mrb_value self) {
   mrb_value str;
-  mrb_int len;
+  long native_len;
   mrb_value items_read;
   mrb_value items_written;
   mrb_value error;
@@ -54575,7 +54467,7 @@ mrb_GLib_g_utf16_to_ucs4(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_utf16_to_utf8(mrb_state* mrb, mrb_value self) {
   mrb_value str;
-  mrb_int len;
+  long native_len;
   mrb_value items_read;
   mrb_value items_written;
   mrb_value error;
@@ -54622,7 +54514,7 @@ mrb_GLib_g_utf16_to_utf8(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_utf8_casefold(mrb_state* mrb, mrb_value self) {
   mrb_value str;
-  mrb_int len;
+  long native_len;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &str, &len);
@@ -54708,7 +54600,7 @@ mrb_GLib_g_utf8_collate(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_utf8_collate_key(mrb_state* mrb, mrb_value self) {
   mrb_value str;
-  mrb_int len;
+  long native_len;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &str, &len);
@@ -54746,7 +54638,7 @@ mrb_GLib_g_utf8_collate_key(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_utf8_collate_key_for_filename(mrb_state* mrb, mrb_value self) {
   mrb_value str;
-  mrb_int len;
+  long native_len;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &str, &len);
@@ -54912,7 +54804,7 @@ mrb_GLib_g_utf8_get_char(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_utf8_get_char_validated(mrb_state* mrb, mrb_value self) {
   mrb_value p;
-  mrb_int max_len;
+  long native_max_len;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &p, &max_len);
@@ -54955,7 +54847,7 @@ mrb_GLib_g_utf8_get_char_validated(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_utf8_normalize(mrb_state* mrb, mrb_value self) {
   mrb_value str;
-  mrb_int len;
+  long native_len;
   mrb_value mode;
 
   /* Fetch the args */
@@ -54997,7 +54889,7 @@ mrb_GLib_g_utf8_normalize(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_utf8_offset_to_pointer(mrb_state* mrb, mrb_value self) {
   mrb_value str;
-  mrb_int offset;
+  long native_offset;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &str, &offset);
@@ -55120,8 +55012,8 @@ mrb_GLib_g_utf8_prev_char(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_utf8_strchr(mrb_state* mrb, mrb_value self) {
   mrb_value p;
-  mrb_int len;
-  mrb_int c;
+  long native_len;
+  unsigned int native_c;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oii", &p, &len, &c);
@@ -55159,7 +55051,7 @@ mrb_GLib_g_utf8_strchr(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_utf8_strdown(mrb_state* mrb, mrb_value self) {
   mrb_value str;
-  mrb_int len;
+  long native_len;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &str, &len);
@@ -55197,7 +55089,7 @@ mrb_GLib_g_utf8_strdown(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_utf8_strlen(mrb_state* mrb, mrb_value self) {
   mrb_value p;
-  mrb_int max;
+  long native_max;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &p, &max);
@@ -55241,7 +55133,7 @@ mrb_value
 mrb_GLib_g_utf8_strncpy(mrb_state* mrb, mrb_value self) {
   mrb_value dest;
   mrb_value src;
-  mrb_int n;
+  unsigned long native_n;
 
   /* Fetch the args */
   mrb_get_args(mrb, "ooi", &dest, &src, &n);
@@ -55299,8 +55191,8 @@ mrb_GLib_g_utf8_strncpy(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_utf8_strrchr(mrb_state* mrb, mrb_value self) {
   mrb_value p;
-  mrb_int len;
-  mrb_int c;
+  long native_len;
+  unsigned int native_c;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oii", &p, &len, &c);
@@ -55338,7 +55230,7 @@ mrb_GLib_g_utf8_strrchr(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_utf8_strreverse(mrb_state* mrb, mrb_value self) {
   mrb_value str;
-  mrb_int len;
+  long native_len;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &str, &len);
@@ -55376,7 +55268,7 @@ mrb_GLib_g_utf8_strreverse(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_utf8_strup(mrb_state* mrb, mrb_value self) {
   mrb_value str;
-  mrb_int len;
+  long native_len;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &str, &len);
@@ -55415,8 +55307,8 @@ mrb_GLib_g_utf8_strup(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_utf8_substring(mrb_state* mrb, mrb_value self) {
   mrb_value str;
-  mrb_int start_pos;
-  mrb_int end_pos;
+  long native_start_pos;
+  long native_end_pos;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oii", &str, &start_pos, &end_pos);
@@ -55457,7 +55349,7 @@ mrb_GLib_g_utf8_substring(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_utf8_to_ucs4(mrb_state* mrb, mrb_value self) {
   mrb_value str;
-  mrb_int len;
+  long native_len;
   mrb_value items_read;
   mrb_value items_written;
   mrb_value error;
@@ -55508,7 +55400,7 @@ mrb_GLib_g_utf8_to_ucs4(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_utf8_to_ucs4_fast(mrb_state* mrb, mrb_value self) {
   mrb_value str;
-  mrb_int len;
+  long native_len;
   mrb_value items_written;
 
   /* Fetch the args */
@@ -55553,7 +55445,7 @@ mrb_GLib_g_utf8_to_ucs4_fast(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_utf8_to_utf16(mrb_state* mrb, mrb_value self) {
   mrb_value str;
-  mrb_int len;
+  long native_len;
   mrb_value items_read;
   mrb_value items_written;
   mrb_value error;
@@ -55604,7 +55496,7 @@ mrb_GLib_g_utf8_to_utf16(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_utf8_validate(mrb_state* mrb, mrb_value self) {
   mrb_value str;
-  mrb_int max_len;
+  long native_max_len;
   mrb_value end;
 
   /* Fetch the args */
@@ -56100,7 +55992,7 @@ mrb_value
 mrb_GLib_g_variant_check_format_string(mrb_state* mrb, mrb_value self) {
   mrb_value value;
   mrb_value format_string;
-  mrb_int copy_only;
+  int native_copy_only;
 
   /* Fetch the args */
   mrb_get_args(mrb, "ooi", &value, &format_string, &copy_only);
@@ -57291,7 +57183,7 @@ mrb_GLib_g_variant_get_bytestring_array(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_variant_get_child(mrb_state* mrb, mrb_value self) {
   mrb_value value;
-  mrb_int index_;
+  unsigned long native_index_;
   mrb_value format_string;
 
   /* Fetch the args */
@@ -57333,7 +57225,7 @@ mrb_GLib_g_variant_get_child(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_variant_get_child_value(mrb_state* mrb, mrb_value self) {
   mrb_value value;
-  mrb_int index_;
+  unsigned long native_index_;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &value, &index_);
@@ -57481,7 +57373,7 @@ mrb_value
 mrb_GLib_g_variant_get_fixed_array(mrb_state* mrb, mrb_value self) {
   mrb_value value;
   mrb_value n_elements;
-  mrb_int element_size;
+  unsigned long native_element_size;
 
   /* Fetch the args */
   mrb_get_args(mrb, "ooi", &value, &n_elements, &element_size);
@@ -59068,7 +58960,7 @@ mrb_value
 mrb_GLib_g_variant_new_array(mrb_state* mrb, mrb_value self) {
   mrb_value child_type;
   mrb_value children;
-  mrb_int n_children;
+  unsigned long native_n_children;
 
   /* Fetch the args */
   mrb_get_args(mrb, "ooi", &child_type, &children, &n_children);
@@ -59107,7 +58999,7 @@ mrb_GLib_g_variant_new_array(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_variant_new_boolean(mrb_state* mrb, mrb_value self) {
-  mrb_int value;
+  int native_value;
 
   /* Fetch the args */
   mrb_get_args(mrb, "i", &value);
@@ -59134,7 +59026,7 @@ mrb_GLib_g_variant_new_boolean(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_variant_new_byte(mrb_state* mrb, mrb_value self) {
-  mrb_int value;
+  unsigned char native_value;
 
   /* Fetch the args */
   mrb_get_args(mrb, "i", &value);
@@ -59199,7 +59091,7 @@ mrb_GLib_g_variant_new_bytestring(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_variant_new_bytestring_array(mrb_state* mrb, mrb_value self) {
   mrb_value strv;
-  mrb_int length;
+  long native_length;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &strv, &length);
@@ -59276,20 +59168,11 @@ mrb_GLib_g_variant_new_dict_entry(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_variant_new_double(mrb_state* mrb, mrb_value self) {
-  mrb_value value;
+  double native_value;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "o", &value);
+  mrb_get_args(mrb, "f", &value);
 
-
-  /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, value, mrb->float_class)) {
-    mrb_raise(mrb, E_TYPE_ERROR, "Float expected");
-    return mrb_nil_value();
-  }
-
-  /* Unbox parameters */
-  double native_value = mrb_float(value);
 
   /* Invocation */
   GVariant * result = g_variant_new_double(native_value);
@@ -59317,8 +59200,8 @@ mrb_value
 mrb_GLib_g_variant_new_fixed_array(mrb_state* mrb, mrb_value self) {
   mrb_value element_type;
   mrb_value elements;
-  mrb_int n_elements;
-  mrb_int element_size;
+  unsigned long native_n_elements;
+  unsigned long native_element_size;
 
   /* Fetch the args */
   mrb_get_args(mrb, "ooii", &element_type, &elements, &n_elements, &element_size);
@@ -59361,7 +59244,7 @@ mrb_value
 mrb_GLib_g_variant_new_from_bytes(mrb_state* mrb, mrb_value self) {
   mrb_value type;
   mrb_value bytes;
-  mrb_int trusted;
+  int native_trusted;
 
   /* Fetch the args */
   mrb_get_args(mrb, "ooi", &type, &bytes, &trusted);
@@ -59408,8 +59291,8 @@ mrb_value
 mrb_GLib_g_variant_new_from_children(mrb_state* mrb, mrb_value self) {
   mrb_value type;
   mrb_value children;
-  mrb_int n_children;
-  mrb_int trusted;
+  unsigned long native_n_children;
+  int native_trusted;
 
   /* Fetch the args */
   mrb_get_args(mrb, "ooii", &type, &children, &n_children, &trusted);
@@ -59455,8 +59338,8 @@ mrb_value
 mrb_GLib_g_variant_new_from_data(mrb_state* mrb, mrb_value self) {
   mrb_value type;
   mrb_value data;
-  mrb_int size;
-  mrb_int trusted;
+  unsigned long native_size;
+  int native_trusted;
   mrb_value notify;
   mrb_value user_data;
 
@@ -59503,7 +59386,7 @@ mrb_GLib_g_variant_new_from_data(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_variant_new_handle(mrb_state* mrb, mrb_value self) {
-  mrb_int value;
+  int native_value;
 
   /* Fetch the args */
   mrb_get_args(mrb, "i", &value);
@@ -59530,7 +59413,7 @@ mrb_GLib_g_variant_new_handle(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_variant_new_int16(mrb_state* mrb, mrb_value self) {
-  mrb_int value;
+  short native_value;
 
   /* Fetch the args */
   mrb_get_args(mrb, "i", &value);
@@ -59557,7 +59440,7 @@ mrb_GLib_g_variant_new_int16(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_variant_new_int32(mrb_state* mrb, mrb_value self) {
-  mrb_int value;
+  int native_value;
 
   /* Fetch the args */
   mrb_get_args(mrb, "i", &value);
@@ -59584,7 +59467,7 @@ mrb_GLib_g_variant_new_int32(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_variant_new_int64(mrb_state* mrb, mrb_value self) {
-  mrb_int value;
+  long native_value;
 
   /* Fetch the args */
   mrb_get_args(mrb, "i", &value);
@@ -59693,7 +59576,7 @@ mrb_GLib_g_variant_new_object_path(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_variant_new_objv(mrb_state* mrb, mrb_value self) {
   mrb_value strv;
-  mrb_int length;
+  long native_length;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &strv, &length);
@@ -59913,7 +59796,7 @@ mrb_GLib_g_variant_new_string(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_variant_new_strv(mrb_state* mrb, mrb_value self) {
   mrb_value strv;
-  mrb_int length;
+  long native_length;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &strv, &length);
@@ -59997,7 +59880,7 @@ mrb_GLib_g_variant_new_take_string(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_variant_new_tuple(mrb_state* mrb, mrb_value self) {
   mrb_value children;
-  mrb_int n_children;
+  unsigned long native_n_children;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &children, &n_children);
@@ -60030,7 +59913,7 @@ mrb_GLib_g_variant_new_tuple(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_variant_new_uint16(mrb_state* mrb, mrb_value self) {
-  mrb_int value;
+  unsigned short native_value;
 
   /* Fetch the args */
   mrb_get_args(mrb, "i", &value);
@@ -60057,7 +59940,7 @@ mrb_GLib_g_variant_new_uint16(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_variant_new_uint32(mrb_state* mrb, mrb_value self) {
-  mrb_int value;
+  unsigned int native_value;
 
   /* Fetch the args */
   mrb_get_args(mrb, "i", &value);
@@ -60084,7 +59967,7 @@ mrb_GLib_g_variant_new_uint32(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_variant_new_uint64(mrb_state* mrb, mrb_value self) {
-  mrb_int value;
+  unsigned long native_value;
 
   /* Fetch the args */
   mrb_get_args(mrb, "i", &value);
@@ -60349,7 +60232,7 @@ mrb_GLib_g_variant_parser_get_error_quark(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_variant_print(mrb_state* mrb, mrb_value self) {
   mrb_value value;
-  mrb_int type_annotate;
+  int native_type_annotate;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &value, &type_annotate);
@@ -60389,7 +60272,7 @@ mrb_value
 mrb_GLib_g_variant_print_string(mrb_state* mrb, mrb_value self) {
   mrb_value value;
   mrb_value string;
-  mrb_int type_annotate;
+  int native_type_annotate;
 
   /* Fetch the args */
   mrb_get_args(mrb, "ooi", &value, &string, &type_annotate);
@@ -60538,7 +60421,7 @@ mrb_GLib_g_variant_serialised_byteswap(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_variant_serialised_get_child(mrb_state* mrb, mrb_value self) {
   mrb_value container;
-  mrb_int index;
+  unsigned long native_index;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &container, &index);
@@ -60661,7 +60544,7 @@ mrb_GLib_g_variant_serialised_n_children(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_variant_serialiser_is_object_path(mrb_state* mrb, mrb_value self) {
   mrb_value data;
-  mrb_int size;
+  unsigned long native_size;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &data, &size);
@@ -60700,7 +60583,7 @@ mrb_GLib_g_variant_serialiser_is_object_path(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_variant_serialiser_is_signature(mrb_state* mrb, mrb_value self) {
   mrb_value data;
-  mrb_int size;
+  unsigned long native_size;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &data, &size);
@@ -60739,7 +60622,7 @@ mrb_GLib_g_variant_serialiser_is_signature(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_variant_serialiser_is_string(mrb_state* mrb, mrb_value self) {
   mrb_value data;
-  mrb_int size;
+  unsigned long native_size;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &data, &size);
@@ -60782,7 +60665,7 @@ mrb_GLib_g_variant_serialiser_needed_size(mrb_state* mrb, mrb_value self) {
   mrb_value info;
   mrb_value gsv_filler;
   mrb_value children;
-  mrb_int n_children;
+  unsigned long native_n_children;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oooi", &info, &gsv_filler, &children, &n_children);
@@ -60834,7 +60717,7 @@ mrb_GLib_g_variant_serialiser_serialise(mrb_state* mrb, mrb_value self) {
   mrb_value container;
   mrb_value gsv_filler;
   mrb_value children;
-  mrb_int n_children;
+  unsigned long native_n_children;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oooi", &container, &gsv_filler, &children, &n_children);
@@ -61406,7 +61289,7 @@ mrb_GLib_g_variant_type_info_get_type_string(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_variant_type_info_member_info(mrb_state* mrb, mrb_value self) {
   mrb_value typeinfo;
-  mrb_int index;
+  unsigned long native_index;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &typeinfo, &index);
@@ -62235,7 +62118,7 @@ mrb_GLib_g_variant_type_new_maybe(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_variant_type_new_tuple(mrb_state* mrb, mrb_value self) {
   mrb_value items;
-  mrb_int length;
+  int native_length;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oi", &items, &length);
@@ -62651,9 +62534,9 @@ mrb_GLib_g_vprintf(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_vsnprintf(mrb_state* mrb, mrb_value self) {
   mrb_value string;
-  mrb_int n;
+  unsigned long native_n;
   mrb_value format;
-  mrb_int args;
+  int native_args;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oioi", &string, &n, &format, &args);
@@ -62944,7 +62827,7 @@ mrb_value
 mrb_GLib_g_warn_message(mrb_state* mrb, mrb_value self) {
   mrb_value domain;
   mrb_value file;
-  mrb_int line;
+  int native_line;
   mrb_value func;
   mrb_value warnexpr;
 
@@ -63019,9 +62902,9 @@ mrb_GLib_glib__private__(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_glib_check_version(mrb_state* mrb, mrb_value self) {
-  mrb_int required_major;
-  mrb_int required_minor;
-  mrb_int required_micro;
+  unsigned int native_required_major;
+  unsigned int native_required_minor;
+  unsigned int native_required_micro;
 
   /* Fetch the args */
   mrb_get_args(mrb, "iii", &required_major, &required_minor, &required_micro);
@@ -63076,11 +62959,11 @@ mrb_GLib_glib_init(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_pack_table(mrb_state* mrb, mrb_value self) {
   mrb_value base;
-  mrb_int key_num;
-  mrb_int key_size;
-  mrb_int default_key;
-  mrb_int max_depth;
-  mrb_int tab_width;
+  long native_key_num;
+  int native_key_size;
+  int native_default_key;
+  int native_max_depth;
+  int native_tab_width;
   mrb_value name;
   mrb_value key_type_name;
   mrb_value table_name;
@@ -63208,7 +63091,7 @@ mrb_GLib_vasnprintf(mrb_state* mrb, mrb_value self) {
   mrb_value resultbuf;
   mrb_value lengthp;
   mrb_value format;
-  mrb_int args;
+  int native_args;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oooi", &resultbuf, &lengthp, &format, &args);
@@ -63267,8 +63150,8 @@ mrb_GLib_vasnprintf(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_xmax(mrb_state* mrb, mrb_value self) {
-  mrb_int size1;
-  mrb_int size2;
+  unsigned long native_size1;
+  unsigned long native_size2;
 
   /* Fetch the args */
   mrb_get_args(mrb, "ii", &size1, &size2);
@@ -63300,8 +63183,8 @@ mrb_GLib_xmax(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_xsum(mrb_state* mrb, mrb_value self) {
-  mrb_int size1;
-  mrb_int size2;
+  unsigned long native_size1;
+  unsigned long native_size2;
 
   /* Fetch the args */
   mrb_get_args(mrb, "ii", &size1, &size2);
@@ -63334,9 +63217,9 @@ mrb_GLib_xsum(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_xsum3(mrb_state* mrb, mrb_value self) {
-  mrb_int size1;
-  mrb_int size2;
-  mrb_int size3;
+  unsigned long native_size1;
+  unsigned long native_size2;
+  unsigned long native_size3;
 
   /* Fetch the args */
   mrb_get_args(mrb, "iii", &size1, &size2, &size3);
@@ -63370,10 +63253,10 @@ mrb_GLib_xsum3(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_xsum4(mrb_state* mrb, mrb_value self) {
-  mrb_int size1;
-  mrb_int size2;
-  mrb_int size3;
-  mrb_int size4;
+  unsigned long native_size1;
+  unsigned long native_size2;
+  unsigned long native_size3;
+  unsigned long native_size4;
 
   /* Fetch the args */
   mrb_get_args(mrb, "iiii", &size1, &size2, &size3, &size4);
