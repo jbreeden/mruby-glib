@@ -54,7 +54,7 @@ mrb_GLib__g_async_queue_get_mutex(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib__g_charset_get_aliases(mrb_state* mrb, mrb_value self) {
-  const char * native_canonical_name;
+  const char * native_canonical_name = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_canonical_name);
@@ -82,7 +82,7 @@ mrb_GLib__g_charset_get_aliases(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib__g_gnulib_fprintf(mrb_state* mrb, mrb_value self) {
   mrb_value file;
-  const char * native_format;
+  const char * native_format = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oz!", &file, &native_format);
@@ -118,7 +118,7 @@ mrb_GLib__g_gnulib_fprintf(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib__g_gnulib_printf(mrb_state* mrb, mrb_value self) {
-  const char * native_format;
+  const char * native_format = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_format);
@@ -150,9 +150,9 @@ mrb_GLib__g_gnulib_printf(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib__g_gnulib_snprintf(mrb_state* mrb, mrb_value self) {
-  char * string;
+  char * string = NULL;
   unsigned long native_n;
-  const char * native_format;
+  const char * native_format = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!iz!", &string, &native_n, &native_format);
@@ -205,8 +205,8 @@ mrb_GLib__g_gnulib_snprintf(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib__g_gnulib_sprintf(mrb_state* mrb, mrb_value self) {
-  char * string;
-  const char * native_format;
+  char * string = NULL;
+  const char * native_format = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!z!", &string, &native_format);
@@ -261,7 +261,7 @@ mrb_GLib__g_gnulib_sprintf(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib__g_gnulib_vasprintf(mrb_state* mrb, mrb_value self) {
   mrb_value result;
-  const char * native_format;
+  const char * native_format = NULL;
   mrb_value args;
 
   /* Fetch the args */
@@ -304,7 +304,7 @@ mrb_GLib__g_gnulib_vasprintf(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib__g_gnulib_vfprintf(mrb_state* mrb, mrb_value self) {
   mrb_value file;
-  const char * native_format;
+  const char * native_format = NULL;
   mrb_value args;
 
   /* Fetch the args */
@@ -345,7 +345,7 @@ mrb_GLib__g_gnulib_vfprintf(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib__g_gnulib_vprintf(mrb_state* mrb, mrb_value self) {
-  const char * native_format;
+  const char * native_format = NULL;
   mrb_value args;
 
   /* Fetch the args */
@@ -385,9 +385,9 @@ mrb_GLib__g_gnulib_vprintf(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib__g_gnulib_vsnprintf(mrb_state* mrb, mrb_value self) {
-  char * string;
+  char * string = NULL;
   unsigned long native_n;
-  const char * native_format;
+  const char * native_format = NULL;
   mrb_value args;
 
   /* Fetch the args */
@@ -445,8 +445,8 @@ mrb_GLib__g_gnulib_vsnprintf(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib__g_gnulib_vsprintf(mrb_state* mrb, mrb_value self) {
-  char * string;
-  const char * native_format;
+  char * string = NULL;
+  const char * native_format = NULL;
   mrb_value args;
 
   /* Fetch the args */
@@ -505,9 +505,9 @@ mrb_GLib__g_gnulib_vsprintf(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib__g_log_fallback_handler(mrb_state* mrb, mrb_value self) {
-  const char * native_log_domain;
+  const char * native_log_domain = NULL;
   mrb_value log_level;
-  const char * native_message;
+  const char * native_message = NULL;
   mrb_value unused_data;
 
   /* Fetch the args */
@@ -566,7 +566,7 @@ mrb_GLib__g_main_create_unix_signal_watch(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib__g_utf8_make_valid(mrb_state* mrb, mrb_value self) {
-  const char * native_name;
+  const char * native_name = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_name);
@@ -774,9 +774,9 @@ mrb_GLib__GLIB_CHECKED_MUL_U64(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_asnprintf(mrb_state* mrb, mrb_value self) {
-  char * resultbuf;
+  char * resultbuf = NULL;
   mrb_value lengthp;
-  const char * native_format;
+  const char * native_format = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!oz!", &resultbuf, &lengthp, &native_format);
@@ -828,7 +828,7 @@ mrb_GLib_asnprintf(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_access(mrb_state* mrb, mrb_value self) {
-  const char * native_filename;
+  const char * native_filename = NULL;
   int native_mode;
 
   /* Fetch the args */
@@ -1490,7 +1490,7 @@ mrb_GLib_g_ascii_digit_value(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_ascii_dtostr(mrb_state* mrb, mrb_value self) {
-  char * buffer;
+  char * buffer = NULL;
   int native_buf_len;
   double native_d;
 
@@ -1543,9 +1543,9 @@ mrb_GLib_g_ascii_dtostr(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_ascii_formatd(mrb_state* mrb, mrb_value self) {
-  char * buffer;
+  char * buffer = NULL;
   int native_buf_len;
-  const char * native_format;
+  const char * native_format = NULL;
   double native_d;
 
   /* Fetch the args */
@@ -1595,8 +1595,8 @@ mrb_GLib_g_ascii_formatd(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_ascii_strcasecmp(mrb_state* mrb, mrb_value self) {
-  const char * native_s1;
-  const char * native_s2;
+  const char * native_s1 = NULL;
+  const char * native_s2 = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!z!", &native_s1, &native_s2);
@@ -1627,7 +1627,7 @@ mrb_GLib_g_ascii_strcasecmp(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_ascii_strdown(mrb_state* mrb, mrb_value self) {
-  const char * native_str;
+  const char * native_str = NULL;
   long native_len;
 
   /* Fetch the args */
@@ -1656,8 +1656,8 @@ mrb_GLib_g_ascii_strdown(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_ascii_strncasecmp(mrb_state* mrb, mrb_value self) {
-  const char * native_s1;
-  const char * native_s2;
+  const char * native_s1 = NULL;
+  const char * native_s2 = NULL;
   unsigned long native_n;
 
   /* Fetch the args */
@@ -1689,7 +1689,7 @@ mrb_GLib_g_ascii_strncasecmp(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_ascii_strtod(mrb_state* mrb, mrb_value self) {
-  const char * native_nptr;
+  const char * native_nptr = NULL;
   mrb_value endptr;
 
   /* Fetch the args */
@@ -1724,7 +1724,7 @@ mrb_GLib_g_ascii_strtod(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_ascii_strtoll(mrb_state* mrb, mrb_value self) {
-  const char * native_nptr;
+  const char * native_nptr = NULL;
   mrb_value endptr;
   unsigned int native_base;
 
@@ -1764,7 +1764,7 @@ mrb_GLib_g_ascii_strtoll(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_ascii_strtoull(mrb_state* mrb, mrb_value self) {
-  const char * native_nptr;
+  const char * native_nptr = NULL;
   mrb_value endptr;
   unsigned int native_base;
 
@@ -1803,7 +1803,7 @@ mrb_GLib_g_ascii_strtoull(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_ascii_strup(mrb_state* mrb, mrb_value self) {
-  const char * native_str;
+  const char * native_str = NULL;
   long native_len;
 
   /* Fetch the args */
@@ -1924,11 +1924,11 @@ mrb_GLib_g_ascii_xdigit_value(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_assert_warning(mrb_state* mrb, mrb_value self) {
-  const char * native_log_domain;
-  const char * native_file;
+  const char * native_log_domain = NULL;
+  const char * native_file = NULL;
   const int native_line;
-  const char * native_pretty_function;
-  const char * native_expression;
+  const char * native_pretty_function = NULL;
+  const char * native_expression = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!z!iz!z!", &native_log_domain, &native_file, &native_line, &native_pretty_function, &native_expression);
@@ -1955,11 +1955,11 @@ mrb_GLib_g_assert_warning(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_assertion_message(mrb_state* mrb, mrb_value self) {
-  const char * native_domain;
-  const char * native_file;
+  const char * native_domain = NULL;
+  const char * native_file = NULL;
   int native_line;
-  const char * native_func;
-  const char * native_message;
+  const char * native_func = NULL;
+  const char * native_message = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!z!iz!z!", &native_domain, &native_file, &native_line, &native_func, &native_message);
@@ -1990,13 +1990,13 @@ mrb_GLib_g_assertion_message(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_assertion_message_cmpnum(mrb_state* mrb, mrb_value self) {
-  const char * native_domain;
-  const char * native_file;
+  const char * native_domain = NULL;
+  const char * native_file = NULL;
   int native_line;
-  const char * native_func;
-  const char * native_expr;
+  const char * native_func = NULL;
+  const char * native_expr = NULL;
   mrb_value arg1;
-  const char * native_cmp;
+  const char * native_cmp = NULL;
   mrb_value arg2;
   char native_numtype;
 
@@ -2037,14 +2037,14 @@ mrb_GLib_g_assertion_message_cmpnum(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_assertion_message_cmpstr(mrb_state* mrb, mrb_value self) {
-  const char * native_domain;
-  const char * native_file;
+  const char * native_domain = NULL;
+  const char * native_file = NULL;
   int native_line;
-  const char * native_func;
-  const char * native_expr;
-  const char * native_arg1;
-  const char * native_cmp;
-  const char * native_arg2;
+  const char * native_func = NULL;
+  const char * native_expr = NULL;
+  const char * native_arg1 = NULL;
+  const char * native_cmp = NULL;
+  const char * native_arg2 = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!z!iz!z!z!z!z!", &native_domain, &native_file, &native_line, &native_func, &native_expr, &native_arg1, &native_cmp, &native_arg2);
@@ -2074,11 +2074,11 @@ mrb_GLib_g_assertion_message_cmpstr(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_assertion_message_error(mrb_state* mrb, mrb_value self) {
-  const char * native_domain;
-  const char * native_file;
+  const char * native_domain = NULL;
+  const char * native_file = NULL;
   int native_line;
-  const char * native_func;
-  const char * native_expr;
+  const char * native_func = NULL;
+  const char * native_expr = NULL;
   mrb_value error;
   unsigned int native_error_domain;
   int native_error_code;
@@ -2117,11 +2117,11 @@ mrb_GLib_g_assertion_message_error(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_assertion_message_expr(mrb_state* mrb, mrb_value self) {
-  const char * native_domain;
-  const char * native_file;
+  const char * native_domain = NULL;
+  const char * native_file = NULL;
   int native_line;
-  const char * native_func;
-  const char * native_expr;
+  const char * native_func = NULL;
+  const char * native_expr = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!z!iz!z!", &native_domain, &native_file, &native_line, &native_func, &native_expr);
@@ -3897,7 +3897,7 @@ mrb_GLib_g_autoptr_cleanup_gstring_free(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_base64_decode(mrb_state* mrb, mrb_value self) {
-  const char * native_text;
+  const char * native_text = NULL;
   mrb_value out_len;
 
   /* Fetch the args */
@@ -3931,7 +3931,7 @@ mrb_GLib_g_base64_decode(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_base64_decode_inplace(mrb_state* mrb, mrb_value self) {
-  char * text;
+  char * text = NULL;
   mrb_value out_len;
 
   /* Fetch the args */
@@ -3987,7 +3987,7 @@ mrb_GLib_g_base64_decode_inplace(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_base64_decode_step(mrb_state* mrb, mrb_value self) {
-  const char * native_in;
+  const char * native_in = NULL;
   unsigned long native_len;
   mrb_value out;
   mrb_value state;
@@ -4071,7 +4071,7 @@ mrb_GLib_g_base64_encode(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_base64_encode_close(mrb_state* mrb, mrb_value self) {
   int native_break_lines;
-  char * out;
+  char * out = NULL;
   mrb_value state;
   mrb_value save;
 
@@ -4139,7 +4139,7 @@ mrb_GLib_g_base64_encode_step(mrb_state* mrb, mrb_value self) {
   mrb_value in;
   unsigned long native_len;
   int native_break_lines;
-  char * out;
+  char * out = NULL;
   mrb_value state;
   mrb_value save;
 
@@ -4202,7 +4202,7 @@ mrb_GLib_g_base64_encode_step(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_basename(mrb_state* mrb, mrb_value self) {
-  const char * native_file_name;
+  const char * native_file_name = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_file_name);
@@ -4520,9 +4520,9 @@ mrb_GLib_g_bit_unlock(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_bookmark_file_add_application(mrb_state* mrb, mrb_value self) {
   mrb_value bookmark;
-  const char * native_uri;
-  const char * native_name;
-  const char * native_exec;
+  const char * native_uri = NULL;
+  const char * native_name = NULL;
+  const char * native_exec = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oz!z!z!", &bookmark, &native_uri, &native_name, &native_exec);
@@ -4557,8 +4557,8 @@ mrb_GLib_g_bookmark_file_add_application(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_bookmark_file_add_group(mrb_state* mrb, mrb_value self) {
   mrb_value bookmark;
-  const char * native_uri;
-  const char * native_group;
+  const char * native_uri = NULL;
+  const char * native_group = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oz!z!", &bookmark, &native_uri, &native_group);
@@ -4649,7 +4649,7 @@ mrb_GLib_g_bookmark_file_free(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_bookmark_file_get_added(mrb_state* mrb, mrb_value self) {
   mrb_value bookmark;
-  const char * native_uri;
+  const char * native_uri = NULL;
   mrb_value error;
 
   /* Fetch the args */
@@ -4695,8 +4695,8 @@ mrb_GLib_g_bookmark_file_get_added(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_bookmark_file_get_app_info(mrb_state* mrb, mrb_value self) {
   mrb_value bookmark;
-  const char * native_uri;
-  const char * native_name;
+  const char * native_uri = NULL;
+  const char * native_name = NULL;
   mrb_value exec;
   mrb_value count;
   mrb_value stamp;
@@ -4755,7 +4755,7 @@ mrb_GLib_g_bookmark_file_get_app_info(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_bookmark_file_get_applications(mrb_state* mrb, mrb_value self) {
   mrb_value bookmark;
-  const char * native_uri;
+  const char * native_uri = NULL;
   mrb_value length;
   mrb_value error;
 
@@ -4801,7 +4801,7 @@ mrb_GLib_g_bookmark_file_get_applications(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_bookmark_file_get_description(mrb_state* mrb, mrb_value self) {
   mrb_value bookmark;
-  const char * native_uri;
+  const char * native_uri = NULL;
   mrb_value error;
 
   /* Fetch the args */
@@ -4844,7 +4844,7 @@ mrb_GLib_g_bookmark_file_get_description(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_bookmark_file_get_groups(mrb_state* mrb, mrb_value self) {
   mrb_value bookmark;
-  const char * native_uri;
+  const char * native_uri = NULL;
   mrb_value length;
   mrb_value error;
 
@@ -4892,7 +4892,7 @@ mrb_GLib_g_bookmark_file_get_groups(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_bookmark_file_get_icon(mrb_state* mrb, mrb_value self) {
   mrb_value bookmark;
-  const char * native_uri;
+  const char * native_uri = NULL;
   mrb_value href;
   mrb_value mime_type;
   mrb_value error;
@@ -4946,7 +4946,7 @@ mrb_GLib_g_bookmark_file_get_icon(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_bookmark_file_get_is_private(mrb_state* mrb, mrb_value self) {
   mrb_value bookmark;
-  const char * native_uri;
+  const char * native_uri = NULL;
   mrb_value error;
 
   /* Fetch the args */
@@ -4992,7 +4992,7 @@ mrb_GLib_g_bookmark_file_get_is_private(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_bookmark_file_get_mime_type(mrb_state* mrb, mrb_value self) {
   mrb_value bookmark;
-  const char * native_uri;
+  const char * native_uri = NULL;
   mrb_value error;
 
   /* Fetch the args */
@@ -5034,7 +5034,7 @@ mrb_GLib_g_bookmark_file_get_mime_type(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_bookmark_file_get_modified(mrb_state* mrb, mrb_value self) {
   mrb_value bookmark;
-  const char * native_uri;
+  const char * native_uri = NULL;
   mrb_value error;
 
   /* Fetch the args */
@@ -5115,7 +5115,7 @@ mrb_GLib_g_bookmark_file_get_size(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_bookmark_file_get_title(mrb_state* mrb, mrb_value self) {
   mrb_value bookmark;
-  const char * native_uri;
+  const char * native_uri = NULL;
   mrb_value error;
 
   /* Fetch the args */
@@ -5197,7 +5197,7 @@ mrb_GLib_g_bookmark_file_get_uris(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_bookmark_file_get_visited(mrb_state* mrb, mrb_value self) {
   mrb_value bookmark;
-  const char * native_uri;
+  const char * native_uri = NULL;
   mrb_value error;
 
   /* Fetch the args */
@@ -5240,8 +5240,8 @@ mrb_GLib_g_bookmark_file_get_visited(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_bookmark_file_has_application(mrb_state* mrb, mrb_value self) {
   mrb_value bookmark;
-  const char * native_uri;
-  const char * native_name;
+  const char * native_uri = NULL;
+  const char * native_name = NULL;
   mrb_value error;
 
   /* Fetch the args */
@@ -5288,8 +5288,8 @@ mrb_GLib_g_bookmark_file_has_application(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_bookmark_file_has_group(mrb_state* mrb, mrb_value self) {
   mrb_value bookmark;
-  const char * native_uri;
-  const char * native_group;
+  const char * native_uri = NULL;
+  const char * native_group = NULL;
   mrb_value error;
 
   /* Fetch the args */
@@ -5334,7 +5334,7 @@ mrb_GLib_g_bookmark_file_has_group(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_bookmark_file_has_item(mrb_state* mrb, mrb_value self) {
   mrb_value bookmark;
-  const char * native_uri;
+  const char * native_uri = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oz!", &bookmark, &native_uri);
@@ -5377,7 +5377,7 @@ mrb_GLib_g_bookmark_file_has_item(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_bookmark_file_load_from_data(mrb_state* mrb, mrb_value self) {
   mrb_value bookmark;
-  const char * native_data;
+  const char * native_data = NULL;
   unsigned long native_length;
   mrb_value error;
 
@@ -5425,7 +5425,7 @@ mrb_GLib_g_bookmark_file_load_from_data(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_bookmark_file_load_from_data_dirs(mrb_state* mrb, mrb_value self) {
   mrb_value bookmark;
-  const char * native_file;
+  const char * native_file = NULL;
   mrb_value full_path;
   mrb_value error;
 
@@ -5475,7 +5475,7 @@ mrb_GLib_g_bookmark_file_load_from_data_dirs(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_bookmark_file_load_from_file(mrb_state* mrb, mrb_value self) {
   mrb_value bookmark;
-  const char * native_filename;
+  const char * native_filename = NULL;
   mrb_value error;
 
   /* Fetch the args */
@@ -5522,8 +5522,8 @@ mrb_GLib_g_bookmark_file_load_from_file(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_bookmark_file_move_item(mrb_state* mrb, mrb_value self) {
   mrb_value bookmark;
-  const char * native_old_uri;
-  const char * native_new_uri;
+  const char * native_old_uri = NULL;
+  const char * native_new_uri = NULL;
   mrb_value error;
 
   /* Fetch the args */
@@ -5590,8 +5590,8 @@ mrb_GLib_g_bookmark_file_new(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_bookmark_file_remove_application(mrb_state* mrb, mrb_value self) {
   mrb_value bookmark;
-  const char * native_uri;
-  const char * native_name;
+  const char * native_uri = NULL;
+  const char * native_name = NULL;
   mrb_value error;
 
   /* Fetch the args */
@@ -5638,8 +5638,8 @@ mrb_GLib_g_bookmark_file_remove_application(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_bookmark_file_remove_group(mrb_state* mrb, mrb_value self) {
   mrb_value bookmark;
-  const char * native_uri;
-  const char * native_group;
+  const char * native_uri = NULL;
+  const char * native_group = NULL;
   mrb_value error;
 
   /* Fetch the args */
@@ -5685,7 +5685,7 @@ mrb_GLib_g_bookmark_file_remove_group(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_bookmark_file_remove_item(mrb_state* mrb, mrb_value self) {
   mrb_value bookmark;
-  const char * native_uri;
+  const char * native_uri = NULL;
   mrb_value error;
 
   /* Fetch the args */
@@ -5731,7 +5731,7 @@ mrb_GLib_g_bookmark_file_remove_item(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_bookmark_file_set_added(mrb_state* mrb, mrb_value self) {
   mrb_value bookmark;
-  const char * native_uri;
+  const char * native_uri = NULL;
   long native_added;
 
   /* Fetch the args */
@@ -5771,9 +5771,9 @@ mrb_GLib_g_bookmark_file_set_added(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_bookmark_file_set_app_info(mrb_state* mrb, mrb_value self) {
   mrb_value bookmark;
-  const char * native_uri;
-  const char * native_name;
-  const char * native_exec;
+  const char * native_uri = NULL;
+  const char * native_name = NULL;
+  const char * native_exec = NULL;
   int native_count;
   long native_stamp;
   mrb_value error;
@@ -5821,8 +5821,8 @@ mrb_GLib_g_bookmark_file_set_app_info(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_bookmark_file_set_description(mrb_state* mrb, mrb_value self) {
   mrb_value bookmark;
-  const char * native_uri;
-  const char * native_description;
+  const char * native_uri = NULL;
+  const char * native_description = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oz!z!", &bookmark, &native_uri, &native_description);
@@ -5858,7 +5858,7 @@ mrb_GLib_g_bookmark_file_set_description(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_bookmark_file_set_groups(mrb_state* mrb, mrb_value self) {
   mrb_value bookmark;
-  const char * native_uri;
+  const char * native_uri = NULL;
   mrb_value groups;
   unsigned long native_length;
 
@@ -5899,9 +5899,9 @@ mrb_GLib_g_bookmark_file_set_groups(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_bookmark_file_set_icon(mrb_state* mrb, mrb_value self) {
   mrb_value bookmark;
-  const char * native_uri;
-  const char * native_href;
-  const char * native_mime_type;
+  const char * native_uri = NULL;
+  const char * native_href = NULL;
+  const char * native_mime_type = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oz!z!z!", &bookmark, &native_uri, &native_href, &native_mime_type);
@@ -5936,7 +5936,7 @@ mrb_GLib_g_bookmark_file_set_icon(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_bookmark_file_set_is_private(mrb_state* mrb, mrb_value self) {
   mrb_value bookmark;
-  const char * native_uri;
+  const char * native_uri = NULL;
   int native_is_private;
 
   /* Fetch the args */
@@ -5972,8 +5972,8 @@ mrb_GLib_g_bookmark_file_set_is_private(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_bookmark_file_set_mime_type(mrb_state* mrb, mrb_value self) {
   mrb_value bookmark;
-  const char * native_uri;
-  const char * native_mime_type;
+  const char * native_uri = NULL;
+  const char * native_mime_type = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oz!z!", &bookmark, &native_uri, &native_mime_type);
@@ -6008,7 +6008,7 @@ mrb_GLib_g_bookmark_file_set_mime_type(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_bookmark_file_set_modified(mrb_state* mrb, mrb_value self) {
   mrb_value bookmark;
-  const char * native_uri;
+  const char * native_uri = NULL;
   long native_modified;
 
   /* Fetch the args */
@@ -6044,8 +6044,8 @@ mrb_GLib_g_bookmark_file_set_modified(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_bookmark_file_set_title(mrb_state* mrb, mrb_value self) {
   mrb_value bookmark;
-  const char * native_uri;
-  const char * native_title;
+  const char * native_uri = NULL;
+  const char * native_title = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oz!z!", &bookmark, &native_uri, &native_title);
@@ -6080,7 +6080,7 @@ mrb_GLib_g_bookmark_file_set_title(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_bookmark_file_set_visited(mrb_state* mrb, mrb_value self) {
   mrb_value bookmark;
-  const char * native_uri;
+  const char * native_uri = NULL;
   long native_visited;
 
   /* Fetch the args */
@@ -6161,7 +6161,7 @@ mrb_GLib_g_bookmark_file_to_data(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_bookmark_file_to_file(mrb_state* mrb, mrb_value self) {
   mrb_value bookmark;
-  const char * native_filename;
+  const char * native_filename = NULL;
   mrb_value error;
 
   /* Fetch the args */
@@ -6588,7 +6588,7 @@ mrb_GLib_g_bsearch_array_replace(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_build_filename(mrb_state* mrb, mrb_value self) {
-  const char * native_first_element;
+  const char * native_first_element = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_first_element);
@@ -6647,8 +6647,8 @@ mrb_GLib_g_build_filenamev(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_build_path(mrb_state* mrb, mrb_value self) {
-  const char * native_separator;
-  const char * native_first_element;
+  const char * native_separator = NULL;
+  const char * native_first_element = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!z!", &native_separator, &native_first_element);
@@ -6675,7 +6675,7 @@ mrb_GLib_g_build_path(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_build_pathv(mrb_state* mrb, mrb_value self) {
-  const char * native_separator;
+  const char * native_separator = NULL;
   mrb_value args;
 
   /* Fetch the args */
@@ -7764,7 +7764,7 @@ mrb_GLib_g_bytes_unref_to_data(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_chdir(mrb_state* mrb, mrb_value self) {
-  const char * native_path;
+  const char * native_path = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_path);
@@ -8403,7 +8403,7 @@ mrb_GLib_g_compute_checksum_for_data(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_compute_checksum_for_string(mrb_state* mrb, mrb_value self) {
   mrb_value checksum_type;
-  const char * native_str;
+  const char * native_str = NULL;
   long native_length;
 
   /* Fetch the args */
@@ -8489,7 +8489,7 @@ mrb_GLib_g_compute_hmac_for_string(mrb_state* mrb, mrb_value self) {
   mrb_value digest_type;
   mrb_value key;
   unsigned long native_key_len;
-  const char * native_str;
+  const char * native_str = NULL;
   long native_length;
 
   /* Fetch the args */
@@ -8742,10 +8742,10 @@ mrb_GLib_g_cond_wait_until(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_convert(mrb_state* mrb, mrb_value self) {
-  const char * native_str;
+  const char * native_str = NULL;
   long native_len;
-  const char * native_to_codeset;
-  const char * native_from_codeset;
+  const char * native_to_codeset = NULL;
+  const char * native_from_codeset = NULL;
   mrb_value bytes_read;
   mrb_value bytes_written;
   mrb_value error;
@@ -8817,11 +8817,11 @@ mrb_GLib_g_convert_error_quark(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_convert_with_fallback(mrb_state* mrb, mrb_value self) {
-  const char * native_str;
+  const char * native_str = NULL;
   long native_len;
-  const char * native_to_codeset;
-  const char * native_from_codeset;
-  const char * native_fallback;
+  const char * native_to_codeset = NULL;
+  const char * native_from_codeset = NULL;
+  const char * native_fallback = NULL;
   mrb_value bytes_read;
   mrb_value bytes_written;
   mrb_value error;
@@ -8867,7 +8867,7 @@ mrb_GLib_g_convert_with_fallback(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_convert_with_iconv(mrb_state* mrb, mrb_value self) {
-  const char * native_str;
+  const char * native_str = NULL;
   long native_len;
   mrb_value converter;
   mrb_value bytes_read;
@@ -8986,7 +8986,7 @@ mrb_GLib_g_datalist_foreach(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_datalist_get_data(mrb_state* mrb, mrb_value self) {
   mrb_value datalist;
-  const char * native_key;
+  const char * native_key = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oz!", &datalist, &native_key);
@@ -10662,7 +10662,7 @@ mrb_GLib_g_date_set_month(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_date_set_parse(mrb_state* mrb, mrb_value self) {
   mrb_value date;
-  const char * native_str;
+  const char * native_str = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oz!", &date, &native_str);
@@ -10839,9 +10839,9 @@ mrb_GLib_g_date_set_year(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_date_strftime(mrb_state* mrb, mrb_value self) {
-  char * s;
+  char * s = NULL;
   unsigned long native_slen;
-  const char * native_format;
+  const char * native_format = NULL;
   mrb_value date;
 
   /* Fetch the args */
@@ -11476,7 +11476,7 @@ mrb_GLib_g_date_time_equal(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_date_time_format(mrb_state* mrb, mrb_value self) {
   mrb_value datetime;
-  const char * native_format;
+  const char * native_format = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oz!", &datetime, &native_format);
@@ -13033,8 +13033,8 @@ mrb_GLib_g_date_valid_year(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_dcgettext(mrb_state* mrb, mrb_value self) {
-  const char * native_domain;
-  const char * native_msgid;
+  const char * native_domain = NULL;
+  const char * native_msgid = NULL;
   int native_category;
 
   /* Fetch the args */
@@ -13062,8 +13062,8 @@ mrb_GLib_g_dcgettext(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_dgettext(mrb_state* mrb, mrb_value self) {
-  const char * native_domain;
-  const char * native_msgid;
+  const char * native_domain = NULL;
+  const char * native_msgid = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!z!", &native_domain, &native_msgid);
@@ -13122,7 +13122,7 @@ mrb_GLib_g_dir_close(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_dir_make_tmp(mrb_state* mrb, mrb_value self) {
-  const char * native_tmpl;
+  const char * native_tmpl = NULL;
   mrb_value error;
 
   /* Fetch the args */
@@ -13189,7 +13189,7 @@ mrb_GLib_g_dir_new_from_dirp(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_dir_open(mrb_state* mrb, mrb_value self) {
-  const char * native_path;
+  const char * native_path = NULL;
   unsigned int native_flags;
   mrb_value error;
 
@@ -13224,7 +13224,7 @@ mrb_GLib_g_dir_open(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_dir_open_with_errno(mrb_state* mrb, mrb_value self) {
-  const char * native_path;
+  const char * native_path = NULL;
   unsigned int native_flags;
 
   /* Fetch the args */
@@ -13398,9 +13398,9 @@ mrb_GLib_g_direct_hash(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_dngettext(mrb_state* mrb, mrb_value self) {
-  const char * native_domain;
-  const char * native_msgid;
-  const char * native_msgid_plural;
+  const char * native_domain = NULL;
+  const char * native_msgid = NULL;
+  const char * native_msgid_plural = NULL;
   unsigned long native_n;
 
   /* Fetch the args */
@@ -13506,8 +13506,8 @@ mrb_GLib_g_double_hash(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_dpgettext(mrb_state* mrb, mrb_value self) {
-  const char * native_domain;
-  const char * native_msgctxtid;
+  const char * native_domain = NULL;
+  const char * native_msgctxtid = NULL;
   unsigned long native_msgidoffset;
 
   /* Fetch the args */
@@ -13536,9 +13536,9 @@ mrb_GLib_g_dpgettext(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_dpgettext2(mrb_state* mrb, mrb_value self) {
-  const char * native_domain;
-  const char * native_context;
-  const char * native_msgid;
+  const char * native_domain = NULL;
+  const char * native_context = NULL;
+  const char * native_msgid = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!z!z!", &native_domain, &native_context, &native_msgid);
@@ -13566,7 +13566,7 @@ mrb_GLib_g_dpgettext2(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_environ_getenv(mrb_state* mrb, mrb_value self) {
   mrb_value envp;
-  const char * native_variable;
+  const char * native_variable = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oz!", &envp, &native_variable);
@@ -13602,8 +13602,8 @@ mrb_GLib_g_environ_getenv(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_environ_setenv(mrb_state* mrb, mrb_value self) {
   mrb_value envp;
-  const char * native_variable;
-  const char * native_value;
+  const char * native_variable = NULL;
+  const char * native_value = NULL;
   int native_overwrite;
 
   /* Fetch the args */
@@ -13638,7 +13638,7 @@ mrb_GLib_g_environ_setenv(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_environ_unsetenv(mrb_state* mrb, mrb_value self) {
   mrb_value envp;
-  const char * native_variable;
+  const char * native_variable = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oz!", &envp, &native_variable);
@@ -13784,7 +13784,7 @@ mrb_value
 mrb_GLib_g_error_new(mrb_state* mrb, mrb_value self) {
   unsigned int native_domain;
   int native_code;
-  const char * native_format;
+  const char * native_format = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "iiz!", &native_domain, &native_code, &native_format);
@@ -13814,7 +13814,7 @@ mrb_value
 mrb_GLib_g_error_new_literal(mrb_state* mrb, mrb_value self) {
   unsigned int native_domain;
   int native_code;
-  const char * native_message;
+  const char * native_message = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "iiz!", &native_domain, &native_code, &native_message);
@@ -13845,7 +13845,7 @@ mrb_value
 mrb_GLib_g_error_new_valist(mrb_state* mrb, mrb_value self) {
   unsigned int native_domain;
   int native_code;
-  const char * native_format;
+  const char * native_format = NULL;
   int native_args;
 
   /* Fetch the args */
@@ -13925,7 +13925,7 @@ mrb_GLib_g_file_error_quark(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_file_get_contents(mrb_state* mrb, mrb_value self) {
-  const char * native_filename;
+  const char * native_filename = NULL;
   mrb_value contents;
   mrb_value length;
   mrb_value error;
@@ -13972,7 +13972,7 @@ mrb_GLib_g_file_get_contents(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_file_open_tmp(mrb_state* mrb, mrb_value self) {
-  const char * native_tmpl;
+  const char * native_tmpl = NULL;
   mrb_value name_used;
   mrb_value error;
 
@@ -14014,7 +14014,7 @@ mrb_GLib_g_file_open_tmp(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_file_read_link(mrb_state* mrb, mrb_value self) {
-  const char * native_filename;
+  const char * native_filename = NULL;
   mrb_value error;
 
   /* Fetch the args */
@@ -14050,8 +14050,8 @@ mrb_GLib_g_file_read_link(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_file_set_contents(mrb_state* mrb, mrb_value self) {
-  const char * native_filename;
-  const char * native_contents;
+  const char * native_filename = NULL;
+  const char * native_contents = NULL;
   long native_length;
   mrb_value error;
 
@@ -14090,7 +14090,7 @@ mrb_GLib_g_file_set_contents(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_file_test(mrb_state* mrb, mrb_value self) {
-  const char * native_filename;
+  const char * native_filename = NULL;
   mrb_value test;
 
   /* Fetch the args */
@@ -14127,7 +14127,7 @@ mrb_GLib_g_file_test(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_filename_display_basename(mrb_state* mrb, mrb_value self) {
-  const char * native_filename;
+  const char * native_filename = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_filename);
@@ -14153,7 +14153,7 @@ mrb_GLib_g_filename_display_basename(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_filename_display_name(mrb_state* mrb, mrb_value self) {
-  const char * native_filename;
+  const char * native_filename = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_filename);
@@ -14181,7 +14181,7 @@ mrb_GLib_g_filename_display_name(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_filename_from_uri(mrb_state* mrb, mrb_value self) {
-  const char * native_uri;
+  const char * native_uri = NULL;
   mrb_value hostname;
   mrb_value error;
 
@@ -14222,7 +14222,7 @@ mrb_GLib_g_filename_from_uri(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_filename_from_utf8(mrb_state* mrb, mrb_value self) {
-  const char * native_utf8string;
+  const char * native_utf8string = NULL;
   long native_len;
   mrb_value bytes_read;
   mrb_value bytes_written;
@@ -14266,8 +14266,8 @@ mrb_GLib_g_filename_from_utf8(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_filename_to_uri(mrb_state* mrb, mrb_value self) {
-  const char * native_filename;
-  const char * native_hostname;
+  const char * native_filename = NULL;
+  const char * native_hostname = NULL;
   mrb_value error;
 
   /* Fetch the args */
@@ -14304,7 +14304,7 @@ mrb_GLib_g_filename_to_uri(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_filename_to_utf8(mrb_state* mrb, mrb_value self) {
-  const char * native_opsysstring;
+  const char * native_opsysstring = NULL;
   long native_len;
   mrb_value bytes_read;
   mrb_value bytes_written;
@@ -14346,7 +14346,7 @@ mrb_GLib_g_filename_to_utf8(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_find_program_in_path(mrb_state* mrb, mrb_value self) {
-  const char * native_program;
+  const char * native_program = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_program);
@@ -14460,7 +14460,7 @@ mrb_GLib_g_format_size_full(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_fprintf(mrb_state* mrb, mrb_value self) {
   mrb_value file;
-  const char * native_format;
+  const char * native_format = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oz!", &file, &native_format);
@@ -14769,7 +14769,7 @@ mrb_GLib_g_get_language_names(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_get_locale_variants(mrb_state* mrb, mrb_value self) {
-  const char * native_locale;
+  const char * native_locale = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_locale);
@@ -15119,7 +15119,7 @@ mrb_GLib_g_get_worker_context(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_getenv(mrb_state* mrb, mrb_value self) {
-  const char * native_variable;
+  const char * native_variable = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_variable);
@@ -17514,7 +17514,7 @@ mrb_GLib_g_hook_unref(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_hostname_is_ascii_encoded(mrb_state* mrb, mrb_value self) {
-  const char * native_hostname;
+  const char * native_hostname = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_hostname);
@@ -17544,7 +17544,7 @@ mrb_GLib_g_hostname_is_ascii_encoded(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_hostname_is_ip_address(mrb_state* mrb, mrb_value self) {
-  const char * native_hostname;
+  const char * native_hostname = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_hostname);
@@ -17574,7 +17574,7 @@ mrb_GLib_g_hostname_is_ip_address(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_hostname_is_non_ascii(mrb_state* mrb, mrb_value self) {
-  const char * native_hostname;
+  const char * native_hostname = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_hostname);
@@ -17604,7 +17604,7 @@ mrb_GLib_g_hostname_is_non_ascii(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_hostname_to_ascii(mrb_state* mrb, mrb_value self) {
-  const char * native_hostname;
+  const char * native_hostname = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_hostname);
@@ -17630,7 +17630,7 @@ mrb_GLib_g_hostname_to_ascii(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_hostname_to_unicode(mrb_state* mrb, mrb_value self) {
-  const char * native_hostname;
+  const char * native_hostname = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_hostname);
@@ -17755,8 +17755,8 @@ mrb_GLib_g_iconv_close(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_iconv_open(mrb_state* mrb, mrb_value self) {
-  const char * native_to_codeset;
-  const char * native_from_codeset;
+  const char * native_to_codeset = NULL;
+  const char * native_from_codeset = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!z!", &native_to_codeset, &native_from_codeset);
@@ -18081,7 +18081,7 @@ mrb_GLib_g_int_hash(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_intern_static_string(mrb_state* mrb, mrb_value self) {
-  const char * native_string;
+  const char * native_string = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_string);
@@ -18107,7 +18107,7 @@ mrb_GLib_g_intern_static_string(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_intern_string(mrb_state* mrb, mrb_value self) {
-  const char * native_string;
+  const char * native_string = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_string);
@@ -18666,8 +18666,8 @@ mrb_GLib_g_io_channel_init(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_io_channel_new_file(mrb_state* mrb, mrb_value self) {
-  const char * native_filename;
-  const char * native_mode;
+  const char * native_filename = NULL;
+  const char * native_mode = NULL;
   mrb_value error;
 
   /* Fetch the args */
@@ -18704,7 +18704,7 @@ mrb_GLib_g_io_channel_new_file(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_io_channel_read(mrb_state* mrb, mrb_value self) {
   mrb_value channel;
-  char * buf;
+  char * buf = NULL;
   unsigned long native_count;
   mrb_value bytes_read;
 
@@ -18768,7 +18768,7 @@ mrb_GLib_g_io_channel_read(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_io_channel_read_chars(mrb_state* mrb, mrb_value self) {
   mrb_value channel;
-  char * buf;
+  char * buf = NULL;
   unsigned long native_count;
   mrb_value bytes_read;
   mrb_value error;
@@ -19263,7 +19263,7 @@ mrb_GLib_g_io_channel_set_close_on_unref(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_io_channel_set_encoding(mrb_state* mrb, mrb_value self) {
   mrb_value channel;
-  const char * native_encoding;
+  const char * native_encoding = NULL;
   mrb_value error;
 
   /* Fetch the args */
@@ -19350,7 +19350,7 @@ mrb_GLib_g_io_channel_set_flags(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_io_channel_set_line_term(mrb_state* mrb, mrb_value self) {
   mrb_value channel;
-  const char * native_line_term;
+  const char * native_line_term = NULL;
   int native_length;
 
   /* Fetch the args */
@@ -19526,7 +19526,7 @@ mrb_GLib_g_io_channel_unref(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_io_channel_write(mrb_state* mrb, mrb_value self) {
   mrb_value channel;
-  const char * native_buf;
+  const char * native_buf = NULL;
   unsigned long native_count;
   mrb_value bytes_written;
 
@@ -19571,7 +19571,7 @@ mrb_GLib_g_io_channel_write(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_io_channel_write_chars(mrb_state* mrb, mrb_value self) {
   mrb_value channel;
-  const char * native_buf;
+  const char * native_buf = NULL;
   long native_count;
   mrb_value bytes_written;
   mrb_value error;
@@ -19757,8 +19757,8 @@ mrb_GLib_g_key_file_free(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_key_file_get_boolean(mrb_state* mrb, mrb_value self) {
   mrb_value key_file;
-  const char * native_group_name;
-  const char * native_key;
+  const char * native_group_name = NULL;
+  const char * native_key = NULL;
   mrb_value error;
 
   /* Fetch the args */
@@ -19806,8 +19806,8 @@ mrb_GLib_g_key_file_get_boolean(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_key_file_get_boolean_list(mrb_state* mrb, mrb_value self) {
   mrb_value key_file;
-  const char * native_group_name;
-  const char * native_key;
+  const char * native_group_name = NULL;
+  const char * native_key = NULL;
   mrb_value length;
   mrb_value error;
 
@@ -19854,8 +19854,8 @@ mrb_GLib_g_key_file_get_boolean_list(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_key_file_get_comment(mrb_state* mrb, mrb_value self) {
   mrb_value key_file;
-  const char * native_group_name;
-  const char * native_key;
+  const char * native_group_name = NULL;
+  const char * native_key = NULL;
   mrb_value error;
 
   /* Fetch the args */
@@ -19898,8 +19898,8 @@ mrb_GLib_g_key_file_get_comment(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_key_file_get_double(mrb_state* mrb, mrb_value self) {
   mrb_value key_file;
-  const char * native_group_name;
-  const char * native_key;
+  const char * native_group_name = NULL;
+  const char * native_key = NULL;
   mrb_value error;
 
   /* Fetch the args */
@@ -19943,8 +19943,8 @@ mrb_GLib_g_key_file_get_double(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_key_file_get_double_list(mrb_state* mrb, mrb_value self) {
   mrb_value key_file;
-  const char * native_group_name;
-  const char * native_key;
+  const char * native_group_name = NULL;
+  const char * native_key = NULL;
   mrb_value length;
   mrb_value error;
 
@@ -20031,8 +20031,8 @@ mrb_GLib_g_key_file_get_groups(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_key_file_get_int64(mrb_state* mrb, mrb_value self) {
   mrb_value key_file;
-  const char * native_group_name;
-  const char * native_key;
+  const char * native_group_name = NULL;
+  const char * native_key = NULL;
   mrb_value error;
 
   /* Fetch the args */
@@ -20079,8 +20079,8 @@ mrb_GLib_g_key_file_get_int64(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_key_file_get_integer(mrb_state* mrb, mrb_value self) {
   mrb_value key_file;
-  const char * native_group_name;
-  const char * native_key;
+  const char * native_group_name = NULL;
+  const char * native_key = NULL;
   mrb_value error;
 
   /* Fetch the args */
@@ -20128,8 +20128,8 @@ mrb_GLib_g_key_file_get_integer(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_key_file_get_integer_list(mrb_state* mrb, mrb_value self) {
   mrb_value key_file;
-  const char * native_group_name;
-  const char * native_key;
+  const char * native_group_name = NULL;
+  const char * native_key = NULL;
   mrb_value length;
   mrb_value error;
 
@@ -20176,7 +20176,7 @@ mrb_GLib_g_key_file_get_integer_list(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_key_file_get_keys(mrb_state* mrb, mrb_value self) {
   mrb_value key_file;
-  const char * native_group_name;
+  const char * native_group_name = NULL;
   mrb_value length;
   mrb_value error;
 
@@ -20224,9 +20224,9 @@ mrb_GLib_g_key_file_get_keys(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_key_file_get_locale_string(mrb_state* mrb, mrb_value self) {
   mrb_value key_file;
-  const char * native_group_name;
-  const char * native_key;
-  const char * native_locale;
+  const char * native_group_name = NULL;
+  const char * native_key = NULL;
+  const char * native_locale = NULL;
   mrb_value error;
 
   /* Fetch the args */
@@ -20271,9 +20271,9 @@ mrb_GLib_g_key_file_get_locale_string(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_key_file_get_locale_string_list(mrb_state* mrb, mrb_value self) {
   mrb_value key_file;
-  const char * native_group_name;
-  const char * native_key;
-  const char * native_locale;
+  const char * native_group_name = NULL;
+  const char * native_key = NULL;
+  const char * native_locale = NULL;
   mrb_value length;
   mrb_value error;
 
@@ -20355,8 +20355,8 @@ mrb_GLib_g_key_file_get_start_group(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_key_file_get_string(mrb_state* mrb, mrb_value self) {
   mrb_value key_file;
-  const char * native_group_name;
-  const char * native_key;
+  const char * native_group_name = NULL;
+  const char * native_key = NULL;
   mrb_value error;
 
   /* Fetch the args */
@@ -20400,8 +20400,8 @@ mrb_GLib_g_key_file_get_string(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_key_file_get_string_list(mrb_state* mrb, mrb_value self) {
   mrb_value key_file;
-  const char * native_group_name;
-  const char * native_key;
+  const char * native_group_name = NULL;
+  const char * native_key = NULL;
   mrb_value length;
   mrb_value error;
 
@@ -20448,8 +20448,8 @@ mrb_GLib_g_key_file_get_string_list(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_key_file_get_uint64(mrb_state* mrb, mrb_value self) {
   mrb_value key_file;
-  const char * native_group_name;
-  const char * native_key;
+  const char * native_group_name = NULL;
+  const char * native_key = NULL;
   mrb_value error;
 
   /* Fetch the args */
@@ -20496,8 +20496,8 @@ mrb_GLib_g_key_file_get_uint64(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_key_file_get_value(mrb_state* mrb, mrb_value self) {
   mrb_value key_file;
-  const char * native_group_name;
-  const char * native_key;
+  const char * native_group_name = NULL;
+  const char * native_key = NULL;
   mrb_value error;
 
   /* Fetch the args */
@@ -20538,7 +20538,7 @@ mrb_GLib_g_key_file_get_value(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_key_file_has_group(mrb_state* mrb, mrb_value self) {
   mrb_value key_file;
-  const char * native_group_name;
+  const char * native_group_name = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oz!", &key_file, &native_group_name);
@@ -20581,8 +20581,8 @@ mrb_GLib_g_key_file_has_group(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_key_file_has_key(mrb_state* mrb, mrb_value self) {
   mrb_value key_file;
-  const char * native_group_name;
-  const char * native_key;
+  const char * native_group_name = NULL;
+  const char * native_key = NULL;
   mrb_value error;
 
   /* Fetch the args */
@@ -20630,7 +20630,7 @@ mrb_GLib_g_key_file_has_key(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_key_file_load_from_data(mrb_state* mrb, mrb_value self) {
   mrb_value key_file;
-  const char * native_data;
+  const char * native_data = NULL;
   unsigned long native_length;
   mrb_value flags;
   mrb_value error;
@@ -20683,7 +20683,7 @@ mrb_GLib_g_key_file_load_from_data(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_key_file_load_from_data_dirs(mrb_state* mrb, mrb_value self) {
   mrb_value key_file;
-  const char * native_file;
+  const char * native_file = NULL;
   mrb_value full_path;
   mrb_value flags;
   mrb_value error;
@@ -20740,7 +20740,7 @@ mrb_GLib_g_key_file_load_from_data_dirs(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_key_file_load_from_dirs(mrb_state* mrb, mrb_value self) {
   mrb_value key_file;
-  const char * native_file;
+  const char * native_file = NULL;
   mrb_value search_dirs;
   mrb_value full_path;
   mrb_value flags;
@@ -20799,7 +20799,7 @@ mrb_GLib_g_key_file_load_from_dirs(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_key_file_load_from_file(mrb_state* mrb, mrb_value self) {
   mrb_value key_file;
-  const char * native_file;
+  const char * native_file = NULL;
   mrb_value flags;
   mrb_value error;
 
@@ -20905,8 +20905,8 @@ mrb_GLib_g_key_file_ref(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_key_file_remove_comment(mrb_state* mrb, mrb_value self) {
   mrb_value key_file;
-  const char * native_group_name;
-  const char * native_key;
+  const char * native_group_name = NULL;
+  const char * native_key = NULL;
   mrb_value error;
 
   /* Fetch the args */
@@ -20952,7 +20952,7 @@ mrb_GLib_g_key_file_remove_comment(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_key_file_remove_group(mrb_state* mrb, mrb_value self) {
   mrb_value key_file;
-  const char * native_group_name;
+  const char * native_group_name = NULL;
   mrb_value error;
 
   /* Fetch the args */
@@ -20999,8 +20999,8 @@ mrb_GLib_g_key_file_remove_group(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_key_file_remove_key(mrb_state* mrb, mrb_value self) {
   mrb_value key_file;
-  const char * native_group_name;
-  const char * native_key;
+  const char * native_group_name = NULL;
+  const char * native_key = NULL;
   mrb_value error;
 
   /* Fetch the args */
@@ -21046,7 +21046,7 @@ mrb_GLib_g_key_file_remove_key(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_key_file_save_to_file(mrb_state* mrb, mrb_value self) {
   mrb_value key_file;
-  const char * native_filename;
+  const char * native_filename = NULL;
   mrb_value error;
 
   /* Fetch the args */
@@ -21093,8 +21093,8 @@ mrb_GLib_g_key_file_save_to_file(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_key_file_set_boolean(mrb_state* mrb, mrb_value self) {
   mrb_value key_file;
-  const char * native_group_name;
-  const char * native_key;
+  const char * native_group_name = NULL;
+  const char * native_key = NULL;
   int native_value;
 
   /* Fetch the args */
@@ -21132,8 +21132,8 @@ mrb_GLib_g_key_file_set_boolean(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_key_file_set_boolean_list(mrb_state* mrb, mrb_value self) {
   mrb_value key_file;
-  const char * native_group_name;
-  const char * native_key;
+  const char * native_group_name = NULL;
+  const char * native_key = NULL;
   mrb_value list;
   unsigned long native_length;
 
@@ -21175,9 +21175,9 @@ mrb_GLib_g_key_file_set_boolean_list(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_key_file_set_comment(mrb_state* mrb, mrb_value self) {
   mrb_value key_file;
-  const char * native_group_name;
-  const char * native_key;
-  const char * native_comment;
+  const char * native_group_name = NULL;
+  const char * native_key = NULL;
+  const char * native_comment = NULL;
   mrb_value error;
 
   /* Fetch the args */
@@ -21224,8 +21224,8 @@ mrb_GLib_g_key_file_set_comment(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_key_file_set_double(mrb_state* mrb, mrb_value self) {
   mrb_value key_file;
-  const char * native_group_name;
-  const char * native_key;
+  const char * native_group_name = NULL;
+  const char * native_key = NULL;
   double native_value;
 
   /* Fetch the args */
@@ -21263,8 +21263,8 @@ mrb_GLib_g_key_file_set_double(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_key_file_set_double_list(mrb_state* mrb, mrb_value self) {
   mrb_value key_file;
-  const char * native_group_name;
-  const char * native_key;
+  const char * native_group_name = NULL;
+  const char * native_key = NULL;
   mrb_value list;
   unsigned long native_length;
 
@@ -21305,8 +21305,8 @@ mrb_GLib_g_key_file_set_double_list(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_key_file_set_int64(mrb_state* mrb, mrb_value self) {
   mrb_value key_file;
-  const char * native_group_name;
-  const char * native_key;
+  const char * native_group_name = NULL;
+  const char * native_key = NULL;
   long native_value;
 
   /* Fetch the args */
@@ -21343,8 +21343,8 @@ mrb_GLib_g_key_file_set_int64(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_key_file_set_integer(mrb_state* mrb, mrb_value self) {
   mrb_value key_file;
-  const char * native_group_name;
-  const char * native_key;
+  const char * native_group_name = NULL;
+  const char * native_key = NULL;
   int native_value;
 
   /* Fetch the args */
@@ -21382,8 +21382,8 @@ mrb_GLib_g_key_file_set_integer(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_key_file_set_integer_list(mrb_state* mrb, mrb_value self) {
   mrb_value key_file;
-  const char * native_group_name;
-  const char * native_key;
+  const char * native_group_name = NULL;
+  const char * native_key = NULL;
   mrb_value list;
   unsigned long native_length;
 
@@ -21459,10 +21459,10 @@ mrb_GLib_g_key_file_set_list_separator(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_key_file_set_locale_string(mrb_state* mrb, mrb_value self) {
   mrb_value key_file;
-  const char * native_group_name;
-  const char * native_key;
-  const char * native_locale;
-  const char * native_string;
+  const char * native_group_name = NULL;
+  const char * native_key = NULL;
+  const char * native_locale = NULL;
+  const char * native_string = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oz!z!z!z!", &key_file, &native_group_name, &native_key, &native_locale, &native_string);
@@ -21500,9 +21500,9 @@ mrb_GLib_g_key_file_set_locale_string(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_key_file_set_locale_string_list(mrb_state* mrb, mrb_value self) {
   mrb_value key_file;
-  const char * native_group_name;
-  const char * native_key;
-  const char * native_locale;
+  const char * native_group_name = NULL;
+  const char * native_key = NULL;
+  const char * native_locale = NULL;
   mrb_value list;
   unsigned long native_length;
 
@@ -21543,9 +21543,9 @@ mrb_GLib_g_key_file_set_locale_string_list(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_key_file_set_string(mrb_state* mrb, mrb_value self) {
   mrb_value key_file;
-  const char * native_group_name;
-  const char * native_key;
-  const char * native_string;
+  const char * native_group_name = NULL;
+  const char * native_key = NULL;
+  const char * native_string = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oz!z!z!", &key_file, &native_group_name, &native_key, &native_string);
@@ -21582,8 +21582,8 @@ mrb_GLib_g_key_file_set_string(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_key_file_set_string_list(mrb_state* mrb, mrb_value self) {
   mrb_value key_file;
-  const char * native_group_name;
-  const char * native_key;
+  const char * native_group_name = NULL;
+  const char * native_key = NULL;
   mrb_value list;
   unsigned long native_length;
 
@@ -21624,8 +21624,8 @@ mrb_GLib_g_key_file_set_string_list(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_key_file_set_uint64(mrb_state* mrb, mrb_value self) {
   mrb_value key_file;
-  const char * native_group_name;
-  const char * native_key;
+  const char * native_group_name = NULL;
+  const char * native_key = NULL;
   unsigned long native_value;
 
   /* Fetch the args */
@@ -21662,9 +21662,9 @@ mrb_GLib_g_key_file_set_uint64(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_key_file_set_value(mrb_state* mrb, mrb_value self) {
   mrb_value key_file;
-  const char * native_group_name;
-  const char * native_key;
-  const char * native_value;
+  const char * native_group_name = NULL;
+  const char * native_key = NULL;
+  const char * native_value = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oz!z!z!", &key_file, &native_group_name, &native_key, &native_value);
@@ -23030,7 +23030,7 @@ mrb_GLib_g_listenv(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_locale_from_utf8(mrb_state* mrb, mrb_value self) {
-  const char * native_utf8string;
+  const char * native_utf8string = NULL;
   long native_len;
   mrb_value bytes_read;
   mrb_value bytes_written;
@@ -23076,7 +23076,7 @@ mrb_GLib_g_locale_from_utf8(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_locale_to_utf8(mrb_state* mrb, mrb_value self) {
-  const char * native_opsysstring;
+  const char * native_opsysstring = NULL;
   long native_len;
   mrb_value bytes_read;
   mrb_value bytes_written;
@@ -23120,9 +23120,9 @@ mrb_GLib_g_locale_to_utf8(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_log(mrb_state* mrb, mrb_value self) {
-  const char * native_log_domain;
+  const char * native_log_domain = NULL;
   mrb_value log_level;
-  const char * native_format;
+  const char * native_format = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!oz!", &native_log_domain, &log_level, &native_format);
@@ -23154,9 +23154,9 @@ mrb_GLib_g_log(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_log_default_handler(mrb_state* mrb, mrb_value self) {
-  const char * native_log_domain;
+  const char * native_log_domain = NULL;
   mrb_value log_level;
-  const char * native_message;
+  const char * native_message = NULL;
   mrb_value unused_data;
 
   /* Fetch the args */
@@ -23190,7 +23190,7 @@ mrb_GLib_g_log_default_handler(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_log_remove_handler(mrb_state* mrb, mrb_value self) {
-  const char * native_log_domain;
+  const char * native_log_domain = NULL;
   unsigned int native_handler_id;
 
   /* Fetch the args */
@@ -23284,7 +23284,7 @@ mrb_GLib_g_log_set_default_handler(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_log_set_fatal_mask(mrb_state* mrb, mrb_value self) {
-  const char * native_log_domain;
+  const char * native_log_domain = NULL;
   mrb_value fatal_mask;
 
   /* Fetch the args */
@@ -23320,7 +23320,7 @@ mrb_GLib_g_log_set_fatal_mask(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_log_set_handler(mrb_state* mrb, mrb_value self) {
-  const char * native_log_domain;
+  const char * native_log_domain = NULL;
   mrb_value log_levels;
   mrb_value log_func;
   mrb_value user_data;
@@ -23369,7 +23369,7 @@ mrb_GLib_g_log_set_handler(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_log_set_handler_full(mrb_state* mrb, mrb_value self) {
-  const char * native_log_domain;
+  const char * native_log_domain = NULL;
   mrb_value log_levels;
   mrb_value log_func;
   mrb_value user_data;
@@ -23421,9 +23421,9 @@ mrb_GLib_g_log_set_handler_full(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_logv(mrb_state* mrb, mrb_value self) {
-  const char * native_log_domain;
+  const char * native_log_domain = NULL;
   mrb_value log_level;
-  const char * native_format;
+  const char * native_format = NULL;
   int native_args;
 
   /* Fetch the args */
@@ -25054,7 +25054,7 @@ mrb_GLib_g_mapped_file_get_length(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_mapped_file_new(mrb_state* mrb, mrb_value self) {
-  const char * native_filename;
+  const char * native_filename = NULL;
   int native_writable;
   mrb_value error;
 
@@ -25196,12 +25196,12 @@ mrb_GLib_g_mapped_file_unref(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_markup_collect_attributes(mrb_state* mrb, mrb_value self) {
-  const char * native_element_name;
+  const char * native_element_name = NULL;
   mrb_value attribute_names;
   mrb_value attribute_values;
   mrb_value error;
   mrb_value first_type;
-  const char * native_first_attr;
+  const char * native_first_attr = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!ooooz!", &native_element_name, &attribute_names, &attribute_values, &error, &first_type, &native_first_attr);
@@ -25271,7 +25271,7 @@ mrb_GLib_g_markup_error_quark(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_markup_escape_text(mrb_state* mrb, mrb_value self) {
-  const char * native_text;
+  const char * native_text = NULL;
   long native_length;
 
   /* Fetch the args */
@@ -25575,7 +25575,7 @@ mrb_GLib_g_markup_parse_context_new(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_markup_parse_context_parse(mrb_state* mrb, mrb_value self) {
   mrb_value context;
-  const char * native_text;
+  const char * native_text = NULL;
   long native_text_len;
   mrb_value error;
 
@@ -25766,7 +25766,7 @@ mrb_GLib_g_markup_parse_context_unref(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_markup_printf_escaped(mrb_state* mrb, mrb_value self) {
-  const char * native_format;
+  const char * native_format = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_format);
@@ -25793,7 +25793,7 @@ mrb_GLib_g_markup_printf_escaped(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_markup_vprintf_escaped(mrb_state* mrb, mrb_value self) {
-  const char * native_format;
+  const char * native_format = NULL;
   int native_args;
 
   /* Fetch the args */
@@ -25823,7 +25823,7 @@ mrb_GLib_g_markup_vprintf_escaped(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_match_info_expand_references(mrb_state* mrb, mrb_value self) {
   mrb_value match_info;
-  const char * native_string_to_expand;
+  const char * native_string_to_expand = NULL;
   mrb_value error;
 
   /* Fetch the args */
@@ -25936,7 +25936,7 @@ mrb_GLib_g_match_info_fetch_all(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_match_info_fetch_named(mrb_state* mrb, mrb_value self) {
   mrb_value match_info;
-  const char * native_name;
+  const char * native_name = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oz!", &match_info, &native_name);
@@ -25975,7 +25975,7 @@ mrb_GLib_g_match_info_fetch_named(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_match_info_fetch_named_pos(mrb_state* mrb, mrb_value self) {
   mrb_value match_info;
-  const char * native_name;
+  const char * native_name = NULL;
   mrb_value start_pos;
   mrb_value end_pos;
 
@@ -26511,7 +26511,7 @@ mrb_GLib_g_memdup(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_mkdir_with_parents(mrb_state* mrb, mrb_value self) {
-  const char * native_pathname;
+  const char * native_pathname = NULL;
   int native_mode;
 
   /* Fetch the args */
@@ -26542,7 +26542,7 @@ mrb_GLib_g_mkdir_with_parents(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_mkdtemp(mrb_state* mrb, mrb_value self) {
-  char * tmpl;
+  char * tmpl = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &tmpl);
@@ -26591,7 +26591,7 @@ mrb_GLib_g_mkdtemp(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_mkdtemp_full(mrb_state* mrb, mrb_value self) {
-  char * tmpl;
+  char * tmpl = NULL;
   int native_mode;
 
   /* Fetch the args */
@@ -26640,7 +26640,7 @@ mrb_GLib_g_mkdtemp_full(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_mkstemp(mrb_state* mrb, mrb_value self) {
-  char * tmpl;
+  char * tmpl = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &tmpl);
@@ -26694,7 +26694,7 @@ mrb_GLib_g_mkstemp(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_mkstemp_full(mrb_state* mrb, mrb_value self) {
-  char * tmpl;
+  char * tmpl = NULL;
   int native_flags;
   int native_mode;
 
@@ -28060,7 +28060,7 @@ mrb_GLib_g_nullify_pointer(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_on_error_query(mrb_state* mrb, mrb_value self) {
-  const char * native_prg_name;
+  const char * native_prg_name = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_prg_name);
@@ -28083,7 +28083,7 @@ mrb_GLib_g_on_error_query(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_on_error_stack_trace(mrb_state* mrb, mrb_value self) {
-  const char * native_prg_name;
+  const char * native_prg_name = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_prg_name);
@@ -28262,7 +28262,7 @@ mrb_value
 mrb_GLib_g_option_context_add_main_entries(mrb_state* mrb, mrb_value self) {
   mrb_value context;
   mrb_value entries;
-  const char * native_translation_domain;
+  const char * native_translation_domain = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "ooz!", &context, &entries, &native_translation_domain);
@@ -28599,7 +28599,7 @@ mrb_GLib_g_option_context_get_summary(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_option_context_new(mrb_state* mrb, mrb_value self) {
-  const char * native_parameter_string;
+  const char * native_parameter_string = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_parameter_string);
@@ -28730,7 +28730,7 @@ mrb_GLib_g_option_context_parse_strv(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_option_context_set_description(mrb_state* mrb, mrb_value self) {
   mrb_value context;
-  const char * native_description;
+  const char * native_description = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oz!", &context, &native_description);
@@ -28906,7 +28906,7 @@ mrb_GLib_g_option_context_set_strict_posix(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_option_context_set_summary(mrb_state* mrb, mrb_value self) {
   mrb_value context;
-  const char * native_summary;
+  const char * native_summary = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oz!", &context, &native_summary);
@@ -28987,7 +28987,7 @@ mrb_GLib_g_option_context_set_translate_func(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_option_context_set_translation_domain(mrb_state* mrb, mrb_value self) {
   mrb_value context;
-  const char * native_domain;
+  const char * native_domain = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oz!", &context, &native_domain);
@@ -29119,9 +29119,9 @@ mrb_GLib_g_option_group_free(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_option_group_new(mrb_state* mrb, mrb_value self) {
-  const char * native_name;
-  const char * native_description;
-  const char * native_help_description;
+  const char * native_name = NULL;
+  const char * native_description = NULL;
+  const char * native_help_description = NULL;
   mrb_value user_data;
   mrb_value destroy;
 
@@ -29321,7 +29321,7 @@ mrb_GLib_g_option_group_set_translate_func(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_option_group_set_translation_domain(mrb_state* mrb, mrb_value self) {
   mrb_value group;
-  const char * native_domain;
+  const char * native_domain = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oz!", &group, &native_domain);
@@ -29387,7 +29387,7 @@ mrb_GLib_g_option_group_unref(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_parse_debug_string(mrb_state* mrb, mrb_value self) {
-  const char * native_string;
+  const char * native_string = NULL;
   mrb_value keys;
   unsigned int native_nkeys;
 
@@ -29428,7 +29428,7 @@ mrb_GLib_g_parse_debug_string(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_path_get_basename(mrb_state* mrb, mrb_value self) {
-  const char * native_file_name;
+  const char * native_file_name = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_file_name);
@@ -29454,7 +29454,7 @@ mrb_GLib_g_path_get_basename(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_path_get_dirname(mrb_state* mrb, mrb_value self) {
-  const char * native_file_name;
+  const char * native_file_name = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_file_name);
@@ -29480,7 +29480,7 @@ mrb_GLib_g_path_get_dirname(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_path_is_absolute(mrb_state* mrb, mrb_value self) {
-  const char * native_file_name;
+  const char * native_file_name = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_file_name);
@@ -29510,7 +29510,7 @@ mrb_GLib_g_path_is_absolute(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_path_skip_root(mrb_state* mrb, mrb_value self) {
-  const char * native_file_name;
+  const char * native_file_name = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_file_name);
@@ -29541,8 +29541,8 @@ mrb_value
 mrb_GLib_g_pattern_match(mrb_state* mrb, mrb_value self) {
   mrb_value pspec;
   unsigned int native_string_length;
-  const char * native_string;
-  const char * native_string_reversed;
+  const char * native_string = NULL;
+  const char * native_string_reversed = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oiz!z!", &pspec, &native_string_length, &native_string, &native_string_reversed);
@@ -29582,8 +29582,8 @@ mrb_GLib_g_pattern_match(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_pattern_match_simple(mrb_state* mrb, mrb_value self) {
-  const char * native_pattern;
-  const char * native_string;
+  const char * native_pattern = NULL;
+  const char * native_string = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!z!", &native_pattern, &native_string);
@@ -29615,7 +29615,7 @@ mrb_GLib_g_pattern_match_simple(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_pattern_match_string(mrb_state* mrb, mrb_value self) {
   mrb_value pspec;
-  const char * native_string;
+  const char * native_string = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oz!", &pspec, &native_string);
@@ -29733,7 +29733,7 @@ mrb_GLib_g_pattern_spec_free(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_pattern_spec_new(mrb_state* mrb, mrb_value self) {
-  const char * native_pattern;
+  const char * native_pattern = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_pattern);
@@ -29904,7 +29904,7 @@ mrb_GLib_g_poll(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_prefix_error(mrb_state* mrb, mrb_value self) {
   mrb_value err;
-  const char * native_format;
+  const char * native_format = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oz!", &err, &native_format);
@@ -29933,7 +29933,7 @@ mrb_GLib_g_prefix_error(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_print(mrb_state* mrb, mrb_value self) {
-  const char * native_format;
+  const char * native_format = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_format);
@@ -29956,7 +29956,7 @@ mrb_GLib_g_print(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_printerr(mrb_state* mrb, mrb_value self) {
-  const char * native_format;
+  const char * native_format = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_format);
@@ -29979,7 +29979,7 @@ mrb_GLib_g_printerr(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_printf(mrb_state* mrb, mrb_value self) {
-  const char * native_format;
+  const char * native_format = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_format);
@@ -30010,7 +30010,7 @@ mrb_GLib_g_printf(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_printf_string_upper_bound(mrb_state* mrb, mrb_value self) {
-  const char * native_format;
+  const char * native_format = NULL;
   int native_args;
 
   /* Fetch the args */
@@ -30191,7 +30191,7 @@ mrb_value
 mrb_GLib_g_propagate_prefixed_error(mrb_state* mrb, mrb_value self) {
   mrb_value dest;
   mrb_value src;
-  const char * native_format;
+  const char * native_format = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "ooz!", &dest, &src, &native_format);
@@ -30954,7 +30954,7 @@ mrb_GLib_g_qsort_with_data(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_quark_from_static_string(mrb_state* mrb, mrb_value self) {
-  const char * native_string;
+  const char * native_string = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_string);
@@ -30984,7 +30984,7 @@ mrb_GLib_g_quark_from_static_string(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_quark_from_string(mrb_state* mrb, mrb_value self) {
-  const char * native_string;
+  const char * native_string = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_string);
@@ -31057,7 +31057,7 @@ mrb_GLib_g_quark_to_string(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_quark_try_string(mrb_state* mrb, mrb_value self) {
-  const char * native_string;
+  const char * native_string = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_string);
@@ -33355,7 +33355,7 @@ mrb_GLib_g_rec_mutex_unlock(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_regex_check_replacement(mrb_state* mrb, mrb_value self) {
-  const char * native_replacement;
+  const char * native_replacement = NULL;
   mrb_value has_references;
   mrb_value error;
 
@@ -33421,7 +33421,7 @@ mrb_GLib_g_regex_error_quark(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_regex_escape_nul(mrb_state* mrb, mrb_value self) {
-  const char * native_string;
+  const char * native_string = NULL;
   int native_length;
 
   /* Fetch the args */
@@ -33449,7 +33449,7 @@ mrb_GLib_g_regex_escape_nul(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_regex_escape_string(mrb_state* mrb, mrb_value self) {
-  const char * native_string;
+  const char * native_string = NULL;
   int native_length;
 
   /* Fetch the args */
@@ -33739,7 +33739,7 @@ mrb_GLib_g_regex_get_pattern(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_regex_get_string_number(mrb_state* mrb, mrb_value self) {
   mrb_value regex;
-  const char * native_name;
+  const char * native_name = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oz!", &regex, &native_name);
@@ -33782,7 +33782,7 @@ mrb_GLib_g_regex_get_string_number(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_regex_match(mrb_state* mrb, mrb_value self) {
   mrb_value regex;
-  const char * native_string;
+  const char * native_string = NULL;
   mrb_value match_options;
   mrb_value match_info;
 
@@ -33833,7 +33833,7 @@ mrb_GLib_g_regex_match(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_regex_match_all(mrb_state* mrb, mrb_value self) {
   mrb_value regex;
-  const char * native_string;
+  const char * native_string = NULL;
   mrb_value match_options;
   mrb_value match_info;
 
@@ -33887,7 +33887,7 @@ mrb_GLib_g_regex_match_all(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_regex_match_all_full(mrb_state* mrb, mrb_value self) {
   mrb_value regex;
-  const char * native_string;
+  const char * native_string = NULL;
   long native_string_len;
   int native_start_position;
   mrb_value match_options;
@@ -33947,7 +33947,7 @@ mrb_GLib_g_regex_match_all_full(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_regex_match_full(mrb_state* mrb, mrb_value self) {
   mrb_value regex;
-  const char * native_string;
+  const char * native_string = NULL;
   long native_string_len;
   int native_start_position;
   mrb_value match_options;
@@ -34003,8 +34003,8 @@ mrb_GLib_g_regex_match_full(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_regex_match_simple(mrb_state* mrb, mrb_value self) {
-  const char * native_pattern;
-  const char * native_string;
+  const char * native_pattern = NULL;
+  const char * native_string = NULL;
   mrb_value compile_options;
   mrb_value match_options;
 
@@ -34048,7 +34048,7 @@ mrb_GLib_g_regex_match_simple(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_regex_new(mrb_state* mrb, mrb_value self) {
-  const char * native_pattern;
+  const char * native_pattern = NULL;
   mrb_value compile_options;
   mrb_value match_options;
   mrb_value error;
@@ -34131,10 +34131,10 @@ mrb_GLib_g_regex_ref(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_regex_replace(mrb_state* mrb, mrb_value self) {
   mrb_value regex;
-  const char * native_string;
+  const char * native_string = NULL;
   long native_string_len;
   int native_start_position;
-  const char * native_replacement;
+  const char * native_replacement = NULL;
   mrb_value match_options;
   mrb_value error;
 
@@ -34185,7 +34185,7 @@ mrb_GLib_g_regex_replace(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_regex_replace_eval(mrb_state* mrb, mrb_value self) {
   mrb_value regex;
-  const char * native_string;
+  const char * native_string = NULL;
   long native_string_len;
   int native_start_position;
   mrb_value match_options;
@@ -34245,10 +34245,10 @@ mrb_GLib_g_regex_replace_eval(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_regex_replace_literal(mrb_state* mrb, mrb_value self) {
   mrb_value regex;
-  const char * native_string;
+  const char * native_string = NULL;
   long native_string_len;
   int native_start_position;
-  const char * native_replacement;
+  const char * native_replacement = NULL;
   mrb_value match_options;
   mrb_value error;
 
@@ -34294,7 +34294,7 @@ mrb_GLib_g_regex_replace_literal(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_regex_split(mrb_state* mrb, mrb_value self) {
   mrb_value regex;
-  const char * native_string;
+  const char * native_string = NULL;
   mrb_value match_options;
 
   /* Fetch the args */
@@ -34340,7 +34340,7 @@ mrb_GLib_g_regex_split(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_regex_split_full(mrb_state* mrb, mrb_value self) {
   mrb_value regex;
-  const char * native_string;
+  const char * native_string = NULL;
   long native_string_len;
   int native_start_position;
   mrb_value match_options;
@@ -34389,8 +34389,8 @@ mrb_GLib_g_regex_split_full(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_regex_split_simple(mrb_state* mrb, mrb_value self) {
-  const char * native_pattern;
-  const char * native_string;
+  const char * native_pattern = NULL;
+  const char * native_string = NULL;
   mrb_value compile_options;
   mrb_value match_options;
 
@@ -34478,9 +34478,9 @@ mrb_GLib_g_reload_user_special_dirs_cache(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_return_if_fail_warning(mrb_state* mrb, mrb_value self) {
-  const char * native_log_domain;
-  const char * native_pretty_function;
-  const char * native_expression;
+  const char * native_log_domain = NULL;
+  const char * native_pretty_function = NULL;
+  const char * native_expression = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!z!z!", &native_log_domain, &native_pretty_function, &native_expression);
@@ -34503,7 +34503,7 @@ mrb_GLib_g_return_if_fail_warning(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_rmdir(mrb_state* mrb, mrb_value self) {
-  const char * native_filename;
+  const char * native_filename = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_filename);
@@ -35024,7 +35024,7 @@ mrb_GLib_g_scanner_eof(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_scanner_error(mrb_state* mrb, mrb_value self) {
   mrb_value scanner;
-  const char * native_format;
+  const char * native_format = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oz!", &scanner, &native_format);
@@ -35128,7 +35128,7 @@ mrb_GLib_g_scanner_input_file(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_scanner_input_text(mrb_state* mrb, mrb_value self) {
   mrb_value scanner;
-  const char * native_text;
+  const char * native_text = NULL;
   unsigned int native_text_len;
 
   /* Fetch the args */
@@ -35163,7 +35163,7 @@ mrb_GLib_g_scanner_input_text(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_scanner_lookup_symbol(mrb_state* mrb, mrb_value self) {
   mrb_value scanner;
-  const char * native_symbol;
+  const char * native_symbol = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oz!", &scanner, &native_symbol);
@@ -35273,7 +35273,7 @@ mrb_value
 mrb_GLib_g_scanner_scope_add_symbol(mrb_state* mrb, mrb_value self) {
   mrb_value scanner;
   unsigned int native_scope_id;
-  const char * native_symbol;
+  const char * native_symbol = NULL;
   mrb_value value;
 
   /* Fetch the args */
@@ -35357,7 +35357,7 @@ mrb_value
 mrb_GLib_g_scanner_scope_lookup_symbol(mrb_state* mrb, mrb_value self) {
   mrb_value scanner;
   unsigned int native_scope_id;
-  const char * native_symbol;
+  const char * native_symbol = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oiz!", &scanner, &native_scope_id, &native_symbol);
@@ -35396,7 +35396,7 @@ mrb_value
 mrb_GLib_g_scanner_scope_remove_symbol(mrb_state* mrb, mrb_value self) {
   mrb_value scanner;
   unsigned int native_scope_id;
-  const char * native_symbol;
+  const char * native_symbol = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oiz!", &scanner, &native_scope_id, &native_symbol);
@@ -35509,10 +35509,10 @@ mrb_value
 mrb_GLib_g_scanner_unexp_token(mrb_state* mrb, mrb_value self) {
   mrb_value scanner;
   mrb_value expected_token;
-  const char * native_identifier_spec;
-  const char * native_symbol_spec;
-  const char * native_symbol_name;
-  const char * native_message;
+  const char * native_identifier_spec = NULL;
+  const char * native_symbol_spec = NULL;
+  const char * native_symbol_name = NULL;
+  const char * native_message = NULL;
   int native_is_error;
 
   /* Fetch the args */
@@ -35550,7 +35550,7 @@ mrb_GLib_g_scanner_unexp_token(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_scanner_warn(mrb_state* mrb, mrb_value self) {
   mrb_value scanner;
-  const char * native_format;
+  const char * native_format = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oz!", &scanner, &native_format);
@@ -37132,7 +37132,7 @@ mrb_GLib_g_sequence_swap(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_set_application_name(mrb_state* mrb, mrb_value self) {
-  const char * native_application_name;
+  const char * native_application_name = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_application_name);
@@ -37161,7 +37161,7 @@ mrb_GLib_g_set_error(mrb_state* mrb, mrb_value self) {
   mrb_value err;
   unsigned int native_domain;
   int native_code;
-  const char * native_format;
+  const char * native_format = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oiiz!", &err, &native_domain, &native_code, &native_format);
@@ -37196,7 +37196,7 @@ mrb_GLib_g_set_error_literal(mrb_state* mrb, mrb_value self) {
   mrb_value err;
   unsigned int native_domain;
   int native_code;
-  const char * native_message;
+  const char * native_message = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oiiz!", &err, &native_domain, &native_code, &native_message);
@@ -37225,7 +37225,7 @@ mrb_GLib_g_set_error_literal(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_set_prgname(mrb_state* mrb, mrb_value self) {
-  const char * native_prgname;
+  const char * native_prgname = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_prgname);
@@ -37314,8 +37314,8 @@ mrb_GLib_g_set_printerr_handler(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_setenv(mrb_state* mrb, mrb_value self) {
-  const char * native_variable;
-  const char * native_value;
+  const char * native_variable = NULL;
+  const char * native_value = NULL;
   int native_overwrite;
 
   /* Fetch the args */
@@ -37373,7 +37373,7 @@ mrb_GLib_g_shell_error_quark(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_shell_parse_argv(mrb_state* mrb, mrb_value self) {
-  const char * native_command_line;
+  const char * native_command_line = NULL;
   mrb_value argcp;
   mrb_value argvp;
   mrb_value error;
@@ -37418,7 +37418,7 @@ mrb_GLib_g_shell_parse_argv(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_shell_quote(mrb_state* mrb, mrb_value self) {
-  const char * native_unquoted_string;
+  const char * native_unquoted_string = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_unquoted_string);
@@ -37445,7 +37445,7 @@ mrb_GLib_g_shell_quote(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_shell_unquote(mrb_state* mrb, mrb_value self) {
-  const char * native_quoted_string;
+  const char * native_quoted_string = NULL;
   mrb_value error;
 
   /* Fetch the args */
@@ -38897,9 +38897,9 @@ mrb_GLib_g_slist_sort_with_data(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_snprintf(mrb_state* mrb, mrb_value self) {
-  char * string;
+  char * string = NULL;
   unsigned long native_n;
-  const char * native_format;
+  const char * native_format = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!iz!", &string, &native_n, &native_format);
@@ -40045,7 +40045,7 @@ mrb_GLib_g_source_set_funcs(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_source_set_name(mrb_state* mrb, mrb_value self) {
   mrb_value source;
-  const char * native_name;
+  const char * native_name = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oz!", &source, &native_name);
@@ -40079,7 +40079,7 @@ mrb_GLib_g_source_set_name(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_source_set_name_by_id(mrb_state* mrb, mrb_value self) {
   unsigned int native_tag;
-  const char * native_name;
+  const char * native_name = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "iz!", &native_tag, &native_name);
@@ -40239,7 +40239,7 @@ mrb_GLib_g_spaced_primes_closest(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_spawn_async(mrb_state* mrb, mrb_value self) {
-  const char * native_working_directory;
+  const char * native_working_directory = NULL;
   mrb_value argv;
   mrb_value envp;
   mrb_value flags;
@@ -40310,7 +40310,7 @@ mrb_GLib_g_spawn_async(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_spawn_async_with_pipes(mrb_state* mrb, mrb_value self) {
-  const char * native_working_directory;
+  const char * native_working_directory = NULL;
   mrb_value argv;
   mrb_value envp;
   mrb_value flags;
@@ -40445,7 +40445,7 @@ mrb_GLib_g_spawn_close_pid(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_spawn_command_line_async(mrb_state* mrb, mrb_value self) {
-  const char * native_command_line;
+  const char * native_command_line = NULL;
   mrb_value error;
 
   /* Fetch the args */
@@ -40486,7 +40486,7 @@ mrb_GLib_g_spawn_command_line_async(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_spawn_command_line_sync(mrb_state* mrb, mrb_value self) {
-  const char * native_command_line;
+  const char * native_command_line = NULL;
   mrb_value standard_output;
   mrb_value standard_error;
   mrb_value exit_status;
@@ -40592,7 +40592,7 @@ mrb_GLib_g_spawn_exit_error_quark(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_spawn_sync(mrb_state* mrb, mrb_value self) {
-  const char * native_working_directory;
+  const char * native_working_directory = NULL;
   mrb_value argv;
   mrb_value envp;
   mrb_value flags;
@@ -40662,8 +40662,8 @@ mrb_GLib_g_spawn_sync(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_sprintf(mrb_state* mrb, mrb_value self) {
-  char * string;
-  const char * native_format;
+  char * string = NULL;
+  const char * native_format = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!z!", &string, &native_format);
@@ -40748,8 +40748,8 @@ mrb_GLib_g_steal_pointer(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_stpcpy(mrb_state* mrb, mrb_value self) {
-  char * dest;
-  const char * native_src;
+  char * dest = NULL;
+  const char * native_src = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!z!", &dest, &native_src);
@@ -40839,8 +40839,8 @@ mrb_GLib_g_str_equal(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_str_has_prefix(mrb_state* mrb, mrb_value self) {
-  const char * native_str;
-  const char * native_prefix;
+  const char * native_str = NULL;
+  const char * native_prefix = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!z!", &native_str, &native_prefix);
@@ -40871,8 +40871,8 @@ mrb_GLib_g_str_has_prefix(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_str_has_suffix(mrb_state* mrb, mrb_value self) {
-  const char * native_str;
-  const char * native_suffix;
+  const char * native_str = NULL;
+  const char * native_suffix = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!z!", &native_str, &native_suffix);
@@ -40938,7 +40938,7 @@ mrb_GLib_g_str_hash(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_str_is_ascii(mrb_state* mrb, mrb_value self) {
-  const char * native_str;
+  const char * native_str = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_str);
@@ -40970,8 +40970,8 @@ mrb_GLib_g_str_is_ascii(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_str_match_string(mrb_state* mrb, mrb_value self) {
-  const char * native_search_term;
-  const char * native_potential_hit;
+  const char * native_search_term = NULL;
+  const char * native_potential_hit = NULL;
   int native_accept_alternates;
 
   /* Fetch the args */
@@ -41003,8 +41003,8 @@ mrb_GLib_g_str_match_string(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_str_to_ascii(mrb_state* mrb, mrb_value self) {
-  const char * native_str;
-  const char * native_from_locale;
+  const char * native_str = NULL;
+  const char * native_from_locale = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!z!", &native_str, &native_from_locale);
@@ -41032,8 +41032,8 @@ mrb_GLib_g_str_to_ascii(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_str_tokenize_and_fold(mrb_state* mrb, mrb_value self) {
-  const char * native_string;
-  const char * native_translit_locale;
+  const char * native_string = NULL;
+  const char * native_translit_locale = NULL;
   mrb_value ascii_alternates;
 
   /* Fetch the args */
@@ -41068,8 +41068,8 @@ mrb_GLib_g_str_tokenize_and_fold(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_strcanon(mrb_state* mrb, mrb_value self) {
-  char * string;
-  const char * native_valid_chars;
+  char * string = NULL;
+  const char * native_valid_chars = NULL;
   char native_substitutor;
 
   /* Fetch the args */
@@ -41119,8 +41119,8 @@ mrb_GLib_g_strcanon(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_strcasecmp(mrb_state* mrb, mrb_value self) {
-  const char * native_s1;
-  const char * native_s2;
+  const char * native_s1 = NULL;
+  const char * native_s2 = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!z!", &native_s1, &native_s2);
@@ -41150,7 +41150,7 @@ mrb_GLib_g_strcasecmp(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_strchomp(mrb_state* mrb, mrb_value self) {
-  char * string;
+  char * string = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &string);
@@ -41198,7 +41198,7 @@ mrb_GLib_g_strchomp(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_strchug(mrb_state* mrb, mrb_value self) {
-  char * string;
+  char * string = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &string);
@@ -41247,8 +41247,8 @@ mrb_GLib_g_strchug(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_strcmp0(mrb_state* mrb, mrb_value self) {
-  const char * native_str1;
-  const char * native_str2;
+  const char * native_str1 = NULL;
+  const char * native_str2 = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!z!", &native_str1, &native_str2);
@@ -41278,7 +41278,7 @@ mrb_GLib_g_strcmp0(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_strcompress(mrb_state* mrb, mrb_value self) {
-  const char * native_source;
+  const char * native_source = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_source);
@@ -41304,7 +41304,7 @@ mrb_GLib_g_strcompress(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_strconcat(mrb_state* mrb, mrb_value self) {
-  const char * native_string1;
+  const char * native_string1 = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_string1);
@@ -41332,8 +41332,8 @@ mrb_GLib_g_strconcat(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_strdelimit(mrb_state* mrb, mrb_value self) {
-  char * string;
-  const char * native_delimiters;
+  char * string = NULL;
+  const char * native_delimiters = NULL;
   char native_new_delimiter;
 
   /* Fetch the args */
@@ -41382,7 +41382,7 @@ mrb_GLib_g_strdelimit(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_strdown(mrb_state* mrb, mrb_value self) {
-  char * string;
+  char * string = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &string);
@@ -41430,7 +41430,7 @@ mrb_GLib_g_strdown(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_strdup(mrb_state* mrb, mrb_value self) {
-  const char * native_str;
+  const char * native_str = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_str);
@@ -41456,7 +41456,7 @@ mrb_GLib_g_strdup(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_strdup_printf(mrb_state* mrb, mrb_value self) {
-  const char * native_format;
+  const char * native_format = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_format);
@@ -41483,7 +41483,7 @@ mrb_GLib_g_strdup_printf(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_strdup_vprintf(mrb_state* mrb, mrb_value self) {
-  const char * native_format;
+  const char * native_format = NULL;
   int native_args;
 
   /* Fetch the args */
@@ -41569,8 +41569,8 @@ mrb_GLib_g_strerror(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_strescape(mrb_state* mrb, mrb_value self) {
-  const char * native_source;
-  const char * native_exceptions;
+  const char * native_source = NULL;
+  const char * native_exceptions = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!z!", &native_source, &native_exceptions);
@@ -41627,7 +41627,7 @@ mrb_GLib_g_strfreev(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_string_append(mrb_state* mrb, mrb_value self) {
   mrb_value string;
-  const char * native_val;
+  const char * native_val = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oz!", &string, &native_val);
@@ -41739,7 +41739,7 @@ mrb_GLib_g_string_append_c_inline(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_string_append_len(mrb_state* mrb, mrb_value self) {
   mrb_value string;
-  const char * native_val;
+  const char * native_val = NULL;
   long native_len;
 
   /* Fetch the args */
@@ -41777,7 +41777,7 @@ mrb_GLib_g_string_append_len(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_string_append_printf(mrb_state* mrb, mrb_value self) {
   mrb_value string;
-  const char * native_format;
+  const char * native_format = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oz!", &string, &native_format);
@@ -41850,8 +41850,8 @@ mrb_GLib_g_string_append_unichar(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_string_append_uri_escaped(mrb_state* mrb, mrb_value self) {
   mrb_value string;
-  const char * native_unescaped;
-  const char * native_reserved_chars_allowed;
+  const char * native_unescaped = NULL;
+  const char * native_reserved_chars_allowed = NULL;
   int native_allow_utf8;
 
   /* Fetch the args */
@@ -41890,7 +41890,7 @@ mrb_GLib_g_string_append_uri_escaped(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_string_append_vprintf(mrb_state* mrb, mrb_value self) {
   mrb_value string;
-  const char * native_format;
+  const char * native_format = NULL;
   int native_args;
 
   /* Fetch the args */
@@ -41995,7 +41995,7 @@ mrb_GLib_g_string_ascii_up(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_string_assign(mrb_state* mrb, mrb_value self) {
   mrb_value string;
-  const char * native_rval;
+  const char * native_rval = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oz!", &string, &native_rval);
@@ -42096,7 +42096,7 @@ mrb_GLib_g_string_chunk_free(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_string_chunk_insert(mrb_state* mrb, mrb_value self) {
   mrb_value chunk;
-  const char * native_string;
+  const char * native_string = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oz!", &chunk, &native_string);
@@ -42133,7 +42133,7 @@ mrb_GLib_g_string_chunk_insert(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_string_chunk_insert_const(mrb_state* mrb, mrb_value self) {
   mrb_value chunk;
-  const char * native_string;
+  const char * native_string = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oz!", &chunk, &native_string);
@@ -42171,7 +42171,7 @@ mrb_GLib_g_string_chunk_insert_const(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_string_chunk_insert_len(mrb_state* mrb, mrb_value self) {
   mrb_value chunk;
-  const char * native_string;
+  const char * native_string = NULL;
   long native_len;
 
   /* Fetch the args */
@@ -42469,7 +42469,7 @@ mrb_value
 mrb_GLib_g_string_insert(mrb_state* mrb, mrb_value self) {
   mrb_value string;
   long native_pos;
-  const char * native_val;
+  const char * native_val = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oiz!", &string, &native_pos, &native_val);
@@ -42548,7 +42548,7 @@ mrb_value
 mrb_GLib_g_string_insert_len(mrb_state* mrb, mrb_value self) {
   mrb_value string;
   long native_pos;
-  const char * native_val;
+  const char * native_val = NULL;
   long native_len;
 
   /* Fetch the args */
@@ -42623,7 +42623,7 @@ mrb_GLib_g_string_insert_unichar(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_string_new(mrb_state* mrb, mrb_value self) {
-  const char * native_init;
+  const char * native_init = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_init);
@@ -42650,7 +42650,7 @@ mrb_GLib_g_string_new(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_string_new_len(mrb_state* mrb, mrb_value self) {
-  const char * native_init;
+  const char * native_init = NULL;
   long native_len;
 
   /* Fetch the args */
@@ -42681,7 +42681,7 @@ mrb_value
 mrb_GLib_g_string_overwrite(mrb_state* mrb, mrb_value self) {
   mrb_value string;
   unsigned long native_pos;
-  const char * native_val;
+  const char * native_val = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oiz!", &string, &native_pos, &native_val);
@@ -42721,7 +42721,7 @@ mrb_value
 mrb_GLib_g_string_overwrite_len(mrb_state* mrb, mrb_value self) {
   mrb_value string;
   unsigned long native_pos;
-  const char * native_val;
+  const char * native_val = NULL;
   long native_len;
 
   /* Fetch the args */
@@ -42759,7 +42759,7 @@ mrb_GLib_g_string_overwrite_len(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_string_prepend(mrb_state* mrb, mrb_value self) {
   mrb_value string;
-  const char * native_val;
+  const char * native_val = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oz!", &string, &native_val);
@@ -42834,7 +42834,7 @@ mrb_GLib_g_string_prepend_c(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_string_prepend_len(mrb_state* mrb, mrb_value self) {
   mrb_value string;
-  const char * native_val;
+  const char * native_val = NULL;
   long native_len;
 
   /* Fetch the args */
@@ -42909,7 +42909,7 @@ mrb_GLib_g_string_prepend_unichar(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_string_printf(mrb_state* mrb, mrb_value self) {
   mrb_value string;
-  const char * native_format;
+  const char * native_format = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oz!", &string, &native_format);
@@ -43079,7 +43079,7 @@ mrb_GLib_g_string_up(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_string_vprintf(mrb_state* mrb, mrb_value self) {
   mrb_value string;
-  const char * native_format;
+  const char * native_format = NULL;
   int native_args;
 
   /* Fetch the args */
@@ -43113,8 +43113,8 @@ mrb_GLib_g_string_vprintf(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_strip_context(mrb_state* mrb, mrb_value self) {
-  const char * native_msgid;
-  const char * native_msgval;
+  const char * native_msgid = NULL;
+  const char * native_msgval = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!z!", &native_msgid, &native_msgval);
@@ -43140,7 +43140,7 @@ mrb_GLib_g_strip_context(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_strjoin(mrb_state* mrb, mrb_value self) {
-  const char * native_separator;
+  const char * native_separator = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_separator);
@@ -43167,7 +43167,7 @@ mrb_GLib_g_strjoin(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_strjoinv(mrb_state* mrb, mrb_value self) {
-  const char * native_separator;
+  const char * native_separator = NULL;
   mrb_value str_array;
 
   /* Fetch the args */
@@ -43202,8 +43202,8 @@ mrb_GLib_g_strjoinv(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_strlcat(mrb_state* mrb, mrb_value self) {
-  char * dest;
-  const char * native_src;
+  char * dest = NULL;
+  const char * native_src = NULL;
   unsigned long native_dest_size;
 
   /* Fetch the args */
@@ -43258,8 +43258,8 @@ mrb_GLib_g_strlcat(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_strlcpy(mrb_state* mrb, mrb_value self) {
-  char * dest;
-  const char * native_src;
+  char * dest = NULL;
+  const char * native_src = NULL;
   unsigned long native_dest_size;
 
   /* Fetch the args */
@@ -43314,8 +43314,8 @@ mrb_GLib_g_strlcpy(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_strncasecmp(mrb_state* mrb, mrb_value self) {
-  const char * native_s1;
-  const char * native_s2;
+  const char * native_s1 = NULL;
+  const char * native_s2 = NULL;
   unsigned int native_n;
 
   /* Fetch the args */
@@ -43347,7 +43347,7 @@ mrb_GLib_g_strncasecmp(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_strndup(mrb_state* mrb, mrb_value self) {
-  const char * native_str;
+  const char * native_str = NULL;
   unsigned long native_n;
 
   /* Fetch the args */
@@ -43402,7 +43402,7 @@ mrb_GLib_g_strnfill(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_strreverse(mrb_state* mrb, mrb_value self) {
-  char * string;
+  char * string = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &string);
@@ -43451,8 +43451,8 @@ mrb_GLib_g_strreverse(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_strrstr(mrb_state* mrb, mrb_value self) {
-  const char * native_haystack;
-  const char * native_needle;
+  const char * native_haystack = NULL;
+  const char * native_needle = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!z!", &native_haystack, &native_needle);
@@ -43480,9 +43480,9 @@ mrb_GLib_g_strrstr(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_strrstr_len(mrb_state* mrb, mrb_value self) {
-  const char * native_haystack;
+  const char * native_haystack = NULL;
   long native_haystack_len;
-  const char * native_needle;
+  const char * native_needle = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!iz!", &native_haystack, &native_haystack_len, &native_needle);
@@ -43536,8 +43536,8 @@ mrb_GLib_g_strsignal(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_strsplit(mrb_state* mrb, mrb_value self) {
-  const char * native_string;
-  const char * native_delimiter;
+  const char * native_string = NULL;
+  const char * native_delimiter = NULL;
   int native_max_tokens;
 
   /* Fetch the args */
@@ -43566,8 +43566,8 @@ mrb_GLib_g_strsplit(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_strsplit_set(mrb_state* mrb, mrb_value self) {
-  const char * native_string;
-  const char * native_delimiters;
+  const char * native_string = NULL;
+  const char * native_delimiters = NULL;
   int native_max_tokens;
 
   /* Fetch the args */
@@ -43596,9 +43596,9 @@ mrb_GLib_g_strsplit_set(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_strstr_len(mrb_state* mrb, mrb_value self) {
-  const char * native_haystack;
+  const char * native_haystack = NULL;
   long native_haystack_len;
-  const char * native_needle;
+  const char * native_needle = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!iz!", &native_haystack, &native_haystack_len, &native_needle);
@@ -43625,7 +43625,7 @@ mrb_GLib_g_strstr_len(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_strtod(mrb_state* mrb, mrb_value self) {
-  const char * native_nptr;
+  const char * native_nptr = NULL;
   mrb_value endptr;
 
   /* Fetch the args */
@@ -43658,7 +43658,7 @@ mrb_GLib_g_strtod(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_strup(mrb_state* mrb, mrb_value self) {
-  char * string;
+  char * string = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &string);
@@ -43708,7 +43708,7 @@ mrb_GLib_g_strup(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_strv_contains(mrb_state* mrb, mrb_value self) {
   mrb_value strv;
-  const char * native_str;
+  const char * native_str = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oz!", &strv, &native_str);
@@ -43868,7 +43868,7 @@ mrb_GLib_g_system_thread_new(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_system_thread_set_name(mrb_state* mrb, mrb_value self) {
-  const char * native_name;
+  const char * native_name = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_name);
@@ -43925,7 +43925,7 @@ mrb_GLib_g_system_thread_wait(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_test_add_data_func(mrb_state* mrb, mrb_value self) {
-  const char * native_testpath;
+  const char * native_testpath = NULL;
   mrb_value test_data;
   mrb_value test_func;
 
@@ -43962,7 +43962,7 @@ mrb_GLib_g_test_add_data_func(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_test_add_data_func_full(mrb_state* mrb, mrb_value self) {
-  const char * native_testpath;
+  const char * native_testpath = NULL;
   mrb_value test_data;
   mrb_value test_func;
   mrb_value data_free_func;
@@ -44001,7 +44001,7 @@ mrb_GLib_g_test_add_data_func_full(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_test_add_func(mrb_state* mrb, mrb_value self) {
-  const char * native_testpath;
+  const char * native_testpath = NULL;
   mrb_value test_func;
 
   /* Fetch the args */
@@ -44036,7 +44036,7 @@ mrb_GLib_g_test_add_func(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_test_add_vtable(mrb_state* mrb, mrb_value self) {
-  const char * native_testpath;
+  const char * native_testpath = NULL;
   unsigned long native_data_size;
   mrb_value test_data;
   mrb_value data_setup;
@@ -44082,10 +44082,10 @@ mrb_GLib_g_test_add_vtable(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_test_assert_expected_messages_internal(mrb_state* mrb, mrb_value self) {
-  const char * native_domain;
-  const char * native_file;
+  const char * native_domain = NULL;
+  const char * native_file = NULL;
   int native_line;
-  const char * native_func;
+  const char * native_func = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!z!iz!", &native_domain, &native_file, &native_line, &native_func);
@@ -44108,7 +44108,7 @@ mrb_GLib_g_test_assert_expected_messages_internal(mrb_state* mrb, mrb_value self
  */
 mrb_value
 mrb_GLib_g_test_bug(mrb_state* mrb, mrb_value self) {
-  const char * native_bug_uri_snippet;
+  const char * native_bug_uri_snippet = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_bug_uri_snippet);
@@ -44131,7 +44131,7 @@ mrb_GLib_g_test_bug(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_test_bug_base(mrb_state* mrb, mrb_value self) {
-  const char * native_uri_pattern;
+  const char * native_uri_pattern = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_uri_pattern);
@@ -44156,7 +44156,7 @@ mrb_GLib_g_test_bug_base(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_test_build_filename(mrb_state* mrb, mrb_value self) {
   mrb_value file_type;
-  const char * native_first_path;
+  const char * native_first_path = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oz!", &file_type, &native_first_path);
@@ -44193,7 +44193,7 @@ mrb_GLib_g_test_build_filename(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_test_create_case(mrb_state* mrb, mrb_value self) {
-  const char * native_test_name;
+  const char * native_test_name = NULL;
   unsigned long native_data_size;
   mrb_value test_data;
   mrb_value data_setup;
@@ -44239,7 +44239,7 @@ mrb_GLib_g_test_create_case(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_test_create_suite(mrb_state* mrb, mrb_value self) {
-  const char * native_suite_name;
+  const char * native_suite_name = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_suite_name);
@@ -44267,9 +44267,9 @@ mrb_GLib_g_test_create_suite(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_test_expect_message(mrb_state* mrb, mrb_value self) {
-  const char * native_log_domain;
+  const char * native_log_domain = NULL;
   mrb_value log_level;
-  const char * native_pattern;
+  const char * native_pattern = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!oz!", &native_log_domain, &log_level, &native_pattern);
@@ -44373,7 +44373,7 @@ mrb_GLib_g_test_get_dir(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_test_get_filename(mrb_state* mrb, mrb_value self) {
   mrb_value file_type;
-  const char * native_first_path;
+  const char * native_first_path = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oz!", &file_type, &native_first_path);
@@ -44425,7 +44425,7 @@ mrb_GLib_g_test_get_root(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_test_incomplete(mrb_state* mrb, mrb_value self) {
-  const char * native_msg;
+  const char * native_msg = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_msg);
@@ -44708,7 +44708,7 @@ mrb_GLib_g_test_log_type_name(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_test_maximized_result(mrb_state* mrb, mrb_value self) {
   double native_maximized_quantity;
-  const char * native_format;
+  const char * native_format = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "fz!", &native_maximized_quantity, &native_format);
@@ -44731,7 +44731,7 @@ mrb_GLib_g_test_maximized_result(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_test_message(mrb_state* mrb, mrb_value self) {
-  const char * native_format;
+  const char * native_format = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_format);
@@ -44756,7 +44756,7 @@ mrb_GLib_g_test_message(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_test_minimized_result(mrb_state* mrb, mrb_value self) {
   double native_minimized_quantity;
-  const char * native_format;
+  const char * native_format = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "fz!", &native_minimized_quantity, &native_format);
@@ -45026,7 +45026,7 @@ mrb_GLib_g_test_set_nonfatal_assertions(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_test_skip(mrb_state* mrb, mrb_value self) {
-  const char * native_msg;
+  const char * native_msg = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_msg);
@@ -45215,12 +45215,12 @@ mrb_GLib_g_test_timer_start(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_test_trap_assertions(mrb_state* mrb, mrb_value self) {
-  const char * native_domain;
-  const char * native_file;
+  const char * native_domain = NULL;
+  const char * native_file = NULL;
   int native_line;
-  const char * native_func;
+  const char * native_func = NULL;
   unsigned long native_assertion_flags;
-  const char * native_pattern;
+  const char * native_pattern = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!z!iz!iz!", &native_domain, &native_file, &native_line, &native_func, &native_assertion_flags, &native_pattern);
@@ -45331,7 +45331,7 @@ mrb_GLib_g_test_trap_reached_timeout(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_test_trap_subprocess(mrb_state* mrb, mrb_value self) {
-  const char * native_test_path;
+  const char * native_test_path = NULL;
   unsigned long native_usec_timeout;
   mrb_value test_flags;
 
@@ -45452,7 +45452,7 @@ mrb_GLib_g_thread_join(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_thread_new(mrb_state* mrb, mrb_value self) {
-  const char * native_name;
+  const char * native_name = NULL;
   mrb_value func;
   mrb_value data;
 
@@ -45494,7 +45494,7 @@ mrb_GLib_g_thread_new(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_thread_new_internal(mrb_state* mrb, mrb_value self) {
-  const char * native_name;
+  const char * native_name = NULL;
   mrb_value proxy;
   mrb_value func;
   mrb_value data;
@@ -46145,7 +46145,7 @@ mrb_GLib_g_thread_self(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_thread_try_new(mrb_state* mrb, mrb_value self) {
-  const char * native_name;
+  const char * native_name = NULL;
   mrb_value func;
   mrb_value data;
   mrb_value error;
@@ -46270,7 +46270,7 @@ mrb_GLib_g_time_val_add(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_time_val_from_iso8601(mrb_state* mrb, mrb_value self) {
-  const char * native_iso_date;
+  const char * native_iso_date = NULL;
   mrb_value time_;
 
   /* Fetch the args */
@@ -46559,7 +46559,7 @@ mrb_GLib_g_time_zone_is_dst(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_time_zone_new(mrb_state* mrb, mrb_value self) {
-  const char * native_identifier;
+  const char * native_identifier = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_identifier);
@@ -49040,7 +49040,7 @@ mrb_GLib_g_unichar_iszerowidth(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_unichar_to_utf8(mrb_state* mrb, mrb_value self) {
   unsigned int native_c;
-  char * outbuf;
+  char * outbuf = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "iz!", &native_c, &outbuf);
@@ -49758,7 +49758,7 @@ mrb_GLib_g_unix_signal_source_new(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_unlink(mrb_state* mrb, mrb_value self) {
-  const char * native_filename;
+  const char * native_filename = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_filename);
@@ -49788,7 +49788,7 @@ mrb_GLib_g_unlink(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_unsetenv(mrb_state* mrb, mrb_value self) {
-  const char * native_variable;
+  const char * native_variable = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_variable);
@@ -49813,8 +49813,8 @@ mrb_GLib_g_unsetenv(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_uri_escape_string(mrb_state* mrb, mrb_value self) {
-  const char * native_unescaped;
-  const char * native_reserved_chars_allowed;
+  const char * native_unescaped = NULL;
+  const char * native_reserved_chars_allowed = NULL;
   int native_allow_utf8;
 
   /* Fetch the args */
@@ -49841,7 +49841,7 @@ mrb_GLib_g_uri_escape_string(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_uri_list_extract_uris(mrb_state* mrb, mrb_value self) {
-  const char * native_uri_list;
+  const char * native_uri_list = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_uri_list);
@@ -49867,7 +49867,7 @@ mrb_GLib_g_uri_list_extract_uris(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_uri_parse_scheme(mrb_state* mrb, mrb_value self) {
-  const char * native_uri;
+  const char * native_uri = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_uri);
@@ -49895,9 +49895,9 @@ mrb_GLib_g_uri_parse_scheme(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_uri_unescape_segment(mrb_state* mrb, mrb_value self) {
-  const char * native_escaped_string;
-  const char * native_escaped_string_end;
-  const char * native_illegal_characters;
+  const char * native_escaped_string = NULL;
+  const char * native_escaped_string_end = NULL;
+  const char * native_illegal_characters = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!z!z!", &native_escaped_string, &native_escaped_string_end, &native_illegal_characters);
@@ -49924,8 +49924,8 @@ mrb_GLib_g_uri_unescape_segment(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_uri_unescape_string(mrb_state* mrb, mrb_value self) {
-  const char * native_escaped_string;
-  const char * native_illegal_characters;
+  const char * native_escaped_string = NULL;
+  const char * native_illegal_characters = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!z!", &native_escaped_string, &native_illegal_characters);
@@ -50073,7 +50073,7 @@ mrb_GLib_g_utf16_to_utf8(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_utf8_casefold(mrb_state* mrb, mrb_value self) {
-  const char * native_str;
+  const char * native_str = NULL;
   long native_len;
 
   /* Fetch the args */
@@ -50101,8 +50101,8 @@ mrb_GLib_g_utf8_casefold(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_utf8_collate(mrb_state* mrb, mrb_value self) {
-  const char * native_str1;
-  const char * native_str2;
+  const char * native_str1 = NULL;
+  const char * native_str2 = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!z!", &native_str1, &native_str2);
@@ -50133,7 +50133,7 @@ mrb_GLib_g_utf8_collate(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_utf8_collate_key(mrb_state* mrb, mrb_value self) {
-  const char * native_str;
+  const char * native_str = NULL;
   long native_len;
 
   /* Fetch the args */
@@ -50161,7 +50161,7 @@ mrb_GLib_g_utf8_collate_key(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_utf8_collate_key_for_filename(mrb_state* mrb, mrb_value self) {
-  const char * native_str;
+  const char * native_str = NULL;
   long native_len;
 
   /* Fetch the args */
@@ -50189,8 +50189,8 @@ mrb_GLib_g_utf8_collate_key_for_filename(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_utf8_find_next_char(mrb_state* mrb, mrb_value self) {
-  const char * native_p;
-  const char * native_end;
+  const char * native_p = NULL;
+  const char * native_end = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!z!", &native_p, &native_end);
@@ -50217,8 +50217,8 @@ mrb_GLib_g_utf8_find_next_char(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_utf8_find_prev_char(mrb_state* mrb, mrb_value self) {
-  const char * native_str;
-  const char * native_p;
+  const char * native_str = NULL;
+  const char * native_p = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!z!", &native_str, &native_p);
@@ -50244,7 +50244,7 @@ mrb_GLib_g_utf8_find_prev_char(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_utf8_get_char(mrb_state* mrb, mrb_value self) {
-  const char * native_p;
+  const char * native_p = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_p);
@@ -50275,7 +50275,7 @@ mrb_GLib_g_utf8_get_char(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_utf8_get_char_validated(mrb_state* mrb, mrb_value self) {
-  const char * native_p;
+  const char * native_p = NULL;
   long native_max_len;
 
   /* Fetch the args */
@@ -50308,7 +50308,7 @@ mrb_GLib_g_utf8_get_char_validated(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_utf8_normalize(mrb_state* mrb, mrb_value self) {
-  const char * native_str;
+  const char * native_str = NULL;
   long native_len;
   mrb_value mode;
 
@@ -50343,7 +50343,7 @@ mrb_GLib_g_utf8_normalize(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_utf8_offset_to_pointer(mrb_state* mrb, mrb_value self) {
-  const char * native_str;
+  const char * native_str = NULL;
   long native_offset;
 
   /* Fetch the args */
@@ -50371,8 +50371,8 @@ mrb_GLib_g_utf8_offset_to_pointer(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_utf8_pointer_to_offset(mrb_state* mrb, mrb_value self) {
-  const char * native_str;
-  const char * native_pos;
+  const char * native_str = NULL;
+  const char * native_pos = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!z!", &native_str, &native_pos);
@@ -50402,7 +50402,7 @@ mrb_GLib_g_utf8_pointer_to_offset(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_utf8_prev_char(mrb_state* mrb, mrb_value self) {
-  const char * native_p;
+  const char * native_p = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_p);
@@ -50430,7 +50430,7 @@ mrb_GLib_g_utf8_prev_char(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_utf8_strchr(mrb_state* mrb, mrb_value self) {
-  const char * native_p;
+  const char * native_p = NULL;
   long native_len;
   unsigned int native_c;
 
@@ -50459,7 +50459,7 @@ mrb_GLib_g_utf8_strchr(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_utf8_strdown(mrb_state* mrb, mrb_value self) {
-  const char * native_str;
+  const char * native_str = NULL;
   long native_len;
 
   /* Fetch the args */
@@ -50487,7 +50487,7 @@ mrb_GLib_g_utf8_strdown(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_utf8_strlen(mrb_state* mrb, mrb_value self) {
-  const char * native_p;
+  const char * native_p = NULL;
   long native_max;
 
   /* Fetch the args */
@@ -50520,8 +50520,8 @@ mrb_GLib_g_utf8_strlen(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_utf8_strncpy(mrb_state* mrb, mrb_value self) {
-  char * dest;
-  const char * native_src;
+  char * dest = NULL;
+  const char * native_src = NULL;
   unsigned long native_n;
 
   /* Fetch the args */
@@ -50572,7 +50572,7 @@ mrb_GLib_g_utf8_strncpy(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_utf8_strrchr(mrb_state* mrb, mrb_value self) {
-  const char * native_p;
+  const char * native_p = NULL;
   long native_len;
   unsigned int native_c;
 
@@ -50601,7 +50601,7 @@ mrb_GLib_g_utf8_strrchr(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_utf8_strreverse(mrb_state* mrb, mrb_value self) {
-  const char * native_str;
+  const char * native_str = NULL;
   long native_len;
 
   /* Fetch the args */
@@ -50629,7 +50629,7 @@ mrb_GLib_g_utf8_strreverse(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_utf8_strup(mrb_state* mrb, mrb_value self) {
-  const char * native_str;
+  const char * native_str = NULL;
   long native_len;
 
   /* Fetch the args */
@@ -50658,7 +50658,7 @@ mrb_GLib_g_utf8_strup(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_utf8_substring(mrb_state* mrb, mrb_value self) {
-  const char * native_str;
+  const char * native_str = NULL;
   long native_start_pos;
   long native_end_pos;
 
@@ -50690,7 +50690,7 @@ mrb_GLib_g_utf8_substring(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_utf8_to_ucs4(mrb_state* mrb, mrb_value self) {
-  const char * native_str;
+  const char * native_str = NULL;
   long native_len;
   mrb_value items_read;
   mrb_value items_written;
@@ -50734,7 +50734,7 @@ mrb_GLib_g_utf8_to_ucs4(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_utf8_to_ucs4_fast(mrb_state* mrb, mrb_value self) {
-  const char * native_str;
+  const char * native_str = NULL;
   long native_len;
   mrb_value items_written;
 
@@ -50772,7 +50772,7 @@ mrb_GLib_g_utf8_to_ucs4_fast(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_utf8_to_utf16(mrb_state* mrb, mrb_value self) {
-  const char * native_str;
+  const char * native_str = NULL;
   long native_len;
   mrb_value items_read;
   mrb_value items_written;
@@ -50816,7 +50816,7 @@ mrb_GLib_g_utf8_to_utf16(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_utf8_validate(mrb_state* mrb, mrb_value self) {
-  const char * native_str;
+  const char * native_str = NULL;
   long native_max_len;
   mrb_value end;
 
@@ -50856,7 +50856,7 @@ mrb_GLib_g_utf8_validate(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_variant_builder_add(mrb_state* mrb, mrb_value self) {
   mrb_value builder;
-  const char * native_format_string;
+  const char * native_format_string = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oz!", &builder, &native_format_string);
@@ -50890,7 +50890,7 @@ mrb_GLib_g_variant_builder_add(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_variant_builder_add_parsed(mrb_state* mrb, mrb_value self) {
   mrb_value builder;
-  const char * native_format;
+  const char * native_format = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oz!", &builder, &native_format);
@@ -51281,7 +51281,7 @@ mrb_GLib_g_variant_byteswap(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_variant_check_format_string(mrb_state* mrb, mrb_value self) {
   mrb_value value;
-  const char * native_format_string;
+  const char * native_format_string = NULL;
   int native_copy_only;
 
   /* Fetch the args */
@@ -51431,7 +51431,7 @@ mrb_GLib_g_variant_dict_clear(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_variant_dict_contains(mrb_state* mrb, mrb_value self) {
   mrb_value dict;
-  const char * native_key;
+  const char * native_key = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oz!", &dict, &native_key);
@@ -51548,8 +51548,8 @@ mrb_GLib_g_variant_dict_init(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_variant_dict_insert(mrb_state* mrb, mrb_value self) {
   mrb_value dict;
-  const char * native_key;
-  const char * native_format_string;
+  const char * native_key = NULL;
+  const char * native_format_string = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oz!z!", &dict, &native_key, &native_format_string);
@@ -51584,7 +51584,7 @@ mrb_GLib_g_variant_dict_insert(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_variant_dict_insert_value(mrb_state* mrb, mrb_value self) {
   mrb_value dict;
-  const char * native_key;
+  const char * native_key = NULL;
   mrb_value value;
 
   /* Fetch the args */
@@ -51626,8 +51626,8 @@ mrb_GLib_g_variant_dict_insert_value(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_variant_dict_lookup(mrb_state* mrb, mrb_value self) {
   mrb_value dict;
-  const char * native_key;
-  const char * native_format_string;
+  const char * native_key = NULL;
+  const char * native_format_string = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oz!z!", &dict, &native_key, &native_format_string);
@@ -51669,7 +51669,7 @@ mrb_GLib_g_variant_dict_lookup(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_variant_dict_lookup_value(mrb_state* mrb, mrb_value self) {
   mrb_value dict;
-  const char * native_key;
+  const char * native_key = NULL;
   mrb_value expected_type;
 
   /* Fetch the args */
@@ -51783,7 +51783,7 @@ mrb_GLib_g_variant_dict_ref(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_variant_dict_remove(mrb_state* mrb, mrb_value self) {
   mrb_value dict;
-  const char * native_key;
+  const char * native_key = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oz!", &dict, &native_key);
@@ -52097,8 +52097,8 @@ mrb_GLib_g_variant_equal(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_variant_format_string_scan(mrb_state* mrb, mrb_value self) {
-  const char * native_string;
-  const char * native_limit;
+  const char * native_string = NULL;
+  const char * native_limit = NULL;
   mrb_value endptr;
 
   /* Fetch the args */
@@ -52137,8 +52137,8 @@ mrb_GLib_g_variant_format_string_scan(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_variant_format_string_scan_type(mrb_state* mrb, mrb_value self) {
-  const char * native_string;
-  const char * native_limit;
+  const char * native_string = NULL;
+  const char * native_limit = NULL;
   mrb_value endptr;
 
   /* Fetch the args */
@@ -52173,7 +52173,7 @@ mrb_GLib_g_variant_format_string_scan_type(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_variant_get(mrb_state* mrb, mrb_value self) {
   mrb_value value;
-  const char * native_format_string;
+  const char * native_format_string = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oz!", &value, &native_format_string);
@@ -52362,7 +52362,7 @@ mrb_value
 mrb_GLib_g_variant_get_child(mrb_state* mrb, mrb_value self) {
   mrb_value value;
   unsigned long native_index_;
-  const char * native_format_string;
+  const char * native_format_string = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oiz!", &value, &native_index_, &native_format_string);
@@ -53189,7 +53189,7 @@ mrb_GLib_g_variant_get_uint64(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_variant_get_va(mrb_state* mrb, mrb_value self) {
   mrb_value value;
-  const char * native_format_string;
+  const char * native_format_string = NULL;
   mrb_value endptr;
   mrb_value app;
 
@@ -53417,7 +53417,7 @@ mrb_GLib_g_variant_is_normal_form(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_variant_is_object_path(mrb_state* mrb, mrb_value self) {
-  const char * native_string;
+  const char * native_string = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_string);
@@ -53494,7 +53494,7 @@ mrb_GLib_g_variant_is_of_type(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_variant_is_signature(mrb_state* mrb, mrb_value self) {
-  const char * native_string;
+  const char * native_string = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_string);
@@ -53679,7 +53679,7 @@ mrb_GLib_g_variant_iter_init(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_variant_iter_loop(mrb_state* mrb, mrb_value self) {
   mrb_value iter;
-  const char * native_format_string;
+  const char * native_format_string = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oz!", &iter, &native_format_string);
@@ -53794,7 +53794,7 @@ mrb_GLib_g_variant_iter_new(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_variant_iter_next(mrb_state* mrb, mrb_value self) {
   mrb_value iter;
-  const char * native_format_string;
+  const char * native_format_string = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oz!", &iter, &native_format_string);
@@ -53871,8 +53871,8 @@ mrb_GLib_g_variant_iter_next_value(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_variant_lookup(mrb_state* mrb, mrb_value self) {
   mrb_value dictionary;
-  const char * native_key;
-  const char * native_format_string;
+  const char * native_key = NULL;
+  const char * native_format_string = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oz!z!", &dictionary, &native_key, &native_format_string);
@@ -53914,7 +53914,7 @@ mrb_GLib_g_variant_lookup(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_variant_lookup_value(mrb_state* mrb, mrb_value self) {
   mrb_value dictionary;
-  const char * native_key;
+  const char * native_key = NULL;
   mrb_value expected_type;
 
   /* Fetch the args */
@@ -53995,7 +53995,7 @@ mrb_GLib_g_variant_n_children(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_variant_new(mrb_state* mrb, mrb_value self) {
-  const char * native_format_string;
+  const char * native_format_string = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_format_string);
@@ -54115,7 +54115,7 @@ mrb_GLib_g_variant_new_byte(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_variant_new_bytestring(mrb_state* mrb, mrb_value self) {
-  const char * native_string;
+  const char * native_string = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_string);
@@ -54578,7 +54578,7 @@ mrb_GLib_g_variant_new_maybe(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_variant_new_object_path(mrb_state* mrb, mrb_value self) {
-  const char * native_object_path;
+  const char * native_object_path = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_object_path);
@@ -54638,7 +54638,7 @@ mrb_GLib_g_variant_new_objv(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_variant_new_parsed(mrb_state* mrb, mrb_value self) {
-  const char * native_format;
+  const char * native_format = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_format);
@@ -54665,7 +54665,7 @@ mrb_GLib_g_variant_new_parsed(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_variant_new_parsed_va(mrb_state* mrb, mrb_value self) {
-  const char * native_format;
+  const char * native_format = NULL;
   mrb_value app;
 
   /* Fetch the args */
@@ -54698,7 +54698,7 @@ mrb_GLib_g_variant_new_parsed_va(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_variant_new_printf(mrb_state* mrb, mrb_value self) {
-  const char * native_format_string;
+  const char * native_format_string = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_format_string);
@@ -54724,7 +54724,7 @@ mrb_GLib_g_variant_new_printf(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_variant_new_signature(mrb_state* mrb, mrb_value self) {
-  const char * native_signature;
+  const char * native_signature = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_signature);
@@ -54750,7 +54750,7 @@ mrb_GLib_g_variant_new_signature(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_variant_new_string(mrb_state* mrb, mrb_value self) {
-  const char * native_string;
+  const char * native_string = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_string);
@@ -54810,7 +54810,7 @@ mrb_GLib_g_variant_new_strv(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_variant_new_take_string(mrb_state* mrb, mrb_value self) {
-  char * string;
+  char * string = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &string);
@@ -54972,7 +54972,7 @@ mrb_GLib_g_variant_new_uint64(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_variant_new_va(mrb_state* mrb, mrb_value self) {
-  const char * native_format_string;
+  const char * native_format_string = NULL;
   mrb_value endptr;
   mrb_value app;
 
@@ -55049,8 +55049,8 @@ mrb_GLib_g_variant_new_variant(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_variant_parse(mrb_state* mrb, mrb_value self) {
   mrb_value type;
-  const char * native_text;
-  const char * native_limit;
+  const char * native_text = NULL;
+  const char * native_limit = NULL;
   mrb_value endptr;
   mrb_value error;
 
@@ -55095,7 +55095,7 @@ mrb_GLib_g_variant_parse(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_variant_parse_error_print_context(mrb_state* mrb, mrb_value self) {
   mrb_value error;
-  const char * native_source_str;
+  const char * native_source_str = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oz!", &error, &native_source_str);
@@ -55763,7 +55763,7 @@ mrb_GLib_g_variant_take_ref(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_variant_type_checked_(mrb_state* mrb, mrb_value self) {
-  const char * native_arg1;
+  const char * native_arg1 = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_arg1);
@@ -56859,7 +56859,7 @@ mrb_GLib_g_variant_type_n_items(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_variant_type_new(mrb_state* mrb, mrb_value self) {
-  const char * native_type_string;
+  const char * native_type_string = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_type_string);
@@ -57102,7 +57102,7 @@ mrb_GLib_g_variant_type_peek_string(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_variant_type_string_is_valid(mrb_state* mrb, mrb_value self) {
-  const char * native_type_string;
+  const char * native_type_string = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_type_string);
@@ -57134,8 +57134,8 @@ mrb_GLib_g_variant_type_string_is_valid(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_variant_type_string_scan(mrb_state* mrb, mrb_value self) {
-  const char * native_string;
-  const char * native_limit;
+  const char * native_string = NULL;
+  const char * native_limit = NULL;
   mrb_value endptr;
 
   /* Fetch the args */
@@ -57242,7 +57242,7 @@ mrb_GLib_g_variant_unref(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_vasprintf(mrb_state* mrb, mrb_value self) {
   mrb_value string;
-  const char * native_format;
+  const char * native_format = NULL;
   mrb_value args;
 
   /* Fetch the args */
@@ -57285,7 +57285,7 @@ mrb_GLib_g_vasprintf(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_vfprintf(mrb_state* mrb, mrb_value self) {
   mrb_value file;
-  const char * native_format;
+  const char * native_format = NULL;
   mrb_value args;
 
   /* Fetch the args */
@@ -57326,7 +57326,7 @@ mrb_GLib_g_vfprintf(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_vprintf(mrb_state* mrb, mrb_value self) {
-  const char * native_format;
+  const char * native_format = NULL;
   mrb_value args;
 
   /* Fetch the args */
@@ -57366,9 +57366,9 @@ mrb_GLib_g_vprintf(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_vsnprintf(mrb_state* mrb, mrb_value self) {
-  char * string;
+  char * string = NULL;
   unsigned long native_n;
-  const char * native_format;
+  const char * native_format = NULL;
   int native_args;
 
   /* Fetch the args */
@@ -57423,8 +57423,8 @@ mrb_GLib_g_vsnprintf(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_vsprintf(mrb_state* mrb, mrb_value self) {
-  char * string;
-  const char * native_format;
+  char * string = NULL;
+  const char * native_format = NULL;
   mrb_value args;
 
   /* Fetch the args */
@@ -57640,11 +57640,11 @@ mrb_GLib_g_wakeup_signal(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_warn_message(mrb_state* mrb, mrb_value self) {
-  const char * native_domain;
-  const char * native_file;
+  const char * native_domain = NULL;
+  const char * native_file = NULL;
   int native_line;
-  const char * native_func;
-  const char * native_warnexpr;
+  const char * native_func = NULL;
+  const char * native_warnexpr = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!z!iz!z!", &native_domain, &native_file, &native_line, &native_func, &native_warnexpr);
@@ -57751,9 +57751,9 @@ mrb_GLib_pack_table(mrb_state* mrb, mrb_value self) {
   int native_max_depth;
   int native_tab_width;
   mrb_value name;
-  const char * native_key_type_name;
-  const char * native_table_name;
-  const char * native_macro_name;
+  const char * native_key_type_name = NULL;
+  const char * native_table_name = NULL;
+  const char * native_macro_name = NULL;
   mrb_value out;
 
   /* Fetch the args */
@@ -57798,7 +57798,7 @@ mrb_GLib_pack_table(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_printf_parse(mrb_state* mrb, mrb_value self) {
-  const char * native_format;
+  const char * native_format = NULL;
   mrb_value d;
   mrb_value a;
 
@@ -57848,9 +57848,9 @@ mrb_GLib_printf_parse(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_vasnprintf(mrb_state* mrb, mrb_value self) {
-  char * resultbuf;
+  char * resultbuf = NULL;
   mrb_value lengthp;
-  const char * native_format;
+  const char * native_format = NULL;
   int native_args;
 
   /* Fetch the args */
