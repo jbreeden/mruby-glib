@@ -150,12 +150,12 @@ mrb_GLib__g_gnulib_printf(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib__g_gnulib_snprintf(mrb_state* mrb, mrb_value self) {
-  mrb_value string;
+  char * string;
   unsigned long native_n;
   const char * native_format;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "oiz!", &string, &native_n, &native_format);
+  mrb_get_args(mrb, "z!iz!", &string, &native_n, &native_format);
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, string, mrb->string_class)) {
@@ -205,11 +205,11 @@ mrb_GLib__g_gnulib_snprintf(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib__g_gnulib_sprintf(mrb_state* mrb, mrb_value self) {
-  mrb_value string;
+  char * string;
   const char * native_format;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "oz!", &string, &native_format);
+  mrb_get_args(mrb, "z!z!", &string, &native_format);
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, string, mrb->string_class)) {
@@ -385,13 +385,13 @@ mrb_GLib__g_gnulib_vprintf(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib__g_gnulib_vsnprintf(mrb_state* mrb, mrb_value self) {
-  mrb_value string;
+  char * string;
   unsigned long native_n;
   const char * native_format;
   mrb_value args;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "oiz!o", &string, &native_n, &native_format, &args);
+  mrb_get_args(mrb, "z!iz!o", &string, &native_n, &native_format, &args);
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, string, mrb->string_class)) {
@@ -445,12 +445,12 @@ mrb_GLib__g_gnulib_vsnprintf(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib__g_gnulib_vsprintf(mrb_state* mrb, mrb_value self) {
-  mrb_value string;
+  char * string;
   const char * native_format;
   mrb_value args;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "oz!o", &string, &native_format, &args);
+  mrb_get_args(mrb, "z!z!o", &string, &native_format, &args);
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, string, mrb->string_class)) {
@@ -774,12 +774,12 @@ mrb_GLib__GLIB_CHECKED_MUL_U64(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_asnprintf(mrb_state* mrb, mrb_value self) {
-  mrb_value resultbuf;
+  char * resultbuf;
   mrb_value lengthp;
   const char * native_format;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "ooz!", &resultbuf, &lengthp, &native_format);
+  mrb_get_args(mrb, "z!oz!", &resultbuf, &lengthp, &native_format);
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, resultbuf, mrb->string_class)) {
@@ -1490,12 +1490,12 @@ mrb_GLib_g_ascii_digit_value(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_ascii_dtostr(mrb_state* mrb, mrb_value self) {
-  mrb_value buffer;
+  char * buffer;
   int native_buf_len;
   double native_d;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "oif", &buffer, &native_buf_len, &native_d);
+  mrb_get_args(mrb, "z!if", &buffer, &native_buf_len, &native_d);
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, buffer, mrb->string_class)) {
@@ -1543,13 +1543,13 @@ mrb_GLib_g_ascii_dtostr(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_ascii_formatd(mrb_state* mrb, mrb_value self) {
-  mrb_value buffer;
+  char * buffer;
   int native_buf_len;
   const char * native_format;
   double native_d;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "oiz!f", &buffer, &native_buf_len, &native_format, &native_d);
+  mrb_get_args(mrb, "z!iz!f", &buffer, &native_buf_len, &native_format, &native_d);
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, buffer, mrb->string_class)) {
@@ -3931,11 +3931,11 @@ mrb_GLib_g_base64_decode(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_base64_decode_inplace(mrb_state* mrb, mrb_value self) {
-  mrb_value text;
+  char * text;
   mrb_value out_len;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "oo", &text, &out_len);
+  mrb_get_args(mrb, "z!o", &text, &out_len);
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, text, mrb->string_class)) {
@@ -4071,12 +4071,12 @@ mrb_GLib_g_base64_encode(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_base64_encode_close(mrb_state* mrb, mrb_value self) {
   int native_break_lines;
-  mrb_value out;
+  char * out;
   mrb_value state;
   mrb_value save;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "iooo", &native_break_lines, &out, &state, &save);
+  mrb_get_args(mrb, "iz!oo", &native_break_lines, &out, &state, &save);
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, out, mrb->string_class)) {
@@ -4139,12 +4139,12 @@ mrb_GLib_g_base64_encode_step(mrb_state* mrb, mrb_value self) {
   mrb_value in;
   unsigned long native_len;
   int native_break_lines;
-  mrb_value out;
+  char * out;
   mrb_value state;
   mrb_value save;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "oiiooo", &in, &native_len, &native_break_lines, &out, &state, &save);
+  mrb_get_args(mrb, "oiiz!oo", &in, &native_len, &native_break_lines, &out, &state, &save);
 
   /* Type checking */
   TODO_type_check_unsigned_char_PTR(in);
@@ -10839,13 +10839,13 @@ mrb_GLib_g_date_set_year(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_date_strftime(mrb_state* mrb, mrb_value self) {
-  mrb_value s;
+  char * s;
   unsigned long native_slen;
   const char * native_format;
   mrb_value date;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "oiz!o", &s, &native_slen, &native_format, &date);
+  mrb_get_args(mrb, "z!iz!o", &s, &native_slen, &native_format, &date);
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, s, mrb->string_class)) {
@@ -18704,12 +18704,12 @@ mrb_GLib_g_io_channel_new_file(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_io_channel_read(mrb_state* mrb, mrb_value self) {
   mrb_value channel;
-  mrb_value buf;
+  char * buf;
   unsigned long native_count;
   mrb_value bytes_read;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "ooio", &channel, &buf, &native_count, &bytes_read);
+  mrb_get_args(mrb, "oz!io", &channel, &buf, &native_count, &bytes_read);
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, channel, GIOChannel_class(mrb))) {
@@ -18768,13 +18768,13 @@ mrb_GLib_g_io_channel_read(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_io_channel_read_chars(mrb_state* mrb, mrb_value self) {
   mrb_value channel;
-  mrb_value buf;
+  char * buf;
   unsigned long native_count;
   mrb_value bytes_read;
   mrb_value error;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "ooioo", &channel, &buf, &native_count, &bytes_read, &error);
+  mrb_get_args(mrb, "oz!ioo", &channel, &buf, &native_count, &bytes_read, &error);
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, channel, GIOChannel_class(mrb))) {
@@ -26542,10 +26542,10 @@ mrb_GLib_g_mkdir_with_parents(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_mkdtemp(mrb_state* mrb, mrb_value self) {
-  mrb_value tmpl;
+  char * tmpl;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "o", &tmpl);
+  mrb_get_args(mrb, "z!", &tmpl);
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, tmpl, mrb->string_class)) {
@@ -26591,11 +26591,11 @@ mrb_GLib_g_mkdtemp(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_mkdtemp_full(mrb_state* mrb, mrb_value self) {
-  mrb_value tmpl;
+  char * tmpl;
   int native_mode;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "oi", &tmpl, &native_mode);
+  mrb_get_args(mrb, "z!i", &tmpl, &native_mode);
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, tmpl, mrb->string_class)) {
@@ -26640,10 +26640,10 @@ mrb_GLib_g_mkdtemp_full(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_mkstemp(mrb_state* mrb, mrb_value self) {
-  mrb_value tmpl;
+  char * tmpl;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "o", &tmpl);
+  mrb_get_args(mrb, "z!", &tmpl);
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, tmpl, mrb->string_class)) {
@@ -26694,12 +26694,12 @@ mrb_GLib_g_mkstemp(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_mkstemp_full(mrb_state* mrb, mrb_value self) {
-  mrb_value tmpl;
+  char * tmpl;
   int native_flags;
   int native_mode;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "oii", &tmpl, &native_flags, &native_mode);
+  mrb_get_args(mrb, "z!ii", &tmpl, &native_flags, &native_mode);
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, tmpl, mrb->string_class)) {
@@ -38897,12 +38897,12 @@ mrb_GLib_g_slist_sort_with_data(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_snprintf(mrb_state* mrb, mrb_value self) {
-  mrb_value string;
+  char * string;
   unsigned long native_n;
   const char * native_format;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "oiz!", &string, &native_n, &native_format);
+  mrb_get_args(mrb, "z!iz!", &string, &native_n, &native_format);
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, string, mrb->string_class)) {
@@ -40662,11 +40662,11 @@ mrb_GLib_g_spawn_sync(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_sprintf(mrb_state* mrb, mrb_value self) {
-  mrb_value string;
+  char * string;
   const char * native_format;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "oz!", &string, &native_format);
+  mrb_get_args(mrb, "z!z!", &string, &native_format);
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, string, mrb->string_class)) {
@@ -40748,11 +40748,11 @@ mrb_GLib_g_steal_pointer(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_stpcpy(mrb_state* mrb, mrb_value self) {
-  mrb_value dest;
+  char * dest;
   const char * native_src;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "oz!", &dest, &native_src);
+  mrb_get_args(mrb, "z!z!", &dest, &native_src);
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, dest, mrb->string_class)) {
@@ -41068,12 +41068,12 @@ mrb_GLib_g_str_tokenize_and_fold(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_strcanon(mrb_state* mrb, mrb_value self) {
-  mrb_value string;
+  char * string;
   const char * native_valid_chars;
   char native_substitutor;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "oz!i", &string, &native_valid_chars, &native_substitutor);
+  mrb_get_args(mrb, "z!z!i", &string, &native_valid_chars, &native_substitutor);
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, string, mrb->string_class)) {
@@ -41150,10 +41150,10 @@ mrb_GLib_g_strcasecmp(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_strchomp(mrb_state* mrb, mrb_value self) {
-  mrb_value string;
+  char * string;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "o", &string);
+  mrb_get_args(mrb, "z!", &string);
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, string, mrb->string_class)) {
@@ -41198,10 +41198,10 @@ mrb_GLib_g_strchomp(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_strchug(mrb_state* mrb, mrb_value self) {
-  mrb_value string;
+  char * string;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "o", &string);
+  mrb_get_args(mrb, "z!", &string);
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, string, mrb->string_class)) {
@@ -41332,12 +41332,12 @@ mrb_GLib_g_strconcat(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_strdelimit(mrb_state* mrb, mrb_value self) {
-  mrb_value string;
+  char * string;
   const char * native_delimiters;
   char native_new_delimiter;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "oz!i", &string, &native_delimiters, &native_new_delimiter);
+  mrb_get_args(mrb, "z!z!i", &string, &native_delimiters, &native_new_delimiter);
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, string, mrb->string_class)) {
@@ -41382,10 +41382,10 @@ mrb_GLib_g_strdelimit(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_strdown(mrb_state* mrb, mrb_value self) {
-  mrb_value string;
+  char * string;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "o", &string);
+  mrb_get_args(mrb, "z!", &string);
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, string, mrb->string_class)) {
@@ -43202,12 +43202,12 @@ mrb_GLib_g_strjoinv(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_strlcat(mrb_state* mrb, mrb_value self) {
-  mrb_value dest;
+  char * dest;
   const char * native_src;
   unsigned long native_dest_size;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "oz!i", &dest, &native_src, &native_dest_size);
+  mrb_get_args(mrb, "z!z!i", &dest, &native_src, &native_dest_size);
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, dest, mrb->string_class)) {
@@ -43258,12 +43258,12 @@ mrb_GLib_g_strlcat(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_strlcpy(mrb_state* mrb, mrb_value self) {
-  mrb_value dest;
+  char * dest;
   const char * native_src;
   unsigned long native_dest_size;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "oz!i", &dest, &native_src, &native_dest_size);
+  mrb_get_args(mrb, "z!z!i", &dest, &native_src, &native_dest_size);
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, dest, mrb->string_class)) {
@@ -43402,10 +43402,10 @@ mrb_GLib_g_strnfill(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_strreverse(mrb_state* mrb, mrb_value self) {
-  mrb_value string;
+  char * string;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "o", &string);
+  mrb_get_args(mrb, "z!", &string);
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, string, mrb->string_class)) {
@@ -43658,10 +43658,10 @@ mrb_GLib_g_strtod(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_strup(mrb_state* mrb, mrb_value self) {
-  mrb_value string;
+  char * string;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "o", &string);
+  mrb_get_args(mrb, "z!", &string);
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, string, mrb->string_class)) {
@@ -49040,10 +49040,10 @@ mrb_GLib_g_unichar_iszerowidth(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_unichar_to_utf8(mrb_state* mrb, mrb_value self) {
   unsigned int native_c;
-  mrb_value outbuf;
+  char * outbuf;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "io", &native_c, &outbuf);
+  mrb_get_args(mrb, "iz!", &native_c, &outbuf);
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, outbuf, mrb->string_class)) {
@@ -50520,12 +50520,12 @@ mrb_GLib_g_utf8_strlen(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_utf8_strncpy(mrb_state* mrb, mrb_value self) {
-  mrb_value dest;
+  char * dest;
   const char * native_src;
   unsigned long native_n;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "oz!i", &dest, &native_src, &native_n);
+  mrb_get_args(mrb, "z!z!i", &dest, &native_src, &native_n);
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, dest, mrb->string_class)) {
@@ -54810,10 +54810,10 @@ mrb_GLib_g_variant_new_strv(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_variant_new_take_string(mrb_state* mrb, mrb_value self) {
-  mrb_value string;
+  char * string;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "o", &string);
+  mrb_get_args(mrb, "z!", &string);
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, string, mrb->string_class)) {
@@ -57366,13 +57366,13 @@ mrb_GLib_g_vprintf(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_vsnprintf(mrb_state* mrb, mrb_value self) {
-  mrb_value string;
+  char * string;
   unsigned long native_n;
   const char * native_format;
   int native_args;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "oiz!i", &string, &native_n, &native_format, &native_args);
+  mrb_get_args(mrb, "z!iz!i", &string, &native_n, &native_format, &native_args);
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, string, mrb->string_class)) {
@@ -57423,12 +57423,12 @@ mrb_GLib_g_vsnprintf(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_vsprintf(mrb_state* mrb, mrb_value self) {
-  mrb_value string;
+  char * string;
   const char * native_format;
   mrb_value args;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "oz!o", &string, &native_format, &args);
+  mrb_get_args(mrb, "z!z!o", &string, &native_format, &args);
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, string, mrb->string_class)) {
@@ -57848,13 +57848,13 @@ mrb_GLib_printf_parse(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_vasnprintf(mrb_state* mrb, mrb_value self) {
-  mrb_value resultbuf;
+  char * resultbuf;
   mrb_value lengthp;
   const char * native_format;
   int native_args;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "ooz!i", &resultbuf, &lengthp, &native_format, &native_args);
+  mrb_get_args(mrb, "z!oz!i", &resultbuf, &lengthp, &native_format, &native_args);
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, resultbuf, mrb->string_class)) {
