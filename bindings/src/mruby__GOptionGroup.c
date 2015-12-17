@@ -58,7 +58,7 @@ mrb_GLib_GOptionGroup_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_GLib_GOptionGroup_init(mrb_state* mrb) {
-  RClass* GOptionGroup_class = mrb_define_class_under(mrb, GLib_module(mrb), "GOptionGroup", mrb->object_class);
+  struct RClass* GOptionGroup_class = mrb_define_class_under(mrb, GLib_module(mrb), "GOptionGroup", mrb->object_class);
   MRB_SET_INSTANCE_TT(GOptionGroup_class, MRB_TT_DATA);
 
 #if BIND_GOptionGroup_INITIALIZE

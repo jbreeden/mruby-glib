@@ -144,7 +144,7 @@ mrb_GLib_GRecMutex_set_i(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_GLib_GRecMutex_init(mrb_state* mrb) {
-  RClass* GRecMutex_class = mrb_define_class_under(mrb, GLib_module(mrb), "GRecMutex", mrb->object_class);
+  struct RClass* GRecMutex_class = mrb_define_class_under(mrb, GLib_module(mrb), "GRecMutex", mrb->object_class);
   MRB_SET_INSTANCE_TT(GRecMutex_class, MRB_TT_DATA);
 
 #if BIND_GRecMutex_INITIALIZE

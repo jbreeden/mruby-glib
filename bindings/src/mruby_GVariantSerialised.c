@@ -195,7 +195,7 @@ mrb_GLib_GVariantSerialised_set_size(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_GLib_GVariantSerialised_init(mrb_state* mrb) {
-  RClass* GVariantSerialised_class = mrb_define_class_under(mrb, GLib_module(mrb), "GVariantSerialised", mrb->object_class);
+  struct RClass* GVariantSerialised_class = mrb_define_class_under(mrb, GLib_module(mrb), "GVariantSerialised", mrb->object_class);
   MRB_SET_INSTANCE_TT(GVariantSerialised_class, MRB_TT_DATA);
 
 #if BIND_GVariantSerialised_INITIALIZE

@@ -506,20 +506,17 @@ mrb_GLib__g_gnulib_vsprintf(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib__g_log_fallback_handler(mrb_state* mrb, mrb_value self) {
   const char * native_log_domain = NULL;
-  mrb_value log_level;
+  GLogLevelFlags native_log_level;
   const char * native_message = NULL;
   mrb_value unused_data;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "z!oz!o", &native_log_domain, &log_level, &native_message, &unused_data);
+  mrb_get_args(mrb, "z!iz!o", &native_log_domain, &native_log_level, &native_message, &unused_data);
 
   /* Type checking */
-  TODO_type_check_GLogLevelFlags(log_level);
   TODO_type_check_void_PTR(unused_data);
 
   /* Unbox parameters */
-  GLogLevelFlags native_log_level = TODO_mruby_unbox_GLogLevelFlags(log_level);
-
   void * native_unused_data = TODO_mruby_unbox_void_PTR(unused_data);
 
   /* Invocation */
@@ -7962,16 +7959,10 @@ mrb_GLib_g_checksum_get_string(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_checksum_new(mrb_state* mrb, mrb_value self) {
-  mrb_value checksum_type;
+  GChecksumType native_checksum_type;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "o", &checksum_type);
-
-  /* Type checking */
-  TODO_type_check_GChecksumType(checksum_type);
-
-  /* Unbox parameters */
-  GChecksumType native_checksum_type = TODO_mruby_unbox_GChecksumType(checksum_type);
+  mrb_get_args(mrb, "i", &native_checksum_type);
 
   /* Invocation */
   GChecksum * native_return_value = g_checksum_new(native_checksum_type);
@@ -8026,16 +8017,10 @@ mrb_GLib_g_checksum_reset(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_checksum_type_get_length(mrb_state* mrb, mrb_value self) {
-  mrb_value checksum_type;
+  GChecksumType native_checksum_type;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "o", &checksum_type);
-
-  /* Type checking */
-  TODO_type_check_GChecksumType(checksum_type);
-
-  /* Unbox parameters */
-  GChecksumType native_checksum_type = TODO_mruby_unbox_GChecksumType(checksum_type);
+  mrb_get_args(mrb, "i", &native_checksum_type);
 
   /* Invocation */
   gssize native_return_value = g_checksum_type_get_length(native_checksum_type);
@@ -8313,22 +8298,19 @@ mrb_GLib_g_close(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_compute_checksum_for_bytes(mrb_state* mrb, mrb_value self) {
-  mrb_value checksum_type;
+  GChecksumType native_checksum_type;
   mrb_value data;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "oo", &checksum_type, &data);
+  mrb_get_args(mrb, "io", &native_checksum_type, &data);
 
   /* Type checking */
-  TODO_type_check_GChecksumType(checksum_type);
   if (!mrb_obj_is_kind_of(mrb, data, GBytes_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GBytes expected");
     return mrb_nil_value();
   }
 
   /* Unbox parameters */
-  GChecksumType native_checksum_type = TODO_mruby_unbox_GChecksumType(checksum_type);
-
   struct _GBytes * native_data = (mrb_nil_p(data) ? NULL : mruby_unbox__GBytes(data));
 
   /* Invocation */
@@ -8354,20 +8336,17 @@ mrb_GLib_g_compute_checksum_for_bytes(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_compute_checksum_for_data(mrb_state* mrb, mrb_value self) {
-  mrb_value checksum_type;
+  GChecksumType native_checksum_type;
   mrb_value data;
   unsigned long native_length;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "ooi", &checksum_type, &data, &native_length);
+  mrb_get_args(mrb, "ioi", &native_checksum_type, &data, &native_length);
 
   /* Type checking */
-  TODO_type_check_GChecksumType(checksum_type);
   TODO_type_check_unsigned_char_PTR(data);
 
   /* Unbox parameters */
-  GChecksumType native_checksum_type = TODO_mruby_unbox_GChecksumType(checksum_type);
-
   const unsigned char * native_data = TODO_mruby_unbox_unsigned_char_PTR(data);
 
   /* Invocation */
@@ -8393,18 +8372,12 @@ mrb_GLib_g_compute_checksum_for_data(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_compute_checksum_for_string(mrb_state* mrb, mrb_value self) {
-  mrb_value checksum_type;
+  GChecksumType native_checksum_type;
   const char * native_str = NULL;
   long native_length;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "oz!i", &checksum_type, &native_str, &native_length);
-
-  /* Type checking */
-  TODO_type_check_GChecksumType(checksum_type);
-
-  /* Unbox parameters */
-  GChecksumType native_checksum_type = TODO_mruby_unbox_GChecksumType(checksum_type);
+  mrb_get_args(mrb, "iz!i", &native_checksum_type, &native_str, &native_length);
 
   /* Invocation */
   gchar * native_return_value = g_compute_checksum_for_string(native_checksum_type, native_str, native_length);
@@ -8431,23 +8404,20 @@ mrb_GLib_g_compute_checksum_for_string(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_compute_hmac_for_data(mrb_state* mrb, mrb_value self) {
-  mrb_value digest_type;
+  GChecksumType native_digest_type;
   mrb_value key;
   unsigned long native_key_len;
   mrb_value data;
   unsigned long native_length;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "ooioi", &digest_type, &key, &native_key_len, &data, &native_length);
+  mrb_get_args(mrb, "ioioi", &native_digest_type, &key, &native_key_len, &data, &native_length);
 
   /* Type checking */
-  TODO_type_check_GChecksumType(digest_type);
   TODO_type_check_unsigned_char_PTR(key);
   TODO_type_check_unsigned_char_PTR(data);
 
   /* Unbox parameters */
-  GChecksumType native_digest_type = TODO_mruby_unbox_GChecksumType(digest_type);
-
   const unsigned char * native_key = TODO_mruby_unbox_unsigned_char_PTR(key);
 
   const unsigned char * native_data = TODO_mruby_unbox_unsigned_char_PTR(data);
@@ -8477,22 +8447,19 @@ mrb_GLib_g_compute_hmac_for_data(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_compute_hmac_for_string(mrb_state* mrb, mrb_value self) {
-  mrb_value digest_type;
+  GChecksumType native_digest_type;
   mrb_value key;
   unsigned long native_key_len;
   const char * native_str = NULL;
   long native_length;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "ooiz!i", &digest_type, &key, &native_key_len, &native_str, &native_length);
+  mrb_get_args(mrb, "ioiz!i", &native_digest_type, &key, &native_key_len, &native_str, &native_length);
 
   /* Type checking */
-  TODO_type_check_GChecksumType(digest_type);
   TODO_type_check_unsigned_char_PTR(key);
 
   /* Unbox parameters */
-  GChecksumType native_digest_type = TODO_mruby_unbox_GChecksumType(digest_type);
-
   const unsigned char * native_key = TODO_mruby_unbox_unsigned_char_PTR(key);
 
   /* Invocation */
@@ -9913,17 +9880,11 @@ mrb_GLib_g_date_get_day_of_year(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_date_get_days_in_month(mrb_state* mrb, mrb_value self) {
-  mrb_value month;
+  GDateMonth native_month;
   unsigned short native_year;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "oi", &month, &native_year);
-
-  /* Type checking */
-  TODO_type_check_GDateMonth(month);
-
-  /* Unbox parameters */
-  GDateMonth native_month = TODO_mruby_unbox_GDateMonth(month);
+  mrb_get_args(mrb, "ii", &native_month, &native_year);
 
   /* Invocation */
   guint8 native_return_value = g_date_get_days_in_month(native_month, native_year);
@@ -10115,7 +10076,11 @@ mrb_GLib_g_date_get_month(mrb_state* mrb, mrb_value self) {
   GDateMonth native_return_value = g_date_get_month(native_date);
 
   /* Box the return value */
-  mrb_value return_value = TODO_mruby_box_GDateMonth(mrb, native_return_value);
+  if (native_return_value > MRB_INT_MAX) {
+    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
+    return mrb_nil_value();
+  }
+  mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
 }
@@ -10219,7 +10184,11 @@ mrb_GLib_g_date_get_weekday(mrb_state* mrb, mrb_value self) {
   GDateWeekday native_return_value = g_date_get_weekday(native_date);
 
   /* Box the return value */
-  mrb_value return_value = TODO_mruby_box_GDateWeekday(mrb, native_return_value);
+  if (native_return_value > MRB_INT_MAX) {
+    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
+    return mrb_nil_value();
+  }
+  mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
 }
@@ -10406,17 +10375,11 @@ mrb_GLib_g_date_new(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_date_new_dmy(mrb_state* mrb, mrb_value self) {
   unsigned char native_day;
-  mrb_value month;
+  GDateMonth native_month;
   unsigned short native_year;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "ioi", &native_day, &month, &native_year);
-
-  /* Type checking */
-  TODO_type_check_GDateMonth(month);
-
-  /* Unbox parameters */
-  GDateMonth native_month = TODO_mruby_unbox_GDateMonth(month);
+  mrb_get_args(mrb, "iii", &native_day, &native_month, &native_year);
 
   /* Invocation */
   GDate * native_return_value = g_date_new_dmy(native_day, native_month, native_year);
@@ -10544,23 +10507,20 @@ mrb_value
 mrb_GLib_g_date_set_dmy(mrb_state* mrb, mrb_value self) {
   mrb_value date;
   unsigned char native_day;
-  mrb_value month;
+  GDateMonth native_month;
   unsigned short native_y;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "oioi", &date, &native_day, &month, &native_y);
+  mrb_get_args(mrb, "oiii", &date, &native_day, &native_month, &native_y);
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, date, GDate_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GDate expected");
     return mrb_nil_value();
   }
-  TODO_type_check_GDateMonth(month);
 
   /* Unbox parameters */
   struct _GDate * native_date = (mrb_nil_p(date) ? NULL : mruby_unbox__GDate(date));
-
-  GDateMonth native_month = TODO_mruby_unbox_GDateMonth(month);
 
   /* Invocation */
   g_date_set_dmy(native_date, native_day, native_month, native_y);
@@ -10616,22 +10576,19 @@ mrb_GLib_g_date_set_julian(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_date_set_month(mrb_state* mrb, mrb_value self) {
   mrb_value date;
-  mrb_value month;
+  GDateMonth native_month;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "oo", &date, &month);
+  mrb_get_args(mrb, "oi", &date, &native_month);
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, date, GDate_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GDate expected");
     return mrb_nil_value();
   }
-  TODO_type_check_GDateMonth(month);
 
   /* Unbox parameters */
   struct _GDate * native_date = (mrb_nil_p(date) ? NULL : mruby_unbox__GDate(date));
-
-  GDateMonth native_month = TODO_mruby_unbox_GDateMonth(month);
 
   /* Invocation */
   g_date_set_month(native_date, native_month);
@@ -12853,17 +12810,11 @@ mrb_GLib_g_date_valid_day(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_date_valid_dmy(mrb_state* mrb, mrb_value self) {
   unsigned char native_day;
-  mrb_value month;
+  GDateMonth native_month;
   unsigned short native_year;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "ioi", &native_day, &month, &native_year);
-
-  /* Type checking */
-  TODO_type_check_GDateMonth(month);
-
-  /* Unbox parameters */
-  GDateMonth native_month = TODO_mruby_unbox_GDateMonth(month);
+  mrb_get_args(mrb, "iii", &native_day, &native_month, &native_year);
 
   /* Invocation */
   gboolean native_return_value = g_date_valid_dmy(native_day, native_month, native_year);
@@ -12920,16 +12871,10 @@ mrb_GLib_g_date_valid_julian(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_date_valid_month(mrb_state* mrb, mrb_value self) {
-  mrb_value month;
+  GDateMonth native_month;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "o", &month);
-
-  /* Type checking */
-  TODO_type_check_GDateMonth(month);
-
-  /* Unbox parameters */
-  GDateMonth native_month = TODO_mruby_unbox_GDateMonth(month);
+  mrb_get_args(mrb, "i", &native_month);
 
   /* Invocation */
   gboolean native_return_value = g_date_valid_month(native_month);
@@ -12956,16 +12901,10 @@ mrb_GLib_g_date_valid_month(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_date_valid_weekday(mrb_state* mrb, mrb_value self) {
-  mrb_value weekday;
+  GDateWeekday native_weekday;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "o", &weekday);
-
-  /* Type checking */
-  TODO_type_check_GDateWeekday(weekday);
-
-  /* Unbox parameters */
-  GDateWeekday native_weekday = TODO_mruby_unbox_GDateWeekday(weekday);
+  mrb_get_args(mrb, "i", &native_weekday);
 
   /* Invocation */
   gboolean native_return_value = g_date_valid_weekday(native_weekday);
@@ -13866,7 +13805,11 @@ mrb_GLib_g_file_error_from_errno(mrb_state* mrb, mrb_value self) {
   GFileError native_return_value = g_file_error_from_errno(native_err_no);
 
   /* Box the return value */
-  mrb_value return_value = TODO_mruby_box_GFileError(mrb, native_return_value);
+  if (native_return_value > MRB_INT_MAX) {
+    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
+    return mrb_nil_value();
+  }
+  mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
 }
@@ -14070,16 +14013,10 @@ mrb_GLib_g_file_set_contents(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_file_test(mrb_state* mrb, mrb_value self) {
   const char * native_filename = NULL;
-  mrb_value test;
+  GFileTest native_test;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "z!o", &native_filename, &test);
-
-  /* Type checking */
-  TODO_type_check_GFileTest(test);
-
-  /* Unbox parameters */
-  GFileTest native_test = TODO_mruby_unbox_GFileTest(test);
+  mrb_get_args(mrb, "z!i", &native_filename, &native_test);
 
   /* Invocation */
   gboolean native_return_value = g_file_test(native_filename, native_test);
@@ -14402,16 +14339,10 @@ mrb_GLib_g_format_size_for_display(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_format_size_full(mrb_state* mrb, mrb_value self) {
   unsigned long native_size;
-  mrb_value flags;
+  GFormatSizeFlags native_flags;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "io", &native_size, &flags);
-
-  /* Type checking */
-  TODO_type_check_GFormatSizeFlags(flags);
-
-  /* Unbox parameters */
-  GFormatSizeFlags native_flags = TODO_mruby_unbox_GFormatSizeFlags(flags);
+  mrb_get_args(mrb, "ii", &native_size, &native_flags);
 
   /* Invocation */
   gchar * native_return_value = g_format_size_full(native_size, native_flags);
@@ -15043,16 +14974,10 @@ mrb_GLib_g_get_user_runtime_dir(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_get_user_special_dir(mrb_state* mrb, mrb_value self) {
-  mrb_value directory;
+  GUserDirectory native_directory;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "o", &directory);
-
-  /* Type checking */
-  TODO_type_check_GUserDirectory(directory);
-
-  /* Unbox parameters */
-  GUserDirectory native_directory = TODO_mruby_unbox_GUserDirectory(directory);
+  mrb_get_args(mrb, "i", &native_directory);
 
   /* Invocation */
   const gchar * native_return_value = g_get_user_special_dir(native_directory);
@@ -16409,20 +16334,17 @@ mrb_GLib_g_hmac_get_string(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_hmac_new(mrb_state* mrb, mrb_value self) {
-  mrb_value digest_type;
+  GChecksumType native_digest_type;
   mrb_value key;
   unsigned long native_key_len;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "ooi", &digest_type, &key, &native_key_len);
+  mrb_get_args(mrb, "ioi", &native_digest_type, &key, &native_key_len);
 
   /* Type checking */
-  TODO_type_check_GChecksumType(digest_type);
   TODO_type_check_unsigned_char_PTR(key);
 
   /* Unbox parameters */
-  GChecksumType native_digest_type = TODO_mruby_unbox_GChecksumType(digest_type);
-
   const unsigned char * native_key = TODO_mruby_unbox_unsigned_char_PTR(key);
 
   /* Invocation */
@@ -18113,26 +18035,23 @@ mrb_GLib_g_intern_string(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_io_add_watch(mrb_state* mrb, mrb_value self) {
   mrb_value channel;
-  mrb_value condition;
+  GIOCondition native_condition;
   mrb_value func;
   mrb_value user_data;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "oooo", &channel, &condition, &func, &user_data);
+  mrb_get_args(mrb, "oioo", &channel, &native_condition, &func, &user_data);
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, channel, GIOChannel_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GIOChannel expected");
     return mrb_nil_value();
   }
-  TODO_type_check_GIOCondition(condition);
   TODO_type_check_int_LPAREN_PTR_RPAREN_LPAREN__GIOChannel_PTR_COMMA_GIOConditionCOMMA_void_PTR_RPAREN(func);
   TODO_type_check_void_PTR(user_data);
 
   /* Unbox parameters */
   struct _GIOChannel * native_channel = (mrb_nil_p(channel) ? NULL : mruby_unbox__GIOChannel(channel));
-
-  GIOCondition native_condition = TODO_mruby_unbox_GIOCondition(condition);
 
   int (*native_func)(struct _GIOChannel *, GIOCondition, void *) = TODO_mruby_unbox_int_LPAREN_PTR_RPAREN_LPAREN__GIOChannel_PTR_COMMA_GIOConditionCOMMA_void_PTR_RPAREN(func);
 
@@ -18170,28 +18089,25 @@ mrb_value
 mrb_GLib_g_io_add_watch_full(mrb_state* mrb, mrb_value self) {
   mrb_value channel;
   int native_priority;
-  mrb_value condition;
+  GIOCondition native_condition;
   mrb_value func;
   mrb_value user_data;
   mrb_value notify;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "oioooo", &channel, &native_priority, &condition, &func, &user_data, &notify);
+  mrb_get_args(mrb, "oiiooo", &channel, &native_priority, &native_condition, &func, &user_data, &notify);
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, channel, GIOChannel_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GIOChannel expected");
     return mrb_nil_value();
   }
-  TODO_type_check_GIOCondition(condition);
   TODO_type_check_int_LPAREN_PTR_RPAREN_LPAREN__GIOChannel_PTR_COMMA_GIOConditionCOMMA_void_PTR_RPAREN(func);
   TODO_type_check_void_PTR(user_data);
   TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_void_PTR_RPAREN(notify);
 
   /* Unbox parameters */
   struct _GIOChannel * native_channel = (mrb_nil_p(channel) ? NULL : mruby_unbox__GIOChannel(channel));
-
-  GIOCondition native_condition = TODO_mruby_unbox_GIOCondition(condition);
 
   int (*native_func)(struct _GIOChannel *, GIOCondition, void *) = TODO_mruby_unbox_int_LPAREN_PTR_RPAREN_LPAREN__GIOChannel_PTR_COMMA_GIOConditionCOMMA_void_PTR_RPAREN(func);
 
@@ -18265,7 +18181,11 @@ mrb_GLib_g_io_channel_error_from_errno(mrb_state* mrb, mrb_value self) {
   GIOChannelError native_return_value = g_io_channel_error_from_errno(native_en);
 
   /* Box the return value */
-  mrb_value return_value = TODO_mruby_box_GIOChannelError(mrb, native_return_value);
+  if (native_return_value > MRB_INT_MAX) {
+    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
+    return mrb_nil_value();
+  }
+  mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
 }
@@ -18326,7 +18246,11 @@ mrb_GLib_g_io_channel_flush(mrb_state* mrb, mrb_value self) {
   GIOStatus native_return_value = g_io_channel_flush(native_channel, &native_error);
 
   /* Box the return value */
-  mrb_value return_value = TODO_mruby_box_GIOStatus(mrb, native_return_value);
+  if (native_return_value > MRB_INT_MAX) {
+    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
+    return mrb_nil_value();
+  }
+  mrb_value return_value = mrb_fixnum_value(native_return_value);
   mrb_ary_push(mrb, results, return_value);
   
   mrb_value error = (native_error == NULL ? mrb_nil_value() : mruby_box__GError(mrb, native_error));
@@ -18364,7 +18288,11 @@ mrb_GLib_g_io_channel_get_buffer_condition(mrb_state* mrb, mrb_value self) {
   GIOCondition native_return_value = g_io_channel_get_buffer_condition(native_channel);
 
   /* Box the return value */
-  mrb_value return_value = TODO_mruby_box_GIOCondition(mrb, native_return_value);
+  if (native_return_value > MRB_INT_MAX) {
+    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
+    return mrb_nil_value();
+  }
+  mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
 }
@@ -18551,7 +18479,11 @@ mrb_GLib_g_io_channel_get_flags(mrb_state* mrb, mrb_value self) {
   GIOFlags native_return_value = g_io_channel_get_flags(native_channel);
 
   /* Box the return value */
-  mrb_value return_value = TODO_mruby_box_GIOFlags(mrb, native_return_value);
+  if (native_return_value > MRB_INT_MAX) {
+    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
+    return mrb_nil_value();
+  }
+  mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
 }
@@ -18711,7 +18643,11 @@ mrb_GLib_g_io_channel_read(mrb_state* mrb, mrb_value self) {
   GIOError native_return_value = g_io_channel_read(native_channel, native_buf, native_count, native_bytes_read);
 
   /* Box the return value */
-  mrb_value return_value = TODO_mruby_box_GIOError(mrb, native_return_value);
+  if (native_return_value > MRB_INT_MAX) {
+    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
+    return mrb_nil_value();
+  }
+  mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   /* WARNING: Assuming that the new string can be deallocated after the function call.
    *          Please verify that this is correct (the function does not save this parameter).
@@ -18776,7 +18712,11 @@ mrb_GLib_g_io_channel_read_chars(mrb_state* mrb, mrb_value self) {
   GIOStatus native_return_value = g_io_channel_read_chars(native_channel, native_buf, native_count, native_bytes_read, &native_error);
 
   /* Box the return value */
-  mrb_value return_value = TODO_mruby_box_GIOStatus(mrb, native_return_value);
+  if (native_return_value > MRB_INT_MAX) {
+    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
+    return mrb_nil_value();
+  }
+  mrb_value return_value = mrb_fixnum_value(native_return_value);
   mrb_ary_push(mrb, results, return_value);
   
   mrb_value error = (native_error == NULL ? mrb_nil_value() : mruby_box__GError(mrb, native_error));
@@ -18839,7 +18779,11 @@ mrb_GLib_g_io_channel_read_line(mrb_state* mrb, mrb_value self) {
   GIOStatus native_return_value = g_io_channel_read_line(native_channel, native_str_return, native_length, native_terminator_pos, &native_error);
 
   /* Box the return value */
-  mrb_value return_value = TODO_mruby_box_GIOStatus(mrb, native_return_value);
+  if (native_return_value > MRB_INT_MAX) {
+    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
+    return mrb_nil_value();
+  }
+  mrb_value return_value = mrb_fixnum_value(native_return_value);
   mrb_ary_push(mrb, results, return_value);
   
   mrb_value error = (native_error == NULL ? mrb_nil_value() : mruby_box__GError(mrb, native_error));
@@ -18892,7 +18836,11 @@ mrb_GLib_g_io_channel_read_line_string(mrb_state* mrb, mrb_value self) {
   GIOStatus native_return_value = g_io_channel_read_line_string(native_channel, native_buffer, native_terminator_pos, &native_error);
 
   /* Box the return value */
-  mrb_value return_value = TODO_mruby_box_GIOStatus(mrb, native_return_value);
+  if (native_return_value > MRB_INT_MAX) {
+    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
+    return mrb_nil_value();
+  }
+  mrb_value return_value = mrb_fixnum_value(native_return_value);
   mrb_ary_push(mrb, results, return_value);
   
   mrb_value error = (native_error == NULL ? mrb_nil_value() : mruby_box__GError(mrb, native_error));
@@ -18942,7 +18890,11 @@ mrb_GLib_g_io_channel_read_to_end(mrb_state* mrb, mrb_value self) {
   GIOStatus native_return_value = g_io_channel_read_to_end(native_channel, native_str_return, native_length, &native_error);
 
   /* Box the return value */
-  mrb_value return_value = TODO_mruby_box_GIOStatus(mrb, native_return_value);
+  if (native_return_value > MRB_INT_MAX) {
+    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
+    return mrb_nil_value();
+  }
+  mrb_value return_value = mrb_fixnum_value(native_return_value);
   mrb_ary_push(mrb, results, return_value);
   
   mrb_value error = (native_error == NULL ? mrb_nil_value() : mruby_box__GError(mrb, native_error));
@@ -18987,7 +18939,11 @@ mrb_GLib_g_io_channel_read_unichar(mrb_state* mrb, mrb_value self) {
   GIOStatus native_return_value = g_io_channel_read_unichar(native_channel, native_thechar, &native_error);
 
   /* Box the return value */
-  mrb_value return_value = TODO_mruby_box_GIOStatus(mrb, native_return_value);
+  if (native_return_value > MRB_INT_MAX) {
+    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
+    return mrb_nil_value();
+  }
+  mrb_value return_value = mrb_fixnum_value(native_return_value);
   mrb_ary_push(mrb, results, return_value);
   
   mrb_value error = (native_error == NULL ? mrb_nil_value() : mruby_box__GError(mrb, native_error));
@@ -19046,28 +19002,29 @@ mrb_value
 mrb_GLib_g_io_channel_seek(mrb_state* mrb, mrb_value self) {
   mrb_value channel;
   long native_offset;
-  mrb_value type;
+  GSeekType native_type;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "oio", &channel, &native_offset, &type);
+  mrb_get_args(mrb, "oii", &channel, &native_offset, &native_type);
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, channel, GIOChannel_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GIOChannel expected");
     return mrb_nil_value();
   }
-  TODO_type_check_GSeekType(type);
 
   /* Unbox parameters */
   struct _GIOChannel * native_channel = (mrb_nil_p(channel) ? NULL : mruby_unbox__GIOChannel(channel));
-
-  GSeekType native_type = TODO_mruby_unbox_GSeekType(type);
 
   /* Invocation */
   GIOError native_return_value = g_io_channel_seek(native_channel, native_offset, native_type);
 
   /* Box the return value */
-  mrb_value return_value = TODO_mruby_box_GIOError(mrb, native_return_value);
+  if (native_return_value > MRB_INT_MAX) {
+    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
+    return mrb_nil_value();
+  }
+  mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
 }
@@ -19089,29 +19046,30 @@ mrb_GLib_g_io_channel_seek_position(mrb_state* mrb, mrb_value self) {
   mrb_value results = mrb_ary_new(mrb);
   mrb_value channel;
   long native_offset;
-  mrb_value type;
+  GSeekType native_type;
   struct GError * native_error = NULL;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "oio", &channel, &native_offset, &type);
+  mrb_get_args(mrb, "oii", &channel, &native_offset, &native_type);
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, channel, GIOChannel_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GIOChannel expected");
     return mrb_nil_value();
   }
-  TODO_type_check_GSeekType(type);
 
   /* Unbox parameters */
   struct _GIOChannel * native_channel = (mrb_nil_p(channel) ? NULL : mruby_unbox__GIOChannel(channel));
-
-  GSeekType native_type = TODO_mruby_unbox_GSeekType(type);
 
   /* Invocation */
   GIOStatus native_return_value = g_io_channel_seek_position(native_channel, native_offset, native_type, &native_error);
 
   /* Box the return value */
-  mrb_value return_value = TODO_mruby_box_GIOStatus(mrb, native_return_value);
+  if (native_return_value > MRB_INT_MAX) {
+    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
+    return mrb_nil_value();
+  }
+  mrb_value return_value = mrb_fixnum_value(native_return_value);
   mrb_ary_push(mrb, results, return_value);
   
   mrb_value error = (native_error == NULL ? mrb_nil_value() : mruby_box__GError(mrb, native_error));
@@ -19255,7 +19213,11 @@ mrb_GLib_g_io_channel_set_encoding(mrb_state* mrb, mrb_value self) {
   GIOStatus native_return_value = g_io_channel_set_encoding(native_channel, native_encoding, &native_error);
 
   /* Box the return value */
-  mrb_value return_value = TODO_mruby_box_GIOStatus(mrb, native_return_value);
+  if (native_return_value > MRB_INT_MAX) {
+    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
+    return mrb_nil_value();
+  }
+  mrb_value return_value = mrb_fixnum_value(native_return_value);
   mrb_ary_push(mrb, results, return_value);
   
   mrb_value error = (native_error == NULL ? mrb_nil_value() : mruby_box__GError(mrb, native_error));
@@ -19278,29 +19240,30 @@ mrb_value
 mrb_GLib_g_io_channel_set_flags(mrb_state* mrb, mrb_value self) {
   mrb_value results = mrb_ary_new(mrb);
   mrb_value channel;
-  mrb_value flags;
+  GIOFlags native_flags;
   struct GError * native_error = NULL;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "oo", &channel, &flags);
+  mrb_get_args(mrb, "oi", &channel, &native_flags);
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, channel, GIOChannel_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GIOChannel expected");
     return mrb_nil_value();
   }
-  TODO_type_check_GIOFlags(flags);
 
   /* Unbox parameters */
   struct _GIOChannel * native_channel = (mrb_nil_p(channel) ? NULL : mruby_unbox__GIOChannel(channel));
-
-  GIOFlags native_flags = TODO_mruby_unbox_GIOFlags(flags);
 
   /* Invocation */
   GIOStatus native_return_value = g_io_channel_set_flags(native_channel, native_flags, &native_error);
 
   /* Box the return value */
-  mrb_value return_value = TODO_mruby_box_GIOStatus(mrb, native_return_value);
+  if (native_return_value > MRB_INT_MAX) {
+    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
+    return mrb_nil_value();
+  }
+  mrb_value return_value = mrb_fixnum_value(native_return_value);
   mrb_ary_push(mrb, results, return_value);
   
   mrb_value error = (native_error == NULL ? mrb_nil_value() : mruby_box__GError(mrb, native_error));
@@ -19378,7 +19341,11 @@ mrb_GLib_g_io_channel_shutdown(mrb_state* mrb, mrb_value self) {
   GIOStatus native_return_value = g_io_channel_shutdown(native_channel, native_flush, &native_err);
 
   /* Box the return value */
-  mrb_value return_value = TODO_mruby_box_GIOStatus(mrb, native_return_value);
+  if (native_return_value > MRB_INT_MAX) {
+    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
+    return mrb_nil_value();
+  }
+  mrb_value return_value = mrb_fixnum_value(native_return_value);
   mrb_ary_push(mrb, results, return_value);
   
   mrb_value err = (native_err == NULL ? mrb_nil_value() : mruby_box__GError(mrb, native_err));
@@ -19522,7 +19489,11 @@ mrb_GLib_g_io_channel_write(mrb_state* mrb, mrb_value self) {
   GIOError native_return_value = g_io_channel_write(native_channel, native_buf, native_count, native_bytes_written);
 
   /* Box the return value */
-  mrb_value return_value = TODO_mruby_box_GIOError(mrb, native_return_value);
+  if (native_return_value > MRB_INT_MAX) {
+    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
+    return mrb_nil_value();
+  }
+  mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
 }
@@ -19568,7 +19539,11 @@ mrb_GLib_g_io_channel_write_chars(mrb_state* mrb, mrb_value self) {
   GIOStatus native_return_value = g_io_channel_write_chars(native_channel, native_buf, native_count, native_bytes_written, &native_error);
 
   /* Box the return value */
-  mrb_value return_value = TODO_mruby_box_GIOStatus(mrb, native_return_value);
+  if (native_return_value > MRB_INT_MAX) {
+    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
+    return mrb_nil_value();
+  }
+  mrb_value return_value = mrb_fixnum_value(native_return_value);
   mrb_ary_push(mrb, results, return_value);
   
   mrb_value error = (native_error == NULL ? mrb_nil_value() : mruby_box__GError(mrb, native_error));
@@ -19610,7 +19585,11 @@ mrb_GLib_g_io_channel_write_unichar(mrb_state* mrb, mrb_value self) {
   GIOStatus native_return_value = g_io_channel_write_unichar(native_channel, native_thechar, &native_error);
 
   /* Box the return value */
-  mrb_value return_value = TODO_mruby_box_GIOStatus(mrb, native_return_value);
+  if (native_return_value > MRB_INT_MAX) {
+    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
+    return mrb_nil_value();
+  }
+  mrb_value return_value = mrb_fixnum_value(native_return_value);
   mrb_ary_push(mrb, results, return_value);
   
   mrb_value error = (native_error == NULL ? mrb_nil_value() : mruby_box__GError(mrb, native_error));
@@ -19632,22 +19611,19 @@ mrb_GLib_g_io_channel_write_unichar(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_io_create_watch(mrb_state* mrb, mrb_value self) {
   mrb_value channel;
-  mrb_value condition;
+  GIOCondition native_condition;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "oo", &channel, &condition);
+  mrb_get_args(mrb, "oi", &channel, &native_condition);
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, channel, GIOChannel_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GIOChannel expected");
     return mrb_nil_value();
   }
-  TODO_type_check_GIOCondition(condition);
 
   /* Unbox parameters */
   struct _GIOChannel * native_channel = (mrb_nil_p(channel) ? NULL : mruby_unbox__GIOChannel(channel));
-
-  GIOCondition native_condition = TODO_mruby_unbox_GIOCondition(condition);
 
   /* Invocation */
   GSource * native_return_value = g_io_create_watch(native_channel, native_condition);
@@ -20605,23 +20581,20 @@ mrb_GLib_g_key_file_load_from_data(mrb_state* mrb, mrb_value self) {
   mrb_value key_file;
   const char * native_data = NULL;
   unsigned long native_length;
-  mrb_value flags;
+  GKeyFileFlags native_flags;
   struct GError * native_error = NULL;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "oz!io", &key_file, &native_data, &native_length, &flags);
+  mrb_get_args(mrb, "oz!ii", &key_file, &native_data, &native_length, &native_flags);
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, key_file, GKeyFile_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GKeyFile expected");
     return mrb_nil_value();
   }
-  TODO_type_check_GKeyFileFlags(flags);
 
   /* Unbox parameters */
   struct _GKeyFile * native_key_file = (mrb_nil_p(key_file) ? NULL : mruby_unbox__GKeyFile(key_file));
-
-  GKeyFileFlags native_flags = TODO_mruby_unbox_GKeyFileFlags(flags);
 
   /* Invocation */
   gboolean native_return_value = g_key_file_load_from_data(native_key_file, native_data, native_length, native_flags, &native_error);
@@ -20658,11 +20631,11 @@ mrb_GLib_g_key_file_load_from_data_dirs(mrb_state* mrb, mrb_value self) {
   mrb_value key_file;
   const char * native_file = NULL;
   mrb_value full_path;
-  mrb_value flags;
+  GKeyFileFlags native_flags;
   struct GError * native_error = NULL;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "oz!oo", &key_file, &native_file, &full_path, &flags);
+  mrb_get_args(mrb, "oz!oi", &key_file, &native_file, &full_path, &native_flags);
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, key_file, GKeyFile_class(mrb))) {
@@ -20670,14 +20643,11 @@ mrb_GLib_g_key_file_load_from_data_dirs(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
   TODO_type_check_char_PTR_PTR(full_path);
-  TODO_type_check_GKeyFileFlags(flags);
 
   /* Unbox parameters */
   struct _GKeyFile * native_key_file = (mrb_nil_p(key_file) ? NULL : mruby_unbox__GKeyFile(key_file));
 
   char ** native_full_path = TODO_mruby_unbox_char_PTR_PTR(full_path);
-
-  GKeyFileFlags native_flags = TODO_mruby_unbox_GKeyFileFlags(flags);
 
   /* Invocation */
   gboolean native_return_value = g_key_file_load_from_data_dirs(native_key_file, native_file, native_full_path, native_flags, &native_error);
@@ -20716,11 +20686,11 @@ mrb_GLib_g_key_file_load_from_dirs(mrb_state* mrb, mrb_value self) {
   const char * native_file = NULL;
   mrb_value search_dirs;
   mrb_value full_path;
-  mrb_value flags;
+  GKeyFileFlags native_flags;
   struct GError * native_error = NULL;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "oz!ooo", &key_file, &native_file, &search_dirs, &full_path, &flags);
+  mrb_get_args(mrb, "oz!ooi", &key_file, &native_file, &search_dirs, &full_path, &native_flags);
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, key_file, GKeyFile_class(mrb))) {
@@ -20729,7 +20699,6 @@ mrb_GLib_g_key_file_load_from_dirs(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check_char_PTR_PTR(search_dirs);
   TODO_type_check_char_PTR_PTR(full_path);
-  TODO_type_check_GKeyFileFlags(flags);
 
   /* Unbox parameters */
   struct _GKeyFile * native_key_file = (mrb_nil_p(key_file) ? NULL : mruby_unbox__GKeyFile(key_file));
@@ -20737,8 +20706,6 @@ mrb_GLib_g_key_file_load_from_dirs(mrb_state* mrb, mrb_value self) {
   const char ** native_search_dirs = TODO_mruby_unbox_char_PTR_PTR(search_dirs);
 
   char ** native_full_path = TODO_mruby_unbox_char_PTR_PTR(full_path);
-
-  GKeyFileFlags native_flags = TODO_mruby_unbox_GKeyFileFlags(flags);
 
   /* Invocation */
   gboolean native_return_value = g_key_file_load_from_dirs(native_key_file, native_file, native_search_dirs, native_full_path, native_flags, &native_error);
@@ -20773,23 +20740,20 @@ mrb_GLib_g_key_file_load_from_file(mrb_state* mrb, mrb_value self) {
   mrb_value results = mrb_ary_new(mrb);
   mrb_value key_file;
   const char * native_file = NULL;
-  mrb_value flags;
+  GKeyFileFlags native_flags;
   struct GError * native_error = NULL;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "oz!o", &key_file, &native_file, &flags);
+  mrb_get_args(mrb, "oz!i", &key_file, &native_file, &native_flags);
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, key_file, GKeyFile_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GKeyFile expected");
     return mrb_nil_value();
   }
-  TODO_type_check_GKeyFileFlags(flags);
 
   /* Unbox parameters */
   struct _GKeyFile * native_key_file = (mrb_nil_p(key_file) ? NULL : mruby_unbox__GKeyFile(key_file));
-
-  GKeyFileFlags native_flags = TODO_mruby_unbox_GKeyFileFlags(flags);
 
   /* Invocation */
   gboolean native_return_value = g_key_file_load_from_file(native_key_file, native_file, native_flags, &native_error);
@@ -23094,17 +23058,11 @@ mrb_GLib_g_locale_to_utf8(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_log(mrb_state* mrb, mrb_value self) {
   const char * native_log_domain = NULL;
-  mrb_value log_level;
+  GLogLevelFlags native_log_level;
   const char * native_format = NULL;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "z!oz!", &native_log_domain, &log_level, &native_format);
-
-  /* Type checking */
-  TODO_type_check_GLogLevelFlags(log_level);
-
-  /* Unbox parameters */
-  GLogLevelFlags native_log_level = TODO_mruby_unbox_GLogLevelFlags(log_level);
+  mrb_get_args(mrb, "z!iz!", &native_log_domain, &native_log_level, &native_format);
 
   /* Invocation */
   g_log(native_log_domain, native_log_level, native_format);
@@ -23128,20 +23086,17 @@ mrb_GLib_g_log(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_log_default_handler(mrb_state* mrb, mrb_value self) {
   const char * native_log_domain = NULL;
-  mrb_value log_level;
+  GLogLevelFlags native_log_level;
   const char * native_message = NULL;
   mrb_value unused_data;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "z!oz!o", &native_log_domain, &log_level, &native_message, &unused_data);
+  mrb_get_args(mrb, "z!iz!o", &native_log_domain, &native_log_level, &native_message, &unused_data);
 
   /* Type checking */
-  TODO_type_check_GLogLevelFlags(log_level);
   TODO_type_check_void_PTR(unused_data);
 
   /* Unbox parameters */
-  GLogLevelFlags native_log_level = TODO_mruby_unbox_GLogLevelFlags(log_level);
-
   void * native_unused_data = TODO_mruby_unbox_void_PTR(unused_data);
 
   /* Invocation */
@@ -23187,22 +23142,20 @@ mrb_GLib_g_log_remove_handler(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_log_set_always_fatal(mrb_state* mrb, mrb_value self) {
-  mrb_value fatal_mask;
+  GLogLevelFlags native_fatal_mask;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "o", &fatal_mask);
-
-  /* Type checking */
-  TODO_type_check_GLogLevelFlags(fatal_mask);
-
-  /* Unbox parameters */
-  GLogLevelFlags native_fatal_mask = TODO_mruby_unbox_GLogLevelFlags(fatal_mask);
+  mrb_get_args(mrb, "i", &native_fatal_mask);
 
   /* Invocation */
   GLogLevelFlags native_return_value = g_log_set_always_fatal(native_fatal_mask);
 
   /* Box the return value */
-  mrb_value return_value = TODO_mruby_box_GLogLevelFlags(mrb, native_return_value);
+  if (native_return_value > MRB_INT_MAX) {
+    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
+    return mrb_nil_value();
+  }
+  mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
 }
@@ -23258,22 +23211,20 @@ mrb_GLib_g_log_set_default_handler(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_log_set_fatal_mask(mrb_state* mrb, mrb_value self) {
   const char * native_log_domain = NULL;
-  mrb_value fatal_mask;
+  GLogLevelFlags native_fatal_mask;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "z!o", &native_log_domain, &fatal_mask);
-
-  /* Type checking */
-  TODO_type_check_GLogLevelFlags(fatal_mask);
-
-  /* Unbox parameters */
-  GLogLevelFlags native_fatal_mask = TODO_mruby_unbox_GLogLevelFlags(fatal_mask);
+  mrb_get_args(mrb, "z!i", &native_log_domain, &native_fatal_mask);
 
   /* Invocation */
   GLogLevelFlags native_return_value = g_log_set_fatal_mask(native_log_domain, native_fatal_mask);
 
   /* Box the return value */
-  mrb_value return_value = TODO_mruby_box_GLogLevelFlags(mrb, native_return_value);
+  if (native_return_value > MRB_INT_MAX) {
+    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
+    return mrb_nil_value();
+  }
+  mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
 }
@@ -23294,21 +23245,18 @@ mrb_GLib_g_log_set_fatal_mask(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_log_set_handler(mrb_state* mrb, mrb_value self) {
   const char * native_log_domain = NULL;
-  mrb_value log_levels;
+  GLogLevelFlags native_log_levels;
   mrb_value log_func;
   mrb_value user_data;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "z!ooo", &native_log_domain, &log_levels, &log_func, &user_data);
+  mrb_get_args(mrb, "z!ioo", &native_log_domain, &native_log_levels, &log_func, &user_data);
 
   /* Type checking */
-  TODO_type_check_GLogLevelFlags(log_levels);
   TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_char_PTR_COMMA_GLogLevelFlagsCOMMA_const_char_PTR_COMMA_void_PTR_RPAREN(log_func);
   TODO_type_check_void_PTR(user_data);
 
   /* Unbox parameters */
-  GLogLevelFlags native_log_levels = TODO_mruby_unbox_GLogLevelFlags(log_levels);
-
   void (*native_log_func)(const char *, GLogLevelFlags, const char *, void *) = TODO_mruby_unbox_void_LPAREN_PTR_RPAREN_LPAREN_char_PTR_COMMA_GLogLevelFlagsCOMMA_const_char_PTR_COMMA_void_PTR_RPAREN(log_func);
 
   void * native_user_data = TODO_mruby_unbox_void_PTR(user_data);
@@ -23343,23 +23291,20 @@ mrb_GLib_g_log_set_handler(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_log_set_handler_full(mrb_state* mrb, mrb_value self) {
   const char * native_log_domain = NULL;
-  mrb_value log_levels;
+  GLogLevelFlags native_log_levels;
   mrb_value log_func;
   mrb_value user_data;
   mrb_value destroy;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "z!oooo", &native_log_domain, &log_levels, &log_func, &user_data, &destroy);
+  mrb_get_args(mrb, "z!iooo", &native_log_domain, &native_log_levels, &log_func, &user_data, &destroy);
 
   /* Type checking */
-  TODO_type_check_GLogLevelFlags(log_levels);
   TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_char_PTR_COMMA_GLogLevelFlagsCOMMA_const_char_PTR_COMMA_void_PTR_RPAREN(log_func);
   TODO_type_check_void_PTR(user_data);
   TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_void_PTR_RPAREN(destroy);
 
   /* Unbox parameters */
-  GLogLevelFlags native_log_levels = TODO_mruby_unbox_GLogLevelFlags(log_levels);
-
   void (*native_log_func)(const char *, GLogLevelFlags, const char *, void *) = TODO_mruby_unbox_void_LPAREN_PTR_RPAREN_LPAREN_char_PTR_COMMA_GLogLevelFlagsCOMMA_const_char_PTR_COMMA_void_PTR_RPAREN(log_func);
 
   void * native_user_data = TODO_mruby_unbox_void_PTR(user_data);
@@ -23395,18 +23340,12 @@ mrb_GLib_g_log_set_handler_full(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_logv(mrb_state* mrb, mrb_value self) {
   const char * native_log_domain = NULL;
-  mrb_value log_level;
+  GLogLevelFlags native_log_level;
   const char * native_format = NULL;
   int native_args;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "z!oz!i", &native_log_domain, &log_level, &native_format, &native_args);
-
-  /* Type checking */
-  TODO_type_check_GLogLevelFlags(log_level);
-
-  /* Unbox parameters */
-  GLogLevelFlags native_log_level = TODO_mruby_unbox_GLogLevelFlags(log_level);
+  mrb_get_args(mrb, "z!iz!i", &native_log_domain, &native_log_level, &native_format, &native_args);
 
   /* Invocation */
   g_logv(native_log_domain, native_log_level, native_format, native_args);
@@ -25167,23 +25106,20 @@ mrb_GLib_g_markup_collect_attributes(mrb_state* mrb, mrb_value self) {
   mrb_value attribute_names;
   mrb_value attribute_values;
   struct GError * native_error = NULL;
-  mrb_value first_type;
+  GMarkupCollectType native_first_type;
   const char * native_first_attr = NULL;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "z!oooz!", &native_element_name, &attribute_names, &attribute_values, &first_type, &native_first_attr);
+  mrb_get_args(mrb, "z!ooiz!", &native_element_name, &attribute_names, &attribute_values, &native_first_type, &native_first_attr);
 
   /* Type checking */
   TODO_type_check_char_PTR_PTR(attribute_names);
   TODO_type_check_char_PTR_PTR(attribute_values);
-  TODO_type_check_GMarkupCollectType(first_type);
 
   /* Unbox parameters */
   const char ** native_attribute_names = TODO_mruby_unbox_char_PTR_PTR(attribute_names);
 
   const char ** native_attribute_values = TODO_mruby_unbox_char_PTR_PTR(attribute_values);
-
-  GMarkupCollectType native_first_type = TODO_mruby_unbox_GMarkupCollectType(first_type);
 
   /* Invocation */
   gboolean native_return_value = g_markup_collect_attributes(native_element_name, native_attribute_names, native_attribute_values, &native_error, native_first_type, native_first_attr);
@@ -25492,26 +25428,23 @@ mrb_GLib_g_markup_parse_context_get_user_data(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_markup_parse_context_new(mrb_state* mrb, mrb_value self) {
   mrb_value parser;
-  mrb_value flags;
+  GMarkupParseFlags native_flags;
   mrb_value user_data;
   mrb_value user_data_dnotify;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "oooo", &parser, &flags, &user_data, &user_data_dnotify);
+  mrb_get_args(mrb, "oioo", &parser, &native_flags, &user_data, &user_data_dnotify);
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, parser, GMarkupParser_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GMarkupParser expected");
     return mrb_nil_value();
   }
-  TODO_type_check_GMarkupParseFlags(flags);
   TODO_type_check_void_PTR(user_data);
   TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_void_PTR_RPAREN(user_data_dnotify);
 
   /* Unbox parameters */
   const struct _GMarkupParser * native_parser = (mrb_nil_p(parser) ? NULL : mruby_unbox__GMarkupParser(parser));
-
-  GMarkupParseFlags native_flags = TODO_mruby_unbox_GMarkupParseFlags(flags);
 
   void * native_user_data = TODO_mruby_unbox_void_PTR(user_data);
 
@@ -27023,26 +26956,23 @@ mrb_GLib_g_node_child_position(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_node_children_foreach(mrb_state* mrb, mrb_value self) {
   mrb_value node;
-  mrb_value flags;
+  GTraverseFlags native_flags;
   mrb_value func;
   mrb_value data;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "oooo", &node, &flags, &func, &data);
+  mrb_get_args(mrb, "oioo", &node, &native_flags, &func, &data);
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, node, GNode_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GNode expected");
     return mrb_nil_value();
   }
-  TODO_type_check_GTraverseFlags(flags);
   TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN__GNode_PTR_COMMA_void_PTR_RPAREN(func);
   TODO_type_check_void_PTR(data);
 
   /* Unbox parameters */
   struct _GNode * native_node = (mrb_nil_p(node) ? NULL : mruby_unbox__GNode(node));
-
-  GTraverseFlags native_flags = TODO_mruby_unbox_GTraverseFlags(flags);
 
   void (*native_func)(struct _GNode *, void *) = TODO_mruby_unbox_void_LPAREN_PTR_RPAREN_LPAREN__GNode_PTR_COMMA_void_PTR_RPAREN(func);
 
@@ -27221,28 +27151,22 @@ mrb_GLib_g_node_destroy(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_node_find(mrb_state* mrb, mrb_value self) {
   mrb_value root;
-  mrb_value order;
-  mrb_value flags;
+  GTraverseType native_order;
+  GTraverseFlags native_flags;
   mrb_value data;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "oooo", &root, &order, &flags, &data);
+  mrb_get_args(mrb, "oiio", &root, &native_order, &native_flags, &data);
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, root, GNode_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GNode expected");
     return mrb_nil_value();
   }
-  TODO_type_check_GTraverseType(order);
-  TODO_type_check_GTraverseFlags(flags);
   TODO_type_check_void_PTR(data);
 
   /* Unbox parameters */
   struct _GNode * native_root = (mrb_nil_p(root) ? NULL : mruby_unbox__GNode(root));
-
-  GTraverseType native_order = TODO_mruby_unbox_GTraverseType(order);
-
-  GTraverseFlags native_flags = TODO_mruby_unbox_GTraverseFlags(flags);
 
   void * native_data = TODO_mruby_unbox_void_PTR(data);
 
@@ -27270,24 +27194,21 @@ mrb_GLib_g_node_find(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_node_find_child(mrb_state* mrb, mrb_value self) {
   mrb_value node;
-  mrb_value flags;
+  GTraverseFlags native_flags;
   mrb_value data;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "ooo", &node, &flags, &data);
+  mrb_get_args(mrb, "oio", &node, &native_flags, &data);
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, node, GNode_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GNode expected");
     return mrb_nil_value();
   }
-  TODO_type_check_GTraverseFlags(flags);
   TODO_type_check_void_PTR(data);
 
   /* Unbox parameters */
   struct _GNode * native_node = (mrb_nil_p(node) ? NULL : mruby_unbox__GNode(node));
-
-  GTraverseFlags native_flags = TODO_mruby_unbox_GTraverseFlags(flags);
 
   void * native_data = TODO_mruby_unbox_void_PTR(data);
 
@@ -27726,22 +27647,19 @@ mrb_GLib_g_node_n_children(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_node_n_nodes(mrb_state* mrb, mrb_value self) {
   mrb_value root;
-  mrb_value flags;
+  GTraverseFlags native_flags;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "oo", &root, &flags);
+  mrb_get_args(mrb, "oi", &root, &native_flags);
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, root, GNode_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GNode expected");
     return mrb_nil_value();
   }
-  TODO_type_check_GTraverseFlags(flags);
 
   /* Unbox parameters */
   struct _GNode * native_root = (mrb_nil_p(root) ? NULL : mruby_unbox__GNode(root));
-
-  GTraverseFlags native_flags = TODO_mruby_unbox_GTraverseFlags(flags);
 
   /* Invocation */
   guint native_return_value = g_node_n_nodes(native_root, native_flags);
@@ -27918,31 +27836,25 @@ mrb_GLib_g_node_reverse_children(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_node_traverse(mrb_state* mrb, mrb_value self) {
   mrb_value root;
-  mrb_value order;
-  mrb_value flags;
+  GTraverseType native_order;
+  GTraverseFlags native_flags;
   int native_max_depth;
   mrb_value func;
   mrb_value data;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "oooioo", &root, &order, &flags, &native_max_depth, &func, &data);
+  mrb_get_args(mrb, "oiiioo", &root, &native_order, &native_flags, &native_max_depth, &func, &data);
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, root, GNode_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GNode expected");
     return mrb_nil_value();
   }
-  TODO_type_check_GTraverseType(order);
-  TODO_type_check_GTraverseFlags(flags);
   TODO_type_check_int_LPAREN_PTR_RPAREN_LPAREN__GNode_PTR_COMMA_void_PTR_RPAREN(func);
   TODO_type_check_void_PTR(data);
 
   /* Unbox parameters */
   struct _GNode * native_root = (mrb_nil_p(root) ? NULL : mruby_unbox__GNode(root));
-
-  GTraverseType native_order = TODO_mruby_unbox_GTraverseType(order);
-
-  GTraverseFlags native_flags = TODO_mruby_unbox_GTraverseFlags(flags);
 
   int (*native_func)(struct _GNode *, void *) = TODO_mruby_unbox_int_LPAREN_PTR_RPAREN_LPAREN__GNode_PTR_COMMA_void_PTR_RPAREN(func);
 
@@ -33488,7 +33400,11 @@ mrb_GLib_g_regex_get_compile_flags(mrb_state* mrb, mrb_value self) {
   GRegexCompileFlags native_return_value = g_regex_get_compile_flags(native_regex);
 
   /* Box the return value */
-  mrb_value return_value = TODO_mruby_box_GRegexCompileFlags(mrb, native_return_value);
+  if (native_return_value > MRB_INT_MAX) {
+    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
+    return mrb_nil_value();
+  }
+  mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
 }
@@ -33562,7 +33478,11 @@ mrb_GLib_g_regex_get_match_flags(mrb_state* mrb, mrb_value self) {
   GRegexMatchFlags native_return_value = g_regex_get_match_flags(native_regex);
 
   /* Box the return value */
-  mrb_value return_value = TODO_mruby_box_GRegexMatchFlags(mrb, native_return_value);
+  if (native_return_value > MRB_INT_MAX) {
+    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
+    return mrb_nil_value();
+  }
+  mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
 }
@@ -33738,24 +33658,21 @@ mrb_value
 mrb_GLib_g_regex_match(mrb_state* mrb, mrb_value self) {
   mrb_value regex;
   const char * native_string = NULL;
-  mrb_value match_options;
+  GRegexMatchFlags native_match_options;
   mrb_value match_info;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "oz!oo", &regex, &native_string, &match_options, &match_info);
+  mrb_get_args(mrb, "oz!io", &regex, &native_string, &native_match_options, &match_info);
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, regex, GRegex_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GRegex expected");
     return mrb_nil_value();
   }
-  TODO_type_check_GRegexMatchFlags(match_options);
   TODO_type_check__GMatchInfo_PTR_PTR(match_info);
 
   /* Unbox parameters */
   const struct _GRegex * native_regex = (mrb_nil_p(regex) ? NULL : mruby_unbox__GRegex(regex));
-
-  GRegexMatchFlags native_match_options = TODO_mruby_unbox_GRegexMatchFlags(match_options);
 
   struct _GMatchInfo ** native_match_info = TODO_mruby_unbox__GMatchInfo_PTR_PTR(match_info);
 
@@ -33789,24 +33706,21 @@ mrb_value
 mrb_GLib_g_regex_match_all(mrb_state* mrb, mrb_value self) {
   mrb_value regex;
   const char * native_string = NULL;
-  mrb_value match_options;
+  GRegexMatchFlags native_match_options;
   mrb_value match_info;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "oz!oo", &regex, &native_string, &match_options, &match_info);
+  mrb_get_args(mrb, "oz!io", &regex, &native_string, &native_match_options, &match_info);
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, regex, GRegex_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GRegex expected");
     return mrb_nil_value();
   }
-  TODO_type_check_GRegexMatchFlags(match_options);
   TODO_type_check__GMatchInfo_PTR_PTR(match_info);
 
   /* Unbox parameters */
   const struct _GRegex * native_regex = (mrb_nil_p(regex) ? NULL : mruby_unbox__GRegex(regex));
-
-  GRegexMatchFlags native_match_options = TODO_mruby_unbox_GRegexMatchFlags(match_options);
 
   struct _GMatchInfo ** native_match_info = TODO_mruby_unbox__GMatchInfo_PTR_PTR(match_info);
 
@@ -33845,25 +33759,22 @@ mrb_GLib_g_regex_match_all_full(mrb_state* mrb, mrb_value self) {
   const char * native_string = NULL;
   long native_string_len;
   int native_start_position;
-  mrb_value match_options;
+  GRegexMatchFlags native_match_options;
   mrb_value match_info;
   struct GError * native_error = NULL;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "oz!iioo", &regex, &native_string, &native_string_len, &native_start_position, &match_options, &match_info);
+  mrb_get_args(mrb, "oz!iiio", &regex, &native_string, &native_string_len, &native_start_position, &native_match_options, &match_info);
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, regex, GRegex_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GRegex expected");
     return mrb_nil_value();
   }
-  TODO_type_check_GRegexMatchFlags(match_options);
   TODO_type_check__GMatchInfo_PTR_PTR(match_info);
 
   /* Unbox parameters */
   const struct _GRegex * native_regex = (mrb_nil_p(regex) ? NULL : mruby_unbox__GRegex(regex));
-
-  GRegexMatchFlags native_match_options = TODO_mruby_unbox_GRegexMatchFlags(match_options);
 
   struct _GMatchInfo ** native_match_info = TODO_mruby_unbox__GMatchInfo_PTR_PTR(match_info);
 
@@ -33905,25 +33816,22 @@ mrb_GLib_g_regex_match_full(mrb_state* mrb, mrb_value self) {
   const char * native_string = NULL;
   long native_string_len;
   int native_start_position;
-  mrb_value match_options;
+  GRegexMatchFlags native_match_options;
   mrb_value match_info;
   struct GError * native_error = NULL;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "oz!iioo", &regex, &native_string, &native_string_len, &native_start_position, &match_options, &match_info);
+  mrb_get_args(mrb, "oz!iiio", &regex, &native_string, &native_string_len, &native_start_position, &native_match_options, &match_info);
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, regex, GRegex_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GRegex expected");
     return mrb_nil_value();
   }
-  TODO_type_check_GRegexMatchFlags(match_options);
   TODO_type_check__GMatchInfo_PTR_PTR(match_info);
 
   /* Unbox parameters */
   const struct _GRegex * native_regex = (mrb_nil_p(regex) ? NULL : mruby_unbox__GRegex(regex));
-
-  GRegexMatchFlags native_match_options = TODO_mruby_unbox_GRegexMatchFlags(match_options);
 
   struct _GMatchInfo ** native_match_info = TODO_mruby_unbox__GMatchInfo_PTR_PTR(match_info);
 
@@ -33960,20 +33868,11 @@ mrb_value
 mrb_GLib_g_regex_match_simple(mrb_state* mrb, mrb_value self) {
   const char * native_pattern = NULL;
   const char * native_string = NULL;
-  mrb_value compile_options;
-  mrb_value match_options;
+  GRegexCompileFlags native_compile_options;
+  GRegexMatchFlags native_match_options;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "z!z!oo", &native_pattern, &native_string, &compile_options, &match_options);
-
-  /* Type checking */
-  TODO_type_check_GRegexCompileFlags(compile_options);
-  TODO_type_check_GRegexMatchFlags(match_options);
-
-  /* Unbox parameters */
-  GRegexCompileFlags native_compile_options = TODO_mruby_unbox_GRegexCompileFlags(compile_options);
-
-  GRegexMatchFlags native_match_options = TODO_mruby_unbox_GRegexMatchFlags(match_options);
+  mrb_get_args(mrb, "z!z!ii", &native_pattern, &native_string, &native_compile_options, &native_match_options);
 
   /* Invocation */
   gboolean native_return_value = g_regex_match_simple(native_pattern, native_string, native_compile_options, native_match_options);
@@ -34004,21 +33903,12 @@ mrb_value
 mrb_GLib_g_regex_new(mrb_state* mrb, mrb_value self) {
   mrb_value results = mrb_ary_new(mrb);
   const char * native_pattern = NULL;
-  mrb_value compile_options;
-  mrb_value match_options;
+  GRegexCompileFlags native_compile_options;
+  GRegexMatchFlags native_match_options;
   struct GError * native_error = NULL;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "z!oo", &native_pattern, &compile_options, &match_options);
-
-  /* Type checking */
-  TODO_type_check_GRegexCompileFlags(compile_options);
-  TODO_type_check_GRegexMatchFlags(match_options);
-
-  /* Unbox parameters */
-  GRegexCompileFlags native_compile_options = TODO_mruby_unbox_GRegexCompileFlags(compile_options);
-
-  GRegexMatchFlags native_match_options = TODO_mruby_unbox_GRegexMatchFlags(match_options);
+  mrb_get_args(mrb, "z!ii", &native_pattern, &native_compile_options, &native_match_options);
 
   /* Invocation */
   GRegex * native_return_value = g_regex_new(native_pattern, native_compile_options, native_match_options, &native_error);
@@ -34090,23 +33980,20 @@ mrb_GLib_g_regex_replace(mrb_state* mrb, mrb_value self) {
   long native_string_len;
   int native_start_position;
   const char * native_replacement = NULL;
-  mrb_value match_options;
+  GRegexMatchFlags native_match_options;
   struct GError * native_error = NULL;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "oz!iiz!o", &regex, &native_string, &native_string_len, &native_start_position, &native_replacement, &match_options);
+  mrb_get_args(mrb, "oz!iiz!i", &regex, &native_string, &native_string_len, &native_start_position, &native_replacement, &native_match_options);
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, regex, GRegex_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GRegex expected");
     return mrb_nil_value();
   }
-  TODO_type_check_GRegexMatchFlags(match_options);
 
   /* Unbox parameters */
   const struct _GRegex * native_regex = (mrb_nil_p(regex) ? NULL : mruby_unbox__GRegex(regex));
-
-  GRegexMatchFlags native_match_options = TODO_mruby_unbox_GRegexMatchFlags(match_options);
 
   /* Invocation */
   gchar * native_return_value = g_regex_replace(native_regex, native_string, native_string_len, native_start_position, native_replacement, native_match_options, &native_error);
@@ -34143,27 +34030,24 @@ mrb_GLib_g_regex_replace_eval(mrb_state* mrb, mrb_value self) {
   const char * native_string = NULL;
   long native_string_len;
   int native_start_position;
-  mrb_value match_options;
+  GRegexMatchFlags native_match_options;
   mrb_value eval;
   mrb_value user_data;
   struct GError * native_error = NULL;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "oz!iiooo", &regex, &native_string, &native_string_len, &native_start_position, &match_options, &eval, &user_data);
+  mrb_get_args(mrb, "oz!iiioo", &regex, &native_string, &native_string_len, &native_start_position, &native_match_options, &eval, &user_data);
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, regex, GRegex_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GRegex expected");
     return mrb_nil_value();
   }
-  TODO_type_check_GRegexMatchFlags(match_options);
   TODO_type_check_int_LPAREN_PTR_RPAREN_LPAREN__GMatchInfo_PTR_COMMA_struct__GString_PTR_COMMA_void_PTR_RPAREN(eval);
   TODO_type_check_void_PTR(user_data);
 
   /* Unbox parameters */
   const struct _GRegex * native_regex = (mrb_nil_p(regex) ? NULL : mruby_unbox__GRegex(regex));
-
-  GRegexMatchFlags native_match_options = TODO_mruby_unbox_GRegexMatchFlags(match_options);
 
   int (*native_eval)(const struct _GMatchInfo *, struct _GString *, void *) = TODO_mruby_unbox_int_LPAREN_PTR_RPAREN_LPAREN__GMatchInfo_PTR_COMMA_struct__GString_PTR_COMMA_void_PTR_RPAREN(eval);
 
@@ -34204,23 +34088,20 @@ mrb_GLib_g_regex_replace_literal(mrb_state* mrb, mrb_value self) {
   long native_string_len;
   int native_start_position;
   const char * native_replacement = NULL;
-  mrb_value match_options;
+  GRegexMatchFlags native_match_options;
   struct GError * native_error = NULL;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "oz!iiz!o", &regex, &native_string, &native_string_len, &native_start_position, &native_replacement, &match_options);
+  mrb_get_args(mrb, "oz!iiz!i", &regex, &native_string, &native_string_len, &native_start_position, &native_replacement, &native_match_options);
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, regex, GRegex_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GRegex expected");
     return mrb_nil_value();
   }
-  TODO_type_check_GRegexMatchFlags(match_options);
 
   /* Unbox parameters */
   const struct _GRegex * native_regex = (mrb_nil_p(regex) ? NULL : mruby_unbox__GRegex(regex));
-
-  GRegexMatchFlags native_match_options = TODO_mruby_unbox_GRegexMatchFlags(match_options);
 
   /* Invocation */
   gchar * native_return_value = g_regex_replace_literal(native_regex, native_string, native_string_len, native_start_position, native_replacement, native_match_options, &native_error);
@@ -34250,22 +34131,19 @@ mrb_value
 mrb_GLib_g_regex_split(mrb_state* mrb, mrb_value self) {
   mrb_value regex;
   const char * native_string = NULL;
-  mrb_value match_options;
+  GRegexMatchFlags native_match_options;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "oz!o", &regex, &native_string, &match_options);
+  mrb_get_args(mrb, "oz!i", &regex, &native_string, &native_match_options);
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, regex, GRegex_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GRegex expected");
     return mrb_nil_value();
   }
-  TODO_type_check_GRegexMatchFlags(match_options);
 
   /* Unbox parameters */
   const struct _GRegex * native_regex = (mrb_nil_p(regex) ? NULL : mruby_unbox__GRegex(regex));
-
-  GRegexMatchFlags native_match_options = TODO_mruby_unbox_GRegexMatchFlags(match_options);
 
   /* Invocation */
   gchar ** native_return_value = g_regex_split(native_regex, native_string, native_match_options);
@@ -34298,24 +34176,21 @@ mrb_GLib_g_regex_split_full(mrb_state* mrb, mrb_value self) {
   const char * native_string = NULL;
   long native_string_len;
   int native_start_position;
-  mrb_value match_options;
+  GRegexMatchFlags native_match_options;
   int native_max_tokens;
   struct GError * native_error = NULL;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "oz!iioi", &regex, &native_string, &native_string_len, &native_start_position, &match_options, &native_max_tokens);
+  mrb_get_args(mrb, "oz!iiii", &regex, &native_string, &native_string_len, &native_start_position, &native_match_options, &native_max_tokens);
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, regex, GRegex_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GRegex expected");
     return mrb_nil_value();
   }
-  TODO_type_check_GRegexMatchFlags(match_options);
 
   /* Unbox parameters */
   const struct _GRegex * native_regex = (mrb_nil_p(regex) ? NULL : mruby_unbox__GRegex(regex));
-
-  GRegexMatchFlags native_match_options = TODO_mruby_unbox_GRegexMatchFlags(match_options);
 
   /* Invocation */
   gchar ** native_return_value = g_regex_split_full(native_regex, native_string, native_string_len, native_start_position, native_match_options, native_max_tokens, &native_error);
@@ -34346,20 +34221,11 @@ mrb_value
 mrb_GLib_g_regex_split_simple(mrb_state* mrb, mrb_value self) {
   const char * native_pattern = NULL;
   const char * native_string = NULL;
-  mrb_value compile_options;
-  mrb_value match_options;
+  GRegexCompileFlags native_compile_options;
+  GRegexMatchFlags native_match_options;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "z!z!oo", &native_pattern, &native_string, &compile_options, &match_options);
-
-  /* Type checking */
-  TODO_type_check_GRegexCompileFlags(compile_options);
-  TODO_type_check_GRegexMatchFlags(match_options);
-
-  /* Unbox parameters */
-  GRegexCompileFlags native_compile_options = TODO_mruby_unbox_GRegexCompileFlags(compile_options);
-
-  GRegexMatchFlags native_match_options = TODO_mruby_unbox_GRegexMatchFlags(match_options);
+  mrb_get_args(mrb, "z!z!ii", &native_pattern, &native_string, &native_compile_options, &native_match_options);
 
   /* Invocation */
   gchar ** native_return_value = g_regex_split_simple(native_pattern, native_string, native_compile_options, native_match_options);
@@ -34854,7 +34720,11 @@ mrb_GLib_g_scanner_cur_token(mrb_state* mrb, mrb_value self) {
   GTokenType native_return_value = g_scanner_cur_token(native_scanner);
 
   /* Box the return value */
-  mrb_value return_value = TODO_mruby_box_GTokenType(mrb, native_return_value);
+  if (native_return_value > MRB_INT_MAX) {
+    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
+    return mrb_nil_value();
+  }
+  mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
 }
@@ -35029,7 +34899,11 @@ mrb_GLib_g_scanner_get_next_token(mrb_state* mrb, mrb_value self) {
   GTokenType native_return_value = g_scanner_get_next_token(native_scanner);
 
   /* Box the return value */
-  mrb_value return_value = TODO_mruby_box_GTokenType(mrb, native_return_value);
+  if (native_return_value > MRB_INT_MAX) {
+    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
+    return mrb_nil_value();
+  }
+  mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
 }
@@ -35206,7 +35080,11 @@ mrb_GLib_g_scanner_peek_next_token(mrb_state* mrb, mrb_value self) {
   GTokenType native_return_value = g_scanner_peek_next_token(native_scanner);
 
   /* Box the return value */
-  mrb_value return_value = TODO_mruby_box_GTokenType(mrb, native_return_value);
+  if (native_return_value > MRB_INT_MAX) {
+    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
+    return mrb_nil_value();
+  }
+  mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
 }
@@ -35463,7 +35341,7 @@ mrb_GLib_g_scanner_sync_file_offset(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_scanner_unexp_token(mrb_state* mrb, mrb_value self) {
   mrb_value scanner;
-  mrb_value expected_token;
+  GTokenType native_expected_token;
   const char * native_identifier_spec = NULL;
   const char * native_symbol_spec = NULL;
   const char * native_symbol_name = NULL;
@@ -35471,19 +35349,16 @@ mrb_GLib_g_scanner_unexp_token(mrb_state* mrb, mrb_value self) {
   int native_is_error;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "ooz!z!z!z!i", &scanner, &expected_token, &native_identifier_spec, &native_symbol_spec, &native_symbol_name, &native_message, &native_is_error);
+  mrb_get_args(mrb, "oiz!z!z!z!i", &scanner, &native_expected_token, &native_identifier_spec, &native_symbol_spec, &native_symbol_name, &native_message, &native_is_error);
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, scanner, GScanner_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GScanner expected");
     return mrb_nil_value();
   }
-  TODO_type_check_GTokenType(expected_token);
 
   /* Unbox parameters */
   struct _GScanner * native_scanner = (mrb_nil_p(scanner) ? NULL : mruby_unbox__GScanner(scanner));
-
-  GTokenType native_expected_token = TODO_mruby_unbox_GTokenType(expected_token);
 
   /* Invocation */
   g_scanner_unexp_token(native_scanner, native_expected_token, native_identifier_spec, native_symbol_spec, native_symbol_name, native_message, native_is_error);
@@ -37568,16 +37443,10 @@ mrb_GLib_g_slice_free_chain_with_offset(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_slice_get_config(mrb_state* mrb, mrb_value self) {
-  mrb_value ckey;
+  GSliceConfig native_ckey;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "o", &ckey);
-
-  /* Type checking */
-  TODO_type_check_GSliceConfig(ckey);
-
-  /* Unbox parameters */
-  GSliceConfig native_ckey = TODO_mruby_unbox_GSliceConfig(ckey);
+  mrb_get_args(mrb, "i", &native_ckey);
 
   /* Invocation */
   gint64 native_return_value = g_slice_get_config(native_ckey);
@@ -37606,20 +37475,17 @@ mrb_GLib_g_slice_get_config(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_slice_get_config_state(mrb_state* mrb, mrb_value self) {
-  mrb_value ckey;
+  GSliceConfig native_ckey;
   long native_address;
   mrb_value n_values;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "oio", &ckey, &native_address, &n_values);
+  mrb_get_args(mrb, "iio", &native_ckey, &native_address, &n_values);
 
   /* Type checking */
-  TODO_type_check_GSliceConfig(ckey);
   TODO_type_check_unsigned_int_PTR(n_values);
 
   /* Unbox parameters */
-  GSliceConfig native_ckey = TODO_mruby_unbox_GSliceConfig(ckey);
-
   unsigned int * native_n_values = TODO_mruby_unbox_unsigned_int_PTR(n_values);
 
   /* Invocation */
@@ -37644,17 +37510,11 @@ mrb_GLib_g_slice_get_config_state(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_slice_set_config(mrb_state* mrb, mrb_value self) {
-  mrb_value ckey;
+  GSliceConfig native_ckey;
   long native_value;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "oi", &ckey, &native_value);
-
-  /* Type checking */
-  TODO_type_check_GSliceConfig(ckey);
-
-  /* Unbox parameters */
-  GSliceConfig native_ckey = TODO_mruby_unbox_GSliceConfig(ckey);
+  mrb_get_args(mrb, "ii", &native_ckey, &native_value);
 
   /* Invocation */
   g_slice_set_config(native_ckey, native_value);
@@ -38975,22 +38835,19 @@ mrb_value
 mrb_GLib_g_source_add_unix_fd(mrb_state* mrb, mrb_value self) {
   mrb_value source;
   int native_fd;
-  mrb_value events;
+  GIOCondition native_events;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "oio", &source, &native_fd, &events);
+  mrb_get_args(mrb, "oii", &source, &native_fd, &native_events);
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, source, GSource_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GSource expected");
     return mrb_nil_value();
   }
-  TODO_type_check_GIOCondition(events);
 
   /* Unbox parameters */
   struct _GSource * native_source = (mrb_nil_p(source) ? NULL : mruby_unbox__GSource(source));
-
-  GIOCondition native_events = TODO_mruby_unbox_GIOCondition(events);
 
   /* Invocation */
   gpointer native_return_value = g_source_add_unix_fd(native_source, native_fd, native_events);
@@ -39440,10 +39297,10 @@ mrb_value
 mrb_GLib_g_source_modify_unix_fd(mrb_state* mrb, mrb_value self) {
   mrb_value source;
   mrb_value tag;
-  mrb_value new_events;
+  GIOCondition native_new_events;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "ooo", &source, &tag, &new_events);
+  mrb_get_args(mrb, "ooi", &source, &tag, &native_new_events);
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, source, GSource_class(mrb))) {
@@ -39451,14 +39308,11 @@ mrb_GLib_g_source_modify_unix_fd(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
   TODO_type_check_void_PTR(tag);
-  TODO_type_check_GIOCondition(new_events);
 
   /* Unbox parameters */
   struct _GSource * native_source = (mrb_nil_p(source) ? NULL : mruby_unbox__GSource(source));
 
   void * native_tag = TODO_mruby_unbox_void_PTR(tag);
-
-  GIOCondition native_new_events = TODO_mruby_unbox_GIOCondition(new_events);
 
   /* Invocation */
   g_source_modify_unix_fd(native_source, native_tag, native_new_events);
@@ -39538,7 +39392,11 @@ mrb_GLib_g_source_query_unix_fd(mrb_state* mrb, mrb_value self) {
   GIOCondition native_return_value = g_source_query_unix_fd(native_source, native_tag);
 
   /* Box the return value */
-  mrb_value return_value = TODO_mruby_box_GIOCondition(mrb, native_return_value);
+  if (native_return_value > MRB_INT_MAX) {
+    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
+    return mrb_nil_value();
+  }
+  mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
 }
@@ -40182,19 +40040,18 @@ mrb_GLib_g_spawn_async(mrb_state* mrb, mrb_value self) {
   const char * native_working_directory = NULL;
   mrb_value argv;
   mrb_value envp;
-  mrb_value flags;
+  GSpawnFlags native_flags;
   mrb_value child_setup;
   mrb_value user_data;
   mrb_value child_pid;
   struct GError * native_error = NULL;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "z!oooooo", &native_working_directory, &argv, &envp, &flags, &child_setup, &user_data, &child_pid);
+  mrb_get_args(mrb, "z!ooiooo", &native_working_directory, &argv, &envp, &native_flags, &child_setup, &user_data, &child_pid);
 
   /* Type checking */
   TODO_type_check_char_PTR_PTR(argv);
   TODO_type_check_char_PTR_PTR(envp);
-  TODO_type_check_GSpawnFlags(flags);
   TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_void_PTR_RPAREN(child_setup);
   TODO_type_check_void_PTR(user_data);
   TODO_type_check_int_PTR(child_pid);
@@ -40203,8 +40060,6 @@ mrb_GLib_g_spawn_async(mrb_state* mrb, mrb_value self) {
   char ** native_argv = TODO_mruby_unbox_char_PTR_PTR(argv);
 
   char ** native_envp = TODO_mruby_unbox_char_PTR_PTR(envp);
-
-  GSpawnFlags native_flags = TODO_mruby_unbox_GSpawnFlags(flags);
 
   void (*native_child_setup)(void *) = TODO_mruby_unbox_void_LPAREN_PTR_RPAREN_LPAREN_void_PTR_RPAREN(child_setup);
 
@@ -40253,7 +40108,7 @@ mrb_GLib_g_spawn_async_with_pipes(mrb_state* mrb, mrb_value self) {
   const char * native_working_directory = NULL;
   mrb_value argv;
   mrb_value envp;
-  mrb_value flags;
+  GSpawnFlags native_flags;
   mrb_value child_setup;
   mrb_value user_data;
   mrb_value child_pid;
@@ -40263,12 +40118,11 @@ mrb_GLib_g_spawn_async_with_pipes(mrb_state* mrb, mrb_value self) {
   struct GError * native_error = NULL;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "z!ooooooooo", &native_working_directory, &argv, &envp, &flags, &child_setup, &user_data, &child_pid, &standard_input, &standard_output, &standard_error);
+  mrb_get_args(mrb, "z!ooioooooo", &native_working_directory, &argv, &envp, &native_flags, &child_setup, &user_data, &child_pid, &standard_input, &standard_output, &standard_error);
 
   /* Type checking */
   TODO_type_check_char_PTR_PTR(argv);
   TODO_type_check_char_PTR_PTR(envp);
-  TODO_type_check_GSpawnFlags(flags);
   TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_void_PTR_RPAREN(child_setup);
   TODO_type_check_void_PTR(user_data);
   TODO_type_check_int_PTR(child_pid);
@@ -40280,8 +40134,6 @@ mrb_GLib_g_spawn_async_with_pipes(mrb_state* mrb, mrb_value self) {
   char ** native_argv = TODO_mruby_unbox_char_PTR_PTR(argv);
 
   char ** native_envp = TODO_mruby_unbox_char_PTR_PTR(envp);
-
-  GSpawnFlags native_flags = TODO_mruby_unbox_GSpawnFlags(flags);
 
   void (*native_child_setup)(void *) = TODO_mruby_unbox_void_LPAREN_PTR_RPAREN_LPAREN_void_PTR_RPAREN(child_setup);
 
@@ -40529,7 +40381,7 @@ mrb_GLib_g_spawn_sync(mrb_state* mrb, mrb_value self) {
   const char * native_working_directory = NULL;
   mrb_value argv;
   mrb_value envp;
-  mrb_value flags;
+  GSpawnFlags native_flags;
   mrb_value child_setup;
   mrb_value user_data;
   mrb_value standard_output;
@@ -40538,12 +40390,11 @@ mrb_GLib_g_spawn_sync(mrb_state* mrb, mrb_value self) {
   struct GError * native_error = NULL;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "z!oooooooo", &native_working_directory, &argv, &envp, &flags, &child_setup, &user_data, &standard_output, &standard_error, &exit_status);
+  mrb_get_args(mrb, "z!ooiooooo", &native_working_directory, &argv, &envp, &native_flags, &child_setup, &user_data, &standard_output, &standard_error, &exit_status);
 
   /* Type checking */
   TODO_type_check_char_PTR_PTR(argv);
   TODO_type_check_char_PTR_PTR(envp);
-  TODO_type_check_GSpawnFlags(flags);
   TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_void_PTR_RPAREN(child_setup);
   TODO_type_check_void_PTR(user_data);
   TODO_type_check_char_PTR_PTR(standard_output);
@@ -40554,8 +40405,6 @@ mrb_GLib_g_spawn_sync(mrb_state* mrb, mrb_value self) {
   char ** native_argv = TODO_mruby_unbox_char_PTR_PTR(argv);
 
   char ** native_envp = TODO_mruby_unbox_char_PTR_PTR(envp);
-
-  GSpawnFlags native_flags = TODO_mruby_unbox_GSpawnFlags(flags);
 
   void (*native_child_setup)(void *) = TODO_mruby_unbox_void_LPAREN_PTR_RPAREN_LPAREN_void_PTR_RPAREN(child_setup);
 
@@ -44089,17 +43938,11 @@ mrb_GLib_g_test_bug_base(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_test_build_filename(mrb_state* mrb, mrb_value self) {
-  mrb_value file_type;
+  GTestFileType native_file_type;
   const char * native_first_path = NULL;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "oz!", &file_type, &native_first_path);
-
-  /* Type checking */
-  TODO_type_check_GTestFileType(file_type);
-
-  /* Unbox parameters */
-  GTestFileType native_file_type = TODO_mruby_unbox_GTestFileType(file_type);
+  mrb_get_args(mrb, "iz!", &native_file_type, &native_first_path);
 
   /* Invocation */
   gchar * native_return_value = g_test_build_filename(native_file_type, native_first_path);
@@ -44202,17 +44045,11 @@ mrb_GLib_g_test_create_suite(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_test_expect_message(mrb_state* mrb, mrb_value self) {
   const char * native_log_domain = NULL;
-  mrb_value log_level;
+  GLogLevelFlags native_log_level;
   const char * native_pattern = NULL;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "z!oz!", &native_log_domain, &log_level, &native_pattern);
-
-  /* Type checking */
-  TODO_type_check_GLogLevelFlags(log_level);
-
-  /* Unbox parameters */
-  GLogLevelFlags native_log_level = TODO_mruby_unbox_GLogLevelFlags(log_level);
+  mrb_get_args(mrb, "z!iz!", &native_log_domain, &native_log_level, &native_pattern);
 
   /* Invocation */
   g_test_expect_message(native_log_domain, native_log_level, native_pattern);
@@ -44273,16 +44110,10 @@ mrb_GLib_g_test_failed(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_test_get_dir(mrb_state* mrb, mrb_value self) {
-  mrb_value file_type;
+  GTestFileType native_file_type;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "o", &file_type);
-
-  /* Type checking */
-  TODO_type_check_GTestFileType(file_type);
-
-  /* Unbox parameters */
-  GTestFileType native_file_type = TODO_mruby_unbox_GTestFileType(file_type);
+  mrb_get_args(mrb, "i", &native_file_type);
 
   /* Invocation */
   const gchar * native_return_value = g_test_get_dir(native_file_type);
@@ -44306,17 +44137,11 @@ mrb_GLib_g_test_get_dir(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_test_get_filename(mrb_state* mrb, mrb_value self) {
-  mrb_value file_type;
+  GTestFileType native_file_type;
   const char * native_first_path = NULL;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "oz!", &file_type, &native_first_path);
-
-  /* Type checking */
-  TODO_type_check_GTestFileType(file_type);
-
-  /* Unbox parameters */
-  GTestFileType native_file_type = TODO_mruby_unbox_GTestFileType(file_type);
+  mrb_get_args(mrb, "iz!", &native_file_type, &native_first_path);
 
   /* Invocation */
   const gchar * native_return_value = g_test_get_filename(native_file_type, native_first_path);
@@ -44608,16 +44433,10 @@ mrb_GLib_g_test_log_set_fatal_handler(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_test_log_type_name(mrb_state* mrb, mrb_value self) {
-  mrb_value log_type;
+  GTestLogType native_log_type;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "o", &log_type);
-
-  /* Type checking */
-  TODO_type_check_GTestLogType(log_type);
-
-  /* Unbox parameters */
-  GTestLogType native_log_type = TODO_mruby_unbox_GTestLogType(log_type);
+  mrb_get_args(mrb, "i", &native_log_type);
 
   /* Invocation */
   const char * native_return_value = g_test_log_type_name(native_log_type);
@@ -45179,16 +44998,10 @@ mrb_GLib_g_test_trap_assertions(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_test_trap_fork(mrb_state* mrb, mrb_value self) {
   unsigned long native_usec_timeout;
-  mrb_value test_trap_flags;
+  GTestTrapFlags native_test_trap_flags;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "io", &native_usec_timeout, &test_trap_flags);
-
-  /* Type checking */
-  TODO_type_check_GTestTrapFlags(test_trap_flags);
-
-  /* Unbox parameters */
-  GTestTrapFlags native_test_trap_flags = TODO_mruby_unbox_GTestTrapFlags(test_trap_flags);
+  mrb_get_args(mrb, "ii", &native_usec_timeout, &native_test_trap_flags);
 
   /* Invocation */
   gboolean native_return_value = g_test_trap_fork(native_usec_timeout, native_test_trap_flags);
@@ -45267,16 +45080,10 @@ mrb_value
 mrb_GLib_g_test_trap_subprocess(mrb_state* mrb, mrb_value self) {
   const char * native_test_path = NULL;
   unsigned long native_usec_timeout;
-  mrb_value test_flags;
+  GTestSubprocessFlags native_test_flags;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "z!io", &native_test_path, &native_usec_timeout, &test_flags);
-
-  /* Type checking */
-  TODO_type_check_GTestSubprocessFlags(test_flags);
-
-  /* Unbox parameters */
-  GTestSubprocessFlags native_test_flags = TODO_mruby_unbox_GTestSubprocessFlags(test_flags);
+  mrb_get_args(mrb, "z!ii", &native_test_path, &native_usec_timeout, &native_test_flags);
 
   /* Invocation */
   g_test_trap_subprocess(native_test_path, native_usec_timeout, native_test_flags);
@@ -46282,24 +46089,21 @@ mrb_GLib_g_time_val_to_iso8601(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_time_zone_adjust_time(mrb_state* mrb, mrb_value self) {
   mrb_value tz;
-  mrb_value type;
+  GTimeType native_type;
   mrb_value time_;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "ooo", &tz, &type, &time_);
+  mrb_get_args(mrb, "oio", &tz, &native_type, &time_);
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, tz, GTimeZone_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GTimeZone expected");
     return mrb_nil_value();
   }
-  TODO_type_check_GTimeType(type);
   TODO_type_check_long_PTR(time_);
 
   /* Unbox parameters */
   struct _GTimeZone * native_tz = (mrb_nil_p(tz) ? NULL : mruby_unbox__GTimeZone(tz));
-
-  GTimeType native_type = TODO_mruby_unbox_GTimeType(type);
 
   long * native_time_ = TODO_mruby_unbox_long_PTR(time_);
 
@@ -46331,23 +46135,20 @@ mrb_GLib_g_time_zone_adjust_time(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_time_zone_find_interval(mrb_state* mrb, mrb_value self) {
   mrb_value tz;
-  mrb_value type;
+  GTimeType native_type;
   long native_time_;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "ooi", &tz, &type, &native_time_);
+  mrb_get_args(mrb, "oii", &tz, &native_type, &native_time_);
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, tz, GTimeZone_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GTimeZone expected");
     return mrb_nil_value();
   }
-  TODO_type_check_GTimeType(type);
 
   /* Unbox parameters */
   struct _GTimeZone * native_tz = (mrb_nil_p(tz) ? NULL : mruby_unbox__GTimeZone(tz));
-
-  GTimeType native_type = TODO_mruby_unbox_GTimeType(type);
 
   /* Invocation */
   gint native_return_value = g_time_zone_find_interval(native_tz, native_type, native_time_);
@@ -47837,11 +47638,11 @@ mrb_value
 mrb_GLib_g_tree_traverse(mrb_state* mrb, mrb_value self) {
   mrb_value tree;
   mrb_value traverse_func;
-  mrb_value traverse_type;
+  GTraverseType native_traverse_type;
   mrb_value user_data;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "oooo", &tree, &traverse_func, &traverse_type, &user_data);
+  mrb_get_args(mrb, "ooio", &tree, &traverse_func, &native_traverse_type, &user_data);
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, tree, GTree_class(mrb))) {
@@ -47849,15 +47650,12 @@ mrb_GLib_g_tree_traverse(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
   TODO_type_check_int_LPAREN_PTR_RPAREN_LPAREN_void_PTR_COMMA_void_PTR_COMMA_void_PTR_RPAREN(traverse_func);
-  TODO_type_check_GTraverseType(traverse_type);
   TODO_type_check_void_PTR(user_data);
 
   /* Unbox parameters */
   struct _GTree * native_tree = (mrb_nil_p(tree) ? NULL : mruby_unbox__GTree(tree));
 
   int (*native_traverse_func)(void *, void *, void *) = TODO_mruby_unbox_int_LPAREN_PTR_RPAREN_LPAREN_void_PTR_COMMA_void_PTR_COMMA_void_PTR_RPAREN(traverse_func);
-
-  GTraverseType native_traverse_type = TODO_mruby_unbox_GTraverseType(traverse_type);
 
   void * native_user_data = TODO_mruby_unbox_void_PTR(user_data);
 
@@ -48196,7 +47994,11 @@ mrb_GLib_g_unichar_break_type(mrb_state* mrb, mrb_value self) {
   GUnicodeBreakType native_return_value = g_unichar_break_type(native_c);
 
   /* Box the return value */
-  mrb_value return_value = TODO_mruby_box_GUnicodeBreakType(mrb, native_return_value);
+  if (native_return_value > MRB_INT_MAX) {
+    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
+    return mrb_nil_value();
+  }
+  mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
 }
@@ -48445,7 +48247,11 @@ mrb_GLib_g_unichar_get_script(mrb_state* mrb, mrb_value self) {
   GUnicodeScript native_return_value = g_unichar_get_script(native_ch);
 
   /* Box the return value */
-  mrb_value return_value = TODO_mruby_box_GUnicodeScript(mrb, native_return_value);
+  if (native_return_value > MRB_INT_MAX) {
+    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
+    return mrb_nil_value();
+  }
+  mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
 }
@@ -49125,7 +48931,11 @@ mrb_GLib_g_unichar_type(mrb_state* mrb, mrb_value self) {
   GUnicodeType native_return_value = g_unichar_type(native_c);
 
   /* Box the return value */
-  mrb_value return_value = TODO_mruby_box_GUnicodeType(mrb, native_return_value);
+  if (native_return_value > MRB_INT_MAX) {
+    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
+    return mrb_nil_value();
+  }
+  mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
 }
@@ -49276,7 +49086,11 @@ mrb_GLib_g_unicode_script_from_iso15924(mrb_state* mrb, mrb_value self) {
   GUnicodeScript native_return_value = g_unicode_script_from_iso15924(native_iso15924);
 
   /* Box the return value */
-  mrb_value return_value = TODO_mruby_box_GUnicodeScript(mrb, native_return_value);
+  if (native_return_value > MRB_INT_MAX) {
+    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
+    return mrb_nil_value();
+  }
+  mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
 }
@@ -49293,16 +49107,10 @@ mrb_GLib_g_unicode_script_from_iso15924(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_unicode_script_to_iso15924(mrb_state* mrb, mrb_value self) {
-  mrb_value script;
+  GUnicodeScript native_script;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "o", &script);
-
-  /* Type checking */
-  TODO_type_check_GUnicodeScript(script);
-
-  /* Unbox parameters */
-  GUnicodeScript native_script = TODO_mruby_unbox_GUnicodeScript(script);
+  mrb_get_args(mrb, "i", &native_script);
 
   /* Invocation */
   guint32 native_return_value = g_unicode_script_to_iso15924(native_script);
@@ -49357,21 +49165,18 @@ mrb_GLib_g_unix_error_quark(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_unix_fd_add(mrb_state* mrb, mrb_value self) {
   int native_fd;
-  mrb_value condition;
+  GIOCondition native_condition;
   mrb_value function;
   mrb_value user_data;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "iooo", &native_fd, &condition, &function, &user_data);
+  mrb_get_args(mrb, "iioo", &native_fd, &native_condition, &function, &user_data);
 
   /* Type checking */
-  TODO_type_check_GIOCondition(condition);
   TODO_type_check_int_LPAREN_PTR_RPAREN_LPAREN_intCOMMA_GIOConditionCOMMA_void_PTR_RPAREN(function);
   TODO_type_check_void_PTR(user_data);
 
   /* Unbox parameters */
-  GIOCondition native_condition = TODO_mruby_unbox_GIOCondition(condition);
-
   int (*native_function)(int, GIOCondition, void *) = TODO_mruby_unbox_int_LPAREN_PTR_RPAREN_LPAREN_intCOMMA_GIOConditionCOMMA_void_PTR_RPAREN(function);
 
   void * native_user_data = TODO_mruby_unbox_void_PTR(user_data);
@@ -49408,23 +49213,20 @@ mrb_value
 mrb_GLib_g_unix_fd_add_full(mrb_state* mrb, mrb_value self) {
   int native_priority;
   int native_fd;
-  mrb_value condition;
+  GIOCondition native_condition;
   mrb_value function;
   mrb_value user_data;
   mrb_value notify;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "iioooo", &native_priority, &native_fd, &condition, &function, &user_data, &notify);
+  mrb_get_args(mrb, "iiiooo", &native_priority, &native_fd, &native_condition, &function, &user_data, &notify);
 
   /* Type checking */
-  TODO_type_check_GIOCondition(condition);
   TODO_type_check_int_LPAREN_PTR_RPAREN_LPAREN_intCOMMA_GIOConditionCOMMA_void_PTR_RPAREN(function);
   TODO_type_check_void_PTR(user_data);
   TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_void_PTR_RPAREN(notify);
 
   /* Unbox parameters */
-  GIOCondition native_condition = TODO_mruby_unbox_GIOCondition(condition);
-
   int (*native_function)(int, GIOCondition, void *) = TODO_mruby_unbox_int_LPAREN_PTR_RPAREN_LPAREN_intCOMMA_GIOConditionCOMMA_void_PTR_RPAREN(function);
 
   void * native_user_data = TODO_mruby_unbox_void_PTR(user_data);
@@ -49458,16 +49260,10 @@ mrb_GLib_g_unix_fd_add_full(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_unix_fd_source_new(mrb_state* mrb, mrb_value self) {
   int native_fd;
-  mrb_value condition;
+  GIOCondition native_condition;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "io", &native_fd, &condition);
-
-  /* Type checking */
-  TODO_type_check_GIOCondition(condition);
-
-  /* Unbox parameters */
-  GIOCondition native_condition = TODO_mruby_unbox_GIOCondition(condition);
+  mrb_get_args(mrb, "ii", &native_fd, &native_condition);
 
   /* Invocation */
   GSource * native_return_value = g_unix_fd_source_new(native_fd, native_condition);
@@ -50241,16 +50037,10 @@ mrb_value
 mrb_GLib_g_utf8_normalize(mrb_state* mrb, mrb_value self) {
   const char * native_str = NULL;
   long native_len;
-  mrb_value mode;
+  GNormalizeMode native_mode;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "z!io", &native_str, &native_len, &mode);
-
-  /* Type checking */
-  TODO_type_check_GNormalizeMode(mode);
-
-  /* Unbox parameters */
-  GNormalizeMode native_mode = TODO_mruby_unbox_GNormalizeMode(mode);
+  mrb_get_args(mrb, "z!ii", &native_str, &native_len, &native_mode);
 
   /* Invocation */
   gchar * native_return_value = g_utf8_normalize(native_str, native_len, native_mode);
@@ -51270,7 +51060,11 @@ mrb_GLib_g_variant_classify(mrb_state* mrb, mrb_value self) {
   GVariantClass native_return_value = g_variant_classify(native_value);
 
   /* Box the return value */
-  mrb_value return_value = TODO_mruby_box_GVariantClass(mrb, native_return_value);
+  if (native_return_value > MRB_INT_MAX) {
+    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
+    return mrb_nil_value();
+  }
+  mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
 }

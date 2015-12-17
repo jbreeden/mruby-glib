@@ -58,7 +58,7 @@ mrb_GLib_GTimer_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_GLib_GTimer_init(mrb_state* mrb) {
-  RClass* GTimer_class = mrb_define_class_under(mrb, GLib_module(mrb), "GTimer", mrb->object_class);
+  struct RClass* GTimer_class = mrb_define_class_under(mrb, GLib_module(mrb), "GTimer", mrb->object_class);
   MRB_SET_INSTANCE_TT(GTimer_class, MRB_TT_DATA);
 
 #if BIND_GTimer_INITIALIZE

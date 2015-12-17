@@ -58,7 +58,7 @@ mrb_GLib_GHmac_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_GLib_GHmac_init(mrb_state* mrb) {
-  RClass* GHmac_class = mrb_define_class_under(mrb, GLib_module(mrb), "GHmac", mrb->object_class);
+  struct RClass* GHmac_class = mrb_define_class_under(mrb, GLib_module(mrb), "GHmac", mrb->object_class);
   MRB_SET_INSTANCE_TT(GHmac_class, MRB_TT_DATA);
 
 #if BIND_GHmac_INITIALIZE

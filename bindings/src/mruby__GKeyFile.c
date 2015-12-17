@@ -58,7 +58,7 @@ mrb_GLib_GKeyFile_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_GLib_GKeyFile_init(mrb_state* mrb) {
-  RClass* GKeyFile_class = mrb_define_class_under(mrb, GLib_module(mrb), "GKeyFile", mrb->object_class);
+  struct RClass* GKeyFile_class = mrb_define_class_under(mrb, GLib_module(mrb), "GKeyFile", mrb->object_class);
   MRB_SET_INSTANCE_TT(GKeyFile_class, MRB_TT_DATA);
 
 #if BIND_GKeyFile_INITIALIZE

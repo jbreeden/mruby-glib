@@ -106,7 +106,7 @@ mrb_GLib_GTrashStack_set_next(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_GLib_GTrashStack_init(mrb_state* mrb) {
-  RClass* GTrashStack_class = mrb_define_class_under(mrb, GLib_module(mrb), "GTrashStack", mrb->object_class);
+  struct RClass* GTrashStack_class = mrb_define_class_under(mrb, GLib_module(mrb), "GTrashStack", mrb->object_class);
   MRB_SET_INSTANCE_TT(GTrashStack_class, MRB_TT_DATA);
 
 #if BIND_GTrashStack_INITIALIZE

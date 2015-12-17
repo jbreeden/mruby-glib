@@ -652,7 +652,7 @@ mrb_GLib_GSource_set_priv(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_GLib_GSource_init(mrb_state* mrb) {
-  RClass* GSource_class = mrb_define_class_under(mrb, GLib_module(mrb), "GSource", mrb->object_class);
+  struct RClass* GSource_class = mrb_define_class_under(mrb, GLib_module(mrb), "GSource", mrb->object_class);
   MRB_SET_INSTANCE_TT(GSource_class, MRB_TT_DATA);
 
 #if BIND_GSource_INITIALIZE

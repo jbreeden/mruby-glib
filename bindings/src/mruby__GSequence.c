@@ -58,7 +58,7 @@ mrb_GLib_GSequence_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_GLib_GSequence_init(mrb_state* mrb) {
-  RClass* GSequence_class = mrb_define_class_under(mrb, GLib_module(mrb), "GSequence", mrb->object_class);
+  struct RClass* GSequence_class = mrb_define_class_under(mrb, GLib_module(mrb), "GSequence", mrb->object_class);
   MRB_SET_INSTANCE_TT(GSequence_class, MRB_TT_DATA);
 
 #if BIND_GSequence_INITIALIZE

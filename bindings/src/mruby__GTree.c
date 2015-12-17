@@ -58,7 +58,7 @@ mrb_GLib_GTree_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_GLib_GTree_init(mrb_state* mrb) {
-  RClass* GTree_class = mrb_define_class_under(mrb, GLib_module(mrb), "GTree", mrb->object_class);
+  struct RClass* GTree_class = mrb_define_class_under(mrb, GLib_module(mrb), "GTree", mrb->object_class);
   MRB_SET_INSTANCE_TT(GTree_class, MRB_TT_DATA);
 
 #if BIND_GTree_INITIALIZE

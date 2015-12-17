@@ -291,7 +291,7 @@ mrb_GLib_CharDirectives_set_direct_alloc_dir(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_GLib_CharDirectives_init(mrb_state* mrb) {
-  RClass* CharDirectives_class = mrb_define_class_under(mrb, GLib_module(mrb), "CharDirectives", mrb->object_class);
+  struct RClass* CharDirectives_class = mrb_define_class_under(mrb, GLib_module(mrb), "CharDirectives", mrb->object_class);
   MRB_SET_INSTANCE_TT(CharDirectives_class, MRB_TT_DATA);
 
 #if BIND_CharDirectives_INITIALIZE

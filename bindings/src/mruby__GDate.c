@@ -350,7 +350,7 @@ mrb_GLib_GDate_set_year(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_GLib_GDate_init(mrb_state* mrb) {
-  RClass* GDate_class = mrb_define_class_under(mrb, GLib_module(mrb), "GDate", mrb->object_class);
+  struct RClass* GDate_class = mrb_define_class_under(mrb, GLib_module(mrb), "GDate", mrb->object_class);
   MRB_SET_INSTANCE_TT(GDate_class, MRB_TT_DATA);
 
 #if BIND_GDate_INITIALIZE

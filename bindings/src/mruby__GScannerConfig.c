@@ -1362,7 +1362,7 @@ mrb_GLib_GScannerConfig_set_padding_dummy(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_GLib_GScannerConfig_init(mrb_state* mrb) {
-  RClass* GScannerConfig_class = mrb_define_class_under(mrb, GLib_module(mrb), "GScannerConfig", mrb->object_class);
+  struct RClass* GScannerConfig_class = mrb_define_class_under(mrb, GLib_module(mrb), "GScannerConfig", mrb->object_class);
   MRB_SET_INSTANCE_TT(GScannerConfig_class, MRB_TT_DATA);
 
 #if BIND_GScannerConfig_INITIALIZE

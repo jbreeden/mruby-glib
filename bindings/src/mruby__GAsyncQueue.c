@@ -58,7 +58,7 @@ mrb_GLib_GAsyncQueue_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_GLib_GAsyncQueue_init(mrb_state* mrb) {
-  RClass* GAsyncQueue_class = mrb_define_class_under(mrb, GLib_module(mrb), "GAsyncQueue", mrb->object_class);
+  struct RClass* GAsyncQueue_class = mrb_define_class_under(mrb, GLib_module(mrb), "GAsyncQueue", mrb->object_class);
   MRB_SET_INSTANCE_TT(GAsyncQueue_class, MRB_TT_DATA);
 
 #if BIND_GAsyncQueue_INITIALIZE

@@ -208,7 +208,11 @@ mrb_GLib_GOptionEntry_get_arg(mrb_state* mrb, mrb_value self) {
 
   GOptionArg native_field = native_self->arg;
 
-  mrb_value ruby_field = TODO_mruby_box_GOptionArg(mrb, native_field);
+  if (native_field > MRB_INT_MAX) {
+    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
+    return mrb_nil_value();
+  }
+  mrb_value ruby_field = mrb_fixnum_value(native_field);
 
   return ruby_field;
 }
@@ -228,9 +232,12 @@ mrb_GLib_GOptionEntry_set_arg(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "o", &ruby_field);
 
   /* type checking */
-  TODO_type_check_GOptionArg(ruby_field);
+  if (!mrb_obj_is_kind_of(mrb, ruby_field, mrb->fixnum_class)) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
+    return mrb_nil_value();
+  }
 
-  GOptionArg native_field = TODO_mruby_unbox_GOptionArg(ruby_field);
+  int native_field = mrb_fixnum(ruby_field);
 
   native_self->arg = native_field;
 
@@ -363,7 +370,7 @@ mrb_GLib_GOptionEntry_set_arg_description(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_GLib_GOptionEntry_init(mrb_state* mrb) {
-  RClass* GOptionEntry_class = mrb_define_class_under(mrb, GLib_module(mrb), "GOptionEntry", mrb->object_class);
+  struct RClass* GOptionEntry_class = mrb_define_class_under(mrb, GLib_module(mrb), "GOptionEntry", mrb->object_class);
   MRB_SET_INSTANCE_TT(GOptionEntry_class, MRB_TT_DATA);
 
 #if BIND_GOptionEntry_INITIALIZE

@@ -417,7 +417,7 @@ mrb_GLib_GHook_set_destroy(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_GLib_GHook_init(mrb_state* mrb) {
-  RClass* GHook_class = mrb_define_class_under(mrb, GLib_module(mrb), "GHook", mrb->object_class);
+  struct RClass* GHook_class = mrb_define_class_under(mrb, GLib_module(mrb), "GHook", mrb->object_class);
   MRB_SET_INSTANCE_TT(GHook_class, MRB_TT_DATA);
 
 #if BIND_GHook_INITIALIZE

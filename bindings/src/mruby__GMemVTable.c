@@ -308,7 +308,7 @@ mrb_GLib_GMemVTable_set_try_realloc(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_GLib_GMemVTable_init(mrb_state* mrb) {
-  RClass* GMemVTable_class = mrb_define_class_under(mrb, GLib_module(mrb), "GMemVTable", mrb->object_class);
+  struct RClass* GMemVTable_class = mrb_define_class_under(mrb, GLib_module(mrb), "GMemVTable", mrb->object_class);
   MRB_SET_INSTANCE_TT(GMemVTable_class, MRB_TT_DATA);
 
 #if BIND_GMemVTable_INITIALIZE

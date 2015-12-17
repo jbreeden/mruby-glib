@@ -308,7 +308,7 @@ mrb_GLib_GSourceFuncs_set_closure_marshal(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_GLib_GSourceFuncs_init(mrb_state* mrb) {
-  RClass* GSourceFuncs_class = mrb_define_class_under(mrb, GLib_module(mrb), "GSourceFuncs", mrb->object_class);
+  struct RClass* GSourceFuncs_class = mrb_define_class_under(mrb, GLib_module(mrb), "GSourceFuncs", mrb->object_class);
   MRB_SET_INSTANCE_TT(GSourceFuncs_class, MRB_TT_DATA);
 
 #if BIND_GSourceFuncs_INITIALIZE

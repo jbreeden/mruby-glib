@@ -267,7 +267,7 @@ mrb_GLib_GMarkupParser_set_error(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_GLib_GMarkupParser_init(mrb_state* mrb) {
-  RClass* GMarkupParser_class = mrb_define_class_under(mrb, GLib_module(mrb), "GMarkupParser", mrb->object_class);
+  struct RClass* GMarkupParser_class = mrb_define_class_under(mrb, GLib_module(mrb), "GMarkupParser", mrb->object_class);
   MRB_SET_INSTANCE_TT(GMarkupParser_class, MRB_TT_DATA);
 
 #if BIND_GMarkupParser_INITIALIZE

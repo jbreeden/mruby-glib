@@ -58,7 +58,7 @@ mrb_GLib_GHashTable_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_GLib_GHashTable_init(mrb_state* mrb) {
-  RClass* GHashTable_class = mrb_define_class_under(mrb, GLib_module(mrb), "GHashTable", mrb->object_class);
+  struct RClass* GHashTable_class = mrb_define_class_under(mrb, GLib_module(mrb), "GHashTable", mrb->object_class);
   MRB_SET_INSTANCE_TT(GHashTable_class, MRB_TT_DATA);
 
 #if BIND_GHashTable_INITIALIZE

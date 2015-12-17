@@ -206,7 +206,7 @@ mrb_GLib_GPollFD_set_revents(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_GLib_GPollFD_init(mrb_state* mrb) {
-  RClass* GPollFD_class = mrb_define_class_under(mrb, GLib_module(mrb), "GPollFD", mrb->object_class);
+  struct RClass* GPollFD_class = mrb_define_class_under(mrb, GLib_module(mrb), "GPollFD", mrb->object_class);
   MRB_SET_INSTANCE_TT(GPollFD_class, MRB_TT_DATA);
 
 #if BIND_GPollFD_INITIALIZE

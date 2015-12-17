@@ -198,7 +198,7 @@ mrb_GLib_GQueue_set_length(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_GLib_GQueue_init(mrb_state* mrb) {
-  RClass* GQueue_class = mrb_define_class_under(mrb, GLib_module(mrb), "GQueue", mrb->object_class);
+  struct RClass* GQueue_class = mrb_define_class_under(mrb, GLib_module(mrb), "GQueue", mrb->object_class);
   MRB_SET_INSTANCE_TT(GQueue_class, MRB_TT_DATA);
 
 #if BIND_GQueue_INITIALIZE

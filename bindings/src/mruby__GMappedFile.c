@@ -58,7 +58,7 @@ mrb_GLib_GMappedFile_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_GLib_GMappedFile_init(mrb_state* mrb) {
-  RClass* GMappedFile_class = mrb_define_class_under(mrb, GLib_module(mrb), "GMappedFile", mrb->object_class);
+  struct RClass* GMappedFile_class = mrb_define_class_under(mrb, GLib_module(mrb), "GMappedFile", mrb->object_class);
   MRB_SET_INSTANCE_TT(GMappedFile_class, MRB_TT_DATA);
 
 #if BIND_GMappedFile_INITIALIZE

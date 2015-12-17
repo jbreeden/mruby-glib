@@ -58,7 +58,7 @@ mrb_GLib_GMatchInfo_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_GLib_GMatchInfo_init(mrb_state* mrb) {
-  RClass* GMatchInfo_class = mrb_define_class_under(mrb, GLib_module(mrb), "GMatchInfo", mrb->object_class);
+  struct RClass* GMatchInfo_class = mrb_define_class_under(mrb, GLib_module(mrb), "GMatchInfo", mrb->object_class);
   MRB_SET_INSTANCE_TT(GMatchInfo_class, MRB_TT_DATA);
 
 #if BIND_GMatchInfo_INITIALIZE

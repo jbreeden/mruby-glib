@@ -71,7 +71,11 @@ mrb_GLib_Argument_get_type(mrb_state* mrb, mrb_value self) {
 
   arg_type native_field = native_self->type;
 
-  mrb_value ruby_field = TODO_mruby_box_arg_type(mrb, native_field);
+  if (native_field > MRB_INT_MAX) {
+    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
+    return mrb_nil_value();
+  }
+  mrb_value ruby_field = mrb_fixnum_value(native_field);
 
   return ruby_field;
 }
@@ -91,9 +95,12 @@ mrb_GLib_Argument_set_type(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "o", &ruby_field);
 
   /* type checking */
-  TODO_type_check_arg_type(ruby_field);
+  if (!mrb_obj_is_kind_of(mrb, ruby_field, mrb->fixnum_class)) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
+    return mrb_nil_value();
+  }
 
-  arg_type native_field = TODO_mruby_unbox_arg_type(ruby_field);
+  int native_field = mrb_fixnum(ruby_field);
 
   native_self->type = native_field;
 
@@ -144,7 +151,7 @@ mrb_GLib_Argument_set_a(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_GLib_Argument_init(mrb_state* mrb) {
-  RClass* Argument_class = mrb_define_class_under(mrb, GLib_module(mrb), "Argument", mrb->object_class);
+  struct RClass* Argument_class = mrb_define_class_under(mrb, GLib_module(mrb), "Argument", mrb->object_class);
   MRB_SET_INSTANCE_TT(Argument_class, MRB_TT_DATA);
 
 #if BIND_Argument_INITIALIZE

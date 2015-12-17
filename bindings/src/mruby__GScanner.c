@@ -337,7 +337,11 @@ mrb_GLib_GScanner_get_token(mrb_state* mrb, mrb_value self) {
 
   GTokenType native_field = native_self->token;
 
-  mrb_value ruby_field = TODO_mruby_box_GTokenType(mrb, native_field);
+  if (native_field > MRB_INT_MAX) {
+    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
+    return mrb_nil_value();
+  }
+  mrb_value ruby_field = mrb_fixnum_value(native_field);
 
   return ruby_field;
 }
@@ -357,9 +361,12 @@ mrb_GLib_GScanner_set_token(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "o", &ruby_field);
 
   /* type checking */
-  TODO_type_check_GTokenType(ruby_field);
+  if (!mrb_obj_is_kind_of(mrb, ruby_field, mrb->fixnum_class)) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
+    return mrb_nil_value();
+  }
 
-  GTokenType native_field = TODO_mruby_unbox_GTokenType(ruby_field);
+  int native_field = mrb_fixnum(ruby_field);
 
   native_self->token = native_field;
 
@@ -515,7 +522,11 @@ mrb_GLib_GScanner_get_next_token(mrb_state* mrb, mrb_value self) {
 
   GTokenType native_field = native_self->next_token;
 
-  mrb_value ruby_field = TODO_mruby_box_GTokenType(mrb, native_field);
+  if (native_field > MRB_INT_MAX) {
+    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
+    return mrb_nil_value();
+  }
+  mrb_value ruby_field = mrb_fixnum_value(native_field);
 
   return ruby_field;
 }
@@ -535,9 +546,12 @@ mrb_GLib_GScanner_set_next_token(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "o", &ruby_field);
 
   /* type checking */
-  TODO_type_check_GTokenType(ruby_field);
+  if (!mrb_obj_is_kind_of(mrb, ruby_field, mrb->fixnum_class)) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
+    return mrb_nil_value();
+  }
 
-  GTokenType native_field = TODO_mruby_unbox_GTokenType(ruby_field);
+  int native_field = mrb_fixnum(ruby_field);
 
   native_self->next_token = native_field;
 
@@ -996,7 +1010,7 @@ mrb_GLib_GScanner_set_msg_handler(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_GLib_GScanner_init(mrb_state* mrb) {
-  RClass* GScanner_class = mrb_define_class_under(mrb, GLib_module(mrb), "GScanner", mrb->object_class);
+  struct RClass* GScanner_class = mrb_define_class_under(mrb, GLib_module(mrb), "GScanner", mrb->object_class);
   MRB_SET_INSTANCE_TT(GScanner_class, MRB_TT_DATA);
 
 #if BIND_GScanner_INITIALIZE

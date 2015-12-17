@@ -151,7 +151,7 @@ mrb_GLib_GDebugKey_set_value(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_GLib_GDebugKey_init(mrb_state* mrb) {
-  RClass* GDebugKey_class = mrb_define_class_under(mrb, GLib_module(mrb), "GDebugKey", mrb->object_class);
+  struct RClass* GDebugKey_class = mrb_define_class_under(mrb, GLib_module(mrb), "GDebugKey", mrb->object_class);
   MRB_SET_INSTANCE_TT(GDebugKey_class, MRB_TT_DATA);
 
 #if BIND_GDebugKey_INITIALIZE

@@ -144,7 +144,7 @@ mrb_GLib_GCond_set_i(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_GLib_GCond_init(mrb_state* mrb) {
-  RClass* GCond_class = mrb_define_class_under(mrb, GLib_module(mrb), "GCond", mrb->object_class);
+  struct RClass* GCond_class = mrb_define_class_under(mrb, GLib_module(mrb), "GCond", mrb->object_class);
   MRB_SET_INSTANCE_TT(GCond_class, MRB_TT_DATA);
 
 #if BIND_GCond_INITIALIZE

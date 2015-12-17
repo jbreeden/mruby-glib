@@ -58,7 +58,7 @@ mrb_GLib_GBytes_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_GLib_GBytes_init(mrb_state* mrb) {
-  RClass* GBytes_class = mrb_define_class_under(mrb, GLib_module(mrb), "GBytes", mrb->object_class);
+  struct RClass* GBytes_class = mrb_define_class_under(mrb, GLib_module(mrb), "GBytes", mrb->object_class);
   MRB_SET_INSTANCE_TT(GBytes_class, MRB_TT_DATA);
 
 #if BIND_GBytes_INITIALIZE

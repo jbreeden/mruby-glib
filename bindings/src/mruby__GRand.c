@@ -58,7 +58,7 @@ mrb_GLib_GRand_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_GLib_GRand_init(mrb_state* mrb) {
-  RClass* GRand_class = mrb_define_class_under(mrb, GLib_module(mrb), "GRand", mrb->object_class);
+  struct RClass* GRand_class = mrb_define_class_under(mrb, GLib_module(mrb), "GRand", mrb->object_class);
   MRB_SET_INSTANCE_TT(GRand_class, MRB_TT_DATA);
 
 #if BIND_GRand_INITIALIZE

@@ -207,7 +207,7 @@ mrb_GLib_GError_set_message(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_GLib_GError_init(mrb_state* mrb) {
-  RClass* GError_class = mrb_define_class_under(mrb, GLib_module(mrb), "GError", mrb->object_class);
+  struct RClass* GError_class = mrb_define_class_under(mrb, GLib_module(mrb), "GError", mrb->object_class);
   MRB_SET_INSTANCE_TT(GError_class, MRB_TT_DATA);
 
 #if BIND_GError_INITIALIZE

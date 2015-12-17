@@ -58,7 +58,7 @@ mrb_GLib_GData_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_GLib_GData_init(mrb_state* mrb) {
-  RClass* GData_class = mrb_define_class_under(mrb, GLib_module(mrb), "GData", mrb->object_class);
+  struct RClass* GData_class = mrb_define_class_under(mrb, GLib_module(mrb), "GData", mrb->object_class);
   MRB_SET_INSTANCE_TT(GData_class, MRB_TT_DATA);
 
 #if BIND_GData_INITIALIZE

@@ -206,7 +206,7 @@ mrb_GLib_DecompositionStep_set_b(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_GLib_DecompositionStep_init(mrb_state* mrb) {
-  RClass* DecompositionStep_class = mrb_define_class_under(mrb, GLib_module(mrb), "DecompositionStep", mrb->object_class);
+  struct RClass* DecompositionStep_class = mrb_define_class_under(mrb, GLib_module(mrb), "DecompositionStep", mrb->object_class);
   MRB_SET_INSTANCE_TT(DecompositionStep_class, MRB_TT_DATA);
 
 #if BIND_DecompositionStep_INITIALIZE

@@ -566,7 +566,7 @@ mrb_GLib_CharDirective_set_arg_index(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_GLib_CharDirective_init(mrb_state* mrb) {
-  RClass* CharDirective_class = mrb_define_class_under(mrb, GLib_module(mrb), "CharDirective", mrb->object_class);
+  struct RClass* CharDirective_class = mrb_define_class_under(mrb, GLib_module(mrb), "CharDirective", mrb->object_class);
   MRB_SET_INSTANCE_TT(CharDirective_class, MRB_TT_DATA);
 
 #if BIND_CharDirective_INITIALIZE

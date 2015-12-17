@@ -144,7 +144,7 @@ mrb_GLib_GOnce_set_retval(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_GLib_GOnce_init(mrb_state* mrb) {
-  RClass* GOnce_class = mrb_define_class_under(mrb, GLib_module(mrb), "GOnce", mrb->object_class);
+  struct RClass* GOnce_class = mrb_define_class_under(mrb, GLib_module(mrb), "GOnce", mrb->object_class);
   MRB_SET_INSTANCE_TT(GOnce_class, MRB_TT_DATA);
 
 #if BIND_GOnce_INITIALIZE

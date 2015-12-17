@@ -103,7 +103,7 @@ mrb_GLib_GVariantIter_set_x(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_GLib_GVariantIter_init(mrb_state* mrb) {
-  RClass* GVariantIter_class = mrb_define_class_under(mrb, GLib_module(mrb), "GVariantIter", mrb->object_class);
+  struct RClass* GVariantIter_class = mrb_define_class_under(mrb, GLib_module(mrb), "GVariantIter", mrb->object_class);
   MRB_SET_INSTANCE_TT(GVariantIter_class, MRB_TT_DATA);
 
 #if BIND_GVariantIter_INITIALIZE

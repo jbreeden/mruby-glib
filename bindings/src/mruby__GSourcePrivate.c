@@ -58,7 +58,7 @@ mrb_GLib_GSourcePrivate_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_GLib_GSourcePrivate_init(mrb_state* mrb) {
-  RClass* GSourcePrivate_class = mrb_define_class_under(mrb, GLib_module(mrb), "GSourcePrivate", mrb->object_class);
+  struct RClass* GSourcePrivate_class = mrb_define_class_under(mrb, GLib_module(mrb), "GSourcePrivate", mrb->object_class);
   MRB_SET_INSTANCE_TT(GSourcePrivate_class, MRB_TT_DATA);
 
 #if BIND_GSourcePrivate_INITIALIZE

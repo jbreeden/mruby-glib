@@ -350,7 +350,7 @@ mrb_GLib_GTestConfig_set_test_undefined(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_GLib_GTestConfig_init(mrb_state* mrb) {
-  RClass* GTestConfig_class = mrb_define_class_under(mrb, GLib_module(mrb), "GTestConfig", mrb->object_class);
+  struct RClass* GTestConfig_class = mrb_define_class_under(mrb, GLib_module(mrb), "GTestConfig", mrb->object_class);
   MRB_SET_INSTANCE_TT(GTestConfig_class, MRB_TT_DATA);
 
 #if BIND_GTestConfig_INITIALIZE

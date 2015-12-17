@@ -103,7 +103,7 @@ mrb_GLib_GVariantBuilder_set_x(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_GLib_GVariantBuilder_init(mrb_state* mrb) {
-  RClass* GVariantBuilder_class = mrb_define_class_under(mrb, GLib_module(mrb), "GVariantBuilder", mrb->object_class);
+  struct RClass* GVariantBuilder_class = mrb_define_class_under(mrb, GLib_module(mrb), "GVariantBuilder", mrb->object_class);
   MRB_SET_INSTANCE_TT(GVariantBuilder_class, MRB_TT_DATA);
 
 #if BIND_GVariantBuilder_INITIALIZE

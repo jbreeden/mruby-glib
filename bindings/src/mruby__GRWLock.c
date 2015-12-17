@@ -144,7 +144,7 @@ mrb_GLib_GRWLock_set_i(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_GLib_GRWLock_init(mrb_state* mrb) {
-  RClass* GRWLock_class = mrb_define_class_under(mrb, GLib_module(mrb), "GRWLock", mrb->object_class);
+  struct RClass* GRWLock_class = mrb_define_class_under(mrb, GLib_module(mrb), "GRWLock", mrb->object_class);
   MRB_SET_INSTANCE_TT(GRWLock_class, MRB_TT_DATA);
 
 #if BIND_GRWLock_INITIALIZE

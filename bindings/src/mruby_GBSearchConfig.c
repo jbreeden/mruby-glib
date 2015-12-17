@@ -199,7 +199,7 @@ mrb_GLib_GBSearchConfig_set_flags(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_GLib_GBSearchConfig_init(mrb_state* mrb) {
-  RClass* GBSearchConfig_class = mrb_define_class_under(mrb, GLib_module(mrb), "GBSearchConfig", mrb->object_class);
+  struct RClass* GBSearchConfig_class = mrb_define_class_under(mrb, GLib_module(mrb), "GBSearchConfig", mrb->object_class);
   MRB_SET_INSTANCE_TT(GBSearchConfig_class, MRB_TT_DATA);
 
 #if BIND_GBSearchConfig_INITIALIZE

@@ -58,7 +58,7 @@ mrb_GLib_GDateTime_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_GLib_GDateTime_init(mrb_state* mrb) {
-  RClass* GDateTime_class = mrb_define_class_under(mrb, GLib_module(mrb), "GDateTime", mrb->object_class);
+  struct RClass* GDateTime_class = mrb_define_class_under(mrb, GLib_module(mrb), "GDateTime", mrb->object_class);
   MRB_SET_INSTANCE_TT(GDateTime_class, MRB_TT_DATA);
 
 #if BIND_GDateTime_INITIALIZE

@@ -58,7 +58,7 @@ mrb_GLib_GTimeZone_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_GLib_GTimeZone_init(mrb_state* mrb) {
-  RClass* GTimeZone_class = mrb_define_class_under(mrb, GLib_module(mrb), "GTimeZone", mrb->object_class);
+  struct RClass* GTimeZone_class = mrb_define_class_under(mrb, GLib_module(mrb), "GTimeZone", mrb->object_class);
   MRB_SET_INSTANCE_TT(GTimeZone_class, MRB_TT_DATA);
 
 #if BIND_GTimeZone_INITIALIZE

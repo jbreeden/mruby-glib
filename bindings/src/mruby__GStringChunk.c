@@ -58,7 +58,7 @@ mrb_GLib_GStringChunk_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_GLib_GStringChunk_init(mrb_state* mrb) {
-  RClass* GStringChunk_class = mrb_define_class_under(mrb, GLib_module(mrb), "GStringChunk", mrb->object_class);
+  struct RClass* GStringChunk_class = mrb_define_class_under(mrb, GLib_module(mrb), "GStringChunk", mrb->object_class);
   MRB_SET_INSTANCE_TT(GStringChunk_class, MRB_TT_DATA);
 
 #if BIND_GStringChunk_INITIALIZE

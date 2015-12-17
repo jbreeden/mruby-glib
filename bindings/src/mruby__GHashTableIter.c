@@ -322,7 +322,7 @@ mrb_GLib_GHashTableIter_set_dummy6(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_GLib_GHashTableIter_init(mrb_state* mrb) {
-  RClass* GHashTableIter_class = mrb_define_class_under(mrb, GLib_module(mrb), "GHashTableIter", mrb->object_class);
+  struct RClass* GHashTableIter_class = mrb_define_class_under(mrb, GLib_module(mrb), "GHashTableIter", mrb->object_class);
   MRB_SET_INSTANCE_TT(GHashTableIter_class, MRB_TT_DATA);
 
 #if BIND_GHashTableIter_INITIALIZE

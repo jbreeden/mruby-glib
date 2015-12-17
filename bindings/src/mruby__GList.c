@@ -191,7 +191,7 @@ mrb_GLib_GList_set_prev(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_GLib_GList_init(mrb_state* mrb) {
-  RClass* GList_class = mrb_define_class_under(mrb, GLib_module(mrb), "GList", mrb->object_class);
+  struct RClass* GList_class = mrb_define_class_under(mrb, GLib_module(mrb), "GList", mrb->object_class);
   MRB_SET_INSTANCE_TT(GList_class, MRB_TT_DATA);
 
 #if BIND_GList_INITIALIZE

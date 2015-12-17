@@ -390,7 +390,7 @@ mrb_GLib_GIOFuncs_set_io_get_flags(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_GLib_GIOFuncs_init(mrb_state* mrb) {
-  RClass* GIOFuncs_class = mrb_define_class_under(mrb, GLib_module(mrb), "GIOFuncs", mrb->object_class);
+  struct RClass* GIOFuncs_class = mrb_define_class_under(mrb, GLib_module(mrb), "GIOFuncs", mrb->object_class);
   MRB_SET_INSTANCE_TT(GIOFuncs_class, MRB_TT_DATA);
 
 #if BIND_GIOFuncs_INITIALIZE

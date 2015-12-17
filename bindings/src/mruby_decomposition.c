@@ -206,7 +206,7 @@ mrb_GLib_Decomposition_set_compat_offset(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_GLib_Decomposition_init(mrb_state* mrb) {
-  RClass* Decomposition_class = mrb_define_class_under(mrb, GLib_module(mrb), "Decomposition", mrb->object_class);
+  struct RClass* Decomposition_class = mrb_define_class_under(mrb, GLib_module(mrb), "Decomposition", mrb->object_class);
   MRB_SET_INSTANCE_TT(Decomposition_class, MRB_TT_DATA);
 
 #if BIND_Decomposition_INITIALIZE

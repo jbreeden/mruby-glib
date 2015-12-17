@@ -195,7 +195,7 @@ mrb_GLib_Arguments_set_direct_alloc_arg(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_GLib_Arguments_init(mrb_state* mrb) {
-  RClass* Arguments_class = mrb_define_class_under(mrb, GLib_module(mrb), "Arguments", mrb->object_class);
+  struct RClass* Arguments_class = mrb_define_class_under(mrb, GLib_module(mrb), "Arguments", mrb->object_class);
   MRB_SET_INSTANCE_TT(Arguments_class, MRB_TT_DATA);
 
 #if BIND_Arguments_INITIALIZE

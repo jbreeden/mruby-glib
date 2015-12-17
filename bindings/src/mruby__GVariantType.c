@@ -58,7 +58,7 @@ mrb_GLib_GVariantType_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_GLib_GVariantType_init(mrb_state* mrb) {
-  RClass* GVariantType_class = mrb_define_class_under(mrb, GLib_module(mrb), "GVariantType", mrb->object_class);
+  struct RClass* GVariantType_class = mrb_define_class_under(mrb, GLib_module(mrb), "GVariantType", mrb->object_class);
   MRB_SET_INSTANCE_TT(GVariantType_class, MRB_TT_DATA);
 
 #if BIND_GVariantType_INITIALIZE

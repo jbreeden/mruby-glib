@@ -159,7 +159,7 @@ mrb_GLib_GArray_set_len(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_GLib_GArray_init(mrb_state* mrb) {
-  RClass* GArray_class = mrb_define_class_under(mrb, GLib_module(mrb), "GArray", mrb->object_class);
+  struct RClass* GArray_class = mrb_define_class_under(mrb, GLib_module(mrb), "GArray", mrb->object_class);
   MRB_SET_INSTANCE_TT(GArray_class, MRB_TT_DATA);
 
 #if BIND_GArray_INITIALIZE

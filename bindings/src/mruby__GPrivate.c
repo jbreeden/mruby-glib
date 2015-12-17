@@ -185,7 +185,7 @@ mrb_GLib_GPrivate_set_future(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_GLib_GPrivate_init(mrb_state* mrb) {
-  RClass* GPrivate_class = mrb_define_class_under(mrb, GLib_module(mrb), "GPrivate", mrb->object_class);
+  struct RClass* GPrivate_class = mrb_define_class_under(mrb, GLib_module(mrb), "GPrivate", mrb->object_class);
   MRB_SET_INSTANCE_TT(GPrivate_class, MRB_TT_DATA);
 
 #if BIND_GPrivate_INITIALIZE

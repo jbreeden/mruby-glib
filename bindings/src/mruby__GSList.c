@@ -147,7 +147,7 @@ mrb_GLib_GSList_set_next(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_GLib_GSList_init(mrb_state* mrb) {
-  RClass* GSList_class = mrb_define_class_under(mrb, GLib_module(mrb), "GSList", mrb->object_class);
+  struct RClass* GSList_class = mrb_define_class_under(mrb, GLib_module(mrb), "GSList", mrb->object_class);
   MRB_SET_INSTANCE_TT(GSList_class, MRB_TT_DATA);
 
 #if BIND_GSList_INITIALIZE

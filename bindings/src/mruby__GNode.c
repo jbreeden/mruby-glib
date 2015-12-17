@@ -279,7 +279,7 @@ mrb_GLib_GNode_set_children(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_GLib_GNode_init(mrb_state* mrb) {
-  RClass* GNode_class = mrb_define_class_under(mrb, GLib_module(mrb), "GNode", mrb->object_class);
+  struct RClass* GNode_class = mrb_define_class_under(mrb, GLib_module(mrb), "GNode", mrb->object_class);
   MRB_SET_INSTANCE_TT(GNode_class, MRB_TT_DATA);
 
 #if BIND_GNode_INITIALIZE

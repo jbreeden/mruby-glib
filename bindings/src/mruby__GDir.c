@@ -58,7 +58,7 @@ mrb_GLib_GDir_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_GLib_GDir_init(mrb_state* mrb) {
-  RClass* GDir_class = mrb_define_class_under(mrb, GLib_module(mrb), "GDir", mrb->object_class);
+  struct RClass* GDir_class = mrb_define_class_under(mrb, GLib_module(mrb), "GDir", mrb->object_class);
   MRB_SET_INSTANCE_TT(GDir_class, MRB_TT_DATA);
 
 #if BIND_GDir_INITIALIZE

@@ -158,7 +158,7 @@ mrb_GLib_GTimeVal_set_tv_usec(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_GLib_GTimeVal_init(mrb_state* mrb) {
-  RClass* GTimeVal_class = mrb_define_class_under(mrb, GLib_module(mrb), "GTimeVal", mrb->object_class);
+  struct RClass* GTimeVal_class = mrb_define_class_under(mrb, GLib_module(mrb), "GTimeVal", mrb->object_class);
   MRB_SET_INSTANCE_TT(GTimeVal_class, MRB_TT_DATA);
 
 #if BIND_GTimeVal_INITIALIZE
