@@ -31,7 +31,6 @@ mrb_GLib__g_async_queue_get_mutex(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GAsyncQueue * native_queue = (mrb_nil_p(queue) ? NULL : mruby_unbox__GAsyncQueue(queue));
 
@@ -67,7 +66,6 @@ mrb_GLib__g_charset_get_aliases(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "String expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   const char * native_canonical_name = mrb_string_value_cstr(mrb, &canonical_name);
@@ -107,7 +105,6 @@ mrb_GLib__g_gnulib_fprintf(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "String expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct __sFILE * native_file = TODO_mruby_unbox___sFILE_PTR(file);
@@ -150,7 +147,6 @@ mrb_GLib__g_gnulib_printf(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "String expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   const char * native_format = mrb_string_value_cstr(mrb, &format);
@@ -203,7 +199,6 @@ mrb_GLib__g_gnulib_snprintf(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "String expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   /* WARNING: Allocating new memory to create 'char *' from 'const char *'.
@@ -268,7 +263,6 @@ mrb_GLib__g_gnulib_sprintf(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   /* WARNING: Allocating new memory to create 'char *' from 'const char *'.
    *          Please verify that this memory is cleaned up correctly.
@@ -330,7 +324,6 @@ mrb_GLib__g_gnulib_vasprintf(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check___va_list_tag_[1](args);
 
-
   /* Unbox parameters */
   char ** native_result = TODO_mruby_unbox_char_PTR_PTR(result);
 
@@ -381,7 +374,6 @@ mrb_GLib__g_gnulib_vfprintf(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check___va_list_tag_[1](args);
 
-
   /* Unbox parameters */
   struct __sFILE * native_file = TODO_mruby_unbox___sFILE_PTR(file);
 
@@ -428,7 +420,6 @@ mrb_GLib__g_gnulib_vprintf(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
   TODO_type_check___va_list_tag_[1](args);
-
 
   /* Unbox parameters */
   const char * native_format = mrb_string_value_cstr(mrb, &format);
@@ -486,7 +477,6 @@ mrb_GLib__g_gnulib_vsnprintf(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
   TODO_type_check___va_list_tag_[1](args);
-
 
   /* Unbox parameters */
   /* WARNING: Allocating new memory to create 'char *' from 'const char *'.
@@ -555,7 +545,6 @@ mrb_GLib__g_gnulib_vsprintf(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
   TODO_type_check___va_list_tag_[1](args);
-
 
   /* Unbox parameters */
   /* WARNING: Allocating new memory to create 'char *' from 'const char *'.
@@ -626,7 +615,6 @@ mrb_GLib__g_log_fallback_handler(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check_void_PTR(unused_data);
 
-
   /* Unbox parameters */
   const char * native_log_domain = mrb_string_value_cstr(mrb, &log_domain);
 
@@ -666,7 +654,6 @@ mrb_GLib__g_main_create_unix_signal_watch(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   int native_signum = mrb_fixnum(signum);
 
@@ -702,7 +689,6 @@ mrb_GLib__g_utf8_make_valid(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "String expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   const char * native_name = mrb_string_value_cstr(mrb, &name);
@@ -769,7 +755,6 @@ mrb_GLib__GLIB_CHECKED_ADD_U32(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   unsigned int * native_dest = TODO_mruby_unbox_unsigned_int_PTR(dest);
 
@@ -822,7 +807,6 @@ mrb_GLib__GLIB_CHECKED_ADD_U64(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   unsigned long * native_dest = TODO_mruby_unbox_unsigned_long_PTR(dest);
@@ -877,7 +861,6 @@ mrb_GLib__GLIB_CHECKED_MUL_U32(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   unsigned int * native_dest = TODO_mruby_unbox_unsigned_int_PTR(dest);
 
@@ -931,7 +914,6 @@ mrb_GLib__GLIB_CHECKED_MUL_U64(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   unsigned long * native_dest = TODO_mruby_unbox_unsigned_long_PTR(dest);
 
@@ -984,7 +966,6 @@ mrb_GLib_asnprintf(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "String expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   /* WARNING: Allocating new memory to create 'char *' from 'const char *'.
@@ -1045,7 +1026,6 @@ mrb_GLib_g_access(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   const char * native_filename = mrb_string_value_cstr(mrb, &filename);
 
@@ -1097,7 +1077,6 @@ mrb_GLib_g_array_append_vals(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GArray * native_array = (mrb_nil_p(array) ? NULL : mruby_unbox__GArray(array));
 
@@ -1144,7 +1123,6 @@ mrb_GLib_g_array_free(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GArray * native_array = (mrb_nil_p(array) ? NULL : mruby_unbox__GArray(array));
 
@@ -1182,7 +1160,6 @@ mrb_GLib_g_array_get_element_size(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GArray expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GArray * native_array = (mrb_nil_p(array) ? NULL : mruby_unbox__GArray(array));
@@ -1239,7 +1216,6 @@ mrb_GLib_g_array_insert_vals(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GArray * native_array = (mrb_nil_p(array) ? NULL : mruby_unbox__GArray(array));
 
@@ -1294,7 +1270,6 @@ mrb_GLib_g_array_new(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   int native_zero_terminated = mrb_fixnum(zero_terminated);
 
@@ -1344,7 +1319,6 @@ mrb_GLib_g_array_prepend_vals(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GArray * native_array = (mrb_nil_p(array) ? NULL : mruby_unbox__GArray(array));
 
@@ -1384,7 +1358,6 @@ mrb_GLib_g_array_ref(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GArray expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GArray * native_array = (mrb_nil_p(array) ? NULL : mruby_unbox__GArray(array));
@@ -1427,7 +1400,6 @@ mrb_GLib_g_array_remove_index(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GArray * native_array = (mrb_nil_p(array) ? NULL : mruby_unbox__GArray(array));
@@ -1472,7 +1444,6 @@ mrb_GLib_g_array_remove_index_fast(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GArray * native_array = (mrb_nil_p(array) ? NULL : mruby_unbox__GArray(array));
@@ -1524,7 +1495,6 @@ mrb_GLib_g_array_remove_range(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GArray * native_array = (mrb_nil_p(array) ? NULL : mruby_unbox__GArray(array));
 
@@ -1568,7 +1538,6 @@ mrb_GLib_g_array_set_clear_func(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_void_PTR_RPAREN(clear_func);
 
-
   /* Unbox parameters */
   struct _GArray * native_array = (mrb_nil_p(array) ? NULL : mruby_unbox__GArray(array));
 
@@ -1609,7 +1578,6 @@ mrb_GLib_g_array_set_size(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GArray * native_array = (mrb_nil_p(array) ? NULL : mruby_unbox__GArray(array));
@@ -1667,7 +1635,6 @@ mrb_GLib_g_array_sized_new(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   int native_zero_terminated = mrb_fixnum(zero_terminated);
 
@@ -1713,7 +1680,6 @@ mrb_GLib_g_array_sort(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check_int_LPAREN_PTR_RPAREN_LPAREN_void_PTR_COMMA_const_void_PTR_RPAREN(compare_func);
 
-
   /* Unbox parameters */
   struct _GArray * native_array = (mrb_nil_p(array) ? NULL : mruby_unbox__GArray(array));
 
@@ -1755,7 +1721,6 @@ mrb_GLib_g_array_sort_with_data(mrb_state* mrb, mrb_value self) {
   TODO_type_check_int_LPAREN_PTR_RPAREN_LPAREN_void_PTR_COMMA_const_void_PTR_COMMA_void_PTR_RPAREN(compare_func);
   TODO_type_check_void_PTR(user_data);
 
-
   /* Unbox parameters */
   struct _GArray * native_array = (mrb_nil_p(array) ? NULL : mruby_unbox__GArray(array));
 
@@ -1793,7 +1758,6 @@ mrb_GLib_g_array_unref(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GArray * native_array = (mrb_nil_p(array) ? NULL : mruby_unbox__GArray(array));
 
@@ -1826,7 +1790,6 @@ mrb_GLib_g_ascii_digit_value(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   char native_c = mrb_fixnum(c);
@@ -1879,7 +1842,6 @@ mrb_GLib_g_ascii_dtostr(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Float expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   /* WARNING: Allocating new memory to create 'char *' from 'const char *'.
@@ -1952,7 +1914,6 @@ mrb_GLib_g_ascii_formatd(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   /* WARNING: Allocating new memory to create 'char *' from 'const char *'.
    *          Please verify that this memory is cleaned up correctly.
@@ -2014,7 +1975,6 @@ mrb_GLib_g_ascii_strcasecmp(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   const char * native_s1 = mrb_string_value_cstr(mrb, &s1);
 
@@ -2062,7 +2022,6 @@ mrb_GLib_g_ascii_strdown(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   const char * native_str = mrb_string_value_cstr(mrb, &str);
@@ -2114,7 +2073,6 @@ mrb_GLib_g_ascii_strncasecmp(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   const char * native_s1 = mrb_string_value_cstr(mrb, &s1);
 
@@ -2162,7 +2120,6 @@ mrb_GLib_g_ascii_strtod(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check_char_PTR_PTR(endptr);
 
-
   /* Unbox parameters */
   const char * native_nptr = mrb_string_value_cstr(mrb, &nptr);
 
@@ -2209,7 +2166,6 @@ mrb_GLib_g_ascii_strtoll(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   const char * native_nptr = mrb_string_value_cstr(mrb, &nptr);
@@ -2264,7 +2220,6 @@ mrb_GLib_g_ascii_strtoull(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   const char * native_nptr = mrb_string_value_cstr(mrb, &nptr);
 
@@ -2315,7 +2270,6 @@ mrb_GLib_g_ascii_strup(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   const char * native_str = mrb_string_value_cstr(mrb, &str);
 
@@ -2353,7 +2307,6 @@ mrb_GLib_g_ascii_tolower(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   char native_c = mrb_fixnum(c);
@@ -2395,7 +2348,6 @@ mrb_GLib_g_ascii_toupper(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   char native_c = mrb_fixnum(c);
 
@@ -2435,7 +2387,6 @@ mrb_GLib_g_ascii_xdigit_value(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   char native_c = mrb_fixnum(c);
@@ -2501,7 +2452,6 @@ mrb_GLib_g_assert_warning(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   const char * native_log_domain = mrb_string_value_cstr(mrb, &log_domain);
 
@@ -2566,7 +2516,6 @@ mrb_GLib_g_assertion_message(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "String expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   const char * native_domain = mrb_string_value_cstr(mrb, &domain);
@@ -2650,7 +2599,6 @@ mrb_GLib_g_assertion_message_cmpnum(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   const char * native_domain = mrb_string_value_cstr(mrb, &domain);
@@ -2743,7 +2691,6 @@ mrb_GLib_g_assertion_message_cmpstr(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   const char * native_domain = mrb_string_value_cstr(mrb, &domain);
 
@@ -2833,7 +2780,6 @@ mrb_GLib_g_assertion_message_error(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   const char * native_domain = mrb_string_value_cstr(mrb, &domain);
 
@@ -2905,7 +2851,6 @@ mrb_GLib_g_assertion_message_expr(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   const char * native_domain = mrb_string_value_cstr(mrb, &domain);
 
@@ -2947,7 +2892,6 @@ mrb_GLib_g_async_queue_length(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GAsyncQueue * native_queue = (mrb_nil_p(queue) ? NULL : mruby_unbox__GAsyncQueue(queue));
 
@@ -2988,7 +2932,6 @@ mrb_GLib_g_async_queue_length_unlocked(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GAsyncQueue * native_queue = (mrb_nil_p(queue) ? NULL : mruby_unbox__GAsyncQueue(queue));
 
@@ -3028,7 +2971,6 @@ mrb_GLib_g_async_queue_lock(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GAsyncQueue expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GAsyncQueue * native_queue = (mrb_nil_p(queue) ? NULL : mruby_unbox__GAsyncQueue(queue));
@@ -3080,7 +3022,6 @@ mrb_GLib_g_async_queue_new_full(mrb_state* mrb, mrb_value self) {
   /* Type checking */
   TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_void_PTR_RPAREN(item_free_func);
 
-
   /* Unbox parameters */
   void (*native_item_free_func)(void *) = TODO_mruby_unbox_void_LPAREN_PTR_RPAREN_LPAREN_void_PTR_RPAREN(item_free_func);
 
@@ -3117,7 +3058,6 @@ mrb_GLib_g_async_queue_pop(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GAsyncQueue * native_queue = (mrb_nil_p(queue) ? NULL : mruby_unbox__GAsyncQueue(queue));
 
@@ -3153,7 +3093,6 @@ mrb_GLib_g_async_queue_pop_unlocked(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GAsyncQueue expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GAsyncQueue * native_queue = (mrb_nil_p(queue) ? NULL : mruby_unbox__GAsyncQueue(queue));
@@ -3194,7 +3133,6 @@ mrb_GLib_g_async_queue_push(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check_void_PTR(data);
 
-
   /* Unbox parameters */
   struct _GAsyncQueue * native_queue = (mrb_nil_p(queue) ? NULL : mruby_unbox__GAsyncQueue(queue));
 
@@ -3233,7 +3171,6 @@ mrb_GLib_g_async_queue_push_front(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check_void_PTR(item);
 
-
   /* Unbox parameters */
   struct _GAsyncQueue * native_queue = (mrb_nil_p(queue) ? NULL : mruby_unbox__GAsyncQueue(queue));
 
@@ -3271,7 +3208,6 @@ mrb_GLib_g_async_queue_push_front_unlocked(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
   TODO_type_check_void_PTR(item);
-
 
   /* Unbox parameters */
   struct _GAsyncQueue * native_queue = (mrb_nil_p(queue) ? NULL : mruby_unbox__GAsyncQueue(queue));
@@ -3316,7 +3252,6 @@ mrb_GLib_g_async_queue_push_sorted(mrb_state* mrb, mrb_value self) {
   TODO_type_check_void_PTR(data);
   TODO_type_check_int_LPAREN_PTR_RPAREN_LPAREN_void_PTR_COMMA_const_void_PTR_COMMA_void_PTR_RPAREN(func);
   TODO_type_check_void_PTR(user_data);
-
 
   /* Unbox parameters */
   struct _GAsyncQueue * native_queue = (mrb_nil_p(queue) ? NULL : mruby_unbox__GAsyncQueue(queue));
@@ -3366,7 +3301,6 @@ mrb_GLib_g_async_queue_push_sorted_unlocked(mrb_state* mrb, mrb_value self) {
   TODO_type_check_int_LPAREN_PTR_RPAREN_LPAREN_void_PTR_COMMA_const_void_PTR_COMMA_void_PTR_RPAREN(func);
   TODO_type_check_void_PTR(user_data);
 
-
   /* Unbox parameters */
   struct _GAsyncQueue * native_queue = (mrb_nil_p(queue) ? NULL : mruby_unbox__GAsyncQueue(queue));
 
@@ -3409,7 +3343,6 @@ mrb_GLib_g_async_queue_push_unlocked(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check_void_PTR(data);
 
-
   /* Unbox parameters */
   struct _GAsyncQueue * native_queue = (mrb_nil_p(queue) ? NULL : mruby_unbox__GAsyncQueue(queue));
 
@@ -3444,7 +3377,6 @@ mrb_GLib_g_async_queue_ref(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GAsyncQueue expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GAsyncQueue * native_queue = (mrb_nil_p(queue) ? NULL : mruby_unbox__GAsyncQueue(queue));
@@ -3482,7 +3414,6 @@ mrb_GLib_g_async_queue_ref_unlocked(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GAsyncQueue * native_queue = (mrb_nil_p(queue) ? NULL : mruby_unbox__GAsyncQueue(queue));
 
@@ -3518,7 +3449,6 @@ mrb_GLib_g_async_queue_remove(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
   TODO_type_check_void_PTR(item);
-
 
   /* Unbox parameters */
   struct _GAsyncQueue * native_queue = (mrb_nil_p(queue) ? NULL : mruby_unbox__GAsyncQueue(queue));
@@ -3564,7 +3494,6 @@ mrb_GLib_g_async_queue_remove_unlocked(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
   TODO_type_check_void_PTR(item);
-
 
   /* Unbox parameters */
   struct _GAsyncQueue * native_queue = (mrb_nil_p(queue) ? NULL : mruby_unbox__GAsyncQueue(queue));
@@ -3614,7 +3543,6 @@ mrb_GLib_g_async_queue_sort(mrb_state* mrb, mrb_value self) {
   TODO_type_check_int_LPAREN_PTR_RPAREN_LPAREN_void_PTR_COMMA_const_void_PTR_COMMA_void_PTR_RPAREN(func);
   TODO_type_check_void_PTR(user_data);
 
-
   /* Unbox parameters */
   struct _GAsyncQueue * native_queue = (mrb_nil_p(queue) ? NULL : mruby_unbox__GAsyncQueue(queue));
 
@@ -3658,7 +3586,6 @@ mrb_GLib_g_async_queue_sort_unlocked(mrb_state* mrb, mrb_value self) {
   TODO_type_check_int_LPAREN_PTR_RPAREN_LPAREN_void_PTR_COMMA_const_void_PTR_COMMA_void_PTR_RPAREN(func);
   TODO_type_check_void_PTR(user_data);
 
-
   /* Unbox parameters */
   struct _GAsyncQueue * native_queue = (mrb_nil_p(queue) ? NULL : mruby_unbox__GAsyncQueue(queue));
 
@@ -3701,7 +3628,6 @@ mrb_GLib_g_async_queue_timed_pop(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GTimeVal expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GAsyncQueue * native_queue = (mrb_nil_p(queue) ? NULL : mruby_unbox__GAsyncQueue(queue));
@@ -3747,7 +3673,6 @@ mrb_GLib_g_async_queue_timed_pop_unlocked(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GAsyncQueue * native_queue = (mrb_nil_p(queue) ? NULL : mruby_unbox__GAsyncQueue(queue));
 
@@ -3791,7 +3716,6 @@ mrb_GLib_g_async_queue_timeout_pop(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GAsyncQueue * native_queue = (mrb_nil_p(queue) ? NULL : mruby_unbox__GAsyncQueue(queue));
@@ -3837,7 +3761,6 @@ mrb_GLib_g_async_queue_timeout_pop_unlocked(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GAsyncQueue * native_queue = (mrb_nil_p(queue) ? NULL : mruby_unbox__GAsyncQueue(queue));
 
@@ -3876,7 +3799,6 @@ mrb_GLib_g_async_queue_try_pop(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GAsyncQueue * native_queue = (mrb_nil_p(queue) ? NULL : mruby_unbox__GAsyncQueue(queue));
 
@@ -3912,7 +3834,6 @@ mrb_GLib_g_async_queue_try_pop_unlocked(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GAsyncQueue expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GAsyncQueue * native_queue = (mrb_nil_p(queue) ? NULL : mruby_unbox__GAsyncQueue(queue));
@@ -3950,7 +3871,6 @@ mrb_GLib_g_async_queue_unlock(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GAsyncQueue * native_queue = (mrb_nil_p(queue) ? NULL : mruby_unbox__GAsyncQueue(queue));
 
@@ -3983,7 +3903,6 @@ mrb_GLib_g_async_queue_unref(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GAsyncQueue expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GAsyncQueue * native_queue = (mrb_nil_p(queue) ? NULL : mruby_unbox__GAsyncQueue(queue));
@@ -4018,7 +3937,6 @@ mrb_GLib_g_async_queue_unref_and_unlock(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GAsyncQueue * native_queue = (mrb_nil_p(queue) ? NULL : mruby_unbox__GAsyncQueue(queue));
 
@@ -4048,7 +3966,6 @@ mrb_GLib_g_atexit(mrb_state* mrb, mrb_value self) {
 
   /* Type checking */
   TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_void_RPAREN(func);
-
 
   /* Unbox parameters */
   void (*native_func)(void) = TODO_mruby_unbox_void_LPAREN_PTR_RPAREN_LPAREN_void_RPAREN(func);
@@ -4085,7 +4002,6 @@ mrb_GLib_g_atomic_int_add(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   volatile int * native_atomic = TODO_mruby_unbox_volatile_int_PTR(atomic);
@@ -4131,7 +4047,6 @@ mrb_GLib_g_atomic_int_and(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   volatile unsigned int * native_atomic = TODO_mruby_unbox_volatile_unsigned_int_PTR(atomic);
@@ -4184,7 +4099,6 @@ mrb_GLib_g_atomic_int_compare_and_exchange(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   volatile int * native_atomic = TODO_mruby_unbox_volatile_int_PTR(atomic);
 
@@ -4225,7 +4139,6 @@ mrb_GLib_g_atomic_int_dec_and_test(mrb_state* mrb, mrb_value self) {
 
   /* Type checking */
   TODO_type_check_volatile_int_PTR(atomic);
-
 
   /* Unbox parameters */
   volatile int * native_atomic = TODO_mruby_unbox_volatile_int_PTR(atomic);
@@ -4270,7 +4183,6 @@ mrb_GLib_g_atomic_int_exchange_and_add(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   volatile int * native_atomic = TODO_mruby_unbox_volatile_int_PTR(atomic);
 
@@ -4310,7 +4222,6 @@ mrb_GLib_g_atomic_int_get(mrb_state* mrb, mrb_value self) {
   /* Type checking */
   TODO_type_check_volatile_int_PTR(atomic);
 
-
   /* Unbox parameters */
   const volatile int * native_atomic = TODO_mruby_unbox_volatile_int_PTR(atomic);
 
@@ -4348,7 +4259,6 @@ mrb_GLib_g_atomic_int_inc(mrb_state* mrb, mrb_value self) {
   /* Type checking */
   TODO_type_check_volatile_int_PTR(atomic);
 
-
   /* Unbox parameters */
   volatile int * native_atomic = TODO_mruby_unbox_volatile_int_PTR(atomic);
 
@@ -4384,7 +4294,6 @@ mrb_GLib_g_atomic_int_or(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   volatile unsigned int * native_atomic = TODO_mruby_unbox_volatile_unsigned_int_PTR(atomic);
@@ -4431,7 +4340,6 @@ mrb_GLib_g_atomic_int_set(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   volatile int * native_atomic = TODO_mruby_unbox_volatile_int_PTR(atomic);
 
@@ -4469,7 +4377,6 @@ mrb_GLib_g_atomic_int_xor(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   volatile unsigned int * native_atomic = TODO_mruby_unbox_volatile_unsigned_int_PTR(atomic);
@@ -4516,7 +4423,6 @@ mrb_GLib_g_atomic_pointer_add(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   volatile void * native_atomic = TODO_mruby_unbox_volatile_void_PTR(atomic);
 
@@ -4561,7 +4467,6 @@ mrb_GLib_g_atomic_pointer_and(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   volatile void * native_atomic = TODO_mruby_unbox_volatile_void_PTR(atomic);
@@ -4608,7 +4513,6 @@ mrb_GLib_g_atomic_pointer_compare_and_exchange(mrb_state* mrb, mrb_value self) {
   TODO_type_check_void_PTR(oldval);
   TODO_type_check_void_PTR(newval);
 
-
   /* Unbox parameters */
   volatile void * native_atomic = TODO_mruby_unbox_volatile_void_PTR(atomic);
 
@@ -4650,7 +4554,6 @@ mrb_GLib_g_atomic_pointer_get(mrb_state* mrb, mrb_value self) {
   /* Type checking */
   TODO_type_check_volatile_void_PTR(atomic);
 
-
   /* Unbox parameters */
   const volatile void * native_atomic = TODO_mruby_unbox_volatile_void_PTR(atomic);
 
@@ -4689,7 +4592,6 @@ mrb_GLib_g_atomic_pointer_or(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   volatile void * native_atomic = TODO_mruby_unbox_volatile_void_PTR(atomic);
@@ -4733,7 +4635,6 @@ mrb_GLib_g_atomic_pointer_set(mrb_state* mrb, mrb_value self) {
   TODO_type_check_volatile_void_PTR(atomic);
   TODO_type_check_void_PTR(newval);
 
-
   /* Unbox parameters */
   volatile void * native_atomic = TODO_mruby_unbox_volatile_void_PTR(atomic);
 
@@ -4771,7 +4672,6 @@ mrb_GLib_g_atomic_pointer_xor(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   volatile void * native_atomic = TODO_mruby_unbox_volatile_void_PTR(atomic);
@@ -4812,7 +4712,6 @@ mrb_GLib_g_autoptr_cleanup_generic_gfree(mrb_state* mrb, mrb_value self) {
   /* Type checking */
   TODO_type_check_void_PTR(p);
 
-
   /* Unbox parameters */
   void * native_p = TODO_mruby_unbox_void_PTR(p);
 
@@ -4842,7 +4741,6 @@ mrb_GLib_g_autoptr_cleanup_gstring_free(mrb_state* mrb, mrb_value self) {
 
   /* Type checking */
   TODO_type_check_int_PTR(string);
-
 
   /* Unbox parameters */
   int * native_string = TODO_mruby_unbox_int_PTR(string);
@@ -4879,7 +4777,6 @@ mrb_GLib_g_base64_decode(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
   TODO_type_check_unsigned_long_PTR(out_len);
-
 
   /* Unbox parameters */
   const char * native_text = mrb_string_value_cstr(mrb, &text);
@@ -4921,7 +4818,6 @@ mrb_GLib_g_base64_decode_inplace(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
   TODO_type_check_unsigned_long_PTR(out_len);
-
 
   /* Unbox parameters */
   /* WARNING: Allocating new memory to create 'char *' from 'const char *'.
@@ -4989,7 +4885,6 @@ mrb_GLib_g_base64_decode_step(mrb_state* mrb, mrb_value self) {
   TODO_type_check_int_PTR(state);
   TODO_type_check_unsigned_int_PTR(save);
 
-
   /* Unbox parameters */
   const char * native_in = mrb_string_value_cstr(mrb, &in);
 
@@ -5041,7 +4936,6 @@ mrb_GLib_g_base64_encode(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   const unsigned char * native_data = TODO_mruby_unbox_unsigned_char_PTR(data);
 
@@ -5091,7 +4985,6 @@ mrb_GLib_g_base64_encode_close(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check_int_PTR(state);
   TODO_type_check_int_PTR(save);
-
 
   /* Unbox parameters */
   int native_break_lines = mrb_fixnum(break_lines);
@@ -5173,7 +5066,6 @@ mrb_GLib_g_base64_encode_step(mrb_state* mrb, mrb_value self) {
   TODO_type_check_int_PTR(state);
   TODO_type_check_int_PTR(save);
 
-
   /* Unbox parameters */
   const unsigned char * native_in = TODO_mruby_unbox_unsigned_char_PTR(in);
 
@@ -5237,7 +5129,6 @@ mrb_GLib_g_basename(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   const char * native_file_name = mrb_string_value_cstr(mrb, &file_name);
 
@@ -5276,7 +5167,6 @@ mrb_GLib_g_bit_lock(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   volatile int * native_address = TODO_mruby_unbox_volatile_int_PTR(address);
@@ -5318,7 +5208,6 @@ mrb_GLib_g_bit_nth_lsf(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   unsigned long native_mask = mrb_fixnum(mask);
@@ -5368,7 +5257,6 @@ mrb_GLib_g_bit_nth_lsf_impl(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   unsigned long native_mask = mrb_fixnum(mask);
 
@@ -5416,7 +5304,6 @@ mrb_GLib_g_bit_nth_msf(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   unsigned long native_mask = mrb_fixnum(mask);
@@ -5466,7 +5353,6 @@ mrb_GLib_g_bit_nth_msf_impl(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   unsigned long native_mask = mrb_fixnum(mask);
 
@@ -5509,7 +5395,6 @@ mrb_GLib_g_bit_storage(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   unsigned long native_number = mrb_fixnum(number);
 
@@ -5549,7 +5434,6 @@ mrb_GLib_g_bit_storage_impl(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   unsigned long native_number = mrb_fixnum(number);
@@ -5593,7 +5477,6 @@ mrb_GLib_g_bit_trylock(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   volatile int * native_address = TODO_mruby_unbox_volatile_int_PTR(address);
@@ -5639,7 +5522,6 @@ mrb_GLib_g_bit_unlock(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   volatile int * native_address = TODO_mruby_unbox_volatile_int_PTR(address);
@@ -5694,7 +5576,6 @@ mrb_GLib_g_bookmark_file_add_application(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GBookmarkFile * native_bookmark = (mrb_nil_p(bookmark) ? NULL : mruby_unbox__GBookmarkFile(bookmark));
 
@@ -5745,7 +5626,6 @@ mrb_GLib_g_bookmark_file_add_group(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "String expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GBookmarkFile * native_bookmark = (mrb_nil_p(bookmark) ? NULL : mruby_unbox__GBookmarkFile(bookmark));
@@ -5808,7 +5688,6 @@ mrb_GLib_g_bookmark_file_free(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GBookmarkFile * native_bookmark = (mrb_nil_p(bookmark) ? NULL : mruby_unbox__GBookmarkFile(bookmark));
 
@@ -5850,7 +5729,6 @@ mrb_GLib_g_bookmark_file_get_added(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
   TODO_type_check__GError_PTR_PTR(error);
-
 
   /* Unbox parameters */
   struct _GBookmarkFile * native_bookmark = (mrb_nil_p(bookmark) ? NULL : mruby_unbox__GBookmarkFile(bookmark));
@@ -5916,7 +5794,6 @@ mrb_GLib_g_bookmark_file_get_app_info(mrb_state* mrb, mrb_value self) {
   TODO_type_check_long_PTR(stamp);
   TODO_type_check__GError_PTR_PTR(error);
 
-
   /* Unbox parameters */
   struct _GBookmarkFile * native_bookmark = (mrb_nil_p(bookmark) ? NULL : mruby_unbox__GBookmarkFile(bookmark));
 
@@ -5981,7 +5858,6 @@ mrb_GLib_g_bookmark_file_get_applications(mrb_state* mrb, mrb_value self) {
   TODO_type_check_unsigned_long_PTR(length);
   TODO_type_check__GError_PTR_PTR(error);
 
-
   /* Unbox parameters */
   struct _GBookmarkFile * native_bookmark = (mrb_nil_p(bookmark) ? NULL : mruby_unbox__GBookmarkFile(bookmark));
 
@@ -6032,7 +5908,6 @@ mrb_GLib_g_bookmark_file_get_description(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
   TODO_type_check__GError_PTR_PTR(error);
-
 
   /* Unbox parameters */
   struct _GBookmarkFile * native_bookmark = (mrb_nil_p(bookmark) ? NULL : mruby_unbox__GBookmarkFile(bookmark));
@@ -6085,7 +5960,6 @@ mrb_GLib_g_bookmark_file_get_groups(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check_unsigned_long_PTR(length);
   TODO_type_check__GError_PTR_PTR(error);
-
 
   /* Unbox parameters */
   struct _GBookmarkFile * native_bookmark = (mrb_nil_p(bookmark) ? NULL : mruby_unbox__GBookmarkFile(bookmark));
@@ -6144,7 +6018,6 @@ mrb_GLib_g_bookmark_file_get_icon(mrb_state* mrb, mrb_value self) {
   TODO_type_check_char_PTR_PTR(mime_type);
   TODO_type_check__GError_PTR_PTR(error);
 
-
   /* Unbox parameters */
   struct _GBookmarkFile * native_bookmark = (mrb_nil_p(bookmark) ? NULL : mruby_unbox__GBookmarkFile(bookmark));
 
@@ -6202,7 +6075,6 @@ mrb_GLib_g_bookmark_file_get_is_private(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check__GError_PTR_PTR(error);
 
-
   /* Unbox parameters */
   struct _GBookmarkFile * native_bookmark = (mrb_nil_p(bookmark) ? NULL : mruby_unbox__GBookmarkFile(bookmark));
 
@@ -6256,7 +6128,6 @@ mrb_GLib_g_bookmark_file_get_mime_type(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check__GError_PTR_PTR(error);
 
-
   /* Unbox parameters */
   struct _GBookmarkFile * native_bookmark = (mrb_nil_p(bookmark) ? NULL : mruby_unbox__GBookmarkFile(bookmark));
 
@@ -6306,7 +6177,6 @@ mrb_GLib_g_bookmark_file_get_modified(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check__GError_PTR_PTR(error);
 
-
   /* Unbox parameters */
   struct _GBookmarkFile * native_bookmark = (mrb_nil_p(bookmark) ? NULL : mruby_unbox__GBookmarkFile(bookmark));
 
@@ -6346,7 +6216,6 @@ mrb_GLib_g_bookmark_file_get_size(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GBookmarkFile expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GBookmarkFile * native_bookmark = (mrb_nil_p(bookmark) ? NULL : mruby_unbox__GBookmarkFile(bookmark));
@@ -6397,7 +6266,6 @@ mrb_GLib_g_bookmark_file_get_title(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check__GError_PTR_PTR(error);
 
-
   /* Unbox parameters */
   struct _GBookmarkFile * native_bookmark = (mrb_nil_p(bookmark) ? NULL : mruby_unbox__GBookmarkFile(bookmark));
 
@@ -6440,7 +6308,6 @@ mrb_GLib_g_bookmark_file_get_uris(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
   TODO_type_check_unsigned_long_PTR(length);
-
 
   /* Unbox parameters */
   struct _GBookmarkFile * native_bookmark = (mrb_nil_p(bookmark) ? NULL : mruby_unbox__GBookmarkFile(bookmark));
@@ -6488,7 +6355,6 @@ mrb_GLib_g_bookmark_file_get_visited(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
   TODO_type_check__GError_PTR_PTR(error);
-
 
   /* Unbox parameters */
   struct _GBookmarkFile * native_bookmark = (mrb_nil_p(bookmark) ? NULL : mruby_unbox__GBookmarkFile(bookmark));
@@ -6544,7 +6410,6 @@ mrb_GLib_g_bookmark_file_has_application(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
   TODO_type_check__GError_PTR_PTR(error);
-
 
   /* Unbox parameters */
   struct _GBookmarkFile * native_bookmark = (mrb_nil_p(bookmark) ? NULL : mruby_unbox__GBookmarkFile(bookmark));
@@ -6607,7 +6472,6 @@ mrb_GLib_g_bookmark_file_has_group(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check__GError_PTR_PTR(error);
 
-
   /* Unbox parameters */
   struct _GBookmarkFile * native_bookmark = (mrb_nil_p(bookmark) ? NULL : mruby_unbox__GBookmarkFile(bookmark));
 
@@ -6659,7 +6523,6 @@ mrb_GLib_g_bookmark_file_has_item(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "String expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GBookmarkFile * native_bookmark = (mrb_nil_p(bookmark) ? NULL : mruby_unbox__GBookmarkFile(bookmark));
@@ -6717,7 +6580,6 @@ mrb_GLib_g_bookmark_file_load_from_data(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
   TODO_type_check__GError_PTR_PTR(error);
-
 
   /* Unbox parameters */
   struct _GBookmarkFile * native_bookmark = (mrb_nil_p(bookmark) ? NULL : mruby_unbox__GBookmarkFile(bookmark));
@@ -6777,7 +6639,6 @@ mrb_GLib_g_bookmark_file_load_from_data_dirs(mrb_state* mrb, mrb_value self) {
   TODO_type_check_char_PTR_PTR(full_path);
   TODO_type_check__GError_PTR_PTR(error);
 
-
   /* Unbox parameters */
   struct _GBookmarkFile * native_bookmark = (mrb_nil_p(bookmark) ? NULL : mruby_unbox__GBookmarkFile(bookmark));
 
@@ -6832,7 +6693,6 @@ mrb_GLib_g_bookmark_file_load_from_file(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
   TODO_type_check__GError_PTR_PTR(error);
-
 
   /* Unbox parameters */
   struct _GBookmarkFile * native_bookmark = (mrb_nil_p(bookmark) ? NULL : mruby_unbox__GBookmarkFile(bookmark));
@@ -6892,7 +6752,6 @@ mrb_GLib_g_bookmark_file_move_item(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
   TODO_type_check__GError_PTR_PTR(error);
-
 
   /* Unbox parameters */
   struct _GBookmarkFile * native_bookmark = (mrb_nil_p(bookmark) ? NULL : mruby_unbox__GBookmarkFile(bookmark));
@@ -6975,7 +6834,6 @@ mrb_GLib_g_bookmark_file_remove_application(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check__GError_PTR_PTR(error);
 
-
   /* Unbox parameters */
   struct _GBookmarkFile * native_bookmark = (mrb_nil_p(bookmark) ? NULL : mruby_unbox__GBookmarkFile(bookmark));
 
@@ -7037,7 +6895,6 @@ mrb_GLib_g_bookmark_file_remove_group(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check__GError_PTR_PTR(error);
 
-
   /* Unbox parameters */
   struct _GBookmarkFile * native_bookmark = (mrb_nil_p(bookmark) ? NULL : mruby_unbox__GBookmarkFile(bookmark));
 
@@ -7092,7 +6949,6 @@ mrb_GLib_g_bookmark_file_remove_item(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
   TODO_type_check__GError_PTR_PTR(error);
-
 
   /* Unbox parameters */
   struct _GBookmarkFile * native_bookmark = (mrb_nil_p(bookmark) ? NULL : mruby_unbox__GBookmarkFile(bookmark));
@@ -7149,7 +7005,6 @@ mrb_GLib_g_bookmark_file_set_added(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GBookmarkFile * native_bookmark = (mrb_nil_p(bookmark) ? NULL : mruby_unbox__GBookmarkFile(bookmark));
@@ -7221,7 +7076,6 @@ mrb_GLib_g_bookmark_file_set_app_info(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check__GError_PTR_PTR(error);
 
-
   /* Unbox parameters */
   struct _GBookmarkFile * native_bookmark = (mrb_nil_p(bookmark) ? NULL : mruby_unbox__GBookmarkFile(bookmark));
 
@@ -7286,7 +7140,6 @@ mrb_GLib_g_bookmark_file_set_description(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GBookmarkFile * native_bookmark = (mrb_nil_p(bookmark) ? NULL : mruby_unbox__GBookmarkFile(bookmark));
 
@@ -7338,7 +7191,6 @@ mrb_GLib_g_bookmark_file_set_groups(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GBookmarkFile * native_bookmark = (mrb_nil_p(bookmark) ? NULL : mruby_unbox__GBookmarkFile(bookmark));
@@ -7397,7 +7249,6 @@ mrb_GLib_g_bookmark_file_set_icon(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GBookmarkFile * native_bookmark = (mrb_nil_p(bookmark) ? NULL : mruby_unbox__GBookmarkFile(bookmark));
 
@@ -7449,7 +7300,6 @@ mrb_GLib_g_bookmark_file_set_is_private(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GBookmarkFile * native_bookmark = (mrb_nil_p(bookmark) ? NULL : mruby_unbox__GBookmarkFile(bookmark));
 
@@ -7498,7 +7348,6 @@ mrb_GLib_g_bookmark_file_set_mime_type(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "String expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GBookmarkFile * native_bookmark = (mrb_nil_p(bookmark) ? NULL : mruby_unbox__GBookmarkFile(bookmark));
@@ -7549,7 +7398,6 @@ mrb_GLib_g_bookmark_file_set_modified(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GBookmarkFile * native_bookmark = (mrb_nil_p(bookmark) ? NULL : mruby_unbox__GBookmarkFile(bookmark));
 
@@ -7598,7 +7446,6 @@ mrb_GLib_g_bookmark_file_set_title(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "String expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GBookmarkFile * native_bookmark = (mrb_nil_p(bookmark) ? NULL : mruby_unbox__GBookmarkFile(bookmark));
@@ -7649,7 +7496,6 @@ mrb_GLib_g_bookmark_file_set_visited(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GBookmarkFile * native_bookmark = (mrb_nil_p(bookmark) ? NULL : mruby_unbox__GBookmarkFile(bookmark));
 
@@ -7692,7 +7538,6 @@ mrb_GLib_g_bookmark_file_to_data(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check_unsigned_long_PTR(length);
   TODO_type_check__GError_PTR_PTR(error);
-
 
   /* Unbox parameters */
   struct _GBookmarkFile * native_bookmark = (mrb_nil_p(bookmark) ? NULL : mruby_unbox__GBookmarkFile(bookmark));
@@ -7743,7 +7588,6 @@ mrb_GLib_g_bookmark_file_to_file(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check__GError_PTR_PTR(error);
 
-
   /* Unbox parameters */
   struct _GBookmarkFile * native_bookmark = (mrb_nil_p(bookmark) ? NULL : mruby_unbox__GBookmarkFile(bookmark));
 
@@ -7788,7 +7632,6 @@ mrb_GLib_g_bsearch_array_create(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   const GBSearchConfig * native_bconfig = (mrb_nil_p(bconfig) ? NULL : mruby_unbox_GBSearchConfig(bconfig));
 
@@ -7827,7 +7670,6 @@ mrb_GLib_g_bsearch_array_free(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GBSearchConfig expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   GBSearchArray * native_barray = TODO_mruby_unbox_GBSearchArray_PTR(barray);
@@ -7869,7 +7711,6 @@ mrb_GLib_g_bsearch_array_get_index(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
   TODO_type_check_void_PTR(node_in_array);
-
 
   /* Unbox parameters */
   GBSearchArray * native_barray = TODO_mruby_unbox_GBSearchArray_PTR(barray);
@@ -7924,7 +7765,6 @@ mrb_GLib_g_bsearch_array_get_nth(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   GBSearchArray * native_barray = TODO_mruby_unbox_GBSearchArray_PTR(barray);
 
@@ -7974,7 +7814,6 @@ mrb_GLib_g_bsearch_array_grow(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   GBSearchArray * native_barray = TODO_mruby_unbox_GBSearchArray_PTR(barray);
 
@@ -8020,7 +7859,6 @@ mrb_GLib_g_bsearch_array_insert(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
   TODO_type_check_void_PTR(key_node);
-
 
   /* Unbox parameters */
   GBSearchArray * native_barray = TODO_mruby_unbox_GBSearchArray_PTR(barray);
@@ -8074,7 +7912,6 @@ mrb_GLib_g_bsearch_array_lookup_fuzzy(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   GBSearchArray * native_barray = TODO_mruby_unbox_GBSearchArray_PTR(barray);
 
@@ -8126,7 +7963,6 @@ mrb_GLib_g_bsearch_array_remove(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   GBSearchArray * native_barray = TODO_mruby_unbox_GBSearchArray_PTR(barray);
 
@@ -8173,7 +8009,6 @@ mrb_GLib_g_bsearch_array_replace(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check_void_PTR(key_node);
 
-
   /* Unbox parameters */
   GBSearchArray * native_barray = TODO_mruby_unbox_GBSearchArray_PTR(barray);
 
@@ -8214,7 +8049,6 @@ mrb_GLib_g_build_filename(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   const char * native_first_element = mrb_string_value_cstr(mrb, &first_element);
 
@@ -8247,7 +8081,6 @@ mrb_GLib_g_build_filenamev(mrb_state* mrb, mrb_value self) {
 
   /* Type checking */
   TODO_type_check_char_PTR_PTR(args);
-
 
   /* Unbox parameters */
   char ** native_args = TODO_mruby_unbox_char_PTR_PTR(args);
@@ -8291,7 +8124,6 @@ mrb_GLib_g_build_path(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   const char * native_separator = mrb_string_value_cstr(mrb, &separator);
 
@@ -8332,7 +8164,6 @@ mrb_GLib_g_build_pathv(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
   TODO_type_check_char_PTR_PTR(args);
-
 
   /* Unbox parameters */
   const char * native_separator = mrb_string_value_cstr(mrb, &separator);
@@ -8381,7 +8212,6 @@ mrb_GLib_g_byte_array_append(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GByteArray * native_array = (mrb_nil_p(array) ? NULL : mruby_unbox__GByteArray(array));
 
@@ -8428,7 +8258,6 @@ mrb_GLib_g_byte_array_free(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GByteArray * native_array = (mrb_nil_p(array) ? NULL : mruby_unbox__GByteArray(array));
 
@@ -8466,7 +8295,6 @@ mrb_GLib_g_byte_array_free_to_bytes(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GByteArray expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GByteArray * native_array = (mrb_nil_p(array) ? NULL : mruby_unbox__GByteArray(array));
@@ -8527,7 +8355,6 @@ mrb_GLib_g_byte_array_new_take(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   unsigned char * native_data = TODO_mruby_unbox_unsigned_char_PTR(data);
 
@@ -8575,7 +8402,6 @@ mrb_GLib_g_byte_array_prepend(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GByteArray * native_array = (mrb_nil_p(array) ? NULL : mruby_unbox__GByteArray(array));
 
@@ -8615,7 +8441,6 @@ mrb_GLib_g_byte_array_ref(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GByteArray expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GByteArray * native_array = (mrb_nil_p(array) ? NULL : mruby_unbox__GByteArray(array));
@@ -8658,7 +8483,6 @@ mrb_GLib_g_byte_array_remove_index(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GByteArray * native_array = (mrb_nil_p(array) ? NULL : mruby_unbox__GByteArray(array));
@@ -8703,7 +8527,6 @@ mrb_GLib_g_byte_array_remove_index_fast(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GByteArray * native_array = (mrb_nil_p(array) ? NULL : mruby_unbox__GByteArray(array));
@@ -8755,7 +8578,6 @@ mrb_GLib_g_byte_array_remove_range(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GByteArray * native_array = (mrb_nil_p(array) ? NULL : mruby_unbox__GByteArray(array));
 
@@ -8802,7 +8624,6 @@ mrb_GLib_g_byte_array_set_size(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GByteArray * native_array = (mrb_nil_p(array) ? NULL : mruby_unbox__GByteArray(array));
 
@@ -8840,7 +8661,6 @@ mrb_GLib_g_byte_array_sized_new(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   unsigned int native_reserved_size = mrb_fixnum(reserved_size);
@@ -8880,7 +8700,6 @@ mrb_GLib_g_byte_array_sort(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
   TODO_type_check_int_LPAREN_PTR_RPAREN_LPAREN_void_PTR_COMMA_const_void_PTR_RPAREN(compare_func);
-
 
   /* Unbox parameters */
   struct _GByteArray * native_array = (mrb_nil_p(array) ? NULL : mruby_unbox__GByteArray(array));
@@ -8923,7 +8742,6 @@ mrb_GLib_g_byte_array_sort_with_data(mrb_state* mrb, mrb_value self) {
   TODO_type_check_int_LPAREN_PTR_RPAREN_LPAREN_void_PTR_COMMA_const_void_PTR_COMMA_void_PTR_RPAREN(compare_func);
   TODO_type_check_void_PTR(user_data);
 
-
   /* Unbox parameters */
   struct _GByteArray * native_array = (mrb_nil_p(array) ? NULL : mruby_unbox__GByteArray(array));
 
@@ -8961,7 +8779,6 @@ mrb_GLib_g_byte_array_unref(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GByteArray * native_array = (mrb_nil_p(array) ? NULL : mruby_unbox__GByteArray(array));
 
@@ -8994,7 +8811,6 @@ mrb_GLib_g_bytes_compare(mrb_state* mrb, mrb_value self) {
   /* Type checking */
   TODO_type_check_void_PTR(bytes1);
   TODO_type_check_void_PTR(bytes2);
-
 
   /* Unbox parameters */
   const void * native_bytes1 = TODO_mruby_unbox_void_PTR(bytes1);
@@ -9037,7 +8853,6 @@ mrb_GLib_g_bytes_equal(mrb_state* mrb, mrb_value self) {
   /* Type checking */
   TODO_type_check_void_PTR(bytes1);
   TODO_type_check_void_PTR(bytes2);
-
 
   /* Unbox parameters */
   const void * native_bytes1 = TODO_mruby_unbox_void_PTR(bytes1);
@@ -9084,7 +8899,6 @@ mrb_GLib_g_bytes_get_data(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check_unsigned_long_PTR(size);
 
-
   /* Unbox parameters */
   struct _GBytes * native_bytes = (mrb_nil_p(bytes) ? NULL : mruby_unbox__GBytes(bytes));
 
@@ -9123,7 +8937,6 @@ mrb_GLib_g_bytes_get_size(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GBytes * native_bytes = (mrb_nil_p(bytes) ? NULL : mruby_unbox__GBytes(bytes));
 
@@ -9160,7 +8973,6 @@ mrb_GLib_g_bytes_hash(mrb_state* mrb, mrb_value self) {
 
   /* Type checking */
   TODO_type_check_void_PTR(bytes);
-
 
   /* Unbox parameters */
   const void * native_bytes = TODO_mruby_unbox_void_PTR(bytes);
@@ -9204,7 +9016,6 @@ mrb_GLib_g_bytes_new(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   const void * native_data = TODO_mruby_unbox_void_PTR(data);
@@ -9256,7 +9067,6 @@ mrb_GLib_g_bytes_new_from_bytes(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GBytes * native_bytes = (mrb_nil_p(bytes) ? NULL : mruby_unbox__GBytes(bytes));
 
@@ -9300,7 +9110,6 @@ mrb_GLib_g_bytes_new_static(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   const void * native_data = TODO_mruby_unbox_void_PTR(data);
 
@@ -9341,7 +9150,6 @@ mrb_GLib_g_bytes_new_take(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   void * native_data = TODO_mruby_unbox_void_PTR(data);
@@ -9390,7 +9198,6 @@ mrb_GLib_g_bytes_new_with_free_func(mrb_state* mrb, mrb_value self) {
   TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_void_PTR_RPAREN(free_func);
   TODO_type_check_void_PTR(user_data);
 
-
   /* Unbox parameters */
   const void * native_data = TODO_mruby_unbox_void_PTR(data);
 
@@ -9433,7 +9240,6 @@ mrb_GLib_g_bytes_ref(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GBytes * native_bytes = (mrb_nil_p(bytes) ? NULL : mruby_unbox__GBytes(bytes));
 
@@ -9470,7 +9276,6 @@ mrb_GLib_g_bytes_unref(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GBytes * native_bytes = (mrb_nil_p(bytes) ? NULL : mruby_unbox__GBytes(bytes));
 
@@ -9503,7 +9308,6 @@ mrb_GLib_g_bytes_unref_to_array(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GBytes expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GBytes * native_bytes = (mrb_nil_p(bytes) ? NULL : mruby_unbox__GBytes(bytes));
@@ -9544,7 +9348,6 @@ mrb_GLib_g_bytes_unref_to_data(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check_unsigned_long_PTR(size);
 
-
   /* Unbox parameters */
   struct _GBytes * native_bytes = (mrb_nil_p(bytes) ? NULL : mruby_unbox__GBytes(bytes));
 
@@ -9582,7 +9385,6 @@ mrb_GLib_g_chdir(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "String expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   const char * native_path = mrb_string_value_cstr(mrb, &path);
@@ -9648,7 +9450,6 @@ mrb_GLib_g_checksum_copy(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   const struct _GChecksum * native_checksum = (mrb_nil_p(checksum) ? NULL : mruby_unbox__GChecksum(checksum));
 
@@ -9684,7 +9485,6 @@ mrb_GLib_g_checksum_free(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GChecksum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GChecksum * native_checksum = (mrb_nil_p(checksum) ? NULL : mruby_unbox__GChecksum(checksum));
@@ -9725,7 +9525,6 @@ mrb_GLib_g_checksum_get_digest(mrb_state* mrb, mrb_value self) {
   TODO_type_check_unsigned_char_PTR(buffer);
   TODO_type_check_unsigned_long_PTR(digest_len);
 
-
   /* Unbox parameters */
   struct _GChecksum * native_checksum = (mrb_nil_p(checksum) ? NULL : mruby_unbox__GChecksum(checksum));
 
@@ -9763,7 +9562,6 @@ mrb_GLib_g_checksum_get_string(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GChecksum * native_checksum = (mrb_nil_p(checksum) ? NULL : mruby_unbox__GChecksum(checksum));
 
@@ -9796,7 +9594,6 @@ mrb_GLib_g_checksum_new(mrb_state* mrb, mrb_value self) {
 
   /* Type checking */
   TODO_type_check_GChecksumType(checksum_type);
-
 
   /* Unbox parameters */
   GChecksumType native_checksum_type = TODO_mruby_unbox_GChecksumType(checksum_type);
@@ -9834,7 +9631,6 @@ mrb_GLib_g_checksum_reset(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GChecksum * native_checksum = (mrb_nil_p(checksum) ? NULL : mruby_unbox__GChecksum(checksum));
 
@@ -9864,7 +9660,6 @@ mrb_GLib_g_checksum_type_get_length(mrb_state* mrb, mrb_value self) {
 
   /* Type checking */
   TODO_type_check_GChecksumType(checksum_type);
-
 
   /* Unbox parameters */
   GChecksumType native_checksum_type = TODO_mruby_unbox_GChecksumType(checksum_type);
@@ -9915,7 +9710,6 @@ mrb_GLib_g_checksum_update(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GChecksum * native_checksum = (mrb_nil_p(checksum) ? NULL : mruby_unbox__GChecksum(checksum));
 
@@ -9958,7 +9752,6 @@ mrb_GLib_g_child_watch_add(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_intCOMMA_intCOMMA_void_PTR_RPAREN(function);
   TODO_type_check_void_PTR(data);
-
 
   /* Unbox parameters */
   int native_pid = mrb_fixnum(pid);
@@ -10019,7 +9812,6 @@ mrb_GLib_g_child_watch_add_full(mrb_state* mrb, mrb_value self) {
   TODO_type_check_void_PTR(data);
   TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_void_PTR_RPAREN(notify);
 
-
   /* Unbox parameters */
   int native_priority = mrb_fixnum(priority);
 
@@ -10068,7 +9860,6 @@ mrb_GLib_g_child_watch_source_new(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   int native_pid = mrb_fixnum(pid);
 
@@ -10102,7 +9893,6 @@ mrb_GLib_g_clear_error(mrb_state* mrb, mrb_value self) {
   /* Type checking */
   TODO_type_check__GError_PTR_PTR(err);
 
-
   /* Unbox parameters */
   struct _GError ** native_err = TODO_mruby_unbox__GError_PTR_PTR(err);
 
@@ -10135,7 +9925,6 @@ mrb_GLib_g_clear_pointer(mrb_state* mrb, mrb_value self) {
   /* Type checking */
   TODO_type_check_void_PTR_PTR(pp);
   TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_void_PTR_RPAREN(destroy);
-
 
   /* Unbox parameters */
   void ** native_pp = TODO_mruby_unbox_void_PTR_PTR(pp);
@@ -10174,7 +9963,6 @@ mrb_GLib_g_close(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
   TODO_type_check__GError_PTR_PTR(error);
-
 
   /* Unbox parameters */
   int native_fd = mrb_fixnum(fd);
@@ -10221,7 +10009,6 @@ mrb_GLib_g_compute_checksum_for_bytes(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   GChecksumType native_checksum_type = TODO_mruby_unbox_GChecksumType(checksum_type);
 
@@ -10265,7 +10052,6 @@ mrb_GLib_g_compute_checksum_for_data(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   GChecksumType native_checksum_type = TODO_mruby_unbox_GChecksumType(checksum_type);
@@ -10315,7 +10101,6 @@ mrb_GLib_g_compute_checksum_for_string(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   GChecksumType native_checksum_type = TODO_mruby_unbox_GChecksumType(checksum_type);
@@ -10371,7 +10156,6 @@ mrb_GLib_g_compute_hmac_for_data(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   GChecksumType native_digest_type = TODO_mruby_unbox_GChecksumType(digest_type);
@@ -10435,7 +10219,6 @@ mrb_GLib_g_compute_hmac_for_string(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   GChecksumType native_digest_type = TODO_mruby_unbox_GChecksumType(digest_type);
 
@@ -10480,7 +10263,6 @@ mrb_GLib_g_cond_broadcast(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GCond * native_cond = (mrb_nil_p(cond) ? NULL : mruby_unbox__GCond(cond));
 
@@ -10513,7 +10295,6 @@ mrb_GLib_g_cond_clear(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GCond expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GCond * native_cond = (mrb_nil_p(cond) ? NULL : mruby_unbox__GCond(cond));
@@ -10548,7 +10329,6 @@ mrb_GLib_g_cond_init(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GCond * native_cond = (mrb_nil_p(cond) ? NULL : mruby_unbox__GCond(cond));
 
@@ -10581,7 +10361,6 @@ mrb_GLib_g_cond_signal(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GCond expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GCond * native_cond = (mrb_nil_p(cond) ? NULL : mruby_unbox__GCond(cond));
@@ -10618,7 +10397,6 @@ mrb_GLib_g_cond_wait(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
   TODO_type_check_union__GMutex_PTR(mutex);
-
 
   /* Unbox parameters */
   struct _GCond * native_cond = (mrb_nil_p(cond) ? NULL : mruby_unbox__GCond(cond));
@@ -10663,7 +10441,6 @@ mrb_GLib_g_cond_wait_until(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GCond * native_cond = (mrb_nil_p(cond) ? NULL : mruby_unbox__GCond(cond));
@@ -10735,7 +10512,6 @@ mrb_GLib_g_convert(mrb_state* mrb, mrb_value self) {
   TODO_type_check_unsigned_long_PTR(bytes_read);
   TODO_type_check_unsigned_long_PTR(bytes_written);
   TODO_type_check__GError_PTR_PTR(error);
-
 
   /* Unbox parameters */
   const char * native_str = mrb_string_value_cstr(mrb, &str);
@@ -10842,7 +10618,6 @@ mrb_GLib_g_convert_with_fallback(mrb_state* mrb, mrb_value self) {
   TODO_type_check_unsigned_long_PTR(bytes_written);
   TODO_type_check__GError_PTR_PTR(error);
 
-
   /* Unbox parameters */
   const char * native_str = mrb_string_value_cstr(mrb, &str);
 
@@ -10914,7 +10689,6 @@ mrb_GLib_g_convert_with_iconv(mrb_state* mrb, mrb_value self) {
   TODO_type_check_unsigned_long_PTR(bytes_written);
   TODO_type_check__GError_PTR_PTR(error);
 
-
   /* Unbox parameters */
   const char * native_str = mrb_string_value_cstr(mrb, &str);
 
@@ -10958,7 +10732,6 @@ mrb_GLib_g_datalist_clear(mrb_state* mrb, mrb_value self) {
   /* Type checking */
   TODO_type_check__GData_PTR_PTR(datalist);
 
-
   /* Unbox parameters */
   struct _GData ** native_datalist = TODO_mruby_unbox__GData_PTR_PTR(datalist);
 
@@ -10994,7 +10767,6 @@ mrb_GLib_g_datalist_foreach(mrb_state* mrb, mrb_value self) {
   TODO_type_check__GData_PTR_PTR(datalist);
   TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_unsigned_intCOMMA_void_PTR_COMMA_void_PTR_RPAREN(func);
   TODO_type_check_void_PTR(user_data);
-
 
   /* Unbox parameters */
   struct _GData ** native_datalist = TODO_mruby_unbox__GData_PTR_PTR(datalist);
@@ -11036,7 +10808,6 @@ mrb_GLib_g_datalist_get_data(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GData ** native_datalist = TODO_mruby_unbox__GData_PTR_PTR(datalist);
 
@@ -11071,7 +10842,6 @@ mrb_GLib_g_datalist_get_flags(mrb_state* mrb, mrb_value self) {
 
   /* Type checking */
   TODO_type_check__GData_PTR_PTR(datalist);
-
 
   /* Unbox parameters */
   struct _GData ** native_datalist = TODO_mruby_unbox__GData_PTR_PTR(datalist);
@@ -11122,7 +10892,6 @@ mrb_GLib_g_datalist_id_dup_data(mrb_state* mrb, mrb_value self) {
   TODO_type_check_void_PTR_LPAREN_PTR_RPAREN_LPAREN_void_PTR_COMMA_void_PTR_RPAREN(dup_func);
   TODO_type_check_void_PTR(user_data);
 
-
   /* Unbox parameters */
   struct _GData ** native_datalist = TODO_mruby_unbox__GData_PTR_PTR(datalist);
 
@@ -11168,7 +10937,6 @@ mrb_GLib_g_datalist_id_get_data(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GData ** native_datalist = TODO_mruby_unbox__GData_PTR_PTR(datalist);
 
@@ -11209,7 +10977,6 @@ mrb_GLib_g_datalist_id_remove_no_notify(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GData ** native_datalist = TODO_mruby_unbox__GData_PTR_PTR(datalist);
@@ -11263,7 +11030,6 @@ mrb_GLib_g_datalist_id_replace_data(mrb_state* mrb, mrb_value self) {
   TODO_type_check_void_PTR(newval);
   TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_void_PTR_RPAREN(destroy);
   TODO_type_check_void_LPAREN_PTR_PTR_RPAREN_LPAREN_void_PTR_RPAREN(old_destroy);
-
 
   /* Unbox parameters */
   struct _GData ** native_datalist = TODO_mruby_unbox__GData_PTR_PTR(datalist);
@@ -11324,7 +11090,6 @@ mrb_GLib_g_datalist_id_set_data_full(mrb_state* mrb, mrb_value self) {
   TODO_type_check_void_PTR(data);
   TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_void_PTR_RPAREN(destroy_func);
 
-
   /* Unbox parameters */
   struct _GData ** native_datalist = TODO_mruby_unbox__GData_PTR_PTR(datalist);
 
@@ -11361,7 +11126,6 @@ mrb_GLib_g_datalist_init(mrb_state* mrb, mrb_value self) {
   /* Type checking */
   TODO_type_check__GData_PTR_PTR(datalist);
 
-
   /* Unbox parameters */
   struct _GData ** native_datalist = TODO_mruby_unbox__GData_PTR_PTR(datalist);
 
@@ -11397,7 +11161,6 @@ mrb_GLib_g_datalist_set_flags(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GData ** native_datalist = TODO_mruby_unbox__GData_PTR_PTR(datalist);
@@ -11437,7 +11200,6 @@ mrb_GLib_g_datalist_unset_flags(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GData ** native_datalist = TODO_mruby_unbox__GData_PTR_PTR(datalist);
 
@@ -11469,7 +11231,6 @@ mrb_GLib_g_dataset_destroy(mrb_state* mrb, mrb_value self) {
 
   /* Type checking */
   TODO_type_check_void_PTR(dataset_location);
-
 
   /* Unbox parameters */
   const void * native_dataset_location = TODO_mruby_unbox_void_PTR(dataset_location);
@@ -11506,7 +11267,6 @@ mrb_GLib_g_dataset_foreach(mrb_state* mrb, mrb_value self) {
   TODO_type_check_void_PTR(dataset_location);
   TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_unsigned_intCOMMA_void_PTR_COMMA_void_PTR_RPAREN(func);
   TODO_type_check_void_PTR(user_data);
-
 
   /* Unbox parameters */
   const void * native_dataset_location = TODO_mruby_unbox_void_PTR(dataset_location);
@@ -11548,7 +11308,6 @@ mrb_GLib_g_dataset_id_get_data(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   const void * native_dataset_location = TODO_mruby_unbox_void_PTR(dataset_location);
 
@@ -11589,7 +11348,6 @@ mrb_GLib_g_dataset_id_remove_no_notify(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   const void * native_dataset_location = TODO_mruby_unbox_void_PTR(dataset_location);
@@ -11638,7 +11396,6 @@ mrb_GLib_g_dataset_id_set_data_full(mrb_state* mrb, mrb_value self) {
   TODO_type_check_void_PTR(data);
   TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_void_PTR_RPAREN(destroy_func);
 
-
   /* Unbox parameters */
   const void * native_dataset_location = TODO_mruby_unbox_void_PTR(dataset_location);
 
@@ -11684,7 +11441,6 @@ mrb_GLib_g_date_add_days(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GDate * native_date = (mrb_nil_p(date) ? NULL : mruby_unbox__GDate(date));
 
@@ -11726,7 +11482,6 @@ mrb_GLib_g_date_add_months(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GDate * native_date = (mrb_nil_p(date) ? NULL : mruby_unbox__GDate(date));
 
@@ -11767,7 +11522,6 @@ mrb_GLib_g_date_add_years(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GDate * native_date = (mrb_nil_p(date) ? NULL : mruby_unbox__GDate(date));
@@ -11816,7 +11570,6 @@ mrb_GLib_g_date_clamp(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GDate * native_date = (mrb_nil_p(date) ? NULL : mruby_unbox__GDate(date));
 
@@ -11860,7 +11613,6 @@ mrb_GLib_g_date_clear(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GDate * native_date = (mrb_nil_p(date) ? NULL : mruby_unbox__GDate(date));
 
@@ -11901,7 +11653,6 @@ mrb_GLib_g_date_compare(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GDate expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   const struct _GDate * native_lhs = (mrb_nil_p(lhs) ? NULL : mruby_unbox__GDate(lhs));
@@ -11951,7 +11702,6 @@ mrb_GLib_g_date_days_between(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   const struct _GDate * native_date1 = (mrb_nil_p(date1) ? NULL : mruby_unbox__GDate(date1));
 
@@ -11994,7 +11744,6 @@ mrb_GLib_g_date_free(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GDate * native_date = (mrb_nil_p(date) ? NULL : mruby_unbox__GDate(date));
 
@@ -12027,7 +11776,6 @@ mrb_GLib_g_date_get_day(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GDate expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   const struct _GDate * native_date = (mrb_nil_p(date) ? NULL : mruby_unbox__GDate(date));
@@ -12068,7 +11816,6 @@ mrb_GLib_g_date_get_day_of_year(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GDate expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   const struct _GDate * native_date = (mrb_nil_p(date) ? NULL : mruby_unbox__GDate(date));
@@ -12113,7 +11860,6 @@ mrb_GLib_g_date_get_days_in_month(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   GDateMonth native_month = TODO_mruby_unbox_GDateMonth(month);
 
@@ -12156,7 +11902,6 @@ mrb_GLib_g_date_get_iso8601_week_of_year(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   const struct _GDate * native_date = (mrb_nil_p(date) ? NULL : mruby_unbox__GDate(date));
 
@@ -12196,7 +11941,6 @@ mrb_GLib_g_date_get_julian(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GDate expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   const struct _GDate * native_date = (mrb_nil_p(date) ? NULL : mruby_unbox__GDate(date));
@@ -12238,7 +11982,6 @@ mrb_GLib_g_date_get_monday_week_of_year(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   const struct _GDate * native_date = (mrb_nil_p(date) ? NULL : mruby_unbox__GDate(date));
 
@@ -12278,7 +12021,6 @@ mrb_GLib_g_date_get_monday_weeks_in_year(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   unsigned short native_year = mrb_fixnum(year);
@@ -12320,7 +12062,6 @@ mrb_GLib_g_date_get_month(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   const struct _GDate * native_date = (mrb_nil_p(date) ? NULL : mruby_unbox__GDate(date));
 
@@ -12356,7 +12097,6 @@ mrb_GLib_g_date_get_sunday_week_of_year(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GDate expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   const struct _GDate * native_date = (mrb_nil_p(date) ? NULL : mruby_unbox__GDate(date));
@@ -12398,7 +12138,6 @@ mrb_GLib_g_date_get_sunday_weeks_in_year(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   unsigned short native_year = mrb_fixnum(year);
 
@@ -12439,7 +12178,6 @@ mrb_GLib_g_date_get_weekday(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   const struct _GDate * native_date = (mrb_nil_p(date) ? NULL : mruby_unbox__GDate(date));
 
@@ -12475,7 +12213,6 @@ mrb_GLib_g_date_get_year(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GDate expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   const struct _GDate * native_date = (mrb_nil_p(date) ? NULL : mruby_unbox__GDate(date));
@@ -12517,7 +12254,6 @@ mrb_GLib_g_date_is_first_of_month(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   const struct _GDate * native_date = (mrb_nil_p(date) ? NULL : mruby_unbox__GDate(date));
 
@@ -12558,7 +12294,6 @@ mrb_GLib_g_date_is_last_of_month(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   const struct _GDate * native_date = (mrb_nil_p(date) ? NULL : mruby_unbox__GDate(date));
 
@@ -12598,7 +12333,6 @@ mrb_GLib_g_date_is_leap_year(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   unsigned short native_year = mrb_fixnum(year);
@@ -12669,7 +12403,6 @@ mrb_GLib_g_date_new_dmy(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   unsigned char native_day = mrb_fixnum(day);
 
@@ -12709,7 +12442,6 @@ mrb_GLib_g_date_new_julian(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   unsigned int native_julian_day = mrb_fixnum(julian_day);
@@ -12753,7 +12485,6 @@ mrb_GLib_g_date_order(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GDate * native_date1 = (mrb_nil_p(date1) ? NULL : mruby_unbox__GDate(date1));
 
@@ -12794,7 +12525,6 @@ mrb_GLib_g_date_set_day(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GDate * native_date = (mrb_nil_p(date) ? NULL : mruby_unbox__GDate(date));
@@ -12846,7 +12576,6 @@ mrb_GLib_g_date_set_dmy(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GDate * native_date = (mrb_nil_p(date) ? NULL : mruby_unbox__GDate(date));
 
@@ -12892,7 +12621,6 @@ mrb_GLib_g_date_set_julian(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GDate * native_date = (mrb_nil_p(date) ? NULL : mruby_unbox__GDate(date));
 
@@ -12930,7 +12658,6 @@ mrb_GLib_g_date_set_month(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
   TODO_type_check_GDateMonth(month);
-
 
   /* Unbox parameters */
   struct _GDate * native_date = (mrb_nil_p(date) ? NULL : mruby_unbox__GDate(date));
@@ -12973,7 +12700,6 @@ mrb_GLib_g_date_set_parse(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GDate * native_date = (mrb_nil_p(date) ? NULL : mruby_unbox__GDate(date));
 
@@ -13014,7 +12740,6 @@ mrb_GLib_g_date_set_time(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GDate * native_date = (mrb_nil_p(date) ? NULL : mruby_unbox__GDate(date));
@@ -13057,7 +12782,6 @@ mrb_GLib_g_date_set_time_t(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GDate * native_date = (mrb_nil_p(date) ? NULL : mruby_unbox__GDate(date));
 
@@ -13099,7 +12823,6 @@ mrb_GLib_g_date_set_time_val(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GDate * native_date = (mrb_nil_p(date) ? NULL : mruby_unbox__GDate(date));
 
@@ -13140,7 +12863,6 @@ mrb_GLib_g_date_set_year(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GDate * native_date = (mrb_nil_p(date) ? NULL : mruby_unbox__GDate(date));
@@ -13194,7 +12916,6 @@ mrb_GLib_g_date_strftime(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GDate expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   /* WARNING: Allocating new memory to create 'char *' from 'const char *'.
@@ -13261,7 +12982,6 @@ mrb_GLib_g_date_subtract_days(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GDate * native_date = (mrb_nil_p(date) ? NULL : mruby_unbox__GDate(date));
 
@@ -13302,7 +13022,6 @@ mrb_GLib_g_date_subtract_months(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GDate * native_date = (mrb_nil_p(date) ? NULL : mruby_unbox__GDate(date));
@@ -13345,7 +13064,6 @@ mrb_GLib_g_date_subtract_years(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GDate * native_date = (mrb_nil_p(date) ? NULL : mruby_unbox__GDate(date));
 
@@ -13386,7 +13104,6 @@ mrb_GLib_g_date_time_add(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GDateTime * native_datetime = (mrb_nil_p(datetime) ? NULL : mruby_unbox__GDateTime(datetime));
@@ -13431,7 +13148,6 @@ mrb_GLib_g_date_time_add_days(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GDateTime * native_datetime = (mrb_nil_p(datetime) ? NULL : mruby_unbox__GDateTime(datetime));
@@ -13507,7 +13223,6 @@ mrb_GLib_g_date_time_add_full(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GDateTime * native_datetime = (mrb_nil_p(datetime) ? NULL : mruby_unbox__GDateTime(datetime));
 
@@ -13562,7 +13277,6 @@ mrb_GLib_g_date_time_add_hours(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GDateTime * native_datetime = (mrb_nil_p(datetime) ? NULL : mruby_unbox__GDateTime(datetime));
 
@@ -13606,7 +13320,6 @@ mrb_GLib_g_date_time_add_minutes(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GDateTime * native_datetime = (mrb_nil_p(datetime) ? NULL : mruby_unbox__GDateTime(datetime));
@@ -13652,7 +13365,6 @@ mrb_GLib_g_date_time_add_months(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GDateTime * native_datetime = (mrb_nil_p(datetime) ? NULL : mruby_unbox__GDateTime(datetime));
 
@@ -13696,7 +13408,6 @@ mrb_GLib_g_date_time_add_seconds(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Float expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GDateTime * native_datetime = (mrb_nil_p(datetime) ? NULL : mruby_unbox__GDateTime(datetime));
@@ -13742,7 +13453,6 @@ mrb_GLib_g_date_time_add_weeks(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GDateTime * native_datetime = (mrb_nil_p(datetime) ? NULL : mruby_unbox__GDateTime(datetime));
 
@@ -13787,7 +13497,6 @@ mrb_GLib_g_date_time_add_years(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GDateTime * native_datetime = (mrb_nil_p(datetime) ? NULL : mruby_unbox__GDateTime(datetime));
 
@@ -13825,7 +13534,6 @@ mrb_GLib_g_date_time_compare(mrb_state* mrb, mrb_value self) {
   /* Type checking */
   TODO_type_check_void_PTR(dt1);
   TODO_type_check_void_PTR(dt2);
-
 
   /* Unbox parameters */
   const void * native_dt1 = TODO_mruby_unbox_void_PTR(dt1);
@@ -13875,7 +13583,6 @@ mrb_GLib_g_date_time_difference(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GDateTime * native_end = (mrb_nil_p(end) ? NULL : mruby_unbox__GDateTime(end));
 
@@ -13917,7 +13624,6 @@ mrb_GLib_g_date_time_equal(mrb_state* mrb, mrb_value self) {
   /* Type checking */
   TODO_type_check_void_PTR(dt1);
   TODO_type_check_void_PTR(dt2);
-
 
   /* Unbox parameters */
   const void * native_dt1 = TODO_mruby_unbox_void_PTR(dt1);
@@ -13967,7 +13673,6 @@ mrb_GLib_g_date_time_format(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GDateTime * native_datetime = (mrb_nil_p(datetime) ? NULL : mruby_unbox__GDateTime(datetime));
 
@@ -14005,7 +13710,6 @@ mrb_GLib_g_date_time_get_day_of_month(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GDateTime expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GDateTime * native_datetime = (mrb_nil_p(datetime) ? NULL : mruby_unbox__GDateTime(datetime));
@@ -14047,7 +13751,6 @@ mrb_GLib_g_date_time_get_day_of_week(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GDateTime * native_datetime = (mrb_nil_p(datetime) ? NULL : mruby_unbox__GDateTime(datetime));
 
@@ -14087,7 +13790,6 @@ mrb_GLib_g_date_time_get_day_of_year(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GDateTime expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GDateTime * native_datetime = (mrb_nil_p(datetime) ? NULL : mruby_unbox__GDateTime(datetime));
@@ -14129,7 +13831,6 @@ mrb_GLib_g_date_time_get_hour(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GDateTime * native_datetime = (mrb_nil_p(datetime) ? NULL : mruby_unbox__GDateTime(datetime));
 
@@ -14169,7 +13870,6 @@ mrb_GLib_g_date_time_get_microsecond(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GDateTime expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GDateTime * native_datetime = (mrb_nil_p(datetime) ? NULL : mruby_unbox__GDateTime(datetime));
@@ -14211,7 +13911,6 @@ mrb_GLib_g_date_time_get_minute(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GDateTime * native_datetime = (mrb_nil_p(datetime) ? NULL : mruby_unbox__GDateTime(datetime));
 
@@ -14251,7 +13950,6 @@ mrb_GLib_g_date_time_get_month(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GDateTime expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GDateTime * native_datetime = (mrb_nil_p(datetime) ? NULL : mruby_unbox__GDateTime(datetime));
@@ -14293,7 +13991,6 @@ mrb_GLib_g_date_time_get_second(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GDateTime * native_datetime = (mrb_nil_p(datetime) ? NULL : mruby_unbox__GDateTime(datetime));
 
@@ -14334,7 +14031,6 @@ mrb_GLib_g_date_time_get_seconds(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GDateTime * native_datetime = (mrb_nil_p(datetime) ? NULL : mruby_unbox__GDateTime(datetime));
 
@@ -14371,7 +14067,6 @@ mrb_GLib_g_date_time_get_timezone_abbreviation(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GDateTime * native_datetime = (mrb_nil_p(datetime) ? NULL : mruby_unbox__GDateTime(datetime));
 
@@ -14407,7 +14102,6 @@ mrb_GLib_g_date_time_get_utc_offset(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GDateTime expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GDateTime * native_datetime = (mrb_nil_p(datetime) ? NULL : mruby_unbox__GDateTime(datetime));
@@ -14449,7 +14143,6 @@ mrb_GLib_g_date_time_get_week_numbering_year(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GDateTime * native_datetime = (mrb_nil_p(datetime) ? NULL : mruby_unbox__GDateTime(datetime));
 
@@ -14490,7 +14183,6 @@ mrb_GLib_g_date_time_get_week_of_year(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GDateTime * native_datetime = (mrb_nil_p(datetime) ? NULL : mruby_unbox__GDateTime(datetime));
 
@@ -14530,7 +14222,6 @@ mrb_GLib_g_date_time_get_year(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GDateTime expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GDateTime * native_datetime = (mrb_nil_p(datetime) ? NULL : mruby_unbox__GDateTime(datetime));
@@ -14581,7 +14272,6 @@ mrb_GLib_g_date_time_get_ymd(mrb_state* mrb, mrb_value self) {
   TODO_type_check_int_PTR(month);
   TODO_type_check_int_PTR(day);
 
-
   /* Unbox parameters */
   struct _GDateTime * native_datetime = (mrb_nil_p(datetime) ? NULL : mruby_unbox__GDateTime(datetime));
 
@@ -14617,7 +14307,6 @@ mrb_GLib_g_date_time_hash(mrb_state* mrb, mrb_value self) {
 
   /* Type checking */
   TODO_type_check_void_PTR(datetime);
-
 
   /* Unbox parameters */
   const void * native_datetime = TODO_mruby_unbox_void_PTR(datetime);
@@ -14658,7 +14347,6 @@ mrb_GLib_g_date_time_is_daylight_savings(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GDateTime expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GDateTime * native_datetime = (mrb_nil_p(datetime) ? NULL : mruby_unbox__GDateTime(datetime));
@@ -14736,7 +14424,6 @@ mrb_GLib_g_date_time_new(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GTimeZone * native_tz = (mrb_nil_p(tz) ? NULL : mruby_unbox__GTimeZone(tz));
 
@@ -14785,7 +14472,6 @@ mrb_GLib_g_date_time_new_from_timeval_local(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   const struct _GTimeVal * native_tv = (mrb_nil_p(tv) ? NULL : mruby_unbox__GTimeVal(tv));
 
@@ -14821,7 +14507,6 @@ mrb_GLib_g_date_time_new_from_timeval_utc(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GTimeVal expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   const struct _GTimeVal * native_tv = (mrb_nil_p(tv) ? NULL : mruby_unbox__GTimeVal(tv));
@@ -14859,7 +14544,6 @@ mrb_GLib_g_date_time_new_from_unix_local(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   long native_t = mrb_fixnum(t);
 
@@ -14895,7 +14579,6 @@ mrb_GLib_g_date_time_new_from_unix_utc(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   long native_t = mrb_fixnum(t);
@@ -14963,7 +14646,6 @@ mrb_GLib_g_date_time_new_local(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   int native_year = mrb_fixnum(year);
 
@@ -15009,7 +14691,6 @@ mrb_GLib_g_date_time_new_now(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GTimeZone expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GTimeZone * native_tz = (mrb_nil_p(tz) ? NULL : mruby_unbox__GTimeZone(tz));
@@ -15117,7 +14798,6 @@ mrb_GLib_g_date_time_new_utc(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   int native_year = mrb_fixnum(year);
 
@@ -15164,7 +14844,6 @@ mrb_GLib_g_date_time_ref(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GDateTime * native_datetime = (mrb_nil_p(datetime) ? NULL : mruby_unbox__GDateTime(datetime));
 
@@ -15200,7 +14879,6 @@ mrb_GLib_g_date_time_to_local(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GDateTime expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GDateTime * native_datetime = (mrb_nil_p(datetime) ? NULL : mruby_unbox__GDateTime(datetime));
@@ -15243,7 +14921,6 @@ mrb_GLib_g_date_time_to_timeval(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GTimeVal expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GDateTime * native_datetime = (mrb_nil_p(datetime) ? NULL : mruby_unbox__GDateTime(datetime));
@@ -15293,7 +14970,6 @@ mrb_GLib_g_date_time_to_timezone(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GDateTime * native_datetime = (mrb_nil_p(datetime) ? NULL : mruby_unbox__GDateTime(datetime));
 
@@ -15331,7 +15007,6 @@ mrb_GLib_g_date_time_to_unix(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GDateTime expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GDateTime * native_datetime = (mrb_nil_p(datetime) ? NULL : mruby_unbox__GDateTime(datetime));
@@ -15373,7 +15048,6 @@ mrb_GLib_g_date_time_to_utc(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GDateTime * native_datetime = (mrb_nil_p(datetime) ? NULL : mruby_unbox__GDateTime(datetime));
 
@@ -15409,7 +15083,6 @@ mrb_GLib_g_date_time_unref(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GDateTime expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GDateTime * native_datetime = (mrb_nil_p(datetime) ? NULL : mruby_unbox__GDateTime(datetime));
@@ -15447,7 +15120,6 @@ mrb_GLib_g_date_to_struct_tm(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check_tm_PTR(tm);
 
-
   /* Unbox parameters */
   const struct _GDate * native_date = (mrb_nil_p(date) ? NULL : mruby_unbox__GDate(date));
 
@@ -15482,7 +15154,6 @@ mrb_GLib_g_date_valid(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GDate expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   const struct _GDate * native_date = (mrb_nil_p(date) ? NULL : mruby_unbox__GDate(date));
@@ -15523,7 +15194,6 @@ mrb_GLib_g_date_valid_day(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   unsigned char native_day = mrb_fixnum(day);
@@ -15574,7 +15244,6 @@ mrb_GLib_g_date_valid_dmy(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   unsigned char native_day = mrb_fixnum(day);
 
@@ -15619,7 +15288,6 @@ mrb_GLib_g_date_valid_julian(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   unsigned int native_julian_date = mrb_fixnum(julian_date);
 
@@ -15657,7 +15325,6 @@ mrb_GLib_g_date_valid_month(mrb_state* mrb, mrb_value self) {
   /* Type checking */
   TODO_type_check_GDateMonth(month);
 
-
   /* Unbox parameters */
   GDateMonth native_month = TODO_mruby_unbox_GDateMonth(month);
 
@@ -15694,7 +15361,6 @@ mrb_GLib_g_date_valid_weekday(mrb_state* mrb, mrb_value self) {
 
   /* Type checking */
   TODO_type_check_GDateWeekday(weekday);
-
 
   /* Unbox parameters */
   GDateWeekday native_weekday = TODO_mruby_unbox_GDateWeekday(weekday);
@@ -15735,7 +15401,6 @@ mrb_GLib_g_date_valid_year(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   unsigned short native_year = mrb_fixnum(year);
@@ -15789,7 +15454,6 @@ mrb_GLib_g_dcgettext(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   const char * native_domain = mrb_string_value_cstr(mrb, &domain);
 
@@ -15836,7 +15500,6 @@ mrb_GLib_g_dgettext(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   const char * native_domain = mrb_string_value_cstr(mrb, &domain);
 
@@ -15875,7 +15538,6 @@ mrb_GLib_g_dir_close(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GDir * native_dir = (mrb_nil_p(dir) ? NULL : mruby_unbox__GDir(dir));
 
@@ -15912,7 +15574,6 @@ mrb_GLib_g_dir_make_tmp(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check__GError_PTR_PTR(error);
 
-
   /* Unbox parameters */
   const char * native_tmpl = mrb_string_value_cstr(mrb, &tmpl);
 
@@ -15947,7 +15608,6 @@ mrb_GLib_g_dir_new_from_dirp(mrb_state* mrb, mrb_value self) {
 
   /* Type checking */
   TODO_type_check_void_PTR(dirp);
-
 
   /* Unbox parameters */
   void * native_dirp = TODO_mruby_unbox_void_PTR(dirp);
@@ -15993,7 +15653,6 @@ mrb_GLib_g_dir_open(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
   TODO_type_check__GError_PTR_PTR(error);
-
 
   /* Unbox parameters */
   const char * native_path = mrb_string_value_cstr(mrb, &path);
@@ -16041,7 +15700,6 @@ mrb_GLib_g_dir_open_with_errno(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   const char * native_path = mrb_string_value_cstr(mrb, &path);
 
@@ -16080,7 +15738,6 @@ mrb_GLib_g_dir_read_name(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GDir * native_dir = (mrb_nil_p(dir) ? NULL : mruby_unbox__GDir(dir));
 
@@ -16117,7 +15774,6 @@ mrb_GLib_g_dir_rewind(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GDir * native_dir = (mrb_nil_p(dir) ? NULL : mruby_unbox__GDir(dir));
 
@@ -16150,7 +15806,6 @@ mrb_GLib_g_direct_equal(mrb_state* mrb, mrb_value self) {
   /* Type checking */
   TODO_type_check_void_PTR(v1);
   TODO_type_check_void_PTR(v2);
-
 
   /* Unbox parameters */
   const void * native_v1 = TODO_mruby_unbox_void_PTR(v1);
@@ -16190,7 +15845,6 @@ mrb_GLib_g_direct_hash(mrb_state* mrb, mrb_value self) {
 
   /* Type checking */
   TODO_type_check_void_PTR(v);
-
 
   /* Unbox parameters */
   const void * native_v = TODO_mruby_unbox_void_PTR(v);
@@ -16250,7 +15904,6 @@ mrb_GLib_g_dngettext(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   const char * native_domain = mrb_string_value_cstr(mrb, &domain);
 
@@ -16293,7 +15946,6 @@ mrb_GLib_g_double_equal(mrb_state* mrb, mrb_value self) {
   TODO_type_check_void_PTR(v1);
   TODO_type_check_void_PTR(v2);
 
-
   /* Unbox parameters */
   const void * native_v1 = TODO_mruby_unbox_void_PTR(v1);
 
@@ -16332,7 +15984,6 @@ mrb_GLib_g_double_hash(mrb_state* mrb, mrb_value self) {
 
   /* Type checking */
   TODO_type_check_void_PTR(v);
-
 
   /* Unbox parameters */
   const void * native_v = TODO_mruby_unbox_void_PTR(v);
@@ -16386,7 +16037,6 @@ mrb_GLib_g_dpgettext(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   const char * native_domain = mrb_string_value_cstr(mrb, &domain);
 
@@ -16439,7 +16089,6 @@ mrb_GLib_g_dpgettext2(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   const char * native_domain = mrb_string_value_cstr(mrb, &domain);
 
@@ -16482,7 +16131,6 @@ mrb_GLib_g_environ_getenv(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "String expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   char ** native_envp = TODO_mruby_unbox_char_PTR_PTR(envp);
@@ -16537,7 +16185,6 @@ mrb_GLib_g_environ_setenv(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   char ** native_envp = TODO_mruby_unbox_char_PTR_PTR(envp);
 
@@ -16583,7 +16230,6 @@ mrb_GLib_g_environ_unsetenv(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   char ** native_envp = TODO_mruby_unbox_char_PTR_PTR(envp);
 
@@ -16622,7 +16268,6 @@ mrb_GLib_g_error_copy(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   const struct _GError * native_error = (mrb_nil_p(error) ? NULL : mruby_unbox__GError(error));
 
@@ -16658,7 +16303,6 @@ mrb_GLib_g_error_free(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GError expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GError * native_error = (mrb_nil_p(error) ? NULL : mruby_unbox__GError(error));
@@ -16704,7 +16348,6 @@ mrb_GLib_g_error_matches(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   const struct _GError * native_error = (mrb_nil_p(error) ? NULL : mruby_unbox__GError(error));
@@ -16762,7 +16405,6 @@ mrb_GLib_g_error_new(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   unsigned int native_domain = mrb_fixnum(domain);
 
@@ -16814,7 +16456,6 @@ mrb_GLib_g_error_new_literal(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "String expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   unsigned int native_domain = mrb_fixnum(domain);
@@ -16874,7 +16515,6 @@ mrb_GLib_g_error_new_valist(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   unsigned int native_domain = mrb_fixnum(domain);
 
@@ -16916,7 +16556,6 @@ mrb_GLib_g_file_error_from_errno(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   int native_err_no = mrb_fixnum(err_no);
@@ -16987,7 +16626,6 @@ mrb_GLib_g_file_get_contents(mrb_state* mrb, mrb_value self) {
   TODO_type_check_unsigned_long_PTR(length);
   TODO_type_check__GError_PTR_PTR(error);
 
-
   /* Unbox parameters */
   const char * native_filename = mrb_string_value_cstr(mrb, &filename);
 
@@ -17040,7 +16678,6 @@ mrb_GLib_g_file_open_tmp(mrb_state* mrb, mrb_value self) {
   TODO_type_check_char_PTR_PTR(name_used);
   TODO_type_check__GError_PTR_PTR(error);
 
-
   /* Unbox parameters */
   const char * native_tmpl = mrb_string_value_cstr(mrb, &tmpl);
 
@@ -17087,7 +16724,6 @@ mrb_GLib_g_file_read_link(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
   TODO_type_check__GError_PTR_PTR(error);
-
 
   /* Unbox parameters */
   const char * native_filename = mrb_string_value_cstr(mrb, &filename);
@@ -17142,7 +16778,6 @@ mrb_GLib_g_file_set_contents(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check__GError_PTR_PTR(error);
 
-
   /* Unbox parameters */
   const char * native_filename = mrb_string_value_cstr(mrb, &filename);
 
@@ -17192,7 +16827,6 @@ mrb_GLib_g_file_test(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check_GFileTest(test);
 
-
   /* Unbox parameters */
   const char * native_filename = mrb_string_value_cstr(mrb, &filename);
 
@@ -17235,7 +16869,6 @@ mrb_GLib_g_filename_display_basename(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   const char * native_filename = mrb_string_value_cstr(mrb, &filename);
 
@@ -17271,7 +16904,6 @@ mrb_GLib_g_filename_display_name(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "String expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   const char * native_filename = mrb_string_value_cstr(mrb, &filename);
@@ -17314,7 +16946,6 @@ mrb_GLib_g_filename_from_uri(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check_char_PTR_PTR(hostname);
   TODO_type_check__GError_PTR_PTR(error);
-
 
   /* Unbox parameters */
   const char * native_uri = mrb_string_value_cstr(mrb, &uri);
@@ -17371,7 +17002,6 @@ mrb_GLib_g_filename_from_utf8(mrb_state* mrb, mrb_value self) {
   TODO_type_check_unsigned_long_PTR(bytes_written);
   TODO_type_check__GError_PTR_PTR(error);
 
-
   /* Unbox parameters */
   const char * native_utf8string = mrb_string_value_cstr(mrb, &utf8string);
 
@@ -17424,7 +17054,6 @@ mrb_GLib_g_filename_to_uri(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
   TODO_type_check__GError_PTR_PTR(error);
-
 
   /* Unbox parameters */
   const char * native_filename = mrb_string_value_cstr(mrb, &filename);
@@ -17481,7 +17110,6 @@ mrb_GLib_g_filename_to_utf8(mrb_state* mrb, mrb_value self) {
   TODO_type_check_unsigned_long_PTR(bytes_written);
   TODO_type_check__GError_PTR_PTR(error);
 
-
   /* Unbox parameters */
   const char * native_opsysstring = mrb_string_value_cstr(mrb, &opsysstring);
 
@@ -17526,7 +17154,6 @@ mrb_GLib_g_find_program_in_path(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   const char * native_program = mrb_string_value_cstr(mrb, &program);
 
@@ -17563,7 +17190,6 @@ mrb_GLib_g_format_size(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   unsigned long native_size = mrb_fixnum(size);
 
@@ -17599,7 +17225,6 @@ mrb_GLib_g_format_size_for_display(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   long native_size = mrb_fixnum(size);
@@ -17639,7 +17264,6 @@ mrb_GLib_g_format_size_full(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
   TODO_type_check_GFormatSizeFlags(flags);
-
 
   /* Unbox parameters */
   unsigned long native_size = mrb_fixnum(size);
@@ -17682,7 +17306,6 @@ mrb_GLib_g_fprintf(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct __sFILE * native_file = TODO_mruby_unbox___sFILE_PTR(file);
 
@@ -17721,7 +17344,6 @@ mrb_GLib_g_free(mrb_state* mrb, mrb_value self) {
 
   /* Type checking */
   TODO_type_check_void_PTR(mem);
-
 
   /* Unbox parameters */
   void * native_mem = TODO_mruby_unbox_void_PTR(mem);
@@ -17772,7 +17394,6 @@ mrb_GLib_g_get_charset(mrb_state* mrb, mrb_value self) {
 
   /* Type checking */
   TODO_type_check_char_PTR_PTR(charset);
-
 
   /* Unbox parameters */
   const char ** native_charset = TODO_mruby_unbox_char_PTR_PTR(charset);
@@ -17854,7 +17475,6 @@ mrb_GLib_g_get_current_time(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GTimeVal * native_result = (mrb_nil_p(result) ? NULL : mruby_unbox__GTimeVal(result));
 
@@ -17904,7 +17524,6 @@ mrb_GLib_g_get_filename_charsets(mrb_state* mrb, mrb_value self) {
 
   /* Type checking */
   TODO_type_check_char_PTR_PTR_PTR(charsets);
-
 
   /* Unbox parameters */
   const char *** native_charsets = TODO_mruby_unbox_char_PTR_PTR_PTR(charsets);
@@ -18005,7 +17624,6 @@ mrb_GLib_g_get_locale_variants(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "String expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   const char * native_locale = mrb_string_value_cstr(mrb, &locale);
@@ -18312,7 +17930,6 @@ mrb_GLib_g_get_user_special_dir(mrb_state* mrb, mrb_value self) {
   /* Type checking */
   TODO_type_check_GUserDirectory(directory);
 
-
   /* Unbox parameters */
   GUserDirectory native_directory = TODO_mruby_unbox_GUserDirectory(directory);
 
@@ -18369,7 +17986,6 @@ mrb_GLib_g_getenv(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   const char * native_variable = mrb_string_value_cstr(mrb, &variable);
 
@@ -18408,7 +18024,6 @@ mrb_GLib_g_hash_table_add(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
   TODO_type_check_void_PTR(key);
-
 
   /* Unbox parameters */
   struct _GHashTable * native_hash_table = (mrb_nil_p(hash_table) ? NULL : mruby_unbox__GHashTable(hash_table));
@@ -18455,7 +18070,6 @@ mrb_GLib_g_hash_table_contains(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check_void_PTR(key);
 
-
   /* Unbox parameters */
   struct _GHashTable * native_hash_table = (mrb_nil_p(hash_table) ? NULL : mruby_unbox__GHashTable(hash_table));
 
@@ -18498,7 +18112,6 @@ mrb_GLib_g_hash_table_destroy(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GHashTable * native_hash_table = (mrb_nil_p(hash_table) ? NULL : mruby_unbox__GHashTable(hash_table));
 
@@ -18537,7 +18150,6 @@ mrb_GLib_g_hash_table_find(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check_int_LPAREN_PTR_RPAREN_LPAREN_void_PTR_COMMA_void_PTR_COMMA_void_PTR_RPAREN(predicate);
   TODO_type_check_void_PTR(user_data);
-
 
   /* Unbox parameters */
   struct _GHashTable * native_hash_table = (mrb_nil_p(hash_table) ? NULL : mruby_unbox__GHashTable(hash_table));
@@ -18585,7 +18197,6 @@ mrb_GLib_g_hash_table_foreach(mrb_state* mrb, mrb_value self) {
   TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_void_PTR_COMMA_void_PTR_COMMA_void_PTR_RPAREN(func);
   TODO_type_check_void_PTR(user_data);
 
-
   /* Unbox parameters */
   struct _GHashTable * native_hash_table = (mrb_nil_p(hash_table) ? NULL : mruby_unbox__GHashTable(hash_table));
 
@@ -18628,7 +18239,6 @@ mrb_GLib_g_hash_table_foreach_remove(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check_int_LPAREN_PTR_RPAREN_LPAREN_void_PTR_COMMA_void_PTR_COMMA_void_PTR_RPAREN(func);
   TODO_type_check_void_PTR(user_data);
-
 
   /* Unbox parameters */
   struct _GHashTable * native_hash_table = (mrb_nil_p(hash_table) ? NULL : mruby_unbox__GHashTable(hash_table));
@@ -18680,7 +18290,6 @@ mrb_GLib_g_hash_table_foreach_steal(mrb_state* mrb, mrb_value self) {
   TODO_type_check_int_LPAREN_PTR_RPAREN_LPAREN_void_PTR_COMMA_void_PTR_COMMA_void_PTR_RPAREN(func);
   TODO_type_check_void_PTR(user_data);
 
-
   /* Unbox parameters */
   struct _GHashTable * native_hash_table = (mrb_nil_p(hash_table) ? NULL : mruby_unbox__GHashTable(hash_table));
 
@@ -18725,7 +18334,6 @@ mrb_GLib_g_hash_table_get_keys(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GHashTable * native_hash_table = (mrb_nil_p(hash_table) ? NULL : mruby_unbox__GHashTable(hash_table));
 
@@ -18765,7 +18373,6 @@ mrb_GLib_g_hash_table_get_keys_as_array(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check_unsigned_int_PTR(length);
 
-
   /* Unbox parameters */
   struct _GHashTable * native_hash_table = (mrb_nil_p(hash_table) ? NULL : mruby_unbox__GHashTable(hash_table));
 
@@ -18803,7 +18410,6 @@ mrb_GLib_g_hash_table_get_values(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GHashTable expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GHashTable * native_hash_table = (mrb_nil_p(hash_table) ? NULL : mruby_unbox__GHashTable(hash_table));
@@ -18846,7 +18452,6 @@ mrb_GLib_g_hash_table_insert(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check_void_PTR(key);
   TODO_type_check_void_PTR(value);
-
 
   /* Unbox parameters */
   struct _GHashTable * native_hash_table = (mrb_nil_p(hash_table) ? NULL : mruby_unbox__GHashTable(hash_table));
@@ -18892,7 +18497,6 @@ mrb_GLib_g_hash_table_iter_get_hash_table(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GHashTableIter * native_iter = (mrb_nil_p(iter) ? NULL : mruby_unbox__GHashTableIter(iter));
 
@@ -18935,7 +18539,6 @@ mrb_GLib_g_hash_table_iter_init(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GHashTableIter * native_iter = (mrb_nil_p(iter) ? NULL : mruby_unbox__GHashTableIter(iter));
 
@@ -18976,7 +18579,6 @@ mrb_GLib_g_hash_table_iter_next(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check_void_PTR_PTR(key);
   TODO_type_check_void_PTR_PTR(value);
-
 
   /* Unbox parameters */
   struct _GHashTableIter * native_iter = (mrb_nil_p(iter) ? NULL : mruby_unbox__GHashTableIter(iter));
@@ -19022,7 +18624,6 @@ mrb_GLib_g_hash_table_iter_remove(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GHashTableIter * native_iter = (mrb_nil_p(iter) ? NULL : mruby_unbox__GHashTableIter(iter));
 
@@ -19059,7 +18660,6 @@ mrb_GLib_g_hash_table_iter_replace(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check_void_PTR(value);
 
-
   /* Unbox parameters */
   struct _GHashTableIter * native_iter = (mrb_nil_p(iter) ? NULL : mruby_unbox__GHashTableIter(iter));
 
@@ -19094,7 +18694,6 @@ mrb_GLib_g_hash_table_iter_steal(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GHashTableIter expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GHashTableIter * native_iter = (mrb_nil_p(iter) ? NULL : mruby_unbox__GHashTableIter(iter));
@@ -19131,7 +18730,6 @@ mrb_GLib_g_hash_table_lookup(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
   TODO_type_check_void_PTR(key);
-
 
   /* Unbox parameters */
   struct _GHashTable * native_hash_table = (mrb_nil_p(hash_table) ? NULL : mruby_unbox__GHashTable(hash_table));
@@ -19180,7 +18778,6 @@ mrb_GLib_g_hash_table_lookup_extended(mrb_state* mrb, mrb_value self) {
   TODO_type_check_void_PTR_PTR(orig_key);
   TODO_type_check_void_PTR_PTR(value);
 
-
   /* Unbox parameters */
   struct _GHashTable * native_hash_table = (mrb_nil_p(hash_table) ? NULL : mruby_unbox__GHashTable(hash_table));
 
@@ -19227,7 +18824,6 @@ mrb_GLib_g_hash_table_new(mrb_state* mrb, mrb_value self) {
   TODO_type_check_unsigned_int_LPAREN_PTR_RPAREN_LPAREN_void_PTR_RPAREN(hash_func);
   TODO_type_check_int_LPAREN_PTR_RPAREN_LPAREN_void_PTR_COMMA_const_void_PTR_RPAREN(key_equal_func);
 
-
   /* Unbox parameters */
   unsigned int (*native_hash_func)(const void *) = TODO_mruby_unbox_unsigned_int_LPAREN_PTR_RPAREN_LPAREN_void_PTR_RPAREN(hash_func);
 
@@ -19272,7 +18868,6 @@ mrb_GLib_g_hash_table_new_full(mrb_state* mrb, mrb_value self) {
   TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_void_PTR_RPAREN(key_destroy_func);
   TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_void_PTR_RPAREN(value_destroy_func);
 
-
   /* Unbox parameters */
   unsigned int (*native_hash_func)(const void *) = TODO_mruby_unbox_unsigned_int_LPAREN_PTR_RPAREN_LPAREN_void_PTR_RPAREN(hash_func);
 
@@ -19315,7 +18910,6 @@ mrb_GLib_g_hash_table_ref(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GHashTable * native_hash_table = (mrb_nil_p(hash_table) ? NULL : mruby_unbox__GHashTable(hash_table));
 
@@ -19354,7 +18948,6 @@ mrb_GLib_g_hash_table_remove(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
   TODO_type_check_void_PTR(key);
-
 
   /* Unbox parameters */
   struct _GHashTable * native_hash_table = (mrb_nil_p(hash_table) ? NULL : mruby_unbox__GHashTable(hash_table));
@@ -19398,7 +18991,6 @@ mrb_GLib_g_hash_table_remove_all(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GHashTable * native_hash_table = (mrb_nil_p(hash_table) ? NULL : mruby_unbox__GHashTable(hash_table));
 
@@ -19437,7 +19029,6 @@ mrb_GLib_g_hash_table_replace(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check_void_PTR(key);
   TODO_type_check_void_PTR(value);
-
 
   /* Unbox parameters */
   struct _GHashTable * native_hash_table = (mrb_nil_p(hash_table) ? NULL : mruby_unbox__GHashTable(hash_table));
@@ -19483,7 +19074,6 @@ mrb_GLib_g_hash_table_size(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GHashTable * native_hash_table = (mrb_nil_p(hash_table) ? NULL : mruby_unbox__GHashTable(hash_table));
 
@@ -19527,7 +19117,6 @@ mrb_GLib_g_hash_table_steal(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check_void_PTR(key);
 
-
   /* Unbox parameters */
   struct _GHashTable * native_hash_table = (mrb_nil_p(hash_table) ? NULL : mruby_unbox__GHashTable(hash_table));
 
@@ -19570,7 +19159,6 @@ mrb_GLib_g_hash_table_steal_all(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GHashTable * native_hash_table = (mrb_nil_p(hash_table) ? NULL : mruby_unbox__GHashTable(hash_table));
 
@@ -19604,7 +19192,6 @@ mrb_GLib_g_hash_table_unref(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GHashTable * native_hash_table = (mrb_nil_p(hash_table) ? NULL : mruby_unbox__GHashTable(hash_table));
 
@@ -19637,7 +19224,6 @@ mrb_GLib_g_hmac_copy(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GHmac expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   const struct _GHmac * native_hmac = (mrb_nil_p(hmac) ? NULL : mruby_unbox__GHmac(hmac));
@@ -19681,7 +19267,6 @@ mrb_GLib_g_hmac_get_digest(mrb_state* mrb, mrb_value self) {
   TODO_type_check_unsigned_char_PTR(buffer);
   TODO_type_check_unsigned_long_PTR(digest_len);
 
-
   /* Unbox parameters */
   struct _GHmac * native_hmac = (mrb_nil_p(hmac) ? NULL : mruby_unbox__GHmac(hmac));
 
@@ -19718,7 +19303,6 @@ mrb_GLib_g_hmac_get_string(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GHmac expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GHmac * native_hmac = (mrb_nil_p(hmac) ? NULL : mruby_unbox__GHmac(hmac));
@@ -19762,7 +19346,6 @@ mrb_GLib_g_hmac_new(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   GChecksumType native_digest_type = TODO_mruby_unbox_GChecksumType(digest_type);
 
@@ -19803,7 +19386,6 @@ mrb_GLib_g_hmac_ref(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GHmac * native_hmac = (mrb_nil_p(hmac) ? NULL : mruby_unbox__GHmac(hmac));
 
@@ -19839,7 +19421,6 @@ mrb_GLib_g_hmac_unref(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GHmac expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GHmac * native_hmac = (mrb_nil_p(hmac) ? NULL : mruby_unbox__GHmac(hmac));
@@ -19883,7 +19464,6 @@ mrb_GLib_g_hmac_update(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GHmac * native_hmac = (mrb_nil_p(hmac) ? NULL : mruby_unbox__GHmac(hmac));
 
@@ -19920,7 +19500,6 @@ mrb_GLib_g_hook_alloc(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GHookList expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GHookList * native_hook_list = (mrb_nil_p(hook_list) ? NULL : mruby_unbox__GHookList(hook_list));
@@ -19963,7 +19542,6 @@ mrb_GLib_g_hook_compare_ids(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GHook expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GHook * native_new_hook = (mrb_nil_p(new_hook) ? NULL : mruby_unbox__GHook(new_hook));
@@ -20013,7 +19591,6 @@ mrb_GLib_g_hook_destroy(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GHookList * native_hook_list = (mrb_nil_p(hook_list) ? NULL : mruby_unbox__GHookList(hook_list));
 
@@ -20062,7 +19639,6 @@ mrb_GLib_g_hook_destroy_link(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GHookList * native_hook_list = (mrb_nil_p(hook_list) ? NULL : mruby_unbox__GHookList(hook_list));
 
@@ -20109,7 +19685,6 @@ mrb_GLib_g_hook_find(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check_int_LPAREN_PTR_RPAREN_LPAREN__GHook_PTR_COMMA_void_PTR_RPAREN(func);
   TODO_type_check_void_PTR(data);
-
 
   /* Unbox parameters */
   struct _GHookList * native_hook_list = (mrb_nil_p(hook_list) ? NULL : mruby_unbox__GHookList(hook_list));
@@ -20162,7 +19737,6 @@ mrb_GLib_g_hook_find_data(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check_void_PTR(data);
 
-
   /* Unbox parameters */
   struct _GHookList * native_hook_list = (mrb_nil_p(hook_list) ? NULL : mruby_unbox__GHookList(hook_list));
 
@@ -20211,7 +19785,6 @@ mrb_GLib_g_hook_find_func(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
   TODO_type_check_void_PTR(func);
-
 
   /* Unbox parameters */
   struct _GHookList * native_hook_list = (mrb_nil_p(hook_list) ? NULL : mruby_unbox__GHookList(hook_list));
@@ -20265,7 +19838,6 @@ mrb_GLib_g_hook_find_func_data(mrb_state* mrb, mrb_value self) {
   TODO_type_check_void_PTR(func);
   TODO_type_check_void_PTR(data);
 
-
   /* Unbox parameters */
   struct _GHookList * native_hook_list = (mrb_nil_p(hook_list) ? NULL : mruby_unbox__GHookList(hook_list));
 
@@ -20314,7 +19886,6 @@ mrb_GLib_g_hook_first_valid(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GHookList * native_hook_list = (mrb_nil_p(hook_list) ? NULL : mruby_unbox__GHookList(hook_list));
 
@@ -20359,7 +19930,6 @@ mrb_GLib_g_hook_free(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GHookList * native_hook_list = (mrb_nil_p(hook_list) ? NULL : mruby_unbox__GHookList(hook_list));
 
@@ -20400,7 +19970,6 @@ mrb_GLib_g_hook_get(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GHookList * native_hook_list = (mrb_nil_p(hook_list) ? NULL : mruby_unbox__GHookList(hook_list));
@@ -20452,7 +20021,6 @@ mrb_GLib_g_hook_insert_before(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GHookList * native_hook_list = (mrb_nil_p(hook_list) ? NULL : mruby_unbox__GHookList(hook_list));
 
@@ -20499,7 +20067,6 @@ mrb_GLib_g_hook_insert_sorted(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check_int_LPAREN_PTR_RPAREN_LPAREN__GHook_PTR_COMMA_struct__GHook_PTR_RPAREN(func);
 
-
   /* Unbox parameters */
   struct _GHookList * native_hook_list = (mrb_nil_p(hook_list) ? NULL : mruby_unbox__GHookList(hook_list));
 
@@ -20536,7 +20103,6 @@ mrb_GLib_g_hook_list_clear(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GHookList expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GHookList * native_hook_list = (mrb_nil_p(hook_list) ? NULL : mruby_unbox__GHookList(hook_list));
@@ -20576,7 +20142,6 @@ mrb_GLib_g_hook_list_init(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GHookList * native_hook_list = (mrb_nil_p(hook_list) ? NULL : mruby_unbox__GHookList(hook_list));
@@ -20619,7 +20184,6 @@ mrb_GLib_g_hook_list_invoke(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GHookList * native_hook_list = (mrb_nil_p(hook_list) ? NULL : mruby_unbox__GHookList(hook_list));
 
@@ -20660,7 +20224,6 @@ mrb_GLib_g_hook_list_invoke_check(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GHookList * native_hook_list = (mrb_nil_p(hook_list) ? NULL : mruby_unbox__GHookList(hook_list));
@@ -20708,7 +20271,6 @@ mrb_GLib_g_hook_list_marshal(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN__GHook_PTR_COMMA_void_PTR_RPAREN(marshaller);
   TODO_type_check_void_PTR(marshal_data);
-
 
   /* Unbox parameters */
   struct _GHookList * native_hook_list = (mrb_nil_p(hook_list) ? NULL : mruby_unbox__GHookList(hook_list));
@@ -20761,7 +20323,6 @@ mrb_GLib_g_hook_list_marshal_check(mrb_state* mrb, mrb_value self) {
   TODO_type_check_int_LPAREN_PTR_RPAREN_LPAREN__GHook_PTR_COMMA_void_PTR_RPAREN(marshaller);
   TODO_type_check_void_PTR(marshal_data);
 
-
   /* Unbox parameters */
   struct _GHookList * native_hook_list = (mrb_nil_p(hook_list) ? NULL : mruby_unbox__GHookList(hook_list));
 
@@ -20813,7 +20374,6 @@ mrb_GLib_g_hook_next_valid(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GHookList * native_hook_list = (mrb_nil_p(hook_list) ? NULL : mruby_unbox__GHookList(hook_list));
 
@@ -20860,7 +20420,6 @@ mrb_GLib_g_hook_prepend(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GHookList * native_hook_list = (mrb_nil_p(hook_list) ? NULL : mruby_unbox__GHookList(hook_list));
 
@@ -20901,7 +20460,6 @@ mrb_GLib_g_hook_ref(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GHook expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GHookList * native_hook_list = (mrb_nil_p(hook_list) ? NULL : mruby_unbox__GHookList(hook_list));
@@ -20947,7 +20505,6 @@ mrb_GLib_g_hook_unref(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GHookList * native_hook_list = (mrb_nil_p(hook_list) ? NULL : mruby_unbox__GHookList(hook_list));
 
@@ -20982,7 +20539,6 @@ mrb_GLib_g_hostname_is_ascii_encoded(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "String expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   const char * native_hostname = mrb_string_value_cstr(mrb, &hostname);
@@ -21024,7 +20580,6 @@ mrb_GLib_g_hostname_is_ip_address(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   const char * native_hostname = mrb_string_value_cstr(mrb, &hostname);
 
@@ -21064,7 +20619,6 @@ mrb_GLib_g_hostname_is_non_ascii(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "String expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   const char * native_hostname = mrb_string_value_cstr(mrb, &hostname);
@@ -21106,7 +20660,6 @@ mrb_GLib_g_hostname_to_ascii(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   const char * native_hostname = mrb_string_value_cstr(mrb, &hostname);
 
@@ -21142,7 +20695,6 @@ mrb_GLib_g_hostname_to_unicode(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "String expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   const char * native_hostname = mrb_string_value_cstr(mrb, &hostname);
@@ -21192,7 +20744,6 @@ mrb_GLib_g_iconv(mrb_state* mrb, mrb_value self) {
   TODO_type_check_char_PTR_PTR(outbuf);
   TODO_type_check_unsigned_long_PTR(outbytes_left);
 
-
   /* Unbox parameters */
   struct _GIConv * native_converter = (mrb_nil_p(converter) ? NULL : mruby_unbox__GIConv(converter));
 
@@ -21241,7 +20792,6 @@ mrb_GLib_g_iconv_close(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GIConv * native_converter = (mrb_nil_p(converter) ? NULL : mruby_unbox__GIConv(converter));
 
@@ -21288,7 +20838,6 @@ mrb_GLib_g_iconv_open(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   const char * native_to_codeset = mrb_string_value_cstr(mrb, &to_codeset);
 
@@ -21326,7 +20875,6 @@ mrb_GLib_g_idle_add(mrb_state* mrb, mrb_value self) {
   /* Type checking */
   TODO_type_check_int_LPAREN_PTR_RPAREN_LPAREN_void_PTR_RPAREN(function);
   TODO_type_check_void_PTR(data);
-
 
   /* Unbox parameters */
   int (*native_function)(void *) = TODO_mruby_unbox_int_LPAREN_PTR_RPAREN_LPAREN_void_PTR_RPAREN(function);
@@ -21379,7 +20927,6 @@ mrb_GLib_g_idle_add_full(mrb_state* mrb, mrb_value self) {
   TODO_type_check_void_PTR(data);
   TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_void_PTR_RPAREN(notify);
 
-
   /* Unbox parameters */
   int native_priority = mrb_fixnum(priority);
 
@@ -21422,7 +20969,6 @@ mrb_GLib_g_idle_remove_by_data(mrb_state* mrb, mrb_value self) {
 
   /* Type checking */
   TODO_type_check_void_PTR(data);
-
 
   /* Unbox parameters */
   void * native_data = TODO_mruby_unbox_void_PTR(data);
@@ -21484,7 +21030,6 @@ mrb_GLib_g_int64_equal(mrb_state* mrb, mrb_value self) {
   TODO_type_check_void_PTR(v1);
   TODO_type_check_void_PTR(v2);
 
-
   /* Unbox parameters */
   const void * native_v1 = TODO_mruby_unbox_void_PTR(v1);
 
@@ -21523,7 +21068,6 @@ mrb_GLib_g_int64_hash(mrb_state* mrb, mrb_value self) {
 
   /* Type checking */
   TODO_type_check_void_PTR(v);
-
 
   /* Unbox parameters */
   const void * native_v = TODO_mruby_unbox_void_PTR(v);
@@ -21565,7 +21109,6 @@ mrb_GLib_g_int_equal(mrb_state* mrb, mrb_value self) {
   TODO_type_check_void_PTR(v1);
   TODO_type_check_void_PTR(v2);
 
-
   /* Unbox parameters */
   const void * native_v1 = TODO_mruby_unbox_void_PTR(v1);
 
@@ -21604,7 +21147,6 @@ mrb_GLib_g_int_hash(mrb_state* mrb, mrb_value self) {
 
   /* Type checking */
   TODO_type_check_void_PTR(v);
-
 
   /* Unbox parameters */
   const void * native_v = TODO_mruby_unbox_void_PTR(v);
@@ -21646,7 +21188,6 @@ mrb_GLib_g_intern_static_string(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   const char * native_string = mrb_string_value_cstr(mrb, &string);
 
@@ -21682,7 +21223,6 @@ mrb_GLib_g_intern_string(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "String expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   const char * native_string = mrb_string_value_cstr(mrb, &string);
@@ -21728,7 +21268,6 @@ mrb_GLib_g_io_add_watch(mrb_state* mrb, mrb_value self) {
   TODO_type_check_GIOCondition(condition);
   TODO_type_check_int_LPAREN_PTR_RPAREN_LPAREN__GIOChannel_PTR_COMMA_GIOConditionCOMMA_void_PTR_RPAREN(func);
   TODO_type_check_void_PTR(user_data);
-
 
   /* Unbox parameters */
   struct _GIOChannel * native_channel = (mrb_nil_p(channel) ? NULL : mruby_unbox__GIOChannel(channel));
@@ -21794,7 +21333,6 @@ mrb_GLib_g_io_add_watch_full(mrb_state* mrb, mrb_value self) {
   TODO_type_check_void_PTR(user_data);
   TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_void_PTR_RPAREN(notify);
 
-
   /* Unbox parameters */
   struct _GIOChannel * native_channel = (mrb_nil_p(channel) ? NULL : mruby_unbox__GIOChannel(channel));
 
@@ -21845,7 +21383,6 @@ mrb_GLib_g_io_channel_close(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GIOChannel * native_channel = (mrb_nil_p(channel) ? NULL : mruby_unbox__GIOChannel(channel));
 
@@ -21878,7 +21415,6 @@ mrb_GLib_g_io_channel_error_from_errno(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   int native_en = mrb_fixnum(en);
@@ -21943,7 +21479,6 @@ mrb_GLib_g_io_channel_flush(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check__GError_PTR_PTR(error);
 
-
   /* Unbox parameters */
   struct _GIOChannel * native_channel = (mrb_nil_p(channel) ? NULL : mruby_unbox__GIOChannel(channel));
 
@@ -21982,7 +21517,6 @@ mrb_GLib_g_io_channel_get_buffer_condition(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GIOChannel * native_channel = (mrb_nil_p(channel) ? NULL : mruby_unbox__GIOChannel(channel));
 
@@ -22018,7 +21552,6 @@ mrb_GLib_g_io_channel_get_buffer_size(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GIOChannel expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GIOChannel * native_channel = (mrb_nil_p(channel) ? NULL : mruby_unbox__GIOChannel(channel));
@@ -22060,7 +21593,6 @@ mrb_GLib_g_io_channel_get_buffered(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GIOChannel * native_channel = (mrb_nil_p(channel) ? NULL : mruby_unbox__GIOChannel(channel));
 
@@ -22100,7 +21632,6 @@ mrb_GLib_g_io_channel_get_close_on_unref(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GIOChannel expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GIOChannel * native_channel = (mrb_nil_p(channel) ? NULL : mruby_unbox__GIOChannel(channel));
@@ -22142,7 +21673,6 @@ mrb_GLib_g_io_channel_get_encoding(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GIOChannel * native_channel = (mrb_nil_p(channel) ? NULL : mruby_unbox__GIOChannel(channel));
 
@@ -22178,7 +21708,6 @@ mrb_GLib_g_io_channel_get_flags(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GIOChannel expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GIOChannel * native_channel = (mrb_nil_p(channel) ? NULL : mruby_unbox__GIOChannel(channel));
@@ -22219,7 +21748,6 @@ mrb_GLib_g_io_channel_get_line_term(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check_int_PTR(length);
 
-
   /* Unbox parameters */
   struct _GIOChannel * native_channel = (mrb_nil_p(channel) ? NULL : mruby_unbox__GIOChannel(channel));
 
@@ -22257,7 +21785,6 @@ mrb_GLib_g_io_channel_init(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GIOChannel expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GIOChannel * native_channel = (mrb_nil_p(channel) ? NULL : mruby_unbox__GIOChannel(channel));
@@ -22300,7 +21827,6 @@ mrb_GLib_g_io_channel_new_file(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
   TODO_type_check__GError_PTR_PTR(error);
-
 
   /* Unbox parameters */
   const char * native_filename = mrb_string_value_cstr(mrb, &filename);
@@ -22356,7 +21882,6 @@ mrb_GLib_g_io_channel_read(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
   TODO_type_check_unsigned_long_PTR(bytes_read);
-
 
   /* Unbox parameters */
   struct _GIOChannel * native_channel = (mrb_nil_p(channel) ? NULL : mruby_unbox__GIOChannel(channel));
@@ -22431,7 +21956,6 @@ mrb_GLib_g_io_channel_read_chars(mrb_state* mrb, mrb_value self) {
   TODO_type_check_unsigned_long_PTR(bytes_read);
   TODO_type_check__GError_PTR_PTR(error);
 
-
   /* Unbox parameters */
   struct _GIOChannel * native_channel = (mrb_nil_p(channel) ? NULL : mruby_unbox__GIOChannel(channel));
 
@@ -22501,7 +22025,6 @@ mrb_GLib_g_io_channel_read_line(mrb_state* mrb, mrb_value self) {
   TODO_type_check_unsigned_long_PTR(terminator_pos);
   TODO_type_check__GError_PTR_PTR(error);
 
-
   /* Unbox parameters */
   struct _GIOChannel * native_channel = (mrb_nil_p(channel) ? NULL : mruby_unbox__GIOChannel(channel));
 
@@ -22558,7 +22081,6 @@ mrb_GLib_g_io_channel_read_line_string(mrb_state* mrb, mrb_value self) {
   TODO_type_check_unsigned_long_PTR(terminator_pos);
   TODO_type_check__GError_PTR_PTR(error);
 
-
   /* Unbox parameters */
   struct _GIOChannel * native_channel = (mrb_nil_p(channel) ? NULL : mruby_unbox__GIOChannel(channel));
 
@@ -22610,7 +22132,6 @@ mrb_GLib_g_io_channel_read_to_end(mrb_state* mrb, mrb_value self) {
   TODO_type_check_unsigned_long_PTR(length);
   TODO_type_check__GError_PTR_PTR(error);
 
-
   /* Unbox parameters */
   struct _GIOChannel * native_channel = (mrb_nil_p(channel) ? NULL : mruby_unbox__GIOChannel(channel));
 
@@ -22659,7 +22180,6 @@ mrb_GLib_g_io_channel_read_unichar(mrb_state* mrb, mrb_value self) {
   TODO_type_check_unsigned_int_PTR(thechar);
   TODO_type_check__GError_PTR_PTR(error);
 
-
   /* Unbox parameters */
   struct _GIOChannel * native_channel = (mrb_nil_p(channel) ? NULL : mruby_unbox__GIOChannel(channel));
 
@@ -22699,7 +22219,6 @@ mrb_GLib_g_io_channel_ref(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GIOChannel expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GIOChannel * native_channel = (mrb_nil_p(channel) ? NULL : mruby_unbox__GIOChannel(channel));
@@ -22745,7 +22264,6 @@ mrb_GLib_g_io_channel_seek(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
   TODO_type_check_GSeekType(type);
-
 
   /* Unbox parameters */
   struct _GIOChannel * native_channel = (mrb_nil_p(channel) ? NULL : mruby_unbox__GIOChannel(channel));
@@ -22799,7 +22317,6 @@ mrb_GLib_g_io_channel_seek_position(mrb_state* mrb, mrb_value self) {
   TODO_type_check_GSeekType(type);
   TODO_type_check__GError_PTR_PTR(error);
 
-
   /* Unbox parameters */
   struct _GIOChannel * native_channel = (mrb_nil_p(channel) ? NULL : mruby_unbox__GIOChannel(channel));
 
@@ -22848,7 +22365,6 @@ mrb_GLib_g_io_channel_set_buffer_size(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GIOChannel * native_channel = (mrb_nil_p(channel) ? NULL : mruby_unbox__GIOChannel(channel));
 
@@ -22890,7 +22406,6 @@ mrb_GLib_g_io_channel_set_buffered(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GIOChannel * native_channel = (mrb_nil_p(channel) ? NULL : mruby_unbox__GIOChannel(channel));
 
@@ -22931,7 +22446,6 @@ mrb_GLib_g_io_channel_set_close_on_unref(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GIOChannel * native_channel = (mrb_nil_p(channel) ? NULL : mruby_unbox__GIOChannel(channel));
@@ -22976,7 +22490,6 @@ mrb_GLib_g_io_channel_set_encoding(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
   TODO_type_check__GError_PTR_PTR(error);
-
 
   /* Unbox parameters */
   struct _GIOChannel * native_channel = (mrb_nil_p(channel) ? NULL : mruby_unbox__GIOChannel(channel));
@@ -23023,7 +22536,6 @@ mrb_GLib_g_io_channel_set_flags(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check_GIOFlags(flags);
   TODO_type_check__GError_PTR_PTR(error);
-
 
   /* Unbox parameters */
   struct _GIOChannel * native_channel = (mrb_nil_p(channel) ? NULL : mruby_unbox__GIOChannel(channel));
@@ -23077,7 +22589,6 @@ mrb_GLib_g_io_channel_set_line_term(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GIOChannel * native_channel = (mrb_nil_p(channel) ? NULL : mruby_unbox__GIOChannel(channel));
 
@@ -23124,7 +22635,6 @@ mrb_GLib_g_io_channel_shutdown(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check__GError_PTR_PTR(err);
 
-
   /* Unbox parameters */
   struct _GIOChannel * native_channel = (mrb_nil_p(channel) ? NULL : mruby_unbox__GIOChannel(channel));
 
@@ -23164,7 +22674,6 @@ mrb_GLib_g_io_channel_unix_get_fd(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GIOChannel expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GIOChannel * native_channel = (mrb_nil_p(channel) ? NULL : mruby_unbox__GIOChannel(channel));
@@ -23206,7 +22715,6 @@ mrb_GLib_g_io_channel_unix_new(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   int native_fd = mrb_fixnum(fd);
 
@@ -23242,7 +22750,6 @@ mrb_GLib_g_io_channel_unref(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GIOChannel expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GIOChannel * native_channel = (mrb_nil_p(channel) ? NULL : mruby_unbox__GIOChannel(channel));
@@ -23291,7 +22798,6 @@ mrb_GLib_g_io_channel_write(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
   TODO_type_check_unsigned_long_PTR(bytes_written);
-
 
   /* Unbox parameters */
   struct _GIOChannel * native_channel = (mrb_nil_p(channel) ? NULL : mruby_unbox__GIOChannel(channel));
@@ -23353,7 +22859,6 @@ mrb_GLib_g_io_channel_write_chars(mrb_state* mrb, mrb_value self) {
   TODO_type_check_unsigned_long_PTR(bytes_written);
   TODO_type_check__GError_PTR_PTR(error);
 
-
   /* Unbox parameters */
   struct _GIOChannel * native_channel = (mrb_nil_p(channel) ? NULL : mruby_unbox__GIOChannel(channel));
 
@@ -23407,7 +22912,6 @@ mrb_GLib_g_io_channel_write_unichar(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check__GError_PTR_PTR(error);
 
-
   /* Unbox parameters */
   struct _GIOChannel * native_channel = (mrb_nil_p(channel) ? NULL : mruby_unbox__GIOChannel(channel));
 
@@ -23450,7 +22954,6 @@ mrb_GLib_g_io_create_watch(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
   TODO_type_check_GIOCondition(condition);
-
 
   /* Unbox parameters */
   struct _GIOChannel * native_channel = (mrb_nil_p(channel) ? NULL : mruby_unbox__GIOChannel(channel));
@@ -23514,7 +23017,6 @@ mrb_GLib_g_key_file_free(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GKeyFile * native_key_file = (mrb_nil_p(key_file) ? NULL : mruby_unbox__GKeyFile(key_file));
 
@@ -23562,7 +23064,6 @@ mrb_GLib_g_key_file_get_boolean(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
   TODO_type_check__GError_PTR_PTR(error);
-
 
   /* Unbox parameters */
   struct _GKeyFile * native_key_file = (mrb_nil_p(key_file) ? NULL : mruby_unbox__GKeyFile(key_file));
@@ -23628,7 +23129,6 @@ mrb_GLib_g_key_file_get_boolean_list(mrb_state* mrb, mrb_value self) {
   TODO_type_check_unsigned_long_PTR(length);
   TODO_type_check__GError_PTR_PTR(error);
 
-
   /* Unbox parameters */
   struct _GKeyFile * native_key_file = (mrb_nil_p(key_file) ? NULL : mruby_unbox__GKeyFile(key_file));
 
@@ -23688,7 +23188,6 @@ mrb_GLib_g_key_file_get_comment(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check__GError_PTR_PTR(error);
 
-
   /* Unbox parameters */
   struct _GKeyFile * native_key_file = (mrb_nil_p(key_file) ? NULL : mruby_unbox__GKeyFile(key_file));
 
@@ -23745,7 +23244,6 @@ mrb_GLib_g_key_file_get_double(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
   TODO_type_check__GError_PTR_PTR(error);
-
 
   /* Unbox parameters */
   struct _GKeyFile * native_key_file = (mrb_nil_p(key_file) ? NULL : mruby_unbox__GKeyFile(key_file));
@@ -23807,7 +23305,6 @@ mrb_GLib_g_key_file_get_double_list(mrb_state* mrb, mrb_value self) {
   TODO_type_check_unsigned_long_PTR(length);
   TODO_type_check__GError_PTR_PTR(error);
 
-
   /* Unbox parameters */
   struct _GKeyFile * native_key_file = (mrb_nil_p(key_file) ? NULL : mruby_unbox__GKeyFile(key_file));
 
@@ -23854,7 +23351,6 @@ mrb_GLib_g_key_file_get_groups(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
   TODO_type_check_unsigned_long_PTR(length);
-
 
   /* Unbox parameters */
   struct _GKeyFile * native_key_file = (mrb_nil_p(key_file) ? NULL : mruby_unbox__GKeyFile(key_file));
@@ -23908,7 +23404,6 @@ mrb_GLib_g_key_file_get_int64(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
   TODO_type_check__GError_PTR_PTR(error);
-
 
   /* Unbox parameters */
   struct _GKeyFile * native_key_file = (mrb_nil_p(key_file) ? NULL : mruby_unbox__GKeyFile(key_file));
@@ -23970,7 +23465,6 @@ mrb_GLib_g_key_file_get_integer(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
   TODO_type_check__GError_PTR_PTR(error);
-
 
   /* Unbox parameters */
   struct _GKeyFile * native_key_file = (mrb_nil_p(key_file) ? NULL : mruby_unbox__GKeyFile(key_file));
@@ -24036,7 +23530,6 @@ mrb_GLib_g_key_file_get_integer_list(mrb_state* mrb, mrb_value self) {
   TODO_type_check_unsigned_long_PTR(length);
   TODO_type_check__GError_PTR_PTR(error);
 
-
   /* Unbox parameters */
   struct _GKeyFile * native_key_file = (mrb_nil_p(key_file) ? NULL : mruby_unbox__GKeyFile(key_file));
 
@@ -24092,7 +23585,6 @@ mrb_GLib_g_key_file_get_keys(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check_unsigned_long_PTR(length);
   TODO_type_check__GError_PTR_PTR(error);
-
 
   /* Unbox parameters */
   struct _GKeyFile * native_key_file = (mrb_nil_p(key_file) ? NULL : mruby_unbox__GKeyFile(key_file));
@@ -24156,7 +23648,6 @@ mrb_GLib_g_key_file_get_locale_string(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
   TODO_type_check__GError_PTR_PTR(error);
-
 
   /* Unbox parameters */
   struct _GKeyFile * native_key_file = (mrb_nil_p(key_file) ? NULL : mruby_unbox__GKeyFile(key_file));
@@ -24226,7 +23717,6 @@ mrb_GLib_g_key_file_get_locale_string_list(mrb_state* mrb, mrb_value self) {
   TODO_type_check_unsigned_long_PTR(length);
   TODO_type_check__GError_PTR_PTR(error);
 
-
   /* Unbox parameters */
   struct _GKeyFile * native_key_file = (mrb_nil_p(key_file) ? NULL : mruby_unbox__GKeyFile(key_file));
 
@@ -24272,7 +23762,6 @@ mrb_GLib_g_key_file_get_start_group(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GKeyFile expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GKeyFile * native_key_file = (mrb_nil_p(key_file) ? NULL : mruby_unbox__GKeyFile(key_file));
@@ -24324,7 +23813,6 @@ mrb_GLib_g_key_file_get_string(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
   TODO_type_check__GError_PTR_PTR(error);
-
 
   /* Unbox parameters */
   struct _GKeyFile * native_key_file = (mrb_nil_p(key_file) ? NULL : mruby_unbox__GKeyFile(key_file));
@@ -24386,7 +23874,6 @@ mrb_GLib_g_key_file_get_string_list(mrb_state* mrb, mrb_value self) {
   TODO_type_check_unsigned_long_PTR(length);
   TODO_type_check__GError_PTR_PTR(error);
 
-
   /* Unbox parameters */
   struct _GKeyFile * native_key_file = (mrb_nil_p(key_file) ? NULL : mruby_unbox__GKeyFile(key_file));
 
@@ -24445,7 +23932,6 @@ mrb_GLib_g_key_file_get_uint64(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
   TODO_type_check__GError_PTR_PTR(error);
-
 
   /* Unbox parameters */
   struct _GKeyFile * native_key_file = (mrb_nil_p(key_file) ? NULL : mruby_unbox__GKeyFile(key_file));
@@ -24508,7 +23994,6 @@ mrb_GLib_g_key_file_get_value(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check__GError_PTR_PTR(error);
 
-
   /* Unbox parameters */
   struct _GKeyFile * native_key_file = (mrb_nil_p(key_file) ? NULL : mruby_unbox__GKeyFile(key_file));
 
@@ -24556,7 +24041,6 @@ mrb_GLib_g_key_file_has_group(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "String expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GKeyFile * native_key_file = (mrb_nil_p(key_file) ? NULL : mruby_unbox__GKeyFile(key_file));
@@ -24614,7 +24098,6 @@ mrb_GLib_g_key_file_has_key(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
   TODO_type_check__GError_PTR_PTR(error);
-
 
   /* Unbox parameters */
   struct _GKeyFile * native_key_file = (mrb_nil_p(key_file) ? NULL : mruby_unbox__GKeyFile(key_file));
@@ -24680,7 +24163,6 @@ mrb_GLib_g_key_file_load_from_data(mrb_state* mrb, mrb_value self) {
   TODO_type_check_GKeyFileFlags(flags);
   TODO_type_check__GError_PTR_PTR(error);
 
-
   /* Unbox parameters */
   struct _GKeyFile * native_key_file = (mrb_nil_p(key_file) ? NULL : mruby_unbox__GKeyFile(key_file));
 
@@ -24743,7 +24225,6 @@ mrb_GLib_g_key_file_load_from_data_dirs(mrb_state* mrb, mrb_value self) {
   TODO_type_check_char_PTR_PTR(full_path);
   TODO_type_check_GKeyFileFlags(flags);
   TODO_type_check__GError_PTR_PTR(error);
-
 
   /* Unbox parameters */
   struct _GKeyFile * native_key_file = (mrb_nil_p(key_file) ? NULL : mruby_unbox__GKeyFile(key_file));
@@ -24811,7 +24292,6 @@ mrb_GLib_g_key_file_load_from_dirs(mrb_state* mrb, mrb_value self) {
   TODO_type_check_GKeyFileFlags(flags);
   TODO_type_check__GError_PTR_PTR(error);
 
-
   /* Unbox parameters */
   struct _GKeyFile * native_key_file = (mrb_nil_p(key_file) ? NULL : mruby_unbox__GKeyFile(key_file));
 
@@ -24873,7 +24353,6 @@ mrb_GLib_g_key_file_load_from_file(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check_GKeyFileFlags(flags);
   TODO_type_check__GError_PTR_PTR(error);
-
 
   /* Unbox parameters */
   struct _GKeyFile * native_key_file = (mrb_nil_p(key_file) ? NULL : mruby_unbox__GKeyFile(key_file));
@@ -24941,7 +24420,6 @@ mrb_GLib_g_key_file_ref(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GKeyFile * native_key_file = (mrb_nil_p(key_file) ? NULL : mruby_unbox__GKeyFile(key_file));
 
@@ -24992,7 +24470,6 @@ mrb_GLib_g_key_file_remove_comment(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
   TODO_type_check__GError_PTR_PTR(error);
-
 
   /* Unbox parameters */
   struct _GKeyFile * native_key_file = (mrb_nil_p(key_file) ? NULL : mruby_unbox__GKeyFile(key_file));
@@ -25048,7 +24525,6 @@ mrb_GLib_g_key_file_remove_group(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
   TODO_type_check__GError_PTR_PTR(error);
-
 
   /* Unbox parameters */
   struct _GKeyFile * native_key_file = (mrb_nil_p(key_file) ? NULL : mruby_unbox__GKeyFile(key_file));
@@ -25109,7 +24585,6 @@ mrb_GLib_g_key_file_remove_key(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check__GError_PTR_PTR(error);
 
-
   /* Unbox parameters */
   struct _GKeyFile * native_key_file = (mrb_nil_p(key_file) ? NULL : mruby_unbox__GKeyFile(key_file));
 
@@ -25164,7 +24639,6 @@ mrb_GLib_g_key_file_save_to_file(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
   TODO_type_check__GError_PTR_PTR(error);
-
 
   /* Unbox parameters */
   struct _GKeyFile * native_key_file = (mrb_nil_p(key_file) ? NULL : mruby_unbox__GKeyFile(key_file));
@@ -25228,7 +24702,6 @@ mrb_GLib_g_key_file_set_boolean(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GKeyFile * native_key_file = (mrb_nil_p(key_file) ? NULL : mruby_unbox__GKeyFile(key_file));
 
@@ -25288,7 +24761,6 @@ mrb_GLib_g_key_file_set_boolean_list(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GKeyFile * native_key_file = (mrb_nil_p(key_file) ? NULL : mruby_unbox__GKeyFile(key_file));
@@ -25351,7 +24823,6 @@ mrb_GLib_g_key_file_set_comment(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
   TODO_type_check__GError_PTR_PTR(error);
-
 
   /* Unbox parameters */
   struct _GKeyFile * native_key_file = (mrb_nil_p(key_file) ? NULL : mruby_unbox__GKeyFile(key_file));
@@ -25419,7 +24890,6 @@ mrb_GLib_g_key_file_set_double(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GKeyFile * native_key_file = (mrb_nil_p(key_file) ? NULL : mruby_unbox__GKeyFile(key_file));
 
@@ -25480,7 +24950,6 @@ mrb_GLib_g_key_file_set_double_list(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GKeyFile * native_key_file = (mrb_nil_p(key_file) ? NULL : mruby_unbox__GKeyFile(key_file));
 
@@ -25540,7 +25009,6 @@ mrb_GLib_g_key_file_set_int64(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GKeyFile * native_key_file = (mrb_nil_p(key_file) ? NULL : mruby_unbox__GKeyFile(key_file));
 
@@ -25597,7 +25065,6 @@ mrb_GLib_g_key_file_set_integer(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GKeyFile * native_key_file = (mrb_nil_p(key_file) ? NULL : mruby_unbox__GKeyFile(key_file));
@@ -25659,7 +25126,6 @@ mrb_GLib_g_key_file_set_integer_list(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GKeyFile * native_key_file = (mrb_nil_p(key_file) ? NULL : mruby_unbox__GKeyFile(key_file));
 
@@ -25706,7 +25172,6 @@ mrb_GLib_g_key_file_set_list_separator(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GKeyFile * native_key_file = (mrb_nil_p(key_file) ? NULL : mruby_unbox__GKeyFile(key_file));
@@ -25766,7 +25231,6 @@ mrb_GLib_g_key_file_set_locale_string(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "String expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GKeyFile * native_key_file = (mrb_nil_p(key_file) ? NULL : mruby_unbox__GKeyFile(key_file));
@@ -25836,7 +25300,6 @@ mrb_GLib_g_key_file_set_locale_string_list(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GKeyFile * native_key_file = (mrb_nil_p(key_file) ? NULL : mruby_unbox__GKeyFile(key_file));
 
@@ -25898,7 +25361,6 @@ mrb_GLib_g_key_file_set_string(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GKeyFile * native_key_file = (mrb_nil_p(key_file) ? NULL : mruby_unbox__GKeyFile(key_file));
 
@@ -25959,7 +25421,6 @@ mrb_GLib_g_key_file_set_string_list(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GKeyFile * native_key_file = (mrb_nil_p(key_file) ? NULL : mruby_unbox__GKeyFile(key_file));
 
@@ -26019,7 +25480,6 @@ mrb_GLib_g_key_file_set_uint64(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GKeyFile * native_key_file = (mrb_nil_p(key_file) ? NULL : mruby_unbox__GKeyFile(key_file));
 
@@ -26077,7 +25537,6 @@ mrb_GLib_g_key_file_set_value(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GKeyFile * native_key_file = (mrb_nil_p(key_file) ? NULL : mruby_unbox__GKeyFile(key_file));
 
@@ -26123,7 +25582,6 @@ mrb_GLib_g_key_file_to_data(mrb_state* mrb, mrb_value self) {
   TODO_type_check_unsigned_long_PTR(length);
   TODO_type_check__GError_PTR_PTR(error);
 
-
   /* Unbox parameters */
   struct _GKeyFile * native_key_file = (mrb_nil_p(key_file) ? NULL : mruby_unbox__GKeyFile(key_file));
 
@@ -26163,7 +25621,6 @@ mrb_GLib_g_key_file_unref(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GKeyFile expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GKeyFile * native_key_file = (mrb_nil_p(key_file) ? NULL : mruby_unbox__GKeyFile(key_file));
@@ -26221,7 +25678,6 @@ mrb_GLib_g_list_append(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check_void_PTR(data);
 
-
   /* Unbox parameters */
   struct _GList * native_list = (mrb_nil_p(list) ? NULL : mruby_unbox__GList(list));
 
@@ -26266,7 +25722,6 @@ mrb_GLib_g_list_concat(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GList * native_list1 = (mrb_nil_p(list1) ? NULL : mruby_unbox__GList(list1));
 
@@ -26304,7 +25759,6 @@ mrb_GLib_g_list_copy(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GList expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GList * native_list = (mrb_nil_p(list) ? NULL : mruby_unbox__GList(list));
@@ -26347,7 +25801,6 @@ mrb_GLib_g_list_copy_deep(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check_void_PTR_LPAREN_PTR_RPAREN_LPAREN_void_PTR_COMMA_void_PTR_RPAREN(func);
   TODO_type_check_void_PTR(user_data);
-
 
   /* Unbox parameters */
   struct _GList * native_list = (mrb_nil_p(list) ? NULL : mruby_unbox__GList(list));
@@ -26395,7 +25848,6 @@ mrb_GLib_g_list_delete_link(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GList * native_list = (mrb_nil_p(list) ? NULL : mruby_unbox__GList(list));
 
@@ -26436,7 +25888,6 @@ mrb_GLib_g_list_find(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
   TODO_type_check_void_PTR(data);
-
 
   /* Unbox parameters */
   struct _GList * native_list = (mrb_nil_p(list) ? NULL : mruby_unbox__GList(list));
@@ -26482,7 +25933,6 @@ mrb_GLib_g_list_find_custom(mrb_state* mrb, mrb_value self) {
   TODO_type_check_void_PTR(data);
   TODO_type_check_int_LPAREN_PTR_RPAREN_LPAREN_void_PTR_COMMA_const_void_PTR_RPAREN(func);
 
-
   /* Unbox parameters */
   struct _GList * native_list = (mrb_nil_p(list) ? NULL : mruby_unbox__GList(list));
 
@@ -26522,7 +25972,6 @@ mrb_GLib_g_list_first(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GList expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GList * native_list = (mrb_nil_p(list) ? NULL : mruby_unbox__GList(list));
@@ -26566,7 +26015,6 @@ mrb_GLib_g_list_foreach(mrb_state* mrb, mrb_value self) {
   TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_void_PTR_COMMA_void_PTR_RPAREN(func);
   TODO_type_check_void_PTR(user_data);
 
-
   /* Unbox parameters */
   struct _GList * native_list = (mrb_nil_p(list) ? NULL : mruby_unbox__GList(list));
 
@@ -26604,7 +26052,6 @@ mrb_GLib_g_list_free(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GList * native_list = (mrb_nil_p(list) ? NULL : mruby_unbox__GList(list));
 
@@ -26637,7 +26084,6 @@ mrb_GLib_g_list_free_1(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GList expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GList * native_list = (mrb_nil_p(list) ? NULL : mruby_unbox__GList(list));
@@ -26674,7 +26120,6 @@ mrb_GLib_g_list_free_full(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
   TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_void_PTR_RPAREN(free_func);
-
 
   /* Unbox parameters */
   struct _GList * native_list = (mrb_nil_p(list) ? NULL : mruby_unbox__GList(list));
@@ -26713,7 +26158,6 @@ mrb_GLib_g_list_index(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
   TODO_type_check_void_PTR(data);
-
 
   /* Unbox parameters */
   struct _GList * native_list = (mrb_nil_p(list) ? NULL : mruby_unbox__GList(list));
@@ -26766,7 +26210,6 @@ mrb_GLib_g_list_insert(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GList * native_list = (mrb_nil_p(list) ? NULL : mruby_unbox__GList(list));
 
@@ -26816,7 +26259,6 @@ mrb_GLib_g_list_insert_before(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check_void_PTR(data);
 
-
   /* Unbox parameters */
   struct _GList * native_list = (mrb_nil_p(list) ? NULL : mruby_unbox__GList(list));
 
@@ -26862,7 +26304,6 @@ mrb_GLib_g_list_insert_sorted(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check_void_PTR(data);
   TODO_type_check_int_LPAREN_PTR_RPAREN_LPAREN_void_PTR_COMMA_const_void_PTR_RPAREN(func);
-
 
   /* Unbox parameters */
   struct _GList * native_list = (mrb_nil_p(list) ? NULL : mruby_unbox__GList(list));
@@ -26913,7 +26354,6 @@ mrb_GLib_g_list_insert_sorted_with_data(mrb_state* mrb, mrb_value self) {
   TODO_type_check_int_LPAREN_PTR_RPAREN_LPAREN_void_PTR_COMMA_const_void_PTR_COMMA_void_PTR_RPAREN(func);
   TODO_type_check_void_PTR(user_data);
 
-
   /* Unbox parameters */
   struct _GList * native_list = (mrb_nil_p(list) ? NULL : mruby_unbox__GList(list));
 
@@ -26956,7 +26396,6 @@ mrb_GLib_g_list_last(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GList * native_list = (mrb_nil_p(list) ? NULL : mruby_unbox__GList(list));
 
@@ -26992,7 +26431,6 @@ mrb_GLib_g_list_length(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GList expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GList * native_list = (mrb_nil_p(list) ? NULL : mruby_unbox__GList(list));
@@ -27040,7 +26478,6 @@ mrb_GLib_g_list_nth(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GList * native_list = (mrb_nil_p(list) ? NULL : mruby_unbox__GList(list));
 
@@ -27084,7 +26521,6 @@ mrb_GLib_g_list_nth_data(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GList * native_list = (mrb_nil_p(list) ? NULL : mruby_unbox__GList(list));
@@ -27130,7 +26566,6 @@ mrb_GLib_g_list_nth_prev(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GList * native_list = (mrb_nil_p(list) ? NULL : mruby_unbox__GList(list));
 
@@ -27174,7 +26609,6 @@ mrb_GLib_g_list_position(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GList expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GList * native_list = (mrb_nil_p(list) ? NULL : mruby_unbox__GList(list));
@@ -27221,7 +26655,6 @@ mrb_GLib_g_list_prepend(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check_void_PTR(data);
 
-
   /* Unbox parameters */
   struct _GList * native_list = (mrb_nil_p(list) ? NULL : mruby_unbox__GList(list));
 
@@ -27263,7 +26696,6 @@ mrb_GLib_g_list_remove(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check_void_PTR(data);
 
-
   /* Unbox parameters */
   struct _GList * native_list = (mrb_nil_p(list) ? NULL : mruby_unbox__GList(list));
 
@@ -27304,7 +26736,6 @@ mrb_GLib_g_list_remove_all(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
   TODO_type_check_void_PTR(data);
-
 
   /* Unbox parameters */
   struct _GList * native_list = (mrb_nil_p(list) ? NULL : mruby_unbox__GList(list));
@@ -27350,7 +26781,6 @@ mrb_GLib_g_list_remove_link(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GList * native_list = (mrb_nil_p(list) ? NULL : mruby_unbox__GList(list));
 
@@ -27388,7 +26818,6 @@ mrb_GLib_g_list_reverse(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GList expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GList * native_list = (mrb_nil_p(list) ? NULL : mruby_unbox__GList(list));
@@ -27428,7 +26857,6 @@ mrb_GLib_g_list_sort(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
   TODO_type_check_int_LPAREN_PTR_RPAREN_LPAREN_void_PTR_COMMA_const_void_PTR_RPAREN(compare_func);
-
 
   /* Unbox parameters */
   struct _GList * native_list = (mrb_nil_p(list) ? NULL : mruby_unbox__GList(list));
@@ -27473,7 +26901,6 @@ mrb_GLib_g_list_sort_with_data(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check_int_LPAREN_PTR_RPAREN_LPAREN_void_PTR_COMMA_const_void_PTR_COMMA_void_PTR_RPAREN(compare_func);
   TODO_type_check_void_PTR(user_data);
-
 
   /* Unbox parameters */
   struct _GList * native_list = (mrb_nil_p(list) ? NULL : mruby_unbox__GList(list));
@@ -27550,7 +26977,6 @@ mrb_GLib_g_locale_from_utf8(mrb_state* mrb, mrb_value self) {
   TODO_type_check_unsigned_long_PTR(bytes_written);
   TODO_type_check__GError_PTR_PTR(error);
 
-
   /* Unbox parameters */
   const char * native_utf8string = mrb_string_value_cstr(mrb, &utf8string);
 
@@ -27610,7 +27036,6 @@ mrb_GLib_g_locale_to_utf8(mrb_state* mrb, mrb_value self) {
   TODO_type_check_unsigned_long_PTR(bytes_written);
   TODO_type_check__GError_PTR_PTR(error);
 
-
   /* Unbox parameters */
   const char * native_opsysstring = mrb_string_value_cstr(mrb, &opsysstring);
 
@@ -27664,7 +27089,6 @@ mrb_GLib_g_log(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   const char * native_log_domain = mrb_string_value_cstr(mrb, &log_domain);
 
@@ -27714,7 +27138,6 @@ mrb_GLib_g_log_default_handler(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check_void_PTR(unused_data);
 
-
   /* Unbox parameters */
   const char * native_log_domain = mrb_string_value_cstr(mrb, &log_domain);
 
@@ -27760,7 +27183,6 @@ mrb_GLib_g_log_remove_handler(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   const char * native_log_domain = mrb_string_value_cstr(mrb, &log_domain);
 
@@ -27792,7 +27214,6 @@ mrb_GLib_g_log_set_always_fatal(mrb_state* mrb, mrb_value self) {
 
   /* Type checking */
   TODO_type_check_GLogLevelFlags(fatal_mask);
-
 
   /* Unbox parameters */
   GLogLevelFlags native_fatal_mask = TODO_mruby_unbox_GLogLevelFlags(fatal_mask);
@@ -27829,7 +27250,6 @@ mrb_GLib_g_log_set_default_handler(mrb_state* mrb, mrb_value self) {
   /* Type checking */
   TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_char_PTR_COMMA_GLogLevelFlagsCOMMA_const_char_PTR_COMMA_void_PTR_RPAREN(log_func);
   TODO_type_check_void_PTR(user_data);
-
 
   /* Unbox parameters */
   void (*native_log_func)(const char *, GLogLevelFlags, const char *, void *) = TODO_mruby_unbox_void_LPAREN_PTR_RPAREN_LPAREN_char_PTR_COMMA_GLogLevelFlagsCOMMA_const_char_PTR_COMMA_void_PTR_RPAREN(log_func);
@@ -27871,7 +27291,6 @@ mrb_GLib_g_log_set_fatal_mask(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
   TODO_type_check_GLogLevelFlags(fatal_mask);
-
 
   /* Unbox parameters */
   const char * native_log_domain = mrb_string_value_cstr(mrb, &log_domain);
@@ -27919,7 +27338,6 @@ mrb_GLib_g_log_set_handler(mrb_state* mrb, mrb_value self) {
   TODO_type_check_GLogLevelFlags(log_levels);
   TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_char_PTR_COMMA_GLogLevelFlagsCOMMA_const_char_PTR_COMMA_void_PTR_RPAREN(log_func);
   TODO_type_check_void_PTR(user_data);
-
 
   /* Unbox parameters */
   const char * native_log_domain = mrb_string_value_cstr(mrb, &log_domain);
@@ -27978,7 +27396,6 @@ mrb_GLib_g_log_set_handler_full(mrb_state* mrb, mrb_value self) {
   TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_char_PTR_COMMA_GLogLevelFlagsCOMMA_const_char_PTR_COMMA_void_PTR_RPAREN(log_func);
   TODO_type_check_void_PTR(user_data);
   TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_void_PTR_RPAREN(destroy);
-
 
   /* Unbox parameters */
   const char * native_log_domain = mrb_string_value_cstr(mrb, &log_domain);
@@ -28043,7 +27460,6 @@ mrb_GLib_g_logv(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   const char * native_log_domain = mrb_string_value_cstr(mrb, &log_domain);
 
@@ -28082,7 +27498,6 @@ mrb_GLib_g_main_context_acquire(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GMainContext expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GMainContext * native_context = (mrb_nil_p(context) ? NULL : mruby_unbox__GMainContext(context));
@@ -28135,7 +27550,6 @@ mrb_GLib_g_main_context_add_poll(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GMainContext * native_context = (mrb_nil_p(context) ? NULL : mruby_unbox__GMainContext(context));
@@ -28191,7 +27605,6 @@ mrb_GLib_g_main_context_check(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GMainContext * native_context = (mrb_nil_p(context) ? NULL : mruby_unbox__GMainContext(context));
@@ -28259,7 +27672,6 @@ mrb_GLib_g_main_context_dispatch(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GMainContext * native_context = (mrb_nil_p(context) ? NULL : mruby_unbox__GMainContext(context));
 
@@ -28301,7 +27713,6 @@ mrb_GLib_g_main_context_find_source_by_funcs_user_data(mrb_state* mrb, mrb_value
     return mrb_nil_value();
   }
   TODO_type_check_void_PTR(user_data);
-
 
   /* Unbox parameters */
   struct _GMainContext * native_context = (mrb_nil_p(context) ? NULL : mruby_unbox__GMainContext(context));
@@ -28349,7 +27760,6 @@ mrb_GLib_g_main_context_find_source_by_id(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GMainContext * native_context = (mrb_nil_p(context) ? NULL : mruby_unbox__GMainContext(context));
 
@@ -28391,7 +27801,6 @@ mrb_GLib_g_main_context_find_source_by_user_data(mrb_state* mrb, mrb_value self)
   }
   TODO_type_check_void_PTR(user_data);
 
-
   /* Unbox parameters */
   struct _GMainContext * native_context = (mrb_nil_p(context) ? NULL : mruby_unbox__GMainContext(context));
 
@@ -28429,7 +27838,6 @@ mrb_GLib_g_main_context_get_poll_func(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GMainContext expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GMainContext * native_context = (mrb_nil_p(context) ? NULL : mruby_unbox__GMainContext(context));
@@ -28493,7 +27901,6 @@ mrb_GLib_g_main_context_invoke(mrb_state* mrb, mrb_value self) {
   TODO_type_check_int_LPAREN_PTR_RPAREN_LPAREN_void_PTR_RPAREN(function);
   TODO_type_check_void_PTR(data);
 
-
   /* Unbox parameters */
   struct _GMainContext * native_context = (mrb_nil_p(context) ? NULL : mruby_unbox__GMainContext(context));
 
@@ -28546,7 +27953,6 @@ mrb_GLib_g_main_context_invoke_full(mrb_state* mrb, mrb_value self) {
   TODO_type_check_void_PTR(data);
   TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_void_PTR_RPAREN(notify);
 
-
   /* Unbox parameters */
   struct _GMainContext * native_context = (mrb_nil_p(context) ? NULL : mruby_unbox__GMainContext(context));
 
@@ -28587,7 +27993,6 @@ mrb_GLib_g_main_context_is_owner(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GMainContext expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GMainContext * native_context = (mrb_nil_p(context) ? NULL : mruby_unbox__GMainContext(context));
@@ -28634,7 +28039,6 @@ mrb_GLib_g_main_context_iteration(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GMainContext * native_context = (mrb_nil_p(context) ? NULL : mruby_unbox__GMainContext(context));
@@ -28698,7 +28102,6 @@ mrb_GLib_g_main_context_new_with_next_id(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   unsigned int native_next_id = mrb_fixnum(next_id);
 
@@ -28734,7 +28137,6 @@ mrb_GLib_g_main_context_pending(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GMainContext expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GMainContext * native_context = (mrb_nil_p(context) ? NULL : mruby_unbox__GMainContext(context));
@@ -28776,7 +28178,6 @@ mrb_GLib_g_main_context_pop_thread_default(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GMainContext * native_context = (mrb_nil_p(context) ? NULL : mruby_unbox__GMainContext(context));
 
@@ -28812,7 +28213,6 @@ mrb_GLib_g_main_context_prepare(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
   TODO_type_check_int_PTR(priority);
-
 
   /* Unbox parameters */
   struct _GMainContext * native_context = (mrb_nil_p(context) ? NULL : mruby_unbox__GMainContext(context));
@@ -28855,7 +28255,6 @@ mrb_GLib_g_main_context_push_thread_default(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GMainContext expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GMainContext * native_context = (mrb_nil_p(context) ? NULL : mruby_unbox__GMainContext(context));
@@ -28911,7 +28310,6 @@ mrb_GLib_g_main_context_query(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GMainContext * native_context = (mrb_nil_p(context) ? NULL : mruby_unbox__GMainContext(context));
 
@@ -28959,7 +28357,6 @@ mrb_GLib_g_main_context_ref(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GMainContext expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GMainContext * native_context = (mrb_nil_p(context) ? NULL : mruby_unbox__GMainContext(context));
@@ -29017,7 +28414,6 @@ mrb_GLib_g_main_context_release(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GMainContext * native_context = (mrb_nil_p(context) ? NULL : mruby_unbox__GMainContext(context));
 
@@ -29057,7 +28453,6 @@ mrb_GLib_g_main_context_remove_poll(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GMainContext * native_context = (mrb_nil_p(context) ? NULL : mruby_unbox__GMainContext(context));
 
@@ -29096,7 +28491,6 @@ mrb_GLib_g_main_context_set_poll_func(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check_int_LPAREN_PTR_RPAREN_LPAREN__GPollFD_PTR_COMMA_unsigned_intCOMMA_int_RPAREN(func);
 
-
   /* Unbox parameters */
   struct _GMainContext * native_context = (mrb_nil_p(context) ? NULL : mruby_unbox__GMainContext(context));
 
@@ -29131,7 +28525,6 @@ mrb_GLib_g_main_context_unref(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GMainContext expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GMainContext * native_context = (mrb_nil_p(context) ? NULL : mruby_unbox__GMainContext(context));
@@ -29174,7 +28567,6 @@ mrb_GLib_g_main_context_wait(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
   TODO_type_check_union__GMutex_PTR(mutex);
-
 
   /* Unbox parameters */
   struct _GMainContext * native_context = (mrb_nil_p(context) ? NULL : mruby_unbox__GMainContext(context));
@@ -29219,7 +28611,6 @@ mrb_GLib_g_main_context_wakeup(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GMainContext expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GMainContext * native_context = (mrb_nil_p(context) ? NULL : mruby_unbox__GMainContext(context));
@@ -29298,7 +28689,6 @@ mrb_GLib_g_main_loop_get_context(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GMainLoop * native_loop = (mrb_nil_p(loop) ? NULL : mruby_unbox__GMainLoop(loop));
 
@@ -29334,7 +28724,6 @@ mrb_GLib_g_main_loop_is_running(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GMainLoop expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GMainLoop * native_loop = (mrb_nil_p(loop) ? NULL : mruby_unbox__GMainLoop(loop));
@@ -29382,7 +28771,6 @@ mrb_GLib_g_main_loop_new(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GMainContext * native_context = (mrb_nil_p(context) ? NULL : mruby_unbox__GMainContext(context));
 
@@ -29421,7 +28809,6 @@ mrb_GLib_g_main_loop_quit(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GMainLoop * native_loop = (mrb_nil_p(loop) ? NULL : mruby_unbox__GMainLoop(loop));
 
@@ -29454,7 +28841,6 @@ mrb_GLib_g_main_loop_ref(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GMainLoop expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GMainLoop * native_loop = (mrb_nil_p(loop) ? NULL : mruby_unbox__GMainLoop(loop));
@@ -29492,7 +28878,6 @@ mrb_GLib_g_main_loop_run(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GMainLoop * native_loop = (mrb_nil_p(loop) ? NULL : mruby_unbox__GMainLoop(loop));
 
@@ -29526,7 +28911,6 @@ mrb_GLib_g_main_loop_unref(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GMainLoop * native_loop = (mrb_nil_p(loop) ? NULL : mruby_unbox__GMainLoop(loop));
 
@@ -29559,7 +28943,6 @@ mrb_GLib_g_malloc(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   unsigned long native_n_bytes = mrb_fixnum(n_bytes);
@@ -29596,7 +28979,6 @@ mrb_GLib_g_malloc0(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   unsigned long native_n_bytes = mrb_fixnum(n_bytes);
@@ -29639,7 +29021,6 @@ mrb_GLib_g_malloc0_n(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   unsigned long native_n_blocks = mrb_fixnum(n_blocks);
@@ -29685,7 +29066,6 @@ mrb_GLib_g_malloc_n(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   unsigned long native_n_blocks = mrb_fixnum(n_blocks);
 
@@ -29724,7 +29104,6 @@ mrb_GLib_g_mapped_file_free(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GMappedFile * native_file = (mrb_nil_p(file) ? NULL : mruby_unbox__GMappedFile(file));
 
@@ -29757,7 +29136,6 @@ mrb_GLib_g_mapped_file_get_bytes(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GMappedFile expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GMappedFile * native_file = (mrb_nil_p(file) ? NULL : mruby_unbox__GMappedFile(file));
@@ -29795,7 +29173,6 @@ mrb_GLib_g_mapped_file_get_contents(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GMappedFile * native_file = (mrb_nil_p(file) ? NULL : mruby_unbox__GMappedFile(file));
 
@@ -29831,7 +29208,6 @@ mrb_GLib_g_mapped_file_get_length(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GMappedFile expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GMappedFile * native_file = (mrb_nil_p(file) ? NULL : mruby_unbox__GMappedFile(file));
@@ -29882,7 +29258,6 @@ mrb_GLib_g_mapped_file_new(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check__GError_PTR_PTR(error);
 
-
   /* Unbox parameters */
   const char * native_filename = mrb_string_value_cstr(mrb, &filename);
 
@@ -29932,7 +29307,6 @@ mrb_GLib_g_mapped_file_new_from_fd(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check__GError_PTR_PTR(error);
 
-
   /* Unbox parameters */
   int native_fd = mrb_fixnum(fd);
 
@@ -29973,7 +29347,6 @@ mrb_GLib_g_mapped_file_ref(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GMappedFile * native_file = (mrb_nil_p(file) ? NULL : mruby_unbox__GMappedFile(file));
 
@@ -30009,7 +29382,6 @@ mrb_GLib_g_mapped_file_unref(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GMappedFile expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GMappedFile * native_file = (mrb_nil_p(file) ? NULL : mruby_unbox__GMappedFile(file));
@@ -30061,7 +29433,6 @@ mrb_GLib_g_markup_collect_attributes(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "String expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   const char * native_element_name = mrb_string_value_cstr(mrb, &element_name);
@@ -30143,7 +29514,6 @@ mrb_GLib_g_markup_escape_text(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   const char * native_text = mrb_string_value_cstr(mrb, &text);
 
@@ -30184,7 +29554,6 @@ mrb_GLib_g_markup_parse_context_end_parse(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
   TODO_type_check__GError_PTR_PTR(error);
-
 
   /* Unbox parameters */
   struct _GMarkupParseContext * native_context = (mrb_nil_p(context) ? NULL : mruby_unbox__GMarkupParseContext(context));
@@ -30228,7 +29597,6 @@ mrb_GLib_g_markup_parse_context_free(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GMarkupParseContext * native_context = (mrb_nil_p(context) ? NULL : mruby_unbox__GMarkupParseContext(context));
 
@@ -30261,7 +29629,6 @@ mrb_GLib_g_markup_parse_context_get_element(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GMarkupParseContext expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GMarkupParseContext * native_context = (mrb_nil_p(context) ? NULL : mruby_unbox__GMarkupParseContext(context));
@@ -30298,7 +29665,6 @@ mrb_GLib_g_markup_parse_context_get_element_stack(mrb_state* mrb, mrb_value self
     mrb_raise(mrb, E_TYPE_ERROR, "GMarkupParseContext expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GMarkupParseContext * native_context = (mrb_nil_p(context) ? NULL : mruby_unbox__GMarkupParseContext(context));
@@ -30342,7 +29708,6 @@ mrb_GLib_g_markup_parse_context_get_position(mrb_state* mrb, mrb_value self) {
   TODO_type_check_int_PTR(line_number);
   TODO_type_check_int_PTR(char_number);
 
-
   /* Unbox parameters */
   struct _GMarkupParseContext * native_context = (mrb_nil_p(context) ? NULL : mruby_unbox__GMarkupParseContext(context));
 
@@ -30379,7 +29744,6 @@ mrb_GLib_g_markup_parse_context_get_user_data(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GMarkupParseContext expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GMarkupParseContext * native_context = (mrb_nil_p(context) ? NULL : mruby_unbox__GMarkupParseContext(context));
@@ -30425,7 +29789,6 @@ mrb_GLib_g_markup_parse_context_new(mrb_state* mrb, mrb_value self) {
   TODO_type_check_GMarkupParseFlags(flags);
   TODO_type_check_void_PTR(user_data);
   TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_void_PTR_RPAREN(user_data_dnotify);
-
 
   /* Unbox parameters */
   const struct _GMarkupParser * native_parser = (mrb_nil_p(parser) ? NULL : mruby_unbox__GMarkupParser(parser));
@@ -30484,7 +29847,6 @@ mrb_GLib_g_markup_parse_context_parse(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check__GError_PTR_PTR(error);
 
-
   /* Unbox parameters */
   struct _GMarkupParseContext * native_context = (mrb_nil_p(context) ? NULL : mruby_unbox__GMarkupParseContext(context));
 
@@ -30531,7 +29893,6 @@ mrb_GLib_g_markup_parse_context_pop(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GMarkupParseContext * native_context = (mrb_nil_p(context) ? NULL : mruby_unbox__GMarkupParseContext(context));
 
@@ -30577,7 +29938,6 @@ mrb_GLib_g_markup_parse_context_push(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check_void_PTR(user_data);
 
-
   /* Unbox parameters */
   struct _GMarkupParseContext * native_context = (mrb_nil_p(context) ? NULL : mruby_unbox__GMarkupParseContext(context));
 
@@ -30615,7 +29975,6 @@ mrb_GLib_g_markup_parse_context_ref(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GMarkupParseContext * native_context = (mrb_nil_p(context) ? NULL : mruby_unbox__GMarkupParseContext(context));
 
@@ -30652,7 +30011,6 @@ mrb_GLib_g_markup_parse_context_unref(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GMarkupParseContext * native_context = (mrb_nil_p(context) ? NULL : mruby_unbox__GMarkupParseContext(context));
 
@@ -30685,7 +30043,6 @@ mrb_GLib_g_markup_printf_escaped(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "String expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   const char * native_format = mrb_string_value_cstr(mrb, &format);
@@ -30728,7 +30085,6 @@ mrb_GLib_g_markup_vprintf_escaped(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   const char * native_format = mrb_string_value_cstr(mrb, &format);
@@ -30777,7 +30133,6 @@ mrb_GLib_g_match_info_expand_references(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check__GError_PTR_PTR(error);
 
-
   /* Unbox parameters */
   const struct _GMatchInfo * native_match_info = (mrb_nil_p(match_info) ? NULL : mruby_unbox__GMatchInfo(match_info));
 
@@ -30824,7 +30179,6 @@ mrb_GLib_g_match_info_fetch(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   const struct _GMatchInfo * native_match_info = (mrb_nil_p(match_info) ? NULL : mruby_unbox__GMatchInfo(match_info));
 
@@ -30862,7 +30216,6 @@ mrb_GLib_g_match_info_fetch_all(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GMatchInfo expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   const struct _GMatchInfo * native_match_info = (mrb_nil_p(match_info) ? NULL : mruby_unbox__GMatchInfo(match_info));
@@ -30905,7 +30258,6 @@ mrb_GLib_g_match_info_fetch_named(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "String expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   const struct _GMatchInfo * native_match_info = (mrb_nil_p(match_info) ? NULL : mruby_unbox__GMatchInfo(match_info));
@@ -30956,7 +30308,6 @@ mrb_GLib_g_match_info_fetch_named_pos(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check_int_PTR(start_pos);
   TODO_type_check_int_PTR(end_pos);
-
 
   /* Unbox parameters */
   const struct _GMatchInfo * native_match_info = (mrb_nil_p(match_info) ? NULL : mruby_unbox__GMatchInfo(match_info));
@@ -31016,7 +30367,6 @@ mrb_GLib_g_match_info_fetch_pos(mrb_state* mrb, mrb_value self) {
   TODO_type_check_int_PTR(start_pos);
   TODO_type_check_int_PTR(end_pos);
 
-
   /* Unbox parameters */
   const struct _GMatchInfo * native_match_info = (mrb_nil_p(match_info) ? NULL : mruby_unbox__GMatchInfo(match_info));
 
@@ -31063,7 +30413,6 @@ mrb_GLib_g_match_info_free(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GMatchInfo * native_match_info = (mrb_nil_p(match_info) ? NULL : mruby_unbox__GMatchInfo(match_info));
 
@@ -31096,7 +30445,6 @@ mrb_GLib_g_match_info_get_match_count(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GMatchInfo expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   const struct _GMatchInfo * native_match_info = (mrb_nil_p(match_info) ? NULL : mruby_unbox__GMatchInfo(match_info));
@@ -31138,7 +30486,6 @@ mrb_GLib_g_match_info_get_regex(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   const struct _GMatchInfo * native_match_info = (mrb_nil_p(match_info) ? NULL : mruby_unbox__GMatchInfo(match_info));
 
@@ -31175,7 +30522,6 @@ mrb_GLib_g_match_info_get_string(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   const struct _GMatchInfo * native_match_info = (mrb_nil_p(match_info) ? NULL : mruby_unbox__GMatchInfo(match_info));
 
@@ -31211,7 +30557,6 @@ mrb_GLib_g_match_info_is_partial_match(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GMatchInfo expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   const struct _GMatchInfo * native_match_info = (mrb_nil_p(match_info) ? NULL : mruby_unbox__GMatchInfo(match_info));
@@ -31252,7 +30597,6 @@ mrb_GLib_g_match_info_matches(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GMatchInfo expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   const struct _GMatchInfo * native_match_info = (mrb_nil_p(match_info) ? NULL : mruby_unbox__GMatchInfo(match_info));
@@ -31297,7 +30641,6 @@ mrb_GLib_g_match_info_next(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check__GError_PTR_PTR(error);
 
-
   /* Unbox parameters */
   struct _GMatchInfo * native_match_info = (mrb_nil_p(match_info) ? NULL : mruby_unbox__GMatchInfo(match_info));
 
@@ -31340,7 +30683,6 @@ mrb_GLib_g_match_info_ref(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GMatchInfo * native_match_info = (mrb_nil_p(match_info) ? NULL : mruby_unbox__GMatchInfo(match_info));
 
@@ -31376,7 +30718,6 @@ mrb_GLib_g_match_info_unref(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GMatchInfo expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GMatchInfo * native_match_info = (mrb_nil_p(match_info) ? NULL : mruby_unbox__GMatchInfo(match_info));
@@ -31452,7 +30793,6 @@ mrb_GLib_g_mem_set_vtable(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GMemVTable * native_vtable = (mrb_nil_p(vtable) ? NULL : mruby_unbox__GMemVTable(vtable));
 
@@ -31488,7 +30828,6 @@ mrb_GLib_g_memdup(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   const void * native_mem = TODO_mruby_unbox_void_PTR(mem);
@@ -31534,7 +30873,6 @@ mrb_GLib_g_mkdir_with_parents(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   const char * native_pathname = mrb_string_value_cstr(mrb, &pathname);
 
@@ -31576,7 +30914,6 @@ mrb_GLib_g_mkdtemp(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "String expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   /* WARNING: Allocating new memory to create 'char *' from 'const char *'.
@@ -31633,7 +30970,6 @@ mrb_GLib_g_mkdtemp_full(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   /* WARNING: Allocating new memory to create 'char *' from 'const char *'.
    *          Please verify that this memory is cleaned up correctly.
@@ -31684,7 +31020,6 @@ mrb_GLib_g_mkstemp(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "String expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   /* WARNING: Allocating new memory to create 'char *' from 'const char *'.
@@ -31751,7 +31086,6 @@ mrb_GLib_g_mkstemp_full(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   /* WARNING: Allocating new memory to create 'char *' from 'const char *'.
    *          Please verify that this memory is cleaned up correctly.
@@ -31806,7 +31140,6 @@ mrb_GLib_g_mutex_clear(mrb_state* mrb, mrb_value self) {
   /* Type checking */
   TODO_type_check_union__GMutex_PTR(mutex);
 
-
   /* Unbox parameters */
   union _GMutex * native_mutex = TODO_mruby_unbox_union__GMutex_PTR(mutex);
 
@@ -31836,7 +31169,6 @@ mrb_GLib_g_mutex_init(mrb_state* mrb, mrb_value self) {
 
   /* Type checking */
   TODO_type_check_union__GMutex_PTR(mutex);
-
 
   /* Unbox parameters */
   union _GMutex * native_mutex = TODO_mruby_unbox_union__GMutex_PTR(mutex);
@@ -31868,7 +31200,6 @@ mrb_GLib_g_mutex_lock(mrb_state* mrb, mrb_value self) {
   /* Type checking */
   TODO_type_check_union__GMutex_PTR(mutex);
 
-
   /* Unbox parameters */
   union _GMutex * native_mutex = TODO_mruby_unbox_union__GMutex_PTR(mutex);
 
@@ -31899,7 +31230,6 @@ mrb_GLib_g_mutex_locker_free(mrb_state* mrb, mrb_value self) {
   /* Type checking */
   TODO_type_check_void_PTR(locker);
 
-
   /* Unbox parameters */
   void * native_locker = TODO_mruby_unbox_void_PTR(locker);
 
@@ -31929,7 +31259,6 @@ mrb_GLib_g_mutex_locker_new(mrb_state* mrb, mrb_value self) {
 
   /* Type checking */
   TODO_type_check_union__GMutex_PTR(mutex);
-
 
   /* Unbox parameters */
   union _GMutex * native_mutex = TODO_mruby_unbox_union__GMutex_PTR(mutex);
@@ -31963,7 +31292,6 @@ mrb_GLib_g_mutex_trylock(mrb_state* mrb, mrb_value self) {
 
   /* Type checking */
   TODO_type_check_union__GMutex_PTR(mutex);
-
 
   /* Unbox parameters */
   union _GMutex * native_mutex = TODO_mruby_unbox_union__GMutex_PTR(mutex);
@@ -32002,7 +31330,6 @@ mrb_GLib_g_mutex_unlock(mrb_state* mrb, mrb_value self) {
   /* Type checking */
   TODO_type_check_union__GMutex_PTR(mutex);
 
-
   /* Unbox parameters */
   union _GMutex * native_mutex = TODO_mruby_unbox_union__GMutex_PTR(mutex);
 
@@ -32038,7 +31365,6 @@ mrb_GLib_g_node_child_index(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
   TODO_type_check_void_PTR(data);
-
 
   /* Unbox parameters */
   struct _GNode * native_node = (mrb_nil_p(node) ? NULL : mruby_unbox__GNode(node));
@@ -32087,7 +31413,6 @@ mrb_GLib_g_node_child_position(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GNode expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GNode * native_node = (mrb_nil_p(node) ? NULL : mruby_unbox__GNode(node));
@@ -32140,7 +31465,6 @@ mrb_GLib_g_node_children_foreach(mrb_state* mrb, mrb_value self) {
   TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN__GNode_PTR_COMMA_void_PTR_RPAREN(func);
   TODO_type_check_void_PTR(data);
 
-
   /* Unbox parameters */
   struct _GNode * native_node = (mrb_nil_p(node) ? NULL : mruby_unbox__GNode(node));
 
@@ -32179,7 +31503,6 @@ mrb_GLib_g_node_copy(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GNode expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GNode * native_node = (mrb_nil_p(node) ? NULL : mruby_unbox__GNode(node));
@@ -32223,7 +31546,6 @@ mrb_GLib_g_node_copy_deep(mrb_state* mrb, mrb_value self) {
   TODO_type_check_void_PTR_LPAREN_PTR_RPAREN_LPAREN_void_PTR_COMMA_void_PTR_RPAREN(copy_func);
   TODO_type_check_void_PTR(data);
 
-
   /* Unbox parameters */
   struct _GNode * native_node = (mrb_nil_p(node) ? NULL : mruby_unbox__GNode(node));
 
@@ -32264,7 +31586,6 @@ mrb_GLib_g_node_depth(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GNode * native_node = (mrb_nil_p(node) ? NULL : mruby_unbox__GNode(node));
 
@@ -32304,7 +31625,6 @@ mrb_GLib_g_node_destroy(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GNode expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GNode * native_root = (mrb_nil_p(root) ? NULL : mruby_unbox__GNode(root));
@@ -32347,7 +31667,6 @@ mrb_GLib_g_node_find(mrb_state* mrb, mrb_value self) {
   TODO_type_check_GTraverseType(order);
   TODO_type_check_GTraverseFlags(flags);
   TODO_type_check_void_PTR(data);
-
 
   /* Unbox parameters */
   struct _GNode * native_root = (mrb_nil_p(root) ? NULL : mruby_unbox__GNode(root));
@@ -32397,7 +31716,6 @@ mrb_GLib_g_node_find_child(mrb_state* mrb, mrb_value self) {
   TODO_type_check_GTraverseFlags(flags);
   TODO_type_check_void_PTR(data);
 
-
   /* Unbox parameters */
   struct _GNode * native_node = (mrb_nil_p(node) ? NULL : mruby_unbox__GNode(node));
 
@@ -32438,7 +31756,6 @@ mrb_GLib_g_node_first_sibling(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GNode * native_node = (mrb_nil_p(node) ? NULL : mruby_unbox__GNode(node));
 
@@ -32474,7 +31791,6 @@ mrb_GLib_g_node_get_root(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GNode expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GNode * native_node = (mrb_nil_p(node) ? NULL : mruby_unbox__GNode(node));
@@ -32523,7 +31839,6 @@ mrb_GLib_g_node_insert(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GNode expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GNode * native_parent = (mrb_nil_p(parent) ? NULL : mruby_unbox__GNode(parent));
@@ -32577,7 +31892,6 @@ mrb_GLib_g_node_insert_after(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GNode * native_parent = (mrb_nil_p(parent) ? NULL : mruby_unbox__GNode(parent));
 
@@ -32630,7 +31944,6 @@ mrb_GLib_g_node_insert_before(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GNode * native_parent = (mrb_nil_p(parent) ? NULL : mruby_unbox__GNode(parent));
 
@@ -32677,7 +31990,6 @@ mrb_GLib_g_node_is_ancestor(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GNode * native_node = (mrb_nil_p(node) ? NULL : mruby_unbox__GNode(node));
 
@@ -32720,7 +32032,6 @@ mrb_GLib_g_node_last_child(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GNode * native_node = (mrb_nil_p(node) ? NULL : mruby_unbox__GNode(node));
 
@@ -32757,7 +32068,6 @@ mrb_GLib_g_node_last_sibling(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GNode * native_node = (mrb_nil_p(node) ? NULL : mruby_unbox__GNode(node));
 
@@ -32793,7 +32103,6 @@ mrb_GLib_g_node_max_height(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GNode expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GNode * native_root = (mrb_nil_p(root) ? NULL : mruby_unbox__GNode(root));
@@ -32834,7 +32143,6 @@ mrb_GLib_g_node_n_children(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GNode expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GNode * native_node = (mrb_nil_p(node) ? NULL : mruby_unbox__GNode(node));
@@ -32879,7 +32187,6 @@ mrb_GLib_g_node_n_nodes(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check_GTraverseFlags(flags);
 
-
   /* Unbox parameters */
   struct _GNode * native_root = (mrb_nil_p(root) ? NULL : mruby_unbox__GNode(root));
 
@@ -32918,7 +32225,6 @@ mrb_GLib_g_node_new(mrb_state* mrb, mrb_value self) {
 
   /* Type checking */
   TODO_type_check_void_PTR(data);
-
 
   /* Unbox parameters */
   void * native_data = TODO_mruby_unbox_void_PTR(data);
@@ -32961,7 +32267,6 @@ mrb_GLib_g_node_nth_child(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GNode * native_node = (mrb_nil_p(node) ? NULL : mruby_unbox__GNode(node));
@@ -33007,7 +32312,6 @@ mrb_GLib_g_node_prepend(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GNode * native_parent = (mrb_nil_p(parent) ? NULL : mruby_unbox__GNode(parent));
 
@@ -33045,7 +32349,6 @@ mrb_GLib_g_node_reverse_children(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GNode expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GNode * native_node = (mrb_nil_p(node) ? NULL : mruby_unbox__GNode(node));
@@ -33098,7 +32401,6 @@ mrb_GLib_g_node_traverse(mrb_state* mrb, mrb_value self) {
   TODO_type_check_int_LPAREN_PTR_RPAREN_LPAREN__GNode_PTR_COMMA_void_PTR_RPAREN(func);
   TODO_type_check_void_PTR(data);
 
-
   /* Unbox parameters */
   struct _GNode * native_root = (mrb_nil_p(root) ? NULL : mruby_unbox__GNode(root));
 
@@ -33142,7 +32444,6 @@ mrb_GLib_g_node_unlink(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GNode * native_node = (mrb_nil_p(node) ? NULL : mruby_unbox__GNode(node));
 
@@ -33172,7 +32473,6 @@ mrb_GLib_g_nullify_pointer(mrb_state* mrb, mrb_value self) {
 
   /* Type checking */
   TODO_type_check_void_PTR_PTR(nullify_location);
-
 
   /* Unbox parameters */
   void ** native_nullify_location = TODO_mruby_unbox_void_PTR_PTR(nullify_location);
@@ -33207,7 +32507,6 @@ mrb_GLib_g_on_error_query(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   const char * native_prg_name = mrb_string_value_cstr(mrb, &prg_name);
 
@@ -33240,7 +32539,6 @@ mrb_GLib_g_on_error_stack_trace(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "String expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   const char * native_prg_name = mrb_string_value_cstr(mrb, &prg_name);
@@ -33281,7 +32579,6 @@ mrb_GLib_g_once_impl(mrb_state* mrb, mrb_value self) {
   TODO_type_check_void_PTR_LPAREN_PTR_RPAREN_LPAREN_void_PTR_RPAREN(func);
   TODO_type_check_void_PTR(arg);
 
-
   /* Unbox parameters */
   struct _GOnce * native_once = (mrb_nil_p(once) ? NULL : mruby_unbox__GOnce(once));
 
@@ -33318,7 +32615,6 @@ mrb_GLib_g_once_init_enter(mrb_state* mrb, mrb_value self) {
 
   /* Type checking */
   TODO_type_check_volatile_void_PTR(location);
-
 
   /* Unbox parameters */
   volatile void * native_location = TODO_mruby_unbox_volatile_void_PTR(location);
@@ -33363,7 +32659,6 @@ mrb_GLib_g_once_init_leave(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   volatile void * native_location = TODO_mruby_unbox_volatile_void_PTR(location);
 
@@ -33404,7 +32699,6 @@ mrb_GLib_g_option_context_add_group(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GOptionGroup expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GOptionContext * native_context = (mrb_nil_p(context) ? NULL : mruby_unbox__GOptionContext(context));
@@ -33453,7 +32747,6 @@ mrb_GLib_g_option_context_add_main_entries(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GOptionContext * native_context = (mrb_nil_p(context) ? NULL : mruby_unbox__GOptionContext(context));
 
@@ -33491,7 +32784,6 @@ mrb_GLib_g_option_context_free(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GOptionContext * native_context = (mrb_nil_p(context) ? NULL : mruby_unbox__GOptionContext(context));
 
@@ -33524,7 +32816,6 @@ mrb_GLib_g_option_context_get_description(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GOptionContext expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GOptionContext * native_context = (mrb_nil_p(context) ? NULL : mruby_unbox__GOptionContext(context));
@@ -33574,7 +32865,6 @@ mrb_GLib_g_option_context_get_help(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GOptionContext * native_context = (mrb_nil_p(context) ? NULL : mruby_unbox__GOptionContext(context));
 
@@ -33614,7 +32904,6 @@ mrb_GLib_g_option_context_get_help_enabled(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GOptionContext expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GOptionContext * native_context = (mrb_nil_p(context) ? NULL : mruby_unbox__GOptionContext(context));
@@ -33656,7 +32945,6 @@ mrb_GLib_g_option_context_get_ignore_unknown_options(mrb_state* mrb, mrb_value s
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GOptionContext * native_context = (mrb_nil_p(context) ? NULL : mruby_unbox__GOptionContext(context));
 
@@ -33697,7 +32985,6 @@ mrb_GLib_g_option_context_get_main_group(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GOptionContext * native_context = (mrb_nil_p(context) ? NULL : mruby_unbox__GOptionContext(context));
 
@@ -33733,7 +33020,6 @@ mrb_GLib_g_option_context_get_strict_posix(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GOptionContext expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GOptionContext * native_context = (mrb_nil_p(context) ? NULL : mruby_unbox__GOptionContext(context));
@@ -33775,7 +33061,6 @@ mrb_GLib_g_option_context_get_summary(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GOptionContext * native_context = (mrb_nil_p(context) ? NULL : mruby_unbox__GOptionContext(context));
 
@@ -33811,7 +33096,6 @@ mrb_GLib_g_option_context_new(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "String expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   const char * native_parameter_string = mrb_string_value_cstr(mrb, &parameter_string);
@@ -33857,7 +33141,6 @@ mrb_GLib_g_option_context_parse(mrb_state* mrb, mrb_value self) {
   TODO_type_check_int_PTR(argc);
   TODO_type_check_char_PTR_PTR_PTR(argv);
   TODO_type_check__GError_PTR_PTR(error);
-
 
   /* Unbox parameters */
   struct _GOptionContext * native_context = (mrb_nil_p(context) ? NULL : mruby_unbox__GOptionContext(context));
@@ -33911,7 +33194,6 @@ mrb_GLib_g_option_context_parse_strv(mrb_state* mrb, mrb_value self) {
   TODO_type_check_char_PTR_PTR_PTR(arguments);
   TODO_type_check__GError_PTR_PTR(error);
 
-
   /* Unbox parameters */
   struct _GOptionContext * native_context = (mrb_nil_p(context) ? NULL : mruby_unbox__GOptionContext(context));
 
@@ -33962,7 +33244,6 @@ mrb_GLib_g_option_context_set_description(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GOptionContext * native_context = (mrb_nil_p(context) ? NULL : mruby_unbox__GOptionContext(context));
 
@@ -34003,7 +33284,6 @@ mrb_GLib_g_option_context_set_help_enabled(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GOptionContext * native_context = (mrb_nil_p(context) ? NULL : mruby_unbox__GOptionContext(context));
@@ -34046,7 +33326,6 @@ mrb_GLib_g_option_context_set_ignore_unknown_options(mrb_state* mrb, mrb_value s
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GOptionContext * native_context = (mrb_nil_p(context) ? NULL : mruby_unbox__GOptionContext(context));
 
@@ -34087,7 +33366,6 @@ mrb_GLib_g_option_context_set_main_group(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GOptionGroup expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GOptionContext * native_context = (mrb_nil_p(context) ? NULL : mruby_unbox__GOptionContext(context));
@@ -34130,7 +33408,6 @@ mrb_GLib_g_option_context_set_strict_posix(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GOptionContext * native_context = (mrb_nil_p(context) ? NULL : mruby_unbox__GOptionContext(context));
 
@@ -34171,7 +33448,6 @@ mrb_GLib_g_option_context_set_summary(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "String expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GOptionContext * native_context = (mrb_nil_p(context) ? NULL : mruby_unbox__GOptionContext(context));
@@ -34217,7 +33493,6 @@ mrb_GLib_g_option_context_set_translate_func(mrb_state* mrb, mrb_value self) {
   TODO_type_check_void_PTR(data);
   TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_void_PTR_RPAREN(destroy_notify);
 
-
   /* Unbox parameters */
   struct _GOptionContext * native_context = (mrb_nil_p(context) ? NULL : mruby_unbox__GOptionContext(context));
 
@@ -34262,7 +33537,6 @@ mrb_GLib_g_option_context_set_translation_domain(mrb_state* mrb, mrb_value self)
     mrb_raise(mrb, E_TYPE_ERROR, "String expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GOptionContext * native_context = (mrb_nil_p(context) ? NULL : mruby_unbox__GOptionContext(context));
@@ -34329,7 +33603,6 @@ mrb_GLib_g_option_group_add_entries(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GOptionGroup * native_group = (mrb_nil_p(group) ? NULL : mruby_unbox__GOptionGroup(group));
 
@@ -34364,7 +33637,6 @@ mrb_GLib_g_option_group_free(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GOptionGroup expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GOptionGroup * native_group = (mrb_nil_p(group) ? NULL : mruby_unbox__GOptionGroup(group));
@@ -34417,7 +33689,6 @@ mrb_GLib_g_option_group_new(mrb_state* mrb, mrb_value self) {
   TODO_type_check_void_PTR(user_data);
   TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_void_PTR_RPAREN(destroy);
 
-
   /* Unbox parameters */
   const char * native_name = mrb_string_value_cstr(mrb, &name);
 
@@ -34462,7 +33733,6 @@ mrb_GLib_g_option_group_ref(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GOptionGroup * native_group = (mrb_nil_p(group) ? NULL : mruby_unbox__GOptionGroup(group));
 
@@ -34501,7 +33771,6 @@ mrb_GLib_g_option_group_set_error_hook(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
   TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN__GOptionContext_PTR_COMMA_struct__GOptionGroup_PTR_COMMA_void_PTR_COMMA_struct__GError_PTR_PTR_RPAREN(error_func);
-
 
   /* Unbox parameters */
   struct _GOptionGroup * native_group = (mrb_nil_p(group) ? NULL : mruby_unbox__GOptionGroup(group));
@@ -34543,7 +33812,6 @@ mrb_GLib_g_option_group_set_parse_hooks(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check_int_LPAREN_PTR_RPAREN_LPAREN__GOptionContext_PTR_COMMA_struct__GOptionGroup_PTR_COMMA_void_PTR_COMMA_struct__GError_PTR_PTR_RPAREN(pre_parse_func);
   TODO_type_check_int_LPAREN_PTR_RPAREN_LPAREN__GOptionContext_PTR_COMMA_struct__GOptionGroup_PTR_COMMA_void_PTR_COMMA_struct__GError_PTR_PTR_RPAREN(post_parse_func);
-
 
   /* Unbox parameters */
   struct _GOptionGroup * native_group = (mrb_nil_p(group) ? NULL : mruby_unbox__GOptionGroup(group));
@@ -34591,7 +33859,6 @@ mrb_GLib_g_option_group_set_translate_func(mrb_state* mrb, mrb_value self) {
   TODO_type_check_void_PTR(data);
   TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_void_PTR_RPAREN(destroy_notify);
 
-
   /* Unbox parameters */
   struct _GOptionGroup * native_group = (mrb_nil_p(group) ? NULL : mruby_unbox__GOptionGroup(group));
 
@@ -34637,7 +33904,6 @@ mrb_GLib_g_option_group_set_translation_domain(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GOptionGroup * native_group = (mrb_nil_p(group) ? NULL : mruby_unbox__GOptionGroup(group));
 
@@ -34672,7 +33938,6 @@ mrb_GLib_g_option_group_unref(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GOptionGroup expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GOptionGroup * native_group = (mrb_nil_p(group) ? NULL : mruby_unbox__GOptionGroup(group));
@@ -34719,7 +33984,6 @@ mrb_GLib_g_parse_debug_string(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   const char * native_string = mrb_string_value_cstr(mrb, &string);
 
@@ -34764,7 +34028,6 @@ mrb_GLib_g_path_get_basename(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   const char * native_file_name = mrb_string_value_cstr(mrb, &file_name);
 
@@ -34801,7 +34064,6 @@ mrb_GLib_g_path_get_dirname(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   const char * native_file_name = mrb_string_value_cstr(mrb, &file_name);
 
@@ -34837,7 +34099,6 @@ mrb_GLib_g_path_is_absolute(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "String expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   const char * native_file_name = mrb_string_value_cstr(mrb, &file_name);
@@ -34878,7 +34139,6 @@ mrb_GLib_g_path_skip_root(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "String expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   const char * native_file_name = mrb_string_value_cstr(mrb, &file_name);
@@ -34934,7 +34194,6 @@ mrb_GLib_g_pattern_match(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GPatternSpec * native_pspec = (mrb_nil_p(pspec) ? NULL : mruby_unbox__GPatternSpec(pspec));
 
@@ -34987,7 +34246,6 @@ mrb_GLib_g_pattern_match_simple(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   const char * native_pattern = mrb_string_value_cstr(mrb, &pattern);
 
@@ -35035,7 +34293,6 @@ mrb_GLib_g_pattern_match_string(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "String expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GPatternSpec * native_pspec = (mrb_nil_p(pspec) ? NULL : mruby_unbox__GPatternSpec(pspec));
@@ -35085,7 +34342,6 @@ mrb_GLib_g_pattern_spec_equal(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GPatternSpec * native_pspec1 = (mrb_nil_p(pspec1) ? NULL : mruby_unbox__GPatternSpec(pspec1));
 
@@ -35128,7 +34384,6 @@ mrb_GLib_g_pattern_spec_free(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GPatternSpec * native_pspec = (mrb_nil_p(pspec) ? NULL : mruby_unbox__GPatternSpec(pspec));
 
@@ -35161,7 +34416,6 @@ mrb_GLib_g_pattern_spec_new(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "String expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   const char * native_pattern = mrb_string_value_cstr(mrb, &pattern);
@@ -35202,7 +34456,6 @@ mrb_GLib_g_pointer_bit_lock(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   volatile void * native_address = TODO_mruby_unbox_volatile_void_PTR(address);
 
@@ -35240,7 +34493,6 @@ mrb_GLib_g_pointer_bit_trylock(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   volatile void * native_address = TODO_mruby_unbox_volatile_void_PTR(address);
@@ -35286,7 +34538,6 @@ mrb_GLib_g_pointer_bit_unlock(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   volatile void * native_address = TODO_mruby_unbox_volatile_void_PTR(address);
@@ -35335,7 +34586,6 @@ mrb_GLib_g_poll(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GPollFD * native_fds = (mrb_nil_p(fds) ? NULL : mruby_unbox__GPollFD(fds));
 
@@ -35383,7 +34633,6 @@ mrb_GLib_g_prefix_error(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GError ** native_err = TODO_mruby_unbox__GError_PTR_PTR(err);
 
@@ -35419,7 +34668,6 @@ mrb_GLib_g_print(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   const char * native_format = mrb_string_value_cstr(mrb, &format);
 
@@ -35453,7 +34701,6 @@ mrb_GLib_g_printerr(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   const char * native_format = mrb_string_value_cstr(mrb, &format);
 
@@ -35486,7 +34733,6 @@ mrb_GLib_g_printf(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "String expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   const char * native_format = mrb_string_value_cstr(mrb, &format);
@@ -35534,7 +34780,6 @@ mrb_GLib_g_printf_string_upper_bound(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   const char * native_format = mrb_string_value_cstr(mrb, &format);
 
@@ -35577,7 +34822,6 @@ mrb_GLib_g_private_get(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GPrivate * native_key = (mrb_nil_p(key) ? NULL : mruby_unbox__GPrivate(key));
 
@@ -35617,7 +34861,6 @@ mrb_GLib_g_private_replace(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check_void_PTR(value);
 
-
   /* Unbox parameters */
   struct _GPrivate * native_key = (mrb_nil_p(key) ? NULL : mruby_unbox__GPrivate(key));
 
@@ -35656,7 +34899,6 @@ mrb_GLib_g_private_set(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check_void_PTR(value);
 
-
   /* Unbox parameters */
   struct _GPrivate * native_key = (mrb_nil_p(key) ? NULL : mruby_unbox__GPrivate(key));
 
@@ -35694,7 +34936,6 @@ mrb_GLib_g_propagate_error(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GError expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GError ** native_dest = TODO_mruby_unbox__GError_PTR_PTR(dest);
@@ -35740,7 +34981,6 @@ mrb_GLib_g_propagate_prefixed_error(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GError ** native_dest = TODO_mruby_unbox__GError_PTR_PTR(dest);
 
@@ -35780,7 +35020,6 @@ mrb_GLib_g_ptr_array_add(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
   TODO_type_check_void_PTR(data);
-
 
   /* Unbox parameters */
   struct _GPtrArray * native_array = (mrb_nil_p(array) ? NULL : mruby_unbox__GPtrArray(array));
@@ -35822,7 +35061,6 @@ mrb_GLib_g_ptr_array_foreach(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_void_PTR_COMMA_void_PTR_RPAREN(func);
   TODO_type_check_void_PTR(user_data);
-
 
   /* Unbox parameters */
   struct _GPtrArray * native_array = (mrb_nil_p(array) ? NULL : mruby_unbox__GPtrArray(array));
@@ -35866,7 +35104,6 @@ mrb_GLib_g_ptr_array_free(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GPtrArray * native_array = (mrb_nil_p(array) ? NULL : mruby_unbox__GPtrArray(array));
@@ -35914,7 +35151,6 @@ mrb_GLib_g_ptr_array_insert(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
   TODO_type_check_void_PTR(data);
-
 
   /* Unbox parameters */
   struct _GPtrArray * native_array = (mrb_nil_p(array) ? NULL : mruby_unbox__GPtrArray(array));
@@ -35976,7 +35212,6 @@ mrb_GLib_g_ptr_array_new_full(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_void_PTR_RPAREN(element_free_func);
 
-
   /* Unbox parameters */
   unsigned int native_reserved_size = mrb_fixnum(reserved_size);
 
@@ -36011,7 +35246,6 @@ mrb_GLib_g_ptr_array_new_with_free_func(mrb_state* mrb, mrb_value self) {
 
   /* Type checking */
   TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_void_PTR_RPAREN(element_free_func);
-
 
   /* Unbox parameters */
   void (*native_element_free_func)(void *) = TODO_mruby_unbox_void_LPAREN_PTR_RPAREN_LPAREN_void_PTR_RPAREN(element_free_func);
@@ -36048,7 +35282,6 @@ mrb_GLib_g_ptr_array_ref(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GPtrArray expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GPtrArray * native_array = (mrb_nil_p(array) ? NULL : mruby_unbox__GPtrArray(array));
@@ -36088,7 +35321,6 @@ mrb_GLib_g_ptr_array_remove(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
   TODO_type_check_void_PTR(data);
-
 
   /* Unbox parameters */
   struct _GPtrArray * native_array = (mrb_nil_p(array) ? NULL : mruby_unbox__GPtrArray(array));
@@ -36134,7 +35366,6 @@ mrb_GLib_g_ptr_array_remove_fast(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
   TODO_type_check_void_PTR(data);
-
 
   /* Unbox parameters */
   struct _GPtrArray * native_array = (mrb_nil_p(array) ? NULL : mruby_unbox__GPtrArray(array));
@@ -36184,7 +35415,6 @@ mrb_GLib_g_ptr_array_remove_index(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GPtrArray * native_array = (mrb_nil_p(array) ? NULL : mruby_unbox__GPtrArray(array));
 
@@ -36228,7 +35458,6 @@ mrb_GLib_g_ptr_array_remove_index_fast(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GPtrArray * native_array = (mrb_nil_p(array) ? NULL : mruby_unbox__GPtrArray(array));
@@ -36280,7 +35509,6 @@ mrb_GLib_g_ptr_array_remove_range(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GPtrArray * native_array = (mrb_nil_p(array) ? NULL : mruby_unbox__GPtrArray(array));
 
@@ -36324,7 +35552,6 @@ mrb_GLib_g_ptr_array_set_free_func(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_void_PTR_RPAREN(element_free_func);
 
-
   /* Unbox parameters */
   struct _GPtrArray * native_array = (mrb_nil_p(array) ? NULL : mruby_unbox__GPtrArray(array));
 
@@ -36366,7 +35593,6 @@ mrb_GLib_g_ptr_array_set_size(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GPtrArray * native_array = (mrb_nil_p(array) ? NULL : mruby_unbox__GPtrArray(array));
 
@@ -36401,7 +35627,6 @@ mrb_GLib_g_ptr_array_sized_new(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   unsigned int native_reserved_size = mrb_fixnum(reserved_size);
@@ -36441,7 +35666,6 @@ mrb_GLib_g_ptr_array_sort(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
   TODO_type_check_int_LPAREN_PTR_RPAREN_LPAREN_void_PTR_COMMA_const_void_PTR_RPAREN(compare_func);
-
 
   /* Unbox parameters */
   struct _GPtrArray * native_array = (mrb_nil_p(array) ? NULL : mruby_unbox__GPtrArray(array));
@@ -36484,7 +35708,6 @@ mrb_GLib_g_ptr_array_sort_with_data(mrb_state* mrb, mrb_value self) {
   TODO_type_check_int_LPAREN_PTR_RPAREN_LPAREN_void_PTR_COMMA_const_void_PTR_COMMA_void_PTR_RPAREN(compare_func);
   TODO_type_check_void_PTR(user_data);
 
-
   /* Unbox parameters */
   struct _GPtrArray * native_array = (mrb_nil_p(array) ? NULL : mruby_unbox__GPtrArray(array));
 
@@ -36521,7 +35744,6 @@ mrb_GLib_g_ptr_array_unref(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GPtrArray expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GPtrArray * native_array = (mrb_nil_p(array) ? NULL : mruby_unbox__GPtrArray(array));
@@ -36571,7 +35793,6 @@ mrb_GLib_g_qsort_with_data(mrb_state* mrb, mrb_value self) {
   TODO_type_check_int_LPAREN_PTR_RPAREN_LPAREN_void_PTR_COMMA_const_void_PTR_COMMA_void_PTR_RPAREN(compare_func);
   TODO_type_check_void_PTR(user_data);
 
-
   /* Unbox parameters */
   const void * native_pbase = TODO_mruby_unbox_void_PTR(pbase);
 
@@ -36613,7 +35834,6 @@ mrb_GLib_g_quark_from_static_string(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   const char * native_string = mrb_string_value_cstr(mrb, &string);
 
@@ -36653,7 +35873,6 @@ mrb_GLib_g_quark_from_string(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "String expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   const char * native_string = mrb_string_value_cstr(mrb, &string);
@@ -36712,7 +35931,6 @@ mrb_GLib_g_quark_to_string(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   unsigned int native_quark = mrb_fixnum(quark);
 
@@ -36748,7 +35966,6 @@ mrb_GLib_g_quark_try_string(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "String expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   const char * native_string = mrb_string_value_cstr(mrb, &string);
@@ -36790,7 +36007,6 @@ mrb_GLib_g_queue_clear(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GQueue * native_queue = (mrb_nil_p(queue) ? NULL : mruby_unbox__GQueue(queue));
 
@@ -36823,7 +36039,6 @@ mrb_GLib_g_queue_copy(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GQueue expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GQueue * native_queue = (mrb_nil_p(queue) ? NULL : mruby_unbox__GQueue(queue));
@@ -36867,7 +36082,6 @@ mrb_GLib_g_queue_delete_link(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GQueue * native_queue = (mrb_nil_p(queue) ? NULL : mruby_unbox__GQueue(queue));
 
@@ -36905,7 +36119,6 @@ mrb_GLib_g_queue_find(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
   TODO_type_check_void_PTR(data);
-
 
   /* Unbox parameters */
   struct _GQueue * native_queue = (mrb_nil_p(queue) ? NULL : mruby_unbox__GQueue(queue));
@@ -36950,7 +36163,6 @@ mrb_GLib_g_queue_find_custom(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check_void_PTR(data);
   TODO_type_check_int_LPAREN_PTR_RPAREN_LPAREN_void_PTR_COMMA_const_void_PTR_RPAREN(func);
-
 
   /* Unbox parameters */
   struct _GQueue * native_queue = (mrb_nil_p(queue) ? NULL : mruby_unbox__GQueue(queue));
@@ -36998,7 +36210,6 @@ mrb_GLib_g_queue_foreach(mrb_state* mrb, mrb_value self) {
   TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_void_PTR_COMMA_void_PTR_RPAREN(func);
   TODO_type_check_void_PTR(user_data);
 
-
   /* Unbox parameters */
   struct _GQueue * native_queue = (mrb_nil_p(queue) ? NULL : mruby_unbox__GQueue(queue));
 
@@ -37036,7 +36247,6 @@ mrb_GLib_g_queue_free(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GQueue * native_queue = (mrb_nil_p(queue) ? NULL : mruby_unbox__GQueue(queue));
 
@@ -37073,7 +36283,6 @@ mrb_GLib_g_queue_free_full(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_void_PTR_RPAREN(free_func);
 
-
   /* Unbox parameters */
   struct _GQueue * native_queue = (mrb_nil_p(queue) ? NULL : mruby_unbox__GQueue(queue));
 
@@ -37108,7 +36317,6 @@ mrb_GLib_g_queue_get_length(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GQueue expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GQueue * native_queue = (mrb_nil_p(queue) ? NULL : mruby_unbox__GQueue(queue));
@@ -37153,7 +36361,6 @@ mrb_GLib_g_queue_index(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check_void_PTR(data);
 
-
   /* Unbox parameters */
   struct _GQueue * native_queue = (mrb_nil_p(queue) ? NULL : mruby_unbox__GQueue(queue));
 
@@ -37196,7 +36403,6 @@ mrb_GLib_g_queue_init(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GQueue * native_queue = (mrb_nil_p(queue) ? NULL : mruby_unbox__GQueue(queue));
 
@@ -37238,7 +36444,6 @@ mrb_GLib_g_queue_insert_after(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
   TODO_type_check_void_PTR(data);
-
 
   /* Unbox parameters */
   struct _GQueue * native_queue = (mrb_nil_p(queue) ? NULL : mruby_unbox__GQueue(queue));
@@ -37286,7 +36491,6 @@ mrb_GLib_g_queue_insert_before(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check_void_PTR(data);
 
-
   /* Unbox parameters */
   struct _GQueue * native_queue = (mrb_nil_p(queue) ? NULL : mruby_unbox__GQueue(queue));
 
@@ -37333,7 +36537,6 @@ mrb_GLib_g_queue_insert_sorted(mrb_state* mrb, mrb_value self) {
   TODO_type_check_int_LPAREN_PTR_RPAREN_LPAREN_void_PTR_COMMA_const_void_PTR_COMMA_void_PTR_RPAREN(func);
   TODO_type_check_void_PTR(user_data);
 
-
   /* Unbox parameters */
   struct _GQueue * native_queue = (mrb_nil_p(queue) ? NULL : mruby_unbox__GQueue(queue));
 
@@ -37372,7 +36575,6 @@ mrb_GLib_g_queue_is_empty(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GQueue expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GQueue * native_queue = (mrb_nil_p(queue) ? NULL : mruby_unbox__GQueue(queue));
@@ -37419,7 +36621,6 @@ mrb_GLib_g_queue_link_index(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GList expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GQueue * native_queue = (mrb_nil_p(queue) ? NULL : mruby_unbox__GQueue(queue));
@@ -37483,7 +36684,6 @@ mrb_GLib_g_queue_peek_head(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GQueue * native_queue = (mrb_nil_p(queue) ? NULL : mruby_unbox__GQueue(queue));
 
@@ -37519,7 +36719,6 @@ mrb_GLib_g_queue_peek_head_link(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GQueue expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GQueue * native_queue = (mrb_nil_p(queue) ? NULL : mruby_unbox__GQueue(queue));
@@ -37562,7 +36761,6 @@ mrb_GLib_g_queue_peek_nth(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GQueue * native_queue = (mrb_nil_p(queue) ? NULL : mruby_unbox__GQueue(queue));
@@ -37608,7 +36806,6 @@ mrb_GLib_g_queue_peek_nth_link(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GQueue * native_queue = (mrb_nil_p(queue) ? NULL : mruby_unbox__GQueue(queue));
 
@@ -37647,7 +36844,6 @@ mrb_GLib_g_queue_peek_tail(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GQueue * native_queue = (mrb_nil_p(queue) ? NULL : mruby_unbox__GQueue(queue));
 
@@ -37683,7 +36879,6 @@ mrb_GLib_g_queue_peek_tail_link(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GQueue expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GQueue * native_queue = (mrb_nil_p(queue) ? NULL : mruby_unbox__GQueue(queue));
@@ -37721,7 +36916,6 @@ mrb_GLib_g_queue_pop_head(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GQueue * native_queue = (mrb_nil_p(queue) ? NULL : mruby_unbox__GQueue(queue));
 
@@ -37757,7 +36951,6 @@ mrb_GLib_g_queue_pop_head_link(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GQueue expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GQueue * native_queue = (mrb_nil_p(queue) ? NULL : mruby_unbox__GQueue(queue));
@@ -37800,7 +36993,6 @@ mrb_GLib_g_queue_pop_nth(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GQueue * native_queue = (mrb_nil_p(queue) ? NULL : mruby_unbox__GQueue(queue));
@@ -37846,7 +37038,6 @@ mrb_GLib_g_queue_pop_nth_link(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GQueue * native_queue = (mrb_nil_p(queue) ? NULL : mruby_unbox__GQueue(queue));
 
@@ -37885,7 +37076,6 @@ mrb_GLib_g_queue_pop_tail(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GQueue * native_queue = (mrb_nil_p(queue) ? NULL : mruby_unbox__GQueue(queue));
 
@@ -37921,7 +37111,6 @@ mrb_GLib_g_queue_pop_tail_link(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GQueue expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GQueue * native_queue = (mrb_nil_p(queue) ? NULL : mruby_unbox__GQueue(queue));
@@ -37961,7 +37150,6 @@ mrb_GLib_g_queue_push_head(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
   TODO_type_check_void_PTR(data);
-
 
   /* Unbox parameters */
   struct _GQueue * native_queue = (mrb_nil_p(queue) ? NULL : mruby_unbox__GQueue(queue));
@@ -38003,7 +37191,6 @@ mrb_GLib_g_queue_push_head_link(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GList expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GQueue * native_queue = (mrb_nil_p(queue) ? NULL : mruby_unbox__GQueue(queue));
@@ -38048,7 +37235,6 @@ mrb_GLib_g_queue_push_nth(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GQueue * native_queue = (mrb_nil_p(queue) ? NULL : mruby_unbox__GQueue(queue));
@@ -38099,7 +37285,6 @@ mrb_GLib_g_queue_push_nth_link(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GQueue * native_queue = (mrb_nil_p(queue) ? NULL : mruby_unbox__GQueue(queue));
 
@@ -38139,7 +37324,6 @@ mrb_GLib_g_queue_push_tail(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
   TODO_type_check_void_PTR(data);
-
 
   /* Unbox parameters */
   struct _GQueue * native_queue = (mrb_nil_p(queue) ? NULL : mruby_unbox__GQueue(queue));
@@ -38182,7 +37366,6 @@ mrb_GLib_g_queue_push_tail_link(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GQueue * native_queue = (mrb_nil_p(queue) ? NULL : mruby_unbox__GQueue(queue));
 
@@ -38220,7 +37403,6 @@ mrb_GLib_g_queue_remove(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
   TODO_type_check_void_PTR(data);
-
 
   /* Unbox parameters */
   struct _GQueue * native_queue = (mrb_nil_p(queue) ? NULL : mruby_unbox__GQueue(queue));
@@ -38267,7 +37449,6 @@ mrb_GLib_g_queue_remove_all(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check_void_PTR(data);
 
-
   /* Unbox parameters */
   struct _GQueue * native_queue = (mrb_nil_p(queue) ? NULL : mruby_unbox__GQueue(queue));
 
@@ -38310,7 +37491,6 @@ mrb_GLib_g_queue_reverse(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GQueue * native_queue = (mrb_nil_p(queue) ? NULL : mruby_unbox__GQueue(queue));
 
@@ -38349,7 +37529,6 @@ mrb_GLib_g_queue_sort(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check_int_LPAREN_PTR_RPAREN_LPAREN_void_PTR_COMMA_const_void_PTR_COMMA_void_PTR_RPAREN(compare_func);
   TODO_type_check_void_PTR(user_data);
-
 
   /* Unbox parameters */
   struct _GQueue * native_queue = (mrb_nil_p(queue) ? NULL : mruby_unbox__GQueue(queue));
@@ -38394,7 +37573,6 @@ mrb_GLib_g_queue_unlink(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GQueue * native_queue = (mrb_nil_p(queue) ? NULL : mruby_unbox__GQueue(queue));
 
@@ -38429,7 +37607,6 @@ mrb_GLib_g_rand_copy(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GRand expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GRand * native_rand_ = (mrb_nil_p(rand_) ? NULL : mruby_unbox__GRand(rand_));
@@ -38466,7 +37643,6 @@ mrb_GLib_g_rand_double(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GRand expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GRand * native_rand_ = (mrb_nil_p(rand_) ? NULL : mruby_unbox__GRand(rand_));
@@ -38516,7 +37692,6 @@ mrb_GLib_g_rand_double_range(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GRand * native_rand_ = (mrb_nil_p(rand_) ? NULL : mruby_unbox__GRand(rand_));
 
@@ -38557,7 +37732,6 @@ mrb_GLib_g_rand_free(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GRand * native_rand_ = (mrb_nil_p(rand_) ? NULL : mruby_unbox__GRand(rand_));
 
@@ -38590,7 +37764,6 @@ mrb_GLib_g_rand_int(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GRand expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GRand * native_rand_ = (mrb_nil_p(rand_) ? NULL : mruby_unbox__GRand(rand_));
@@ -38643,7 +37816,6 @@ mrb_GLib_g_rand_int_range(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GRand * native_rand_ = (mrb_nil_p(rand_) ? NULL : mruby_unbox__GRand(rand_));
@@ -38709,7 +37881,6 @@ mrb_GLib_g_rand_new_with_seed(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   unsigned int native_seed = mrb_fixnum(seed);
 
@@ -38748,7 +37919,6 @@ mrb_GLib_g_rand_new_with_seed_array(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   const unsigned int * native_seed = TODO_mruby_unbox_unsigned_int_PTR(seed);
@@ -38794,7 +37964,6 @@ mrb_GLib_g_rand_set_seed(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GRand * native_rand_ = (mrb_nil_p(rand_) ? NULL : mruby_unbox__GRand(rand_));
 
@@ -38838,7 +38007,6 @@ mrb_GLib_g_rand_set_seed_array(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GRand * native_rand_ = (mrb_nil_p(rand_) ? NULL : mruby_unbox__GRand(rand_));
@@ -38902,7 +38070,6 @@ mrb_GLib_g_random_double_range(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Float expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   double native_begin = mrb_float(begin);
@@ -38972,7 +38139,6 @@ mrb_GLib_g_random_int_range(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   int native_begin = mrb_fixnum(begin);
 
@@ -39015,7 +38181,6 @@ mrb_GLib_g_random_set_seed(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   unsigned int native_seed = mrb_fixnum(seed);
 
@@ -39051,7 +38216,6 @@ mrb_GLib_g_realloc(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   void * native_mem = TODO_mruby_unbox_void_PTR(mem);
@@ -39100,7 +38264,6 @@ mrb_GLib_g_realloc_n(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   void * native_mem = TODO_mruby_unbox_void_PTR(mem);
 
@@ -39141,7 +38304,6 @@ mrb_GLib_g_rec_mutex_clear(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GRecMutex * native_rec_mutex = (mrb_nil_p(rec_mutex) ? NULL : mruby_unbox__GRecMutex(rec_mutex));
 
@@ -39174,7 +38336,6 @@ mrb_GLib_g_rec_mutex_init(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GRecMutex expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GRecMutex * native_rec_mutex = (mrb_nil_p(rec_mutex) ? NULL : mruby_unbox__GRecMutex(rec_mutex));
@@ -39209,7 +38370,6 @@ mrb_GLib_g_rec_mutex_lock(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GRecMutex * native_rec_mutex = (mrb_nil_p(rec_mutex) ? NULL : mruby_unbox__GRecMutex(rec_mutex));
 
@@ -39242,7 +38402,6 @@ mrb_GLib_g_rec_mutex_trylock(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GRecMutex expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GRecMutex * native_rec_mutex = (mrb_nil_p(rec_mutex) ? NULL : mruby_unbox__GRecMutex(rec_mutex));
@@ -39284,7 +38443,6 @@ mrb_GLib_g_rec_mutex_unlock(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GRecMutex * native_rec_mutex = (mrb_nil_p(rec_mutex) ? NULL : mruby_unbox__GRecMutex(rec_mutex));
 
@@ -39323,7 +38481,6 @@ mrb_GLib_g_regex_check_replacement(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check_int_PTR(has_references);
   TODO_type_check__GError_PTR_PTR(error);
-
 
   /* Unbox parameters */
   const char * native_replacement = mrb_string_value_cstr(mrb, &replacement);
@@ -39399,7 +38556,6 @@ mrb_GLib_g_regex_escape_nul(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   const char * native_string = mrb_string_value_cstr(mrb, &string);
 
@@ -39444,7 +38600,6 @@ mrb_GLib_g_regex_escape_string(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   const char * native_string = mrb_string_value_cstr(mrb, &string);
 
@@ -39482,7 +38637,6 @@ mrb_GLib_g_regex_get_capture_count(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GRegex expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   const struct _GRegex * native_regex = (mrb_nil_p(regex) ? NULL : mruby_unbox__GRegex(regex));
@@ -39524,7 +38678,6 @@ mrb_GLib_g_regex_get_compile_flags(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   const struct _GRegex * native_regex = (mrb_nil_p(regex) ? NULL : mruby_unbox__GRegex(regex));
 
@@ -39560,7 +38713,6 @@ mrb_GLib_g_regex_get_has_cr_or_lf(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GRegex expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   const struct _GRegex * native_regex = (mrb_nil_p(regex) ? NULL : mruby_unbox__GRegex(regex));
@@ -39602,7 +38754,6 @@ mrb_GLib_g_regex_get_match_flags(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   const struct _GRegex * native_regex = (mrb_nil_p(regex) ? NULL : mruby_unbox__GRegex(regex));
 
@@ -39638,7 +38789,6 @@ mrb_GLib_g_regex_get_max_backref(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GRegex expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   const struct _GRegex * native_regex = (mrb_nil_p(regex) ? NULL : mruby_unbox__GRegex(regex));
@@ -39680,7 +38830,6 @@ mrb_GLib_g_regex_get_max_lookbehind(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   const struct _GRegex * native_regex = (mrb_nil_p(regex) ? NULL : mruby_unbox__GRegex(regex));
 
@@ -39720,7 +38869,6 @@ mrb_GLib_g_regex_get_pattern(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GRegex expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   const struct _GRegex * native_regex = (mrb_nil_p(regex) ? NULL : mruby_unbox__GRegex(regex));
@@ -39763,7 +38911,6 @@ mrb_GLib_g_regex_get_string_number(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "String expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   const struct _GRegex * native_regex = (mrb_nil_p(regex) ? NULL : mruby_unbox__GRegex(regex));
@@ -39818,7 +38965,6 @@ mrb_GLib_g_regex_match(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check_GRegexMatchFlags(match_options);
   TODO_type_check__GMatchInfo_PTR_PTR(match_info);
-
 
   /* Unbox parameters */
   const struct _GRegex * native_regex = (mrb_nil_p(regex) ? NULL : mruby_unbox__GRegex(regex));
@@ -39877,7 +39023,6 @@ mrb_GLib_g_regex_match_all(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check_GRegexMatchFlags(match_options);
   TODO_type_check__GMatchInfo_PTR_PTR(match_info);
-
 
   /* Unbox parameters */
   const struct _GRegex * native_regex = (mrb_nil_p(regex) ? NULL : mruby_unbox__GRegex(regex));
@@ -39951,7 +39096,6 @@ mrb_GLib_g_regex_match_all_full(mrb_state* mrb, mrb_value self) {
   TODO_type_check_GRegexMatchFlags(match_options);
   TODO_type_check__GMatchInfo_PTR_PTR(match_info);
   TODO_type_check__GError_PTR_PTR(error);
-
 
   /* Unbox parameters */
   const struct _GRegex * native_regex = (mrb_nil_p(regex) ? NULL : mruby_unbox__GRegex(regex));
@@ -40032,7 +39176,6 @@ mrb_GLib_g_regex_match_full(mrb_state* mrb, mrb_value self) {
   TODO_type_check__GMatchInfo_PTR_PTR(match_info);
   TODO_type_check__GError_PTR_PTR(error);
 
-
   /* Unbox parameters */
   const struct _GRegex * native_regex = (mrb_nil_p(regex) ? NULL : mruby_unbox__GRegex(regex));
 
@@ -40097,7 +39240,6 @@ mrb_GLib_g_regex_match_simple(mrb_state* mrb, mrb_value self) {
   TODO_type_check_GRegexCompileFlags(compile_options);
   TODO_type_check_GRegexMatchFlags(match_options);
 
-
   /* Unbox parameters */
   const char * native_pattern = mrb_string_value_cstr(mrb, &pattern);
 
@@ -40153,7 +39295,6 @@ mrb_GLib_g_regex_new(mrb_state* mrb, mrb_value self) {
   TODO_type_check_GRegexMatchFlags(match_options);
   TODO_type_check__GError_PTR_PTR(error);
 
-
   /* Unbox parameters */
   const char * native_pattern = mrb_string_value_cstr(mrb, &pattern);
 
@@ -40195,7 +39336,6 @@ mrb_GLib_g_regex_ref(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GRegex expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GRegex * native_regex = (mrb_nil_p(regex) ? NULL : mruby_unbox__GRegex(regex));
@@ -40262,7 +39402,6 @@ mrb_GLib_g_regex_replace(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check_GRegexMatchFlags(match_options);
   TODO_type_check__GError_PTR_PTR(error);
-
 
   /* Unbox parameters */
   const struct _GRegex * native_regex = (mrb_nil_p(regex) ? NULL : mruby_unbox__GRegex(regex));
@@ -40341,7 +39480,6 @@ mrb_GLib_g_regex_replace_eval(mrb_state* mrb, mrb_value self) {
   TODO_type_check_int_LPAREN_PTR_RPAREN_LPAREN__GMatchInfo_PTR_COMMA_struct__GString_PTR_COMMA_void_PTR_RPAREN(eval);
   TODO_type_check_void_PTR(user_data);
   TODO_type_check__GError_PTR_PTR(error);
-
 
   /* Unbox parameters */
   const struct _GRegex * native_regex = (mrb_nil_p(regex) ? NULL : mruby_unbox__GRegex(regex));
@@ -40423,7 +39561,6 @@ mrb_GLib_g_regex_replace_literal(mrb_state* mrb, mrb_value self) {
   TODO_type_check_GRegexMatchFlags(match_options);
   TODO_type_check__GError_PTR_PTR(error);
 
-
   /* Unbox parameters */
   const struct _GRegex * native_regex = (mrb_nil_p(regex) ? NULL : mruby_unbox__GRegex(regex));
 
@@ -40480,7 +39617,6 @@ mrb_GLib_g_regex_split(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
   TODO_type_check_GRegexMatchFlags(match_options);
-
 
   /* Unbox parameters */
   const struct _GRegex * native_regex = (mrb_nil_p(regex) ? NULL : mruby_unbox__GRegex(regex));
@@ -40552,7 +39688,6 @@ mrb_GLib_g_regex_split_full(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check__GError_PTR_PTR(error);
 
-
   /* Unbox parameters */
   const struct _GRegex * native_regex = (mrb_nil_p(regex) ? NULL : mruby_unbox__GRegex(regex));
 
@@ -40613,7 +39748,6 @@ mrb_GLib_g_regex_split_simple(mrb_state* mrb, mrb_value self) {
   TODO_type_check_GRegexCompileFlags(compile_options);
   TODO_type_check_GRegexMatchFlags(match_options);
 
-
   /* Unbox parameters */
   const char * native_pattern = mrb_string_value_cstr(mrb, &pattern);
 
@@ -40655,7 +39789,6 @@ mrb_GLib_g_regex_unref(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GRegex expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GRegex * native_regex = (mrb_nil_p(regex) ? NULL : mruby_unbox__GRegex(regex));
@@ -40719,7 +39852,6 @@ mrb_GLib_g_return_if_fail_warning(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   const char * native_log_domain = mrb_string_value_cstr(mrb, &log_domain);
 
@@ -40756,7 +39888,6 @@ mrb_GLib_g_rmdir(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "String expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   const char * native_filename = mrb_string_value_cstr(mrb, &filename);
@@ -40798,7 +39929,6 @@ mrb_GLib_g_rw_lock_clear(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GRWLock * native_rw_lock = (mrb_nil_p(rw_lock) ? NULL : mruby_unbox__GRWLock(rw_lock));
 
@@ -40831,7 +39961,6 @@ mrb_GLib_g_rw_lock_init(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GRWLock expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GRWLock * native_rw_lock = (mrb_nil_p(rw_lock) ? NULL : mruby_unbox__GRWLock(rw_lock));
@@ -40866,7 +39995,6 @@ mrb_GLib_g_rw_lock_reader_lock(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GRWLock * native_rw_lock = (mrb_nil_p(rw_lock) ? NULL : mruby_unbox__GRWLock(rw_lock));
 
@@ -40899,7 +40027,6 @@ mrb_GLib_g_rw_lock_reader_trylock(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GRWLock expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GRWLock * native_rw_lock = (mrb_nil_p(rw_lock) ? NULL : mruby_unbox__GRWLock(rw_lock));
@@ -40941,7 +40068,6 @@ mrb_GLib_g_rw_lock_reader_unlock(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GRWLock * native_rw_lock = (mrb_nil_p(rw_lock) ? NULL : mruby_unbox__GRWLock(rw_lock));
 
@@ -40975,7 +40101,6 @@ mrb_GLib_g_rw_lock_writer_lock(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GRWLock * native_rw_lock = (mrb_nil_p(rw_lock) ? NULL : mruby_unbox__GRWLock(rw_lock));
 
@@ -41008,7 +40133,6 @@ mrb_GLib_g_rw_lock_writer_trylock(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GRWLock expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GRWLock * native_rw_lock = (mrb_nil_p(rw_lock) ? NULL : mruby_unbox__GRWLock(rw_lock));
@@ -41050,7 +40174,6 @@ mrb_GLib_g_rw_lock_writer_unlock(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GRWLock * native_rw_lock = (mrb_nil_p(rw_lock) ? NULL : mruby_unbox__GRWLock(rw_lock));
 
@@ -41083,7 +40206,6 @@ mrb_GLib_g_scanner_cur_line(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GScanner expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GScanner * native_scanner = (mrb_nil_p(scanner) ? NULL : mruby_unbox__GScanner(scanner));
@@ -41125,7 +40247,6 @@ mrb_GLib_g_scanner_cur_position(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GScanner * native_scanner = (mrb_nil_p(scanner) ? NULL : mruby_unbox__GScanner(scanner));
 
@@ -41166,7 +40287,6 @@ mrb_GLib_g_scanner_cur_token(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GScanner * native_scanner = (mrb_nil_p(scanner) ? NULL : mruby_unbox__GScanner(scanner));
 
@@ -41202,7 +40322,6 @@ mrb_GLib_g_scanner_cur_value(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GScanner expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GScanner * native_scanner = (mrb_nil_p(scanner) ? NULL : mruby_unbox__GScanner(scanner));
@@ -41240,7 +40359,6 @@ mrb_GLib_g_scanner_destroy(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GScanner * native_scanner = (mrb_nil_p(scanner) ? NULL : mruby_unbox__GScanner(scanner));
 
@@ -41273,7 +40391,6 @@ mrb_GLib_g_scanner_eof(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GScanner expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GScanner * native_scanner = (mrb_nil_p(scanner) ? NULL : mruby_unbox__GScanner(scanner));
@@ -41321,7 +40438,6 @@ mrb_GLib_g_scanner_error(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GScanner * native_scanner = (mrb_nil_p(scanner) ? NULL : mruby_unbox__GScanner(scanner));
 
@@ -41356,7 +40472,6 @@ mrb_GLib_g_scanner_get_next_token(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GScanner expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GScanner * native_scanner = (mrb_nil_p(scanner) ? NULL : mruby_unbox__GScanner(scanner));
@@ -41399,7 +40514,6 @@ mrb_GLib_g_scanner_input_file(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GScanner * native_scanner = (mrb_nil_p(scanner) ? NULL : mruby_unbox__GScanner(scanner));
@@ -41448,7 +40562,6 @@ mrb_GLib_g_scanner_input_text(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GScanner * native_scanner = (mrb_nil_p(scanner) ? NULL : mruby_unbox__GScanner(scanner));
 
@@ -41492,7 +40605,6 @@ mrb_GLib_g_scanner_lookup_symbol(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GScanner * native_scanner = (mrb_nil_p(scanner) ? NULL : mruby_unbox__GScanner(scanner));
 
@@ -41531,7 +40643,6 @@ mrb_GLib_g_scanner_new(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   const struct _GScannerConfig * native_config_templ = (mrb_nil_p(config_templ) ? NULL : mruby_unbox__GScannerConfig(config_templ));
 
@@ -41567,7 +40678,6 @@ mrb_GLib_g_scanner_peek_next_token(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GScanner expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GScanner * native_scanner = (mrb_nil_p(scanner) ? NULL : mruby_unbox__GScanner(scanner));
@@ -41620,7 +40730,6 @@ mrb_GLib_g_scanner_scope_add_symbol(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check_void_PTR(value);
 
-
   /* Unbox parameters */
   struct _GScanner * native_scanner = (mrb_nil_p(scanner) ? NULL : mruby_unbox__GScanner(scanner));
 
@@ -41672,7 +40781,6 @@ mrb_GLib_g_scanner_scope_foreach_symbol(mrb_state* mrb, mrb_value self) {
   TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_void_PTR_COMMA_void_PTR_COMMA_void_PTR_RPAREN(func);
   TODO_type_check_void_PTR(user_data);
 
-
   /* Unbox parameters */
   struct _GScanner * native_scanner = (mrb_nil_p(scanner) ? NULL : mruby_unbox__GScanner(scanner));
 
@@ -41723,7 +40831,6 @@ mrb_GLib_g_scanner_scope_lookup_symbol(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "String expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GScanner * native_scanner = (mrb_nil_p(scanner) ? NULL : mruby_unbox__GScanner(scanner));
@@ -41777,7 +40884,6 @@ mrb_GLib_g_scanner_scope_remove_symbol(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GScanner * native_scanner = (mrb_nil_p(scanner) ? NULL : mruby_unbox__GScanner(scanner));
 
@@ -41821,7 +40927,6 @@ mrb_GLib_g_scanner_set_scope(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GScanner * native_scanner = (mrb_nil_p(scanner) ? NULL : mruby_unbox__GScanner(scanner));
 
@@ -41863,7 +40968,6 @@ mrb_GLib_g_scanner_sync_file_offset(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GScanner expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GScanner * native_scanner = (mrb_nil_p(scanner) ? NULL : mruby_unbox__GScanner(scanner));
@@ -41931,7 +41035,6 @@ mrb_GLib_g_scanner_unexp_token(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GScanner * native_scanner = (mrb_nil_p(scanner) ? NULL : mruby_unbox__GScanner(scanner));
 
@@ -41983,7 +41086,6 @@ mrb_GLib_g_scanner_warn(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GScanner * native_scanner = (mrb_nil_p(scanner) ? NULL : mruby_unbox__GScanner(scanner));
 
@@ -42021,7 +41123,6 @@ mrb_GLib_g_sequence_append(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
   TODO_type_check_void_PTR(data);
-
 
   /* Unbox parameters */
   struct _GSequence * native_seq = (mrb_nil_p(seq) ? NULL : mruby_unbox__GSequence(seq));
@@ -42066,7 +41167,6 @@ mrb_GLib_g_sequence_foreach(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_void_PTR_COMMA_void_PTR_RPAREN(func);
   TODO_type_check_void_PTR(user_data);
-
 
   /* Unbox parameters */
   struct _GSequence * native_seq = (mrb_nil_p(seq) ? NULL : mruby_unbox__GSequence(seq));
@@ -42117,7 +41217,6 @@ mrb_GLib_g_sequence_foreach_range(mrb_state* mrb, mrb_value self) {
   TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_void_PTR_COMMA_void_PTR_RPAREN(func);
   TODO_type_check_void_PTR(user_data);
 
-
   /* Unbox parameters */
   struct _GSequenceNode * native_begin = (mrb_nil_p(begin) ? NULL : mruby_unbox__GSequenceNode(begin));
 
@@ -42157,7 +41256,6 @@ mrb_GLib_g_sequence_free(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GSequence * native_seq = (mrb_nil_p(seq) ? NULL : mruby_unbox__GSequence(seq));
 
@@ -42190,7 +41288,6 @@ mrb_GLib_g_sequence_get(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GSequenceNode expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GSequenceNode * native_iter = (mrb_nil_p(iter) ? NULL : mruby_unbox__GSequenceNode(iter));
@@ -42228,7 +41325,6 @@ mrb_GLib_g_sequence_get_begin_iter(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GSequence * native_seq = (mrb_nil_p(seq) ? NULL : mruby_unbox__GSequence(seq));
 
@@ -42264,7 +41360,6 @@ mrb_GLib_g_sequence_get_end_iter(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GSequence expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GSequence * native_seq = (mrb_nil_p(seq) ? NULL : mruby_unbox__GSequence(seq));
@@ -42308,7 +41403,6 @@ mrb_GLib_g_sequence_get_iter_at_pos(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GSequence * native_seq = (mrb_nil_p(seq) ? NULL : mruby_unbox__GSequence(seq));
 
@@ -42346,7 +41440,6 @@ mrb_GLib_g_sequence_get_length(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GSequence expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GSequence * native_seq = (mrb_nil_p(seq) ? NULL : mruby_unbox__GSequence(seq));
@@ -42390,7 +41483,6 @@ mrb_GLib_g_sequence_insert_before(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
   TODO_type_check_void_PTR(data);
-
 
   /* Unbox parameters */
   struct _GSequenceNode * native_iter = (mrb_nil_p(iter) ? NULL : mruby_unbox__GSequenceNode(iter));
@@ -42438,7 +41530,6 @@ mrb_GLib_g_sequence_insert_sorted(mrb_state* mrb, mrb_value self) {
   TODO_type_check_void_PTR(data);
   TODO_type_check_int_LPAREN_PTR_RPAREN_LPAREN_void_PTR_COMMA_const_void_PTR_COMMA_void_PTR_RPAREN(cmp_func);
   TODO_type_check_void_PTR(cmp_data);
-
 
   /* Unbox parameters */
   struct _GSequence * native_seq = (mrb_nil_p(seq) ? NULL : mruby_unbox__GSequence(seq));
@@ -42491,7 +41582,6 @@ mrb_GLib_g_sequence_insert_sorted_iter(mrb_state* mrb, mrb_value self) {
   TODO_type_check_int_LPAREN_PTR_RPAREN_LPAREN__GSequenceNode_PTR_COMMA_struct__GSequenceNode_PTR_COMMA_void_PTR_RPAREN(iter_cmp);
   TODO_type_check_void_PTR(cmp_data);
 
-
   /* Unbox parameters */
   struct _GSequence * native_seq = (mrb_nil_p(seq) ? NULL : mruby_unbox__GSequence(seq));
 
@@ -42533,7 +41623,6 @@ mrb_GLib_g_sequence_is_empty(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GSequence expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GSequence * native_seq = (mrb_nil_p(seq) ? NULL : mruby_unbox__GSequence(seq));
@@ -42581,7 +41670,6 @@ mrb_GLib_g_sequence_iter_compare(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GSequenceNode * native_a = (mrb_nil_p(a) ? NULL : mruby_unbox__GSequenceNode(a));
 
@@ -42624,7 +41712,6 @@ mrb_GLib_g_sequence_iter_get_position(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GSequenceNode * native_iter = (mrb_nil_p(iter) ? NULL : mruby_unbox__GSequenceNode(iter));
 
@@ -42665,7 +41752,6 @@ mrb_GLib_g_sequence_iter_get_sequence(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GSequenceNode * native_iter = (mrb_nil_p(iter) ? NULL : mruby_unbox__GSequenceNode(iter));
 
@@ -42701,7 +41787,6 @@ mrb_GLib_g_sequence_iter_is_begin(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GSequenceNode expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GSequenceNode * native_iter = (mrb_nil_p(iter) ? NULL : mruby_unbox__GSequenceNode(iter));
@@ -42742,7 +41827,6 @@ mrb_GLib_g_sequence_iter_is_end(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GSequenceNode expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GSequenceNode * native_iter = (mrb_nil_p(iter) ? NULL : mruby_unbox__GSequenceNode(iter));
@@ -42790,7 +41874,6 @@ mrb_GLib_g_sequence_iter_move(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GSequenceNode * native_iter = (mrb_nil_p(iter) ? NULL : mruby_unbox__GSequenceNode(iter));
 
@@ -42829,7 +41912,6 @@ mrb_GLib_g_sequence_iter_next(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GSequenceNode * native_iter = (mrb_nil_p(iter) ? NULL : mruby_unbox__GSequenceNode(iter));
 
@@ -42865,7 +41947,6 @@ mrb_GLib_g_sequence_iter_prev(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GSequenceNode expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GSequenceNode * native_iter = (mrb_nil_p(iter) ? NULL : mruby_unbox__GSequenceNode(iter));
@@ -42911,7 +41992,6 @@ mrb_GLib_g_sequence_lookup(mrb_state* mrb, mrb_value self) {
   TODO_type_check_void_PTR(data);
   TODO_type_check_int_LPAREN_PTR_RPAREN_LPAREN_void_PTR_COMMA_const_void_PTR_COMMA_void_PTR_RPAREN(cmp_func);
   TODO_type_check_void_PTR(cmp_data);
-
 
   /* Unbox parameters */
   struct _GSequence * native_seq = (mrb_nil_p(seq) ? NULL : mruby_unbox__GSequence(seq));
@@ -42964,7 +42044,6 @@ mrb_GLib_g_sequence_lookup_iter(mrb_state* mrb, mrb_value self) {
   TODO_type_check_int_LPAREN_PTR_RPAREN_LPAREN__GSequenceNode_PTR_COMMA_struct__GSequenceNode_PTR_COMMA_void_PTR_RPAREN(iter_cmp);
   TODO_type_check_void_PTR(cmp_data);
 
-
   /* Unbox parameters */
   struct _GSequence * native_seq = (mrb_nil_p(seq) ? NULL : mruby_unbox__GSequence(seq));
 
@@ -43013,7 +42092,6 @@ mrb_GLib_g_sequence_move(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GSequenceNode * native_src = (mrb_nil_p(src) ? NULL : mruby_unbox__GSequenceNode(src));
 
@@ -43061,7 +42139,6 @@ mrb_GLib_g_sequence_move_range(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GSequenceNode * native_dest = (mrb_nil_p(dest) ? NULL : mruby_unbox__GSequenceNode(dest));
 
@@ -43095,7 +42172,6 @@ mrb_GLib_g_sequence_new(mrb_state* mrb, mrb_value self) {
 
   /* Type checking */
   TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_void_PTR_RPAREN(data_destroy);
-
 
   /* Unbox parameters */
   void (*native_data_destroy)(void *) = TODO_mruby_unbox_void_LPAREN_PTR_RPAREN_LPAREN_void_PTR_RPAREN(data_destroy);
@@ -43135,7 +42211,6 @@ mrb_GLib_g_sequence_prepend(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
   TODO_type_check_void_PTR(data);
-
 
   /* Unbox parameters */
   struct _GSequence * native_seq = (mrb_nil_p(seq) ? NULL : mruby_unbox__GSequence(seq));
@@ -43181,7 +42256,6 @@ mrb_GLib_g_sequence_range_get_midpoint(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GSequenceNode * native_begin = (mrb_nil_p(begin) ? NULL : mruby_unbox__GSequenceNode(begin));
 
@@ -43219,7 +42293,6 @@ mrb_GLib_g_sequence_remove(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GSequenceNode expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GSequenceNode * native_iter = (mrb_nil_p(iter) ? NULL : mruby_unbox__GSequenceNode(iter));
@@ -43259,7 +42332,6 @@ mrb_GLib_g_sequence_remove_range(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GSequenceNode expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GSequenceNode * native_begin = (mrb_nil_p(begin) ? NULL : mruby_unbox__GSequenceNode(begin));
@@ -43304,7 +42376,6 @@ mrb_GLib_g_sequence_search(mrb_state* mrb, mrb_value self) {
   TODO_type_check_void_PTR(data);
   TODO_type_check_int_LPAREN_PTR_RPAREN_LPAREN_void_PTR_COMMA_const_void_PTR_COMMA_void_PTR_RPAREN(cmp_func);
   TODO_type_check_void_PTR(cmp_data);
-
 
   /* Unbox parameters */
   struct _GSequence * native_seq = (mrb_nil_p(seq) ? NULL : mruby_unbox__GSequence(seq));
@@ -43357,7 +42428,6 @@ mrb_GLib_g_sequence_search_iter(mrb_state* mrb, mrb_value self) {
   TODO_type_check_int_LPAREN_PTR_RPAREN_LPAREN__GSequenceNode_PTR_COMMA_struct__GSequenceNode_PTR_COMMA_void_PTR_RPAREN(iter_cmp);
   TODO_type_check_void_PTR(cmp_data);
 
-
   /* Unbox parameters */
   struct _GSequence * native_seq = (mrb_nil_p(seq) ? NULL : mruby_unbox__GSequence(seq));
 
@@ -43403,7 +42473,6 @@ mrb_GLib_g_sequence_set(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check_void_PTR(data);
 
-
   /* Unbox parameters */
   struct _GSequenceNode * native_iter = (mrb_nil_p(iter) ? NULL : mruby_unbox__GSequenceNode(iter));
 
@@ -43444,7 +42513,6 @@ mrb_GLib_g_sequence_sort(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check_int_LPAREN_PTR_RPAREN_LPAREN_void_PTR_COMMA_const_void_PTR_COMMA_void_PTR_RPAREN(cmp_func);
   TODO_type_check_void_PTR(cmp_data);
-
 
   /* Unbox parameters */
   struct _GSequence * native_seq = (mrb_nil_p(seq) ? NULL : mruby_unbox__GSequence(seq));
@@ -43489,7 +42557,6 @@ mrb_GLib_g_sequence_sort_changed(mrb_state* mrb, mrb_value self) {
   TODO_type_check_int_LPAREN_PTR_RPAREN_LPAREN_void_PTR_COMMA_const_void_PTR_COMMA_void_PTR_RPAREN(cmp_func);
   TODO_type_check_void_PTR(cmp_data);
 
-
   /* Unbox parameters */
   struct _GSequenceNode * native_iter = (mrb_nil_p(iter) ? NULL : mruby_unbox__GSequenceNode(iter));
 
@@ -43532,7 +42599,6 @@ mrb_GLib_g_sequence_sort_changed_iter(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check_int_LPAREN_PTR_RPAREN_LPAREN__GSequenceNode_PTR_COMMA_struct__GSequenceNode_PTR_COMMA_void_PTR_RPAREN(iter_cmp);
   TODO_type_check_void_PTR(cmp_data);
-
 
   /* Unbox parameters */
   struct _GSequenceNode * native_iter = (mrb_nil_p(iter) ? NULL : mruby_unbox__GSequenceNode(iter));
@@ -43577,7 +42643,6 @@ mrb_GLib_g_sequence_sort_iter(mrb_state* mrb, mrb_value self) {
   TODO_type_check_int_LPAREN_PTR_RPAREN_LPAREN__GSequenceNode_PTR_COMMA_struct__GSequenceNode_PTR_COMMA_void_PTR_RPAREN(cmp_func);
   TODO_type_check_void_PTR(cmp_data);
 
-
   /* Unbox parameters */
   struct _GSequence * native_seq = (mrb_nil_p(seq) ? NULL : mruby_unbox__GSequence(seq));
 
@@ -43621,7 +42686,6 @@ mrb_GLib_g_sequence_swap(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GSequenceNode * native_a = (mrb_nil_p(a) ? NULL : mruby_unbox__GSequenceNode(a));
 
@@ -43656,7 +42720,6 @@ mrb_GLib_g_set_application_name(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "String expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   const char * native_application_name = mrb_string_value_cstr(mrb, &application_name);
@@ -43705,7 +42768,6 @@ mrb_GLib_g_set_error(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "String expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GError ** native_err = TODO_mruby_unbox__GError_PTR_PTR(err);
@@ -43761,7 +42823,6 @@ mrb_GLib_g_set_error_literal(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GError ** native_err = TODO_mruby_unbox__GError_PTR_PTR(err);
 
@@ -43801,7 +42862,6 @@ mrb_GLib_g_set_prgname(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   const char * native_prgname = mrb_string_value_cstr(mrb, &prgname);
 
@@ -43831,7 +42891,6 @@ mrb_GLib_g_set_print_handler(mrb_state* mrb, mrb_value self) {
 
   /* Type checking */
   TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_char_PTR_RPAREN(func);
-
 
   /* Unbox parameters */
   void (*native_func)(const char *) = TODO_mruby_unbox_void_LPAREN_PTR_RPAREN_LPAREN_char_PTR_RPAREN(func);
@@ -43865,7 +42924,6 @@ mrb_GLib_g_set_printerr_handler(mrb_state* mrb, mrb_value self) {
 
   /* Type checking */
   TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_char_PTR_RPAREN(func);
-
 
   /* Unbox parameters */
   void (*native_func)(const char *) = TODO_mruby_unbox_void_LPAREN_PTR_RPAREN_LPAREN_char_PTR_RPAREN(func);
@@ -43914,7 +42972,6 @@ mrb_GLib_g_setenv(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   const char * native_variable = mrb_string_value_cstr(mrb, &variable);
@@ -43993,7 +43050,6 @@ mrb_GLib_g_shell_parse_argv(mrb_state* mrb, mrb_value self) {
   TODO_type_check_char_PTR_PTR_PTR(argvp);
   TODO_type_check__GError_PTR_PTR(error);
 
-
   /* Unbox parameters */
   const char * native_command_line = mrb_string_value_cstr(mrb, &command_line);
 
@@ -44040,7 +43096,6 @@ mrb_GLib_g_shell_quote(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   const char * native_unquoted_string = mrb_string_value_cstr(mrb, &unquoted_string);
 
@@ -44080,7 +43135,6 @@ mrb_GLib_g_shell_unquote(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check__GError_PTR_PTR(error);
 
-
   /* Unbox parameters */
   const char * native_quoted_string = mrb_string_value_cstr(mrb, &quoted_string);
 
@@ -44119,7 +43173,6 @@ mrb_GLib_g_slice_alloc(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   unsigned long native_block_size = mrb_fixnum(block_size);
 
@@ -44155,7 +43208,6 @@ mrb_GLib_g_slice_alloc0(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   unsigned long native_block_size = mrb_fixnum(block_size);
@@ -44195,7 +43247,6 @@ mrb_GLib_g_slice_copy(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
   TODO_type_check_void_PTR(mem_block);
-
 
   /* Unbox parameters */
   unsigned long native_block_size = mrb_fixnum(block_size);
@@ -44237,7 +43288,6 @@ mrb_GLib_g_slice_free1(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
   TODO_type_check_void_PTR(mem_block);
-
 
   /* Unbox parameters */
   unsigned long native_block_size = mrb_fixnum(block_size);
@@ -44283,7 +43333,6 @@ mrb_GLib_g_slice_free_chain_with_offset(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   unsigned long native_block_size = mrb_fixnum(block_size);
 
@@ -44317,7 +43366,6 @@ mrb_GLib_g_slice_get_config(mrb_state* mrb, mrb_value self) {
 
   /* Type checking */
   TODO_type_check_GSliceConfig(ckey);
-
 
   /* Unbox parameters */
   GSliceConfig native_ckey = TODO_mruby_unbox_GSliceConfig(ckey);
@@ -44365,7 +43413,6 @@ mrb_GLib_g_slice_get_config_state(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check_unsigned_int_PTR(n_values);
 
-
   /* Unbox parameters */
   GSliceConfig native_ckey = TODO_mruby_unbox_GSliceConfig(ckey);
 
@@ -44408,7 +43455,6 @@ mrb_GLib_g_slice_set_config(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   GSliceConfig native_ckey = TODO_mruby_unbox_GSliceConfig(ckey);
@@ -44468,7 +43514,6 @@ mrb_GLib_g_slist_append(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check_void_PTR(data);
 
-
   /* Unbox parameters */
   struct _GSList * native_list = (mrb_nil_p(list) ? NULL : mruby_unbox__GSList(list));
 
@@ -44513,7 +43558,6 @@ mrb_GLib_g_slist_concat(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GSList * native_list1 = (mrb_nil_p(list1) ? NULL : mruby_unbox__GSList(list1));
 
@@ -44551,7 +43595,6 @@ mrb_GLib_g_slist_copy(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GSList expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GSList * native_list = (mrb_nil_p(list) ? NULL : mruby_unbox__GSList(list));
@@ -44594,7 +43637,6 @@ mrb_GLib_g_slist_copy_deep(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check_void_PTR_LPAREN_PTR_RPAREN_LPAREN_void_PTR_COMMA_void_PTR_RPAREN(func);
   TODO_type_check_void_PTR(user_data);
-
 
   /* Unbox parameters */
   struct _GSList * native_list = (mrb_nil_p(list) ? NULL : mruby_unbox__GSList(list));
@@ -44642,7 +43684,6 @@ mrb_GLib_g_slist_delete_link(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GSList * native_list = (mrb_nil_p(list) ? NULL : mruby_unbox__GSList(list));
 
@@ -44683,7 +43724,6 @@ mrb_GLib_g_slist_find(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
   TODO_type_check_void_PTR(data);
-
 
   /* Unbox parameters */
   struct _GSList * native_list = (mrb_nil_p(list) ? NULL : mruby_unbox__GSList(list));
@@ -44728,7 +43768,6 @@ mrb_GLib_g_slist_find_custom(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check_void_PTR(data);
   TODO_type_check_int_LPAREN_PTR_RPAREN_LPAREN_void_PTR_COMMA_const_void_PTR_RPAREN(func);
-
 
   /* Unbox parameters */
   struct _GSList * native_list = (mrb_nil_p(list) ? NULL : mruby_unbox__GSList(list));
@@ -44776,7 +43815,6 @@ mrb_GLib_g_slist_foreach(mrb_state* mrb, mrb_value self) {
   TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_void_PTR_COMMA_void_PTR_RPAREN(func);
   TODO_type_check_void_PTR(user_data);
 
-
   /* Unbox parameters */
   struct _GSList * native_list = (mrb_nil_p(list) ? NULL : mruby_unbox__GSList(list));
 
@@ -44814,7 +43852,6 @@ mrb_GLib_g_slist_free(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GSList * native_list = (mrb_nil_p(list) ? NULL : mruby_unbox__GSList(list));
 
@@ -44847,7 +43884,6 @@ mrb_GLib_g_slist_free_1(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GSList expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GSList * native_list = (mrb_nil_p(list) ? NULL : mruby_unbox__GSList(list));
@@ -44884,7 +43920,6 @@ mrb_GLib_g_slist_free_full(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
   TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_void_PTR_RPAREN(free_func);
-
 
   /* Unbox parameters */
   struct _GSList * native_list = (mrb_nil_p(list) ? NULL : mruby_unbox__GSList(list));
@@ -44923,7 +43958,6 @@ mrb_GLib_g_slist_index(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
   TODO_type_check_void_PTR(data);
-
 
   /* Unbox parameters */
   struct _GSList * native_list = (mrb_nil_p(list) ? NULL : mruby_unbox__GSList(list));
@@ -44976,7 +44010,6 @@ mrb_GLib_g_slist_insert(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GSList * native_list = (mrb_nil_p(list) ? NULL : mruby_unbox__GSList(list));
 
@@ -45026,7 +44059,6 @@ mrb_GLib_g_slist_insert_before(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check_void_PTR(data);
 
-
   /* Unbox parameters */
   struct _GSList * native_slist = (mrb_nil_p(slist) ? NULL : mruby_unbox__GSList(slist));
 
@@ -45072,7 +44104,6 @@ mrb_GLib_g_slist_insert_sorted(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check_void_PTR(data);
   TODO_type_check_int_LPAREN_PTR_RPAREN_LPAREN_void_PTR_COMMA_const_void_PTR_RPAREN(func);
-
 
   /* Unbox parameters */
   struct _GSList * native_list = (mrb_nil_p(list) ? NULL : mruby_unbox__GSList(list));
@@ -45123,7 +44154,6 @@ mrb_GLib_g_slist_insert_sorted_with_data(mrb_state* mrb, mrb_value self) {
   TODO_type_check_int_LPAREN_PTR_RPAREN_LPAREN_void_PTR_COMMA_const_void_PTR_COMMA_void_PTR_RPAREN(func);
   TODO_type_check_void_PTR(user_data);
 
-
   /* Unbox parameters */
   struct _GSList * native_list = (mrb_nil_p(list) ? NULL : mruby_unbox__GSList(list));
 
@@ -45166,7 +44196,6 @@ mrb_GLib_g_slist_last(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GSList * native_list = (mrb_nil_p(list) ? NULL : mruby_unbox__GSList(list));
 
@@ -45202,7 +44231,6 @@ mrb_GLib_g_slist_length(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GSList expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GSList * native_list = (mrb_nil_p(list) ? NULL : mruby_unbox__GSList(list));
@@ -45250,7 +44278,6 @@ mrb_GLib_g_slist_nth(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GSList * native_list = (mrb_nil_p(list) ? NULL : mruby_unbox__GSList(list));
 
@@ -45295,7 +44322,6 @@ mrb_GLib_g_slist_nth_data(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GSList * native_list = (mrb_nil_p(list) ? NULL : mruby_unbox__GSList(list));
 
@@ -45339,7 +44365,6 @@ mrb_GLib_g_slist_position(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GSList expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GSList * native_list = (mrb_nil_p(list) ? NULL : mruby_unbox__GSList(list));
@@ -45386,7 +44411,6 @@ mrb_GLib_g_slist_prepend(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check_void_PTR(data);
 
-
   /* Unbox parameters */
   struct _GSList * native_list = (mrb_nil_p(list) ? NULL : mruby_unbox__GSList(list));
 
@@ -45428,7 +44452,6 @@ mrb_GLib_g_slist_remove(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check_void_PTR(data);
 
-
   /* Unbox parameters */
   struct _GSList * native_list = (mrb_nil_p(list) ? NULL : mruby_unbox__GSList(list));
 
@@ -45469,7 +44492,6 @@ mrb_GLib_g_slist_remove_all(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
   TODO_type_check_void_PTR(data);
-
 
   /* Unbox parameters */
   struct _GSList * native_list = (mrb_nil_p(list) ? NULL : mruby_unbox__GSList(list));
@@ -45515,7 +44537,6 @@ mrb_GLib_g_slist_remove_link(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GSList * native_list = (mrb_nil_p(list) ? NULL : mruby_unbox__GSList(list));
 
@@ -45553,7 +44574,6 @@ mrb_GLib_g_slist_reverse(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GSList expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GSList * native_list = (mrb_nil_p(list) ? NULL : mruby_unbox__GSList(list));
@@ -45593,7 +44613,6 @@ mrb_GLib_g_slist_sort(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
   TODO_type_check_int_LPAREN_PTR_RPAREN_LPAREN_void_PTR_COMMA_const_void_PTR_RPAREN(compare_func);
-
 
   /* Unbox parameters */
   struct _GSList * native_list = (mrb_nil_p(list) ? NULL : mruby_unbox__GSList(list));
@@ -45638,7 +44657,6 @@ mrb_GLib_g_slist_sort_with_data(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check_int_LPAREN_PTR_RPAREN_LPAREN_void_PTR_COMMA_const_void_PTR_COMMA_void_PTR_RPAREN(compare_func);
   TODO_type_check_void_PTR(user_data);
-
 
   /* Unbox parameters */
   struct _GSList * native_list = (mrb_nil_p(list) ? NULL : mruby_unbox__GSList(list));
@@ -45691,7 +44709,6 @@ mrb_GLib_g_snprintf(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "String expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   /* WARNING: Allocating new memory to create 'char *' from 'const char *'.
@@ -45756,7 +44773,6 @@ mrb_GLib_g_source_add_child_source(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GSource * native_source = (mrb_nil_p(source) ? NULL : mruby_unbox__GSource(source));
 
@@ -45797,7 +44813,6 @@ mrb_GLib_g_source_add_poll(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GPollFD expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GSource * native_source = (mrb_nil_p(source) ? NULL : mruby_unbox__GSource(source));
@@ -45842,7 +44857,6 @@ mrb_GLib_g_source_add_unix_fd(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
   TODO_type_check_GIOCondition(events);
-
 
   /* Unbox parameters */
   struct _GSource * native_source = (mrb_nil_p(source) ? NULL : mruby_unbox__GSource(source));
@@ -45890,7 +44904,6 @@ mrb_GLib_g_source_attach(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GSource * native_source = (mrb_nil_p(source) ? NULL : mruby_unbox__GSource(source));
 
@@ -45933,7 +44946,6 @@ mrb_GLib_g_source_destroy(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GSource * native_source = (mrb_nil_p(source) ? NULL : mruby_unbox__GSource(source));
 
@@ -45966,7 +44978,6 @@ mrb_GLib_g_source_get_can_recurse(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GSource expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GSource * native_source = (mrb_nil_p(source) ? NULL : mruby_unbox__GSource(source));
@@ -46007,7 +45018,6 @@ mrb_GLib_g_source_get_context(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GSource expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GSource * native_source = (mrb_nil_p(source) ? NULL : mruby_unbox__GSource(source));
@@ -46051,7 +45061,6 @@ mrb_GLib_g_source_get_current_time(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GSource * native_source = (mrb_nil_p(source) ? NULL : mruby_unbox__GSource(source));
 
@@ -46086,7 +45095,6 @@ mrb_GLib_g_source_get_id(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GSource expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GSource * native_source = (mrb_nil_p(source) ? NULL : mruby_unbox__GSource(source));
@@ -46128,7 +45136,6 @@ mrb_GLib_g_source_get_name(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GSource * native_source = (mrb_nil_p(source) ? NULL : mruby_unbox__GSource(source));
 
@@ -46164,7 +45171,6 @@ mrb_GLib_g_source_get_priority(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GSource expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GSource * native_source = (mrb_nil_p(source) ? NULL : mruby_unbox__GSource(source));
@@ -46206,7 +45212,6 @@ mrb_GLib_g_source_get_ready_time(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GSource * native_source = (mrb_nil_p(source) ? NULL : mruby_unbox__GSource(source));
 
@@ -46247,7 +45252,6 @@ mrb_GLib_g_source_get_time(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GSource * native_source = (mrb_nil_p(source) ? NULL : mruby_unbox__GSource(source));
 
@@ -46287,7 +45291,6 @@ mrb_GLib_g_source_is_destroyed(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GSource expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GSource * native_source = (mrb_nil_p(source) ? NULL : mruby_unbox__GSource(source));
@@ -46335,7 +45338,6 @@ mrb_GLib_g_source_modify_unix_fd(mrb_state* mrb, mrb_value self) {
   TODO_type_check_void_PTR(tag);
   TODO_type_check_GIOCondition(new_events);
 
-
   /* Unbox parameters */
   struct _GSource * native_source = (mrb_nil_p(source) ? NULL : mruby_unbox__GSource(source));
 
@@ -46379,7 +45381,6 @@ mrb_GLib_g_source_new(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GSourceFuncs * native_source_funcs = (mrb_nil_p(source_funcs) ? NULL : mruby_unbox__GSourceFuncs(source_funcs));
 
@@ -46421,7 +45422,6 @@ mrb_GLib_g_source_query_unix_fd(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check_void_PTR(tag);
 
-
   /* Unbox parameters */
   struct _GSource * native_source = (mrb_nil_p(source) ? NULL : mruby_unbox__GSource(source));
 
@@ -46460,7 +45460,6 @@ mrb_GLib_g_source_ref(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GSource * native_source = (mrb_nil_p(source) ? NULL : mruby_unbox__GSource(source));
 
@@ -46496,7 +45495,6 @@ mrb_GLib_g_source_remove(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   unsigned int native_tag = mrb_fixnum(tag);
@@ -46541,7 +45539,6 @@ mrb_GLib_g_source_remove_by_funcs_user_data(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check_void_PTR(user_data);
 
-
   /* Unbox parameters */
   struct _GSourceFuncs * native_funcs = (mrb_nil_p(funcs) ? NULL : mruby_unbox__GSourceFuncs(funcs));
 
@@ -46580,7 +45577,6 @@ mrb_GLib_g_source_remove_by_user_data(mrb_state* mrb, mrb_value self) {
 
   /* Type checking */
   TODO_type_check_void_PTR(user_data);
-
 
   /* Unbox parameters */
   void * native_user_data = TODO_mruby_unbox_void_PTR(user_data);
@@ -46628,7 +45624,6 @@ mrb_GLib_g_source_remove_child_source(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GSource * native_source = (mrb_nil_p(source) ? NULL : mruby_unbox__GSource(source));
 
@@ -46670,7 +45665,6 @@ mrb_GLib_g_source_remove_poll(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GSource * native_source = (mrb_nil_p(source) ? NULL : mruby_unbox__GSource(source));
 
@@ -46708,7 +45702,6 @@ mrb_GLib_g_source_remove_unix_fd(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
   TODO_type_check_void_PTR(tag);
-
 
   /* Unbox parameters */
   struct _GSource * native_source = (mrb_nil_p(source) ? NULL : mruby_unbox__GSource(source));
@@ -46753,7 +45746,6 @@ mrb_GLib_g_source_set_callback(mrb_state* mrb, mrb_value self) {
   TODO_type_check_int_LPAREN_PTR_RPAREN_LPAREN_void_PTR_RPAREN(func);
   TODO_type_check_void_PTR(data);
   TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_void_PTR_RPAREN(notify);
-
 
   /* Unbox parameters */
   struct _GSource * native_source = (mrb_nil_p(source) ? NULL : mruby_unbox__GSource(source));
@@ -46803,7 +45795,6 @@ mrb_GLib_g_source_set_callback_indirect(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GSource * native_source = (mrb_nil_p(source) ? NULL : mruby_unbox__GSource(source));
 
@@ -46847,7 +45838,6 @@ mrb_GLib_g_source_set_can_recurse(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GSource * native_source = (mrb_nil_p(source) ? NULL : mruby_unbox__GSource(source));
 
@@ -46888,7 +45878,6 @@ mrb_GLib_g_source_set_funcs(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GSourceFuncs expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GSource * native_source = (mrb_nil_p(source) ? NULL : mruby_unbox__GSource(source));
@@ -46931,7 +45920,6 @@ mrb_GLib_g_source_set_name(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GSource * native_source = (mrb_nil_p(source) ? NULL : mruby_unbox__GSource(source));
 
@@ -46972,7 +45960,6 @@ mrb_GLib_g_source_set_name_by_id(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "String expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   unsigned int native_tag = mrb_fixnum(tag);
@@ -47015,7 +46002,6 @@ mrb_GLib_g_source_set_priority(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GSource * native_source = (mrb_nil_p(source) ? NULL : mruby_unbox__GSource(source));
 
@@ -47057,7 +46043,6 @@ mrb_GLib_g_source_set_ready_time(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GSource * native_source = (mrb_nil_p(source) ? NULL : mruby_unbox__GSource(source));
 
@@ -47093,7 +46078,6 @@ mrb_GLib_g_source_unref(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GSource * native_source = (mrb_nil_p(source) ? NULL : mruby_unbox__GSource(source));
 
@@ -47126,7 +46110,6 @@ mrb_GLib_g_spaced_primes_closest(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   unsigned int native_num = mrb_fixnum(num);
@@ -47188,7 +46171,6 @@ mrb_GLib_g_spawn_async(mrb_state* mrb, mrb_value self) {
   TODO_type_check_void_PTR(user_data);
   TODO_type_check_int_PTR(child_pid);
   TODO_type_check__GError_PTR_PTR(error);
-
 
   /* Unbox parameters */
   const char * native_working_directory = mrb_string_value_cstr(mrb, &working_directory);
@@ -47274,7 +46256,6 @@ mrb_GLib_g_spawn_async_with_pipes(mrb_state* mrb, mrb_value self) {
   TODO_type_check_int_PTR(standard_error);
   TODO_type_check__GError_PTR_PTR(error);
 
-
   /* Unbox parameters */
   const char * native_working_directory = mrb_string_value_cstr(mrb, &working_directory);
 
@@ -47338,7 +46319,6 @@ mrb_GLib_g_spawn_check_exit_status(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check__GError_PTR_PTR(error);
 
-
   /* Unbox parameters */
   int native_exit_status = mrb_fixnum(exit_status);
 
@@ -47381,7 +46361,6 @@ mrb_GLib_g_spawn_close_pid(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   int native_pid = mrb_fixnum(pid);
 
@@ -47417,7 +46396,6 @@ mrb_GLib_g_spawn_command_line_async(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
   TODO_type_check__GError_PTR_PTR(error);
-
 
   /* Unbox parameters */
   const char * native_command_line = mrb_string_value_cstr(mrb, &command_line);
@@ -47472,7 +46450,6 @@ mrb_GLib_g_spawn_command_line_sync(mrb_state* mrb, mrb_value self) {
   TODO_type_check_char_PTR_PTR(standard_error);
   TODO_type_check_int_PTR(exit_status);
   TODO_type_check__GError_PTR_PTR(error);
-
 
   /* Unbox parameters */
   const char * native_command_line = mrb_string_value_cstr(mrb, &command_line);
@@ -47597,7 +46574,6 @@ mrb_GLib_g_spawn_sync(mrb_state* mrb, mrb_value self) {
   TODO_type_check_int_PTR(exit_status);
   TODO_type_check__GError_PTR_PTR(error);
 
-
   /* Unbox parameters */
   const char * native_working_directory = mrb_string_value_cstr(mrb, &working_directory);
 
@@ -47662,7 +46638,6 @@ mrb_GLib_g_sprintf(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   /* WARNING: Allocating new memory to create 'char *' from 'const char *'.
    *          Please verify that this memory is cleaned up correctly.
@@ -47715,7 +46690,6 @@ mrb_GLib_g_steal_pointer(mrb_state* mrb, mrb_value self) {
   /* Type checking */
   TODO_type_check_void_PTR(pp);
 
-
   /* Unbox parameters */
   void * native_pp = TODO_mruby_unbox_void_PTR(pp);
 
@@ -47757,7 +46731,6 @@ mrb_GLib_g_stpcpy(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "String expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   /* WARNING: Allocating new memory to create 'char *' from 'const char *'.
@@ -47810,7 +46783,6 @@ mrb_GLib_g_str_equal(mrb_state* mrb, mrb_value self) {
   TODO_type_check_void_PTR(v1);
   TODO_type_check_void_PTR(v2);
 
-
   /* Unbox parameters */
   const void * native_v1 = TODO_mruby_unbox_void_PTR(v1);
 
@@ -47858,7 +46830,6 @@ mrb_GLib_g_str_has_prefix(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "String expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   const char * native_str = mrb_string_value_cstr(mrb, &str);
@@ -47908,7 +46879,6 @@ mrb_GLib_g_str_has_suffix(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   const char * native_str = mrb_string_value_cstr(mrb, &str);
 
@@ -47947,7 +46917,6 @@ mrb_GLib_g_str_hash(mrb_state* mrb, mrb_value self) {
 
   /* Type checking */
   TODO_type_check_void_PTR(v);
-
 
   /* Unbox parameters */
   const void * native_v = TODO_mruby_unbox_void_PTR(v);
@@ -47988,7 +46957,6 @@ mrb_GLib_g_str_is_ascii(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "String expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   const char * native_str = mrb_string_value_cstr(mrb, &str);
@@ -48042,7 +47010,6 @@ mrb_GLib_g_str_match_string(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   const char * native_search_term = mrb_string_value_cstr(mrb, &search_term);
 
@@ -48093,7 +47060,6 @@ mrb_GLib_g_str_to_ascii(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   const char * native_str = mrb_string_value_cstr(mrb, &str);
 
@@ -48140,7 +47106,6 @@ mrb_GLib_g_str_tokenize_and_fold(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
   TODO_type_check_char_PTR_PTR_PTR(ascii_alternates);
-
 
   /* Unbox parameters */
   const char * native_string = mrb_string_value_cstr(mrb, &string);
@@ -48193,7 +47158,6 @@ mrb_GLib_g_strcanon(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   /* WARNING: Allocating new memory to create 'char *' from 'const char *'.
@@ -48254,7 +47218,6 @@ mrb_GLib_g_strcasecmp(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   const char * native_s1 = mrb_string_value_cstr(mrb, &s1);
 
@@ -48296,7 +47259,6 @@ mrb_GLib_g_strchomp(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "String expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   /* WARNING: Allocating new memory to create 'char *' from 'const char *'.
@@ -48346,7 +47308,6 @@ mrb_GLib_g_strchug(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "String expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   /* WARNING: Allocating new memory to create 'char *' from 'const char *'.
@@ -48403,7 +47364,6 @@ mrb_GLib_g_strcmp0(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   const char * native_str1 = mrb_string_value_cstr(mrb, &str1);
 
@@ -48446,7 +47406,6 @@ mrb_GLib_g_strcompress(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   const char * native_source = mrb_string_value_cstr(mrb, &source);
 
@@ -48482,7 +47441,6 @@ mrb_GLib_g_strconcat(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "String expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   const char * native_string1 = mrb_string_value_cstr(mrb, &string1);
@@ -48531,7 +47489,6 @@ mrb_GLib_g_strdelimit(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   /* WARNING: Allocating new memory to create 'char *' from 'const char *'.
@@ -48586,7 +47543,6 @@ mrb_GLib_g_strdown(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   /* WARNING: Allocating new memory to create 'char *' from 'const char *'.
    *          Please verify that this memory is cleaned up correctly.
@@ -48636,7 +47592,6 @@ mrb_GLib_g_strdup(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   const char * native_str = mrb_string_value_cstr(mrb, &str);
 
@@ -48672,7 +47627,6 @@ mrb_GLib_g_strdup_printf(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "String expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   const char * native_format = mrb_string_value_cstr(mrb, &format);
@@ -48716,7 +47670,6 @@ mrb_GLib_g_strdup_vprintf(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   const char * native_format = mrb_string_value_cstr(mrb, &format);
 
@@ -48751,7 +47704,6 @@ mrb_GLib_g_strdupv(mrb_state* mrb, mrb_value self) {
 
   /* Type checking */
   TODO_type_check_char_PTR_PTR(str_array);
-
 
   /* Unbox parameters */
   char ** native_str_array = TODO_mruby_unbox_char_PTR_PTR(str_array);
@@ -48788,7 +47740,6 @@ mrb_GLib_g_strerror(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   int native_errnum = mrb_fixnum(errnum);
@@ -48832,7 +47783,6 @@ mrb_GLib_g_strescape(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   const char * native_source = mrb_string_value_cstr(mrb, &source);
 
@@ -48867,7 +47817,6 @@ mrb_GLib_g_strfreev(mrb_state* mrb, mrb_value self) {
 
   /* Type checking */
   TODO_type_check_char_PTR_PTR(str_array);
-
 
   /* Unbox parameters */
   char ** native_str_array = TODO_mruby_unbox_char_PTR_PTR(str_array);
@@ -48907,7 +47856,6 @@ mrb_GLib_g_string_append(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "String expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GString * native_string = (mrb_nil_p(string) ? NULL : mruby_unbox__GString(string));
@@ -48953,7 +47901,6 @@ mrb_GLib_g_string_append_c(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GString * native_string = (mrb_nil_p(string) ? NULL : mruby_unbox__GString(string));
 
@@ -48997,7 +47944,6 @@ mrb_GLib_g_string_append_c_inline(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GString * native_gstring = (mrb_nil_p(gstring) ? NULL : mruby_unbox__GString(gstring));
@@ -49049,7 +47995,6 @@ mrb_GLib_g_string_append_len(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GString * native_string = (mrb_nil_p(string) ? NULL : mruby_unbox__GString(string));
 
@@ -49096,7 +48041,6 @@ mrb_GLib_g_string_append_printf(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GString * native_string = (mrb_nil_p(string) ? NULL : mruby_unbox__GString(string));
 
@@ -49137,7 +48081,6 @@ mrb_GLib_g_string_append_unichar(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GString * native_string = (mrb_nil_p(string) ? NULL : mruby_unbox__GString(string));
@@ -49195,7 +48138,6 @@ mrb_GLib_g_string_append_uri_escaped(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GString * native_string = (mrb_nil_p(string) ? NULL : mruby_unbox__GString(string));
 
@@ -49250,7 +48192,6 @@ mrb_GLib_g_string_append_vprintf(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GString * native_string = (mrb_nil_p(string) ? NULL : mruby_unbox__GString(string));
 
@@ -49288,7 +48229,6 @@ mrb_GLib_g_string_ascii_down(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GString * native_string = (mrb_nil_p(string) ? NULL : mruby_unbox__GString(string));
 
@@ -49324,7 +48264,6 @@ mrb_GLib_g_string_ascii_up(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GString expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GString * native_string = (mrb_nil_p(string) ? NULL : mruby_unbox__GString(string));
@@ -49368,7 +48307,6 @@ mrb_GLib_g_string_assign(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GString * native_string = (mrb_nil_p(string) ? NULL : mruby_unbox__GString(string));
 
@@ -49407,7 +48345,6 @@ mrb_GLib_g_string_chunk_clear(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GStringChunk * native_chunk = (mrb_nil_p(chunk) ? NULL : mruby_unbox__GStringChunk(chunk));
 
@@ -49440,7 +48377,6 @@ mrb_GLib_g_string_chunk_free(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GStringChunk expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GStringChunk * native_chunk = (mrb_nil_p(chunk) ? NULL : mruby_unbox__GStringChunk(chunk));
@@ -49480,7 +48416,6 @@ mrb_GLib_g_string_chunk_insert(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "String expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GStringChunk * native_chunk = (mrb_nil_p(chunk) ? NULL : mruby_unbox__GStringChunk(chunk));
@@ -49525,7 +48460,6 @@ mrb_GLib_g_string_chunk_insert_const(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "String expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GStringChunk * native_chunk = (mrb_nil_p(chunk) ? NULL : mruby_unbox__GStringChunk(chunk));
@@ -49577,7 +48511,6 @@ mrb_GLib_g_string_chunk_insert_len(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GStringChunk * native_chunk = (mrb_nil_p(chunk) ? NULL : mruby_unbox__GStringChunk(chunk));
 
@@ -49618,7 +48551,6 @@ mrb_GLib_g_string_chunk_new(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   unsigned long native_size = mrb_fixnum(size);
 
@@ -49654,7 +48586,6 @@ mrb_GLib_g_string_down(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GString expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GString * native_string = (mrb_nil_p(string) ? NULL : mruby_unbox__GString(string));
@@ -49697,7 +48628,6 @@ mrb_GLib_g_string_equal(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GString expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   const struct _GString * native_v = (mrb_nil_p(v) ? NULL : mruby_unbox__GString(v));
@@ -49753,7 +48683,6 @@ mrb_GLib_g_string_erase(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GString * native_string = (mrb_nil_p(string) ? NULL : mruby_unbox__GString(string));
 
@@ -49800,7 +48729,6 @@ mrb_GLib_g_string_free(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GString * native_string = (mrb_nil_p(string) ? NULL : mruby_unbox__GString(string));
 
@@ -49839,7 +48767,6 @@ mrb_GLib_g_string_free_to_bytes(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GString * native_string = (mrb_nil_p(string) ? NULL : mruby_unbox__GString(string));
 
@@ -49875,7 +48802,6 @@ mrb_GLib_g_string_hash(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GString expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   const struct _GString * native_str = (mrb_nil_p(str) ? NULL : mruby_unbox__GString(str));
@@ -49929,7 +48855,6 @@ mrb_GLib_g_string_insert(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GString * native_string = (mrb_nil_p(string) ? NULL : mruby_unbox__GString(string));
 
@@ -49981,7 +48906,6 @@ mrb_GLib_g_string_insert_c(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GString * native_string = (mrb_nil_p(string) ? NULL : mruby_unbox__GString(string));
@@ -50041,7 +48965,6 @@ mrb_GLib_g_string_insert_len(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GString * native_string = (mrb_nil_p(string) ? NULL : mruby_unbox__GString(string));
 
@@ -50096,7 +49019,6 @@ mrb_GLib_g_string_insert_unichar(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GString * native_string = (mrb_nil_p(string) ? NULL : mruby_unbox__GString(string));
 
@@ -50136,7 +49058,6 @@ mrb_GLib_g_string_new(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "String expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   const char * native_init = mrb_string_value_cstr(mrb, &init);
@@ -50179,7 +49100,6 @@ mrb_GLib_g_string_new_len(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   const char * native_init = mrb_string_value_cstr(mrb, &init);
@@ -50230,7 +49150,6 @@ mrb_GLib_g_string_overwrite(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "String expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GString * native_string = (mrb_nil_p(string) ? NULL : mruby_unbox__GString(string));
@@ -50290,7 +49209,6 @@ mrb_GLib_g_string_overwrite_len(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GString * native_string = (mrb_nil_p(string) ? NULL : mruby_unbox__GString(string));
 
@@ -50339,7 +49257,6 @@ mrb_GLib_g_string_prepend(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GString * native_string = (mrb_nil_p(string) ? NULL : mruby_unbox__GString(string));
 
@@ -50383,7 +49300,6 @@ mrb_GLib_g_string_prepend_c(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GString * native_string = (mrb_nil_p(string) ? NULL : mruby_unbox__GString(string));
@@ -50435,7 +49351,6 @@ mrb_GLib_g_string_prepend_len(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GString * native_string = (mrb_nil_p(string) ? NULL : mruby_unbox__GString(string));
 
@@ -50482,7 +49397,6 @@ mrb_GLib_g_string_prepend_unichar(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GString * native_string = (mrb_nil_p(string) ? NULL : mruby_unbox__GString(string));
 
@@ -50527,7 +49441,6 @@ mrb_GLib_g_string_printf(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GString * native_string = (mrb_nil_p(string) ? NULL : mruby_unbox__GString(string));
 
@@ -50569,7 +49482,6 @@ mrb_GLib_g_string_set_size(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GString * native_string = (mrb_nil_p(string) ? NULL : mruby_unbox__GString(string));
 
@@ -50607,7 +49519,6 @@ mrb_GLib_g_string_sized_new(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   unsigned long native_dfl_size = mrb_fixnum(dfl_size);
@@ -50651,7 +49562,6 @@ mrb_GLib_g_string_truncate(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GString * native_string = (mrb_nil_p(string) ? NULL : mruby_unbox__GString(string));
 
@@ -50689,7 +49599,6 @@ mrb_GLib_g_string_up(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GString expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GString * native_string = (mrb_nil_p(string) ? NULL : mruby_unbox__GString(string));
@@ -50739,7 +49648,6 @@ mrb_GLib_g_string_vprintf(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GString * native_string = (mrb_nil_p(string) ? NULL : mruby_unbox__GString(string));
 
@@ -50783,7 +49691,6 @@ mrb_GLib_g_strip_context(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   const char * native_msgid = mrb_string_value_cstr(mrb, &msgid);
 
@@ -50821,7 +49728,6 @@ mrb_GLib_g_strjoin(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "String expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   const char * native_separator = mrb_string_value_cstr(mrb, &separator);
@@ -50861,7 +49767,6 @@ mrb_GLib_g_strjoinv(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
   TODO_type_check_char_PTR_PTR(str_array);
-
 
   /* Unbox parameters */
   const char * native_separator = mrb_string_value_cstr(mrb, &separator);
@@ -50912,7 +49817,6 @@ mrb_GLib_g_strlcat(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   /* WARNING: Allocating new memory to create 'char *' from 'const char *'.
@@ -50983,7 +49887,6 @@ mrb_GLib_g_strlcpy(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   /* WARNING: Allocating new memory to create 'char *' from 'const char *'.
    *          Please verify that this memory is cleaned up correctly.
@@ -51053,7 +49956,6 @@ mrb_GLib_g_strncasecmp(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   const char * native_s1 = mrb_string_value_cstr(mrb, &s1);
 
@@ -51104,7 +50006,6 @@ mrb_GLib_g_strndup(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   const char * native_str = mrb_string_value_cstr(mrb, &str);
 
@@ -51149,7 +50050,6 @@ mrb_GLib_g_strnfill(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   unsigned long native_length = mrb_fixnum(length);
 
@@ -51187,7 +50087,6 @@ mrb_GLib_g_strreverse(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "String expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   /* WARNING: Allocating new memory to create 'char *' from 'const char *'.
@@ -51244,7 +50143,6 @@ mrb_GLib_g_strrstr(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   const char * native_haystack = mrb_string_value_cstr(mrb, &haystack);
 
@@ -51295,7 +50193,6 @@ mrb_GLib_g_strrstr_len(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   const char * native_haystack = mrb_string_value_cstr(mrb, &haystack);
 
@@ -51335,7 +50232,6 @@ mrb_GLib_g_strsignal(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   int native_signum = mrb_fixnum(signum);
@@ -51384,7 +50280,6 @@ mrb_GLib_g_strsplit(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   const char * native_string = mrb_string_value_cstr(mrb, &string);
@@ -51438,7 +50333,6 @@ mrb_GLib_g_strsplit_set(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   const char * native_string = mrb_string_value_cstr(mrb, &string);
 
@@ -51491,7 +50385,6 @@ mrb_GLib_g_strstr_len(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   const char * native_haystack = mrb_string_value_cstr(mrb, &haystack);
 
@@ -51535,7 +50428,6 @@ mrb_GLib_g_strtod(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check_char_PTR_PTR(endptr);
 
-
   /* Unbox parameters */
   const char * native_nptr = mrb_string_value_cstr(mrb, &nptr);
 
@@ -51573,7 +50465,6 @@ mrb_GLib_g_strup(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "String expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   /* WARNING: Allocating new memory to create 'char *' from 'const char *'.
@@ -51627,7 +50518,6 @@ mrb_GLib_g_strv_contains(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   const char *const * native_strv = TODO_mruby_unbox_char_PTR_const_PTR(strv);
 
@@ -51666,7 +50556,6 @@ mrb_GLib_g_strv_length(mrb_state* mrb, mrb_value self) {
 
   /* Type checking */
   TODO_type_check_char_PTR_PTR(str_array);
-
 
   /* Unbox parameters */
   char ** native_str_array = TODO_mruby_unbox_char_PTR_PTR(str_array);
@@ -51725,7 +50614,6 @@ mrb_GLib_g_system_thread_free(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GRealThread * native_thread = (mrb_nil_p(thread) ? NULL : mruby_unbox__GRealThread(thread));
 
@@ -51764,7 +50652,6 @@ mrb_GLib_g_system_thread_new(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
   TODO_type_check__GError_PTR_PTR(error);
-
 
   /* Unbox parameters */
   void *(*native_func)(void *) = TODO_mruby_unbox_void_PTR_LPAREN_PTR_RPAREN_LPAREN_void_PTR_RPAREN(func);
@@ -51806,7 +50693,6 @@ mrb_GLib_g_system_thread_set_name(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   const char * native_name = mrb_string_value_cstr(mrb, &name);
 
@@ -51839,7 +50725,6 @@ mrb_GLib_g_system_thread_wait(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GRealThread expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GRealThread * native_thread = (mrb_nil_p(thread) ? NULL : mruby_unbox__GRealThread(thread));
@@ -51879,7 +50764,6 @@ mrb_GLib_g_test_add_data_func(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check_void_PTR(test_data);
   TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_void_PTR_RPAREN(test_func);
-
 
   /* Unbox parameters */
   const char * native_testpath = mrb_string_value_cstr(mrb, &testpath);
@@ -51927,7 +50811,6 @@ mrb_GLib_g_test_add_data_func_full(mrb_state* mrb, mrb_value self) {
   TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_void_PTR_RPAREN(test_func);
   TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_void_PTR_RPAREN(data_free_func);
 
-
   /* Unbox parameters */
   const char * native_testpath = mrb_string_value_cstr(mrb, &testpath);
 
@@ -51969,7 +50852,6 @@ mrb_GLib_g_test_add_func(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
   TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_void_RPAREN(test_func);
-
 
   /* Unbox parameters */
   const char * native_testpath = mrb_string_value_cstr(mrb, &testpath);
@@ -52023,7 +50905,6 @@ mrb_GLib_g_test_add_vtable(mrb_state* mrb, mrb_value self) {
   TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_void_PTR_COMMAvoid_PTR_RPAREN(data_setup);
   TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_void_PTR_COMMAvoid_PTR_RPAREN(data_test);
   TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_void_PTR_COMMAvoid_PTR_RPAREN(data_teardown);
-
 
   /* Unbox parameters */
   const char * native_testpath = mrb_string_value_cstr(mrb, &testpath);
@@ -52086,7 +50967,6 @@ mrb_GLib_g_test_assert_expected_messages_internal(mrb_state* mrb, mrb_value self
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   const char * native_domain = mrb_string_value_cstr(mrb, &domain);
 
@@ -52126,7 +51006,6 @@ mrb_GLib_g_test_bug(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   const char * native_bug_uri_snippet = mrb_string_value_cstr(mrb, &bug_uri_snippet);
 
@@ -52159,7 +51038,6 @@ mrb_GLib_g_test_bug_base(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "String expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   const char * native_uri_pattern = mrb_string_value_cstr(mrb, &uri_pattern);
@@ -52196,7 +51074,6 @@ mrb_GLib_g_test_build_filename(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "String expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   GTestFileType native_file_type = TODO_mruby_unbox_GTestFileType(file_type);
@@ -52254,7 +51131,6 @@ mrb_GLib_g_test_create_case(mrb_state* mrb, mrb_value self) {
   TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_void_PTR_COMMAvoid_PTR_RPAREN(data_test);
   TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_void_PTR_COMMAvoid_PTR_RPAREN(data_teardown);
 
-
   /* Unbox parameters */
   const char * native_test_name = mrb_string_value_cstr(mrb, &test_name);
 
@@ -52301,7 +51177,6 @@ mrb_GLib_g_test_create_suite(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   const char * native_suite_name = mrb_string_value_cstr(mrb, &suite_name);
 
@@ -52346,7 +51221,6 @@ mrb_GLib_g_test_expect_message(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "String expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   const char * native_log_domain = mrb_string_value_cstr(mrb, &log_domain);
@@ -52423,7 +51297,6 @@ mrb_GLib_g_test_get_dir(mrb_state* mrb, mrb_value self) {
   /* Type checking */
   TODO_type_check_GTestFileType(file_type);
 
-
   /* Unbox parameters */
   GTestFileType native_file_type = TODO_mruby_unbox_GTestFileType(file_type);
 
@@ -52462,7 +51335,6 @@ mrb_GLib_g_test_get_filename(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "String expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   GTestFileType native_file_type = TODO_mruby_unbox_GTestFileType(file_type);
@@ -52522,7 +51394,6 @@ mrb_GLib_g_test_incomplete(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   const char * native_msg = mrb_string_value_cstr(mrb, &msg);
 
@@ -52555,7 +51426,6 @@ mrb_GLib_g_test_init(mrb_state* mrb, mrb_value self) {
   /* Type checking */
   TODO_type_check_int_PTR(argc);
   TODO_type_check_char_PTR_PTR_PTR(argv);
-
 
   /* Unbox parameters */
   int * native_argc = TODO_mruby_unbox_int_PTR(argc);
@@ -52591,7 +51461,6 @@ mrb_GLib_g_test_log_buffer_free(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GTestLogBuffer expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   GTestLogBuffer * native_tbuffer = (mrb_nil_p(tbuffer) ? NULL : mruby_unbox_GTestLogBuffer(tbuffer));
@@ -52646,7 +51515,6 @@ mrb_GLib_g_test_log_buffer_pop(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   GTestLogBuffer * native_tbuffer = (mrb_nil_p(tbuffer) ? NULL : mruby_unbox_GTestLogBuffer(tbuffer));
 
@@ -52692,7 +51560,6 @@ mrb_GLib_g_test_log_buffer_push(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check_unsigned_char_PTR(bytes);
 
-
   /* Unbox parameters */
   GTestLogBuffer * native_tbuffer = (mrb_nil_p(tbuffer) ? NULL : mruby_unbox_GTestLogBuffer(tbuffer));
 
@@ -52730,7 +51597,6 @@ mrb_GLib_g_test_log_msg_free(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   GTestLogMsg * native_tmsg = (mrb_nil_p(tmsg) ? NULL : mruby_unbox_GTestLogMsg(tmsg));
 
@@ -52764,7 +51630,6 @@ mrb_GLib_g_test_log_set_fatal_handler(mrb_state* mrb, mrb_value self) {
   TODO_type_check_int_LPAREN_PTR_RPAREN_LPAREN_char_PTR_COMMA_GLogLevelFlagsCOMMA_const_char_PTR_COMMA_void_PTR_RPAREN(log_func);
   TODO_type_check_void_PTR(user_data);
 
-
   /* Unbox parameters */
   int (*native_log_func)(const char *, GLogLevelFlags, const char *, void *) = TODO_mruby_unbox_int_LPAREN_PTR_RPAREN_LPAREN_char_PTR_COMMA_GLogLevelFlagsCOMMA_const_char_PTR_COMMA_void_PTR_RPAREN(log_func);
 
@@ -52796,7 +51661,6 @@ mrb_GLib_g_test_log_type_name(mrb_state* mrb, mrb_value self) {
 
   /* Type checking */
   TODO_type_check_GTestLogType(log_type);
-
 
   /* Unbox parameters */
   GTestLogType native_log_type = TODO_mruby_unbox_GTestLogType(log_type);
@@ -52840,7 +51704,6 @@ mrb_GLib_g_test_maximized_result(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   double native_maximized_quantity = mrb_float(maximized_quantity);
 
@@ -52875,7 +51738,6 @@ mrb_GLib_g_test_message(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "String expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   const char * native_format = mrb_string_value_cstr(mrb, &format);
@@ -52916,7 +51778,6 @@ mrb_GLib_g_test_minimized_result(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   double native_minimized_quantity = mrb_float(minimized_quantity);
 
@@ -52952,7 +51813,6 @@ mrb_GLib_g_test_queue_destroy(mrb_state* mrb, mrb_value self) {
   TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_void_PTR_RPAREN(destroy_func);
   TODO_type_check_void_PTR(destroy_data);
 
-
   /* Unbox parameters */
   void (*native_destroy_func)(void *) = TODO_mruby_unbox_void_LPAREN_PTR_RPAREN_LPAREN_void_PTR_RPAREN(destroy_func);
 
@@ -52984,7 +51844,6 @@ mrb_GLib_g_test_queue_free(mrb_state* mrb, mrb_value self) {
 
   /* Type checking */
   TODO_type_check_void_PTR(gfree_pointer);
-
 
   /* Unbox parameters */
   void * native_gfree_pointer = TODO_mruby_unbox_void_PTR(gfree_pointer);
@@ -53044,7 +51903,6 @@ mrb_GLib_g_test_rand_double_range(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Float expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   double native_range_start = mrb_float(range_start);
@@ -53114,7 +51972,6 @@ mrb_GLib_g_test_rand_int_range(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   int native_begin = mrb_fixnum(begin);
 
@@ -53181,7 +52038,6 @@ mrb_GLib_g_test_run_suite(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct GTestSuite * native_suite = (mrb_nil_p(suite) ? NULL : mruby_unbox_GTestSuite(suite));
 
@@ -53238,7 +52094,6 @@ mrb_GLib_g_test_skip(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "String expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   const char * native_msg = mrb_string_value_cstr(mrb, &msg);
@@ -53303,7 +52158,6 @@ mrb_GLib_g_test_suite_add(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct GTestSuite * native_suite = (mrb_nil_p(suite) ? NULL : mruby_unbox_GTestSuite(suite));
 
@@ -53344,7 +52198,6 @@ mrb_GLib_g_test_suite_add_suite(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GTestSuite expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct GTestSuite * native_suite = (mrb_nil_p(suite) ? NULL : mruby_unbox_GTestSuite(suite));
@@ -53468,7 +52321,6 @@ mrb_GLib_g_test_trap_assertions(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   const char * native_domain = mrb_string_value_cstr(mrb, &domain);
 
@@ -53514,7 +52366,6 @@ mrb_GLib_g_test_trap_fork(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
   TODO_type_check_GTestTrapFlags(test_trap_flags);
-
 
   /* Unbox parameters */
   unsigned long native_usec_timeout = mrb_fixnum(usec_timeout);
@@ -53615,7 +52466,6 @@ mrb_GLib_g_test_trap_subprocess(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check_GTestSubprocessFlags(test_flags);
 
-
   /* Unbox parameters */
   const char * native_test_path = mrb_string_value_cstr(mrb, &test_path);
 
@@ -53674,7 +52524,6 @@ mrb_GLib_g_thread_exit(mrb_state* mrb, mrb_value self) {
   /* Type checking */
   TODO_type_check_void_PTR(retval);
 
-
   /* Unbox parameters */
   void * native_retval = TODO_mruby_unbox_void_PTR(retval);
 
@@ -53707,7 +52556,6 @@ mrb_GLib_g_thread_join(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GThread expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GThread * native_thread = (mrb_nil_p(thread) ? NULL : mruby_unbox__GThread(thread));
@@ -53750,7 +52598,6 @@ mrb_GLib_g_thread_new(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check_void_PTR_LPAREN_PTR_RPAREN_LPAREN_void_PTR_RPAREN(func);
   TODO_type_check_void_PTR(data);
-
 
   /* Unbox parameters */
   const char * native_name = mrb_string_value_cstr(mrb, &name);
@@ -53810,7 +52657,6 @@ mrb_GLib_g_thread_new_internal(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check__GError_PTR_PTR(error);
 
-
   /* Unbox parameters */
   const char * native_name = mrb_string_value_cstr(mrb, &name);
 
@@ -53868,7 +52714,6 @@ mrb_GLib_g_thread_pool_free(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GThreadPool * native_pool = (mrb_nil_p(pool) ? NULL : mruby_unbox__GThreadPool(pool));
@@ -53930,7 +52775,6 @@ mrb_GLib_g_thread_pool_get_max_threads(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GThreadPool expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GThreadPool * native_pool = (mrb_nil_p(pool) ? NULL : mruby_unbox__GThreadPool(pool));
@@ -53995,7 +52839,6 @@ mrb_GLib_g_thread_pool_get_num_threads(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GThreadPool expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GThreadPool * native_pool = (mrb_nil_p(pool) ? NULL : mruby_unbox__GThreadPool(pool));
@@ -54064,7 +52907,6 @@ mrb_GLib_g_thread_pool_move_to_front(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check_void_PTR(data);
 
-
   /* Unbox parameters */
   struct _GThreadPool * native_pool = (mrb_nil_p(pool) ? NULL : mruby_unbox__GThreadPool(pool));
 
@@ -54122,7 +52964,6 @@ mrb_GLib_g_thread_pool_new(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check__GError_PTR_PTR(error);
 
-
   /* Unbox parameters */
   void (*native_func)(void *, void *) = TODO_mruby_unbox_void_LPAREN_PTR_RPAREN_LPAREN_void_PTR_COMMA_void_PTR_RPAREN(func);
 
@@ -54173,7 +53014,6 @@ mrb_GLib_g_thread_pool_push(mrb_state* mrb, mrb_value self) {
   TODO_type_check_void_PTR(data);
   TODO_type_check__GError_PTR_PTR(error);
 
-
   /* Unbox parameters */
   struct _GThreadPool * native_pool = (mrb_nil_p(pool) ? NULL : mruby_unbox__GThreadPool(pool));
 
@@ -54218,7 +53058,6 @@ mrb_GLib_g_thread_pool_set_max_idle_time(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   unsigned int native_interval = mrb_fixnum(interval);
 
@@ -54260,7 +53099,6 @@ mrb_GLib_g_thread_pool_set_max_threads(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
   TODO_type_check__GError_PTR_PTR(error);
-
 
   /* Unbox parameters */
   struct _GThreadPool * native_pool = (mrb_nil_p(pool) ? NULL : mruby_unbox__GThreadPool(pool));
@@ -54306,7 +53144,6 @@ mrb_GLib_g_thread_pool_set_max_unused_threads(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   int native_max_threads = mrb_fixnum(max_threads);
 
@@ -54345,7 +53182,6 @@ mrb_GLib_g_thread_pool_set_sort_function(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check_int_LPAREN_PTR_RPAREN_LPAREN_void_PTR_COMMA_const_void_PTR_COMMA_void_PTR_RPAREN(func);
   TODO_type_check_void_PTR(user_data);
-
 
   /* Unbox parameters */
   struct _GThreadPool * native_pool = (mrb_nil_p(pool) ? NULL : mruby_unbox__GThreadPool(pool));
@@ -54401,7 +53237,6 @@ mrb_GLib_g_thread_pool_unprocessed(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GThreadPool * native_pool = (mrb_nil_p(pool) ? NULL : mruby_unbox__GThreadPool(pool));
 
@@ -54439,7 +53274,6 @@ mrb_GLib_g_thread_proxy(mrb_state* mrb, mrb_value self) {
   /* Type checking */
   TODO_type_check_void_PTR(thread);
 
-
   /* Unbox parameters */
   void * native_thread = TODO_mruby_unbox_void_PTR(thread);
 
@@ -54475,7 +53309,6 @@ mrb_GLib_g_thread_ref(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GThread expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GThread * native_thread = (mrb_nil_p(thread) ? NULL : mruby_unbox__GThread(thread));
@@ -54542,7 +53375,6 @@ mrb_GLib_g_thread_try_new(mrb_state* mrb, mrb_value self) {
   TODO_type_check_void_PTR(data);
   TODO_type_check__GError_PTR_PTR(error);
 
-
   /* Unbox parameters */
   const char * native_name = mrb_string_value_cstr(mrb, &name);
 
@@ -54584,7 +53416,6 @@ mrb_GLib_g_thread_unref(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GThread expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GThread * native_thread = (mrb_nil_p(thread) ? NULL : mruby_unbox__GThread(thread));
@@ -54642,7 +53473,6 @@ mrb_GLib_g_time_val_add(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GTimeVal * native_time_ = (mrb_nil_p(time_) ? NULL : mruby_unbox__GTimeVal(time_));
 
@@ -54683,7 +53513,6 @@ mrb_GLib_g_time_val_from_iso8601(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GTimeVal expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   const char * native_iso_date = mrb_string_value_cstr(mrb, &iso_date);
@@ -54727,7 +53556,6 @@ mrb_GLib_g_time_val_to_iso8601(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GTimeVal * native_time_ = (mrb_nil_p(time_) ? NULL : mruby_unbox__GTimeVal(time_));
 
@@ -54769,7 +53597,6 @@ mrb_GLib_g_time_zone_adjust_time(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check_GTimeType(type);
   TODO_type_check_long_PTR(time_);
-
 
   /* Unbox parameters */
   struct _GTimeZone * native_tz = (mrb_nil_p(tz) ? NULL : mruby_unbox__GTimeZone(tz));
@@ -54824,7 +53651,6 @@ mrb_GLib_g_time_zone_find_interval(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GTimeZone * native_tz = (mrb_nil_p(tz) ? NULL : mruby_unbox__GTimeZone(tz));
 
@@ -54875,7 +53701,6 @@ mrb_GLib_g_time_zone_get_abbreviation(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GTimeZone * native_tz = (mrb_nil_p(tz) ? NULL : mruby_unbox__GTimeZone(tz));
 
@@ -54919,7 +53744,6 @@ mrb_GLib_g_time_zone_get_offset(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GTimeZone * native_tz = (mrb_nil_p(tz) ? NULL : mruby_unbox__GTimeZone(tz));
@@ -54969,7 +53793,6 @@ mrb_GLib_g_time_zone_is_dst(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GTimeZone * native_tz = (mrb_nil_p(tz) ? NULL : mruby_unbox__GTimeZone(tz));
 
@@ -55011,7 +53834,6 @@ mrb_GLib_g_time_zone_new(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "String expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   const char * native_identifier = mrb_string_value_cstr(mrb, &identifier);
@@ -55089,7 +53911,6 @@ mrb_GLib_g_time_zone_ref(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GTimeZone * native_tz = (mrb_nil_p(tz) ? NULL : mruby_unbox__GTimeZone(tz));
 
@@ -55125,7 +53946,6 @@ mrb_GLib_g_time_zone_unref(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GTimeZone expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GTimeZone * native_tz = (mrb_nil_p(tz) ? NULL : mruby_unbox__GTimeZone(tz));
@@ -55165,7 +53985,6 @@ mrb_GLib_g_timeout_add(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check_int_LPAREN_PTR_RPAREN_LPAREN_void_PTR_RPAREN(function);
   TODO_type_check_void_PTR(data);
-
 
   /* Unbox parameters */
   unsigned int native_interval = mrb_fixnum(interval);
@@ -55226,7 +54045,6 @@ mrb_GLib_g_timeout_add_full(mrb_state* mrb, mrb_value self) {
   TODO_type_check_void_PTR(data);
   TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_void_PTR_RPAREN(notify);
 
-
   /* Unbox parameters */
   int native_priority = mrb_fixnum(priority);
 
@@ -55280,7 +54098,6 @@ mrb_GLib_g_timeout_add_seconds(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check_int_LPAREN_PTR_RPAREN_LPAREN_void_PTR_RPAREN(function);
   TODO_type_check_void_PTR(data);
-
 
   /* Unbox parameters */
   unsigned int native_interval = mrb_fixnum(interval);
@@ -55341,7 +54158,6 @@ mrb_GLib_g_timeout_add_seconds_full(mrb_state* mrb, mrb_value self) {
   TODO_type_check_void_PTR(data);
   TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_void_PTR_RPAREN(notify);
 
-
   /* Unbox parameters */
   int native_priority = mrb_fixnum(priority);
 
@@ -55390,7 +54206,6 @@ mrb_GLib_g_timeout_source_new(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   unsigned int native_interval = mrb_fixnum(interval);
 
@@ -55426,7 +54241,6 @@ mrb_GLib_g_timeout_source_new_seconds(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   unsigned int native_interval = mrb_fixnum(interval);
@@ -55464,7 +54278,6 @@ mrb_GLib_g_timer_continue(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GTimer * native_timer = (mrb_nil_p(timer) ? NULL : mruby_unbox__GTimer(timer));
 
@@ -55497,7 +54310,6 @@ mrb_GLib_g_timer_destroy(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GTimer expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GTimer * native_timer = (mrb_nil_p(timer) ? NULL : mruby_unbox__GTimer(timer));
@@ -55534,7 +54346,6 @@ mrb_GLib_g_timer_elapsed(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
   TODO_type_check_unsigned_long_PTR(microseconds);
-
 
   /* Unbox parameters */
   struct _GTimer * native_timer = (mrb_nil_p(timer) ? NULL : mruby_unbox__GTimer(timer));
@@ -55594,7 +54405,6 @@ mrb_GLib_g_timer_reset(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GTimer * native_timer = (mrb_nil_p(timer) ? NULL : mruby_unbox__GTimer(timer));
 
@@ -55627,7 +54437,6 @@ mrb_GLib_g_timer_start(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GTimer expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GTimer * native_timer = (mrb_nil_p(timer) ? NULL : mruby_unbox__GTimer(timer));
@@ -55662,7 +54471,6 @@ mrb_GLib_g_timer_stop(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GTimer * native_timer = (mrb_nil_p(timer) ? NULL : mruby_unbox__GTimer(timer));
 
@@ -55692,7 +54500,6 @@ mrb_GLib_g_trash_stack_height(mrb_state* mrb, mrb_value self) {
 
   /* Type checking */
   TODO_type_check__GTrashStack_PTR_PTR(stack_p);
-
 
   /* Unbox parameters */
   struct _GTrashStack ** native_stack_p = TODO_mruby_unbox__GTrashStack_PTR_PTR(stack_p);
@@ -55731,7 +54538,6 @@ mrb_GLib_g_trash_stack_peek(mrb_state* mrb, mrb_value self) {
   /* Type checking */
   TODO_type_check__GTrashStack_PTR_PTR(stack_p);
 
-
   /* Unbox parameters */
   struct _GTrashStack ** native_stack_p = TODO_mruby_unbox__GTrashStack_PTR_PTR(stack_p);
 
@@ -55764,7 +54570,6 @@ mrb_GLib_g_trash_stack_pop(mrb_state* mrb, mrb_value self) {
 
   /* Type checking */
   TODO_type_check__GTrashStack_PTR_PTR(stack_p);
-
 
   /* Unbox parameters */
   struct _GTrashStack ** native_stack_p = TODO_mruby_unbox__GTrashStack_PTR_PTR(stack_p);
@@ -55802,7 +54607,6 @@ mrb_GLib_g_trash_stack_push(mrb_state* mrb, mrb_value self) {
   TODO_type_check__GTrashStack_PTR_PTR(stack_p);
   TODO_type_check_void_PTR(data_p);
 
-
   /* Unbox parameters */
   struct _GTrashStack ** native_stack_p = TODO_mruby_unbox__GTrashStack_PTR_PTR(stack_p);
 
@@ -55837,7 +54641,6 @@ mrb_GLib_g_tree_destroy(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GTree expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GTree * native_tree = (mrb_nil_p(tree) ? NULL : mruby_unbox__GTree(tree));
@@ -55878,7 +54681,6 @@ mrb_GLib_g_tree_foreach(mrb_state* mrb, mrb_value self) {
   TODO_type_check_int_LPAREN_PTR_RPAREN_LPAREN_void_PTR_COMMA_void_PTR_COMMA_void_PTR_RPAREN(func);
   TODO_type_check_void_PTR(user_data);
 
-
   /* Unbox parameters */
   struct _GTree * native_tree = (mrb_nil_p(tree) ? NULL : mruby_unbox__GTree(tree));
 
@@ -55915,7 +54717,6 @@ mrb_GLib_g_tree_height(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GTree expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GTree * native_tree = (mrb_nil_p(tree) ? NULL : mruby_unbox__GTree(tree));
@@ -55963,7 +54764,6 @@ mrb_GLib_g_tree_insert(mrb_state* mrb, mrb_value self) {
   TODO_type_check_void_PTR(key);
   TODO_type_check_void_PTR(value);
 
-
   /* Unbox parameters */
   struct _GTree * native_tree = (mrb_nil_p(tree) ? NULL : mruby_unbox__GTree(tree));
 
@@ -56003,7 +54803,6 @@ mrb_GLib_g_tree_lookup(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
   TODO_type_check_void_PTR(key);
-
 
   /* Unbox parameters */
   struct _GTree * native_tree = (mrb_nil_p(tree) ? NULL : mruby_unbox__GTree(tree));
@@ -56052,7 +54851,6 @@ mrb_GLib_g_tree_lookup_extended(mrb_state* mrb, mrb_value self) {
   TODO_type_check_void_PTR_PTR(orig_key);
   TODO_type_check_void_PTR_PTR(value);
 
-
   /* Unbox parameters */
   struct _GTree * native_tree = (mrb_nil_p(tree) ? NULL : mruby_unbox__GTree(tree));
 
@@ -56096,7 +54894,6 @@ mrb_GLib_g_tree_new(mrb_state* mrb, mrb_value self) {
   /* Type checking */
   TODO_type_check_int_LPAREN_PTR_RPAREN_LPAREN_void_PTR_COMMA_const_void_PTR_RPAREN(key_compare_func);
 
-
   /* Unbox parameters */
   int (*native_key_compare_func)(const void *, const void *) = TODO_mruby_unbox_int_LPAREN_PTR_RPAREN_LPAREN_void_PTR_COMMA_const_void_PTR_RPAREN(key_compare_func);
 
@@ -56138,7 +54935,6 @@ mrb_GLib_g_tree_new_full(mrb_state* mrb, mrb_value self) {
   TODO_type_check_void_PTR(key_compare_data);
   TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_void_PTR_RPAREN(key_destroy_func);
   TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_void_PTR_RPAREN(value_destroy_func);
-
 
   /* Unbox parameters */
   int (*native_key_compare_func)(const void *, const void *, void *) = TODO_mruby_unbox_int_LPAREN_PTR_RPAREN_LPAREN_void_PTR_COMMA_const_void_PTR_COMMA_void_PTR_RPAREN(key_compare_func);
@@ -56182,7 +54978,6 @@ mrb_GLib_g_tree_new_with_data(mrb_state* mrb, mrb_value self) {
   TODO_type_check_int_LPAREN_PTR_RPAREN_LPAREN_void_PTR_COMMA_const_void_PTR_COMMA_void_PTR_RPAREN(key_compare_func);
   TODO_type_check_void_PTR(key_compare_data);
 
-
   /* Unbox parameters */
   int (*native_key_compare_func)(const void *, const void *, void *) = TODO_mruby_unbox_int_LPAREN_PTR_RPAREN_LPAREN_void_PTR_COMMA_const_void_PTR_COMMA_void_PTR_RPAREN(key_compare_func);
 
@@ -56220,7 +55015,6 @@ mrb_GLib_g_tree_nnodes(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GTree expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GTree * native_tree = (mrb_nil_p(tree) ? NULL : mruby_unbox__GTree(tree));
@@ -56262,7 +55056,6 @@ mrb_GLib_g_tree_ref(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GTree * native_tree = (mrb_nil_p(tree) ? NULL : mruby_unbox__GTree(tree));
 
@@ -56301,7 +55094,6 @@ mrb_GLib_g_tree_remove(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
   TODO_type_check_void_PTR(key);
-
 
   /* Unbox parameters */
   struct _GTree * native_tree = (mrb_nil_p(tree) ? NULL : mruby_unbox__GTree(tree));
@@ -56351,7 +55143,6 @@ mrb_GLib_g_tree_replace(mrb_state* mrb, mrb_value self) {
   TODO_type_check_void_PTR(key);
   TODO_type_check_void_PTR(value);
 
-
   /* Unbox parameters */
   struct _GTree * native_tree = (mrb_nil_p(tree) ? NULL : mruby_unbox__GTree(tree));
 
@@ -56395,7 +55186,6 @@ mrb_GLib_g_tree_search(mrb_state* mrb, mrb_value self) {
   TODO_type_check_int_LPAREN_PTR_RPAREN_LPAREN_void_PTR_COMMA_const_void_PTR_RPAREN(search_func);
   TODO_type_check_void_PTR(user_data);
 
-
   /* Unbox parameters */
   struct _GTree * native_tree = (mrb_nil_p(tree) ? NULL : mruby_unbox__GTree(tree));
 
@@ -56438,7 +55228,6 @@ mrb_GLib_g_tree_steal(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
   TODO_type_check_void_PTR(key);
-
 
   /* Unbox parameters */
   struct _GTree * native_tree = (mrb_nil_p(tree) ? NULL : mruby_unbox__GTree(tree));
@@ -56491,7 +55280,6 @@ mrb_GLib_g_tree_traverse(mrb_state* mrb, mrb_value self) {
   TODO_type_check_GTraverseType(traverse_type);
   TODO_type_check_void_PTR(user_data);
 
-
   /* Unbox parameters */
   struct _GTree * native_tree = (mrb_nil_p(tree) ? NULL : mruby_unbox__GTree(tree));
 
@@ -56531,7 +55319,6 @@ mrb_GLib_g_tree_unref(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GTree * native_tree = (mrb_nil_p(tree) ? NULL : mruby_unbox__GTree(tree));
 
@@ -56564,7 +55351,6 @@ mrb_GLib_g_try_malloc(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   unsigned long native_n_bytes = mrb_fixnum(n_bytes);
@@ -56601,7 +55387,6 @@ mrb_GLib_g_try_malloc0(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   unsigned long native_n_bytes = mrb_fixnum(n_bytes);
@@ -56644,7 +55429,6 @@ mrb_GLib_g_try_malloc0_n(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   unsigned long native_n_blocks = mrb_fixnum(n_blocks);
@@ -56690,7 +55474,6 @@ mrb_GLib_g_try_malloc_n(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   unsigned long native_n_blocks = mrb_fixnum(n_blocks);
 
@@ -56731,7 +55514,6 @@ mrb_GLib_g_try_realloc(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   void * native_mem = TODO_mruby_unbox_void_PTR(mem);
@@ -56779,7 +55561,6 @@ mrb_GLib_g_try_realloc_n(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   void * native_mem = TODO_mruby_unbox_void_PTR(mem);
@@ -56832,7 +55613,6 @@ mrb_GLib_g_ucs4_to_utf16(mrb_state* mrb, mrb_value self) {
   TODO_type_check_long_PTR(items_read);
   TODO_type_check_long_PTR(items_written);
   TODO_type_check__GError_PTR_PTR(error);
-
 
   /* Unbox parameters */
   const unsigned int * native_str = TODO_mruby_unbox_unsigned_int_PTR(str);
@@ -56890,7 +55670,6 @@ mrb_GLib_g_ucs4_to_utf8(mrb_state* mrb, mrb_value self) {
   TODO_type_check_long_PTR(items_written);
   TODO_type_check__GError_PTR_PTR(error);
 
-
   /* Unbox parameters */
   const unsigned int * native_str = TODO_mruby_unbox_unsigned_int_PTR(str);
 
@@ -56935,7 +55714,6 @@ mrb_GLib_g_unichar_break_type(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   unsigned int native_c = mrb_fixnum(c);
 
@@ -56971,7 +55749,6 @@ mrb_GLib_g_unichar_combining_class(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   unsigned int native_uc = mrb_fixnum(uc);
@@ -57021,7 +55798,6 @@ mrb_GLib_g_unichar_compose(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
   TODO_type_check_unsigned_int_PTR(ch);
-
 
   /* Unbox parameters */
   unsigned int native_a = mrb_fixnum(a);
@@ -57073,7 +55849,6 @@ mrb_GLib_g_unichar_decompose(mrb_state* mrb, mrb_value self) {
   TODO_type_check_unsigned_int_PTR(a);
   TODO_type_check_unsigned_int_PTR(b);
 
-
   /* Unbox parameters */
   unsigned int native_ch = mrb_fixnum(ch);
 
@@ -57117,7 +55892,6 @@ mrb_GLib_g_unichar_digit_value(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   unsigned int native_c = mrb_fixnum(c);
@@ -57174,7 +55948,6 @@ mrb_GLib_g_unichar_fully_decompose(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   unsigned int native_ch = mrb_fixnum(ch);
 
@@ -57224,7 +55997,6 @@ mrb_GLib_g_unichar_get_mirror_char(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check_unsigned_int_PTR(mirrored_ch);
 
-
   /* Unbox parameters */
   unsigned int native_ch = mrb_fixnum(ch);
 
@@ -57267,7 +56039,6 @@ mrb_GLib_g_unichar_get_script(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   unsigned int native_ch = mrb_fixnum(ch);
 
@@ -57303,7 +56074,6 @@ mrb_GLib_g_unichar_isalnum(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   unsigned int native_c = mrb_fixnum(c);
@@ -57345,7 +56115,6 @@ mrb_GLib_g_unichar_isalpha(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   unsigned int native_c = mrb_fixnum(c);
 
@@ -57385,7 +56154,6 @@ mrb_GLib_g_unichar_iscntrl(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   unsigned int native_c = mrb_fixnum(c);
@@ -57427,7 +56195,6 @@ mrb_GLib_g_unichar_isdefined(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   unsigned int native_c = mrb_fixnum(c);
 
@@ -57467,7 +56234,6 @@ mrb_GLib_g_unichar_isdigit(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   unsigned int native_c = mrb_fixnum(c);
@@ -57509,7 +56275,6 @@ mrb_GLib_g_unichar_isgraph(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   unsigned int native_c = mrb_fixnum(c);
 
@@ -57549,7 +56314,6 @@ mrb_GLib_g_unichar_islower(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   unsigned int native_c = mrb_fixnum(c);
@@ -57591,7 +56355,6 @@ mrb_GLib_g_unichar_ismark(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   unsigned int native_c = mrb_fixnum(c);
 
@@ -57631,7 +56394,6 @@ mrb_GLib_g_unichar_isprint(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   unsigned int native_c = mrb_fixnum(c);
@@ -57673,7 +56435,6 @@ mrb_GLib_g_unichar_ispunct(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   unsigned int native_c = mrb_fixnum(c);
 
@@ -57713,7 +56474,6 @@ mrb_GLib_g_unichar_isspace(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   unsigned int native_c = mrb_fixnum(c);
@@ -57755,7 +56515,6 @@ mrb_GLib_g_unichar_istitle(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   unsigned int native_c = mrb_fixnum(c);
 
@@ -57795,7 +56554,6 @@ mrb_GLib_g_unichar_isupper(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   unsigned int native_c = mrb_fixnum(c);
@@ -57837,7 +56595,6 @@ mrb_GLib_g_unichar_iswide(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   unsigned int native_c = mrb_fixnum(c);
 
@@ -57877,7 +56634,6 @@ mrb_GLib_g_unichar_iswide_cjk(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   unsigned int native_c = mrb_fixnum(c);
@@ -57919,7 +56675,6 @@ mrb_GLib_g_unichar_isxdigit(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   unsigned int native_c = mrb_fixnum(c);
 
@@ -57959,7 +56714,6 @@ mrb_GLib_g_unichar_iszerowidth(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   unsigned int native_c = mrb_fixnum(c);
@@ -58006,7 +56760,6 @@ mrb_GLib_g_unichar_to_utf8(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "String expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   unsigned int native_c = mrb_fixnum(c);
@@ -58063,7 +56816,6 @@ mrb_GLib_g_unichar_tolower(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   unsigned int native_c = mrb_fixnum(c);
 
@@ -58103,7 +56855,6 @@ mrb_GLib_g_unichar_totitle(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   unsigned int native_c = mrb_fixnum(c);
@@ -58145,7 +56896,6 @@ mrb_GLib_g_unichar_toupper(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   unsigned int native_c = mrb_fixnum(c);
 
@@ -58186,7 +56936,6 @@ mrb_GLib_g_unichar_type(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   unsigned int native_c = mrb_fixnum(c);
 
@@ -58222,7 +56971,6 @@ mrb_GLib_g_unichar_validate(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   unsigned int native_ch = mrb_fixnum(ch);
@@ -58263,7 +57011,6 @@ mrb_GLib_g_unichar_xdigit_value(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   unsigned int native_c = mrb_fixnum(c);
@@ -58308,7 +57055,6 @@ mrb_GLib_g_unicode_canonical_decomposition(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check_unsigned_long_PTR(result_len);
 
-
   /* Unbox parameters */
   unsigned int native_ch = mrb_fixnum(ch);
 
@@ -58350,7 +57096,6 @@ mrb_GLib_g_unicode_canonical_ordering(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   unsigned int * native_string = TODO_mruby_unbox_unsigned_int_PTR(string);
 
@@ -58386,7 +57131,6 @@ mrb_GLib_g_unicode_script_from_iso15924(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   unsigned int native_iso15924 = mrb_fixnum(iso15924);
 
@@ -58419,7 +57163,6 @@ mrb_GLib_g_unicode_script_to_iso15924(mrb_state* mrb, mrb_value self) {
 
   /* Type checking */
   TODO_type_check_GUnicodeScript(script);
-
 
   /* Unbox parameters */
   GUnicodeScript native_script = TODO_mruby_unbox_GUnicodeScript(script);
@@ -58494,7 +57237,6 @@ mrb_GLib_g_unix_fd_add(mrb_state* mrb, mrb_value self) {
   TODO_type_check_int_LPAREN_PTR_RPAREN_LPAREN_intCOMMA_GIOConditionCOMMA_void_PTR_RPAREN(function);
   TODO_type_check_void_PTR(user_data);
 
-
   /* Unbox parameters */
   int native_fd = mrb_fixnum(fd);
 
@@ -58559,7 +57301,6 @@ mrb_GLib_g_unix_fd_add_full(mrb_state* mrb, mrb_value self) {
   TODO_type_check_void_PTR(user_data);
   TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_void_PTR_RPAREN(notify);
 
-
   /* Unbox parameters */
   int native_priority = mrb_fixnum(priority);
 
@@ -58613,7 +57354,6 @@ mrb_GLib_g_unix_fd_source_new(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check_GIOCondition(condition);
 
-
   /* Unbox parameters */
   int native_fd = mrb_fixnum(fd);
 
@@ -58657,7 +57397,6 @@ mrb_GLib_g_unix_open_pipe(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
   TODO_type_check__GError_PTR_PTR(error);
-
 
   /* Unbox parameters */
   int * native_fds = TODO_mruby_unbox_int_PTR(fds);
@@ -58712,7 +57451,6 @@ mrb_GLib_g_unix_set_fd_nonblocking(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check__GError_PTR_PTR(error);
 
-
   /* Unbox parameters */
   int native_fd = mrb_fixnum(fd);
 
@@ -58762,7 +57500,6 @@ mrb_GLib_g_unix_signal_add(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check_int_LPAREN_PTR_RPAREN_LPAREN_void_PTR_RPAREN(handler);
   TODO_type_check_void_PTR(user_data);
-
 
   /* Unbox parameters */
   int native_signum = mrb_fixnum(signum);
@@ -58823,7 +57560,6 @@ mrb_GLib_g_unix_signal_add_full(mrb_state* mrb, mrb_value self) {
   TODO_type_check_void_PTR(user_data);
   TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_void_PTR_RPAREN(notify);
 
-
   /* Unbox parameters */
   int native_priority = mrb_fixnum(priority);
 
@@ -58872,7 +57608,6 @@ mrb_GLib_g_unix_signal_source_new(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   int native_signum = mrb_fixnum(signum);
 
@@ -58908,7 +57643,6 @@ mrb_GLib_g_unlink(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "String expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   const char * native_filename = mrb_string_value_cstr(mrb, &filename);
@@ -58949,7 +57683,6 @@ mrb_GLib_g_unsetenv(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "String expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   const char * native_variable = mrb_string_value_cstr(mrb, &variable);
@@ -58996,7 +57729,6 @@ mrb_GLib_g_uri_escape_string(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   const char * native_unescaped = mrb_string_value_cstr(mrb, &unescaped);
 
@@ -59037,7 +57769,6 @@ mrb_GLib_g_uri_list_extract_uris(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   const char * native_uri_list = mrb_string_value_cstr(mrb, &uri_list);
 
@@ -59073,7 +57804,6 @@ mrb_GLib_g_uri_parse_scheme(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "String expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   const char * native_uri = mrb_string_value_cstr(mrb, &uri);
@@ -59123,7 +57853,6 @@ mrb_GLib_g_uri_unescape_segment(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   const char * native_escaped_string = mrb_string_value_cstr(mrb, &escaped_string);
 
@@ -59170,7 +57899,6 @@ mrb_GLib_g_uri_unescape_string(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   const char * native_escaped_string = mrb_string_value_cstr(mrb, &escaped_string);
 
@@ -59208,7 +57936,6 @@ mrb_GLib_g_usleep(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   unsigned long native_microseconds = mrb_fixnum(microseconds);
@@ -59254,7 +57981,6 @@ mrb_GLib_g_utf16_to_ucs4(mrb_state* mrb, mrb_value self) {
   TODO_type_check_long_PTR(items_read);
   TODO_type_check_long_PTR(items_written);
   TODO_type_check__GError_PTR_PTR(error);
-
 
   /* Unbox parameters */
   const unsigned short * native_str = TODO_mruby_unbox_unsigned_short_PTR(str);
@@ -59312,7 +58038,6 @@ mrb_GLib_g_utf16_to_utf8(mrb_state* mrb, mrb_value self) {
   TODO_type_check_long_PTR(items_written);
   TODO_type_check__GError_PTR_PTR(error);
 
-
   /* Unbox parameters */
   const unsigned short * native_str = TODO_mruby_unbox_unsigned_short_PTR(str);
 
@@ -59363,7 +58088,6 @@ mrb_GLib_g_utf8_casefold(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   const char * native_str = mrb_string_value_cstr(mrb, &str);
 
@@ -59407,7 +58131,6 @@ mrb_GLib_g_utf8_collate(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "String expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   const char * native_str1 = mrb_string_value_cstr(mrb, &str1);
@@ -59457,7 +58180,6 @@ mrb_GLib_g_utf8_collate_key(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   const char * native_str = mrb_string_value_cstr(mrb, &str);
 
@@ -59501,7 +58223,6 @@ mrb_GLib_g_utf8_collate_key_for_filename(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   const char * native_str = mrb_string_value_cstr(mrb, &str);
@@ -59547,7 +58268,6 @@ mrb_GLib_g_utf8_find_next_char(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   const char * native_p = mrb_string_value_cstr(mrb, &p);
 
@@ -59592,7 +58312,6 @@ mrb_GLib_g_utf8_find_prev_char(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   const char * native_str = mrb_string_value_cstr(mrb, &str);
 
@@ -59630,7 +58349,6 @@ mrb_GLib_g_utf8_get_char(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "String expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   const char * native_p = mrb_string_value_cstr(mrb, &p);
@@ -59677,7 +58395,6 @@ mrb_GLib_g_utf8_get_char_validated(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   const char * native_p = mrb_string_value_cstr(mrb, &p);
@@ -59730,7 +58447,6 @@ mrb_GLib_g_utf8_normalize(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check_GNormalizeMode(mode);
 
-
   /* Unbox parameters */
   const char * native_str = mrb_string_value_cstr(mrb, &str);
 
@@ -59777,7 +58493,6 @@ mrb_GLib_g_utf8_offset_to_pointer(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   const char * native_str = mrb_string_value_cstr(mrb, &str);
 
@@ -59822,7 +58537,6 @@ mrb_GLib_g_utf8_pointer_to_offset(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   const char * native_str = mrb_string_value_cstr(mrb, &str);
 
@@ -59864,7 +58578,6 @@ mrb_GLib_g_utf8_prev_char(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "String expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   const char * native_p = mrb_string_value_cstr(mrb, &p);
@@ -59914,7 +58627,6 @@ mrb_GLib_g_utf8_strchr(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   const char * native_p = mrb_string_value_cstr(mrb, &p);
 
@@ -59961,7 +58673,6 @@ mrb_GLib_g_utf8_strdown(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   const char * native_str = mrb_string_value_cstr(mrb, &str);
 
@@ -60005,7 +58716,6 @@ mrb_GLib_g_utf8_strlen(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   const char * native_p = mrb_string_value_cstr(mrb, &p);
@@ -60060,7 +58770,6 @@ mrb_GLib_g_utf8_strncpy(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   /* WARNING: Allocating new memory to create 'char *' from 'const char *'.
@@ -60127,7 +58836,6 @@ mrb_GLib_g_utf8_strrchr(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   const char * native_p = mrb_string_value_cstr(mrb, &p);
 
@@ -60174,7 +58882,6 @@ mrb_GLib_g_utf8_strreverse(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   const char * native_str = mrb_string_value_cstr(mrb, &str);
 
@@ -60218,7 +58925,6 @@ mrb_GLib_g_utf8_strup(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   const char * native_str = mrb_string_value_cstr(mrb, &str);
@@ -60269,7 +58975,6 @@ mrb_GLib_g_utf8_substring(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   const char * native_str = mrb_string_value_cstr(mrb, &str);
@@ -60326,7 +59031,6 @@ mrb_GLib_g_utf8_to_ucs4(mrb_state* mrb, mrb_value self) {
   TODO_type_check_long_PTR(items_written);
   TODO_type_check__GError_PTR_PTR(error);
 
-
   /* Unbox parameters */
   const char * native_str = mrb_string_value_cstr(mrb, &str);
 
@@ -60379,7 +59083,6 @@ mrb_GLib_g_utf8_to_ucs4_fast(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
   TODO_type_check_long_PTR(items_written);
-
 
   /* Unbox parameters */
   const char * native_str = mrb_string_value_cstr(mrb, &str);
@@ -60436,7 +59139,6 @@ mrb_GLib_g_utf8_to_utf16(mrb_state* mrb, mrb_value self) {
   TODO_type_check_long_PTR(items_written);
   TODO_type_check__GError_PTR_PTR(error);
 
-
   /* Unbox parameters */
   const char * native_str = mrb_string_value_cstr(mrb, &str);
 
@@ -60490,7 +59192,6 @@ mrb_GLib_g_utf8_validate(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check_char_PTR_PTR(end);
 
-
   /* Unbox parameters */
   const char * native_str = mrb_string_value_cstr(mrb, &str);
 
@@ -60541,7 +59242,6 @@ mrb_GLib_g_variant_builder_add(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GVariantBuilder * native_builder = (mrb_nil_p(builder) ? NULL : mruby_unbox__GVariantBuilder(builder));
 
@@ -60582,7 +59282,6 @@ mrb_GLib_g_variant_builder_add_parsed(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "String expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GVariantBuilder * native_builder = (mrb_nil_p(builder) ? NULL : mruby_unbox__GVariantBuilder(builder));
@@ -60625,7 +59324,6 @@ mrb_GLib_g_variant_builder_add_value(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GVariantBuilder * native_builder = (mrb_nil_p(builder) ? NULL : mruby_unbox__GVariantBuilder(builder));
 
@@ -60661,7 +59359,6 @@ mrb_GLib_g_variant_builder_clear(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GVariantBuilder * native_builder = (mrb_nil_p(builder) ? NULL : mruby_unbox__GVariantBuilder(builder));
 
@@ -60695,7 +59392,6 @@ mrb_GLib_g_variant_builder_close(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GVariantBuilder * native_builder = (mrb_nil_p(builder) ? NULL : mruby_unbox__GVariantBuilder(builder));
 
@@ -60728,7 +59424,6 @@ mrb_GLib_g_variant_builder_end(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GVariantBuilder expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GVariantBuilder * native_builder = (mrb_nil_p(builder) ? NULL : mruby_unbox__GVariantBuilder(builder));
@@ -60772,7 +59467,6 @@ mrb_GLib_g_variant_builder_init(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GVariantBuilder * native_builder = (mrb_nil_p(builder) ? NULL : mruby_unbox__GVariantBuilder(builder));
 
@@ -60807,7 +59501,6 @@ mrb_GLib_g_variant_builder_new(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GVariantType expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   const struct _GVariantType * native_type = (mrb_nil_p(type) ? NULL : mruby_unbox__GVariantType(type));
@@ -60851,7 +59544,6 @@ mrb_GLib_g_variant_builder_open(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GVariantBuilder * native_builder = (mrb_nil_p(builder) ? NULL : mruby_unbox__GVariantBuilder(builder));
 
@@ -60886,7 +59578,6 @@ mrb_GLib_g_variant_builder_ref(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GVariantBuilder expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GVariantBuilder * native_builder = (mrb_nil_p(builder) ? NULL : mruby_unbox__GVariantBuilder(builder));
@@ -60924,7 +59615,6 @@ mrb_GLib_g_variant_builder_unref(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GVariantBuilder * native_builder = (mrb_nil_p(builder) ? NULL : mruby_unbox__GVariantBuilder(builder));
 
@@ -60957,7 +59647,6 @@ mrb_GLib_g_variant_byteswap(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GVariant expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GVariant * native_value = (mrb_nil_p(value) ? NULL : mruby_unbox__GVariant(value));
@@ -61007,7 +59696,6 @@ mrb_GLib_g_variant_check_format_string(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GVariant * native_value = (mrb_nil_p(value) ? NULL : mruby_unbox__GVariant(value));
 
@@ -61052,7 +59740,6 @@ mrb_GLib_g_variant_classify(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GVariant * native_value = (mrb_nil_p(value) ? NULL : mruby_unbox__GVariant(value));
 
@@ -61088,7 +59775,6 @@ mrb_GLib_g_variant_compare(mrb_state* mrb, mrb_value self) {
   /* Type checking */
   TODO_type_check_void_PTR(one);
   TODO_type_check_void_PTR(two);
-
 
   /* Unbox parameters */
   const void * native_one = TODO_mruby_unbox_void_PTR(one);
@@ -61132,7 +59818,6 @@ mrb_GLib_g_variant_dict_clear(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GVariantDict * native_dict = (mrb_nil_p(dict) ? NULL : mruby_unbox__GVariantDict(dict));
 
@@ -61171,7 +59856,6 @@ mrb_GLib_g_variant_dict_contains(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "String expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GVariantDict * native_dict = (mrb_nil_p(dict) ? NULL : mruby_unbox__GVariantDict(dict));
@@ -61215,7 +59899,6 @@ mrb_GLib_g_variant_dict_end(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GVariantDict * native_dict = (mrb_nil_p(dict) ? NULL : mruby_unbox__GVariantDict(dict));
 
@@ -61257,7 +59940,6 @@ mrb_GLib_g_variant_dict_init(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GVariant expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GVariantDict * native_dict = (mrb_nil_p(dict) ? NULL : mruby_unbox__GVariantDict(dict));
@@ -61305,7 +59987,6 @@ mrb_GLib_g_variant_dict_insert(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "String expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GVariantDict * native_dict = (mrb_nil_p(dict) ? NULL : mruby_unbox__GVariantDict(dict));
@@ -61356,7 +60037,6 @@ mrb_GLib_g_variant_dict_insert_value(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GVariantDict * native_dict = (mrb_nil_p(dict) ? NULL : mruby_unbox__GVariantDict(dict));
 
@@ -61405,7 +60085,6 @@ mrb_GLib_g_variant_dict_lookup(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "String expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GVariantDict * native_dict = (mrb_nil_p(dict) ? NULL : mruby_unbox__GVariantDict(dict));
@@ -61463,7 +60142,6 @@ mrb_GLib_g_variant_dict_lookup_value(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GVariantDict * native_dict = (mrb_nil_p(dict) ? NULL : mruby_unbox__GVariantDict(dict));
 
@@ -61504,7 +60182,6 @@ mrb_GLib_g_variant_dict_new(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GVariant * native_from_asv = (mrb_nil_p(from_asv) ? NULL : mruby_unbox__GVariant(from_asv));
 
@@ -61540,7 +60217,6 @@ mrb_GLib_g_variant_dict_ref(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GVariantDict expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GVariantDict * native_dict = (mrb_nil_p(dict) ? NULL : mruby_unbox__GVariantDict(dict));
@@ -61584,7 +60260,6 @@ mrb_GLib_g_variant_dict_remove(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GVariantDict * native_dict = (mrb_nil_p(dict) ? NULL : mruby_unbox__GVariantDict(dict));
 
@@ -61627,7 +60302,6 @@ mrb_GLib_g_variant_dict_unref(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GVariantDict * native_dict = (mrb_nil_p(dict) ? NULL : mruby_unbox__GVariantDict(dict));
 
@@ -61663,7 +60337,6 @@ mrb_GLib_g_variant_dup_bytestring(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
   TODO_type_check_unsigned_long_PTR(length);
-
 
   /* Unbox parameters */
   struct _GVariant * native_value = (mrb_nil_p(value) ? NULL : mruby_unbox__GVariant(value));
@@ -61706,7 +60379,6 @@ mrb_GLib_g_variant_dup_bytestring_array(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check_unsigned_long_PTR(length);
 
-
   /* Unbox parameters */
   struct _GVariant * native_value = (mrb_nil_p(value) ? NULL : mruby_unbox__GVariant(value));
 
@@ -61747,7 +60419,6 @@ mrb_GLib_g_variant_dup_objv(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
   TODO_type_check_unsigned_long_PTR(length);
-
 
   /* Unbox parameters */
   struct _GVariant * native_value = (mrb_nil_p(value) ? NULL : mruby_unbox__GVariant(value));
@@ -61790,7 +60461,6 @@ mrb_GLib_g_variant_dup_string(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check_unsigned_long_PTR(length);
 
-
   /* Unbox parameters */
   struct _GVariant * native_value = (mrb_nil_p(value) ? NULL : mruby_unbox__GVariant(value));
 
@@ -61832,7 +60502,6 @@ mrb_GLib_g_variant_dup_strv(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check_unsigned_long_PTR(length);
 
-
   /* Unbox parameters */
   struct _GVariant * native_value = (mrb_nil_p(value) ? NULL : mruby_unbox__GVariant(value));
 
@@ -61870,7 +60539,6 @@ mrb_GLib_g_variant_equal(mrb_state* mrb, mrb_value self) {
   /* Type checking */
   TODO_type_check_void_PTR(one);
   TODO_type_check_void_PTR(two);
-
 
   /* Unbox parameters */
   const void * native_one = TODO_mruby_unbox_void_PTR(one);
@@ -61922,7 +60590,6 @@ mrb_GLib_g_variant_format_string_scan(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
   TODO_type_check_char_PTR_PTR(endptr);
-
 
   /* Unbox parameters */
   const char * native_string = mrb_string_value_cstr(mrb, &string);
@@ -61977,7 +60644,6 @@ mrb_GLib_g_variant_format_string_scan_type(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check_char_PTR_PTR(endptr);
 
-
   /* Unbox parameters */
   const char * native_string = mrb_string_value_cstr(mrb, &string);
 
@@ -62024,7 +60690,6 @@ mrb_GLib_g_variant_get(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GVariant * native_value = (mrb_nil_p(value) ? NULL : mruby_unbox__GVariant(value));
 
@@ -62059,7 +60724,6 @@ mrb_GLib_g_variant_get_boolean(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GVariant expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GVariant * native_value = (mrb_nil_p(value) ? NULL : mruby_unbox__GVariant(value));
@@ -62101,7 +60765,6 @@ mrb_GLib_g_variant_get_byte(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GVariant * native_value = (mrb_nil_p(value) ? NULL : mruby_unbox__GVariant(value));
 
@@ -62142,7 +60805,6 @@ mrb_GLib_g_variant_get_bytestring(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GVariant * native_value = (mrb_nil_p(value) ? NULL : mruby_unbox__GVariant(value));
 
@@ -62181,7 +60843,6 @@ mrb_GLib_g_variant_get_bytestring_array(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
   TODO_type_check_unsigned_long_PTR(length);
-
 
   /* Unbox parameters */
   struct _GVariant * native_value = (mrb_nil_p(value) ? NULL : mruby_unbox__GVariant(value));
@@ -62233,7 +60894,6 @@ mrb_GLib_g_variant_get_child(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GVariant * native_value = (mrb_nil_p(value) ? NULL : mruby_unbox__GVariant(value));
 
@@ -62277,7 +60937,6 @@ mrb_GLib_g_variant_get_child_value(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GVariant * native_value = (mrb_nil_p(value) ? NULL : mruby_unbox__GVariant(value));
 
@@ -62316,7 +60975,6 @@ mrb_GLib_g_variant_get_data(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GVariant * native_value = (mrb_nil_p(value) ? NULL : mruby_unbox__GVariant(value));
 
@@ -62353,7 +61011,6 @@ mrb_GLib_g_variant_get_data_as_bytes(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GVariant * native_value = (mrb_nil_p(value) ? NULL : mruby_unbox__GVariant(value));
 
@@ -62389,7 +61046,6 @@ mrb_GLib_g_variant_get_double(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GVariant expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GVariant * native_value = (mrb_nil_p(value) ? NULL : mruby_unbox__GVariant(value));
@@ -62436,7 +61092,6 @@ mrb_GLib_g_variant_get_fixed_array(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GVariant * native_value = (mrb_nil_p(value) ? NULL : mruby_unbox__GVariant(value));
 
@@ -62476,7 +61131,6 @@ mrb_GLib_g_variant_get_handle(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GVariant expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GVariant * native_value = (mrb_nil_p(value) ? NULL : mruby_unbox__GVariant(value));
@@ -62518,7 +61172,6 @@ mrb_GLib_g_variant_get_int16(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GVariant * native_value = (mrb_nil_p(value) ? NULL : mruby_unbox__GVariant(value));
 
@@ -62558,7 +61211,6 @@ mrb_GLib_g_variant_get_int32(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GVariant expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GVariant * native_value = (mrb_nil_p(value) ? NULL : mruby_unbox__GVariant(value));
@@ -62600,7 +61252,6 @@ mrb_GLib_g_variant_get_int64(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GVariant * native_value = (mrb_nil_p(value) ? NULL : mruby_unbox__GVariant(value));
 
@@ -62641,7 +61292,6 @@ mrb_GLib_g_variant_get_maybe(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GVariant * native_value = (mrb_nil_p(value) ? NULL : mruby_unbox__GVariant(value));
 
@@ -62677,7 +61327,6 @@ mrb_GLib_g_variant_get_normal_form(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GVariant expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GVariant * native_value = (mrb_nil_p(value) ? NULL : mruby_unbox__GVariant(value));
@@ -62718,7 +61367,6 @@ mrb_GLib_g_variant_get_objv(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check_unsigned_long_PTR(length);
 
-
   /* Unbox parameters */
   struct _GVariant * native_value = (mrb_nil_p(value) ? NULL : mruby_unbox__GVariant(value));
 
@@ -62756,7 +61404,6 @@ mrb_GLib_g_variant_get_size(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GVariant expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GVariant * native_value = (mrb_nil_p(value) ? NULL : mruby_unbox__GVariant(value));
@@ -62801,7 +61448,6 @@ mrb_GLib_g_variant_get_string(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check_unsigned_long_PTR(length);
 
-
   /* Unbox parameters */
   struct _GVariant * native_value = (mrb_nil_p(value) ? NULL : mruby_unbox__GVariant(value));
 
@@ -62843,7 +61489,6 @@ mrb_GLib_g_variant_get_strv(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check_unsigned_long_PTR(length);
 
-
   /* Unbox parameters */
   struct _GVariant * native_value = (mrb_nil_p(value) ? NULL : mruby_unbox__GVariant(value));
 
@@ -62882,7 +61527,6 @@ mrb_GLib_g_variant_get_type(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GVariant * native_value = (mrb_nil_p(value) ? NULL : mruby_unbox__GVariant(value));
 
@@ -62918,7 +61562,6 @@ mrb_GLib_g_variant_get_type_info(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GVariant expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GVariant * native_value = (mrb_nil_p(value) ? NULL : mruby_unbox__GVariant(value));
@@ -62956,7 +61599,6 @@ mrb_GLib_g_variant_get_type_string(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GVariant * native_value = (mrb_nil_p(value) ? NULL : mruby_unbox__GVariant(value));
 
@@ -62992,7 +61634,6 @@ mrb_GLib_g_variant_get_uint16(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GVariant expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GVariant * native_value = (mrb_nil_p(value) ? NULL : mruby_unbox__GVariant(value));
@@ -63034,7 +61675,6 @@ mrb_GLib_g_variant_get_uint32(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GVariant * native_value = (mrb_nil_p(value) ? NULL : mruby_unbox__GVariant(value));
 
@@ -63074,7 +61714,6 @@ mrb_GLib_g_variant_get_uint64(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GVariant expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GVariant * native_value = (mrb_nil_p(value) ? NULL : mruby_unbox__GVariant(value));
@@ -63128,7 +61767,6 @@ mrb_GLib_g_variant_get_va(mrb_state* mrb, mrb_value self) {
   TODO_type_check_char_PTR_PTR(endptr);
   TODO_type_check_int_PTR(app);
 
-
   /* Unbox parameters */
   struct _GVariant * native_value = (mrb_nil_p(value) ? NULL : mruby_unbox__GVariant(value));
 
@@ -63168,7 +61806,6 @@ mrb_GLib_g_variant_get_variant(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GVariant * native_value = (mrb_nil_p(value) ? NULL : mruby_unbox__GVariant(value));
 
@@ -63201,7 +61838,6 @@ mrb_GLib_g_variant_hash(mrb_state* mrb, mrb_value self) {
 
   /* Type checking */
   TODO_type_check_void_PTR(value);
-
 
   /* Unbox parameters */
   const void * native_value = TODO_mruby_unbox_void_PTR(value);
@@ -63243,7 +61879,6 @@ mrb_GLib_g_variant_is_container(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GVariant * native_value = (mrb_nil_p(value) ? NULL : mruby_unbox__GVariant(value));
 
@@ -63283,7 +61918,6 @@ mrb_GLib_g_variant_is_floating(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GVariant expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GVariant * native_value = (mrb_nil_p(value) ? NULL : mruby_unbox__GVariant(value));
@@ -63325,7 +61959,6 @@ mrb_GLib_g_variant_is_normal_form(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GVariant * native_value = (mrb_nil_p(value) ? NULL : mruby_unbox__GVariant(value));
 
@@ -63365,7 +61998,6 @@ mrb_GLib_g_variant_is_object_path(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "String expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   const char * native_string = mrb_string_value_cstr(mrb, &string);
@@ -63413,7 +62045,6 @@ mrb_GLib_g_variant_is_of_type(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GVariant * native_value = (mrb_nil_p(value) ? NULL : mruby_unbox__GVariant(value));
 
@@ -63456,7 +62087,6 @@ mrb_GLib_g_variant_is_signature(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   const char * native_string = mrb_string_value_cstr(mrb, &string);
 
@@ -63496,7 +62126,6 @@ mrb_GLib_g_variant_is_trusted(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GVariant expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GVariant * native_value = (mrb_nil_p(value) ? NULL : mruby_unbox__GVariant(value));
@@ -63538,7 +62167,6 @@ mrb_GLib_g_variant_iter_copy(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GVariantIter * native_iter = (mrb_nil_p(iter) ? NULL : mruby_unbox__GVariantIter(iter));
 
@@ -63574,7 +62202,6 @@ mrb_GLib_g_variant_iter_free(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GVariantIter expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GVariantIter * native_iter = (mrb_nil_p(iter) ? NULL : mruby_unbox__GVariantIter(iter));
@@ -63614,7 +62241,6 @@ mrb_GLib_g_variant_iter_init(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GVariant expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GVariantIter * native_iter = (mrb_nil_p(iter) ? NULL : mruby_unbox__GVariantIter(iter));
@@ -63664,7 +62290,6 @@ mrb_GLib_g_variant_iter_loop(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GVariantIter * native_iter = (mrb_nil_p(iter) ? NULL : mruby_unbox__GVariantIter(iter));
 
@@ -63707,7 +62332,6 @@ mrb_GLib_g_variant_iter_n_children(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GVariantIter * native_iter = (mrb_nil_p(iter) ? NULL : mruby_unbox__GVariantIter(iter));
 
@@ -63747,7 +62371,6 @@ mrb_GLib_g_variant_iter_new(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GVariant expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GVariant * native_value = (mrb_nil_p(value) ? NULL : mruby_unbox__GVariant(value));
@@ -63791,7 +62414,6 @@ mrb_GLib_g_variant_iter_next(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GVariantIter * native_iter = (mrb_nil_p(iter) ? NULL : mruby_unbox__GVariantIter(iter));
 
@@ -63833,7 +62455,6 @@ mrb_GLib_g_variant_iter_next_value(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GVariantIter expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GVariantIter * native_iter = (mrb_nil_p(iter) ? NULL : mruby_unbox__GVariantIter(iter));
@@ -63882,7 +62503,6 @@ mrb_GLib_g_variant_lookup(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "String expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GVariant * native_dictionary = (mrb_nil_p(dictionary) ? NULL : mruby_unbox__GVariant(dictionary));
@@ -63940,7 +62560,6 @@ mrb_GLib_g_variant_lookup_value(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GVariant * native_dictionary = (mrb_nil_p(dictionary) ? NULL : mruby_unbox__GVariant(dictionary));
 
@@ -63981,7 +62600,6 @@ mrb_GLib_g_variant_n_children(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GVariant * native_value = (mrb_nil_p(value) ? NULL : mruby_unbox__GVariant(value));
 
@@ -64021,7 +62639,6 @@ mrb_GLib_g_variant_new(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "String expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   const char * native_format_string = mrb_string_value_cstr(mrb, &format_string);
@@ -64068,7 +62685,6 @@ mrb_GLib_g_variant_new_array(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   const struct _GVariantType * native_child_type = (mrb_nil_p(child_type) ? NULL : mruby_unbox__GVariantType(child_type));
 
@@ -64109,7 +62725,6 @@ mrb_GLib_g_variant_new_boolean(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   int native_value = mrb_fixnum(value);
 
@@ -64146,7 +62761,6 @@ mrb_GLib_g_variant_new_byte(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   unsigned char native_value = mrb_fixnum(value);
 
@@ -64182,7 +62796,6 @@ mrb_GLib_g_variant_new_bytestring(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "String expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   const char * native_string = mrb_string_value_cstr(mrb, &string);
@@ -64222,7 +62835,6 @@ mrb_GLib_g_variant_new_bytestring_array(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   const char *const * native_strv = TODO_mruby_unbox_char_PTR_const_PTR(strv);
@@ -64268,7 +62880,6 @@ mrb_GLib_g_variant_new_dict_entry(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GVariant * native_key = (mrb_nil_p(key) ? NULL : mruby_unbox__GVariant(key));
 
@@ -64306,7 +62917,6 @@ mrb_GLib_g_variant_new_double(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Float expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   double native_value = mrb_float(value);
@@ -64358,7 +62968,6 @@ mrb_GLib_g_variant_new_fixed_array(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   const struct _GVariantType * native_element_type = (mrb_nil_p(element_type) ? NULL : mruby_unbox__GVariantType(element_type));
@@ -64414,7 +63023,6 @@ mrb_GLib_g_variant_new_from_bytes(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   const struct _GVariantType * native_type = (mrb_nil_p(type) ? NULL : mruby_unbox__GVariantType(type));
 
@@ -64469,7 +63077,6 @@ mrb_GLib_g_variant_new_from_children(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   const struct _GVariantType * native_type = (mrb_nil_p(type) ? NULL : mruby_unbox__GVariantType(type));
@@ -64534,7 +63141,6 @@ mrb_GLib_g_variant_new_from_data(mrb_state* mrb, mrb_value self) {
   TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_void_PTR_RPAREN(notify);
   TODO_type_check_void_PTR(user_data);
 
-
   /* Unbox parameters */
   const struct _GVariantType * native_type = (mrb_nil_p(type) ? NULL : mruby_unbox__GVariantType(type));
 
@@ -64581,7 +63187,6 @@ mrb_GLib_g_variant_new_handle(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   int native_value = mrb_fixnum(value);
 
@@ -64617,7 +63222,6 @@ mrb_GLib_g_variant_new_int16(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   short native_value = mrb_fixnum(value);
@@ -64655,7 +63259,6 @@ mrb_GLib_g_variant_new_int32(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   int native_value = mrb_fixnum(value);
 
@@ -64691,7 +63294,6 @@ mrb_GLib_g_variant_new_int64(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   long native_value = mrb_fixnum(value);
@@ -64735,7 +63337,6 @@ mrb_GLib_g_variant_new_maybe(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   const struct _GVariantType * native_child_type = (mrb_nil_p(child_type) ? NULL : mruby_unbox__GVariantType(child_type));
 
@@ -64773,7 +63374,6 @@ mrb_GLib_g_variant_new_object_path(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "String expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   const char * native_object_path = mrb_string_value_cstr(mrb, &object_path);
@@ -64814,7 +63414,6 @@ mrb_GLib_g_variant_new_objv(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   const char *const * native_strv = TODO_mruby_unbox_char_PTR_const_PTR(strv);
 
@@ -64852,7 +63451,6 @@ mrb_GLib_g_variant_new_parsed(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "String expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   const char * native_format = mrb_string_value_cstr(mrb, &format);
@@ -64893,7 +63491,6 @@ mrb_GLib_g_variant_new_parsed_va(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check_int_PTR(app);
 
-
   /* Unbox parameters */
   const char * native_format = mrb_string_value_cstr(mrb, &format);
 
@@ -64932,7 +63529,6 @@ mrb_GLib_g_variant_new_printf(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   const char * native_format_string = mrb_string_value_cstr(mrb, &format_string);
 
@@ -64969,7 +63565,6 @@ mrb_GLib_g_variant_new_signature(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   const char * native_signature = mrb_string_value_cstr(mrb, &signature);
 
@@ -65005,7 +63600,6 @@ mrb_GLib_g_variant_new_string(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "String expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   const char * native_string = mrb_string_value_cstr(mrb, &string);
@@ -65046,7 +63640,6 @@ mrb_GLib_g_variant_new_strv(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   const char *const * native_strv = TODO_mruby_unbox_char_PTR_const_PTR(strv);
 
@@ -65084,7 +63677,6 @@ mrb_GLib_g_variant_new_take_string(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "String expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   /* WARNING: Allocating new memory to create 'char *' from 'const char *'.
@@ -65138,7 +63730,6 @@ mrb_GLib_g_variant_new_tuple(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GVariant *const * native_children = TODO_mruby_unbox__GVariant_PTR_PTR(children);
 
@@ -65177,7 +63768,6 @@ mrb_GLib_g_variant_new_uint16(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   unsigned short native_value = mrb_fixnum(value);
 
@@ -65214,7 +63804,6 @@ mrb_GLib_g_variant_new_uint32(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   unsigned int native_value = mrb_fixnum(value);
 
@@ -65250,7 +63839,6 @@ mrb_GLib_g_variant_new_uint64(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   unsigned long native_value = mrb_fixnum(value);
@@ -65294,7 +63882,6 @@ mrb_GLib_g_variant_new_va(mrb_state* mrb, mrb_value self) {
   TODO_type_check_char_PTR_PTR(endptr);
   TODO_type_check_int_PTR(app);
 
-
   /* Unbox parameters */
   const char * native_format_string = mrb_string_value_cstr(mrb, &format_string);
 
@@ -65334,7 +63921,6 @@ mrb_GLib_g_variant_new_variant(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GVariant expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GVariant * native_value = (mrb_nil_p(value) ? NULL : mruby_unbox__GVariant(value));
@@ -65390,7 +63976,6 @@ mrb_GLib_g_variant_parse(mrb_state* mrb, mrb_value self) {
   TODO_type_check_char_PTR_PTR(endptr);
   TODO_type_check__GError_PTR_PTR(error);
 
-
   /* Unbox parameters */
   const struct _GVariantType * native_type = (mrb_nil_p(type) ? NULL : mruby_unbox__GVariantType(type));
 
@@ -65440,7 +64025,6 @@ mrb_GLib_g_variant_parse_error_print_context(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "String expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GError * native_error = (mrb_nil_p(error) ? NULL : mruby_unbox__GError(error));
@@ -65534,7 +64118,6 @@ mrb_GLib_g_variant_print(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GVariant * native_value = (mrb_nil_p(value) ? NULL : mruby_unbox__GVariant(value));
 
@@ -65585,7 +64168,6 @@ mrb_GLib_g_variant_print_string(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GVariant * native_value = (mrb_nil_p(value) ? NULL : mruby_unbox__GVariant(value));
 
@@ -65626,7 +64208,6 @@ mrb_GLib_g_variant_ref(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GVariant * native_value = (mrb_nil_p(value) ? NULL : mruby_unbox__GVariant(value));
 
@@ -65663,7 +64244,6 @@ mrb_GLib_g_variant_ref_sink(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GVariant * native_value = (mrb_nil_p(value) ? NULL : mruby_unbox__GVariant(value));
 
@@ -65699,7 +64279,6 @@ mrb_GLib_g_variant_serialised_byteswap(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GVariantSerialised expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   GVariantSerialised native_value = *(mruby_unbox_GVariantSerialised(value));
@@ -65739,7 +64318,6 @@ mrb_GLib_g_variant_serialised_get_child(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   GVariantSerialised native_container = *(mruby_unbox_GVariantSerialised(container));
@@ -65784,7 +64362,6 @@ mrb_GLib_g_variant_serialised_is_normal(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   GVariantSerialised native_value = *(mruby_unbox_GVariantSerialised(value));
 
@@ -65824,7 +64401,6 @@ mrb_GLib_g_variant_serialised_n_children(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GVariantSerialised expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   GVariantSerialised native_container = *(mruby_unbox_GVariantSerialised(container));
@@ -65868,7 +64444,6 @@ mrb_GLib_g_variant_serialiser_is_object_path(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   const void * native_data = TODO_mruby_unbox_void_PTR(data);
@@ -65915,7 +64490,6 @@ mrb_GLib_g_variant_serialiser_is_signature(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   const void * native_data = TODO_mruby_unbox_void_PTR(data);
 
@@ -65960,7 +64534,6 @@ mrb_GLib_g_variant_serialiser_is_string(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   const void * native_data = TODO_mruby_unbox_void_PTR(data);
@@ -66015,7 +64588,6 @@ mrb_GLib_g_variant_serialiser_needed_size(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GVariantTypeInfo * native_info = (mrb_nil_p(info) ? NULL : mruby_unbox__GVariantTypeInfo(info));
@@ -66075,7 +64647,6 @@ mrb_GLib_g_variant_serialiser_serialise(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   GVariantSerialised native_container = *(mruby_unbox_GVariantSerialised(container));
 
@@ -66118,7 +64689,6 @@ mrb_GLib_g_variant_store(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check_void_PTR(data);
 
-
   /* Unbox parameters */
   struct _GVariant * native_value = (mrb_nil_p(value) ? NULL : mruby_unbox__GVariant(value));
 
@@ -66153,7 +64723,6 @@ mrb_GLib_g_variant_take_ref(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GVariant expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GVariant * native_value = (mrb_nil_p(value) ? NULL : mruby_unbox__GVariant(value));
@@ -66191,7 +64760,6 @@ mrb_GLib_g_variant_type_checked_(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   const char * native_arg1 = mrb_string_value_cstr(mrb, &arg1);
 
@@ -66227,7 +64795,6 @@ mrb_GLib_g_variant_type_copy(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GVariantType expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   const struct _GVariantType * native_type = (mrb_nil_p(type) ? NULL : mruby_unbox__GVariantType(type));
@@ -66265,7 +64832,6 @@ mrb_GLib_g_variant_type_dup_string(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   const struct _GVariantType * native_type = (mrb_nil_p(type) ? NULL : mruby_unbox__GVariantType(type));
 
@@ -66302,7 +64868,6 @@ mrb_GLib_g_variant_type_element(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   const struct _GVariantType * native_type = (mrb_nil_p(type) ? NULL : mruby_unbox__GVariantType(type));
 
@@ -66338,7 +64903,6 @@ mrb_GLib_g_variant_type_equal(mrb_state* mrb, mrb_value self) {
   /* Type checking */
   TODO_type_check_void_PTR(type1);
   TODO_type_check_void_PTR(type2);
-
 
   /* Unbox parameters */
   const void * native_type1 = TODO_mruby_unbox_void_PTR(type1);
@@ -66382,7 +64946,6 @@ mrb_GLib_g_variant_type_first(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   const struct _GVariantType * native_type = (mrb_nil_p(type) ? NULL : mruby_unbox__GVariantType(type));
 
@@ -66419,7 +64982,6 @@ mrb_GLib_g_variant_type_free(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GVariantType * native_type = (mrb_nil_p(type) ? NULL : mruby_unbox__GVariantType(type));
 
@@ -66452,7 +65014,6 @@ mrb_GLib_g_variant_type_get_string_length(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GVariantType expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   const struct _GVariantType * native_type = (mrb_nil_p(type) ? NULL : mruby_unbox__GVariantType(type));
@@ -66490,7 +65051,6 @@ mrb_GLib_g_variant_type_hash(mrb_state* mrb, mrb_value self) {
 
   /* Type checking */
   TODO_type_check_void_PTR(type);
-
 
   /* Unbox parameters */
   const void * native_type = TODO_mruby_unbox_void_PTR(type);
@@ -66549,7 +65109,6 @@ mrb_GLib_g_variant_type_info_element(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GVariantTypeInfo * native_typeinfo = (mrb_nil_p(typeinfo) ? NULL : mruby_unbox__GVariantTypeInfo(typeinfo));
 
@@ -66586,7 +65145,6 @@ mrb_GLib_g_variant_type_info_get(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   const struct _GVariantType * native_type = (mrb_nil_p(type) ? NULL : mruby_unbox__GVariantType(type));
 
@@ -66622,7 +65180,6 @@ mrb_GLib_g_variant_type_info_get_type_string(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GVariantTypeInfo expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GVariantTypeInfo * native_typeinfo = (mrb_nil_p(typeinfo) ? NULL : mruby_unbox__GVariantTypeInfo(typeinfo));
@@ -66666,7 +65223,6 @@ mrb_GLib_g_variant_type_info_member_info(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GVariantTypeInfo * native_typeinfo = (mrb_nil_p(typeinfo) ? NULL : mruby_unbox__GVariantTypeInfo(typeinfo));
 
@@ -66704,7 +65260,6 @@ mrb_GLib_g_variant_type_info_n_members(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GVariantTypeInfo expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GVariantTypeInfo * native_typeinfo = (mrb_nil_p(typeinfo) ? NULL : mruby_unbox__GVariantTypeInfo(typeinfo));
@@ -66752,7 +65307,6 @@ mrb_GLib_g_variant_type_info_query(mrb_state* mrb, mrb_value self) {
   TODO_type_check_unsigned_int_PTR(alignment);
   TODO_type_check_unsigned_long_PTR(size);
 
-
   /* Unbox parameters */
   struct _GVariantTypeInfo * native_typeinfo = (mrb_nil_p(typeinfo) ? NULL : mruby_unbox__GVariantTypeInfo(typeinfo));
 
@@ -66796,7 +65350,6 @@ mrb_GLib_g_variant_type_info_query_element(mrb_state* mrb, mrb_value self) {
   TODO_type_check_unsigned_int_PTR(alignment);
   TODO_type_check_unsigned_long_PTR(size);
 
-
   /* Unbox parameters */
   struct _GVariantTypeInfo * native_typeinfo = (mrb_nil_p(typeinfo) ? NULL : mruby_unbox__GVariantTypeInfo(typeinfo));
 
@@ -66834,7 +65387,6 @@ mrb_GLib_g_variant_type_info_ref(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GVariantTypeInfo * native_typeinfo = (mrb_nil_p(typeinfo) ? NULL : mruby_unbox__GVariantTypeInfo(typeinfo));
 
@@ -66871,7 +65423,6 @@ mrb_GLib_g_variant_type_info_unref(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GVariantTypeInfo * native_typeinfo = (mrb_nil_p(typeinfo) ? NULL : mruby_unbox__GVariantTypeInfo(typeinfo));
 
@@ -66904,7 +65455,6 @@ mrb_GLib_g_variant_type_is_array(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GVariantType expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   const struct _GVariantType * native_type = (mrb_nil_p(type) ? NULL : mruby_unbox__GVariantType(type));
@@ -66946,7 +65496,6 @@ mrb_GLib_g_variant_type_is_basic(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   const struct _GVariantType * native_type = (mrb_nil_p(type) ? NULL : mruby_unbox__GVariantType(type));
 
@@ -66986,7 +65535,6 @@ mrb_GLib_g_variant_type_is_container(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GVariantType expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   const struct _GVariantType * native_type = (mrb_nil_p(type) ? NULL : mruby_unbox__GVariantType(type));
@@ -67028,7 +65576,6 @@ mrb_GLib_g_variant_type_is_definite(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   const struct _GVariantType * native_type = (mrb_nil_p(type) ? NULL : mruby_unbox__GVariantType(type));
 
@@ -67069,7 +65616,6 @@ mrb_GLib_g_variant_type_is_dict_entry(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   const struct _GVariantType * native_type = (mrb_nil_p(type) ? NULL : mruby_unbox__GVariantType(type));
 
@@ -67109,7 +65655,6 @@ mrb_GLib_g_variant_type_is_maybe(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GVariantType expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   const struct _GVariantType * native_type = (mrb_nil_p(type) ? NULL : mruby_unbox__GVariantType(type));
@@ -67157,7 +65702,6 @@ mrb_GLib_g_variant_type_is_subtype_of(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   const struct _GVariantType * native_type = (mrb_nil_p(type) ? NULL : mruby_unbox__GVariantType(type));
 
@@ -67200,7 +65744,6 @@ mrb_GLib_g_variant_type_is_tuple(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   const struct _GVariantType * native_type = (mrb_nil_p(type) ? NULL : mruby_unbox__GVariantType(type));
 
@@ -67240,7 +65783,6 @@ mrb_GLib_g_variant_type_is_variant(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GVariantType expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   const struct _GVariantType * native_type = (mrb_nil_p(type) ? NULL : mruby_unbox__GVariantType(type));
@@ -67282,7 +65824,6 @@ mrb_GLib_g_variant_type_key(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   const struct _GVariantType * native_type = (mrb_nil_p(type) ? NULL : mruby_unbox__GVariantType(type));
 
@@ -67318,7 +65859,6 @@ mrb_GLib_g_variant_type_n_items(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GVariantType expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   const struct _GVariantType * native_type = (mrb_nil_p(type) ? NULL : mruby_unbox__GVariantType(type));
@@ -67360,7 +65900,6 @@ mrb_GLib_g_variant_type_new(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   const char * native_type_string = mrb_string_value_cstr(mrb, &type_string);
 
@@ -67396,7 +65935,6 @@ mrb_GLib_g_variant_type_new_array(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GVariantType expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   const struct _GVariantType * native_element = (mrb_nil_p(element) ? NULL : mruby_unbox__GVariantType(element));
@@ -67440,7 +65978,6 @@ mrb_GLib_g_variant_type_new_dict_entry(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   const struct _GVariantType * native_key = (mrb_nil_p(key) ? NULL : mruby_unbox__GVariantType(key));
 
@@ -67478,7 +66015,6 @@ mrb_GLib_g_variant_type_new_maybe(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GVariantType expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   const struct _GVariantType * native_element = (mrb_nil_p(element) ? NULL : mruby_unbox__GVariantType(element));
@@ -67519,7 +66055,6 @@ mrb_GLib_g_variant_type_new_tuple(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   const struct _GVariantType *const * native_items = TODO_mruby_unbox__GVariantType_PTR_const_PTR(items);
 
@@ -67558,7 +66093,6 @@ mrb_GLib_g_variant_type_next(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   const struct _GVariantType * native_type = (mrb_nil_p(type) ? NULL : mruby_unbox__GVariantType(type));
 
@@ -67595,7 +66129,6 @@ mrb_GLib_g_variant_type_peek_string(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   const struct _GVariantType * native_type = (mrb_nil_p(type) ? NULL : mruby_unbox__GVariantType(type));
 
@@ -67631,7 +66164,6 @@ mrb_GLib_g_variant_type_string_is_valid(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "String expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   const char * native_type_string = mrb_string_value_cstr(mrb, &type_string);
@@ -67682,7 +66214,6 @@ mrb_GLib_g_variant_type_string_scan(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check_char_PTR_PTR(endptr);
 
-
   /* Unbox parameters */
   const char * native_string = mrb_string_value_cstr(mrb, &string);
 
@@ -67727,7 +66258,6 @@ mrb_GLib_g_variant_type_value(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   const struct _GVariantType * native_type = (mrb_nil_p(type) ? NULL : mruby_unbox__GVariantType(type));
 
@@ -67763,7 +66293,6 @@ mrb_GLib_g_variant_unref(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GVariant expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GVariant * native_value = (mrb_nil_p(value) ? NULL : mruby_unbox__GVariant(value));
@@ -67803,7 +66332,6 @@ mrb_GLib_g_vasprintf(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
   TODO_type_check___va_list_tag_[1](args);
-
 
   /* Unbox parameters */
   char ** native_string = TODO_mruby_unbox_char_PTR_PTR(string);
@@ -67855,7 +66383,6 @@ mrb_GLib_g_vfprintf(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check___va_list_tag_[1](args);
 
-
   /* Unbox parameters */
   struct __sFILE * native_file = TODO_mruby_unbox___sFILE_PTR(file);
 
@@ -67902,7 +66429,6 @@ mrb_GLib_g_vprintf(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
   TODO_type_check___va_list_tag_[1](args);
-
 
   /* Unbox parameters */
   const char * native_format = mrb_string_value_cstr(mrb, &format);
@@ -67963,7 +66489,6 @@ mrb_GLib_g_vsnprintf(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   /* WARNING: Allocating new memory to create 'char *' from 'const char *'.
@@ -68033,7 +66558,6 @@ mrb_GLib_g_vsprintf(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check___va_list_tag_[1](args);
 
-
   /* Unbox parameters */
   /* WARNING: Allocating new memory to create 'char *' from 'const char *'.
    *          Please verify that this memory is cleaned up correctly.
@@ -68091,7 +66615,6 @@ mrb_GLib_g_wakeup_acknowledge(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct _GWakeup * native_wakeup = (mrb_nil_p(wakeup) ? NULL : mruby_unbox__GWakeup(wakeup));
 
@@ -68124,7 +66647,6 @@ mrb_GLib_g_wakeup_free(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GWakeup expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GWakeup * native_wakeup = (mrb_nil_p(wakeup) ? NULL : mruby_unbox__GWakeup(wakeup));
@@ -68164,7 +66686,6 @@ mrb_GLib_g_wakeup_get_pollfd(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GPollFD expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GWakeup * native_wakeup = (mrb_nil_p(wakeup) ? NULL : mruby_unbox__GWakeup(wakeup));
@@ -68220,7 +66741,6 @@ mrb_GLib_g_wakeup_signal(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GWakeup expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct _GWakeup * native_wakeup = (mrb_nil_p(wakeup) ? NULL : mruby_unbox__GWakeup(wakeup));
@@ -68278,7 +66798,6 @@ mrb_GLib_g_warn_message(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "String expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   const char * native_domain = mrb_string_value_cstr(mrb, &domain);
@@ -68352,7 +66871,6 @@ mrb_GLib_glib_check_version(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   unsigned int native_required_major = mrb_fixnum(required_major);
@@ -68462,7 +66980,6 @@ mrb_GLib_pack_table(mrb_state* mrb, mrb_value self) {
   }
   TODO_type_check_int_PTR(out);
 
-
   /* Unbox parameters */
   const int * native_base = TODO_mruby_unbox_int_PTR(base);
 
@@ -68535,7 +67052,6 @@ mrb_GLib_printf_parse(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   const char * native_format = mrb_string_value_cstr(mrb, &format);
 
@@ -68594,7 +67110,6 @@ mrb_GLib_vasnprintf(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   /* WARNING: Allocating new memory to create 'char *' from 'const char *'.
@@ -68657,7 +67172,6 @@ mrb_GLib_xmax(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   unsigned long native_size1 = mrb_fixnum(size1);
 
@@ -68705,7 +67219,6 @@ mrb_GLib_xsum(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   unsigned long native_size1 = mrb_fixnum(size1);
@@ -68760,7 +67273,6 @@ mrb_GLib_xsum3(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   unsigned long native_size1 = mrb_fixnum(size1);
@@ -68823,7 +67335,6 @@ mrb_GLib_xsum4(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   unsigned long native_size1 = mrb_fixnum(size1);
