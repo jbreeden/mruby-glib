@@ -6,7 +6,6 @@ TODO_mruby_box_GLogFunc
 TODO_mruby_box_GMutexLocker_PTR
 TODO_mruby_box_GPollFunc
 TODO_mruby_box_GPrintFunc
-TODO_mruby_box_GQuark
 TODO_mruby_box_GTimeSpan
 TODO_mruby_box_GTokenValue
 TODO_mruby_box_gboolean_PTR

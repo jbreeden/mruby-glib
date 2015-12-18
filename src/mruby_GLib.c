@@ -3614,7 +3614,11 @@ mrb_GLib_g_bookmark_file_error_quark(mrb_state* mrb, mrb_value self) {
   GQuark native_return_value = g_bookmark_file_error_quark();
 
   /* Box the return value */
-  mrb_value return_value = TODO_mruby_box_GQuark(mrb, native_return_value);
+  if (native_return_value > MRB_INT_MAX) {
+    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
+    return mrb_nil_value();
+  }
+  mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
 }
@@ -7363,7 +7367,11 @@ mrb_GLib_g_convert_error_quark(mrb_state* mrb, mrb_value self) {
   GQuark native_return_value = g_convert_error_quark();
 
   /* Box the return value */
-  mrb_value return_value = TODO_mruby_box_GQuark(mrb, native_return_value);
+  if (native_return_value > MRB_INT_MAX) {
+    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
+    return mrb_nil_value();
+  }
+  mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
 }
@@ -12341,7 +12349,11 @@ mrb_GLib_g_file_error_quark(mrb_state* mrb, mrb_value self) {
   GQuark native_return_value = g_file_error_quark();
 
   /* Box the return value */
-  mrb_value return_value = TODO_mruby_box_GQuark(mrb, native_return_value);
+  if (native_return_value > MRB_INT_MAX) {
+    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
+    return mrb_nil_value();
+  }
+  mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
 }
@@ -16696,7 +16708,11 @@ mrb_GLib_g_io_channel_error_quark(mrb_state* mrb, mrb_value self) {
   GQuark native_return_value = g_io_channel_error_quark();
 
   /* Box the return value */
-  mrb_value return_value = TODO_mruby_box_GQuark(mrb, native_return_value);
+  if (native_return_value > MRB_INT_MAX) {
+    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
+    return mrb_nil_value();
+  }
+  mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
 }
@@ -18124,7 +18140,11 @@ mrb_GLib_g_key_file_error_quark(mrb_state* mrb, mrb_value self) {
   GQuark native_return_value = g_key_file_error_quark();
 
   /* Box the return value */
-  mrb_value return_value = TODO_mruby_box_GQuark(mrb, native_return_value);
+  if (native_return_value > MRB_INT_MAX) {
+    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
+    return mrb_nil_value();
+  }
+  mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
 }
@@ -23594,7 +23614,11 @@ mrb_GLib_g_markup_error_quark(mrb_state* mrb, mrb_value self) {
   GQuark native_return_value = g_markup_error_quark();
 
   /* Box the return value */
-  mrb_value return_value = TODO_mruby_box_GQuark(mrb, native_return_value);
+  if (native_return_value > MRB_INT_MAX) {
+    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
+    return mrb_nil_value();
+  }
+  mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
 }
@@ -27324,7 +27348,11 @@ mrb_GLib_g_option_error_quark(mrb_state* mrb, mrb_value self) {
   GQuark native_return_value = g_option_error_quark();
 
   /* Box the return value */
-  mrb_value return_value = TODO_mruby_box_GQuark(mrb, native_return_value);
+  if (native_return_value > MRB_INT_MAX) {
+    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
+    return mrb_nil_value();
+  }
+  mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
 }
@@ -29247,7 +29275,11 @@ mrb_GLib_g_quark_from_static_string(mrb_state* mrb, mrb_value self) {
   GQuark native_return_value = g_quark_from_static_string(native_string);
 
   /* Box the return value */
-  mrb_value return_value = TODO_mruby_box_GQuark(mrb, native_return_value);
+  if (native_return_value > MRB_INT_MAX) {
+    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
+    return mrb_nil_value();
+  }
+  mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
 }
@@ -29273,7 +29305,11 @@ mrb_GLib_g_quark_from_string(mrb_state* mrb, mrb_value self) {
   GQuark native_return_value = g_quark_from_string(native_string);
 
   /* Box the return value */
-  mrb_value return_value = TODO_mruby_box_GQuark(mrb, native_return_value);
+  if (native_return_value > MRB_INT_MAX) {
+    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
+    return mrb_nil_value();
+  }
+  mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
 }
@@ -29325,7 +29361,11 @@ mrb_GLib_g_quark_try_string(mrb_state* mrb, mrb_value self) {
   GQuark native_return_value = g_quark_try_string(native_string);
 
   /* Box the return value */
-  mrb_value return_value = TODO_mruby_box_GQuark(mrb, native_return_value);
+  if (native_return_value > MRB_INT_MAX) {
+    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
+    return mrb_nil_value();
+  }
+  mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
 }
@@ -31638,7 +31678,11 @@ mrb_GLib_g_regex_error_quark(mrb_state* mrb, mrb_value self) {
   GQuark native_return_value = g_regex_error_quark();
 
   /* Box the return value */
-  mrb_value return_value = TODO_mruby_box_GQuark(mrb, native_return_value);
+  if (native_return_value > MRB_INT_MAX) {
+    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
+    return mrb_nil_value();
+  }
+  mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
 }
@@ -35501,7 +35545,11 @@ mrb_GLib_g_shell_error_quark(mrb_state* mrb, mrb_value self) {
   GQuark native_return_value = g_shell_error_quark();
 
   /* Box the return value */
-  mrb_value return_value = TODO_mruby_box_GQuark(mrb, native_return_value);
+  if (native_return_value > MRB_INT_MAX) {
+    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
+    return mrb_nil_value();
+  }
+  mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
 }
@@ -38667,7 +38715,11 @@ mrb_GLib_g_spawn_error_quark(mrb_state* mrb, mrb_value self) {
   GQuark native_return_value = g_spawn_error_quark();
 
   /* Box the return value */
-  mrb_value return_value = TODO_mruby_box_GQuark(mrb, native_return_value);
+  if (native_return_value > MRB_INT_MAX) {
+    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
+    return mrb_nil_value();
+  }
+  mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
 }
@@ -38687,14 +38739,18 @@ mrb_GLib_g_spawn_exit_error_quark(mrb_state* mrb, mrb_value self) {
   GQuark native_return_value = g_spawn_exit_error_quark();
 
   /* Box the return value */
-  mrb_value return_value = TODO_mruby_box_GQuark(mrb, native_return_value);
+  if (native_return_value > MRB_INT_MAX) {
+    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
+    return mrb_nil_value();
+  }
+  mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
 }
 #endif
 
 #if BIND_g_spawn_sync_FUNCTION
-#define g_spawn_sync_REQUIRED_ARGC 9
+#define g_spawn_sync_REQUIRED_ARGC 6
 #define g_spawn_sync_OPTIONAL_ARGC 0
 /* g_spawn_sync
  *
@@ -38705,9 +38761,6 @@ mrb_GLib_g_spawn_exit_error_quark(mrb_state* mrb, mrb_value self) {
  * - flags: GSpawnFlags
  * - child_setup: void (*)(void *)
  * - user_data: void *
- * - standard_output: char **
- * - standard_error: char **
- * - exit_status: int *
  * Return Type: gboolean
  */
 mrb_value
@@ -38719,40 +38772,51 @@ mrb_GLib_g_spawn_sync(mrb_state* mrb, mrb_value self) {
   GSpawnFlags native_flags;
   mrb_value child_setup;
   mrb_value user_data;
-  mrb_value standard_output;
-  mrb_value standard_error;
-  mrb_value exit_status;
+  char * native_standard_output = NULL;
+  char * native_standard_error = NULL;
+  int native_exit_status;
   struct GError * native_error = NULL;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "z!ooiooooo", &native_working_directory, &argv, &envp, &native_flags, &child_setup, &user_data, &standard_output, &standard_error, &exit_status);
-
-  /* Type checking */
-  TODO_type_check_char_PTR_PTR(argv);
-  TODO_type_check_char_PTR_PTR(envp);
-  TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_void_PTR_RPAREN(child_setup);
-  TODO_type_check_void_PTR(user_data);
-  TODO_type_check_char_PTR_PTR(standard_output);
-  TODO_type_check_char_PTR_PTR(standard_error);
-  TODO_type_check_int_PTR(exit_status);
+  mrb_get_args(mrb, "z!A!A!ioo", &native_working_directory, &argv, &envp, &native_flags, &child_setup, &user_data);
 
   /* Unbox parameters */
-  char ** native_argv = TODO_mruby_unbox_char_PTR_PTR(argv);
+  char ** native_argv = NULL;
+  do {
+    if (mrb_nil_p(argv)) {
+      native_argv = NULL;
+    } else {
+      int len = mrb_ary_len(mrb, argv);
+      native_argv = (char**)calloc((len + 1), sizeof(char*));
+      for (int i = 0; i < len; i++) {
+        mrb_value str = mrb_ary_ref(mrb, argv, i);
+        native_argv[i] = mrb_string_value_cstr(mrb, &str);
+      }
+      native_argv[len] = NULL;
+    }
+  } while (0);
 
-  char ** native_envp = TODO_mruby_unbox_char_PTR_PTR(envp);
+  char ** native_envp = NULL;
+  do {
+    if (mrb_nil_p(envp)) {
+      native_envp = NULL;
+    } else {
+      int len = mrb_ary_len(mrb, envp);
+      native_envp = (char**)calloc((len + 1), sizeof(char*));
+      for (int i = 0; i < len; i++) {
+        mrb_value str = mrb_ary_ref(mrb, envp, i);
+        native_envp[i] = mrb_string_value_cstr(mrb, &str);
+      }
+      native_envp[len] = NULL;
+    }
+  } while (0);
 
-  void (*native_child_setup)(void *) = TODO_mruby_unbox_void_LPAREN_PTR_RPAREN_LPAREN_void_PTR_RPAREN(child_setup);
+  void * native_child_setup = NULL; /* Unused parameter */
 
-  void * native_user_data = TODO_mruby_unbox_void_PTR(user_data);
-
-  char ** native_standard_output = TODO_mruby_unbox_char_PTR_PTR(standard_output);
-
-  char ** native_standard_error = TODO_mruby_unbox_char_PTR_PTR(standard_error);
-
-  int * native_exit_status = TODO_mruby_unbox_int_PTR(exit_status);
+  void * native_user_data = NULL; /* Unused parameter */
 
   /* Invocation */
-  gboolean native_return_value = g_spawn_sync(native_working_directory, native_argv, native_envp, native_flags, native_child_setup, native_user_data, native_standard_output, native_standard_error, native_exit_status, &native_error);
+  gboolean native_return_value = g_spawn_sync(native_working_directory, native_argv, native_envp, native_flags, native_child_setup, native_user_data, &native_standard_output, &native_standard_error, &native_exit_status, &native_error);
 
   /* Box the return value */
   if (native_return_value > MRB_INT_MAX) {
@@ -38762,8 +38826,18 @@ mrb_GLib_g_spawn_sync(mrb_state* mrb, mrb_value self) {
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   mrb_ary_push(mrb, results, return_value);
   
+  mrb_value standard_output = mrb_str_new_cstr(mrb, native_standard_output);
+  mrb_ary_push(mrb, results, standard_output);
+  mrb_value standard_error = mrb_str_new_cstr(mrb, native_standard_error);
+  mrb_ary_push(mrb, results, standard_error);
+  mrb_value exit_status = mrb_fixnum_value(native_exit_status);
+  mrb_ary_push(mrb, results, exit_status);
   mrb_value error = (native_error == NULL ? mrb_nil_value() : mruby_box__GError(mrb, native_error));
   mrb_ary_push(mrb, results, error);
+  if (native_argv != NULL) free(native_argv);
+
+  if (native_envp != NULL) free(native_envp);
+
   return results;
 }
 #endif
@@ -43243,7 +43317,11 @@ mrb_GLib_g_thread_error_quark(mrb_state* mrb, mrb_value self) {
   GQuark native_return_value = g_thread_error_quark();
 
   /* Box the return value */
-  mrb_value return_value = TODO_mruby_box_GQuark(mrb, native_return_value);
+  if (native_return_value > MRB_INT_MAX) {
+    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
+    return mrb_nil_value();
+  }
+  mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
 }
@@ -52297,7 +52375,11 @@ mrb_GLib_g_variant_parse_error_quark(mrb_state* mrb, mrb_value self) {
   GQuark native_return_value = g_variant_parse_error_quark();
 
   /* Box the return value */
-  mrb_value return_value = TODO_mruby_box_GQuark(mrb, native_return_value);
+  if (native_return_value > MRB_INT_MAX) {
+    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
+    return mrb_nil_value();
+  }
+  mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
 }
@@ -52317,7 +52399,11 @@ mrb_GLib_g_variant_parser_get_error_quark(mrb_state* mrb, mrb_value self) {
   GQuark native_return_value = g_variant_parser_get_error_quark();
 
   /* Box the return value */
-  mrb_value return_value = TODO_mruby_box_GQuark(mrb, native_return_value);
+  if (native_return_value > MRB_INT_MAX) {
+    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
+    return mrb_nil_value();
+  }
+  mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
 }

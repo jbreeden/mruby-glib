@@ -351,10 +351,7 @@
 */
 #define BIND_g_bookmark_file_add_application_FUNCTION TRUE
 #define BIND_g_bookmark_file_add_group_FUNCTION TRUE
-#define BIND_g_bookmark_file_error_quark_FUNCTION FALSE
-/* Couln't complete binding for g_bookmark_file_error_quark
-  - TODO_mruby_box_GQuark
-*/
+#define BIND_g_bookmark_file_error_quark_FUNCTION TRUE
 #define BIND_g_bookmark_file_free_FUNCTION TRUE
 #define BIND_g_bookmark_file_get_added_FUNCTION FALSE
 /* Couln't complete binding for g_bookmark_file_get_added
@@ -633,10 +630,7 @@
   - TODO_mruby_unbox_unsigned_long_PTR
   - TODO_type_check_unsigned_long_PTR
 */
-#define BIND_g_convert_error_quark_FUNCTION FALSE
-/* Couln't complete binding for g_convert_error_quark
-  - TODO_mruby_box_GQuark
-*/
+#define BIND_g_convert_error_quark_FUNCTION TRUE
 #define BIND_g_convert_with_fallback_FUNCTION FALSE
 /* Couln't complete binding for g_convert_with_fallback
   - TODO_mruby_unbox_unsigned_long_PTR
@@ -959,10 +953,7 @@
 #define BIND_g_error_new_literal_FUNCTION TRUE
 #define BIND_g_error_new_valist_FUNCTION TRUE
 #define BIND_g_file_error_from_errno_FUNCTION TRUE
-#define BIND_g_file_error_quark_FUNCTION FALSE
-/* Couln't complete binding for g_file_error_quark
-  - TODO_mruby_box_GQuark
-*/
+#define BIND_g_file_error_quark_FUNCTION TRUE
 #define BIND_g_file_get_contents_FUNCTION FALSE
 /* Couln't complete binding for g_file_get_contents
   - TODO_mruby_unbox_char_PTR_PTR
@@ -1339,10 +1330,7 @@
 */
 #define BIND_g_io_channel_close_FUNCTION TRUE
 #define BIND_g_io_channel_error_from_errno_FUNCTION TRUE
-#define BIND_g_io_channel_error_quark_FUNCTION FALSE
-/* Couln't complete binding for g_io_channel_error_quark
-  - TODO_mruby_box_GQuark
-*/
+#define BIND_g_io_channel_error_quark_FUNCTION TRUE
 #define BIND_g_io_channel_flush_FUNCTION TRUE
 #define BIND_g_io_channel_get_buffer_condition_FUNCTION TRUE
 #define BIND_g_io_channel_get_buffer_size_FUNCTION FALSE
@@ -1419,10 +1407,7 @@
 */
 #define BIND_g_io_channel_write_unichar_FUNCTION TRUE
 #define BIND_g_io_create_watch_FUNCTION TRUE
-#define BIND_g_key_file_error_quark_FUNCTION FALSE
-/* Couln't complete binding for g_key_file_error_quark
-  - TODO_mruby_box_GQuark
-*/
+#define BIND_g_key_file_error_quark_FUNCTION TRUE
 #define BIND_g_key_file_free_FUNCTION TRUE
 #define BIND_g_key_file_get_boolean_FUNCTION TRUE
 #define BIND_g_key_file_get_boolean_list_FUNCTION FALSE
@@ -1811,10 +1796,7 @@
   - TODO_mruby_unbox_char_PTR_PTR
   - TODO_type_check_char_PTR_PTR
 */
-#define BIND_g_markup_error_quark_FUNCTION FALSE
-/* Couln't complete binding for g_markup_error_quark
-  - TODO_mruby_box_GQuark
-*/
+#define BIND_g_markup_error_quark_FUNCTION TRUE
 #define BIND_g_markup_escape_text_FUNCTION TRUE
 #define BIND_g_markup_parse_context_end_parse_FUNCTION TRUE
 #define BIND_g_markup_parse_context_free_FUNCTION TRUE
@@ -2050,10 +2032,7 @@
   - TODO_type_check_void_PTR
 */
 #define BIND_g_option_context_set_translation_domain_FUNCTION TRUE
-#define BIND_g_option_error_quark_FUNCTION FALSE
-/* Couln't complete binding for g_option_error_quark
-  - TODO_mruby_box_GQuark
-*/
+#define BIND_g_option_error_quark_FUNCTION TRUE
 #define BIND_g_option_group_add_entries_FUNCTION TRUE
 #define BIND_g_option_group_free_FUNCTION TRUE
 #define BIND_g_option_group_new_FUNCTION FALSE
@@ -2215,19 +2194,10 @@
   - TODO_type_check_int_LPAREN_PTR_RPAREN_LPAREN_void_PTR_COMMA_const_void_PTR_COMMA_void_PTR_RPAREN
   - TODO_type_check_void_PTR
 */
-#define BIND_g_quark_from_static_string_FUNCTION FALSE
-/* Couln't complete binding for g_quark_from_static_string
-  - TODO_mruby_box_GQuark
-*/
-#define BIND_g_quark_from_string_FUNCTION FALSE
-/* Couln't complete binding for g_quark_from_string
-  - TODO_mruby_box_GQuark
-*/
+#define BIND_g_quark_from_static_string_FUNCTION TRUE
+#define BIND_g_quark_from_string_FUNCTION TRUE
 #define BIND_g_quark_to_string_FUNCTION TRUE
-#define BIND_g_quark_try_string_FUNCTION FALSE
-/* Couln't complete binding for g_quark_try_string
-  - TODO_mruby_box_GQuark
-*/
+#define BIND_g_quark_try_string_FUNCTION TRUE
 #define BIND_g_queue_clear_FUNCTION TRUE
 #define BIND_g_queue_copy_FUNCTION TRUE
 #define BIND_g_queue_delete_link_FUNCTION TRUE
@@ -2408,10 +2378,7 @@
   - TODO_mruby_unbox_int_PTR
   - TODO_type_check_int_PTR
 */
-#define BIND_g_regex_error_quark_FUNCTION FALSE
-/* Couln't complete binding for g_regex_error_quark
-  - TODO_mruby_box_GQuark
-*/
+#define BIND_g_regex_error_quark_FUNCTION TRUE
 #define BIND_g_regex_escape_nul_FUNCTION TRUE
 #define BIND_g_regex_escape_string_FUNCTION TRUE
 #define BIND_g_regex_get_capture_count_FUNCTION TRUE
@@ -2667,10 +2634,7 @@
   - TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_char_PTR_RPAREN
 */
 #define BIND_g_setenv_FUNCTION TRUE
-#define BIND_g_shell_error_quark_FUNCTION FALSE
-/* Couln't complete binding for g_shell_error_quark
-  - TODO_mruby_box_GQuark
-*/
+#define BIND_g_shell_error_quark_FUNCTION TRUE
 #define BIND_g_shell_parse_argv_FUNCTION FALSE
 /* Couln't complete binding for g_shell_parse_argv
   - TODO_mruby_unbox_char_PTR_PTR_PTR
@@ -2905,25 +2869,9 @@
 #define BIND_g_spawn_close_pid_FUNCTION TRUE
 #define BIND_g_spawn_command_line_async_FUNCTION TRUE
 #define BIND_g_spawn_command_line_sync_FUNCTION TRUE
-#define BIND_g_spawn_error_quark_FUNCTION FALSE
-/* Couln't complete binding for g_spawn_error_quark
-  - TODO_mruby_box_GQuark
-*/
-#define BIND_g_spawn_exit_error_quark_FUNCTION FALSE
-/* Couln't complete binding for g_spawn_exit_error_quark
-  - TODO_mruby_box_GQuark
-*/
-#define BIND_g_spawn_sync_FUNCTION FALSE
-/* Couln't complete binding for g_spawn_sync
-  - TODO_mruby_unbox_char_PTR_PTR
-  - TODO_mruby_unbox_int_PTR
-  - TODO_mruby_unbox_void_LPAREN_PTR_RPAREN_LPAREN_void_PTR_RPAREN
-  - TODO_mruby_unbox_void_PTR
-  - TODO_type_check_char_PTR_PTR
-  - TODO_type_check_int_PTR
-  - TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_void_PTR_RPAREN
-  - TODO_type_check_void_PTR
-*/
+#define BIND_g_spawn_error_quark_FUNCTION TRUE
+#define BIND_g_spawn_exit_error_quark_FUNCTION TRUE
+#define BIND_g_spawn_sync_FUNCTION TRUE
 #define BIND_g_sprintf_FUNCTION TRUE
 #define BIND_g_steal_pointer_FUNCTION FALSE
 /* Couln't complete binding for g_steal_pointer
@@ -3175,10 +3123,7 @@
 #define BIND_g_test_trap_has_passed_FUNCTION TRUE
 #define BIND_g_test_trap_reached_timeout_FUNCTION TRUE
 #define BIND_g_test_trap_subprocess_FUNCTION TRUE
-#define BIND_g_thread_error_quark_FUNCTION FALSE
-/* Couln't complete binding for g_thread_error_quark
-  - TODO_mruby_box_GQuark
-*/
+#define BIND_g_thread_error_quark_FUNCTION TRUE
 #define BIND_g_thread_exit_FUNCTION FALSE
 /* Couln't complete binding for g_thread_exit
   - TODO_mruby_unbox_void_PTR
@@ -3860,14 +3805,8 @@
   - TODO_type_check_char_PTR_PTR
 */
 #define BIND_g_variant_parse_error_print_context_FUNCTION TRUE
-#define BIND_g_variant_parse_error_quark_FUNCTION FALSE
-/* Couln't complete binding for g_variant_parse_error_quark
-  - TODO_mruby_box_GQuark
-*/
-#define BIND_g_variant_parser_get_error_quark_FUNCTION FALSE
-/* Couln't complete binding for g_variant_parser_get_error_quark
-  - TODO_mruby_box_GQuark
-*/
+#define BIND_g_variant_parse_error_quark_FUNCTION TRUE
+#define BIND_g_variant_parser_get_error_quark_FUNCTION TRUE
 #define BIND_g_variant_print_FUNCTION TRUE
 #define BIND_g_variant_print_string_FUNCTION TRUE
 #define BIND_g_variant_ref_FUNCTION TRUE

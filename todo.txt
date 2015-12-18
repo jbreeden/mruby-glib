@@ -53,10 +53,3 @@
 #define BIND_g_random_int_FUNCTION FALSE
 #define BIND_g_shell_error_quark_FUNCTION FALSE
 #define BIND_g_shell_parse_argv_FUNCTION FALSE
-
-#define BIND_g_spawn_async_FUNCTION FALSE
-#define BIND_g_spawn_async_with_pipes_FUNCTION FALSE
-#define BIND_g_spawn_command_line_sync_FUNCTION FALSE
-#define BIND_g_spawn_error_quark_FUNCTION FALSE
-#define BIND_g_spawn_exit_error_quark_FUNCTION FALSE
-#define BIND_g_spawn_sync_FUNCTION FALSE
