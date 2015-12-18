@@ -772,10 +772,7 @@
   - TODO_mruby_box_guint8
 */
 #define BIND_g_date_get_iso8601_week_of_year_FUNCTION TRUE
-#define BIND_g_date_get_julian_FUNCTION FALSE
-/* Couln't complete binding for g_date_get_julian
-  - TODO_mruby_box_guint32
-*/
+#define BIND_g_date_get_julian_FUNCTION TRUE
 #define BIND_g_date_get_monday_week_of_year_FUNCTION TRUE
 #define BIND_g_date_get_monday_weeks_in_year_FUNCTION FALSE
 /* Couln't complete binding for g_date_get_monday_weeks_in_year
@@ -2311,10 +2308,7 @@
 #define BIND_g_rand_double_FUNCTION TRUE
 #define BIND_g_rand_double_range_FUNCTION TRUE
 #define BIND_g_rand_free_FUNCTION TRUE
-#define BIND_g_rand_int_FUNCTION FALSE
-/* Couln't complete binding for g_rand_int
-  - TODO_mruby_box_guint32
-*/
+#define BIND_g_rand_int_FUNCTION TRUE
 #define BIND_g_rand_int_range_FUNCTION FALSE
 /* Couln't complete binding for g_rand_int_range
   - TODO_mruby_box_gint32
@@ -2334,10 +2328,7 @@
 */
 #define BIND_g_random_double_FUNCTION TRUE
 #define BIND_g_random_double_range_FUNCTION TRUE
-#define BIND_g_random_int_FUNCTION FALSE
-/* Couln't complete binding for g_random_int
-  - TODO_mruby_box_guint32
-*/
+#define BIND_g_random_int_FUNCTION TRUE
 #define BIND_g_random_int_range_FUNCTION FALSE
 /* Couln't complete binding for g_random_int_range
   - TODO_mruby_box_gint32
@@ -3429,18 +3420,9 @@
 #define BIND_g_unichar_isxdigit_FUNCTION TRUE
 #define BIND_g_unichar_iszerowidth_FUNCTION TRUE
 #define BIND_g_unichar_to_utf8_FUNCTION TRUE
-#define BIND_g_unichar_tolower_FUNCTION FALSE
-/* Couln't complete binding for g_unichar_tolower
-  - TODO_mruby_box_guint32
-*/
-#define BIND_g_unichar_totitle_FUNCTION FALSE
-/* Couln't complete binding for g_unichar_totitle
-  - TODO_mruby_box_guint32
-*/
-#define BIND_g_unichar_toupper_FUNCTION FALSE
-/* Couln't complete binding for g_unichar_toupper
-  - TODO_mruby_box_guint32
-*/
+#define BIND_g_unichar_tolower_FUNCTION TRUE
+#define BIND_g_unichar_totitle_FUNCTION TRUE
+#define BIND_g_unichar_toupper_FUNCTION TRUE
 #define BIND_g_unichar_type_FUNCTION TRUE
 #define BIND_g_unichar_validate_FUNCTION TRUE
 #define BIND_g_unichar_xdigit_value_FUNCTION TRUE
@@ -3456,10 +3438,7 @@
   - TODO_type_check_unsigned_int_PTR
 */
 #define BIND_g_unicode_script_from_iso15924_FUNCTION TRUE
-#define BIND_g_unicode_script_to_iso15924_FUNCTION FALSE
-/* Couln't complete binding for g_unicode_script_to_iso15924
-  - TODO_mruby_box_guint32
-*/
+#define BIND_g_unicode_script_to_iso15924_FUNCTION TRUE
 #define BIND_g_unlink_FUNCTION TRUE
 #define BIND_g_unsetenv_FUNCTION TRUE
 #define BIND_g_uri_escape_string_FUNCTION TRUE
@@ -3492,14 +3471,8 @@
 #define BIND_g_utf8_collate_key_for_filename_FUNCTION TRUE
 #define BIND_g_utf8_find_next_char_FUNCTION TRUE
 #define BIND_g_utf8_find_prev_char_FUNCTION TRUE
-#define BIND_g_utf8_get_char_FUNCTION FALSE
-/* Couln't complete binding for g_utf8_get_char
-  - TODO_mruby_box_guint32
-*/
-#define BIND_g_utf8_get_char_validated_FUNCTION FALSE
-/* Couln't complete binding for g_utf8_get_char_validated
-  - TODO_mruby_box_guint32
-*/
+#define BIND_g_utf8_get_char_FUNCTION TRUE
+#define BIND_g_utf8_get_char_validated_FUNCTION TRUE
 #define BIND_g_utf8_normalize_FUNCTION TRUE
 #define BIND_g_utf8_offset_to_pointer_FUNCTION TRUE
 #define BIND_g_utf8_pointer_to_offset_FUNCTION TRUE
@@ -3668,10 +3641,7 @@
 /* Couln't complete binding for g_variant_get_uint16
   - TODO_mruby_box_guint16
 */
-#define BIND_g_variant_get_uint32_FUNCTION FALSE
-/* Couln't complete binding for g_variant_get_uint32
-  - TODO_mruby_box_guint32
-*/
+#define BIND_g_variant_get_uint32_FUNCTION TRUE
 #define BIND_g_variant_get_uint64_FUNCTION FALSE
 /* Couln't complete binding for g_variant_get_uint64
   - TODO_mruby_box_guint64

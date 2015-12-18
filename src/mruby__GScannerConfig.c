@@ -267,10 +267,6 @@ mrb_GLib_GScannerConfig_get_case_sensitive(mrb_state* mrb, mrb_value self) {
 
   guint native_field = native_self->case_sensitive;
 
-  if (native_field > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value ruby_field = mrb_fixnum_value(native_field);
 
   return ruby_field;
@@ -315,10 +311,6 @@ mrb_GLib_GScannerConfig_get_skip_comment_multi(mrb_state* mrb, mrb_value self) {
 
   guint native_field = native_self->skip_comment_multi;
 
-  if (native_field > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value ruby_field = mrb_fixnum_value(native_field);
 
   return ruby_field;
@@ -363,10 +355,6 @@ mrb_GLib_GScannerConfig_get_skip_comment_single(mrb_state* mrb, mrb_value self) 
 
   guint native_field = native_self->skip_comment_single;
 
-  if (native_field > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value ruby_field = mrb_fixnum_value(native_field);
 
   return ruby_field;
@@ -411,10 +399,6 @@ mrb_GLib_GScannerConfig_get_scan_comment_multi(mrb_state* mrb, mrb_value self) {
 
   guint native_field = native_self->scan_comment_multi;
 
-  if (native_field > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value ruby_field = mrb_fixnum_value(native_field);
 
   return ruby_field;
@@ -459,10 +443,6 @@ mrb_GLib_GScannerConfig_get_scan_identifier(mrb_state* mrb, mrb_value self) {
 
   guint native_field = native_self->scan_identifier;
 
-  if (native_field > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value ruby_field = mrb_fixnum_value(native_field);
 
   return ruby_field;
@@ -507,10 +487,6 @@ mrb_GLib_GScannerConfig_get_scan_identifier_1char(mrb_state* mrb, mrb_value self
 
   guint native_field = native_self->scan_identifier_1char;
 
-  if (native_field > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value ruby_field = mrb_fixnum_value(native_field);
 
   return ruby_field;
@@ -555,10 +531,6 @@ mrb_GLib_GScannerConfig_get_scan_identifier_NULL(mrb_state* mrb, mrb_value self)
 
   guint native_field = native_self->scan_identifier_NULL;
 
-  if (native_field > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value ruby_field = mrb_fixnum_value(native_field);
 
   return ruby_field;
@@ -603,10 +575,6 @@ mrb_GLib_GScannerConfig_get_scan_symbols(mrb_state* mrb, mrb_value self) {
 
   guint native_field = native_self->scan_symbols;
 
-  if (native_field > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value ruby_field = mrb_fixnum_value(native_field);
 
   return ruby_field;
@@ -651,10 +619,6 @@ mrb_GLib_GScannerConfig_get_scan_binary(mrb_state* mrb, mrb_value self) {
 
   guint native_field = native_self->scan_binary;
 
-  if (native_field > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value ruby_field = mrb_fixnum_value(native_field);
 
   return ruby_field;
@@ -699,10 +663,6 @@ mrb_GLib_GScannerConfig_get_scan_octal(mrb_state* mrb, mrb_value self) {
 
   guint native_field = native_self->scan_octal;
 
-  if (native_field > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value ruby_field = mrb_fixnum_value(native_field);
 
   return ruby_field;
@@ -747,10 +707,6 @@ mrb_GLib_GScannerConfig_get_scan_float(mrb_state* mrb, mrb_value self) {
 
   guint native_field = native_self->scan_float;
 
-  if (native_field > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value ruby_field = mrb_fixnum_value(native_field);
 
   return ruby_field;
@@ -795,10 +751,6 @@ mrb_GLib_GScannerConfig_get_scan_hex(mrb_state* mrb, mrb_value self) {
 
   guint native_field = native_self->scan_hex;
 
-  if (native_field > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value ruby_field = mrb_fixnum_value(native_field);
 
   return ruby_field;
@@ -843,10 +795,6 @@ mrb_GLib_GScannerConfig_get_scan_hex_dollar(mrb_state* mrb, mrb_value self) {
 
   guint native_field = native_self->scan_hex_dollar;
 
-  if (native_field > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value ruby_field = mrb_fixnum_value(native_field);
 
   return ruby_field;
@@ -891,10 +839,6 @@ mrb_GLib_GScannerConfig_get_scan_string_sq(mrb_state* mrb, mrb_value self) {
 
   guint native_field = native_self->scan_string_sq;
 
-  if (native_field > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value ruby_field = mrb_fixnum_value(native_field);
 
   return ruby_field;
@@ -939,10 +883,6 @@ mrb_GLib_GScannerConfig_get_scan_string_dq(mrb_state* mrb, mrb_value self) {
 
   guint native_field = native_self->scan_string_dq;
 
-  if (native_field > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value ruby_field = mrb_fixnum_value(native_field);
 
   return ruby_field;
@@ -987,10 +927,6 @@ mrb_GLib_GScannerConfig_get_numbers_2_int(mrb_state* mrb, mrb_value self) {
 
   guint native_field = native_self->numbers_2_int;
 
-  if (native_field > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value ruby_field = mrb_fixnum_value(native_field);
 
   return ruby_field;
@@ -1035,10 +971,6 @@ mrb_GLib_GScannerConfig_get_int_2_float(mrb_state* mrb, mrb_value self) {
 
   guint native_field = native_self->int_2_float;
 
-  if (native_field > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value ruby_field = mrb_fixnum_value(native_field);
 
   return ruby_field;
@@ -1083,10 +1015,6 @@ mrb_GLib_GScannerConfig_get_identifier_2_string(mrb_state* mrb, mrb_value self) 
 
   guint native_field = native_self->identifier_2_string;
 
-  if (native_field > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value ruby_field = mrb_fixnum_value(native_field);
 
   return ruby_field;
@@ -1131,10 +1059,6 @@ mrb_GLib_GScannerConfig_get_char_2_token(mrb_state* mrb, mrb_value self) {
 
   guint native_field = native_self->char_2_token;
 
-  if (native_field > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value ruby_field = mrb_fixnum_value(native_field);
 
   return ruby_field;
@@ -1179,10 +1103,6 @@ mrb_GLib_GScannerConfig_get_symbol_2_token(mrb_state* mrb, mrb_value self) {
 
   guint native_field = native_self->symbol_2_token;
 
-  if (native_field > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value ruby_field = mrb_fixnum_value(native_field);
 
   return ruby_field;
@@ -1227,10 +1147,6 @@ mrb_GLib_GScannerConfig_get_scope_0_fallback(mrb_state* mrb, mrb_value self) {
 
   guint native_field = native_self->scope_0_fallback;
 
-  if (native_field > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value ruby_field = mrb_fixnum_value(native_field);
 
   return ruby_field;
@@ -1275,10 +1191,6 @@ mrb_GLib_GScannerConfig_get_store_int64(mrb_state* mrb, mrb_value self) {
 
   guint native_field = native_self->store_int64;
 
-  if (native_field > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value ruby_field = mrb_fixnum_value(native_field);
 
   return ruby_field;
@@ -1323,10 +1235,6 @@ mrb_GLib_GScannerConfig_get_padding_dummy(mrb_state* mrb, mrb_value self) {
 
   guint native_field = native_self->padding_dummy;
 
-  if (native_field > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value ruby_field = mrb_fixnum_value(native_field);
 
   return ruby_field;

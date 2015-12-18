@@ -200,10 +200,6 @@ mrb_GLib_GHook_get_ref_count(mrb_state* mrb, mrb_value self) {
 
   guint native_field = native_self->ref_count;
 
-  if (native_field > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value ruby_field = mrb_fixnum_value(native_field);
 
   return ruby_field;
@@ -248,10 +244,6 @@ mrb_GLib_GHook_get_hook_id(mrb_state* mrb, mrb_value self) {
 
   gulong native_field = native_self->hook_id;
 
-  if (native_field > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value ruby_field = mrb_fixnum_value(native_field);
 
   return ruby_field;
@@ -296,10 +288,6 @@ mrb_GLib_GHook_get_flags(mrb_state* mrb, mrb_value self) {
 
   guint native_field = native_self->flags;
 
-  if (native_field > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value ruby_field = mrb_fixnum_value(native_field);
 
   return ruby_field;

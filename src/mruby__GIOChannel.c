@@ -71,10 +71,6 @@ mrb_GLib_GIOChannel_get_ref_count(mrb_state* mrb, mrb_value self) {
 
   gint native_field = native_self->ref_count;
 
-  if (native_field > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value ruby_field = mrb_fixnum_value(native_field);
 
   return ruby_field;
@@ -343,10 +339,6 @@ mrb_GLib_GIOChannel_get_line_term_len(mrb_state* mrb, mrb_value self) {
 
   guint native_field = native_self->line_term_len;
 
-  if (native_field > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value ruby_field = mrb_fixnum_value(native_field);
 
   return ruby_field;
@@ -605,10 +597,6 @@ mrb_GLib_GIOChannel_get_use_buffer(mrb_state* mrb, mrb_value self) {
 
   guint native_field = native_self->use_buffer;
 
-  if (native_field > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value ruby_field = mrb_fixnum_value(native_field);
 
   return ruby_field;
@@ -653,10 +641,6 @@ mrb_GLib_GIOChannel_get_do_encode(mrb_state* mrb, mrb_value self) {
 
   guint native_field = native_self->do_encode;
 
-  if (native_field > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value ruby_field = mrb_fixnum_value(native_field);
 
   return ruby_field;
@@ -701,10 +685,6 @@ mrb_GLib_GIOChannel_get_close_on_unref(mrb_state* mrb, mrb_value self) {
 
   guint native_field = native_self->close_on_unref;
 
-  if (native_field > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value ruby_field = mrb_fixnum_value(native_field);
 
   return ruby_field;
@@ -749,10 +729,6 @@ mrb_GLib_GIOChannel_get_is_readable(mrb_state* mrb, mrb_value self) {
 
   guint native_field = native_self->is_readable;
 
-  if (native_field > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value ruby_field = mrb_fixnum_value(native_field);
 
   return ruby_field;
@@ -797,10 +773,6 @@ mrb_GLib_GIOChannel_get_is_writeable(mrb_state* mrb, mrb_value self) {
 
   guint native_field = native_self->is_writeable;
 
-  if (native_field > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value ruby_field = mrb_fixnum_value(native_field);
 
   return ruby_field;
@@ -845,10 +817,6 @@ mrb_GLib_GIOChannel_get_is_seekable(mrb_state* mrb, mrb_value self) {
 
   guint native_field = native_self->is_seekable;
 
-  if (native_field > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value ruby_field = mrb_fixnum_value(native_field);
 
   return ruby_field;

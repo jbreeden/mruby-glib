@@ -112,10 +112,6 @@ mrb_GLib_GScanner_get_max_parse_errors(mrb_state* mrb, mrb_value self) {
 
   guint native_field = native_self->max_parse_errors;
 
-  if (native_field > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value ruby_field = mrb_fixnum_value(native_field);
 
   return ruby_field;
@@ -160,10 +156,6 @@ mrb_GLib_GScanner_get_parse_errors(mrb_state* mrb, mrb_value self) {
 
   guint native_field = native_self->parse_errors;
 
-  if (native_field > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value ruby_field = mrb_fixnum_value(native_field);
 
   return ruby_field;
@@ -340,10 +332,6 @@ mrb_GLib_GScanner_get_token(mrb_state* mrb, mrb_value self) {
 
   GTokenType native_field = native_self->token;
 
-  if (native_field > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value ruby_field = mrb_fixnum_value(native_field);
 
   return ruby_field;
@@ -429,10 +417,6 @@ mrb_GLib_GScanner_get_line(mrb_state* mrb, mrb_value self) {
 
   guint native_field = native_self->line;
 
-  if (native_field > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value ruby_field = mrb_fixnum_value(native_field);
 
   return ruby_field;
@@ -477,10 +461,6 @@ mrb_GLib_GScanner_get_position(mrb_state* mrb, mrb_value self) {
 
   guint native_field = native_self->position;
 
-  if (native_field > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value ruby_field = mrb_fixnum_value(native_field);
 
   return ruby_field;
@@ -525,10 +505,6 @@ mrb_GLib_GScanner_get_next_token(mrb_state* mrb, mrb_value self) {
 
   GTokenType native_field = native_self->next_token;
 
-  if (native_field > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value ruby_field = mrb_fixnum_value(native_field);
 
   return ruby_field;
@@ -614,10 +590,6 @@ mrb_GLib_GScanner_get_next_line(mrb_state* mrb, mrb_value self) {
 
   guint native_field = native_self->next_line;
 
-  if (native_field > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value ruby_field = mrb_fixnum_value(native_field);
 
   return ruby_field;
@@ -662,10 +634,6 @@ mrb_GLib_GScanner_get_next_position(mrb_state* mrb, mrb_value self) {
 
   guint native_field = native_self->next_position;
 
-  if (native_field > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value ruby_field = mrb_fixnum_value(native_field);
 
   return ruby_field;
@@ -754,10 +722,6 @@ mrb_GLib_GScanner_get_input_fd(mrb_state* mrb, mrb_value self) {
 
   gint native_field = native_self->input_fd;
 
-  if (native_field > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value ruby_field = mrb_fixnum_value(native_field);
 
   return ruby_field;
@@ -939,10 +903,6 @@ mrb_GLib_GScanner_get_scope_id(mrb_state* mrb, mrb_value self) {
 
   guint native_field = native_self->scope_id;
 
-  if (native_field > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value ruby_field = mrb_fixnum_value(native_field);
 
   return ruby_field;

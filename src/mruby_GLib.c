@@ -65,10 +65,6 @@ mrb_GLib_g_access(mrb_state* mrb, mrb_value self) {
   int native_return_value = g_access(native_filename, native_mode);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -184,10 +180,6 @@ mrb_GLib_g_array_get_element_size(mrb_state* mrb, mrb_value self) {
   guint native_return_value = g_array_get_element_size(native_array);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -695,10 +687,6 @@ mrb_GLib_g_ascii_digit_value(mrb_state* mrb, mrb_value self) {
   gint native_return_value = g_ascii_digit_value(native_c);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -825,10 +813,6 @@ mrb_GLib_g_ascii_strcasecmp(mrb_state* mrb, mrb_value self) {
   gint native_return_value = g_ascii_strcasecmp(native_s1, native_s2);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -888,10 +872,6 @@ mrb_GLib_g_ascii_strncasecmp(mrb_state* mrb, mrb_value self) {
   gint native_return_value = g_ascii_strncasecmp(native_s1, native_s2, native_n);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -1053,10 +1033,6 @@ mrb_GLib_g_ascii_tolower(mrb_state* mrb, mrb_value self) {
   gchar native_return_value = g_ascii_tolower(native_c);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -1083,10 +1059,6 @@ mrb_GLib_g_ascii_toupper(mrb_state* mrb, mrb_value self) {
   gchar native_return_value = g_ascii_toupper(native_c);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -1113,10 +1085,6 @@ mrb_GLib_g_ascii_xdigit_value(mrb_state* mrb, mrb_value self) {
   gint native_return_value = g_ascii_xdigit_value(native_c);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -1376,10 +1344,6 @@ mrb_GLib_g_async_queue_length(mrb_state* mrb, mrb_value self) {
   gint native_return_value = g_async_queue_length(native_queue);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -1415,10 +1379,6 @@ mrb_GLib_g_async_queue_length_unlocked(mrb_state* mrb, mrb_value self) {
   gint native_return_value = g_async_queue_length_unlocked(native_queue);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -1922,10 +1882,6 @@ mrb_GLib_g_async_queue_remove(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_async_queue_remove(native_queue, native_item);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -1966,10 +1922,6 @@ mrb_GLib_g_async_queue_remove_unlocked(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_async_queue_remove_unlocked(native_queue, native_item);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -2443,10 +2395,6 @@ mrb_GLib_g_atomic_int_add(mrb_state* mrb, mrb_value self) {
   gint native_return_value = g_atomic_int_add(native_atomic, native_val);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -2481,10 +2429,6 @@ mrb_GLib_g_atomic_int_and(mrb_state* mrb, mrb_value self) {
   guint native_return_value = g_atomic_int_and(native_atomic, native_val);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -2521,10 +2465,6 @@ mrb_GLib_g_atomic_int_compare_and_exchange(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_atomic_int_compare_and_exchange(native_atomic, native_oldval, native_newval);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -2557,10 +2497,6 @@ mrb_GLib_g_atomic_int_dec_and_test(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_atomic_int_dec_and_test(native_atomic);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -2595,10 +2531,6 @@ mrb_GLib_g_atomic_int_exchange_and_add(mrb_state* mrb, mrb_value self) {
   gint native_return_value = g_atomic_int_exchange_and_add(native_atomic, native_val);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -2631,10 +2563,6 @@ mrb_GLib_g_atomic_int_get(mrb_state* mrb, mrb_value self) {
   gint native_return_value = g_atomic_int_get(native_atomic);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -2698,10 +2626,6 @@ mrb_GLib_g_atomic_int_or(mrb_state* mrb, mrb_value self) {
   guint native_return_value = g_atomic_int_or(native_atomic, native_val);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -2767,10 +2691,6 @@ mrb_GLib_g_atomic_int_xor(mrb_state* mrb, mrb_value self) {
   guint native_return_value = g_atomic_int_xor(native_atomic, native_val);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -2881,10 +2801,6 @@ mrb_GLib_g_atomic_pointer_compare_and_exchange(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_atomic_pointer_compare_and_exchange(native_atomic, native_oldval, native_newval);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -3390,10 +3306,6 @@ mrb_GLib_g_bit_nth_lsf(mrb_state* mrb, mrb_value self) {
   gint native_return_value = g_bit_nth_lsf(native_mask, native_nth_bit);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -3422,10 +3334,6 @@ mrb_GLib_g_bit_nth_msf(mrb_state* mrb, mrb_value self) {
   gint native_return_value = g_bit_nth_msf(native_mask, native_nth_bit);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -3452,10 +3360,6 @@ mrb_GLib_g_bit_storage(mrb_state* mrb, mrb_value self) {
   guint native_return_value = g_bit_storage(native_number);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -3490,10 +3394,6 @@ mrb_GLib_g_bit_trylock(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_bit_trylock(native_address, native_lock_bit);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -3619,10 +3519,6 @@ mrb_GLib_g_bookmark_file_error_quark(mrb_state* mrb, mrb_value self) {
   GQuark native_return_value = g_bookmark_file_error_quark();
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -3755,10 +3651,6 @@ mrb_GLib_g_bookmark_file_get_app_info(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_bookmark_file_get_app_info(native_bookmark, native_uri, native_name, native_exec, native_count, native_stamp, &native_error);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   mrb_ary_push(mrb, results, return_value);
   
@@ -3956,10 +3848,6 @@ mrb_GLib_g_bookmark_file_get_icon(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_bookmark_file_get_icon(native_bookmark, native_uri, native_href, native_mime_type, &native_error);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   mrb_ary_push(mrb, results, return_value);
   
@@ -4004,10 +3892,6 @@ mrb_GLib_g_bookmark_file_get_is_private(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_bookmark_file_get_is_private(native_bookmark, native_uri, &native_error);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   mrb_ary_push(mrb, results, return_value);
   
@@ -4137,10 +4021,6 @@ mrb_GLib_g_bookmark_file_get_size(mrb_state* mrb, mrb_value self) {
   gint native_return_value = g_bookmark_file_get_size(native_bookmark);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -4311,10 +4191,6 @@ mrb_GLib_g_bookmark_file_has_application(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_bookmark_file_has_application(native_bookmark, native_uri, native_name, &native_error);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   mrb_ary_push(mrb, results, return_value);
   
@@ -4361,10 +4237,6 @@ mrb_GLib_g_bookmark_file_has_group(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_bookmark_file_has_group(native_bookmark, native_uri, native_group, &native_error);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   mrb_ary_push(mrb, results, return_value);
   
@@ -4407,10 +4279,6 @@ mrb_GLib_g_bookmark_file_has_item(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_bookmark_file_has_item(native_bookmark, native_uri);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -4452,10 +4320,6 @@ mrb_GLib_g_bookmark_file_load_from_data(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_bookmark_file_load_from_data(native_bookmark, native_data, native_length, &native_error);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   mrb_ary_push(mrb, results, return_value);
   
@@ -4505,10 +4369,6 @@ mrb_GLib_g_bookmark_file_load_from_data_dirs(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_bookmark_file_load_from_data_dirs(native_bookmark, native_file, native_full_path, &native_error);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   mrb_ary_push(mrb, results, return_value);
   
@@ -4553,10 +4413,6 @@ mrb_GLib_g_bookmark_file_load_from_file(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_bookmark_file_load_from_file(native_bookmark, native_filename, &native_error);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   mrb_ary_push(mrb, results, return_value);
   
@@ -4603,10 +4459,6 @@ mrb_GLib_g_bookmark_file_move_item(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_bookmark_file_move_item(native_bookmark, native_old_uri, native_new_uri, &native_error);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   mrb_ary_push(mrb, results, return_value);
   
@@ -4673,10 +4525,6 @@ mrb_GLib_g_bookmark_file_remove_application(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_bookmark_file_remove_application(native_bookmark, native_uri, native_name, &native_error);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   mrb_ary_push(mrb, results, return_value);
   
@@ -4723,10 +4571,6 @@ mrb_GLib_g_bookmark_file_remove_group(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_bookmark_file_remove_group(native_bookmark, native_uri, native_group, &native_error);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   mrb_ary_push(mrb, results, return_value);
   
@@ -4771,10 +4615,6 @@ mrb_GLib_g_bookmark_file_remove_item(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_bookmark_file_remove_item(native_bookmark, native_uri, &native_error);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   mrb_ary_push(mrb, results, return_value);
   
@@ -4863,10 +4703,6 @@ mrb_GLib_g_bookmark_file_set_app_info(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_bookmark_file_set_app_info(native_bookmark, native_uri, native_name, native_exec, native_count, native_stamp, &native_error);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   mrb_ary_push(mrb, results, return_value);
   
@@ -5254,10 +5090,6 @@ mrb_GLib_g_bookmark_file_to_file(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_bookmark_file_to_file(native_bookmark, native_filename, &native_error);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   mrb_ary_push(mrb, results, return_value);
   
@@ -5956,10 +5788,6 @@ mrb_GLib_g_bytes_compare(mrb_state* mrb, mrb_value self) {
   gint native_return_value = g_bytes_compare(native_bytes1, native_bytes2);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -5997,10 +5825,6 @@ mrb_GLib_g_bytes_equal(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_bytes_equal(native_bytes1, native_bytes2);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -6108,10 +5932,6 @@ mrb_GLib_g_bytes_hash(mrb_state* mrb, mrb_value self) {
   guint native_return_value = g_bytes_hash(native_bytes);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -6465,10 +6285,6 @@ mrb_GLib_g_chdir(mrb_state* mrb, mrb_value self) {
   int native_return_value = g_chdir(native_path);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -6775,10 +6591,6 @@ mrb_GLib_g_child_watch_add(mrb_state* mrb, mrb_value self) {
   guint native_return_value = g_child_watch_add(native_pid, native_function, native_data);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -6825,10 +6637,6 @@ mrb_GLib_g_child_watch_add_full(mrb_state* mrb, mrb_value self) {
   guint native_return_value = g_child_watch_add_full(native_priority, native_pid, native_function, native_data, native_notify);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -6940,10 +6748,6 @@ mrb_GLib_g_close(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_close(native_fd, &native_error);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   mrb_ary_push(mrb, results, return_value);
   
@@ -7347,10 +7151,6 @@ mrb_GLib_g_cond_wait_until(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_cond_wait_until(native_cond, native_mutex, native_end_time);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -7424,10 +7224,6 @@ mrb_GLib_g_convert_error_quark(mrb_state* mrb, mrb_value self) {
   GQuark native_return_value = g_convert_error_quark();
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -7674,10 +7470,6 @@ mrb_GLib_g_datalist_get_flags(mrb_state* mrb, mrb_value self) {
   guint native_return_value = g_datalist_get_flags(native_datalist);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -7844,10 +7636,6 @@ mrb_GLib_g_datalist_id_replace_data(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_datalist_id_replace_data(native_datalist, native_key_id, native_oldval, native_newval, native_destroy, native_old_destroy);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -8384,10 +8172,6 @@ mrb_GLib_g_date_compare(mrb_state* mrb, mrb_value self) {
   gint native_return_value = g_date_compare(native_lhs, native_rhs);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -8431,10 +8215,6 @@ mrb_GLib_g_date_days_between(mrb_state* mrb, mrb_value self) {
   gint native_return_value = g_date_days_between(native_date1, native_date2);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -8537,10 +8317,6 @@ mrb_GLib_g_date_get_day_of_year(mrb_state* mrb, mrb_value self) {
   guint native_return_value = g_date_get_day_of_year(native_date);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -8604,10 +8380,6 @@ mrb_GLib_g_date_get_iso8601_week_of_year(mrb_state* mrb, mrb_value self) {
   guint native_return_value = g_date_get_iso8601_week_of_year(native_date);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -8643,7 +8415,7 @@ mrb_GLib_g_date_get_julian(mrb_state* mrb, mrb_value self) {
   guint32 native_return_value = g_date_get_julian(native_date);
 
   /* Box the return value */
-  mrb_value return_value = TODO_mruby_box_guint32(mrb, native_return_value);
+  mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
 }
@@ -8678,10 +8450,6 @@ mrb_GLib_g_date_get_monday_week_of_year(mrb_state* mrb, mrb_value self) {
   guint native_return_value = g_date_get_monday_week_of_year(native_date);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -8743,10 +8511,6 @@ mrb_GLib_g_date_get_month(mrb_state* mrb, mrb_value self) {
   GDateMonth native_return_value = g_date_get_month(native_date);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -8782,10 +8546,6 @@ mrb_GLib_g_date_get_sunday_week_of_year(mrb_state* mrb, mrb_value self) {
   guint native_return_value = g_date_get_sunday_week_of_year(native_date);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -8847,10 +8607,6 @@ mrb_GLib_g_date_get_weekday(mrb_state* mrb, mrb_value self) {
   GDateWeekday native_return_value = g_date_get_weekday(native_date);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -8921,10 +8677,6 @@ mrb_GLib_g_date_is_first_of_month(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_date_is_first_of_month(native_date);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -8960,10 +8712,6 @@ mrb_GLib_g_date_is_last_of_month(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_date_is_last_of_month(native_date);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -8990,10 +8738,6 @@ mrb_GLib_g_date_is_leap_year(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_date_is_leap_year(native_year);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -9965,10 +9709,6 @@ mrb_GLib_g_date_time_compare(mrb_state* mrb, mrb_value self) {
   gint native_return_value = g_date_time_compare(native_dt1, native_dt2);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -10049,10 +9789,6 @@ mrb_GLib_g_date_time_equal(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_date_time_equal(native_dt1, native_dt2);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -10126,10 +9862,6 @@ mrb_GLib_g_date_time_get_day_of_month(mrb_state* mrb, mrb_value self) {
   gint native_return_value = g_date_time_get_day_of_month(native_datetime);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -10165,10 +9897,6 @@ mrb_GLib_g_date_time_get_day_of_week(mrb_state* mrb, mrb_value self) {
   gint native_return_value = g_date_time_get_day_of_week(native_datetime);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -10204,10 +9932,6 @@ mrb_GLib_g_date_time_get_day_of_year(mrb_state* mrb, mrb_value self) {
   gint native_return_value = g_date_time_get_day_of_year(native_datetime);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -10243,10 +9967,6 @@ mrb_GLib_g_date_time_get_hour(mrb_state* mrb, mrb_value self) {
   gint native_return_value = g_date_time_get_hour(native_datetime);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -10282,10 +10002,6 @@ mrb_GLib_g_date_time_get_microsecond(mrb_state* mrb, mrb_value self) {
   gint native_return_value = g_date_time_get_microsecond(native_datetime);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -10321,10 +10037,6 @@ mrb_GLib_g_date_time_get_minute(mrb_state* mrb, mrb_value self) {
   gint native_return_value = g_date_time_get_minute(native_datetime);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -10360,10 +10072,6 @@ mrb_GLib_g_date_time_get_month(mrb_state* mrb, mrb_value self) {
   gint native_return_value = g_date_time_get_month(native_datetime);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -10399,10 +10107,6 @@ mrb_GLib_g_date_time_get_second(mrb_state* mrb, mrb_value self) {
   gint native_return_value = g_date_time_get_second(native_datetime);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -10543,10 +10247,6 @@ mrb_GLib_g_date_time_get_week_numbering_year(mrb_state* mrb, mrb_value self) {
   gint native_return_value = g_date_time_get_week_numbering_year(native_datetime);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -10582,10 +10282,6 @@ mrb_GLib_g_date_time_get_week_of_year(mrb_state* mrb, mrb_value self) {
   gint native_return_value = g_date_time_get_week_of_year(native_datetime);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -10621,10 +10317,6 @@ mrb_GLib_g_date_time_get_year(mrb_state* mrb, mrb_value self) {
   gint native_return_value = g_date_time_get_year(native_datetime);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -10704,10 +10396,6 @@ mrb_GLib_g_date_time_hash(mrb_state* mrb, mrb_value self) {
   guint native_return_value = g_date_time_hash(native_datetime);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -10743,10 +10431,6 @@ mrb_GLib_g_date_time_is_daylight_savings(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_date_time_is_daylight_savings(native_datetime);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -11176,10 +10860,6 @@ mrb_GLib_g_date_time_to_timeval(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_date_time_to_timeval(native_datetime, native_tv);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -11397,10 +11077,6 @@ mrb_GLib_g_date_valid(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_date_valid(native_date);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -11427,10 +11103,6 @@ mrb_GLib_g_date_valid_day(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_date_valid_day(native_day);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -11461,10 +11133,6 @@ mrb_GLib_g_date_valid_dmy(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_date_valid_dmy(native_day, native_month, native_year);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -11491,10 +11159,6 @@ mrb_GLib_g_date_valid_julian(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_date_valid_julian(native_julian_date);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -11521,10 +11185,6 @@ mrb_GLib_g_date_valid_month(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_date_valid_month(native_month);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -11551,10 +11211,6 @@ mrb_GLib_g_date_valid_weekday(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_date_valid_weekday(native_weekday);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -11581,10 +11237,6 @@ mrb_GLib_g_date_valid_year(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_date_valid_year(native_year);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -11848,10 +11500,6 @@ mrb_GLib_g_direct_equal(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_direct_equal(native_v1, native_v2);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -11884,10 +11532,6 @@ mrb_GLib_g_direct_hash(mrb_state* mrb, mrb_value self) {
   guint native_return_value = g_direct_hash(native_v);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -11957,10 +11601,6 @@ mrb_GLib_g_double_equal(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_double_equal(native_v1, native_v2);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -11993,10 +11633,6 @@ mrb_GLib_g_double_hash(mrb_state* mrb, mrb_value self) {
   guint native_return_value = g_double_hash(native_v);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -12269,10 +11905,6 @@ mrb_GLib_g_error_matches(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_error_matches(native_error, native_domain, native_code);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -12391,10 +12023,6 @@ mrb_GLib_g_file_error_from_errno(mrb_state* mrb, mrb_value self) {
   GFileError native_return_value = g_file_error_from_errno(native_err_no);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -12415,10 +12043,6 @@ mrb_GLib_g_file_error_quark(mrb_state* mrb, mrb_value self) {
   GQuark native_return_value = g_file_error_quark();
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -12449,10 +12073,6 @@ mrb_GLib_g_file_get_contents(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_file_get_contents(native_filename, &native_contents, &native_length, &native_error);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   mrb_ary_push(mrb, results, return_value);
   
@@ -12492,10 +12112,6 @@ mrb_GLib_g_file_open_tmp(mrb_state* mrb, mrb_value self) {
   gint native_return_value = g_file_open_tmp(native_tmpl, &native_name_used, &native_error);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   mrb_ary_push(mrb, results, return_value);
   
@@ -12570,10 +12186,6 @@ mrb_GLib_g_file_set_contents(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_file_set_contents(native_filename, native_contents, native_length, &native_error);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   mrb_ary_push(mrb, results, return_value);
   
@@ -12607,10 +12219,6 @@ mrb_GLib_g_file_test(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_file_test(native_filename, native_test);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -12985,10 +12593,6 @@ mrb_GLib_g_fprintf(mrb_state* mrb, mrb_value self) {
   gint native_return_value = g_fprintf(native_file, native_format);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -13070,10 +12674,6 @@ mrb_GLib_g_get_charset(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_get_charset(native_charset);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -13200,10 +12800,6 @@ mrb_GLib_g_get_filename_charsets(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_get_filename_charsets(native_charsets);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -13330,10 +12926,6 @@ mrb_GLib_g_get_num_processors(mrb_state* mrb, mrb_value self) {
   guint native_return_value = g_get_num_processors();
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -13646,10 +13238,6 @@ mrb_GLib_g_hash_table_add(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_hash_table_add(native_hash_table, native_key);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -13690,10 +13278,6 @@ mrb_GLib_g_hash_table_contains(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_hash_table_contains(native_hash_table, native_key);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -13858,10 +13442,6 @@ mrb_GLib_g_hash_table_foreach_remove(mrb_state* mrb, mrb_value self) {
   guint native_return_value = g_hash_table_foreach_remove(native_hash_table, native_func, native_user_data);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -13907,10 +13487,6 @@ mrb_GLib_g_hash_table_foreach_steal(mrb_state* mrb, mrb_value self) {
   guint native_return_value = g_hash_table_foreach_steal(native_hash_table, native_func, native_user_data);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -14066,10 +13642,6 @@ mrb_GLib_g_hash_table_insert(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_hash_table_insert(native_hash_table, native_key, native_value);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -14190,10 +13762,6 @@ mrb_GLib_g_hash_table_iter_next(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_hash_table_iter_next(native_iter, native_key, native_value);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -14385,10 +13953,6 @@ mrb_GLib_g_hash_table_lookup_extended(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_hash_table_lookup_extended(native_hash_table, native_lookup_key, native_orig_key, native_value);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -14548,10 +14112,6 @@ mrb_GLib_g_hash_table_remove(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_hash_table_remove(native_hash_table, native_key);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -14629,10 +14189,6 @@ mrb_GLib_g_hash_table_replace(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_hash_table_replace(native_hash_table, native_key, native_value);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -14668,10 +14224,6 @@ mrb_GLib_g_hash_table_size(mrb_state* mrb, mrb_value self) {
   guint native_return_value = g_hash_table_size(native_hash_table);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -14712,10 +14264,6 @@ mrb_GLib_g_hash_table_steal(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_hash_table_steal(native_hash_table, native_key);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -15112,10 +14660,6 @@ mrb_GLib_g_hook_compare_ids(mrb_state* mrb, mrb_value self) {
   gint native_return_value = g_hook_compare_ids(native_new_hook, native_sibling);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -15153,10 +14697,6 @@ mrb_GLib_g_hook_destroy(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_hook_destroy(native_hook_list, native_hook_id);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -15998,10 +15538,6 @@ mrb_GLib_g_hostname_is_ascii_encoded(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_hostname_is_ascii_encoded(native_hostname);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -16028,10 +15564,6 @@ mrb_GLib_g_hostname_is_ip_address(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_hostname_is_ip_address(native_hostname);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -16058,10 +15590,6 @@ mrb_GLib_g_hostname_is_non_ascii(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_hostname_is_non_ascii(native_hostname);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -16206,10 +15734,6 @@ mrb_GLib_g_iconv_close(mrb_state* mrb, mrb_value self) {
   gint native_return_value = g_iconv_close(native_converter);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -16275,10 +15799,6 @@ mrb_GLib_g_idle_add(mrb_state* mrb, mrb_value self) {
   guint native_return_value = g_idle_add(native_function, native_data);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -16323,10 +15843,6 @@ mrb_GLib_g_idle_add_full(mrb_state* mrb, mrb_value self) {
   guint native_return_value = g_idle_add_full(native_priority, native_function, native_data, native_notify);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -16359,10 +15875,6 @@ mrb_GLib_g_idle_remove_by_data(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_idle_remove_by_data(native_data);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -16420,10 +15932,6 @@ mrb_GLib_g_int64_equal(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_int64_equal(native_v1, native_v2);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -16456,10 +15964,6 @@ mrb_GLib_g_int64_hash(mrb_state* mrb, mrb_value self) {
   guint native_return_value = g_int64_hash(native_v);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -16497,10 +16001,6 @@ mrb_GLib_g_int_equal(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_int_equal(native_v1, native_v2);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -16533,10 +16033,6 @@ mrb_GLib_g_int_hash(mrb_state* mrb, mrb_value self) {
   guint native_return_value = g_int_hash(native_v);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -16636,10 +16132,6 @@ mrb_GLib_g_io_add_watch(mrb_state* mrb, mrb_value self) {
   guint native_return_value = g_io_add_watch(native_channel, native_condition, native_func, native_user_data);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -16694,10 +16186,6 @@ mrb_GLib_g_io_add_watch_full(mrb_state* mrb, mrb_value self) {
   guint native_return_value = g_io_add_watch_full(native_channel, native_priority, native_condition, native_func, native_user_data, native_notify);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -16756,10 +16244,6 @@ mrb_GLib_g_io_channel_error_from_errno(mrb_state* mrb, mrb_value self) {
   GIOChannelError native_return_value = g_io_channel_error_from_errno(native_en);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -16780,10 +16264,6 @@ mrb_GLib_g_io_channel_error_quark(mrb_state* mrb, mrb_value self) {
   GQuark native_return_value = g_io_channel_error_quark();
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -16821,10 +16301,6 @@ mrb_GLib_g_io_channel_flush(mrb_state* mrb, mrb_value self) {
   GIOStatus native_return_value = g_io_channel_flush(native_channel, &native_error);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   mrb_ary_push(mrb, results, return_value);
   
@@ -16865,10 +16341,6 @@ mrb_GLib_g_io_channel_get_buffer_condition(mrb_state* mrb, mrb_value self) {
   GIOCondition native_return_value = g_io_channel_get_buffer_condition(native_channel);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -16939,10 +16411,6 @@ mrb_GLib_g_io_channel_get_buffered(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_io_channel_get_buffered(native_channel);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -16978,10 +16446,6 @@ mrb_GLib_g_io_channel_get_close_on_unref(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_io_channel_get_close_on_unref(native_channel);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -17052,10 +16516,6 @@ mrb_GLib_g_io_channel_get_flags(mrb_state* mrb, mrb_value self) {
   GIOFlags native_return_value = g_io_channel_get_flags(native_channel);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -17214,10 +16674,6 @@ mrb_GLib_g_io_channel_read(mrb_state* mrb, mrb_value self) {
   GIOError native_return_value = g_io_channel_read(native_channel, native_buf, native_count, native_bytes_read);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   /* Clean up temporary values from unboxing */
@@ -17280,10 +16736,6 @@ mrb_GLib_g_io_channel_read_chars(mrb_state* mrb, mrb_value self) {
   GIOStatus native_return_value = g_io_channel_read_chars(native_channel, native_buf, native_count, native_bytes_read, &native_error);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   mrb_ary_push(mrb, results, return_value);
   
@@ -17350,10 +16802,6 @@ mrb_GLib_g_io_channel_read_line(mrb_state* mrb, mrb_value self) {
   GIOStatus native_return_value = g_io_channel_read_line(native_channel, native_str_return, native_length, native_terminator_pos, &native_error);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   mrb_ary_push(mrb, results, return_value);
   
@@ -17409,10 +16857,6 @@ mrb_GLib_g_io_channel_read_line_string(mrb_state* mrb, mrb_value self) {
   GIOStatus native_return_value = g_io_channel_read_line_string(native_channel, native_buffer, native_terminator_pos, &native_error);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   mrb_ary_push(mrb, results, return_value);
   
@@ -17465,10 +16909,6 @@ mrb_GLib_g_io_channel_read_to_end(mrb_state* mrb, mrb_value self) {
   GIOStatus native_return_value = g_io_channel_read_to_end(native_channel, native_str_return, native_length, &native_error);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   mrb_ary_push(mrb, results, return_value);
   
@@ -17516,10 +16956,6 @@ mrb_GLib_g_io_channel_read_unichar(mrb_state* mrb, mrb_value self) {
   GIOStatus native_return_value = g_io_channel_read_unichar(native_channel, native_thechar, &native_error);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   mrb_ary_push(mrb, results, return_value);
   
@@ -17599,10 +17035,6 @@ mrb_GLib_g_io_channel_seek(mrb_state* mrb, mrb_value self) {
   GIOError native_return_value = g_io_channel_seek(native_channel, native_offset, native_type);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -17644,10 +17076,6 @@ mrb_GLib_g_io_channel_seek_position(mrb_state* mrb, mrb_value self) {
   GIOStatus native_return_value = g_io_channel_seek_position(native_channel, native_offset, native_type, &native_error);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   mrb_ary_push(mrb, results, return_value);
   
@@ -17794,10 +17222,6 @@ mrb_GLib_g_io_channel_set_encoding(mrb_state* mrb, mrb_value self) {
   GIOStatus native_return_value = g_io_channel_set_encoding(native_channel, native_encoding, &native_error);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   mrb_ary_push(mrb, results, return_value);
   
@@ -17842,10 +17266,6 @@ mrb_GLib_g_io_channel_set_flags(mrb_state* mrb, mrb_value self) {
   GIOStatus native_return_value = g_io_channel_set_flags(native_channel, native_flags, &native_error);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   mrb_ary_push(mrb, results, return_value);
   
@@ -17926,10 +17346,6 @@ mrb_GLib_g_io_channel_shutdown(mrb_state* mrb, mrb_value self) {
   GIOStatus native_return_value = g_io_channel_shutdown(native_channel, native_flush, &native_err);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   mrb_ary_push(mrb, results, return_value);
   
@@ -17970,10 +17386,6 @@ mrb_GLib_g_io_channel_unix_get_fd(mrb_state* mrb, mrb_value self) {
   gint native_return_value = g_io_channel_unix_get_fd(native_channel);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -18076,10 +17488,6 @@ mrb_GLib_g_io_channel_write(mrb_state* mrb, mrb_value self) {
   GIOError native_return_value = g_io_channel_write(native_channel, native_buf, native_count, native_bytes_written);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -18126,10 +17534,6 @@ mrb_GLib_g_io_channel_write_chars(mrb_state* mrb, mrb_value self) {
   GIOStatus native_return_value = g_io_channel_write_chars(native_channel, native_buf, native_count, native_bytes_written, &native_error);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   mrb_ary_push(mrb, results, return_value);
   
@@ -18174,10 +17578,6 @@ mrb_GLib_g_io_channel_write_unichar(mrb_state* mrb, mrb_value self) {
   GIOStatus native_return_value = g_io_channel_write_unichar(native_channel, native_thechar, &native_error);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   mrb_ary_push(mrb, results, return_value);
   
@@ -18240,10 +17640,6 @@ mrb_GLib_g_key_file_error_quark(mrb_state* mrb, mrb_value self) {
   GQuark native_return_value = g_key_file_error_quark();
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -18317,10 +17713,6 @@ mrb_GLib_g_key_file_get_boolean(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_key_file_get_boolean(native_key_file, native_group_name, native_key, &native_error);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   mrb_ary_push(mrb, results, return_value);
   
@@ -18648,10 +18040,6 @@ mrb_GLib_g_key_file_get_integer(mrb_state* mrb, mrb_value self) {
   gint native_return_value = g_key_file_get_integer(native_key_file, native_group_name, native_key, &native_error);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   mrb_ary_push(mrb, results, return_value);
   
@@ -19123,10 +18511,6 @@ mrb_GLib_g_key_file_has_group(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_key_file_has_group(native_key_file, native_group_name);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -19168,10 +18552,6 @@ mrb_GLib_g_key_file_has_key(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_key_file_has_key(native_key_file, native_group_name, native_key, &native_error);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   mrb_ary_push(mrb, results, return_value);
   
@@ -19220,10 +18600,6 @@ mrb_GLib_g_key_file_load_from_data(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_key_file_load_from_data(native_key_file, native_data, native_length, native_flags, &native_error);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   mrb_ary_push(mrb, results, return_value);
   
@@ -19275,10 +18651,6 @@ mrb_GLib_g_key_file_load_from_data_dirs(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_key_file_load_from_data_dirs(native_key_file, native_file, native_full_path, native_flags, &native_error);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   mrb_ary_push(mrb, results, return_value);
   
@@ -19335,10 +18707,6 @@ mrb_GLib_g_key_file_load_from_dirs(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_key_file_load_from_dirs(native_key_file, native_file, native_search_dirs, native_full_path, native_flags, &native_error);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   mrb_ary_push(mrb, results, return_value);
   
@@ -19385,10 +18753,6 @@ mrb_GLib_g_key_file_load_from_file(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_key_file_load_from_file(native_key_file, native_file, native_flags, &native_error);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   mrb_ary_push(mrb, results, return_value);
   
@@ -19490,10 +18854,6 @@ mrb_GLib_g_key_file_remove_comment(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_key_file_remove_comment(native_key_file, native_group_name, native_key, &native_error);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   mrb_ary_push(mrb, results, return_value);
   
@@ -19538,10 +18898,6 @@ mrb_GLib_g_key_file_remove_group(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_key_file_remove_group(native_key_file, native_group_name, &native_error);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   mrb_ary_push(mrb, results, return_value);
   
@@ -19588,10 +18944,6 @@ mrb_GLib_g_key_file_remove_key(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_key_file_remove_key(native_key_file, native_group_name, native_key, &native_error);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   mrb_ary_push(mrb, results, return_value);
   
@@ -19636,10 +18988,6 @@ mrb_GLib_g_key_file_save_to_file(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_key_file_save_to_file(native_key_file, native_filename, &native_error);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   mrb_ary_push(mrb, results, return_value);
   
@@ -19769,10 +19117,6 @@ mrb_GLib_g_key_file_set_comment(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_key_file_set_comment(native_key_file, native_group_name, native_key, native_comment, &native_error);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   mrb_ary_push(mrb, results, return_value);
   
@@ -20863,10 +20207,6 @@ mrb_GLib_g_list_index(mrb_state* mrb, mrb_value self) {
   gint native_return_value = g_list_index(native_list, native_data);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -21122,10 +20462,6 @@ mrb_GLib_g_list_length(mrb_state* mrb, mrb_value self) {
   guint native_return_value = g_list_length(native_list);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -21280,10 +20616,6 @@ mrb_GLib_g_list_position(mrb_state* mrb, mrb_value self) {
   gint native_return_value = g_list_position(native_list, native_llink);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -21813,10 +21145,6 @@ mrb_GLib_g_log_set_always_fatal(mrb_state* mrb, mrb_value self) {
   GLogLevelFlags native_return_value = g_log_set_always_fatal(native_fatal_mask);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -21882,10 +21210,6 @@ mrb_GLib_g_log_set_fatal_mask(mrb_state* mrb, mrb_value self) {
   GLogLevelFlags native_return_value = g_log_set_fatal_mask(native_log_domain, native_fatal_mask);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -21927,10 +21251,6 @@ mrb_GLib_g_log_set_handler(mrb_state* mrb, mrb_value self) {
   guint native_return_value = g_log_set_handler(native_log_domain, native_log_levels, native_log_func, native_user_data);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -21977,10 +21297,6 @@ mrb_GLib_g_log_set_handler_full(mrb_state* mrb, mrb_value self) {
   guint native_return_value = g_log_set_handler_full(native_log_domain, native_log_levels, native_log_func, native_user_data, native_destroy);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -22045,10 +21361,6 @@ mrb_GLib_g_main_context_acquire(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_main_context_acquire(native_context);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -22138,10 +21450,6 @@ mrb_GLib_g_main_context_check(mrb_state* mrb, mrb_value self) {
   gint native_return_value = g_main_context_check(native_context, native_max_priority, native_fds, native_n_fds);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -22500,10 +21808,6 @@ mrb_GLib_g_main_context_is_owner(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_main_context_is_owner(native_context);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -22541,10 +21845,6 @@ mrb_GLib_g_main_context_iteration(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_main_context_iteration(native_context, native_may_block);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -22600,10 +21900,6 @@ mrb_GLib_g_main_context_pending(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_main_context_pending(native_context);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -22676,10 +21972,6 @@ mrb_GLib_g_main_context_prepare(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_main_context_prepare(native_context, native_priority);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -22764,10 +22056,6 @@ mrb_GLib_g_main_context_query(mrb_state* mrb, mrb_value self) {
   gint native_return_value = g_main_context_query(native_context, native_max_priority, native_timeout_, native_fds, native_n_fds);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -23012,10 +22300,6 @@ mrb_GLib_g_main_context_wait(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_main_context_wait(native_context, native_cond, native_mutex);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -23088,10 +22372,6 @@ mrb_GLib_g_main_depth(mrb_state* mrb, mrb_value self) {
   gint native_return_value = g_main_depth();
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -23162,10 +22442,6 @@ mrb_GLib_g_main_loop_is_running(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_main_loop_is_running(native_loop);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -23762,10 +23038,6 @@ mrb_GLib_g_markup_collect_attributes(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_markup_collect_attributes(native_element_name, native_attribute_names, native_attribute_values, &native_error, native_first_type, native_first_attr);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   mrb_ary_push(mrb, results, return_value);
   
@@ -23791,10 +23063,6 @@ mrb_GLib_g_markup_error_quark(mrb_state* mrb, mrb_value self) {
   GQuark native_return_value = g_markup_error_quark();
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -23861,10 +23129,6 @@ mrb_GLib_g_markup_parse_context_end_parse(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_markup_parse_context_end_parse(native_context, &native_error);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   mrb_ary_push(mrb, results, return_value);
   
@@ -24137,10 +23401,6 @@ mrb_GLib_g_markup_parse_context_parse(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_markup_parse_context_parse(native_context, native_text, native_text_len, &native_error);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   mrb_ary_push(mrb, results, return_value);
   
@@ -24552,10 +23812,6 @@ mrb_GLib_g_match_info_fetch_named_pos(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_match_info_fetch_named_pos(native_match_info, native_name, native_start_pos, native_end_pos);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -24603,10 +23859,6 @@ mrb_GLib_g_match_info_fetch_pos(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_match_info_fetch_pos(native_match_info, native_match_num, native_start_pos, native_end_pos);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -24674,10 +23926,6 @@ mrb_GLib_g_match_info_get_match_count(mrb_state* mrb, mrb_value self) {
   gint native_return_value = g_match_info_get_match_count(native_match_info);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -24783,10 +24031,6 @@ mrb_GLib_g_match_info_is_partial_match(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_match_info_is_partial_match(native_match_info);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -24822,10 +24066,6 @@ mrb_GLib_g_match_info_matches(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_match_info_matches(native_match_info);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -24863,10 +24103,6 @@ mrb_GLib_g_match_info_next(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_match_info_next(native_match_info, &native_error);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   mrb_ary_push(mrb, results, return_value);
   
@@ -24959,10 +24195,6 @@ mrb_GLib_g_mem_is_system_malloc(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_mem_is_system_malloc();
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -25074,10 +24306,6 @@ mrb_GLib_g_mkdir_with_parents(mrb_state* mrb, mrb_value self) {
   gint native_return_value = g_mkdir_with_parents(native_pathname, native_mode);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -25202,10 +24430,6 @@ mrb_GLib_g_mkstemp(mrb_state* mrb, mrb_value self) {
   gint native_return_value = g_mkstemp(native_tmpl);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   /* Clean up temporary values from unboxing */
@@ -25253,10 +24477,6 @@ mrb_GLib_g_mkstemp_full(mrb_state* mrb, mrb_value self) {
   gint native_return_value = g_mkstemp_full(native_tmpl, native_flags, native_mode);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   /* Clean up temporary values from unboxing */
@@ -25446,10 +24666,6 @@ mrb_GLib_g_mutex_trylock(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_mutex_trylock(native_mutex);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -25519,10 +24735,6 @@ mrb_GLib_g_node_child_index(mrb_state* mrb, mrb_value self) {
   gint native_return_value = g_node_child_index(native_node, native_data);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -25566,10 +24778,6 @@ mrb_GLib_g_node_child_position(mrb_state* mrb, mrb_value self) {
   gint native_return_value = g_node_child_position(native_node, native_child);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -25729,10 +24937,6 @@ mrb_GLib_g_node_depth(mrb_state* mrb, mrb_value self) {
   guint native_return_value = g_node_depth(native_node);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -26111,10 +25315,6 @@ mrb_GLib_g_node_is_ancestor(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_node_is_ancestor(native_node, native_descendant);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -26220,10 +25420,6 @@ mrb_GLib_g_node_max_height(mrb_state* mrb, mrb_value self) {
   guint native_return_value = g_node_max_height(native_root);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -26259,10 +25455,6 @@ mrb_GLib_g_node_n_children(mrb_state* mrb, mrb_value self) {
   guint native_return_value = g_node_n_children(native_node);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -26300,10 +25492,6 @@ mrb_GLib_g_node_n_nodes(mrb_state* mrb, mrb_value self) {
   guint native_return_value = g_node_n_nodes(native_root, native_flags);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -26680,10 +25868,6 @@ mrb_GLib_g_once_init_enter(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_once_init_enter(native_location);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -26945,10 +26129,6 @@ mrb_GLib_g_option_context_get_help_enabled(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_option_context_get_help_enabled(native_context);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -26984,10 +26164,6 @@ mrb_GLib_g_option_context_get_ignore_unknown_options(mrb_state* mrb, mrb_value s
   gboolean native_return_value = g_option_context_get_ignore_unknown_options(native_context);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -27058,10 +26234,6 @@ mrb_GLib_g_option_context_get_strict_posix(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_option_context_get_strict_posix(native_context);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -27170,10 +26342,6 @@ mrb_GLib_g_option_context_parse(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_option_context_parse(native_context, native_argc, native_argv, &native_error);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   mrb_ary_push(mrb, results, return_value);
   
@@ -27221,10 +26389,6 @@ mrb_GLib_g_option_context_parse_strv(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_option_context_parse_strv(native_context, native_arguments, &native_error);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   mrb_ary_push(mrb, results, return_value);
   
@@ -27541,10 +26705,6 @@ mrb_GLib_g_option_error_quark(mrb_state* mrb, mrb_value self) {
   GQuark native_return_value = g_option_error_quark();
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -27926,10 +27086,6 @@ mrb_GLib_g_parse_debug_string(mrb_state* mrb, mrb_value self) {
   guint native_return_value = g_parse_debug_string(native_string, native_keys, native_nkeys);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -28010,10 +27166,6 @@ mrb_GLib_g_path_is_absolute(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_path_is_absolute(native_file_name);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -28081,10 +27233,6 @@ mrb_GLib_g_pattern_match(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_pattern_match(native_pspec, native_string_length, native_string, native_string_reversed);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -28113,10 +27261,6 @@ mrb_GLib_g_pattern_match_simple(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_pattern_match_simple(native_pattern, native_string);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -28154,10 +27298,6 @@ mrb_GLib_g_pattern_match_string(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_pattern_match_string(native_pspec, native_string);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -28201,10 +27341,6 @@ mrb_GLib_g_pattern_spec_equal(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_pattern_spec_equal(native_pspec1, native_pspec2);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -28328,10 +27464,6 @@ mrb_GLib_g_pointer_bit_trylock(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_pointer_bit_trylock(native_address, native_lock_bit);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -28402,10 +27534,6 @@ mrb_GLib_g_poll(mrb_state* mrb, mrb_value self) {
   gint native_return_value = g_poll(native_fds, native_nfds, native_timeout);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -28505,10 +27633,6 @@ mrb_GLib_g_printf(mrb_state* mrb, mrb_value self) {
   gint native_return_value = g_printf(native_format);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -29036,10 +28160,6 @@ mrb_GLib_g_ptr_array_remove(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_ptr_array_remove(native_array, native_data);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -29080,10 +28200,6 @@ mrb_GLib_g_ptr_array_remove_fast(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_ptr_array_remove_fast(native_array, native_data);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -29474,10 +28590,6 @@ mrb_GLib_g_quark_from_static_string(mrb_state* mrb, mrb_value self) {
   GQuark native_return_value = g_quark_from_static_string(native_string);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -29504,10 +28616,6 @@ mrb_GLib_g_quark_from_string(mrb_state* mrb, mrb_value self) {
   GQuark native_return_value = g_quark_from_string(native_string);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -29560,10 +28668,6 @@ mrb_GLib_g_quark_try_string(mrb_state* mrb, mrb_value self) {
   GQuark native_return_value = g_quark_try_string(native_string);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -29902,10 +29006,6 @@ mrb_GLib_g_queue_get_length(mrb_state* mrb, mrb_value self) {
   guint native_return_value = g_queue_get_length(native_queue);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -29946,10 +29046,6 @@ mrb_GLib_g_queue_index(mrb_state* mrb, mrb_value self) {
   gint native_return_value = g_queue_index(native_queue, native_data);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -30154,10 +29250,6 @@ mrb_GLib_g_queue_is_empty(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_queue_is_empty(native_queue);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -30201,10 +29293,6 @@ mrb_GLib_g_queue_link_index(mrb_state* mrb, mrb_value self) {
   gint native_return_value = g_queue_link_index(native_queue, native_link_);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -30928,10 +30016,6 @@ mrb_GLib_g_queue_remove(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_queue_remove(native_queue, native_data);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -30972,10 +30056,6 @@ mrb_GLib_g_queue_remove_all(mrb_state* mrb, mrb_value self) {
   guint native_return_value = g_queue_remove_all(native_queue, native_data);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -31266,7 +30346,7 @@ mrb_GLib_g_rand_int(mrb_state* mrb, mrb_value self) {
   guint32 native_return_value = g_rand_int(native_rand_);
 
   /* Box the return value */
-  mrb_value return_value = TODO_mruby_box_guint32(mrb, native_return_value);
+  mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
 }
@@ -31526,7 +30606,7 @@ mrb_GLib_g_random_int(mrb_state* mrb, mrb_value self) {
   guint32 native_return_value = g_random_int();
 
   /* Box the return value */
-  mrb_value return_value = TODO_mruby_box_guint32(mrb, native_return_value);
+  mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
 }
@@ -31778,10 +30858,6 @@ mrb_GLib_g_rec_mutex_trylock(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_rec_mutex_trylock(native_rec_mutex);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -31850,10 +30926,6 @@ mrb_GLib_g_regex_check_replacement(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_regex_check_replacement(native_replacement, native_has_references, &native_error);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   mrb_ary_push(mrb, results, return_value);
   
@@ -31879,10 +30951,6 @@ mrb_GLib_g_regex_error_quark(mrb_state* mrb, mrb_value self) {
   GQuark native_return_value = g_regex_error_quark();
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -31976,10 +31044,6 @@ mrb_GLib_g_regex_get_capture_count(mrb_state* mrb, mrb_value self) {
   gint native_return_value = g_regex_get_capture_count(native_regex);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -32015,10 +31079,6 @@ mrb_GLib_g_regex_get_compile_flags(mrb_state* mrb, mrb_value self) {
   GRegexCompileFlags native_return_value = g_regex_get_compile_flags(native_regex);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -32054,10 +31114,6 @@ mrb_GLib_g_regex_get_has_cr_or_lf(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_regex_get_has_cr_or_lf(native_regex);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -32093,10 +31149,6 @@ mrb_GLib_g_regex_get_match_flags(mrb_state* mrb, mrb_value self) {
   GRegexMatchFlags native_return_value = g_regex_get_match_flags(native_regex);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -32132,10 +31184,6 @@ mrb_GLib_g_regex_get_max_backref(mrb_state* mrb, mrb_value self) {
   gint native_return_value = g_regex_get_max_backref(native_regex);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -32171,10 +31219,6 @@ mrb_GLib_g_regex_get_max_lookbehind(mrb_state* mrb, mrb_value self) {
   gint native_return_value = g_regex_get_max_lookbehind(native_regex);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -32247,10 +31291,6 @@ mrb_GLib_g_regex_get_string_number(mrb_state* mrb, mrb_value self) {
   gint native_return_value = g_regex_get_string_number(native_regex, native_name);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -32295,10 +31335,6 @@ mrb_GLib_g_regex_match(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_regex_match(native_regex, native_string, native_match_options, native_match_info);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -32343,10 +31379,6 @@ mrb_GLib_g_regex_match_all(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_regex_match_all(native_regex, native_string, native_match_options, native_match_info);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -32397,10 +31429,6 @@ mrb_GLib_g_regex_match_all_full(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_regex_match_all_full(native_regex, native_string, native_string_len, native_start_position, native_match_options, native_match_info, &native_error);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   mrb_ary_push(mrb, results, return_value);
   
@@ -32456,10 +31484,6 @@ mrb_GLib_g_regex_match_full(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_regex_match_full(native_regex, native_string, native_string_len, native_start_position, native_match_options, native_match_info, &native_error);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   mrb_ary_push(mrb, results, return_value);
   
@@ -32497,10 +31521,6 @@ mrb_GLib_g_regex_match_simple(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_regex_match_simple(native_pattern, native_string, native_compile_options, native_match_options);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -32965,10 +31985,6 @@ mrb_GLib_g_rmdir(mrb_state* mrb, mrb_value self) {
   int native_return_value = g_rmdir(native_filename);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -33100,10 +32116,6 @@ mrb_GLib_g_rw_lock_reader_trylock(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_rw_lock_reader_trylock(native_rw_lock);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -33203,10 +32215,6 @@ mrb_GLib_g_rw_lock_writer_trylock(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_rw_lock_writer_trylock(native_rw_lock);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -33274,10 +32282,6 @@ mrb_GLib_g_scanner_cur_line(mrb_state* mrb, mrb_value self) {
   guint native_return_value = g_scanner_cur_line(native_scanner);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -33313,10 +32317,6 @@ mrb_GLib_g_scanner_cur_position(mrb_state* mrb, mrb_value self) {
   guint native_return_value = g_scanner_cur_position(native_scanner);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -33352,10 +32352,6 @@ mrb_GLib_g_scanner_cur_token(mrb_state* mrb, mrb_value self) {
   GTokenType native_return_value = g_scanner_cur_token(native_scanner);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -33458,10 +32454,6 @@ mrb_GLib_g_scanner_eof(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_scanner_eof(native_scanner);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -33531,10 +32523,6 @@ mrb_GLib_g_scanner_get_next_token(mrb_state* mrb, mrb_value self) {
   GTokenType native_return_value = g_scanner_get_next_token(native_scanner);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -33712,10 +32700,6 @@ mrb_GLib_g_scanner_peek_next_token(mrb_state* mrb, mrb_value self) {
   GTokenType native_return_value = g_scanner_peek_next_token(native_scanner);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -33913,10 +32897,6 @@ mrb_GLib_g_scanner_set_scope(mrb_state* mrb, mrb_value self) {
   guint native_return_value = g_scanner_set_scope(native_scanner, native_scope_id);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -34368,10 +33348,6 @@ mrb_GLib_g_sequence_get_length(mrb_state* mrb, mrb_value self) {
   gint native_return_value = g_sequence_get_length(native_seq);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -34555,10 +33531,6 @@ mrb_GLib_g_sequence_iter_compare(mrb_state* mrb, mrb_value self) {
   gint native_return_value = g_sequence_iter_compare(native_a, native_b);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -34594,10 +33566,6 @@ mrb_GLib_g_sequence_iter_get_position(mrb_state* mrb, mrb_value self) {
   gint native_return_value = g_sequence_iter_get_position(native_iter);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -34668,10 +33636,6 @@ mrb_GLib_g_sequence_iter_is_begin(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_sequence_iter_is_begin(native_iter);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -34707,10 +33671,6 @@ mrb_GLib_g_sequence_iter_is_end(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_sequence_iter_is_end(native_iter);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -35740,10 +34700,6 @@ mrb_GLib_g_setenv(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_setenv(native_variable, native_value, native_overwrite);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -35764,10 +34720,6 @@ mrb_GLib_g_shell_error_quark(mrb_state* mrb, mrb_value self) {
   GQuark native_return_value = g_shell_error_quark();
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -35809,10 +34761,6 @@ mrb_GLib_g_shell_parse_argv(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_shell_parse_argv(native_command_line, native_argcp, native_argvp, &native_error);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   mrb_ary_push(mrb, results, return_value);
   
@@ -36610,10 +35558,6 @@ mrb_GLib_g_slist_index(mrb_state* mrb, mrb_value self) {
   gint native_return_value = g_slist_index(native_list, native_data);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -36869,10 +35813,6 @@ mrb_GLib_g_slist_length(mrb_state* mrb, mrb_value self) {
   guint native_return_value = g_slist_length(native_list);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -36990,10 +35930,6 @@ mrb_GLib_g_slist_position(mrb_state* mrb, mrb_value self) {
   gint native_return_value = g_slist_position(native_list, native_llink);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -37315,10 +36251,6 @@ mrb_GLib_g_snprintf(mrb_state* mrb, mrb_value self) {
   gint native_return_value = g_snprintf(native_string, native_n, native_format);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   /* Clean up temporary values from unboxing */
@@ -37490,10 +36422,6 @@ mrb_GLib_g_source_attach(mrb_state* mrb, mrb_value self) {
   guint native_return_value = g_source_attach(native_source, native_context);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -37561,10 +36489,6 @@ mrb_GLib_g_source_get_can_recurse(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_source_get_can_recurse(native_source);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -37675,10 +36599,6 @@ mrb_GLib_g_source_get_id(mrb_state* mrb, mrb_value self) {
   guint native_return_value = g_source_get_id(native_source);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -37749,10 +36669,6 @@ mrb_GLib_g_source_get_priority(mrb_state* mrb, mrb_value self) {
   gint native_return_value = g_source_get_priority(native_source);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -37858,10 +36774,6 @@ mrb_GLib_g_source_is_destroyed(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_source_is_destroyed(native_source);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -37978,10 +36890,6 @@ mrb_GLib_g_source_query_unix_fd(mrb_state* mrb, mrb_value self) {
   GIOCondition native_return_value = g_source_query_unix_fd(native_source, native_tag);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -38043,10 +36951,6 @@ mrb_GLib_g_source_remove(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_source_remove(native_tag);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -38087,10 +36991,6 @@ mrb_GLib_g_source_remove_by_funcs_user_data(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_source_remove_by_funcs_user_data(native_funcs, native_user_data);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -38123,10 +37023,6 @@ mrb_GLib_g_source_remove_by_user_data(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_source_remove_by_user_data(native_user_data);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -38595,10 +37491,6 @@ mrb_GLib_g_spaced_primes_closest(mrb_state* mrb, mrb_value self) {
   guint native_return_value = g_spaced_primes_closest(native_num);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -38673,10 +37565,6 @@ mrb_GLib_g_spawn_async(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_spawn_async(native_working_directory, native_argv, native_envp, native_flags, native_child_setup, native_user_data, &native_child_pid, &native_error);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   mrb_ary_push(mrb, results, return_value);
   
@@ -38766,10 +37654,6 @@ mrb_GLib_g_spawn_async_with_pipes(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_spawn_async_with_pipes(native_working_directory, native_argv, native_envp, native_flags, native_child_setup, native_user_data, &native_child_pid, &native_standard_input, &native_standard_output, &native_standard_error, &native_error);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   mrb_ary_push(mrb, results, return_value);
   
@@ -38816,10 +37700,6 @@ mrb_GLib_g_spawn_check_exit_status(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_spawn_check_exit_status(native_exit_status, &native_error);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   mrb_ary_push(mrb, results, return_value);
   
@@ -38876,10 +37756,6 @@ mrb_GLib_g_spawn_command_line_async(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_spawn_command_line_async(native_command_line, &native_error);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   mrb_ary_push(mrb, results, return_value);
   
@@ -38916,10 +37792,6 @@ mrb_GLib_g_spawn_command_line_sync(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_spawn_command_line_sync(native_command_line, &native_standard_output, &native_standard_error, &native_exit_status, &native_error);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   mrb_ary_push(mrb, results, return_value);
   
@@ -38952,10 +37824,6 @@ mrb_GLib_g_spawn_error_quark(mrb_state* mrb, mrb_value self) {
   GQuark native_return_value = g_spawn_error_quark();
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -38976,10 +37844,6 @@ mrb_GLib_g_spawn_exit_error_quark(mrb_state* mrb, mrb_value self) {
   GQuark native_return_value = g_spawn_exit_error_quark();
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -39056,10 +37920,6 @@ mrb_GLib_g_spawn_sync(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_spawn_sync(native_working_directory, native_argv, native_envp, native_flags, native_child_setup, native_user_data, &native_standard_output, &native_standard_error, &native_exit_status, &native_error);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   mrb_ary_push(mrb, results, return_value);
   
@@ -39114,10 +37974,6 @@ mrb_GLib_g_sprintf(mrb_state* mrb, mrb_value self) {
   gint native_return_value = g_sprintf(native_string, native_format);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   /* Clean up temporary values from unboxing */
@@ -39242,10 +38098,6 @@ mrb_GLib_g_str_equal(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_str_equal(native_v1, native_v2);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -39274,10 +38126,6 @@ mrb_GLib_g_str_has_prefix(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_str_has_prefix(native_str, native_prefix);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -39306,10 +38154,6 @@ mrb_GLib_g_str_has_suffix(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_str_has_suffix(native_str, native_suffix);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -39342,10 +38186,6 @@ mrb_GLib_g_str_hash(mrb_state* mrb, mrb_value self) {
   guint native_return_value = g_str_hash(native_v);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -39372,10 +38212,6 @@ mrb_GLib_g_str_is_ascii(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_str_is_ascii(native_str);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -39406,10 +38242,6 @@ mrb_GLib_g_str_match_string(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_str_match_string(native_search_term, native_potential_hit, native_accept_alternates);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -39551,10 +38383,6 @@ mrb_GLib_g_strcasecmp(mrb_state* mrb, mrb_value self) {
   gint native_return_value = g_strcasecmp(native_s1, native_s2);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -39671,10 +38499,6 @@ mrb_GLib_g_strcmp0(mrb_state* mrb, mrb_value self) {
   int native_return_value = g_strcmp0(native_str1, native_str2);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -40709,10 +39533,6 @@ mrb_GLib_g_string_equal(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_string_equal(native_v, native_v2);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -40860,10 +39680,6 @@ mrb_GLib_g_string_hash(mrb_state* mrb, mrb_value self) {
   guint native_return_value = g_string_hash(native_str);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -41725,10 +40541,6 @@ mrb_GLib_g_strncasecmp(mrb_state* mrb, mrb_value self) {
   gint native_return_value = g_strncasecmp(native_s1, native_s2, native_n);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -42120,10 +40932,6 @@ mrb_GLib_g_strv_contains(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_strv_contains(native_strv, native_str);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -42156,10 +40964,6 @@ mrb_GLib_g_strv_length(mrb_state* mrb, mrb_value self) {
   guint native_return_value = g_strv_length(native_str_array);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -42561,10 +41365,6 @@ mrb_GLib_g_test_failed(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_test_failed();
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -43166,10 +41966,6 @@ mrb_GLib_g_test_run(mrb_state* mrb, mrb_value self) {
   int native_return_value = g_test_run();
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -43205,10 +42001,6 @@ mrb_GLib_g_test_run_suite(mrb_state* mrb, mrb_value self) {
   int native_return_value = g_test_run_suite(native_suite);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -43269,10 +42061,6 @@ mrb_GLib_g_test_subprocess(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_test_subprocess();
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -43471,10 +42259,6 @@ mrb_GLib_g_test_trap_fork(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_test_trap_fork(native_usec_timeout, native_test_trap_flags);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -43495,10 +42279,6 @@ mrb_GLib_g_test_trap_has_passed(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_test_trap_has_passed();
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -43519,10 +42299,6 @@ mrb_GLib_g_test_trap_reached_timeout(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_test_trap_reached_timeout();
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -43570,10 +42346,6 @@ mrb_GLib_g_thread_error_quark(mrb_state* mrb, mrb_value self) {
   GQuark native_return_value = g_thread_error_quark();
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -43733,10 +42505,6 @@ mrb_GLib_g_thread_pool_get_max_idle_time(mrb_state* mrb, mrb_value self) {
   guint native_return_value = g_thread_pool_get_max_idle_time();
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -43772,10 +42540,6 @@ mrb_GLib_g_thread_pool_get_max_threads(mrb_state* mrb, mrb_value self) {
   gint native_return_value = g_thread_pool_get_max_threads(native_pool);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -43796,10 +42560,6 @@ mrb_GLib_g_thread_pool_get_max_unused_threads(mrb_state* mrb, mrb_value self) {
   gint native_return_value = g_thread_pool_get_max_unused_threads();
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -43835,10 +42595,6 @@ mrb_GLib_g_thread_pool_get_num_threads(mrb_state* mrb, mrb_value self) {
   guint native_return_value = g_thread_pool_get_num_threads(native_pool);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -43859,10 +42615,6 @@ mrb_GLib_g_thread_pool_get_num_unused_threads(mrb_state* mrb, mrb_value self) {
   guint native_return_value = g_thread_pool_get_num_unused_threads();
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -43903,10 +42655,6 @@ mrb_GLib_g_thread_pool_move_to_front(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_thread_pool_move_to_front(native_pool, native_data);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -43997,10 +42745,6 @@ mrb_GLib_g_thread_pool_push(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_thread_pool_push(native_pool, native_data, &native_error);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   mrb_ary_push(mrb, results, return_value);
   
@@ -44068,10 +42812,6 @@ mrb_GLib_g_thread_pool_set_max_threads(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_thread_pool_set_max_threads(native_pool, native_max_threads, &native_error);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   mrb_ary_push(mrb, results, return_value);
   
@@ -44194,10 +42934,6 @@ mrb_GLib_g_thread_pool_unprocessed(mrb_state* mrb, mrb_value self) {
   guint native_return_value = g_thread_pool_unprocessed(native_pool);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -44419,10 +43155,6 @@ mrb_GLib_g_time_val_from_iso8601(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_time_val_from_iso8601(native_iso_date, native_time_);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -44501,10 +43233,6 @@ mrb_GLib_g_time_zone_adjust_time(mrb_state* mrb, mrb_value self) {
   gint native_return_value = g_time_zone_adjust_time(native_tz, native_type, native_time_);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -44544,10 +43272,6 @@ mrb_GLib_g_time_zone_find_interval(mrb_state* mrb, mrb_value self) {
   gint native_return_value = g_time_zone_find_interval(native_tz, native_type, native_time_);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -44659,10 +43383,6 @@ mrb_GLib_g_time_zone_is_dst(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_time_zone_is_dst(native_tz, native_interval);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -44835,10 +43555,6 @@ mrb_GLib_g_timeout_add(mrb_state* mrb, mrb_value self) {
   guint native_return_value = g_timeout_add(native_interval, native_function, native_data);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -44885,10 +43601,6 @@ mrb_GLib_g_timeout_add_full(mrb_state* mrb, mrb_value self) {
   guint native_return_value = g_timeout_add_full(native_priority, native_interval, native_function, native_data, native_notify);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -44928,10 +43640,6 @@ mrb_GLib_g_timeout_add_seconds(mrb_state* mrb, mrb_value self) {
   guint native_return_value = g_timeout_add_seconds(native_interval, native_function, native_data);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -44978,10 +43686,6 @@ mrb_GLib_g_timeout_add_seconds_full(mrb_state* mrb, mrb_value self) {
   guint native_return_value = g_timeout_add_seconds_full(native_priority, native_interval, native_function, native_data, native_notify);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -45286,10 +43990,6 @@ mrb_GLib_g_trash_stack_height(mrb_state* mrb, mrb_value self) {
   guint native_return_value = g_trash_stack_height(native_stack_p);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -45497,10 +44197,6 @@ mrb_GLib_g_tree_height(mrb_state* mrb, mrb_value self) {
   gint native_return_value = g_tree_height(native_tree);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -45633,10 +44329,6 @@ mrb_GLib_g_tree_lookup_extended(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_tree_lookup_extended(native_tree, native_lookup_key, native_orig_key, native_value);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -45788,10 +44480,6 @@ mrb_GLib_g_tree_nnodes(mrb_state* mrb, mrb_value self) {
   gint native_return_value = g_tree_nnodes(native_tree);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -45867,10 +44555,6 @@ mrb_GLib_g_tree_remove(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_tree_remove(native_tree, native_key);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -45998,10 +44682,6 @@ mrb_GLib_g_tree_steal(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_tree_steal(native_tree, native_key);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -46385,10 +45065,6 @@ mrb_GLib_g_unichar_break_type(mrb_state* mrb, mrb_value self) {
   GUnicodeBreakType native_return_value = g_unichar_break_type(native_c);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -46415,10 +45091,6 @@ mrb_GLib_g_unichar_combining_class(mrb_state* mrb, mrb_value self) {
   gint native_return_value = g_unichar_combining_class(native_uc);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -46455,10 +45127,6 @@ mrb_GLib_g_unichar_compose(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_unichar_compose(native_a, native_b, native_ch);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -46498,10 +45166,6 @@ mrb_GLib_g_unichar_decompose(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_unichar_decompose(native_ch, native_a, native_b);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -46528,10 +45192,6 @@ mrb_GLib_g_unichar_digit_value(mrb_state* mrb, mrb_value self) {
   gint native_return_value = g_unichar_digit_value(native_c);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -46604,10 +45264,6 @@ mrb_GLib_g_unichar_get_mirror_char(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_unichar_get_mirror_char(native_ch, native_mirrored_ch);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -46634,10 +45290,6 @@ mrb_GLib_g_unichar_get_script(mrb_state* mrb, mrb_value self) {
   GUnicodeScript native_return_value = g_unichar_get_script(native_ch);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -46664,10 +45316,6 @@ mrb_GLib_g_unichar_isalnum(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_unichar_isalnum(native_c);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -46694,10 +45342,6 @@ mrb_GLib_g_unichar_isalpha(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_unichar_isalpha(native_c);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -46724,10 +45368,6 @@ mrb_GLib_g_unichar_iscntrl(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_unichar_iscntrl(native_c);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -46754,10 +45394,6 @@ mrb_GLib_g_unichar_isdefined(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_unichar_isdefined(native_c);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -46784,10 +45420,6 @@ mrb_GLib_g_unichar_isdigit(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_unichar_isdigit(native_c);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -46814,10 +45446,6 @@ mrb_GLib_g_unichar_isgraph(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_unichar_isgraph(native_c);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -46844,10 +45472,6 @@ mrb_GLib_g_unichar_islower(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_unichar_islower(native_c);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -46874,10 +45498,6 @@ mrb_GLib_g_unichar_ismark(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_unichar_ismark(native_c);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -46904,10 +45524,6 @@ mrb_GLib_g_unichar_isprint(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_unichar_isprint(native_c);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -46934,10 +45550,6 @@ mrb_GLib_g_unichar_ispunct(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_unichar_ispunct(native_c);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -46964,10 +45576,6 @@ mrb_GLib_g_unichar_isspace(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_unichar_isspace(native_c);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -46994,10 +45602,6 @@ mrb_GLib_g_unichar_istitle(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_unichar_istitle(native_c);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -47024,10 +45628,6 @@ mrb_GLib_g_unichar_isupper(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_unichar_isupper(native_c);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -47054,10 +45654,6 @@ mrb_GLib_g_unichar_iswide(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_unichar_iswide(native_c);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -47084,10 +45680,6 @@ mrb_GLib_g_unichar_iswide_cjk(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_unichar_iswide_cjk(native_c);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -47114,10 +45706,6 @@ mrb_GLib_g_unichar_isxdigit(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_unichar_isxdigit(native_c);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -47144,10 +45732,6 @@ mrb_GLib_g_unichar_iszerowidth(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_unichar_iszerowidth(native_c);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -47184,10 +45768,6 @@ mrb_GLib_g_unichar_to_utf8(mrb_state* mrb, mrb_value self) {
   gint native_return_value = g_unichar_to_utf8(native_c, native_outbuf);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   /* Clean up temporary values from unboxing */
@@ -47223,7 +45803,7 @@ mrb_GLib_g_unichar_tolower(mrb_state* mrb, mrb_value self) {
   gunichar native_return_value = g_unichar_tolower(native_c);
 
   /* Box the return value */
-  mrb_value return_value = TODO_mruby_box_guint32(mrb, native_return_value);
+  mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
 }
@@ -47249,7 +45829,7 @@ mrb_GLib_g_unichar_totitle(mrb_state* mrb, mrb_value self) {
   gunichar native_return_value = g_unichar_totitle(native_c);
 
   /* Box the return value */
-  mrb_value return_value = TODO_mruby_box_guint32(mrb, native_return_value);
+  mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
 }
@@ -47275,7 +45855,7 @@ mrb_GLib_g_unichar_toupper(mrb_state* mrb, mrb_value self) {
   gunichar native_return_value = g_unichar_toupper(native_c);
 
   /* Box the return value */
-  mrb_value return_value = TODO_mruby_box_guint32(mrb, native_return_value);
+  mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
 }
@@ -47301,10 +45881,6 @@ mrb_GLib_g_unichar_type(mrb_state* mrb, mrb_value self) {
   GUnicodeType native_return_value = g_unichar_type(native_c);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -47331,10 +45907,6 @@ mrb_GLib_g_unichar_validate(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_unichar_validate(native_ch);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -47361,10 +45933,6 @@ mrb_GLib_g_unichar_xdigit_value(mrb_state* mrb, mrb_value self) {
   gint native_return_value = g_unichar_xdigit_value(native_c);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -47456,10 +46024,6 @@ mrb_GLib_g_unicode_script_from_iso15924(mrb_state* mrb, mrb_value self) {
   GUnicodeScript native_return_value = g_unicode_script_from_iso15924(native_iso15924);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -47486,7 +46050,7 @@ mrb_GLib_g_unicode_script_to_iso15924(mrb_state* mrb, mrb_value self) {
   guint32 native_return_value = g_unicode_script_to_iso15924(native_script);
 
   /* Box the return value */
-  mrb_value return_value = TODO_mruby_box_guint32(mrb, native_return_value);
+  mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
 }
@@ -47512,10 +46076,6 @@ mrb_GLib_g_unlink(mrb_state* mrb, mrb_value self) {
   int native_return_value = g_unlink(native_filename);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -47866,10 +46426,6 @@ mrb_GLib_g_utf8_collate(mrb_state* mrb, mrb_value self) {
   gint native_return_value = g_utf8_collate(native_str1, native_str2);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -48012,7 +46568,7 @@ mrb_GLib_g_utf8_get_char(mrb_state* mrb, mrb_value self) {
   gunichar native_return_value = g_utf8_get_char(native_p);
 
   /* Box the return value */
-  mrb_value return_value = TODO_mruby_box_guint32(mrb, native_return_value);
+  mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
 }
@@ -48040,7 +46596,7 @@ mrb_GLib_g_utf8_get_char_validated(mrb_state* mrb, mrb_value self) {
   gunichar native_return_value = g_utf8_get_char_validated(native_p, native_max_len);
 
   /* Box the return value */
-  mrb_value return_value = TODO_mruby_box_guint32(mrb, native_return_value);
+  mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
 }
@@ -48128,10 +46684,6 @@ mrb_GLib_g_utf8_pointer_to_offset(mrb_state* mrb, mrb_value self) {
   glong native_return_value = g_utf8_pointer_to_offset(native_str, native_pos);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -48247,10 +46799,6 @@ mrb_GLib_g_utf8_strlen(mrb_state* mrb, mrb_value self) {
   glong native_return_value = g_utf8_strlen(native_p, native_max);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -48587,10 +47135,6 @@ mrb_GLib_g_utf8_validate(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_utf8_validate(native_str, native_max_len, native_end);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -49054,10 +47598,6 @@ mrb_GLib_g_variant_check_format_string(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_variant_check_format_string(native_value, native_format_string, native_copy_only);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -49093,10 +47633,6 @@ mrb_GLib_g_variant_classify(mrb_state* mrb, mrb_value self) {
   GVariantClass native_return_value = g_variant_classify(native_value);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -49134,10 +47670,6 @@ mrb_GLib_g_variant_compare(mrb_state* mrb, mrb_value self) {
   gint native_return_value = g_variant_compare(native_one, native_two);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -49207,10 +47739,6 @@ mrb_GLib_g_variant_dict_contains(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_variant_dict_contains(native_dict, native_key);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -49403,10 +47931,6 @@ mrb_GLib_g_variant_dict_lookup(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_variant_dict_lookup(native_dict, native_key, native_format_string);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -49559,10 +48083,6 @@ mrb_GLib_g_variant_dict_remove(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_variant_dict_remove(native_dict, native_key);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -49834,10 +48354,6 @@ mrb_GLib_g_variant_equal(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_variant_equal(native_one, native_two);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -49907,10 +48423,6 @@ mrb_GLib_g_variant_get_boolean(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_variant_get_boolean(native_value);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -49946,10 +48458,6 @@ mrb_GLib_g_variant_get_byte(mrb_state* mrb, mrb_value self) {
   guchar native_return_value = g_variant_get_byte(native_value);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -50750,7 +49258,7 @@ mrb_GLib_g_variant_get_uint32(mrb_state* mrb, mrb_value self) {
   guint32 native_return_value = g_variant_get_uint32(native_value);
 
   /* Box the return value */
-  mrb_value return_value = TODO_mruby_box_guint32(mrb, native_return_value);
+  mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
 }
@@ -50896,10 +49404,6 @@ mrb_GLib_g_variant_hash(mrb_state* mrb, mrb_value self) {
   guint native_return_value = g_variant_hash(native_value);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -50935,10 +49439,6 @@ mrb_GLib_g_variant_is_container(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_variant_is_container(native_value);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -50974,10 +49474,6 @@ mrb_GLib_g_variant_is_floating(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_variant_is_floating(native_value);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -51013,10 +49509,6 @@ mrb_GLib_g_variant_is_normal_form(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_variant_is_normal_form(native_value);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -51043,10 +49535,6 @@ mrb_GLib_g_variant_is_object_path(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_variant_is_object_path(native_string);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -51090,10 +49578,6 @@ mrb_GLib_g_variant_is_of_type(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_variant_is_of_type(native_value, native_type);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -51120,10 +49604,6 @@ mrb_GLib_g_variant_is_signature(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_variant_is_signature(native_string);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -51271,10 +49751,6 @@ mrb_GLib_g_variant_iter_loop(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_variant_iter_loop(native_iter, native_format_string);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -51382,10 +49858,6 @@ mrb_GLib_g_variant_iter_next(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_variant_iter_next(native_iter, native_format_string);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -51460,10 +49932,6 @@ mrb_GLib_g_variant_lookup(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_variant_lookup(native_dictionary, native_key, native_format_string);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -52653,10 +51121,6 @@ mrb_GLib_g_variant_parse_error_quark(mrb_state* mrb, mrb_value self) {
   GQuark native_return_value = g_variant_parse_error_quark();
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -52677,10 +51141,6 @@ mrb_GLib_g_variant_parser_get_error_quark(mrb_state* mrb, mrb_value self) {
   GQuark native_return_value = g_variant_parser_get_error_quark();
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -53075,10 +51535,6 @@ mrb_GLib_g_variant_type_equal(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_variant_type_equal(native_type1, native_type2);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -53213,10 +51669,6 @@ mrb_GLib_g_variant_type_hash(mrb_state* mrb, mrb_value self) {
   guint native_return_value = g_variant_type_hash(native_type);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -53252,10 +51704,6 @@ mrb_GLib_g_variant_type_is_array(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_variant_type_is_array(native_type);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -53291,10 +51739,6 @@ mrb_GLib_g_variant_type_is_basic(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_variant_type_is_basic(native_type);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -53330,10 +51774,6 @@ mrb_GLib_g_variant_type_is_container(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_variant_type_is_container(native_type);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -53369,10 +51809,6 @@ mrb_GLib_g_variant_type_is_definite(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_variant_type_is_definite(native_type);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -53408,10 +51844,6 @@ mrb_GLib_g_variant_type_is_dict_entry(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_variant_type_is_dict_entry(native_type);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -53447,10 +51879,6 @@ mrb_GLib_g_variant_type_is_maybe(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_variant_type_is_maybe(native_type);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -53494,10 +51922,6 @@ mrb_GLib_g_variant_type_is_subtype_of(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_variant_type_is_subtype_of(native_type, native_supertype);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -53533,10 +51957,6 @@ mrb_GLib_g_variant_type_is_tuple(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_variant_type_is_tuple(native_type);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -53572,10 +51992,6 @@ mrb_GLib_g_variant_type_is_variant(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_variant_type_is_variant(native_type);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -53915,10 +52331,6 @@ mrb_GLib_g_variant_type_string_is_valid(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_variant_type_string_is_valid(native_type_string);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -53955,10 +52367,6 @@ mrb_GLib_g_variant_type_string_scan(mrb_state* mrb, mrb_value self) {
   gboolean native_return_value = g_variant_type_string_scan(native_string, native_limit, native_endptr);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -54065,10 +52473,6 @@ mrb_GLib_g_vasprintf(mrb_state* mrb, mrb_value self) {
   gint native_return_value = g_vasprintf(native_string, native_format, native_args);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -54108,10 +52512,6 @@ mrb_GLib_g_vfprintf(mrb_state* mrb, mrb_value self) {
   gint native_return_value = g_vfprintf(native_file, native_format, native_args);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -54146,10 +52546,6 @@ mrb_GLib_g_vprintf(mrb_state* mrb, mrb_value self) {
   gint native_return_value = g_vprintf(native_format, native_args);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
@@ -54190,10 +52586,6 @@ mrb_GLib_g_vsnprintf(mrb_state* mrb, mrb_value self) {
   gint native_return_value = g_vsnprintf(native_string, native_n, native_format, native_args);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   /* Clean up temporary values from unboxing */
@@ -54246,10 +52638,6 @@ mrb_GLib_g_vsprintf(mrb_state* mrb, mrb_value self) {
   gint native_return_value = g_vsprintf(native_string, native_format, native_args);
 
   /* Box the return value */
-  if (native_return_value > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   /* Clean up temporary values from unboxing */

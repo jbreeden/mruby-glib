@@ -23,7 +23,6 @@ TODO_mruby_box_gsize
 TODO_mruby_box_gssize
 TODO_mruby_box_guchar_PTR
 TODO_mruby_box_guint16
-TODO_mruby_box_guint32
 TODO_mruby_box_guint64
 TODO_mruby_box_guint8
 TODO_mruby_box_guint8_PTR

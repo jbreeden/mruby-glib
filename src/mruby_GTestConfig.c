@@ -71,10 +71,6 @@ mrb_GLib_GTestConfig_get_test_initialized(mrb_state* mrb, mrb_value self) {
 
   gboolean native_field = native_self->test_initialized;
 
-  if (native_field > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value ruby_field = mrb_fixnum_value(native_field);
 
   return ruby_field;
@@ -119,10 +115,6 @@ mrb_GLib_GTestConfig_get_test_quick(mrb_state* mrb, mrb_value self) {
 
   gboolean native_field = native_self->test_quick;
 
-  if (native_field > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value ruby_field = mrb_fixnum_value(native_field);
 
   return ruby_field;
@@ -167,10 +159,6 @@ mrb_GLib_GTestConfig_get_test_perf(mrb_state* mrb, mrb_value self) {
 
   gboolean native_field = native_self->test_perf;
 
-  if (native_field > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value ruby_field = mrb_fixnum_value(native_field);
 
   return ruby_field;
@@ -215,10 +203,6 @@ mrb_GLib_GTestConfig_get_test_verbose(mrb_state* mrb, mrb_value self) {
 
   gboolean native_field = native_self->test_verbose;
 
-  if (native_field > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value ruby_field = mrb_fixnum_value(native_field);
 
   return ruby_field;
@@ -263,10 +247,6 @@ mrb_GLib_GTestConfig_get_test_quiet(mrb_state* mrb, mrb_value self) {
 
   gboolean native_field = native_self->test_quiet;
 
-  if (native_field > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value ruby_field = mrb_fixnum_value(native_field);
 
   return ruby_field;
@@ -311,10 +291,6 @@ mrb_GLib_GTestConfig_get_test_undefined(mrb_state* mrb, mrb_value self) {
 
   gboolean native_field = native_self->test_undefined;
 
-  if (native_field > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value ruby_field = mrb_fixnum_value(native_field);
 
   return ruby_field;

@@ -32,13 +32,10 @@
 #define BIND_g_checksum_update_FUNCTION FALSE
 
 #define BIND_g_file_get_contents_FUNCTION FALSE
-#define BIND_g_file_open_tmp_FUNCTION FALSE\
-#define BIND_g_free_FUNCTION FALSE
 
 #define BIND_g_iconv_FUNCTION FALSE
 #define BIND_g_iconv_open_FUNCTION FALSE
 
-#define BIND_g_malloc_FUNCTION FALSE
 #define BIND_g_rand_int_FUNCTION FALSE
 #define BIND_g_random_int_FUNCTION FALSE
 #define BIND_g_shell_error_quark_FUNCTION FALSE

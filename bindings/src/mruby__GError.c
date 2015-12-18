@@ -71,10 +71,6 @@ mrb_GLib_GError_get_domain(mrb_state* mrb, mrb_value self) {
 
   GQuark native_field = native_self->domain;
 
-  if (native_field > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value ruby_field = mrb_fixnum_value(native_field);
 
   return ruby_field;
@@ -119,10 +115,6 @@ mrb_GLib_GError_get_code(mrb_state* mrb, mrb_value self) {
 
   gint native_field = native_self->code;
 
-  if (native_field > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value ruby_field = mrb_fixnum_value(native_field);
 
   return ruby_field;

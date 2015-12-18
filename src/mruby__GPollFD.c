@@ -71,10 +71,6 @@ mrb_GLib_GPollFD_get_fd(mrb_state* mrb, mrb_value self) {
 
   gint native_field = native_self->fd;
 
-  if (native_field > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value ruby_field = mrb_fixnum_value(native_field);
 
   return ruby_field;
@@ -119,10 +115,6 @@ mrb_GLib_GPollFD_get_events(mrb_state* mrb, mrb_value self) {
 
   gushort native_field = native_self->events;
 
-  if (native_field > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value ruby_field = mrb_fixnum_value(native_field);
 
   return ruby_field;
@@ -167,10 +159,6 @@ mrb_GLib_GPollFD_get_revents(mrb_state* mrb, mrb_value self) {
 
   gushort native_field = native_self->revents;
 
-  if (native_field > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value ruby_field = mrb_fixnum_value(native_field);
 
   return ruby_field;

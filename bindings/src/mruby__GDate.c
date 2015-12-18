@@ -71,10 +71,6 @@ mrb_GLib_GDate_get_julian_days(mrb_state* mrb, mrb_value self) {
 
   guint native_field = native_self->julian_days;
 
-  if (native_field > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value ruby_field = mrb_fixnum_value(native_field);
 
   return ruby_field;
@@ -119,10 +115,6 @@ mrb_GLib_GDate_get_julian(mrb_state* mrb, mrb_value self) {
 
   guint native_field = native_self->julian;
 
-  if (native_field > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value ruby_field = mrb_fixnum_value(native_field);
 
   return ruby_field;
@@ -167,10 +159,6 @@ mrb_GLib_GDate_get_dmy(mrb_state* mrb, mrb_value self) {
 
   guint native_field = native_self->dmy;
 
-  if (native_field > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value ruby_field = mrb_fixnum_value(native_field);
 
   return ruby_field;
@@ -215,10 +203,6 @@ mrb_GLib_GDate_get_day(mrb_state* mrb, mrb_value self) {
 
   guint native_field = native_self->day;
 
-  if (native_field > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value ruby_field = mrb_fixnum_value(native_field);
 
   return ruby_field;
@@ -263,10 +247,6 @@ mrb_GLib_GDate_get_month(mrb_state* mrb, mrb_value self) {
 
   guint native_field = native_self->month;
 
-  if (native_field > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value ruby_field = mrb_fixnum_value(native_field);
 
   return ruby_field;
@@ -311,10 +291,6 @@ mrb_GLib_GDate_get_year(mrb_state* mrb, mrb_value self) {
 
   guint native_field = native_self->year;
 
-  if (native_field > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value ruby_field = mrb_fixnum_value(native_field);
 
   return ruby_field;
