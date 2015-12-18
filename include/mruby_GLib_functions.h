@@ -2900,27 +2900,11 @@
 #define BIND_g_source_unref_FUNCTION TRUE
 #define BIND_g_spaced_primes_closest_FUNCTION TRUE
 #define BIND_g_spawn_async_FUNCTION TRUE
-#define BIND_g_spawn_async_with_pipes_FUNCTION FALSE
-/* Couln't complete binding for g_spawn_async_with_pipes
-  - TODO_mruby_unbox_char_PTR_PTR
-  - TODO_mruby_unbox_int_PTR
-  - TODO_mruby_unbox_void_LPAREN_PTR_RPAREN_LPAREN_void_PTR_RPAREN
-  - TODO_mruby_unbox_void_PTR
-  - TODO_type_check_char_PTR_PTR
-  - TODO_type_check_int_PTR
-  - TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_void_PTR_RPAREN
-  - TODO_type_check_void_PTR
-*/
+#define BIND_g_spawn_async_with_pipes_FUNCTION TRUE
 #define BIND_g_spawn_check_exit_status_FUNCTION TRUE
 #define BIND_g_spawn_close_pid_FUNCTION TRUE
 #define BIND_g_spawn_command_line_async_FUNCTION TRUE
-#define BIND_g_spawn_command_line_sync_FUNCTION FALSE
-/* Couln't complete binding for g_spawn_command_line_sync
-  - TODO_mruby_unbox_char_PTR_PTR
-  - TODO_mruby_unbox_int_PTR
-  - TODO_type_check_char_PTR_PTR
-  - TODO_type_check_int_PTR
-*/
+#define BIND_g_spawn_command_line_sync_FUNCTION TRUE
 #define BIND_g_spawn_error_quark_FUNCTION FALSE
 /* Couln't complete binding for g_spawn_error_quark
   - TODO_mruby_box_GQuark

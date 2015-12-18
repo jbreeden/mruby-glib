@@ -38421,7 +38421,7 @@ mrb_GLib_g_spawn_async(mrb_state* mrb, mrb_value self) {
 #endif
 
 #if BIND_g_spawn_async_with_pipes_FUNCTION
-#define g_spawn_async_with_pipes_REQUIRED_ARGC 10
+#define g_spawn_async_with_pipes_REQUIRED_ARGC 6
 #define g_spawn_async_with_pipes_OPTIONAL_ARGC 0
 /* g_spawn_async_with_pipes
  *
@@ -38432,10 +38432,6 @@ mrb_GLib_g_spawn_async(mrb_state* mrb, mrb_value self) {
  * - flags: GSpawnFlags
  * - child_setup: void (*)(void *)
  * - user_data: void *
- * - child_pid: int *
- * - standard_input: int *
- * - standard_output: int *
- * - standard_error: int *
  * Return Type: gboolean
  */
 mrb_value
@@ -38447,44 +38443,52 @@ mrb_GLib_g_spawn_async_with_pipes(mrb_state* mrb, mrb_value self) {
   GSpawnFlags native_flags;
   mrb_value child_setup;
   mrb_value user_data;
-  mrb_value child_pid;
-  mrb_value standard_input;
-  mrb_value standard_output;
-  mrb_value standard_error;
+  int native_child_pid;
+  int native_standard_input;
+  int native_standard_output;
+  int native_standard_error;
   struct GError * native_error = NULL;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "z!ooioooooo", &native_working_directory, &argv, &envp, &native_flags, &child_setup, &user_data, &child_pid, &standard_input, &standard_output, &standard_error);
-
-  /* Type checking */
-  TODO_type_check_char_PTR_PTR(argv);
-  TODO_type_check_char_PTR_PTR(envp);
-  TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_void_PTR_RPAREN(child_setup);
-  TODO_type_check_void_PTR(user_data);
-  TODO_type_check_int_PTR(child_pid);
-  TODO_type_check_int_PTR(standard_input);
-  TODO_type_check_int_PTR(standard_output);
-  TODO_type_check_int_PTR(standard_error);
+  mrb_get_args(mrb, "z!A!A!ioo", &native_working_directory, &argv, &envp, &native_flags, &child_setup, &user_data);
 
   /* Unbox parameters */
-  char ** native_argv = TODO_mruby_unbox_char_PTR_PTR(argv);
+  char ** native_argv = NULL;
+  do {
+    if (mrb_nil_p(argv)) {
+      native_argv = NULL;
+    } else {
+      int len = mrb_ary_len(mrb, argv);
+      native_argv = (char**)calloc((len + 1), sizeof(char*));
+      for (int i = 0; i < len; i++) {
+        mrb_value str = mrb_ary_ref(mrb, argv, i);
+        native_argv[i] = mrb_string_value_cstr(mrb, &str);
+      }
+      native_argv[len] = NULL;
+    }
+  } while (0);
 
-  char ** native_envp = TODO_mruby_unbox_char_PTR_PTR(envp);
+  char ** native_envp = NULL;
+  do {
+    if (mrb_nil_p(envp)) {
+      native_envp = NULL;
+    } else {
+      int len = mrb_ary_len(mrb, envp);
+      native_envp = (char**)calloc((len + 1), sizeof(char*));
+      for (int i = 0; i < len; i++) {
+        mrb_value str = mrb_ary_ref(mrb, envp, i);
+        native_envp[i] = mrb_string_value_cstr(mrb, &str);
+      }
+      native_envp[len] = NULL;
+    }
+  } while (0);
 
-  void (*native_child_setup)(void *) = TODO_mruby_unbox_void_LPAREN_PTR_RPAREN_LPAREN_void_PTR_RPAREN(child_setup);
+  void * native_child_setup = NULL; /* Unused parameter */
 
-  void * native_user_data = TODO_mruby_unbox_void_PTR(user_data);
-
-  int * native_child_pid = TODO_mruby_unbox_int_PTR(child_pid);
-
-  int * native_standard_input = TODO_mruby_unbox_int_PTR(standard_input);
-
-  int * native_standard_output = TODO_mruby_unbox_int_PTR(standard_output);
-
-  int * native_standard_error = TODO_mruby_unbox_int_PTR(standard_error);
+  void * native_user_data = NULL; /* Unused parameter */
 
   /* Invocation */
-  gboolean native_return_value = g_spawn_async_with_pipes(native_working_directory, native_argv, native_envp, native_flags, native_child_setup, native_user_data, native_child_pid, native_standard_input, native_standard_output, native_standard_error, &native_error);
+  gboolean native_return_value = g_spawn_async_with_pipes(native_working_directory, native_argv, native_envp, native_flags, native_child_setup, native_user_data, &native_child_pid, &native_standard_input, &native_standard_output, &native_standard_error, &native_error);
 
   /* Box the return value */
   if (native_return_value > MRB_INT_MAX) {
@@ -38494,8 +38498,20 @@ mrb_GLib_g_spawn_async_with_pipes(mrb_state* mrb, mrb_value self) {
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   mrb_ary_push(mrb, results, return_value);
   
+  mrb_value child_pid = mrb_fixnum_value(native_child_pid);
+  mrb_ary_push(mrb, results, child_pid);
+  mrb_value standard_input = mrb_fixnum_value(native_standard_input);
+  mrb_ary_push(mrb, results, standard_input);
+  mrb_value standard_output = mrb_fixnum_value(native_standard_output);
+  mrb_ary_push(mrb, results, standard_output);
+  mrb_value standard_error = mrb_fixnum_value(native_standard_error);
+  mrb_ary_push(mrb, results, standard_error);
   mrb_value error = (native_error == NULL ? mrb_nil_value() : mruby_box__GError(mrb, native_error));
   mrb_ary_push(mrb, results, error);
+  if (native_argv != NULL) free(native_argv);
+
+  if (native_envp != NULL) free(native_envp);
+
   return results;
 }
 #endif
@@ -38594,43 +38610,28 @@ mrb_GLib_g_spawn_command_line_async(mrb_state* mrb, mrb_value self) {
 #endif
 
 #if BIND_g_spawn_command_line_sync_FUNCTION
-#define g_spawn_command_line_sync_REQUIRED_ARGC 4
+#define g_spawn_command_line_sync_REQUIRED_ARGC 1
 #define g_spawn_command_line_sync_OPTIONAL_ARGC 0
 /* g_spawn_command_line_sync
  *
  * Parameters:
  * - command_line: const char *
- * - standard_output: char **
- * - standard_error: char **
- * - exit_status: int *
  * Return Type: gboolean
  */
 mrb_value
 mrb_GLib_g_spawn_command_line_sync(mrb_state* mrb, mrb_value self) {
   mrb_value results = mrb_ary_new(mrb);
   const char * native_command_line = NULL;
-  mrb_value standard_output;
-  mrb_value standard_error;
-  mrb_value exit_status;
+  int native_standard_output;
+  int native_standard_error;
+  char * native_exit_status = NULL;
   struct GError * native_error = NULL;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "z!ooo", &native_command_line, &standard_output, &standard_error, &exit_status);
-
-  /* Type checking */
-  TODO_type_check_char_PTR_PTR(standard_output);
-  TODO_type_check_char_PTR_PTR(standard_error);
-  TODO_type_check_int_PTR(exit_status);
-
-  /* Unbox parameters */
-  char ** native_standard_output = TODO_mruby_unbox_char_PTR_PTR(standard_output);
-
-  char ** native_standard_error = TODO_mruby_unbox_char_PTR_PTR(standard_error);
-
-  int * native_exit_status = TODO_mruby_unbox_int_PTR(exit_status);
+  mrb_get_args(mrb, "z!", &native_command_line);
 
   /* Invocation */
-  gboolean native_return_value = g_spawn_command_line_sync(native_command_line, native_standard_output, native_standard_error, native_exit_status, &native_error);
+  gboolean native_return_value = g_spawn_command_line_sync(native_command_line, &native_standard_output, &native_standard_error, &native_exit_status, &native_error);
 
   /* Box the return value */
   if (native_return_value > MRB_INT_MAX) {
@@ -38640,6 +38641,12 @@ mrb_GLib_g_spawn_command_line_sync(mrb_state* mrb, mrb_value self) {
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   mrb_ary_push(mrb, results, return_value);
   
+  mrb_value standard_output = mrb_fixnum_value(native_standard_output);
+  mrb_ary_push(mrb, results, standard_output);
+  mrb_value standard_error = mrb_fixnum_value(native_standard_error);
+  mrb_ary_push(mrb, results, standard_error);
+  mrb_value exit_status = mrb_str_new_cstr(mrb, native_exit_status);
+  mrb_ary_push(mrb, results, exit_status);
   mrb_value error = (native_error == NULL ? mrb_nil_value() : mruby_box__GError(mrb, native_error));
   mrb_ary_push(mrb, results, error);
   return results;
