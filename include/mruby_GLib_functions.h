@@ -955,11 +955,7 @@
 #define BIND_g_file_error_from_errno_FUNCTION TRUE
 #define BIND_g_file_error_quark_FUNCTION TRUE
 #define BIND_g_file_get_contents_FUNCTION TRUE
-#define BIND_g_file_open_tmp_FUNCTION FALSE
-/* Couln't complete binding for g_file_open_tmp
-  - TODO_mruby_unbox_char_PTR_PTR
-  - TODO_type_check_char_PTR_PTR
-*/
+#define BIND_g_file_open_tmp_FUNCTION TRUE
 #define BIND_g_file_read_link_FUNCTION TRUE
 #define BIND_g_file_set_contents_FUNCTION TRUE
 #define BIND_g_file_test_FUNCTION TRUE

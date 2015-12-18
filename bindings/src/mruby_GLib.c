@@ -12470,33 +12470,26 @@ mrb_GLib_g_file_get_contents(mrb_state* mrb, mrb_value self) {
 #endif
 
 #if BIND_g_file_open_tmp_FUNCTION
-#define g_file_open_tmp_REQUIRED_ARGC 2
+#define g_file_open_tmp_REQUIRED_ARGC 1
 #define g_file_open_tmp_OPTIONAL_ARGC 0
 /* g_file_open_tmp
  *
  * Parameters:
  * - tmpl: const char *
- * - name_used: char **
  * Return Type: gint
  */
 mrb_value
 mrb_GLib_g_file_open_tmp(mrb_state* mrb, mrb_value self) {
   mrb_value results = mrb_ary_new(mrb);
   char * native_tmpl = NULL;
-  mrb_value name_used;
+  char * native_name_used = NULL;
   struct GError * native_error = NULL;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "z!o", &native_tmpl, &name_used);
-
-  /* Type checking */
-  TODO_type_check_char_PTR_PTR(name_used);
-
-  /* Unbox parameters */
-  char ** native_name_used = TODO_mruby_unbox_char_PTR_PTR(name_used);
+  mrb_get_args(mrb, "z!", &native_tmpl);
 
   /* Invocation */
-  gint native_return_value = g_file_open_tmp(native_tmpl, native_name_used, &native_error);
+  gint native_return_value = g_file_open_tmp(native_tmpl, &native_name_used, &native_error);
 
   /* Box the return value */
   if (native_return_value > MRB_INT_MAX) {
@@ -12507,6 +12500,9 @@ mrb_GLib_g_file_open_tmp(mrb_state* mrb, mrb_value self) {
   mrb_ary_push(mrb, results, return_value);
   
   /* Box the out parameters */
+  mrb_value name_used = mrb_str_new_cstr(mrb, native_name_used);
+  free(native_name_used);
+  mrb_ary_push(mrb, results, name_used);
   mrb_value error = (native_error == NULL ? mrb_nil_value() : mruby_box__GError(mrb, native_error));
   mrb_ary_push(mrb, results, error);
 

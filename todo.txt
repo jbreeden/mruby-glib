@@ -1,3 +1,5 @@
+- Figure out how to out-param-ify a buffer & length (2 separate out params as 1)
+
 #define BIND_g_atexit_FUNCTION FALSE
 
 #define BIND_g_atomic_int_add_FUNCTION FALSE
