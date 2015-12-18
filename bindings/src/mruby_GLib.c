@@ -13096,7 +13096,14 @@ mrb_GLib_g_get_environ(mrb_state* mrb, mrb_value self) {
   gchar ** native_return_value = g_get_environ();
 
   /* Box the return value */
-  mrb_value return_value = TODO_mruby_box_gchar_PTR_PTR(mrb, native_return_value);
+  mrb_value return_value = mrb_ary_new(mrb);
+  do {
+    int i = 0;
+    while (native_return_value[i] != NULL) {
+      mrb_ary_push(mrb, return_value, mrb_str_new_cstr(mrb, native_return_value[i]));
+      ++i;
+    }
+  } while (0);
   
   return return_value;
 }

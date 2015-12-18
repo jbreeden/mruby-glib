@@ -20225,7 +20225,7 @@
    "params"=>[],
    "argc"=>0,
    "out_count"=>1,
-   "ctype"=>#<CType[gchar **]>,
+   "ctype"=>#<CType[char **]>,
    "in_params"=>[],
    "out_params"=>[]},
  "c:@F@g_environ_getenv"=>
