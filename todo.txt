@@ -29,21 +29,9 @@
 #define BIND_g_checksum_type_get_length_FUNCTION FALSE
 #define BIND_g_checksum_update_FUNCTION FALSE
 
-
-#define BIND_g_environ_getenv_FUNCTION FALSE
-#define BIND_g_environ_setenv_FUNCTION FALSE
-#define BIND_g_environ_unsetenv_FUNCTION FALSE
-
-#define BIND_g_file_error_quark_FUNCTION FALSE
 #define BIND_g_file_get_contents_FUNCTION FALSE
-#define BIND_g_file_open_tmp_FUNCTION FALSE
-#define BIND_g_filename_from_uri_FUNCTION FALSE
-#define BIND_g_filename_from_utf8_FUNCTION FALSE
-#define BIND_g_filename_to_utf8_FUNCTION FALSE
-#define BIND_g_fprintf_FUNCTION FALSE
+#define BIND_g_file_open_tmp_FUNCTION FALSE\
 #define BIND_g_free_FUNCTION FALSE
-#define BIND_g_get_charset_FUNCTION FALSE
-#define BIND_g_get_environ_FUNCTION FALSE
 
 #define BIND_g_iconv_FUNCTION FALSE
 #define BIND_g_iconv_open_FUNCTION FALSE

@@ -229,7 +229,7 @@ mrb_GLib_GHook_set_ref_count(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-  unsigned int native_field = mrb_fixnum(ruby_field);
+  unsigned int native_field = (unsigned int)ruby_field;
 
   native_self->ref_count = native_field;
 
@@ -277,7 +277,7 @@ mrb_GLib_GHook_set_hook_id(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-  unsigned long native_field = mrb_fixnum(ruby_field);
+  unsigned long native_field = (unsigned long)ruby_field;
 
   native_self->hook_id = native_field;
 
@@ -325,7 +325,7 @@ mrb_GLib_GHook_set_flags(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-  unsigned int native_field = mrb_fixnum(ruby_field);
+  unsigned int native_field = (unsigned int)ruby_field;
 
   native_self->flags = native_field;
 

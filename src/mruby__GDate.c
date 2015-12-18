@@ -100,7 +100,7 @@ mrb_GLib_GDate_set_julian_days(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-  unsigned int native_field = mrb_fixnum(ruby_field);
+  unsigned int native_field = (unsigned int)ruby_field;
 
   native_self->julian_days = native_field;
 
@@ -148,7 +148,7 @@ mrb_GLib_GDate_set_julian(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-  unsigned int native_field = mrb_fixnum(ruby_field);
+  unsigned int native_field = (unsigned int)ruby_field;
 
   native_self->julian = native_field;
 
@@ -196,7 +196,7 @@ mrb_GLib_GDate_set_dmy(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-  unsigned int native_field = mrb_fixnum(ruby_field);
+  unsigned int native_field = (unsigned int)ruby_field;
 
   native_self->dmy = native_field;
 
@@ -244,7 +244,7 @@ mrb_GLib_GDate_set_day(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-  unsigned int native_field = mrb_fixnum(ruby_field);
+  unsigned int native_field = (unsigned int)ruby_field;
 
   native_self->day = native_field;
 
@@ -292,7 +292,7 @@ mrb_GLib_GDate_set_month(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-  unsigned int native_field = mrb_fixnum(ruby_field);
+  unsigned int native_field = (unsigned int)ruby_field;
 
   native_self->month = native_field;
 
@@ -340,7 +340,7 @@ mrb_GLib_GDate_set_year(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-  unsigned int native_field = mrb_fixnum(ruby_field);
+  unsigned int native_field = (unsigned int)ruby_field;
 
   native_self->year = native_field;
 

@@ -182,7 +182,7 @@ mrb_GLib_GThreadPool_set_exclusive(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-  int native_field = mrb_fixnum(ruby_field);
+  int native_field = (int)ruby_field;
 
   native_self->exclusive = native_field;
 

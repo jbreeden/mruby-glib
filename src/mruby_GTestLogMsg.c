@@ -100,7 +100,7 @@ mrb_GLib_GTestLogMsg_set_log_type(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-  int native_field = mrb_fixnum(ruby_field);
+  int native_field = (int)ruby_field;
 
   native_self->log_type = native_field;
 
@@ -148,7 +148,7 @@ mrb_GLib_GTestLogMsg_set_n_strings(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-  unsigned int native_field = mrb_fixnum(ruby_field);
+  unsigned int native_field = (unsigned int)ruby_field;
 
   native_self->n_strings = native_field;
 
@@ -237,7 +237,7 @@ mrb_GLib_GTestLogMsg_set_n_nums(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-  unsigned int native_field = mrb_fixnum(ruby_field);
+  unsigned int native_field = (unsigned int)ruby_field;
 
   native_self->n_nums = native_field;
 

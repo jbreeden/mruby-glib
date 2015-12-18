@@ -100,7 +100,7 @@ mrb_GLib_GTimeVal_set_tv_sec(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-  long native_field = mrb_fixnum(ruby_field);
+  long native_field = (long)ruby_field;
 
   native_self->tv_sec = native_field;
 
@@ -148,7 +148,7 @@ mrb_GLib_GTimeVal_set_tv_usec(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-  long native_field = mrb_fixnum(ruby_field);
+  long native_field = (long)ruby_field;
 
   native_self->tv_usec = native_field;
 

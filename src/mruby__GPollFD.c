@@ -100,7 +100,7 @@ mrb_GLib_GPollFD_set_fd(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-  int native_field = mrb_fixnum(ruby_field);
+  int native_field = (int)ruby_field;
 
   native_self->fd = native_field;
 
@@ -148,7 +148,7 @@ mrb_GLib_GPollFD_set_events(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-  unsigned short native_field = mrb_fixnum(ruby_field);
+  unsigned short native_field = (unsigned short)ruby_field;
 
   native_self->events = native_field;
 
@@ -196,7 +196,7 @@ mrb_GLib_GPollFD_set_revents(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-  unsigned short native_field = mrb_fixnum(ruby_field);
+  unsigned short native_field = (unsigned short)ruby_field;
 
   native_self->revents = native_field;
 

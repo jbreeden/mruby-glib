@@ -223,7 +223,7 @@ mrb_GLib_GHashTableIter_set_dummy4(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-  int native_field = mrb_fixnum(ruby_field);
+  int native_field = (int)ruby_field;
 
   native_self->dummy4 = native_field;
 
@@ -271,7 +271,7 @@ mrb_GLib_GHashTableIter_set_dummy5(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-  int native_field = mrb_fixnum(ruby_field);
+  int native_field = (int)ruby_field;
 
   native_self->dummy5 = native_field;
 

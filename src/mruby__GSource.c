@@ -229,7 +229,7 @@ mrb_GLib_GSource_set_ref_count(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-  unsigned int native_field = mrb_fixnum(ruby_field);
+  unsigned int native_field = (unsigned int)ruby_field;
 
   native_self->ref_count = native_field;
 
@@ -321,7 +321,7 @@ mrb_GLib_GSource_set_priority(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-  int native_field = mrb_fixnum(ruby_field);
+  int native_field = (int)ruby_field;
 
   native_self->priority = native_field;
 
@@ -369,7 +369,7 @@ mrb_GLib_GSource_set_flags(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-  unsigned int native_field = mrb_fixnum(ruby_field);
+  unsigned int native_field = (unsigned int)ruby_field;
 
   native_self->flags = native_field;
 
@@ -417,7 +417,7 @@ mrb_GLib_GSource_set_source_id(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-  unsigned int native_field = mrb_fixnum(ruby_field);
+  unsigned int native_field = (unsigned int)ruby_field;
 
   native_self->source_id = native_field;
 

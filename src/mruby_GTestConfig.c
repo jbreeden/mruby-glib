@@ -100,7 +100,7 @@ mrb_GLib_GTestConfig_set_test_initialized(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-  int native_field = mrb_fixnum(ruby_field);
+  int native_field = (int)ruby_field;
 
   native_self->test_initialized = native_field;
 
@@ -148,7 +148,7 @@ mrb_GLib_GTestConfig_set_test_quick(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-  int native_field = mrb_fixnum(ruby_field);
+  int native_field = (int)ruby_field;
 
   native_self->test_quick = native_field;
 
@@ -196,7 +196,7 @@ mrb_GLib_GTestConfig_set_test_perf(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-  int native_field = mrb_fixnum(ruby_field);
+  int native_field = (int)ruby_field;
 
   native_self->test_perf = native_field;
 
@@ -244,7 +244,7 @@ mrb_GLib_GTestConfig_set_test_verbose(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-  int native_field = mrb_fixnum(ruby_field);
+  int native_field = (int)ruby_field;
 
   native_self->test_verbose = native_field;
 
@@ -292,7 +292,7 @@ mrb_GLib_GTestConfig_set_test_quiet(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-  int native_field = mrb_fixnum(ruby_field);
+  int native_field = (int)ruby_field;
 
   native_self->test_quiet = native_field;
 
@@ -340,7 +340,7 @@ mrb_GLib_GTestConfig_set_test_undefined(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-  int native_field = mrb_fixnum(ruby_field);
+  int native_field = (int)ruby_field;
 
   native_self->test_undefined = native_field;
 

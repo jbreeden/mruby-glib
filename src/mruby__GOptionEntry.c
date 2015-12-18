@@ -144,7 +144,7 @@ mrb_GLib_GOptionEntry_set_short_name(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-  char native_field = mrb_fixnum(ruby_field);
+  char native_field = (char)ruby_field;
 
   native_self->short_name = native_field;
 
@@ -192,7 +192,7 @@ mrb_GLib_GOptionEntry_set_flags(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-  int native_field = mrb_fixnum(ruby_field);
+  int native_field = (int)ruby_field;
 
   native_self->flags = native_field;
 
@@ -240,7 +240,7 @@ mrb_GLib_GOptionEntry_set_arg(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-  int native_field = mrb_fixnum(ruby_field);
+  int native_field = (int)ruby_field;
 
   native_self->arg = native_field;
 

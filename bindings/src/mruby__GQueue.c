@@ -188,7 +188,7 @@ mrb_GLib_GQueue_set_length(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-  unsigned int native_field = mrb_fixnum(ruby_field);
+  unsigned int native_field = (unsigned int)ruby_field;
 
   native_self->length = native_field;
 

@@ -100,7 +100,7 @@ mrb_GLib_GError_set_domain(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-  int native_field = mrb_fixnum(ruby_field);
+  int native_field = (int)ruby_field;
 
   native_self->domain = native_field;
 
@@ -148,7 +148,7 @@ mrb_GLib_GError_set_code(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-  int native_field = mrb_fixnum(ruby_field);
+  int native_field = (int)ruby_field;
 
   native_self->code = native_field;
 

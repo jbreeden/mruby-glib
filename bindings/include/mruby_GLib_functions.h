@@ -954,13 +954,7 @@
 #define BIND_g_error_new_valist_FUNCTION TRUE
 #define BIND_g_file_error_from_errno_FUNCTION TRUE
 #define BIND_g_file_error_quark_FUNCTION TRUE
-#define BIND_g_file_get_contents_FUNCTION FALSE
-/* Couln't complete binding for g_file_get_contents
-  - TODO_mruby_unbox_char_PTR_PTR
-  - TODO_mruby_unbox_unsigned_long_PTR
-  - TODO_type_check_char_PTR_PTR
-  - TODO_type_check_unsigned_long_PTR
-*/
+#define BIND_g_file_get_contents_FUNCTION TRUE
 #define BIND_g_file_open_tmp_FUNCTION FALSE
 /* Couln't complete binding for g_file_open_tmp
   - TODO_mruby_unbox_char_PTR_PTR
@@ -1010,7 +1004,10 @@
 #define BIND_g_get_codeset_FUNCTION TRUE
 #define BIND_g_get_current_dir_FUNCTION TRUE
 #define BIND_g_get_current_time_FUNCTION TRUE
-#define BIND_g_get_environ_FUNCTION TRUE
+#define BIND_g_get_environ_FUNCTION FALSE
+/* Couln't complete binding for g_get_environ
+  - TODO_mruby_box_gchar_PTR_PTR
+*/
 #define BIND_g_get_filename_charsets_FUNCTION FALSE
 /* Couln't complete binding for g_get_filename_charsets
   - TODO_mruby_unbox_char_PTR_PTR_PTR
@@ -1635,10 +1632,7 @@
   - TODO_type_check_int_LPAREN_PTR_RPAREN_LPAREN_void_PTR_COMMA_const_void_PTR_COMMA_void_PTR_RPAREN
   - TODO_type_check_void_PTR
 */
-#define BIND_g_listenv_FUNCTION FALSE
-/* Couln't complete binding for g_listenv
-  - TODO_mruby_box_gchar_PTR_PTR
-*/
+#define BIND_g_listenv_FUNCTION TRUE
 #define BIND_g_locale_from_utf8_FUNCTION FALSE
 /* Couln't complete binding for g_locale_from_utf8
   - TODO_mruby_unbox_unsigned_long_PTR

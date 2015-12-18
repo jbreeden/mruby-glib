@@ -100,7 +100,7 @@ mrb_GLib_GHookList_set_seq_id(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-  unsigned long native_field = mrb_fixnum(ruby_field);
+  unsigned long native_field = (unsigned long)ruby_field;
 
   native_self->seq_id = native_field;
 
@@ -148,7 +148,7 @@ mrb_GLib_GHookList_set_hook_size(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-  unsigned int native_field = mrb_fixnum(ruby_field);
+  unsigned int native_field = (unsigned int)ruby_field;
 
   native_self->hook_size = native_field;
 
@@ -196,7 +196,7 @@ mrb_GLib_GHookList_set_is_setup(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-  unsigned int native_field = mrb_fixnum(ruby_field);
+  unsigned int native_field = (unsigned int)ruby_field;
 
   native_self->is_setup = native_field;
 

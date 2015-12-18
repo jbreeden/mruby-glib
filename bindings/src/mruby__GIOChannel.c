@@ -100,7 +100,7 @@ mrb_GLib_GIOChannel_set_ref_count(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-  int native_field = mrb_fixnum(ruby_field);
+  int native_field = (int)ruby_field;
 
   native_self->ref_count = native_field;
 
@@ -372,7 +372,7 @@ mrb_GLib_GIOChannel_set_line_term_len(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-  unsigned int native_field = mrb_fixnum(ruby_field);
+  unsigned int native_field = (unsigned int)ruby_field;
 
   native_self->line_term_len = native_field;
 
@@ -634,7 +634,7 @@ mrb_GLib_GIOChannel_set_use_buffer(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-  unsigned int native_field = mrb_fixnum(ruby_field);
+  unsigned int native_field = (unsigned int)ruby_field;
 
   native_self->use_buffer = native_field;
 
@@ -682,7 +682,7 @@ mrb_GLib_GIOChannel_set_do_encode(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-  unsigned int native_field = mrb_fixnum(ruby_field);
+  unsigned int native_field = (unsigned int)ruby_field;
 
   native_self->do_encode = native_field;
 
@@ -730,7 +730,7 @@ mrb_GLib_GIOChannel_set_close_on_unref(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-  unsigned int native_field = mrb_fixnum(ruby_field);
+  unsigned int native_field = (unsigned int)ruby_field;
 
   native_self->close_on_unref = native_field;
 
@@ -778,7 +778,7 @@ mrb_GLib_GIOChannel_set_is_readable(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-  unsigned int native_field = mrb_fixnum(ruby_field);
+  unsigned int native_field = (unsigned int)ruby_field;
 
   native_self->is_readable = native_field;
 
@@ -826,7 +826,7 @@ mrb_GLib_GIOChannel_set_is_writeable(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-  unsigned int native_field = mrb_fixnum(ruby_field);
+  unsigned int native_field = (unsigned int)ruby_field;
 
   native_self->is_writeable = native_field;
 
@@ -874,7 +874,7 @@ mrb_GLib_GIOChannel_set_is_seekable(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-  unsigned int native_field = mrb_fixnum(ruby_field);
+  unsigned int native_field = (unsigned int)ruby_field;
 
   native_self->is_seekable = native_field;
 

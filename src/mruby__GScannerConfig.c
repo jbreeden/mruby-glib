@@ -296,7 +296,7 @@ mrb_GLib_GScannerConfig_set_case_sensitive(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-  unsigned int native_field = mrb_fixnum(ruby_field);
+  unsigned int native_field = (unsigned int)ruby_field;
 
   native_self->case_sensitive = native_field;
 
@@ -344,7 +344,7 @@ mrb_GLib_GScannerConfig_set_skip_comment_multi(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-  unsigned int native_field = mrb_fixnum(ruby_field);
+  unsigned int native_field = (unsigned int)ruby_field;
 
   native_self->skip_comment_multi = native_field;
 
@@ -392,7 +392,7 @@ mrb_GLib_GScannerConfig_set_skip_comment_single(mrb_state* mrb, mrb_value self) 
     return mrb_nil_value();
   }
 
-  unsigned int native_field = mrb_fixnum(ruby_field);
+  unsigned int native_field = (unsigned int)ruby_field;
 
   native_self->skip_comment_single = native_field;
 
@@ -440,7 +440,7 @@ mrb_GLib_GScannerConfig_set_scan_comment_multi(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-  unsigned int native_field = mrb_fixnum(ruby_field);
+  unsigned int native_field = (unsigned int)ruby_field;
 
   native_self->scan_comment_multi = native_field;
 
@@ -488,7 +488,7 @@ mrb_GLib_GScannerConfig_set_scan_identifier(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-  unsigned int native_field = mrb_fixnum(ruby_field);
+  unsigned int native_field = (unsigned int)ruby_field;
 
   native_self->scan_identifier = native_field;
 
@@ -536,7 +536,7 @@ mrb_GLib_GScannerConfig_set_scan_identifier_1char(mrb_state* mrb, mrb_value self
     return mrb_nil_value();
   }
 
-  unsigned int native_field = mrb_fixnum(ruby_field);
+  unsigned int native_field = (unsigned int)ruby_field;
 
   native_self->scan_identifier_1char = native_field;
 
@@ -584,7 +584,7 @@ mrb_GLib_GScannerConfig_set_scan_identifier_NULL(mrb_state* mrb, mrb_value self)
     return mrb_nil_value();
   }
 
-  unsigned int native_field = mrb_fixnum(ruby_field);
+  unsigned int native_field = (unsigned int)ruby_field;
 
   native_self->scan_identifier_NULL = native_field;
 
@@ -632,7 +632,7 @@ mrb_GLib_GScannerConfig_set_scan_symbols(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-  unsigned int native_field = mrb_fixnum(ruby_field);
+  unsigned int native_field = (unsigned int)ruby_field;
 
   native_self->scan_symbols = native_field;
 
@@ -680,7 +680,7 @@ mrb_GLib_GScannerConfig_set_scan_binary(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-  unsigned int native_field = mrb_fixnum(ruby_field);
+  unsigned int native_field = (unsigned int)ruby_field;
 
   native_self->scan_binary = native_field;
 
@@ -728,7 +728,7 @@ mrb_GLib_GScannerConfig_set_scan_octal(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-  unsigned int native_field = mrb_fixnum(ruby_field);
+  unsigned int native_field = (unsigned int)ruby_field;
 
   native_self->scan_octal = native_field;
 
@@ -776,7 +776,7 @@ mrb_GLib_GScannerConfig_set_scan_float(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-  unsigned int native_field = mrb_fixnum(ruby_field);
+  unsigned int native_field = (unsigned int)ruby_field;
 
   native_self->scan_float = native_field;
 
@@ -824,7 +824,7 @@ mrb_GLib_GScannerConfig_set_scan_hex(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-  unsigned int native_field = mrb_fixnum(ruby_field);
+  unsigned int native_field = (unsigned int)ruby_field;
 
   native_self->scan_hex = native_field;
 
@@ -872,7 +872,7 @@ mrb_GLib_GScannerConfig_set_scan_hex_dollar(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-  unsigned int native_field = mrb_fixnum(ruby_field);
+  unsigned int native_field = (unsigned int)ruby_field;
 
   native_self->scan_hex_dollar = native_field;
 
@@ -920,7 +920,7 @@ mrb_GLib_GScannerConfig_set_scan_string_sq(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-  unsigned int native_field = mrb_fixnum(ruby_field);
+  unsigned int native_field = (unsigned int)ruby_field;
 
   native_self->scan_string_sq = native_field;
 
@@ -968,7 +968,7 @@ mrb_GLib_GScannerConfig_set_scan_string_dq(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-  unsigned int native_field = mrb_fixnum(ruby_field);
+  unsigned int native_field = (unsigned int)ruby_field;
 
   native_self->scan_string_dq = native_field;
 
@@ -1016,7 +1016,7 @@ mrb_GLib_GScannerConfig_set_numbers_2_int(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-  unsigned int native_field = mrb_fixnum(ruby_field);
+  unsigned int native_field = (unsigned int)ruby_field;
 
   native_self->numbers_2_int = native_field;
 
@@ -1064,7 +1064,7 @@ mrb_GLib_GScannerConfig_set_int_2_float(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-  unsigned int native_field = mrb_fixnum(ruby_field);
+  unsigned int native_field = (unsigned int)ruby_field;
 
   native_self->int_2_float = native_field;
 
@@ -1112,7 +1112,7 @@ mrb_GLib_GScannerConfig_set_identifier_2_string(mrb_state* mrb, mrb_value self) 
     return mrb_nil_value();
   }
 
-  unsigned int native_field = mrb_fixnum(ruby_field);
+  unsigned int native_field = (unsigned int)ruby_field;
 
   native_self->identifier_2_string = native_field;
 
@@ -1160,7 +1160,7 @@ mrb_GLib_GScannerConfig_set_char_2_token(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-  unsigned int native_field = mrb_fixnum(ruby_field);
+  unsigned int native_field = (unsigned int)ruby_field;
 
   native_self->char_2_token = native_field;
 
@@ -1208,7 +1208,7 @@ mrb_GLib_GScannerConfig_set_symbol_2_token(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-  unsigned int native_field = mrb_fixnum(ruby_field);
+  unsigned int native_field = (unsigned int)ruby_field;
 
   native_self->symbol_2_token = native_field;
 
@@ -1256,7 +1256,7 @@ mrb_GLib_GScannerConfig_set_scope_0_fallback(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-  unsigned int native_field = mrb_fixnum(ruby_field);
+  unsigned int native_field = (unsigned int)ruby_field;
 
   native_self->scope_0_fallback = native_field;
 
@@ -1304,7 +1304,7 @@ mrb_GLib_GScannerConfig_set_store_int64(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-  unsigned int native_field = mrb_fixnum(ruby_field);
+  unsigned int native_field = (unsigned int)ruby_field;
 
   native_self->store_int64 = native_field;
 
@@ -1352,7 +1352,7 @@ mrb_GLib_GScannerConfig_set_padding_dummy(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-  unsigned int native_field = mrb_fixnum(ruby_field);
+  unsigned int native_field = (unsigned int)ruby_field;
 
   native_self->padding_dummy = native_field;
 

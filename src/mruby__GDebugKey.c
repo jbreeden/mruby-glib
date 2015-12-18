@@ -144,7 +144,7 @@ mrb_GLib_GDebugKey_set_value(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-  unsigned int native_field = mrb_fixnum(ruby_field);
+  unsigned int native_field = (unsigned int)ruby_field;
 
   native_self->value = native_field;
 
