@@ -43,33 +43,6 @@ mrb_GLib__g_log_fallback_handler(mrb_state* mrb, mrb_value self) {
 }
 #endif
 
-#if BIND__g_utf8_make_valid_FUNCTION
-#define _g_utf8_make_valid_REQUIRED_ARGC 1
-#define _g_utf8_make_valid_OPTIONAL_ARGC 0
-/* _g_utf8_make_valid
- *
- * Parameters:
- * - name: const char *
- * Return Type: gchar *
- */
-mrb_value
-mrb_GLib__g_utf8_make_valid(mrb_state* mrb, mrb_value self) {
-  const char * native_name = NULL;
-
-  /* Fetch the args */
-  mrb_get_args(mrb, "z!", &native_name);
-
-  /* Invocation */
-  gchar * native_return_value = _g_utf8_make_valid(native_name);
-
-  /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
-  g_free(native_return_value);
-  
-  return return_value;
-}
-#endif
-
 #if BIND_g_access_FUNCTION
 #define g_access_REQUIRED_ARGC 2
 #define g_access_OPTIONAL_ARGC 0
@@ -3680,7 +3653,7 @@ mrb_GLib_g_bookmark_file_free(mrb_state* mrb, mrb_value self) {
 #endif
 
 #if BIND_g_bookmark_file_get_added_FUNCTION
-#define g_bookmark_file_get_added_REQUIRED_ARGC 3
+#define g_bookmark_file_get_added_REQUIRED_ARGC 2
 #define g_bookmark_file_get_added_OPTIONAL_ARGC 0
 /* g_bookmark_file_get_added
  *
@@ -3722,7 +3695,7 @@ mrb_GLib_g_bookmark_file_get_added(mrb_state* mrb, mrb_value self) {
 #endif
 
 #if BIND_g_bookmark_file_get_app_info_FUNCTION
-#define g_bookmark_file_get_app_info_REQUIRED_ARGC 7
+#define g_bookmark_file_get_app_info_REQUIRED_ARGC 6
 #define g_bookmark_file_get_app_info_OPTIONAL_ARGC 0
 /* g_bookmark_file_get_app_info
  *
@@ -3785,7 +3758,7 @@ mrb_GLib_g_bookmark_file_get_app_info(mrb_state* mrb, mrb_value self) {
 #endif
 
 #if BIND_g_bookmark_file_get_applications_FUNCTION
-#define g_bookmark_file_get_applications_REQUIRED_ARGC 4
+#define g_bookmark_file_get_applications_REQUIRED_ARGC 3
 #define g_bookmark_file_get_applications_OPTIONAL_ARGC 0
 /* g_bookmark_file_get_applications
  *
@@ -3832,7 +3805,7 @@ mrb_GLib_g_bookmark_file_get_applications(mrb_state* mrb, mrb_value self) {
 #endif
 
 #if BIND_g_bookmark_file_get_description_FUNCTION
-#define g_bookmark_file_get_description_REQUIRED_ARGC 3
+#define g_bookmark_file_get_description_REQUIRED_ARGC 2
 #define g_bookmark_file_get_description_OPTIONAL_ARGC 0
 /* g_bookmark_file_get_description
  *
@@ -3875,7 +3848,7 @@ mrb_GLib_g_bookmark_file_get_description(mrb_state* mrb, mrb_value self) {
 #endif
 
 #if BIND_g_bookmark_file_get_groups_FUNCTION
-#define g_bookmark_file_get_groups_REQUIRED_ARGC 4
+#define g_bookmark_file_get_groups_REQUIRED_ARGC 3
 #define g_bookmark_file_get_groups_OPTIONAL_ARGC 0
 /* g_bookmark_file_get_groups
  *
@@ -3922,7 +3895,7 @@ mrb_GLib_g_bookmark_file_get_groups(mrb_state* mrb, mrb_value self) {
 #endif
 
 #if BIND_g_bookmark_file_get_icon_FUNCTION
-#define g_bookmark_file_get_icon_REQUIRED_ARGC 5
+#define g_bookmark_file_get_icon_REQUIRED_ARGC 4
 #define g_bookmark_file_get_icon_OPTIONAL_ARGC 0
 /* g_bookmark_file_get_icon
  *
@@ -3978,7 +3951,7 @@ mrb_GLib_g_bookmark_file_get_icon(mrb_state* mrb, mrb_value self) {
 #endif
 
 #if BIND_g_bookmark_file_get_is_private_FUNCTION
-#define g_bookmark_file_get_is_private_REQUIRED_ARGC 3
+#define g_bookmark_file_get_is_private_REQUIRED_ARGC 2
 #define g_bookmark_file_get_is_private_OPTIONAL_ARGC 0
 /* g_bookmark_file_get_is_private
  *
@@ -4024,7 +3997,7 @@ mrb_GLib_g_bookmark_file_get_is_private(mrb_state* mrb, mrb_value self) {
 #endif
 
 #if BIND_g_bookmark_file_get_mime_type_FUNCTION
-#define g_bookmark_file_get_mime_type_REQUIRED_ARGC 3
+#define g_bookmark_file_get_mime_type_REQUIRED_ARGC 2
 #define g_bookmark_file_get_mime_type_OPTIONAL_ARGC 0
 /* g_bookmark_file_get_mime_type
  *
@@ -4067,7 +4040,7 @@ mrb_GLib_g_bookmark_file_get_mime_type(mrb_state* mrb, mrb_value self) {
 #endif
 
 #if BIND_g_bookmark_file_get_modified_FUNCTION
-#define g_bookmark_file_get_modified_REQUIRED_ARGC 3
+#define g_bookmark_file_get_modified_REQUIRED_ARGC 2
 #define g_bookmark_file_get_modified_OPTIONAL_ARGC 0
 /* g_bookmark_file_get_modified
  *
@@ -4148,7 +4121,7 @@ mrb_GLib_g_bookmark_file_get_size(mrb_state* mrb, mrb_value self) {
 #endif
 
 #if BIND_g_bookmark_file_get_title_FUNCTION
-#define g_bookmark_file_get_title_REQUIRED_ARGC 3
+#define g_bookmark_file_get_title_REQUIRED_ARGC 2
 #define g_bookmark_file_get_title_OPTIONAL_ARGC 0
 /* g_bookmark_file_get_title
  *
@@ -4231,7 +4204,7 @@ mrb_GLib_g_bookmark_file_get_uris(mrb_state* mrb, mrb_value self) {
 #endif
 
 #if BIND_g_bookmark_file_get_visited_FUNCTION
-#define g_bookmark_file_get_visited_REQUIRED_ARGC 3
+#define g_bookmark_file_get_visited_REQUIRED_ARGC 2
 #define g_bookmark_file_get_visited_OPTIONAL_ARGC 0
 /* g_bookmark_file_get_visited
  *
@@ -4273,7 +4246,7 @@ mrb_GLib_g_bookmark_file_get_visited(mrb_state* mrb, mrb_value self) {
 #endif
 
 #if BIND_g_bookmark_file_has_application_FUNCTION
-#define g_bookmark_file_has_application_REQUIRED_ARGC 4
+#define g_bookmark_file_has_application_REQUIRED_ARGC 3
 #define g_bookmark_file_has_application_OPTIONAL_ARGC 0
 /* g_bookmark_file_has_application
  *
@@ -4321,7 +4294,7 @@ mrb_GLib_g_bookmark_file_has_application(mrb_state* mrb, mrb_value self) {
 #endif
 
 #if BIND_g_bookmark_file_has_group_FUNCTION
-#define g_bookmark_file_has_group_REQUIRED_ARGC 4
+#define g_bookmark_file_has_group_REQUIRED_ARGC 3
 #define g_bookmark_file_has_group_OPTIONAL_ARGC 0
 /* g_bookmark_file_has_group
  *
@@ -4410,7 +4383,7 @@ mrb_GLib_g_bookmark_file_has_item(mrb_state* mrb, mrb_value self) {
 #endif
 
 #if BIND_g_bookmark_file_load_from_data_FUNCTION
-#define g_bookmark_file_load_from_data_REQUIRED_ARGC 4
+#define g_bookmark_file_load_from_data_REQUIRED_ARGC 3
 #define g_bookmark_file_load_from_data_OPTIONAL_ARGC 0
 /* g_bookmark_file_load_from_data
  *
@@ -4458,7 +4431,7 @@ mrb_GLib_g_bookmark_file_load_from_data(mrb_state* mrb, mrb_value self) {
 #endif
 
 #if BIND_g_bookmark_file_load_from_data_dirs_FUNCTION
-#define g_bookmark_file_load_from_data_dirs_REQUIRED_ARGC 4
+#define g_bookmark_file_load_from_data_dirs_REQUIRED_ARGC 3
 #define g_bookmark_file_load_from_data_dirs_OPTIONAL_ARGC 0
 /* g_bookmark_file_load_from_data_dirs
  *
@@ -4509,7 +4482,7 @@ mrb_GLib_g_bookmark_file_load_from_data_dirs(mrb_state* mrb, mrb_value self) {
 #endif
 
 #if BIND_g_bookmark_file_load_from_file_FUNCTION
-#define g_bookmark_file_load_from_file_REQUIRED_ARGC 3
+#define g_bookmark_file_load_from_file_REQUIRED_ARGC 2
 #define g_bookmark_file_load_from_file_OPTIONAL_ARGC 0
 /* g_bookmark_file_load_from_file
  *
@@ -4555,7 +4528,7 @@ mrb_GLib_g_bookmark_file_load_from_file(mrb_state* mrb, mrb_value self) {
 #endif
 
 #if BIND_g_bookmark_file_move_item_FUNCTION
-#define g_bookmark_file_move_item_REQUIRED_ARGC 4
+#define g_bookmark_file_move_item_REQUIRED_ARGC 3
 #define g_bookmark_file_move_item_OPTIONAL_ARGC 0
 /* g_bookmark_file_move_item
  *
@@ -4623,7 +4596,7 @@ mrb_GLib_g_bookmark_file_new(mrb_state* mrb, mrb_value self) {
 #endif
 
 #if BIND_g_bookmark_file_remove_application_FUNCTION
-#define g_bookmark_file_remove_application_REQUIRED_ARGC 4
+#define g_bookmark_file_remove_application_REQUIRED_ARGC 3
 #define g_bookmark_file_remove_application_OPTIONAL_ARGC 0
 /* g_bookmark_file_remove_application
  *
@@ -4671,7 +4644,7 @@ mrb_GLib_g_bookmark_file_remove_application(mrb_state* mrb, mrb_value self) {
 #endif
 
 #if BIND_g_bookmark_file_remove_group_FUNCTION
-#define g_bookmark_file_remove_group_REQUIRED_ARGC 4
+#define g_bookmark_file_remove_group_REQUIRED_ARGC 3
 #define g_bookmark_file_remove_group_OPTIONAL_ARGC 0
 /* g_bookmark_file_remove_group
  *
@@ -4719,7 +4692,7 @@ mrb_GLib_g_bookmark_file_remove_group(mrb_state* mrb, mrb_value self) {
 #endif
 
 #if BIND_g_bookmark_file_remove_item_FUNCTION
-#define g_bookmark_file_remove_item_REQUIRED_ARGC 3
+#define g_bookmark_file_remove_item_REQUIRED_ARGC 2
 #define g_bookmark_file_remove_item_OPTIONAL_ARGC 0
 /* g_bookmark_file_remove_item
  *
@@ -4801,7 +4774,7 @@ mrb_GLib_g_bookmark_file_set_added(mrb_state* mrb, mrb_value self) {
 #endif
 
 #if BIND_g_bookmark_file_set_app_info_FUNCTION
-#define g_bookmark_file_set_app_info_REQUIRED_ARGC 7
+#define g_bookmark_file_set_app_info_REQUIRED_ARGC 6
 #define g_bookmark_file_set_app_info_OPTIONAL_ARGC 0
 /* g_bookmark_file_set_app_info
  *
@@ -5150,7 +5123,7 @@ mrb_GLib_g_bookmark_file_set_visited(mrb_state* mrb, mrb_value self) {
 #endif
 
 #if BIND_g_bookmark_file_to_data_FUNCTION
-#define g_bookmark_file_to_data_REQUIRED_ARGC 3
+#define g_bookmark_file_to_data_REQUIRED_ARGC 2
 #define g_bookmark_file_to_data_OPTIONAL_ARGC 0
 /* g_bookmark_file_to_data
  *
@@ -5196,7 +5169,7 @@ mrb_GLib_g_bookmark_file_to_data(mrb_state* mrb, mrb_value self) {
 #endif
 
 #if BIND_g_bookmark_file_to_file_FUNCTION
-#define g_bookmark_file_to_file_REQUIRED_ARGC 3
+#define g_bookmark_file_to_file_REQUIRED_ARGC 2
 #define g_bookmark_file_to_file_OPTIONAL_ARGC 0
 /* g_bookmark_file_to_file
  *
@@ -6834,7 +6807,7 @@ mrb_GLib_g_child_watch_source_new(mrb_state* mrb, mrb_value self) {
 #endif
 
 #if BIND_g_clear_error_FUNCTION
-#define g_clear_error_REQUIRED_ARGC 1
+#define g_clear_error_REQUIRED_ARGC 0
 #define g_clear_error_OPTIONAL_ARGC 0
 /* g_clear_error
  *
@@ -6889,7 +6862,7 @@ mrb_GLib_g_clear_pointer(mrb_state* mrb, mrb_value self) {
 #endif
 
 #if BIND_g_close_FUNCTION
-#define g_close_REQUIRED_ARGC 2
+#define g_close_REQUIRED_ARGC 1
 #define g_close_OPTIONAL_ARGC 0
 /* g_close
  *
@@ -7326,7 +7299,7 @@ mrb_GLib_g_cond_wait_until(mrb_state* mrb, mrb_value self) {
 #endif
 
 #if BIND_g_convert_FUNCTION
-#define g_convert_REQUIRED_ARGC 7
+#define g_convert_REQUIRED_ARGC 6
 #define g_convert_OPTIONAL_ARGC 0
 /* g_convert
  *
@@ -7397,7 +7370,7 @@ mrb_GLib_g_convert_error_quark(mrb_state* mrb, mrb_value self) {
 #endif
 
 #if BIND_g_convert_with_fallback_FUNCTION
-#define g_convert_with_fallback_REQUIRED_ARGC 8
+#define g_convert_with_fallback_REQUIRED_ARGC 7
 #define g_convert_with_fallback_OPTIONAL_ARGC 0
 /* g_convert_with_fallback
  *
@@ -7450,7 +7423,7 @@ mrb_GLib_g_convert_with_fallback(mrb_state* mrb, mrb_value self) {
 #endif
 
 #if BIND_g_convert_with_iconv_FUNCTION
-#define g_convert_with_iconv_REQUIRED_ARGC 6
+#define g_convert_with_iconv_REQUIRED_ARGC 5
 #define g_convert_with_iconv_OPTIONAL_ARGC 0
 /* g_convert_with_iconv
  *
@@ -11639,7 +11612,7 @@ mrb_GLib_g_dir_close(mrb_state* mrb, mrb_value self) {
 #endif
 
 #if BIND_g_dir_make_tmp_FUNCTION
-#define g_dir_make_tmp_REQUIRED_ARGC 2
+#define g_dir_make_tmp_REQUIRED_ARGC 1
 #define g_dir_make_tmp_OPTIONAL_ARGC 0
 /* g_dir_make_tmp
  *
@@ -11671,7 +11644,7 @@ mrb_GLib_g_dir_make_tmp(mrb_state* mrb, mrb_value self) {
 #endif
 
 #if BIND_g_dir_open_FUNCTION
-#define g_dir_open_REQUIRED_ARGC 3
+#define g_dir_open_REQUIRED_ARGC 2
 #define g_dir_open_OPTIONAL_ARGC 0
 /* g_dir_open
  *
@@ -12375,7 +12348,7 @@ mrb_GLib_g_file_error_quark(mrb_state* mrb, mrb_value self) {
 #endif
 
 #if BIND_g_file_get_contents_FUNCTION
-#define g_file_get_contents_REQUIRED_ARGC 4
+#define g_file_get_contents_REQUIRED_ARGC 3
 #define g_file_get_contents_OPTIONAL_ARGC 0
 /* g_file_get_contents
  *
@@ -12423,7 +12396,7 @@ mrb_GLib_g_file_get_contents(mrb_state* mrb, mrb_value self) {
 #endif
 
 #if BIND_g_file_open_tmp_FUNCTION
-#define g_file_open_tmp_REQUIRED_ARGC 3
+#define g_file_open_tmp_REQUIRED_ARGC 2
 #define g_file_open_tmp_OPTIONAL_ARGC 0
 /* g_file_open_tmp
  *
@@ -12466,7 +12439,7 @@ mrb_GLib_g_file_open_tmp(mrb_state* mrb, mrb_value self) {
 #endif
 
 #if BIND_g_file_read_link_FUNCTION
-#define g_file_read_link_REQUIRED_ARGC 2
+#define g_file_read_link_REQUIRED_ARGC 1
 #define g_file_read_link_OPTIONAL_ARGC 0
 /* g_file_read_link
  *
@@ -12498,7 +12471,7 @@ mrb_GLib_g_file_read_link(mrb_state* mrb, mrb_value self) {
 #endif
 
 #if BIND_g_file_set_contents_FUNCTION
-#define g_file_set_contents_REQUIRED_ARGC 4
+#define g_file_set_contents_REQUIRED_ARGC 3
 #define g_file_set_contents_OPTIONAL_ARGC 0
 /* g_file_set_contents
  *
@@ -12623,7 +12596,7 @@ mrb_GLib_g_filename_display_name(mrb_state* mrb, mrb_value self) {
 #endif
 
 #if BIND_g_filename_from_uri_FUNCTION
-#define g_filename_from_uri_REQUIRED_ARGC 3
+#define g_filename_from_uri_REQUIRED_ARGC 2
 #define g_filename_from_uri_OPTIONAL_ARGC 0
 /* g_filename_from_uri
  *
@@ -12663,7 +12636,7 @@ mrb_GLib_g_filename_from_uri(mrb_state* mrb, mrb_value self) {
 #endif
 
 #if BIND_g_filename_from_utf8_FUNCTION
-#define g_filename_from_utf8_REQUIRED_ARGC 5
+#define g_filename_from_utf8_REQUIRED_ARGC 4
 #define g_filename_from_utf8_OPTIONAL_ARGC 0
 /* g_filename_from_utf8
  *
@@ -12710,7 +12683,7 @@ mrb_GLib_g_filename_from_utf8(mrb_state* mrb, mrb_value self) {
 #endif
 
 #if BIND_g_filename_to_uri_FUNCTION
-#define g_filename_to_uri_REQUIRED_ARGC 3
+#define g_filename_to_uri_REQUIRED_ARGC 2
 #define g_filename_to_uri_OPTIONAL_ARGC 0
 /* g_filename_to_uri
  *
@@ -12744,7 +12717,7 @@ mrb_GLib_g_filename_to_uri(mrb_state* mrb, mrb_value self) {
 #endif
 
 #if BIND_g_filename_to_utf8_FUNCTION
-#define g_filename_to_utf8_REQUIRED_ARGC 5
+#define g_filename_to_utf8_REQUIRED_ARGC 4
 #define g_filename_to_utf8_OPTIONAL_ARGC 0
 /* g_filename_to_utf8
  *
@@ -16730,7 +16703,7 @@ mrb_GLib_g_io_channel_error_quark(mrb_state* mrb, mrb_value self) {
 #endif
 
 #if BIND_g_io_channel_flush_FUNCTION
-#define g_io_channel_flush_REQUIRED_ARGC 2
+#define g_io_channel_flush_REQUIRED_ARGC 1
 #define g_io_channel_flush_OPTIONAL_ARGC 0
 /* g_io_channel_flush
  *
@@ -17072,7 +17045,7 @@ mrb_GLib_g_io_channel_init(mrb_state* mrb, mrb_value self) {
 #endif
 
 #if BIND_g_io_channel_new_file_FUNCTION
-#define g_io_channel_new_file_REQUIRED_ARGC 3
+#define g_io_channel_new_file_REQUIRED_ARGC 2
 #define g_io_channel_new_file_OPTIONAL_ARGC 0
 /* g_io_channel_new_file
  *
@@ -17168,7 +17141,7 @@ mrb_GLib_g_io_channel_read(mrb_state* mrb, mrb_value self) {
 #endif
 
 #if BIND_g_io_channel_read_chars_FUNCTION
-#define g_io_channel_read_chars_REQUIRED_ARGC 5
+#define g_io_channel_read_chars_REQUIRED_ARGC 4
 #define g_io_channel_read_chars_OPTIONAL_ARGC 0
 /* g_io_channel_read_chars
  *
@@ -17236,7 +17209,7 @@ mrb_GLib_g_io_channel_read_chars(mrb_state* mrb, mrb_value self) {
 #endif
 
 #if BIND_g_io_channel_read_line_FUNCTION
-#define g_io_channel_read_line_REQUIRED_ARGC 5
+#define g_io_channel_read_line_REQUIRED_ARGC 4
 #define g_io_channel_read_line_OPTIONAL_ARGC 0
 /* g_io_channel_read_line
  *
@@ -17295,7 +17268,7 @@ mrb_GLib_g_io_channel_read_line(mrb_state* mrb, mrb_value self) {
 #endif
 
 #if BIND_g_io_channel_read_line_string_FUNCTION
-#define g_io_channel_read_line_string_REQUIRED_ARGC 4
+#define g_io_channel_read_line_string_REQUIRED_ARGC 3
 #define g_io_channel_read_line_string_OPTIONAL_ARGC 0
 /* g_io_channel_read_line_string
  *
@@ -17352,7 +17325,7 @@ mrb_GLib_g_io_channel_read_line_string(mrb_state* mrb, mrb_value self) {
 #endif
 
 #if BIND_g_io_channel_read_to_end_FUNCTION
-#define g_io_channel_read_to_end_REQUIRED_ARGC 4
+#define g_io_channel_read_to_end_REQUIRED_ARGC 3
 #define g_io_channel_read_to_end_OPTIONAL_ARGC 0
 /* g_io_channel_read_to_end
  *
@@ -17406,7 +17379,7 @@ mrb_GLib_g_io_channel_read_to_end(mrb_state* mrb, mrb_value self) {
 #endif
 
 #if BIND_g_io_channel_read_unichar_FUNCTION
-#define g_io_channel_read_unichar_REQUIRED_ARGC 3
+#define g_io_channel_read_unichar_REQUIRED_ARGC 2
 #define g_io_channel_read_unichar_OPTIONAL_ARGC 0
 /* g_io_channel_read_unichar
  *
@@ -17533,7 +17506,7 @@ mrb_GLib_g_io_channel_seek(mrb_state* mrb, mrb_value self) {
 #endif
 
 #if BIND_g_io_channel_seek_position_FUNCTION
-#define g_io_channel_seek_position_REQUIRED_ARGC 4
+#define g_io_channel_seek_position_REQUIRED_ARGC 3
 #define g_io_channel_seek_position_OPTIONAL_ARGC 0
 /* g_io_channel_seek_position
  *
@@ -17683,7 +17656,7 @@ mrb_GLib_g_io_channel_set_close_on_unref(mrb_state* mrb, mrb_value self) {
 #endif
 
 #if BIND_g_io_channel_set_encoding_FUNCTION
-#define g_io_channel_set_encoding_REQUIRED_ARGC 3
+#define g_io_channel_set_encoding_REQUIRED_ARGC 2
 #define g_io_channel_set_encoding_OPTIONAL_ARGC 0
 /* g_io_channel_set_encoding
  *
@@ -17729,7 +17702,7 @@ mrb_GLib_g_io_channel_set_encoding(mrb_state* mrb, mrb_value self) {
 #endif
 
 #if BIND_g_io_channel_set_flags_FUNCTION
-#define g_io_channel_set_flags_REQUIRED_ARGC 3
+#define g_io_channel_set_flags_REQUIRED_ARGC 2
 #define g_io_channel_set_flags_OPTIONAL_ARGC 0
 /* g_io_channel_set_flags
  *
@@ -17811,7 +17784,7 @@ mrb_GLib_g_io_channel_set_line_term(mrb_state* mrb, mrb_value self) {
 #endif
 
 #if BIND_g_io_channel_shutdown_FUNCTION
-#define g_io_channel_shutdown_REQUIRED_ARGC 3
+#define g_io_channel_shutdown_REQUIRED_ARGC 2
 #define g_io_channel_shutdown_OPTIONAL_ARGC 0
 /* g_io_channel_shutdown
  *
@@ -18002,7 +17975,7 @@ mrb_GLib_g_io_channel_write(mrb_state* mrb, mrb_value self) {
 #endif
 
 #if BIND_g_io_channel_write_chars_FUNCTION
-#define g_io_channel_write_chars_REQUIRED_ARGC 5
+#define g_io_channel_write_chars_REQUIRED_ARGC 4
 #define g_io_channel_write_chars_OPTIONAL_ARGC 0
 /* g_io_channel_write_chars
  *
@@ -18055,7 +18028,7 @@ mrb_GLib_g_io_channel_write_chars(mrb_state* mrb, mrb_value self) {
 #endif
 
 #if BIND_g_io_channel_write_unichar_FUNCTION
-#define g_io_channel_write_unichar_REQUIRED_ARGC 3
+#define g_io_channel_write_unichar_REQUIRED_ARGC 2
 #define g_io_channel_write_unichar_OPTIONAL_ARGC 0
 /* g_io_channel_write_unichar
  *
@@ -18190,7 +18163,7 @@ mrb_GLib_g_key_file_free(mrb_state* mrb, mrb_value self) {
 #endif
 
 #if BIND_g_key_file_get_boolean_FUNCTION
-#define g_key_file_get_boolean_REQUIRED_ARGC 4
+#define g_key_file_get_boolean_REQUIRED_ARGC 3
 #define g_key_file_get_boolean_OPTIONAL_ARGC 0
 /* g_key_file_get_boolean
  *
@@ -18238,7 +18211,7 @@ mrb_GLib_g_key_file_get_boolean(mrb_state* mrb, mrb_value self) {
 #endif
 
 #if BIND_g_key_file_get_boolean_list_FUNCTION
-#define g_key_file_get_boolean_list_REQUIRED_ARGC 5
+#define g_key_file_get_boolean_list_REQUIRED_ARGC 4
 #define g_key_file_get_boolean_list_OPTIONAL_ARGC 0
 /* g_key_file_get_boolean_list
  *
@@ -18287,7 +18260,7 @@ mrb_GLib_g_key_file_get_boolean_list(mrb_state* mrb, mrb_value self) {
 #endif
 
 #if BIND_g_key_file_get_comment_FUNCTION
-#define g_key_file_get_comment_REQUIRED_ARGC 4
+#define g_key_file_get_comment_REQUIRED_ARGC 3
 #define g_key_file_get_comment_OPTIONAL_ARGC 0
 /* g_key_file_get_comment
  *
@@ -18332,7 +18305,7 @@ mrb_GLib_g_key_file_get_comment(mrb_state* mrb, mrb_value self) {
 #endif
 
 #if BIND_g_key_file_get_double_FUNCTION
-#define g_key_file_get_double_REQUIRED_ARGC 4
+#define g_key_file_get_double_REQUIRED_ARGC 3
 #define g_key_file_get_double_OPTIONAL_ARGC 0
 /* g_key_file_get_double
  *
@@ -18376,7 +18349,7 @@ mrb_GLib_g_key_file_get_double(mrb_state* mrb, mrb_value self) {
 #endif
 
 #if BIND_g_key_file_get_double_list_FUNCTION
-#define g_key_file_get_double_list_REQUIRED_ARGC 5
+#define g_key_file_get_double_list_REQUIRED_ARGC 4
 #define g_key_file_get_double_list_OPTIONAL_ARGC 0
 /* g_key_file_get_double_list
  *
@@ -18465,7 +18438,7 @@ mrb_GLib_g_key_file_get_groups(mrb_state* mrb, mrb_value self) {
 #endif
 
 #if BIND_g_key_file_get_int64_FUNCTION
-#define g_key_file_get_int64_REQUIRED_ARGC 4
+#define g_key_file_get_int64_REQUIRED_ARGC 3
 #define g_key_file_get_int64_OPTIONAL_ARGC 0
 /* g_key_file_get_int64
  *
@@ -18509,7 +18482,7 @@ mrb_GLib_g_key_file_get_int64(mrb_state* mrb, mrb_value self) {
 #endif
 
 #if BIND_g_key_file_get_integer_FUNCTION
-#define g_key_file_get_integer_REQUIRED_ARGC 4
+#define g_key_file_get_integer_REQUIRED_ARGC 3
 #define g_key_file_get_integer_OPTIONAL_ARGC 0
 /* g_key_file_get_integer
  *
@@ -18557,7 +18530,7 @@ mrb_GLib_g_key_file_get_integer(mrb_state* mrb, mrb_value self) {
 #endif
 
 #if BIND_g_key_file_get_integer_list_FUNCTION
-#define g_key_file_get_integer_list_REQUIRED_ARGC 5
+#define g_key_file_get_integer_list_REQUIRED_ARGC 4
 #define g_key_file_get_integer_list_OPTIONAL_ARGC 0
 /* g_key_file_get_integer_list
  *
@@ -18606,7 +18579,7 @@ mrb_GLib_g_key_file_get_integer_list(mrb_state* mrb, mrb_value self) {
 #endif
 
 #if BIND_g_key_file_get_keys_FUNCTION
-#define g_key_file_get_keys_REQUIRED_ARGC 4
+#define g_key_file_get_keys_REQUIRED_ARGC 3
 #define g_key_file_get_keys_OPTIONAL_ARGC 0
 /* g_key_file_get_keys
  *
@@ -18653,7 +18626,7 @@ mrb_GLib_g_key_file_get_keys(mrb_state* mrb, mrb_value self) {
 #endif
 
 #if BIND_g_key_file_get_locale_string_FUNCTION
-#define g_key_file_get_locale_string_REQUIRED_ARGC 5
+#define g_key_file_get_locale_string_REQUIRED_ARGC 4
 #define g_key_file_get_locale_string_OPTIONAL_ARGC 0
 /* g_key_file_get_locale_string
  *
@@ -18700,7 +18673,7 @@ mrb_GLib_g_key_file_get_locale_string(mrb_state* mrb, mrb_value self) {
 #endif
 
 #if BIND_g_key_file_get_locale_string_list_FUNCTION
-#define g_key_file_get_locale_string_list_REQUIRED_ARGC 6
+#define g_key_file_get_locale_string_list_REQUIRED_ARGC 5
 #define g_key_file_get_locale_string_list_OPTIONAL_ARGC 0
 /* g_key_file_get_locale_string_list
  *
@@ -18787,7 +18760,7 @@ mrb_GLib_g_key_file_get_start_group(mrb_state* mrb, mrb_value self) {
 #endif
 
 #if BIND_g_key_file_get_string_FUNCTION
-#define g_key_file_get_string_REQUIRED_ARGC 4
+#define g_key_file_get_string_REQUIRED_ARGC 3
 #define g_key_file_get_string_OPTIONAL_ARGC 0
 /* g_key_file_get_string
  *
@@ -18832,7 +18805,7 @@ mrb_GLib_g_key_file_get_string(mrb_state* mrb, mrb_value self) {
 #endif
 
 #if BIND_g_key_file_get_string_list_FUNCTION
-#define g_key_file_get_string_list_REQUIRED_ARGC 5
+#define g_key_file_get_string_list_REQUIRED_ARGC 4
 #define g_key_file_get_string_list_OPTIONAL_ARGC 0
 /* g_key_file_get_string_list
  *
@@ -18881,7 +18854,7 @@ mrb_GLib_g_key_file_get_string_list(mrb_state* mrb, mrb_value self) {
 #endif
 
 #if BIND_g_key_file_get_uint64_FUNCTION
-#define g_key_file_get_uint64_REQUIRED_ARGC 4
+#define g_key_file_get_uint64_REQUIRED_ARGC 3
 #define g_key_file_get_uint64_OPTIONAL_ARGC 0
 /* g_key_file_get_uint64
  *
@@ -18925,7 +18898,7 @@ mrb_GLib_g_key_file_get_uint64(mrb_state* mrb, mrb_value self) {
 #endif
 
 #if BIND_g_key_file_get_value_FUNCTION
-#define g_key_file_get_value_REQUIRED_ARGC 4
+#define g_key_file_get_value_REQUIRED_ARGC 3
 #define g_key_file_get_value_OPTIONAL_ARGC 0
 /* g_key_file_get_value
  *
@@ -19011,7 +18984,7 @@ mrb_GLib_g_key_file_has_group(mrb_state* mrb, mrb_value self) {
 #endif
 
 #if BIND_g_key_file_has_key_FUNCTION
-#define g_key_file_has_key_REQUIRED_ARGC 4
+#define g_key_file_has_key_REQUIRED_ARGC 3
 #define g_key_file_has_key_OPTIONAL_ARGC 0
 /* g_key_file_has_key
  *
@@ -19059,7 +19032,7 @@ mrb_GLib_g_key_file_has_key(mrb_state* mrb, mrb_value self) {
 #endif
 
 #if BIND_g_key_file_load_from_data_FUNCTION
-#define g_key_file_load_from_data_REQUIRED_ARGC 5
+#define g_key_file_load_from_data_REQUIRED_ARGC 4
 #define g_key_file_load_from_data_OPTIONAL_ARGC 0
 /* g_key_file_load_from_data
  *
@@ -19109,7 +19082,7 @@ mrb_GLib_g_key_file_load_from_data(mrb_state* mrb, mrb_value self) {
 #endif
 
 #if BIND_g_key_file_load_from_data_dirs_FUNCTION
-#define g_key_file_load_from_data_dirs_REQUIRED_ARGC 5
+#define g_key_file_load_from_data_dirs_REQUIRED_ARGC 4
 #define g_key_file_load_from_data_dirs_OPTIONAL_ARGC 0
 /* g_key_file_load_from_data_dirs
  *
@@ -19162,7 +19135,7 @@ mrb_GLib_g_key_file_load_from_data_dirs(mrb_state* mrb, mrb_value self) {
 #endif
 
 #if BIND_g_key_file_load_from_dirs_FUNCTION
-#define g_key_file_load_from_dirs_REQUIRED_ARGC 6
+#define g_key_file_load_from_dirs_REQUIRED_ARGC 5
 #define g_key_file_load_from_dirs_OPTIONAL_ARGC 0
 /* g_key_file_load_from_dirs
  *
@@ -19220,7 +19193,7 @@ mrb_GLib_g_key_file_load_from_dirs(mrb_state* mrb, mrb_value self) {
 #endif
 
 #if BIND_g_key_file_load_from_file_FUNCTION
-#define g_key_file_load_from_file_REQUIRED_ARGC 4
+#define g_key_file_load_from_file_REQUIRED_ARGC 3
 #define g_key_file_load_from_file_OPTIONAL_ARGC 0
 /* g_key_file_load_from_file
  *
@@ -19323,7 +19296,7 @@ mrb_GLib_g_key_file_ref(mrb_state* mrb, mrb_value self) {
 #endif
 
 #if BIND_g_key_file_remove_comment_FUNCTION
-#define g_key_file_remove_comment_REQUIRED_ARGC 4
+#define g_key_file_remove_comment_REQUIRED_ARGC 3
 #define g_key_file_remove_comment_OPTIONAL_ARGC 0
 /* g_key_file_remove_comment
  *
@@ -19371,7 +19344,7 @@ mrb_GLib_g_key_file_remove_comment(mrb_state* mrb, mrb_value self) {
 #endif
 
 #if BIND_g_key_file_remove_group_FUNCTION
-#define g_key_file_remove_group_REQUIRED_ARGC 3
+#define g_key_file_remove_group_REQUIRED_ARGC 2
 #define g_key_file_remove_group_OPTIONAL_ARGC 0
 /* g_key_file_remove_group
  *
@@ -19417,7 +19390,7 @@ mrb_GLib_g_key_file_remove_group(mrb_state* mrb, mrb_value self) {
 #endif
 
 #if BIND_g_key_file_remove_key_FUNCTION
-#define g_key_file_remove_key_REQUIRED_ARGC 4
+#define g_key_file_remove_key_REQUIRED_ARGC 3
 #define g_key_file_remove_key_OPTIONAL_ARGC 0
 /* g_key_file_remove_key
  *
@@ -19465,7 +19438,7 @@ mrb_GLib_g_key_file_remove_key(mrb_state* mrb, mrb_value self) {
 #endif
 
 #if BIND_g_key_file_save_to_file_FUNCTION
-#define g_key_file_save_to_file_REQUIRED_ARGC 3
+#define g_key_file_save_to_file_REQUIRED_ARGC 2
 #define g_key_file_save_to_file_OPTIONAL_ARGC 0
 /* g_key_file_save_to_file
  *
@@ -19592,7 +19565,7 @@ mrb_GLib_g_key_file_set_boolean_list(mrb_state* mrb, mrb_value self) {
 #endif
 
 #if BIND_g_key_file_set_comment_FUNCTION
-#define g_key_file_set_comment_REQUIRED_ARGC 5
+#define g_key_file_set_comment_REQUIRED_ARGC 4
 #define g_key_file_set_comment_OPTIONAL_ARGC 0
 /* g_key_file_set_comment
  *
@@ -20118,7 +20091,7 @@ mrb_GLib_g_key_file_set_value(mrb_state* mrb, mrb_value self) {
 #endif
 
 #if BIND_g_key_file_to_data_FUNCTION
-#define g_key_file_to_data_REQUIRED_ARGC 3
+#define g_key_file_to_data_REQUIRED_ARGC 2
 #define g_key_file_to_data_OPTIONAL_ARGC 0
 /* g_key_file_to_data
  *
@@ -21449,7 +21422,7 @@ mrb_GLib_g_listenv(mrb_state* mrb, mrb_value self) {
 #endif
 
 #if BIND_g_locale_from_utf8_FUNCTION
-#define g_locale_from_utf8_REQUIRED_ARGC 5
+#define g_locale_from_utf8_REQUIRED_ARGC 4
 #define g_locale_from_utf8_OPTIONAL_ARGC 0
 /* g_locale_from_utf8
  *
@@ -21496,7 +21469,7 @@ mrb_GLib_g_locale_from_utf8(mrb_state* mrb, mrb_value self) {
 #endif
 
 #if BIND_g_locale_to_utf8_FUNCTION
-#define g_locale_to_utf8_REQUIRED_ARGC 5
+#define g_locale_to_utf8_REQUIRED_ARGC 4
 #define g_locale_to_utf8_OPTIONAL_ARGC 0
 /* g_locale_to_utf8
  *
@@ -23423,7 +23396,7 @@ mrb_GLib_g_mapped_file_get_length(mrb_state* mrb, mrb_value self) {
 #endif
 
 #if BIND_g_mapped_file_new_FUNCTION
-#define g_mapped_file_new_REQUIRED_ARGC 3
+#define g_mapped_file_new_REQUIRED_ARGC 2
 #define g_mapped_file_new_OPTIONAL_ARGC 0
 /* g_mapped_file_new
  *
@@ -23456,7 +23429,7 @@ mrb_GLib_g_mapped_file_new(mrb_state* mrb, mrb_value self) {
 #endif
 
 #if BIND_g_mapped_file_new_from_fd_FUNCTION
-#define g_mapped_file_new_from_fd_REQUIRED_ARGC 3
+#define g_mapped_file_new_from_fd_REQUIRED_ARGC 2
 #define g_mapped_file_new_from_fd_OPTIONAL_ARGC 0
 /* g_mapped_file_new_from_fd
  *
@@ -23556,7 +23529,7 @@ mrb_GLib_g_mapped_file_unref(mrb_state* mrb, mrb_value self) {
 #endif
 
 #if BIND_g_markup_collect_attributes_FUNCTION
-#define g_markup_collect_attributes_REQUIRED_ARGC 6
+#define g_markup_collect_attributes_REQUIRED_ARGC 5
 #define g_markup_collect_attributes_OPTIONAL_ARGC 0
 /* g_markup_collect_attributes
  *
@@ -23657,7 +23630,7 @@ mrb_GLib_g_markup_escape_text(mrb_state* mrb, mrb_value self) {
 #endif
 
 #if BIND_g_markup_parse_context_end_parse_FUNCTION
-#define g_markup_parse_context_end_parse_REQUIRED_ARGC 2
+#define g_markup_parse_context_end_parse_REQUIRED_ARGC 1
 #define g_markup_parse_context_end_parse_OPTIONAL_ARGC 0
 /* g_markup_parse_context_end_parse
  *
@@ -23927,7 +23900,7 @@ mrb_GLib_g_markup_parse_context_new(mrb_state* mrb, mrb_value self) {
 #endif
 
 #if BIND_g_markup_parse_context_parse_FUNCTION
-#define g_markup_parse_context_parse_REQUIRED_ARGC 4
+#define g_markup_parse_context_parse_REQUIRED_ARGC 3
 #define g_markup_parse_context_parse_OPTIONAL_ARGC 0
 /* g_markup_parse_context_parse
  *
@@ -24178,7 +24151,7 @@ mrb_GLib_g_markup_vprintf_escaped(mrb_state* mrb, mrb_value self) {
 #endif
 
 #if BIND_g_match_info_expand_references_FUNCTION
-#define g_match_info_expand_references_REQUIRED_ARGC 3
+#define g_match_info_expand_references_REQUIRED_ARGC 2
 #define g_match_info_expand_references_OPTIONAL_ARGC 0
 /* g_match_info_expand_references
  *
@@ -24653,7 +24626,7 @@ mrb_GLib_g_match_info_matches(mrb_state* mrb, mrb_value self) {
 #endif
 
 #if BIND_g_match_info_next_FUNCTION
-#define g_match_info_next_REQUIRED_ARGC 2
+#define g_match_info_next_REQUIRED_ARGC 1
 #define g_match_info_next_OPTIONAL_ARGC 0
 /* g_match_info_next
  *
@@ -26944,7 +26917,7 @@ mrb_GLib_g_option_context_new(mrb_state* mrb, mrb_value self) {
 #endif
 
 #if BIND_g_option_context_parse_FUNCTION
-#define g_option_context_parse_REQUIRED_ARGC 4
+#define g_option_context_parse_REQUIRED_ARGC 3
 #define g_option_context_parse_OPTIONAL_ARGC 0
 /* g_option_context_parse
  *
@@ -26998,7 +26971,7 @@ mrb_GLib_g_option_context_parse(mrb_state* mrb, mrb_value self) {
 #endif
 
 #if BIND_g_option_context_parse_strv_FUNCTION
-#define g_option_context_parse_strv_REQUIRED_ARGC 3
+#define g_option_context_parse_strv_REQUIRED_ARGC 2
 #define g_option_context_parse_strv_OPTIONAL_ARGC 0
 /* g_option_context_parse_strv
  *
@@ -28219,7 +28192,7 @@ mrb_GLib_g_poll(mrb_state* mrb, mrb_value self) {
 #endif
 
 #if BIND_g_prefix_error_FUNCTION
-#define g_prefix_error_REQUIRED_ARGC 2
+#define g_prefix_error_REQUIRED_ARGC 1
 #define g_prefix_error_OPTIONAL_ARGC 0
 /* g_prefix_error
  *
@@ -28457,7 +28430,7 @@ mrb_GLib_g_private_set(mrb_state* mrb, mrb_value self) {
 #endif
 
 #if BIND_g_propagate_error_FUNCTION
-#define g_propagate_error_REQUIRED_ARGC 2
+#define g_propagate_error_REQUIRED_ARGC 1
 #define g_propagate_error_OPTIONAL_ARGC 0
 /* g_propagate_error
  *
@@ -28491,7 +28464,7 @@ mrb_GLib_g_propagate_error(mrb_state* mrb, mrb_value self) {
 #endif
 
 #if BIND_g_propagate_prefixed_error_FUNCTION
-#define g_propagate_prefixed_error_REQUIRED_ARGC 3
+#define g_propagate_prefixed_error_REQUIRED_ARGC 2
 #define g_propagate_prefixed_error_OPTIONAL_ARGC 0
 /* g_propagate_prefixed_error
  *
@@ -31609,7 +31582,7 @@ mrb_GLib_g_rec_mutex_unlock(mrb_state* mrb, mrb_value self) {
 #endif
 
 #if BIND_g_regex_check_replacement_FUNCTION
-#define g_regex_check_replacement_REQUIRED_ARGC 3
+#define g_regex_check_replacement_REQUIRED_ARGC 2
 #define g_regex_check_replacement_OPTIONAL_ARGC 0
 /* g_regex_check_replacement
  *
@@ -32136,7 +32109,7 @@ mrb_GLib_g_regex_match_all(mrb_state* mrb, mrb_value self) {
 #endif
 
 #if BIND_g_regex_match_all_full_FUNCTION
-#define g_regex_match_all_full_REQUIRED_ARGC 7
+#define g_regex_match_all_full_REQUIRED_ARGC 6
 #define g_regex_match_all_full_OPTIONAL_ARGC 0
 /* g_regex_match_all_full
  *
@@ -32193,7 +32166,7 @@ mrb_GLib_g_regex_match_all_full(mrb_state* mrb, mrb_value self) {
 #endif
 
 #if BIND_g_regex_match_full_FUNCTION
-#define g_regex_match_full_REQUIRED_ARGC 7
+#define g_regex_match_full_REQUIRED_ARGC 6
 #define g_regex_match_full_OPTIONAL_ARGC 0
 /* g_regex_match_full
  *
@@ -32286,7 +32259,7 @@ mrb_GLib_g_regex_match_simple(mrb_state* mrb, mrb_value self) {
 #endif
 
 #if BIND_g_regex_new_FUNCTION
-#define g_regex_new_REQUIRED_ARGC 4
+#define g_regex_new_REQUIRED_ARGC 3
 #define g_regex_new_OPTIONAL_ARGC 0
 /* g_regex_new
  *
@@ -32356,7 +32329,7 @@ mrb_GLib_g_regex_ref(mrb_state* mrb, mrb_value self) {
 #endif
 
 #if BIND_g_regex_replace_FUNCTION
-#define g_regex_replace_REQUIRED_ARGC 7
+#define g_regex_replace_REQUIRED_ARGC 6
 #define g_regex_replace_OPTIONAL_ARGC 0
 /* g_regex_replace
  *
@@ -32407,7 +32380,7 @@ mrb_GLib_g_regex_replace(mrb_state* mrb, mrb_value self) {
 #endif
 
 #if BIND_g_regex_replace_eval_FUNCTION
-#define g_regex_replace_eval_REQUIRED_ARGC 8
+#define g_regex_replace_eval_REQUIRED_ARGC 7
 #define g_regex_replace_eval_OPTIONAL_ARGC 0
 /* g_regex_replace_eval
  *
@@ -32466,7 +32439,7 @@ mrb_GLib_g_regex_replace_eval(mrb_state* mrb, mrb_value self) {
 #endif
 
 #if BIND_g_regex_replace_literal_FUNCTION
-#define g_regex_replace_literal_REQUIRED_ARGC 7
+#define g_regex_replace_literal_REQUIRED_ARGC 6
 #define g_regex_replace_literal_OPTIONAL_ARGC 0
 /* g_regex_replace_literal
  *
@@ -32556,7 +32529,7 @@ mrb_GLib_g_regex_split(mrb_state* mrb, mrb_value self) {
 #endif
 
 #if BIND_g_regex_split_full_FUNCTION
-#define g_regex_split_full_REQUIRED_ARGC 7
+#define g_regex_split_full_REQUIRED_ARGC 6
 #define g_regex_split_full_OPTIONAL_ARGC 0
 /* g_regex_split_full
  *
@@ -35336,7 +35309,7 @@ mrb_GLib_g_set_application_name(mrb_state* mrb, mrb_value self) {
 #endif
 
 #if BIND_g_set_error_FUNCTION
-#define g_set_error_REQUIRED_ARGC 4
+#define g_set_error_REQUIRED_ARGC 3
 #define g_set_error_OPTIONAL_ARGC 0
 /* g_set_error
  *
@@ -35365,7 +35338,7 @@ mrb_GLib_g_set_error(mrb_state* mrb, mrb_value self) {
 #endif
 
 #if BIND_g_set_error_literal_FUNCTION
-#define g_set_error_literal_REQUIRED_ARGC 4
+#define g_set_error_literal_REQUIRED_ARGC 3
 #define g_set_error_literal_OPTIONAL_ARGC 0
 /* g_set_error_literal
  *
@@ -35535,7 +35508,7 @@ mrb_GLib_g_shell_error_quark(mrb_state* mrb, mrb_value self) {
 #endif
 
 #if BIND_g_shell_parse_argv_FUNCTION
-#define g_shell_parse_argv_REQUIRED_ARGC 4
+#define g_shell_parse_argv_REQUIRED_ARGC 3
 #define g_shell_parse_argv_OPTIONAL_ARGC 0
 /* g_shell_parse_argv
  *
@@ -35610,7 +35583,7 @@ mrb_GLib_g_shell_quote(mrb_state* mrb, mrb_value self) {
 #endif
 
 #if BIND_g_shell_unquote_FUNCTION
-#define g_shell_unquote_REQUIRED_ARGC 2
+#define g_shell_unquote_REQUIRED_ARGC 1
 #define g_shell_unquote_OPTIONAL_ARGC 0
 /* g_shell_unquote
  *
@@ -38361,7 +38334,7 @@ mrb_GLib_g_spaced_primes_closest(mrb_state* mrb, mrb_value self) {
 #endif
 
 #if BIND_g_spawn_async_FUNCTION
-#define g_spawn_async_REQUIRED_ARGC 8
+#define g_spawn_async_REQUIRED_ARGC 6
 #define g_spawn_async_OPTIONAL_ARGC 0
 /* g_spawn_async
  *
@@ -38372,7 +38345,6 @@ mrb_GLib_g_spaced_primes_closest(mrb_state* mrb, mrb_value self) {
  * - flags: GSpawnFlags
  * - child_setup: void (*)(void *)
  * - user_data: void *
- * - child_pid: int *
  * Return Type: gboolean
  */
 mrb_value
@@ -38384,32 +38356,49 @@ mrb_GLib_g_spawn_async(mrb_state* mrb, mrb_value self) {
   GSpawnFlags native_flags;
   mrb_value child_setup;
   mrb_value user_data;
-  mrb_value child_pid;
+  int native_child_pid;
   struct GError * native_error = NULL;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "z!ooiooo", &native_working_directory, &argv, &envp, &native_flags, &child_setup, &user_data, &child_pid);
-
-  /* Type checking */
-  TODO_type_check_char_PTR_PTR(argv);
-  TODO_type_check_char_PTR_PTR(envp);
-  TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_void_PTR_RPAREN(child_setup);
-  TODO_type_check_void_PTR(user_data);
-  TODO_type_check_int_PTR(child_pid);
+  mrb_get_args(mrb, "z!A!A!ioo", &native_working_directory, &argv, &envp, &native_flags, &child_setup, &user_data);
 
   /* Unbox parameters */
-  char ** native_argv = TODO_mruby_unbox_char_PTR_PTR(argv);
+  char ** native_argv = NULL;
+  do {
+    if (mrb_nil_p(argv)) {
+      native_argv = NULL;
+    } else {
+      int len = mrb_ary_len(mrb, argv);
+      native_argv = (char**)calloc((len + 1), sizeof(char*));
+      for (int i = 0; i < len; i++) {
+        mrb_value str = mrb_ary_ref(mrb, argv, i);
+        native_argv[i] = mrb_string_value_cstr(mrb, &str);
+      }
+      native_argv[len] = NULL;
+    }
+  } while (0);
 
-  char ** native_envp = TODO_mruby_unbox_char_PTR_PTR(envp);
+  char ** native_envp = NULL;
+  do {
+    if (mrb_nil_p(envp)) {
+      native_envp = NULL;
+    } else {
+      int len = mrb_ary_len(mrb, envp);
+      native_envp = (char**)calloc((len + 1), sizeof(char*));
+      for (int i = 0; i < len; i++) {
+        mrb_value str = mrb_ary_ref(mrb, envp, i);
+        native_envp[i] = mrb_string_value_cstr(mrb, &str);
+      }
+      native_envp[len] = NULL;
+    }
+  } while (0);
 
-  void (*native_child_setup)(void *) = TODO_mruby_unbox_void_LPAREN_PTR_RPAREN_LPAREN_void_PTR_RPAREN(child_setup);
+  void * native_child_setup = NULL; /* Unused parameter */
 
-  void * native_user_data = TODO_mruby_unbox_void_PTR(user_data);
-
-  int * native_child_pid = TODO_mruby_unbox_int_PTR(child_pid);
+  void * native_user_data = NULL; /* Unused parameter */
 
   /* Invocation */
-  gboolean native_return_value = g_spawn_async(native_working_directory, native_argv, native_envp, native_flags, native_child_setup, native_user_data, native_child_pid, &native_error);
+  gboolean native_return_value = g_spawn_async(native_working_directory, native_argv, native_envp, native_flags, native_child_setup, native_user_data, &native_child_pid, &native_error);
 
   /* Box the return value */
   if (native_return_value > MRB_INT_MAX) {
@@ -38419,14 +38408,20 @@ mrb_GLib_g_spawn_async(mrb_state* mrb, mrb_value self) {
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   mrb_ary_push(mrb, results, return_value);
   
+  mrb_value child_pid = mrb_fixnum_value(native_child_pid);
+  mrb_ary_push(mrb, results, child_pid);
   mrb_value error = (native_error == NULL ? mrb_nil_value() : mruby_box__GError(mrb, native_error));
   mrb_ary_push(mrb, results, error);
+  if (native_argv != NULL) free(native_argv);
+
+  if (native_envp != NULL) free(native_envp);
+
   return results;
 }
 #endif
 
 #if BIND_g_spawn_async_with_pipes_FUNCTION
-#define g_spawn_async_with_pipes_REQUIRED_ARGC 11
+#define g_spawn_async_with_pipes_REQUIRED_ARGC 10
 #define g_spawn_async_with_pipes_OPTIONAL_ARGC 0
 /* g_spawn_async_with_pipes
  *
@@ -38506,7 +38501,7 @@ mrb_GLib_g_spawn_async_with_pipes(mrb_state* mrb, mrb_value self) {
 #endif
 
 #if BIND_g_spawn_check_exit_status_FUNCTION
-#define g_spawn_check_exit_status_REQUIRED_ARGC 2
+#define g_spawn_check_exit_status_REQUIRED_ARGC 1
 #define g_spawn_check_exit_status_OPTIONAL_ARGC 0
 /* g_spawn_check_exit_status
  *
@@ -38564,7 +38559,7 @@ mrb_GLib_g_spawn_close_pid(mrb_state* mrb, mrb_value self) {
 #endif
 
 #if BIND_g_spawn_command_line_async_FUNCTION
-#define g_spawn_command_line_async_REQUIRED_ARGC 2
+#define g_spawn_command_line_async_REQUIRED_ARGC 1
 #define g_spawn_command_line_async_OPTIONAL_ARGC 0
 /* g_spawn_command_line_async
  *
@@ -38599,7 +38594,7 @@ mrb_GLib_g_spawn_command_line_async(mrb_state* mrb, mrb_value self) {
 #endif
 
 #if BIND_g_spawn_command_line_sync_FUNCTION
-#define g_spawn_command_line_sync_REQUIRED_ARGC 5
+#define g_spawn_command_line_sync_REQUIRED_ARGC 4
 #define g_spawn_command_line_sync_OPTIONAL_ARGC 0
 /* g_spawn_command_line_sync
  *
@@ -38692,7 +38687,7 @@ mrb_GLib_g_spawn_exit_error_quark(mrb_state* mrb, mrb_value self) {
 #endif
 
 #if BIND_g_spawn_sync_FUNCTION
-#define g_spawn_sync_REQUIRED_ARGC 10
+#define g_spawn_sync_REQUIRED_ARGC 9
 #define g_spawn_sync_OPTIONAL_ARGC 0
 /* g_spawn_sync
  *
@@ -43581,7 +43576,7 @@ mrb_GLib_g_thread_pool_move_to_front(mrb_state* mrb, mrb_value self) {
 #endif
 
 #if BIND_g_thread_pool_new_FUNCTION
-#define g_thread_pool_new_REQUIRED_ARGC 5
+#define g_thread_pool_new_REQUIRED_ARGC 4
 #define g_thread_pool_new_OPTIONAL_ARGC 0
 /* g_thread_pool_new
  *
@@ -43627,7 +43622,7 @@ mrb_GLib_g_thread_pool_new(mrb_state* mrb, mrb_value self) {
 #endif
 
 #if BIND_g_thread_pool_push_FUNCTION
-#define g_thread_pool_push_REQUIRED_ARGC 3
+#define g_thread_pool_push_REQUIRED_ARGC 2
 #define g_thread_pool_push_OPTIONAL_ARGC 0
 /* g_thread_pool_push
  *
@@ -43699,7 +43694,7 @@ mrb_GLib_g_thread_pool_set_max_idle_time(mrb_state* mrb, mrb_value self) {
 #endif
 
 #if BIND_g_thread_pool_set_max_threads_FUNCTION
-#define g_thread_pool_set_max_threads_REQUIRED_ARGC 3
+#define g_thread_pool_set_max_threads_REQUIRED_ARGC 2
 #define g_thread_pool_set_max_threads_OPTIONAL_ARGC 0
 /* g_thread_pool_set_max_threads
  *
@@ -43921,7 +43916,7 @@ mrb_GLib_g_thread_self(mrb_state* mrb, mrb_value self) {
 #endif
 
 #if BIND_g_thread_try_new_FUNCTION
-#define g_thread_try_new_REQUIRED_ARGC 4
+#define g_thread_try_new_REQUIRED_ARGC 3
 #define g_thread_try_new_OPTIONAL_ARGC 0
 /* g_thread_try_new
  *
@@ -45922,7 +45917,7 @@ mrb_GLib_g_try_realloc_n(mrb_state* mrb, mrb_value self) {
 #endif
 
 #if BIND_g_ucs4_to_utf16_FUNCTION
-#define g_ucs4_to_utf16_REQUIRED_ARGC 5
+#define g_ucs4_to_utf16_REQUIRED_ARGC 4
 #define g_ucs4_to_utf16_OPTIONAL_ARGC 0
 /* g_ucs4_to_utf16
  *
@@ -45971,7 +45966,7 @@ mrb_GLib_g_ucs4_to_utf16(mrb_state* mrb, mrb_value self) {
 #endif
 
 #if BIND_g_ucs4_to_utf8_FUNCTION
-#define g_ucs4_to_utf8_REQUIRED_ARGC 5
+#define g_ucs4_to_utf8_REQUIRED_ARGC 4
 #define g_ucs4_to_utf8_OPTIONAL_ARGC 0
 /* g_ucs4_to_utf8
  *
@@ -47367,7 +47362,7 @@ mrb_GLib_g_usleep(mrb_state* mrb, mrb_value self) {
 #endif
 
 #if BIND_g_utf16_to_ucs4_FUNCTION
-#define g_utf16_to_ucs4_REQUIRED_ARGC 5
+#define g_utf16_to_ucs4_REQUIRED_ARGC 4
 #define g_utf16_to_ucs4_OPTIONAL_ARGC 0
 /* g_utf16_to_ucs4
  *
@@ -47416,7 +47411,7 @@ mrb_GLib_g_utf16_to_ucs4(mrb_state* mrb, mrb_value self) {
 #endif
 
 #if BIND_g_utf16_to_utf8_FUNCTION
-#define g_utf16_to_utf8_REQUIRED_ARGC 5
+#define g_utf16_to_utf8_REQUIRED_ARGC 4
 #define g_utf16_to_utf8_OPTIONAL_ARGC 0
 /* g_utf16_to_utf8
  *
@@ -48075,7 +48070,7 @@ mrb_GLib_g_utf8_substring(mrb_state* mrb, mrb_value self) {
 #endif
 
 #if BIND_g_utf8_to_ucs4_FUNCTION
-#define g_utf8_to_ucs4_REQUIRED_ARGC 5
+#define g_utf8_to_ucs4_REQUIRED_ARGC 4
 #define g_utf8_to_ucs4_OPTIONAL_ARGC 0
 /* g_utf8_to_ucs4
  *
@@ -48157,7 +48152,7 @@ mrb_GLib_g_utf8_to_ucs4_fast(mrb_state* mrb, mrb_value self) {
 #endif
 
 #if BIND_g_utf8_to_utf16_FUNCTION
-#define g_utf8_to_utf16_REQUIRED_ARGC 5
+#define g_utf8_to_utf16_REQUIRED_ARGC 4
 #define g_utf8_to_utf16_OPTIONAL_ARGC 0
 /* g_utf8_to_utf16
  *
@@ -52195,7 +52190,7 @@ mrb_GLib_g_variant_new_variant(mrb_state* mrb, mrb_value self) {
 #endif
 
 #if BIND_g_variant_parse_FUNCTION
-#define g_variant_parse_REQUIRED_ARGC 5
+#define g_variant_parse_REQUIRED_ARGC 4
 #define g_variant_parse_OPTIONAL_ARGC 0
 /* g_variant_parse
  *
@@ -54188,9 +54183,6 @@ void mrb_mruby_glib_gem_init(mrb_state* mrb) {
    */
 #if BIND__g_log_fallback_handler_FUNCTION
   mrb_define_class_method(mrb, GLib_module, "_g_log_fallback_handler", mrb_GLib__g_log_fallback_handler, MRB_ARGS_ARG(_g_log_fallback_handler_REQUIRED_ARGC, _g_log_fallback_handler_OPTIONAL_ARGC));
-#endif
-#if BIND__g_utf8_make_valid_FUNCTION
-  mrb_define_class_method(mrb, GLib_module, "_g_utf8_make_valid", mrb_GLib__g_utf8_make_valid, MRB_ARGS_ARG(_g_utf8_make_valid_REQUIRED_ARGC, _g_utf8_make_valid_OPTIONAL_ARGC));
 #endif
 #if BIND_g_access_FUNCTION
   mrb_define_class_method(mrb, GLib_module, "g_access", mrb_GLib_g_access, MRB_ARGS_ARG(g_access_REQUIRED_ARGC, g_access_OPTIONAL_ARGC));

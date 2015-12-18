@@ -43,33 +43,6 @@ mrb_GLib__g_log_fallback_handler(mrb_state* mrb, mrb_value self) {
 }
 #endif
 
-#if BIND__g_utf8_make_valid_FUNCTION
-#define _g_utf8_make_valid_REQUIRED_ARGC 1
-#define _g_utf8_make_valid_OPTIONAL_ARGC 0
-/* _g_utf8_make_valid
- *
- * Parameters:
- * - name: const char *
- * Return Type: gchar *
- */
-mrb_value
-mrb_GLib__g_utf8_make_valid(mrb_state* mrb, mrb_value self) {
-  const char * native_name = NULL;
-
-  /* Fetch the args */
-  mrb_get_args(mrb, "z!", &native_name);
-
-  /* Invocation */
-  gchar * native_return_value = _g_utf8_make_valid(native_name);
-
-  /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
-  g_free(native_return_value);
-  
-  return return_value;
-}
-#endif
-
 #if BIND_g_access_FUNCTION
 #define g_access_REQUIRED_ARGC 2
 #define g_access_OPTIONAL_ARGC 0
@@ -38361,7 +38334,7 @@ mrb_GLib_g_spaced_primes_closest(mrb_state* mrb, mrb_value self) {
 #endif
 
 #if BIND_g_spawn_async_FUNCTION
-#define g_spawn_async_REQUIRED_ARGC 7
+#define g_spawn_async_REQUIRED_ARGC 6
 #define g_spawn_async_OPTIONAL_ARGC 0
 /* g_spawn_async
  *
@@ -38372,7 +38345,6 @@ mrb_GLib_g_spaced_primes_closest(mrb_state* mrb, mrb_value self) {
  * - flags: GSpawnFlags
  * - child_setup: void (*)(void *)
  * - user_data: void *
- * - child_pid: int *
  * Return Type: gboolean
  */
 mrb_value
@@ -38384,44 +38356,49 @@ mrb_GLib_g_spawn_async(mrb_state* mrb, mrb_value self) {
   GSpawnFlags native_flags;
   mrb_value child_setup;
   mrb_value user_data;
-  mrb_value child_pid;
+  int native_child_pid;
   struct GError * native_error = NULL;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "z!A!A!iooo", &native_working_directory, &argv, &envp, &native_flags, &child_setup, &user_data, &child_pid);
-
-  /* Type checking */
-  TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_void_PTR_RPAREN(child_setup);
-  TODO_type_check_void_PTR(user_data);
-  TODO_type_check_int_PTR(child_pid);
+  mrb_get_args(mrb, "z!A!A!ioo", &native_working_directory, &argv, &envp, &native_flags, &child_setup, &user_data);
 
   /* Unbox parameters */
   char ** native_argv = NULL;
   do {
-    int len = mrb_ary_len(mrb, argv);
-    native_argv = (char**)calloc((len + 1), sizeof(char*));
-    for (int i = 0; i < len; i++) {
-      native_argv[i] = mrb_string_value_cstr(mrb, mrb_ary_ref(mrb, argv, i));
+    if (mrb_nil_p(argv)) {
+      native_argv = NULL;
+    } else {
+      int len = mrb_ary_len(mrb, argv);
+      native_argv = (char**)calloc((len + 1), sizeof(char*));
+      for (int i = 0; i < len; i++) {
+        mrb_value str = mrb_ary_ref(mrb, argv, i);
+        native_argv[i] = mrb_string_value_cstr(mrb, &str);
+      }
+      native_argv[len] = NULL;
     }
   } while (0);
 
   char ** native_envp = NULL;
   do {
-    int len = mrb_ary_len(mrb, envp);
-    native_envp = (char**)calloc((len + 1), sizeof(char*));
-    for (int i = 0; i < len; i++) {
-      native_envp[i] = mrb_string_value_cstr(mrb, mrb_ary_ref(mrb, envp, i));
+    if (mrb_nil_p(envp)) {
+      native_envp = NULL;
+    } else {
+      int len = mrb_ary_len(mrb, envp);
+      native_envp = (char**)calloc((len + 1), sizeof(char*));
+      for (int i = 0; i < len; i++) {
+        mrb_value str = mrb_ary_ref(mrb, envp, i);
+        native_envp[i] = mrb_string_value_cstr(mrb, &str);
+      }
+      native_envp[len] = NULL;
     }
   } while (0);
 
-  void (*native_child_setup)(void *) = TODO_mruby_unbox_void_LPAREN_PTR_RPAREN_LPAREN_void_PTR_RPAREN(child_setup);
+  void * native_child_setup = NULL; /* Unused parameter */
 
-  void * native_user_data = TODO_mruby_unbox_void_PTR(user_data);
-
-  int * native_child_pid = TODO_mruby_unbox_int_PTR(child_pid);
+  void * native_user_data = NULL; /* Unused parameter */
 
   /* Invocation */
-  gboolean native_return_value = g_spawn_async(native_working_directory, native_argv, native_envp, native_flags, native_child_setup, native_user_data, native_child_pid, &native_error);
+  gboolean native_return_value = g_spawn_async(native_working_directory, native_argv, native_envp, native_flags, native_child_setup, native_user_data, &native_child_pid, &native_error);
 
   /* Box the return value */
   if (native_return_value > MRB_INT_MAX) {
@@ -38431,11 +38408,13 @@ mrb_GLib_g_spawn_async(mrb_state* mrb, mrb_value self) {
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   mrb_ary_push(mrb, results, return_value);
   
+  mrb_value child_pid = mrb_fixnum_value(native_child_pid);
+  mrb_ary_push(mrb, results, child_pid);
   mrb_value error = (native_error == NULL ? mrb_nil_value() : mruby_box__GError(mrb, native_error));
   mrb_ary_push(mrb, results, error);
-  free(native_argv);
+  if (native_argv != NULL) free(native_argv);
 
-  free(native_envp);
+  if (native_envp != NULL) free(native_envp);
 
   return results;
 }
@@ -54204,9 +54183,6 @@ void mrb_mruby_glib_gem_init(mrb_state* mrb) {
    */
 #if BIND__g_log_fallback_handler_FUNCTION
   mrb_define_class_method(mrb, GLib_module, "_g_log_fallback_handler", mrb_GLib__g_log_fallback_handler, MRB_ARGS_ARG(_g_log_fallback_handler_REQUIRED_ARGC, _g_log_fallback_handler_OPTIONAL_ARGC));
-#endif
-#if BIND__g_utf8_make_valid_FUNCTION
-  mrb_define_class_method(mrb, GLib_module, "_g_utf8_make_valid", mrb_GLib__g_utf8_make_valid, MRB_ARGS_ARG(_g_utf8_make_valid_REQUIRED_ARGC, _g_utf8_make_valid_OPTIONAL_ARGC));
 #endif
 #if BIND_g_access_FUNCTION
   mrb_define_class_method(mrb, GLib_module, "g_access", mrb_GLib_g_access, MRB_ARGS_ARG(g_access_REQUIRED_ARGC, g_access_OPTIONAL_ARGC));

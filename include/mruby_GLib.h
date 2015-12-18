@@ -14,24 +14,25 @@
  *       If the file is not directly on the include path,
  *       you will need to prepend the relative path.
  */
- 
- #include <stdlib.h>
- #include "mruby.h"
- #include "mruby/array.h"
- #include "mruby/class.h"
- #include "mruby/data.h"
- #include "mruby/string.h"
- #include "mruby/value.h"
- #include "mruby/variable.h"
 
- #include "glib.h"
- #include "glib/gi18n.h"
- #include "glib/gprintf.h"
- #include "glib/gstdio.h"
+#include <stdlib.h>
+#include "mruby.h"
+#include "mruby/array.h"
+#include "mruby/class.h"
+#include "mruby/data.h"
+#include "mruby/string.h"
+#include "mruby/value.h"
+#include "mruby/variable.h"
 
- #include "mruby_GLib_functions.h"
- #include "mruby_GLib_classes.h"
- #include "mruby_GLib_boxing.h"
+#include "glib.h"
+#include "glib/gi18n.h"
+#include "glib/gprintf.h"
+#include "glib/gstdio.h"
+
+
+#include "mruby_GLib_functions.h"
+#include "mruby_GLib_classes.h"
+#include "mruby_GLib_boxing.h"
 
 /*
  * RClass Macros

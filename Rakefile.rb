@@ -2,8 +2,8 @@ GLIB_HOME = "/usr/local/opt/glib2"
 
 desc 'Generate declarations.json'
 task :declarations do
-  declarations = File.expand_path(File.dirname(__FILE__)) + "/declarations.json"
-  headers = File.expand_path(File.dirname(__FILE__)) + "/headers_list.txt"
+  declarations = File.expand_path(File.dirname(__FILE__)) + "/mruby_bindings_config/declarations.json"
+  headers = File.expand_path(File.dirname(__FILE__)) + "/mruby_bindings_config/headers_list.txt"
   # I just happened to put it here. Should probably use pkg-config
   # to determine this at runtime.
   cd "#{GLIB_HOME}/include/glib-2.0" do
@@ -13,7 +13,17 @@ end
 
 desc 'Generate bindings'
 task :bindings do
-  sh "ruby ~/projects/mruby-bindings/mruby_bindings.rb -l ctypes.rb --input declarations.json --gem mruby-glib --module GLib --force --verbose"
+  sh <<EOS.split("\n").join(' ').gsub(/\s+/, ' ')
+    ruby ~/projects/mruby-bindings/mruby_bindings.rb
+    --includes mruby_bindings_config/includes.h
+    -l mruby_bindings_config/ctypes.rb
+    --input mruby_bindings_config/declarations.json
+    --gem mruby-glib
+    --module GLib
+    --skip macros
+    --force
+    --verbose
+EOS
 end
 
 namespace :pull do
