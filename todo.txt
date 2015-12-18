@@ -31,12 +31,10 @@
 #define BIND_g_checksum_type_get_length_FUNCTION FALSE
 #define BIND_g_checksum_update_FUNCTION FALSE
 
+/* Current binding doesn't work if File contains null character (binary much?) */
 #define BIND_g_file_get_contents_FUNCTION FALSE
 
 #define BIND_g_iconv_FUNCTION FALSE
 #define BIND_g_iconv_open_FUNCTION FALSE
 
-#define BIND_g_rand_int_FUNCTION FALSE
-#define BIND_g_random_int_FUNCTION FALSE
-#define BIND_g_shell_error_quark_FUNCTION FALSE
 #define BIND_g_shell_parse_argv_FUNCTION FALSE

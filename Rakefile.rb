@@ -15,14 +15,14 @@ desc 'Generate bindings'
 task :bindings do
   sh <<EOS.split("\n").join(' ').gsub(/\s+/, ' ')
     ruby ~/projects/mruby-bindings/mruby_bindings.rb
-    --includes mruby_bindings_config/includes.h
-    -l mruby_bindings_config/ctypes.rb
-    --input mruby_bindings_config/declarations.json
-    --gem mruby-glib
-    --module GLib
-    --skip macros
-    --force
-    --verbose
+      --includes mruby_bindings_config/includes.h
+      -l mruby_bindings_config/ctypes.rb
+      --input mruby_bindings_config/declarations.json
+      --gem mruby-glib
+      --module GLib
+      --skip macros
+      --skip mrbgem.rake
+      --force
 EOS
 end
 
@@ -76,4 +76,42 @@ end
 
 task :macros do
   sh "cat bindings/src/mruby_GLib_macro_constants.c | ruby -ne 'match = $_[/mrb_define.*\"(.*)\"/, 1]; puts match if match'"
+end
+
+namespace :test do
+  def each_test_file(&block)
+    Dir['specs/*.rb'].reject { |f| File.basename(f) == 'fixture.rb' }.each(&block)
+  end
+
+  def test_file_name(test_file)
+    File.basename(test_file).sub(/\.rb$/, '')
+  end
+  
+  each_test_file do |test_file|
+    test = test_file_name(test_file)
+    desc "Run the #{test} tests"
+    task (test) do
+      Dir.chdir 'specs' do
+        system "mruby #{test_file.sub(/^specs\//, '')}"
+      end
+    end
+  end
+
+  desc "Run all of the tests"
+  task :all do
+    Dir.chdir 'specs' do
+      Dir['*.rb'].reject { |f| File.basename(f) == 'specs/fixture.rb' }.sort.each do |f|
+        system "mruby #{f}"
+      end
+    end
+  end
+
+  desc "Run all the tests and print a summary"
+  task :summary do
+    IO.popen("rake test:all", "r") do |io|
+      while s = io.gets
+        puts s if /(^[a-z])|tests failed/i =~ s
+      end
+    end
+  end
 end
