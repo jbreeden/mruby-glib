@@ -15,7 +15,7 @@
 mrb_value
 mrb_GLib_GAsyncQueue_initialize(mrb_state* mrb, mrb_value self) {
   struct _GAsyncQueue* native_object = (struct _GAsyncQueue*)calloc(1, sizeof(struct _GAsyncQueue));
-  mruby_gift_struct _GAsyncQueue_data_ptr(self, native_object);
+  mruby_giftwrap__GAsyncQueue_data_ptr(self, native_object);
   return self;
 }
 #endif

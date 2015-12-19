@@ -15,7 +15,7 @@
 mrb_value
 mrb_GLib_GTestLogBuffer_initialize(mrb_state* mrb, mrb_value self) {
   GTestLogBuffer* native_object = (GTestLogBuffer*)calloc(1, sizeof(GTestLogBuffer));
-  mruby_gift_GTestLogBuffer_data_ptr(self, native_object);
+  mruby_giftwrap_GTestLogBuffer_data_ptr(self, native_object);
   return self;
 }
 #endif
@@ -96,7 +96,6 @@ mrb_GLib_GTestLogBuffer_set_data(mrb_state* mrb, mrb_value self) {
 
   native_self->data = native_data;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -143,7 +142,6 @@ mrb_GLib_GTestLogBuffer_set_msgs(mrb_state* mrb, mrb_value self) {
 
   native_self->msgs = native_msgs;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;

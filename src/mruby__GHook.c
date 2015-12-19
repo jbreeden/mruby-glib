@@ -15,7 +15,7 @@
 mrb_value
 mrb_GLib_GHook_initialize(mrb_state* mrb, mrb_value self) {
   struct _GHook* native_object = (struct _GHook*)calloc(1, sizeof(struct _GHook));
-  mruby_gift_struct _GHook_data_ptr(self, native_object);
+  mruby_giftwrap__GHook_data_ptr(self, native_object);
   return self;
 }
 #endif
@@ -93,7 +93,6 @@ mrb_GLib_GHook_set_data(mrb_state* mrb, mrb_value self) {
 
   native_self->data = native_data;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -140,7 +139,6 @@ mrb_GLib_GHook_set_next(mrb_state* mrb, mrb_value self) {
 
   native_self->next = native_next;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -187,7 +185,6 @@ mrb_GLib_GHook_set_prev(mrb_state* mrb, mrb_value self) {
 
   native_self->prev = native_prev;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -226,7 +223,6 @@ mrb_GLib_GHook_set_ref_count(mrb_state* mrb, mrb_value self) {
 
   native_self->ref_count = native_ref_count;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -265,7 +261,6 @@ mrb_GLib_GHook_set_hook_id(mrb_state* mrb, mrb_value self) {
 
   native_self->hook_id = native_hook_id;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -304,7 +299,6 @@ mrb_GLib_GHook_set_flags(mrb_state* mrb, mrb_value self) {
 
   native_self->flags = native_flags;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -348,7 +342,6 @@ mrb_GLib_GHook_set_func(mrb_state* mrb, mrb_value self) {
 
   native_self->func = native_func;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -392,7 +385,6 @@ mrb_GLib_GHook_set_destroy(mrb_state* mrb, mrb_value self) {
 
   native_self->destroy = native_destroy;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;

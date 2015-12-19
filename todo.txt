@@ -1,4 +1,6 @@
-- Figure out how to out-param-ify a buffer & length (2 separate out params as 1)
+- Have mruby_bindings output a list of unbound function signatures
+  + To be used as quick ref for defining CTypes
+  + Same deal for macros
 
 #define BIND_g_atexit_FUNCTION FALSE
 

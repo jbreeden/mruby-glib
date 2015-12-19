@@ -15,7 +15,7 @@
 mrb_value
 mrb_GLib_GOnce_initialize(mrb_state* mrb, mrb_value self) {
   struct _GOnce* native_object = (struct _GOnce*)calloc(1, sizeof(struct _GOnce));
-  mruby_gift_struct _GOnce_data_ptr(self, native_object);
+  mruby_giftwrap__GOnce_data_ptr(self, native_object);
   return self;
 }
 #endif
@@ -93,7 +93,6 @@ mrb_GLib_GOnce_set_status(mrb_state* mrb, mrb_value self) {
 
   native_self->status = native_status;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -137,7 +136,6 @@ mrb_GLib_GOnce_set_retval(mrb_state* mrb, mrb_value self) {
 
   native_self->retval = native_retval;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;

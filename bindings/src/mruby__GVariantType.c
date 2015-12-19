@@ -15,7 +15,7 @@
 mrb_value
 mrb_GLib_GVariantType_initialize(mrb_state* mrb, mrb_value self) {
   struct _GVariantType* native_object = (struct _GVariantType*)calloc(1, sizeof(struct _GVariantType));
-  mruby_gift_struct _GVariantType_data_ptr(self, native_object);
+  mruby_giftwrap__GVariantType_data_ptr(self, native_object);
   return self;
 }
 #endif

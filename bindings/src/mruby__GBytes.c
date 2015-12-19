@@ -15,7 +15,7 @@
 mrb_value
 mrb_GLib_GBytes_initialize(mrb_state* mrb, mrb_value self) {
   struct _GBytes* native_object = (struct _GBytes*)calloc(1, sizeof(struct _GBytes));
-  mruby_gift_struct _GBytes_data_ptr(self, native_object);
+  mruby_giftwrap__GBytes_data_ptr(self, native_object);
   return self;
 }
 #endif

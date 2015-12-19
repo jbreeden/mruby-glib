@@ -15,7 +15,7 @@
 mrb_value
 mrb_GLib_GDebugKey_initialize(mrb_state* mrb, mrb_value self) {
   struct _GDebugKey* native_object = (struct _GDebugKey*)calloc(1, sizeof(struct _GDebugKey));
-  mruby_gift_struct _GDebugKey_data_ptr(self, native_object);
+  mruby_giftwrap__GDebugKey_data_ptr(self, native_object);
   return self;
 }
 #endif
@@ -88,7 +88,6 @@ mrb_GLib_GDebugKey_set_key(mrb_state* mrb, mrb_value self) {
 
   native_self->key = native_key;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -127,7 +126,6 @@ mrb_GLib_GDebugKey_set_value(mrb_state* mrb, mrb_value self) {
 
   native_self->value = native_value;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;

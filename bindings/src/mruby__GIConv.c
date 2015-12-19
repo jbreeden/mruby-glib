@@ -15,7 +15,7 @@
 mrb_value
 mrb_GLib_GIConv_initialize(mrb_state* mrb, mrb_value self) {
   struct _GIConv* native_object = (struct _GIConv*)calloc(1, sizeof(struct _GIConv));
-  mruby_gift_struct _GIConv_data_ptr(self, native_object);
+  mruby_giftwrap__GIConv_data_ptr(self, native_object);
   return self;
 }
 #endif

@@ -15,7 +15,7 @@
 mrb_value
 mrb_GLib_GHookList_initialize(mrb_state* mrb, mrb_value self) {
   struct _GHookList* native_object = (struct _GHookList*)calloc(1, sizeof(struct _GHookList));
-  mruby_gift_struct _GHookList_data_ptr(self, native_object);
+  mruby_giftwrap__GHookList_data_ptr(self, native_object);
   return self;
 }
 #endif
@@ -88,7 +88,6 @@ mrb_GLib_GHookList_set_seq_id(mrb_state* mrb, mrb_value self) {
 
   native_self->seq_id = native_seq_id;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -127,7 +126,6 @@ mrb_GLib_GHookList_set_hook_size(mrb_state* mrb, mrb_value self) {
 
   native_self->hook_size = native_hook_size;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -166,7 +164,6 @@ mrb_GLib_GHookList_set_is_setup(mrb_state* mrb, mrb_value self) {
 
   native_self->is_setup = native_is_setup;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -213,7 +210,6 @@ mrb_GLib_GHookList_set_hooks(mrb_state* mrb, mrb_value self) {
 
   native_self->hooks = native_hooks;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -257,7 +253,6 @@ mrb_GLib_GHookList_set_dummy3(mrb_state* mrb, mrb_value self) {
 
   native_self->dummy3 = native_dummy3;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -301,7 +296,6 @@ mrb_GLib_GHookList_set_finalize_hook(mrb_state* mrb, mrb_value self) {
 
   native_self->finalize_hook = native_finalize_hook;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -345,7 +339,6 @@ mrb_GLib_GHookList_set_dummy(mrb_state* mrb, mrb_value self) {
 
   native_self->dummy = native_dummy;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;

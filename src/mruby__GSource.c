@@ -15,7 +15,7 @@
 mrb_value
 mrb_GLib_GSource_initialize(mrb_state* mrb, mrb_value self) {
   struct _GSource* native_object = (struct _GSource*)calloc(1, sizeof(struct _GSource));
-  mruby_gift_struct _GSource_data_ptr(self, native_object);
+  mruby_giftwrap__GSource_data_ptr(self, native_object);
   return self;
 }
 #endif
@@ -93,7 +93,6 @@ mrb_GLib_GSource_set_callback_data(mrb_state* mrb, mrb_value self) {
 
   native_self->callback_data = native_callback_data;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -140,7 +139,6 @@ mrb_GLib_GSource_set_callback_funcs(mrb_state* mrb, mrb_value self) {
 
   native_self->callback_funcs = native_callback_funcs;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -187,7 +185,6 @@ mrb_GLib_GSource_set_source_funcs(mrb_state* mrb, mrb_value self) {
 
   native_self->source_funcs = native_source_funcs;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -226,7 +223,6 @@ mrb_GLib_GSource_set_ref_count(mrb_state* mrb, mrb_value self) {
 
   native_self->ref_count = native_ref_count;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -273,7 +269,6 @@ mrb_GLib_GSource_set_context(mrb_state* mrb, mrb_value self) {
 
   native_self->context = native_context;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -312,7 +307,6 @@ mrb_GLib_GSource_set_priority(mrb_state* mrb, mrb_value self) {
 
   native_self->priority = native_priority;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -351,7 +345,6 @@ mrb_GLib_GSource_set_flags(mrb_state* mrb, mrb_value self) {
 
   native_self->flags = native_flags;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -390,7 +383,6 @@ mrb_GLib_GSource_set_source_id(mrb_state* mrb, mrb_value self) {
 
   native_self->source_id = native_source_id;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -437,7 +429,6 @@ mrb_GLib_GSource_set_poll_fds(mrb_state* mrb, mrb_value self) {
 
   native_self->poll_fds = native_poll_fds;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -484,7 +475,6 @@ mrb_GLib_GSource_set_prev(mrb_state* mrb, mrb_value self) {
 
   native_self->prev = native_prev;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -531,7 +521,6 @@ mrb_GLib_GSource_set_next(mrb_state* mrb, mrb_value self) {
 
   native_self->next = native_next;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -568,16 +557,12 @@ mrb_GLib_GSource_set_name(mrb_state* mrb, mrb_value self) {
 
   mrb_get_args(mrb, "z!", &name);
 
-  /* WARNING: Allocating new memory to create 'char *' from 'const char *'.
-   *          Please verify that this memory is cleaned up correctly.
-   *
-   *          Has this been verified? [No]
-   */
+  /* WARNING: String is strdup'ed to avoid mutable reference to internal MRuby memory */
   char * native_name = strdup(name);
 
+  if (NULL != native_self->name) free(native_self->name);
   native_self->name = native_name;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -624,7 +609,6 @@ mrb_GLib_GSource_set_priv(mrb_state* mrb, mrb_value self) {
 
   native_self->priv = native_priv;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;

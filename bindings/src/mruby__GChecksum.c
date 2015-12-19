@@ -15,7 +15,7 @@
 mrb_value
 mrb_GLib_GChecksum_initialize(mrb_state* mrb, mrb_value self) {
   struct _GChecksum* native_object = (struct _GChecksum*)calloc(1, sizeof(struct _GChecksum));
-  mruby_gift_struct _GChecksum_data_ptr(self, native_object);
+  mruby_giftwrap__GChecksum_data_ptr(self, native_object);
   return self;
 }
 #endif

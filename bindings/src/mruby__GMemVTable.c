@@ -15,7 +15,7 @@
 mrb_value
 mrb_GLib_GMemVTable_initialize(mrb_state* mrb, mrb_value self) {
   struct _GMemVTable* native_object = (struct _GMemVTable*)calloc(1, sizeof(struct _GMemVTable));
-  mruby_gift_struct _GMemVTable_data_ptr(self, native_object);
+  mruby_giftwrap__GMemVTable_data_ptr(self, native_object);
   return self;
 }
 #endif
@@ -93,7 +93,6 @@ mrb_GLib_GMemVTable_set_malloc(mrb_state* mrb, mrb_value self) {
 
   native_self->malloc = native_malloc;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -137,7 +136,6 @@ mrb_GLib_GMemVTable_set_realloc(mrb_state* mrb, mrb_value self) {
 
   native_self->realloc = native_realloc;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -181,7 +179,6 @@ mrb_GLib_GMemVTable_set_free(mrb_state* mrb, mrb_value self) {
 
   native_self->free = native_free;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -225,7 +222,6 @@ mrb_GLib_GMemVTable_set_calloc(mrb_state* mrb, mrb_value self) {
 
   native_self->calloc = native_calloc;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -269,7 +265,6 @@ mrb_GLib_GMemVTable_set_try_malloc(mrb_state* mrb, mrb_value self) {
 
   native_self->try_malloc = native_try_malloc;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -313,7 +308,6 @@ mrb_GLib_GMemVTable_set_try_realloc(mrb_state* mrb, mrb_value self) {
 
   native_self->try_realloc = native_try_realloc;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;

@@ -15,7 +15,7 @@
 mrb_value
 mrb_GLib_GMappedFile_initialize(mrb_state* mrb, mrb_value self) {
   struct _GMappedFile* native_object = (struct _GMappedFile*)calloc(1, sizeof(struct _GMappedFile));
-  mruby_gift_struct _GMappedFile_data_ptr(self, native_object);
+  mruby_giftwrap__GMappedFile_data_ptr(self, native_object);
   return self;
 }
 #endif

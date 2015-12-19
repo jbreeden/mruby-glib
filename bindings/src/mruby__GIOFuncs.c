@@ -15,7 +15,7 @@
 mrb_value
 mrb_GLib_GIOFuncs_initialize(mrb_state* mrb, mrb_value self) {
   struct _GIOFuncs* native_object = (struct _GIOFuncs*)calloc(1, sizeof(struct _GIOFuncs));
-  mruby_gift_struct _GIOFuncs_data_ptr(self, native_object);
+  mruby_giftwrap__GIOFuncs_data_ptr(self, native_object);
   return self;
 }
 #endif
@@ -93,7 +93,6 @@ mrb_GLib_GIOFuncs_set_io_read(mrb_state* mrb, mrb_value self) {
 
   native_self->io_read = native_io_read;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -137,7 +136,6 @@ mrb_GLib_GIOFuncs_set_io_write(mrb_state* mrb, mrb_value self) {
 
   native_self->io_write = native_io_write;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -181,7 +179,6 @@ mrb_GLib_GIOFuncs_set_io_seek(mrb_state* mrb, mrb_value self) {
 
   native_self->io_seek = native_io_seek;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -225,7 +222,6 @@ mrb_GLib_GIOFuncs_set_io_close(mrb_state* mrb, mrb_value self) {
 
   native_self->io_close = native_io_close;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -269,7 +265,6 @@ mrb_GLib_GIOFuncs_set_io_create_watch(mrb_state* mrb, mrb_value self) {
 
   native_self->io_create_watch = native_io_create_watch;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -313,7 +308,6 @@ mrb_GLib_GIOFuncs_set_io_free(mrb_state* mrb, mrb_value self) {
 
   native_self->io_free = native_io_free;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -357,7 +351,6 @@ mrb_GLib_GIOFuncs_set_io_set_flags(mrb_state* mrb, mrb_value self) {
 
   native_self->io_set_flags = native_io_set_flags;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -401,7 +394,6 @@ mrb_GLib_GIOFuncs_set_io_get_flags(mrb_state* mrb, mrb_value self) {
 
   native_self->io_get_flags = native_io_get_flags;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;

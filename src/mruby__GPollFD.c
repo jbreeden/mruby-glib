@@ -15,7 +15,7 @@
 mrb_value
 mrb_GLib_GPollFD_initialize(mrb_state* mrb, mrb_value self) {
   struct _GPollFD* native_object = (struct _GPollFD*)calloc(1, sizeof(struct _GPollFD));
-  mruby_gift_struct _GPollFD_data_ptr(self, native_object);
+  mruby_giftwrap__GPollFD_data_ptr(self, native_object);
   return self;
 }
 #endif
@@ -88,7 +88,6 @@ mrb_GLib_GPollFD_set_fd(mrb_state* mrb, mrb_value self) {
 
   native_self->fd = native_fd;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -127,7 +126,6 @@ mrb_GLib_GPollFD_set_events(mrb_state* mrb, mrb_value self) {
 
   native_self->events = native_events;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -166,7 +164,6 @@ mrb_GLib_GPollFD_set_revents(mrb_state* mrb, mrb_value self) {
 
   native_self->revents = native_revents;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;

@@ -15,7 +15,7 @@
 mrb_value
 mrb_GLib_GVariantBuilder_initialize(mrb_state* mrb, mrb_value self) {
   struct _GVariantBuilder* native_object = (struct _GVariantBuilder*)calloc(1, sizeof(struct _GVariantBuilder));
-  mruby_gift_struct _GVariantBuilder_data_ptr(self, native_object);
+  mruby_giftwrap__GVariantBuilder_data_ptr(self, native_object);
   return self;
 }
 #endif
@@ -93,7 +93,6 @@ mrb_GLib_GVariantBuilder_set_x(mrb_state* mrb, mrb_value self) {
 
   native_self->x = native_x;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;

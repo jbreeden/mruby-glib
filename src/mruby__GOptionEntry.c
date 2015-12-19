@@ -15,7 +15,7 @@
 mrb_value
 mrb_GLib_GOptionEntry_initialize(mrb_state* mrb, mrb_value self) {
   struct _GOptionEntry* native_object = (struct _GOptionEntry*)calloc(1, sizeof(struct _GOptionEntry));
-  mruby_gift_struct _GOptionEntry_data_ptr(self, native_object);
+  mruby_giftwrap__GOptionEntry_data_ptr(self, native_object);
   return self;
 }
 #endif
@@ -88,7 +88,6 @@ mrb_GLib_GOptionEntry_set_long_name(mrb_state* mrb, mrb_value self) {
 
   native_self->long_name = native_long_name;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -127,7 +126,6 @@ mrb_GLib_GOptionEntry_set_short_name(mrb_state* mrb, mrb_value self) {
 
   native_self->short_name = native_short_name;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -166,7 +164,6 @@ mrb_GLib_GOptionEntry_set_flags(mrb_state* mrb, mrb_value self) {
 
   native_self->flags = native_flags;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -205,7 +202,6 @@ mrb_GLib_GOptionEntry_set_arg(mrb_state* mrb, mrb_value self) {
 
   native_self->arg = native_arg;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -249,7 +245,6 @@ mrb_GLib_GOptionEntry_set_arg_data(mrb_state* mrb, mrb_value self) {
 
   native_self->arg_data = native_arg_data;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -288,7 +283,6 @@ mrb_GLib_GOptionEntry_set_description(mrb_state* mrb, mrb_value self) {
 
   native_self->description = native_description;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -327,7 +321,6 @@ mrb_GLib_GOptionEntry_set_arg_description(mrb_state* mrb, mrb_value self) {
 
   native_self->arg_description = native_arg_description;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;

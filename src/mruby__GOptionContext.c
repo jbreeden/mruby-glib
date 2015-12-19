@@ -15,7 +15,7 @@
 mrb_value
 mrb_GLib_GOptionContext_initialize(mrb_state* mrb, mrb_value self) {
   struct _GOptionContext* native_object = (struct _GOptionContext*)calloc(1, sizeof(struct _GOptionContext));
-  mruby_gift_struct _GOptionContext_data_ptr(self, native_object);
+  mruby_giftwrap__GOptionContext_data_ptr(self, native_object);
   return self;
 }
 #endif

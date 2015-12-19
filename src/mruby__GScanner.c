@@ -15,7 +15,7 @@
 mrb_value
 mrb_GLib_GScanner_initialize(mrb_state* mrb, mrb_value self) {
   struct _GScanner* native_object = (struct _GScanner*)calloc(1, sizeof(struct _GScanner));
-  mruby_gift_struct _GScanner_data_ptr(self, native_object);
+  mruby_giftwrap__GScanner_data_ptr(self, native_object);
   return self;
 }
 #endif
@@ -93,7 +93,6 @@ mrb_GLib_GScanner_set_user_data(mrb_state* mrb, mrb_value self) {
 
   native_self->user_data = native_user_data;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -132,7 +131,6 @@ mrb_GLib_GScanner_set_max_parse_errors(mrb_state* mrb, mrb_value self) {
 
   native_self->max_parse_errors = native_max_parse_errors;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -171,7 +169,6 @@ mrb_GLib_GScanner_set_parse_errors(mrb_state* mrb, mrb_value self) {
 
   native_self->parse_errors = native_parse_errors;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -210,7 +207,6 @@ mrb_GLib_GScanner_set_input_name(mrb_state* mrb, mrb_value self) {
 
   native_self->input_name = native_input_name;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -257,7 +253,6 @@ mrb_GLib_GScanner_set_qdata(mrb_state* mrb, mrb_value self) {
 
   native_self->qdata = native_qdata;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -304,7 +299,6 @@ mrb_GLib_GScanner_set_config(mrb_state* mrb, mrb_value self) {
 
   native_self->config = native_config;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -343,7 +337,6 @@ mrb_GLib_GScanner_set_token(mrb_state* mrb, mrb_value self) {
 
   native_self->token = native_token;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -387,7 +380,6 @@ mrb_GLib_GScanner_set_value(mrb_state* mrb, mrb_value self) {
 
   native_self->value = native_value;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -426,7 +418,6 @@ mrb_GLib_GScanner_set_line(mrb_state* mrb, mrb_value self) {
 
   native_self->line = native_line;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -465,7 +456,6 @@ mrb_GLib_GScanner_set_position(mrb_state* mrb, mrb_value self) {
 
   native_self->position = native_position;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -504,7 +494,6 @@ mrb_GLib_GScanner_set_next_token(mrb_state* mrb, mrb_value self) {
 
   native_self->next_token = native_next_token;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -548,7 +537,6 @@ mrb_GLib_GScanner_set_next_value(mrb_state* mrb, mrb_value self) {
 
   native_self->next_value = native_next_value;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -587,7 +575,6 @@ mrb_GLib_GScanner_set_next_line(mrb_state* mrb, mrb_value self) {
 
   native_self->next_line = native_next_line;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -626,7 +613,6 @@ mrb_GLib_GScanner_set_next_position(mrb_state* mrb, mrb_value self) {
 
   native_self->next_position = native_next_position;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -673,7 +659,6 @@ mrb_GLib_GScanner_set_symbol_table(mrb_state* mrb, mrb_value self) {
 
   native_self->symbol_table = native_symbol_table;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -712,7 +697,6 @@ mrb_GLib_GScanner_set_input_fd(mrb_state* mrb, mrb_value self) {
 
   native_self->input_fd = native_input_fd;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -751,7 +735,6 @@ mrb_GLib_GScanner_set_text(mrb_state* mrb, mrb_value self) {
 
   native_self->text = native_text;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -790,7 +773,6 @@ mrb_GLib_GScanner_set_text_end(mrb_state* mrb, mrb_value self) {
 
   native_self->text_end = native_text_end;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -823,13 +805,16 @@ mrb_GLib_GScanner_get_buffer(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_GScanner_set_buffer(mrb_state* mrb, mrb_value self) {
   struct _GScanner * native_self = mruby_unbox__GScanner(self);
-  char * native_buffer = NULL;
+  char * buffer = NULL;
 
-  mrb_get_args(mrb, "z!", &native_buffer);
+  mrb_get_args(mrb, "z!", &buffer);
 
+  /* WARNING: String is strdup'ed to avoid mutable reference to internal MRuby memory */
+  char * native_buffer = strdup(buffer);
+
+  if (NULL != native_self->buffer) free(native_self->buffer);
   native_self->buffer = native_buffer;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -868,7 +853,6 @@ mrb_GLib_GScanner_set_scope_id(mrb_state* mrb, mrb_value self) {
 
   native_self->scope_id = native_scope_id;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -912,7 +896,6 @@ mrb_GLib_GScanner_set_msg_handler(mrb_state* mrb, mrb_value self) {
 
   native_self->msg_handler = native_msg_handler;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;

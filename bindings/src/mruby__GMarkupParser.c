@@ -15,7 +15,7 @@
 mrb_value
 mrb_GLib_GMarkupParser_initialize(mrb_state* mrb, mrb_value self) {
   struct _GMarkupParser* native_object = (struct _GMarkupParser*)calloc(1, sizeof(struct _GMarkupParser));
-  mruby_gift_struct _GMarkupParser_data_ptr(self, native_object);
+  mruby_giftwrap__GMarkupParser_data_ptr(self, native_object);
   return self;
 }
 #endif
@@ -93,7 +93,6 @@ mrb_GLib_GMarkupParser_set_start_element(mrb_state* mrb, mrb_value self) {
 
   native_self->start_element = native_start_element;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -137,7 +136,6 @@ mrb_GLib_GMarkupParser_set_end_element(mrb_state* mrb, mrb_value self) {
 
   native_self->end_element = native_end_element;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -181,7 +179,6 @@ mrb_GLib_GMarkupParser_set_text(mrb_state* mrb, mrb_value self) {
 
   native_self->text = native_text;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -225,7 +222,6 @@ mrb_GLib_GMarkupParser_set_passthrough(mrb_state* mrb, mrb_value self) {
 
   native_self->passthrough = native_passthrough;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -269,7 +265,6 @@ mrb_GLib_GMarkupParser_set_error(mrb_state* mrb, mrb_value self) {
 
   native_self->error = native_error;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;

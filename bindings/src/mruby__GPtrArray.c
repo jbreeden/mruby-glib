@@ -15,7 +15,7 @@
 mrb_value
 mrb_GLib_GPtrArray_initialize(mrb_state* mrb, mrb_value self) {
   struct _GPtrArray* native_object = (struct _GPtrArray*)calloc(1, sizeof(struct _GPtrArray));
-  mruby_gift_struct _GPtrArray_data_ptr(self, native_object);
+  mruby_giftwrap__GPtrArray_data_ptr(self, native_object);
   return self;
 }
 #endif
@@ -93,7 +93,6 @@ mrb_GLib_GPtrArray_set_pdata(mrb_state* mrb, mrb_value self) {
 
   native_self->pdata = native_pdata;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -132,7 +131,6 @@ mrb_GLib_GPtrArray_set_len(mrb_state* mrb, mrb_value self) {
 
   native_self->len = native_len;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;

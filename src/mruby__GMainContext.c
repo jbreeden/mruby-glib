@@ -15,7 +15,7 @@
 mrb_value
 mrb_GLib_GMainContext_initialize(mrb_state* mrb, mrb_value self) {
   struct _GMainContext* native_object = (struct _GMainContext*)calloc(1, sizeof(struct _GMainContext));
-  mruby_gift_struct _GMainContext_data_ptr(self, native_object);
+  mruby_giftwrap__GMainContext_data_ptr(self, native_object);
   return self;
 }
 #endif

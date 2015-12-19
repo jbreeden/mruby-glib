@@ -15,7 +15,7 @@
 mrb_value
 mrb_GLib_GPatternSpec_initialize(mrb_state* mrb, mrb_value self) {
   struct _GPatternSpec* native_object = (struct _GPatternSpec*)calloc(1, sizeof(struct _GPatternSpec));
-  mruby_gift_struct _GPatternSpec_data_ptr(self, native_object);
+  mruby_giftwrap__GPatternSpec_data_ptr(self, native_object);
   return self;
 }
 #endif

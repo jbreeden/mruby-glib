@@ -15,7 +15,7 @@
 mrb_value
 mrb_GLib_GTimer_initialize(mrb_state* mrb, mrb_value self) {
   struct _GTimer* native_object = (struct _GTimer*)calloc(1, sizeof(struct _GTimer));
-  mruby_gift_struct _GTimer_data_ptr(self, native_object);
+  mruby_giftwrap__GTimer_data_ptr(self, native_object);
   return self;
 }
 #endif

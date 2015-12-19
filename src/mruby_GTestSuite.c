@@ -15,7 +15,7 @@
 mrb_value
 mrb_GLib_GTestSuite_initialize(mrb_state* mrb, mrb_value self) {
   struct GTestSuite* native_object = (struct GTestSuite*)calloc(1, sizeof(struct GTestSuite));
-  mruby_gift_struct GTestSuite_data_ptr(self, native_object);
+  mruby_giftwrap_GTestSuite_data_ptr(self, native_object);
   return self;
 }
 #endif

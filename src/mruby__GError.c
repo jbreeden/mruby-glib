@@ -15,7 +15,7 @@
 mrb_value
 mrb_GLib_GError_initialize(mrb_state* mrb, mrb_value self) {
   struct _GError* native_object = (struct _GError*)calloc(1, sizeof(struct _GError));
-  mruby_gift_struct _GError_data_ptr(self, native_object);
+  mruby_giftwrap__GError_data_ptr(self, native_object);
   return self;
 }
 #endif
@@ -88,7 +88,6 @@ mrb_GLib_GError_set_domain(mrb_state* mrb, mrb_value self) {
 
   native_self->domain = native_domain;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -127,7 +126,6 @@ mrb_GLib_GError_set_code(mrb_state* mrb, mrb_value self) {
 
   native_self->code = native_code;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -160,13 +158,16 @@ mrb_GLib_GError_get_message(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_GError_set_message(mrb_state* mrb, mrb_value self) {
   struct _GError * native_self = mruby_unbox__GError(self);
-  char * native_message = NULL;
+  char * message = NULL;
 
-  mrb_get_args(mrb, "z!", &native_message);
+  mrb_get_args(mrb, "z!", &message);
 
+  /* WARNING: String is strdup'ed to avoid mutable reference to internal MRuby memory */
+  char * native_message = strdup(message);
+
+  if (NULL != native_self->message) free(native_self->message);
   native_self->message = native_message;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;

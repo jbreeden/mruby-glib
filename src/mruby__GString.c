@@ -15,7 +15,7 @@
 mrb_value
 mrb_GLib_GString_initialize(mrb_state* mrb, mrb_value self) {
   struct _GString* native_object = (struct _GString*)calloc(1, sizeof(struct _GString));
-  mruby_gift_struct _GString_data_ptr(self, native_object);
+  mruby_giftwrap__GString_data_ptr(self, native_object);
   return self;
 }
 #endif
@@ -82,13 +82,16 @@ mrb_GLib_GString_get_str(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_GString_set_str(mrb_state* mrb, mrb_value self) {
   struct _GString * native_self = mruby_unbox__GString(self);
-  char * native_str = NULL;
+  char * str = NULL;
 
-  mrb_get_args(mrb, "z!", &native_str);
+  mrb_get_args(mrb, "z!", &str);
 
+  /* WARNING: String is strdup'ed to avoid mutable reference to internal MRuby memory */
+  char * native_str = strdup(str);
+
+  if (NULL != native_self->str) free(native_self->str);
   native_self->str = native_str;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -127,7 +130,6 @@ mrb_GLib_GString_set_len(mrb_state* mrb, mrb_value self) {
 
   native_self->len = native_len;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -166,7 +168,6 @@ mrb_GLib_GString_set_allocated_len(mrb_state* mrb, mrb_value self) {
 
   native_self->allocated_len = native_allocated_len;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;

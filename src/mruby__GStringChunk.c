@@ -15,7 +15,7 @@
 mrb_value
 mrb_GLib_GStringChunk_initialize(mrb_state* mrb, mrb_value self) {
   struct _GStringChunk* native_object = (struct _GStringChunk*)calloc(1, sizeof(struct _GStringChunk));
-  mruby_gift_struct _GStringChunk_data_ptr(self, native_object);
+  mruby_giftwrap__GStringChunk_data_ptr(self, native_object);
   return self;
 }
 #endif

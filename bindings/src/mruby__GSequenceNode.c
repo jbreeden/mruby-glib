@@ -15,7 +15,7 @@
 mrb_value
 mrb_GLib_GSequenceNode_initialize(mrb_state* mrb, mrb_value self) {
   struct _GSequenceNode* native_object = (struct _GSequenceNode*)calloc(1, sizeof(struct _GSequenceNode));
-  mruby_gift_struct _GSequenceNode_data_ptr(self, native_object);
+  mruby_giftwrap__GSequenceNode_data_ptr(self, native_object);
   return self;
 }
 #endif

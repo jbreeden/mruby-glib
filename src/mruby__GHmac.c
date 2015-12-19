@@ -15,7 +15,7 @@
 mrb_value
 mrb_GLib_GHmac_initialize(mrb_state* mrb, mrb_value self) {
   struct _GHmac* native_object = (struct _GHmac*)calloc(1, sizeof(struct _GHmac));
-  mruby_gift_struct _GHmac_data_ptr(self, native_object);
+  mruby_giftwrap__GHmac_data_ptr(self, native_object);
   return self;
 }
 #endif

@@ -15,7 +15,7 @@
 mrb_value
 mrb_GLib_GVariantIter_initialize(mrb_state* mrb, mrb_value self) {
   struct _GVariantIter* native_object = (struct _GVariantIter*)calloc(1, sizeof(struct _GVariantIter));
-  mruby_gift_struct _GVariantIter_data_ptr(self, native_object);
+  mruby_giftwrap__GVariantIter_data_ptr(self, native_object);
   return self;
 }
 #endif
@@ -93,7 +93,6 @@ mrb_GLib_GVariantIter_set_x(mrb_state* mrb, mrb_value self) {
 
   native_self->x = native_x;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;

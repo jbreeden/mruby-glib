@@ -15,7 +15,7 @@
 mrb_value
 mrb_GLib_GDir_initialize(mrb_state* mrb, mrb_value self) {
   struct _GDir* native_object = (struct _GDir*)calloc(1, sizeof(struct _GDir));
-  mruby_gift_struct _GDir_data_ptr(self, native_object);
+  mruby_giftwrap__GDir_data_ptr(self, native_object);
   return self;
 }
 #endif

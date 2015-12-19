@@ -15,7 +15,7 @@
 mrb_value
 mrb_GLib_GOptionGroup_initialize(mrb_state* mrb, mrb_value self) {
   struct _GOptionGroup* native_object = (struct _GOptionGroup*)calloc(1, sizeof(struct _GOptionGroup));
-  mruby_gift_struct _GOptionGroup_data_ptr(self, native_object);
+  mruby_giftwrap__GOptionGroup_data_ptr(self, native_object);
   return self;
 }
 #endif

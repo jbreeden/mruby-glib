@@ -15,7 +15,7 @@
 mrb_value
 mrb_GLib_GData_initialize(mrb_state* mrb, mrb_value self) {
   struct _GData* native_object = (struct _GData*)calloc(1, sizeof(struct _GData));
-  mruby_gift_struct _GData_data_ptr(self, native_object);
+  mruby_giftwrap__GData_data_ptr(self, native_object);
   return self;
 }
 #endif

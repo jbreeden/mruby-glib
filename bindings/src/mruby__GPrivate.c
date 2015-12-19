@@ -15,7 +15,7 @@
 mrb_value
 mrb_GLib_GPrivate_initialize(mrb_state* mrb, mrb_value self) {
   struct _GPrivate* native_object = (struct _GPrivate*)calloc(1, sizeof(struct _GPrivate));
-  mruby_gift_struct _GPrivate_data_ptr(self, native_object);
+  mruby_giftwrap__GPrivate_data_ptr(self, native_object);
   return self;
 }
 #endif
@@ -93,7 +93,6 @@ mrb_GLib_GPrivate_set_p(mrb_state* mrb, mrb_value self) {
 
   native_self->p = native_p;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -137,7 +136,6 @@ mrb_GLib_GPrivate_set_notify(mrb_state* mrb, mrb_value self) {
 
   native_self->notify = native_notify;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -181,7 +179,6 @@ mrb_GLib_GPrivate_set_future(mrb_state* mrb, mrb_value self) {
 
   native_self->future = native_future;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;

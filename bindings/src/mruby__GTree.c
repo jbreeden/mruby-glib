@@ -15,7 +15,7 @@
 mrb_value
 mrb_GLib_GTree_initialize(mrb_state* mrb, mrb_value self) {
   struct _GTree* native_object = (struct _GTree*)calloc(1, sizeof(struct _GTree));
-  mruby_gift_struct _GTree_data_ptr(self, native_object);
+  mruby_giftwrap__GTree_data_ptr(self, native_object);
   return self;
 }
 #endif

@@ -15,7 +15,7 @@
 mrb_value
 mrb_GLib_GHashTableIter_initialize(mrb_state* mrb, mrb_value self) {
   struct _GHashTableIter* native_object = (struct _GHashTableIter*)calloc(1, sizeof(struct _GHashTableIter));
-  mruby_gift_struct _GHashTableIter_data_ptr(self, native_object);
+  mruby_giftwrap__GHashTableIter_data_ptr(self, native_object);
   return self;
 }
 #endif
@@ -93,7 +93,6 @@ mrb_GLib_GHashTableIter_set_dummy1(mrb_state* mrb, mrb_value self) {
 
   native_self->dummy1 = native_dummy1;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -137,7 +136,6 @@ mrb_GLib_GHashTableIter_set_dummy2(mrb_state* mrb, mrb_value self) {
 
   native_self->dummy2 = native_dummy2;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -181,7 +179,6 @@ mrb_GLib_GHashTableIter_set_dummy3(mrb_state* mrb, mrb_value self) {
 
   native_self->dummy3 = native_dummy3;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -220,7 +217,6 @@ mrb_GLib_GHashTableIter_set_dummy4(mrb_state* mrb, mrb_value self) {
 
   native_self->dummy4 = native_dummy4;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -259,7 +255,6 @@ mrb_GLib_GHashTableIter_set_dummy5(mrb_state* mrb, mrb_value self) {
 
   native_self->dummy5 = native_dummy5;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -303,7 +298,6 @@ mrb_GLib_GHashTableIter_set_dummy6(mrb_state* mrb, mrb_value self) {
 
   native_self->dummy6 = native_dummy6;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;

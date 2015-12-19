@@ -15,7 +15,7 @@
 mrb_value
 mrb_GLib_GRWLock_initialize(mrb_state* mrb, mrb_value self) {
   struct _GRWLock* native_object = (struct _GRWLock*)calloc(1, sizeof(struct _GRWLock));
-  mruby_gift_struct _GRWLock_data_ptr(self, native_object);
+  mruby_giftwrap__GRWLock_data_ptr(self, native_object);
   return self;
 }
 #endif
@@ -93,7 +93,6 @@ mrb_GLib_GRWLock_set_p(mrb_state* mrb, mrb_value self) {
 
   native_self->p = native_p;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -137,7 +136,6 @@ mrb_GLib_GRWLock_set_i(mrb_state* mrb, mrb_value self) {
 
   native_self->i = native_i;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;

@@ -721,11 +721,7 @@ mrb_GLib_g_ascii_dtostr(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "z!if", &buffer, &native_buf_len, &native_d);
 
   /* Unbox param: buffer */
-  /* WARNING: Allocating new memory to create 'char *' from 'const char *'.
-   *          Please verify that this memory is cleaned up correctly.
-   *
-   *          Has this been verified? [No]
-   */
+  /* WARNING: String is strdup'ed to avoid mutable reference to internal MRuby memory */
   char * native_buffer = strdup(buffer);
 
   /* Invocation */
@@ -736,11 +732,7 @@ mrb_GLib_g_ascii_dtostr(mrb_state* mrb, mrb_value self) {
   g_free(native_return_value);
   
   /* Clean in param: buffer */
-  /* WARNING: Assuming that the new string can be deallocated after the function call.
-   *          Please verify that this is correct (the function does not save this parameter).
-   *
-   *          Has this been verified? [No]
-   */
+  /* WARNING: Assuming that the new string can be deallocated after the function call. */
   free(native_buffer);
   native_buffer = NULL;
 
@@ -771,11 +763,7 @@ mrb_GLib_g_ascii_formatd(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "z!iz!f", &buffer, &native_buf_len, &native_format, &native_d);
 
   /* Unbox param: buffer */
-  /* WARNING: Allocating new memory to create 'char *' from 'const char *'.
-   *          Please verify that this memory is cleaned up correctly.
-   *
-   *          Has this been verified? [No]
-   */
+  /* WARNING: String is strdup'ed to avoid mutable reference to internal MRuby memory */
   char * native_buffer = strdup(buffer);
 
   /* Invocation */
@@ -786,11 +774,7 @@ mrb_GLib_g_ascii_formatd(mrb_state* mrb, mrb_value self) {
   g_free(native_return_value);
   
   /* Clean in param: buffer */
-  /* WARNING: Assuming that the new string can be deallocated after the function call.
-   *          Please verify that this is correct (the function does not save this parameter).
-   *
-   *          Has this been verified? [No]
-   */
+  /* WARNING: Assuming that the new string can be deallocated after the function call. */
   free(native_buffer);
   native_buffer = NULL;
 
@@ -3026,11 +3010,7 @@ mrb_GLib_g_base64_decode_inplace(mrb_state* mrb, mrb_value self) {
   TODO_type_check_unsigned_long_PTR(out_len);
 
   /* Unbox param: text */
-  /* WARNING: Allocating new memory to create 'char *' from 'const char *'.
-   *          Please verify that this memory is cleaned up correctly.
-   *
-   *          Has this been verified? [No]
-   */
+  /* WARNING: String is strdup'ed to avoid mutable reference to internal MRuby memory */
   char * native_text = strdup(text);
 
   /* Unbox param: out_len */
@@ -3043,11 +3023,7 @@ mrb_GLib_g_base64_decode_inplace(mrb_state* mrb, mrb_value self) {
   mrb_value return_value = TODO_mruby_box_guchar_PTR(mrb, native_return_value);
   
   /* Clean in param: text */
-  /* WARNING: Assuming that the new string can be deallocated after the function call.
-   *          Please verify that this is correct (the function does not save this parameter).
-   *
-   *          Has this been verified? [No]
-   */
+  /* WARNING: Assuming that the new string can be deallocated after the function call. */
   free(native_text);
   native_text = NULL;
 
@@ -3165,11 +3141,7 @@ mrb_GLib_g_base64_encode_close(mrb_state* mrb, mrb_value self) {
   TODO_type_check_int_PTR(save);
 
   /* Unbox param: out */
-  /* WARNING: Allocating new memory to create 'char *' from 'const char *'.
-   *          Please verify that this memory is cleaned up correctly.
-   *
-   *          Has this been verified? [No]
-   */
+  /* WARNING: String is strdup'ed to avoid mutable reference to internal MRuby memory */
   char * native_out = strdup(out);
 
   /* Unbox param: state */
@@ -3185,11 +3157,7 @@ mrb_GLib_g_base64_encode_close(mrb_state* mrb, mrb_value self) {
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   /* Clean in param: out */
-  /* WARNING: Assuming that the new string can be deallocated after the function call.
-   *          Please verify that this is correct (the function does not save this parameter).
-   *
-   *          Has this been verified? [No]
-   */
+  /* WARNING: Assuming that the new string can be deallocated after the function call. */
   free(native_out);
   native_out = NULL;
 
@@ -3232,11 +3200,7 @@ mrb_GLib_g_base64_encode_step(mrb_state* mrb, mrb_value self) {
   const unsigned char * native_in = TODO_mruby_unbox_unsigned_char_PTR(in);
 
   /* Unbox param: out */
-  /* WARNING: Allocating new memory to create 'char *' from 'const char *'.
-   *          Please verify that this memory is cleaned up correctly.
-   *
-   *          Has this been verified? [No]
-   */
+  /* WARNING: String is strdup'ed to avoid mutable reference to internal MRuby memory */
   char * native_out = strdup(out);
 
   /* Unbox param: state */
@@ -3252,11 +3216,7 @@ mrb_GLib_g_base64_encode_step(mrb_state* mrb, mrb_value self) {
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   /* Clean in param: out */
-  /* WARNING: Assuming that the new string can be deallocated after the function call.
-   *          Please verify that this is correct (the function does not save this parameter).
-   *
-   *          Has this been verified? [No]
-   */
+  /* WARNING: Assuming that the new string can be deallocated after the function call. */
   free(native_out);
   native_out = NULL;
 
@@ -9352,11 +9312,7 @@ mrb_GLib_g_date_strftime(mrb_state* mrb, mrb_value self) {
   }
 
   /* Unbox param: s */
-  /* WARNING: Allocating new memory to create 'char *' from 'const char *'.
-   *          Please verify that this memory is cleaned up correctly.
-   *
-   *          Has this been verified? [No]
-   */
+  /* WARNING: String is strdup'ed to avoid mutable reference to internal MRuby memory */
   char * native_s = strdup(s);
 
   /* Unbox param: date */
@@ -9369,11 +9325,7 @@ mrb_GLib_g_date_strftime(mrb_state* mrb, mrb_value self) {
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   /* Clean in param: s */
-  /* WARNING: Assuming that the new string can be deallocated after the function call.
-   *          Please verify that this is correct (the function does not save this parameter).
-   *
-   *          Has this been verified? [No]
-   */
+  /* WARNING: Assuming that the new string can be deallocated after the function call. */
   free(native_s);
   native_s = NULL;
 
@@ -16922,11 +16874,7 @@ mrb_GLib_g_io_channel_read(mrb_state* mrb, mrb_value self) {
   struct _GIOChannel * native_channel = (mrb_nil_p(channel) ? NULL : mruby_unbox__GIOChannel(channel));
 
   /* Unbox param: buf */
-  /* WARNING: Allocating new memory to create 'char *' from 'const char *'.
-   *          Please verify that this memory is cleaned up correctly.
-   *
-   *          Has this been verified? [No]
-   */
+  /* WARNING: String is strdup'ed to avoid mutable reference to internal MRuby memory */
   char * native_buf = strdup(buf);
 
   /* Unbox param: bytes_read */
@@ -16939,11 +16887,7 @@ mrb_GLib_g_io_channel_read(mrb_state* mrb, mrb_value self) {
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   /* Clean in param: buf */
-  /* WARNING: Assuming that the new string can be deallocated after the function call.
-   *          Please verify that this is correct (the function does not save this parameter).
-   *
-   *          Has this been verified? [No]
-   */
+  /* WARNING: Assuming that the new string can be deallocated after the function call. */
   free(native_buf);
   native_buf = NULL;
 
@@ -16986,11 +16930,7 @@ mrb_GLib_g_io_channel_read_chars(mrb_state* mrb, mrb_value self) {
   struct _GIOChannel * native_channel = (mrb_nil_p(channel) ? NULL : mruby_unbox__GIOChannel(channel));
 
   /* Unbox param: buf */
-  /* WARNING: Allocating new memory to create 'char *' from 'const char *'.
-   *          Please verify that this memory is cleaned up correctly.
-   *
-   *          Has this been verified? [No]
-   */
+  /* WARNING: String is strdup'ed to avoid mutable reference to internal MRuby memory */
   char * native_buf = strdup(buf);
 
   /* Unbox param: bytes_read */
@@ -17010,11 +16950,7 @@ mrb_GLib_g_io_channel_read_chars(mrb_state* mrb, mrb_value self) {
   mrb_ary_push(mrb, results, error);
 
   /* Clean in param: buf */
-  /* WARNING: Assuming that the new string can be deallocated after the function call.
-   *          Please verify that this is correct (the function does not save this parameter).
-   *
-   *          Has this been verified? [No]
-   */
+  /* WARNING: Assuming that the new string can be deallocated after the function call. */
   free(native_buf);
   native_buf = NULL;
 
@@ -24773,11 +24709,7 @@ mrb_GLib_g_mkdtemp(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "z!", &tmpl);
 
   /* Unbox param: tmpl */
-  /* WARNING: Allocating new memory to create 'char *' from 'const char *'.
-   *          Please verify that this memory is cleaned up correctly.
-   *
-   *          Has this been verified? [No]
-   */
+  /* WARNING: String is strdup'ed to avoid mutable reference to internal MRuby memory */
   char * native_tmpl = strdup(tmpl);
 
   /* Invocation */
@@ -24788,11 +24720,7 @@ mrb_GLib_g_mkdtemp(mrb_state* mrb, mrb_value self) {
   g_free(native_return_value);
   
   /* Clean in param: tmpl */
-  /* WARNING: Assuming that the new string can be deallocated after the function call.
-   *          Please verify that this is correct (the function does not save this parameter).
-   *
-   *          Has this been verified? [No]
-   */
+  /* WARNING: Assuming that the new string can be deallocated after the function call. */
   free(native_tmpl);
   native_tmpl = NULL;
 
@@ -24819,11 +24747,7 @@ mrb_GLib_g_mkdtemp_full(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "z!i", &tmpl, &native_mode);
 
   /* Unbox param: tmpl */
-  /* WARNING: Allocating new memory to create 'char *' from 'const char *'.
-   *          Please verify that this memory is cleaned up correctly.
-   *
-   *          Has this been verified? [No]
-   */
+  /* WARNING: String is strdup'ed to avoid mutable reference to internal MRuby memory */
   char * native_tmpl = strdup(tmpl);
 
   /* Invocation */
@@ -24834,11 +24758,7 @@ mrb_GLib_g_mkdtemp_full(mrb_state* mrb, mrb_value self) {
   g_free(native_return_value);
   
   /* Clean in param: tmpl */
-  /* WARNING: Assuming that the new string can be deallocated after the function call.
-   *          Please verify that this is correct (the function does not save this parameter).
-   *
-   *          Has this been verified? [No]
-   */
+  /* WARNING: Assuming that the new string can be deallocated after the function call. */
   free(native_tmpl);
   native_tmpl = NULL;
 
@@ -24863,11 +24783,7 @@ mrb_GLib_g_mkstemp(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "z!", &tmpl);
 
   /* Unbox param: tmpl */
-  /* WARNING: Allocating new memory to create 'char *' from 'const char *'.
-   *          Please verify that this memory is cleaned up correctly.
-   *
-   *          Has this been verified? [No]
-   */
+  /* WARNING: String is strdup'ed to avoid mutable reference to internal MRuby memory */
   char * native_tmpl = strdup(tmpl);
 
   /* Invocation */
@@ -24877,11 +24793,7 @@ mrb_GLib_g_mkstemp(mrb_state* mrb, mrb_value self) {
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   /* Clean in param: tmpl */
-  /* WARNING: Assuming that the new string can be deallocated after the function call.
-   *          Please verify that this is correct (the function does not save this parameter).
-   *
-   *          Has this been verified? [No]
-   */
+  /* WARNING: Assuming that the new string can be deallocated after the function call. */
   free(native_tmpl);
   native_tmpl = NULL;
 
@@ -24910,11 +24822,7 @@ mrb_GLib_g_mkstemp_full(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "z!ii", &tmpl, &native_flags, &native_mode);
 
   /* Unbox param: tmpl */
-  /* WARNING: Allocating new memory to create 'char *' from 'const char *'.
-   *          Please verify that this memory is cleaned up correctly.
-   *
-   *          Has this been verified? [No]
-   */
+  /* WARNING: String is strdup'ed to avoid mutable reference to internal MRuby memory */
   char * native_tmpl = strdup(tmpl);
 
   /* Invocation */
@@ -24924,11 +24832,7 @@ mrb_GLib_g_mkstemp_full(mrb_state* mrb, mrb_value self) {
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   /* Clean in param: tmpl */
-  /* WARNING: Assuming that the new string can be deallocated after the function call.
-   *          Please verify that this is correct (the function does not save this parameter).
-   *
-   *          Has this been verified? [No]
-   */
+  /* WARNING: Assuming that the new string can be deallocated after the function call. */
   free(native_tmpl);
   native_tmpl = NULL;
 
@@ -36868,11 +36772,7 @@ mrb_GLib_g_snprintf(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "z!iz!", &string, &native_n, &native_format);
 
   /* Unbox param: string */
-  /* WARNING: Allocating new memory to create 'char *' from 'const char *'.
-   *          Please verify that this memory is cleaned up correctly.
-   *
-   *          Has this been verified? [No]
-   */
+  /* WARNING: String is strdup'ed to avoid mutable reference to internal MRuby memory */
   char * native_string = strdup(string);
 
   /* Invocation */
@@ -36882,11 +36782,7 @@ mrb_GLib_g_snprintf(mrb_state* mrb, mrb_value self) {
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   /* Clean in param: string */
-  /* WARNING: Assuming that the new string can be deallocated after the function call.
-   *          Please verify that this is correct (the function does not save this parameter).
-   *
-   *          Has this been verified? [No]
-   */
+  /* WARNING: Assuming that the new string can be deallocated after the function call. */
   free(native_string);
   native_string = NULL;
 
@@ -38645,11 +38541,7 @@ mrb_GLib_g_sprintf(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "z!z!", &string, &native_format);
 
   /* Unbox param: string */
-  /* WARNING: Allocating new memory to create 'char *' from 'const char *'.
-   *          Please verify that this memory is cleaned up correctly.
-   *
-   *          Has this been verified? [No]
-   */
+  /* WARNING: String is strdup'ed to avoid mutable reference to internal MRuby memory */
   char * native_string = strdup(string);
 
   /* Invocation */
@@ -38659,11 +38551,7 @@ mrb_GLib_g_sprintf(mrb_state* mrb, mrb_value self) {
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   /* Clean in param: string */
-  /* WARNING: Assuming that the new string can be deallocated after the function call.
-   *          Please verify that this is correct (the function does not save this parameter).
-   *
-   *          Has this been verified? [No]
-   */
+  /* WARNING: Assuming that the new string can be deallocated after the function call. */
   free(native_string);
   native_string = NULL;
 
@@ -38722,11 +38610,7 @@ mrb_GLib_g_stpcpy(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "z!z!", &dest, &native_src);
 
   /* Unbox param: dest */
-  /* WARNING: Allocating new memory to create 'char *' from 'const char *'.
-   *          Please verify that this memory is cleaned up correctly.
-   *
-   *          Has this been verified? [No]
-   */
+  /* WARNING: String is strdup'ed to avoid mutable reference to internal MRuby memory */
   char * native_dest = strdup(dest);
 
   /* Invocation */
@@ -38737,11 +38621,7 @@ mrb_GLib_g_stpcpy(mrb_state* mrb, mrb_value self) {
   g_free(native_return_value);
   
   /* Clean in param: dest */
-  /* WARNING: Assuming that the new string can be deallocated after the function call.
-   *          Please verify that this is correct (the function does not save this parameter).
-   *
-   *          Has this been verified? [No]
-   */
+  /* WARNING: Assuming that the new string can be deallocated after the function call. */
   free(native_dest);
   native_dest = NULL;
 
@@ -39017,11 +38897,7 @@ mrb_GLib_g_strcanon(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "z!z!i", &string, &native_valid_chars, &native_substitutor);
 
   /* Unbox param: string */
-  /* WARNING: Allocating new memory to create 'char *' from 'const char *'.
-   *          Please verify that this memory is cleaned up correctly.
-   *
-   *          Has this been verified? [No]
-   */
+  /* WARNING: String is strdup'ed to avoid mutable reference to internal MRuby memory */
   char * native_string = strdup(string);
 
   /* Invocation */
@@ -39032,11 +38908,7 @@ mrb_GLib_g_strcanon(mrb_state* mrb, mrb_value self) {
   g_free(native_return_value);
   
   /* Clean in param: string */
-  /* WARNING: Assuming that the new string can be deallocated after the function call.
-   *          Please verify that this is correct (the function does not save this parameter).
-   *
-   *          Has this been verified? [No]
-   */
+  /* WARNING: Assuming that the new string can be deallocated after the function call. */
   free(native_string);
   native_string = NULL;
 
@@ -39089,11 +38961,7 @@ mrb_GLib_g_strchomp(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "z!", &string);
 
   /* Unbox param: string */
-  /* WARNING: Allocating new memory to create 'char *' from 'const char *'.
-   *          Please verify that this memory is cleaned up correctly.
-   *
-   *          Has this been verified? [No]
-   */
+  /* WARNING: String is strdup'ed to avoid mutable reference to internal MRuby memory */
   char * native_string = strdup(string);
 
   /* Invocation */
@@ -39104,11 +38972,7 @@ mrb_GLib_g_strchomp(mrb_state* mrb, mrb_value self) {
   g_free(native_return_value);
   
   /* Clean in param: string */
-  /* WARNING: Assuming that the new string can be deallocated after the function call.
-   *          Please verify that this is correct (the function does not save this parameter).
-   *
-   *          Has this been verified? [No]
-   */
+  /* WARNING: Assuming that the new string can be deallocated after the function call. */
   free(native_string);
   native_string = NULL;
 
@@ -39133,11 +38997,7 @@ mrb_GLib_g_strchug(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "z!", &string);
 
   /* Unbox param: string */
-  /* WARNING: Allocating new memory to create 'char *' from 'const char *'.
-   *          Please verify that this memory is cleaned up correctly.
-   *
-   *          Has this been verified? [No]
-   */
+  /* WARNING: String is strdup'ed to avoid mutable reference to internal MRuby memory */
   char * native_string = strdup(string);
 
   /* Invocation */
@@ -39148,11 +39008,7 @@ mrb_GLib_g_strchug(mrb_state* mrb, mrb_value self) {
   g_free(native_return_value);
   
   /* Clean in param: string */
-  /* WARNING: Assuming that the new string can be deallocated after the function call.
-   *          Please verify that this is correct (the function does not save this parameter).
-   *
-   *          Has this been verified? [No]
-   */
+  /* WARNING: Assuming that the new string can be deallocated after the function call. */
   free(native_string);
   native_string = NULL;
 
@@ -39263,11 +39119,7 @@ mrb_GLib_g_strdelimit(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "z!z!i", &string, &native_delimiters, &native_new_delimiter);
 
   /* Unbox param: string */
-  /* WARNING: Allocating new memory to create 'char *' from 'const char *'.
-   *          Please verify that this memory is cleaned up correctly.
-   *
-   *          Has this been verified? [No]
-   */
+  /* WARNING: String is strdup'ed to avoid mutable reference to internal MRuby memory */
   char * native_string = strdup(string);
 
   /* Invocation */
@@ -39278,11 +39130,7 @@ mrb_GLib_g_strdelimit(mrb_state* mrb, mrb_value self) {
   g_free(native_return_value);
   
   /* Clean in param: string */
-  /* WARNING: Assuming that the new string can be deallocated after the function call.
-   *          Please verify that this is correct (the function does not save this parameter).
-   *
-   *          Has this been verified? [No]
-   */
+  /* WARNING: Assuming that the new string can be deallocated after the function call. */
   free(native_string);
   native_string = NULL;
 
@@ -39307,11 +39155,7 @@ mrb_GLib_g_strdown(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "z!", &string);
 
   /* Unbox param: string */
-  /* WARNING: Allocating new memory to create 'char *' from 'const char *'.
-   *          Please verify that this memory is cleaned up correctly.
-   *
-   *          Has this been verified? [No]
-   */
+  /* WARNING: String is strdup'ed to avoid mutable reference to internal MRuby memory */
   char * native_string = strdup(string);
 
   /* Invocation */
@@ -39322,11 +39166,7 @@ mrb_GLib_g_strdown(mrb_state* mrb, mrb_value self) {
   g_free(native_return_value);
   
   /* Clean in param: string */
-  /* WARNING: Assuming that the new string can be deallocated after the function call.
-   *          Please verify that this is correct (the function does not save this parameter).
-   *
-   *          Has this been verified? [No]
-   */
+  /* WARNING: Assuming that the new string can be deallocated after the function call. */
   free(native_string);
   native_string = NULL;
 
@@ -41128,11 +40968,7 @@ mrb_GLib_g_strlcat(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "z!z!i", &dest, &native_src, &native_dest_size);
 
   /* Unbox param: dest */
-  /* WARNING: Allocating new memory to create 'char *' from 'const char *'.
-   *          Please verify that this memory is cleaned up correctly.
-   *
-   *          Has this been verified? [No]
-   */
+  /* WARNING: String is strdup'ed to avoid mutable reference to internal MRuby memory */
   char * native_dest = strdup(dest);
 
   /* Invocation */
@@ -41142,11 +40978,7 @@ mrb_GLib_g_strlcat(mrb_state* mrb, mrb_value self) {
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   /* Clean in param: dest */
-  /* WARNING: Assuming that the new string can be deallocated after the function call.
-   *          Please verify that this is correct (the function does not save this parameter).
-   *
-   *          Has this been verified? [No]
-   */
+  /* WARNING: Assuming that the new string can be deallocated after the function call. */
   free(native_dest);
   native_dest = NULL;
 
@@ -41175,11 +41007,7 @@ mrb_GLib_g_strlcpy(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "z!z!i", &dest, &native_src, &native_dest_size);
 
   /* Unbox param: dest */
-  /* WARNING: Allocating new memory to create 'char *' from 'const char *'.
-   *          Please verify that this memory is cleaned up correctly.
-   *
-   *          Has this been verified? [No]
-   */
+  /* WARNING: String is strdup'ed to avoid mutable reference to internal MRuby memory */
   char * native_dest = strdup(dest);
 
   /* Invocation */
@@ -41189,11 +41017,7 @@ mrb_GLib_g_strlcpy(mrb_state* mrb, mrb_value self) {
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   /* Clean in param: dest */
-  /* WARNING: Assuming that the new string can be deallocated after the function call.
-   *          Please verify that this is correct (the function does not save this parameter).
-   *
-   *          Has this been verified? [No]
-   */
+  /* WARNING: Assuming that the new string can be deallocated after the function call. */
   free(native_dest);
   native_dest = NULL;
 
@@ -41306,11 +41130,7 @@ mrb_GLib_g_strreverse(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "z!", &string);
 
   /* Unbox param: string */
-  /* WARNING: Allocating new memory to create 'char *' from 'const char *'.
-   *          Please verify that this memory is cleaned up correctly.
-   *
-   *          Has this been verified? [No]
-   */
+  /* WARNING: String is strdup'ed to avoid mutable reference to internal MRuby memory */
   char * native_string = strdup(string);
 
   /* Invocation */
@@ -41321,11 +41141,7 @@ mrb_GLib_g_strreverse(mrb_state* mrb, mrb_value self) {
   g_free(native_return_value);
   
   /* Clean in param: string */
-  /* WARNING: Assuming that the new string can be deallocated after the function call.
-   *          Please verify that this is correct (the function does not save this parameter).
-   *
-   *          Has this been verified? [No]
-   */
+  /* WARNING: Assuming that the new string can be deallocated after the function call. */
   free(native_string);
   native_string = NULL;
 
@@ -41561,11 +41377,7 @@ mrb_GLib_g_strup(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "z!", &string);
 
   /* Unbox param: string */
-  /* WARNING: Allocating new memory to create 'char *' from 'const char *'.
-   *          Please verify that this memory is cleaned up correctly.
-   *
-   *          Has this been verified? [No]
-   */
+  /* WARNING: String is strdup'ed to avoid mutable reference to internal MRuby memory */
   char * native_string = strdup(string);
 
   /* Invocation */
@@ -41576,11 +41388,7 @@ mrb_GLib_g_strup(mrb_state* mrb, mrb_value self) {
   g_free(native_return_value);
   
   /* Clean in param: string */
-  /* WARNING: Assuming that the new string can be deallocated after the function call.
-   *          Please verify that this is correct (the function does not save this parameter).
-   *
-   *          Has this been verified? [No]
-   */
+  /* WARNING: Assuming that the new string can be deallocated after the function call. */
   free(native_string);
   native_string = NULL;
 
@@ -46509,11 +46317,7 @@ mrb_GLib_g_unichar_to_utf8(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "iz!", &native_c, &outbuf);
 
   /* Unbox param: outbuf */
-  /* WARNING: Allocating new memory to create 'char *' from 'const char *'.
-   *          Please verify that this memory is cleaned up correctly.
-   *
-   *          Has this been verified? [No]
-   */
+  /* WARNING: String is strdup'ed to avoid mutable reference to internal MRuby memory */
   char * native_outbuf = strdup(outbuf);
 
   /* Invocation */
@@ -46523,11 +46327,7 @@ mrb_GLib_g_unichar_to_utf8(mrb_state* mrb, mrb_value self) {
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   /* Clean in param: outbuf */
-  /* WARNING: Assuming that the new string can be deallocated after the function call.
-   *          Please verify that this is correct (the function does not save this parameter).
-   *
-   *          Has this been verified? [No]
-   */
+  /* WARNING: Assuming that the new string can be deallocated after the function call. */
   free(native_outbuf);
   native_outbuf = NULL;
 
@@ -47586,11 +47386,7 @@ mrb_GLib_g_utf8_strncpy(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "z!z!i", &dest, &native_src, &native_n);
 
   /* Unbox param: dest */
-  /* WARNING: Allocating new memory to create 'char *' from 'const char *'.
-   *          Please verify that this memory is cleaned up correctly.
-   *
-   *          Has this been verified? [No]
-   */
+  /* WARNING: String is strdup'ed to avoid mutable reference to internal MRuby memory */
   char * native_dest = strdup(dest);
 
   /* Invocation */
@@ -47601,11 +47397,7 @@ mrb_GLib_g_utf8_strncpy(mrb_state* mrb, mrb_value self) {
   g_free(native_return_value);
   
   /* Clean in param: dest */
-  /* WARNING: Assuming that the new string can be deallocated after the function call.
-   *          Please verify that this is correct (the function does not save this parameter).
-   *
-   *          Has this been verified? [No]
-   */
+  /* WARNING: Assuming that the new string can be deallocated after the function call. */
   free(native_dest);
   native_dest = NULL;
 
@@ -51603,11 +51395,7 @@ mrb_GLib_g_variant_new_take_string(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "z!", &string);
 
   /* Unbox param: string */
-  /* WARNING: Allocating new memory to create 'char *' from 'const char *'.
-   *          Please verify that this memory is cleaned up correctly.
-   *
-   *          Has this been verified? [No]
-   */
+  /* WARNING: String is strdup'ed to avoid mutable reference to internal MRuby memory */
   char * native_string = strdup(string);
 
   /* Invocation */
@@ -51617,11 +51405,7 @@ mrb_GLib_g_variant_new_take_string(mrb_state* mrb, mrb_value self) {
   mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_box__GVariant(mrb, native_return_value));
   
   /* Clean in param: string */
-  /* WARNING: Assuming that the new string can be deallocated after the function call.
-   *          Please verify that this is correct (the function does not save this parameter).
-   *
-   *          Has this been verified? [No]
-   */
+  /* WARNING: Assuming that the new string can be deallocated after the function call. */
   free(native_string);
   native_string = NULL;
 
@@ -53383,11 +53167,7 @@ mrb_GLib_g_vsnprintf(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "z!iz!i", &string, &native_n, &native_format, &native_args);
 
   /* Unbox param: string */
-  /* WARNING: Allocating new memory to create 'char *' from 'const char *'.
-   *          Please verify that this memory is cleaned up correctly.
-   *
-   *          Has this been verified? [No]
-   */
+  /* WARNING: String is strdup'ed to avoid mutable reference to internal MRuby memory */
   char * native_string = strdup(string);
 
   /* Invocation */
@@ -53397,11 +53177,7 @@ mrb_GLib_g_vsnprintf(mrb_state* mrb, mrb_value self) {
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   /* Clean in param: string */
-  /* WARNING: Assuming that the new string can be deallocated after the function call.
-   *          Please verify that this is correct (the function does not save this parameter).
-   *
-   *          Has this been verified? [No]
-   */
+  /* WARNING: Assuming that the new string can be deallocated after the function call. */
   free(native_string);
   native_string = NULL;
 
@@ -53433,11 +53209,7 @@ mrb_GLib_g_vsprintf(mrb_state* mrb, mrb_value self) {
   TODO_type_check___va_list_tag_[1](args);
 
   /* Unbox param: string */
-  /* WARNING: Allocating new memory to create 'char *' from 'const char *'.
-   *          Please verify that this memory is cleaned up correctly.
-   *
-   *          Has this been verified? [No]
-   */
+  /* WARNING: String is strdup'ed to avoid mutable reference to internal MRuby memory */
   char * native_string = strdup(string);
 
   /* Unbox param: args */
@@ -53450,11 +53222,7 @@ mrb_GLib_g_vsprintf(mrb_state* mrb, mrb_value self) {
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   /* Clean in param: string */
-  /* WARNING: Assuming that the new string can be deallocated after the function call.
-   *          Please verify that this is correct (the function does not save this parameter).
-   *
-   *          Has this been verified? [No]
-   */
+  /* WARNING: Assuming that the new string can be deallocated after the function call. */
   free(native_string);
   native_string = NULL;
 

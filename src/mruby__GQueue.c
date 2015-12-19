@@ -15,7 +15,7 @@
 mrb_value
 mrb_GLib_GQueue_initialize(mrb_state* mrb, mrb_value self) {
   struct _GQueue* native_object = (struct _GQueue*)calloc(1, sizeof(struct _GQueue));
-  mruby_gift_struct _GQueue_data_ptr(self, native_object);
+  mruby_giftwrap__GQueue_data_ptr(self, native_object);
   return self;
 }
 #endif
@@ -96,7 +96,6 @@ mrb_GLib_GQueue_set_head(mrb_state* mrb, mrb_value self) {
 
   native_self->head = native_head;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -143,7 +142,6 @@ mrb_GLib_GQueue_set_tail(mrb_state* mrb, mrb_value self) {
 
   native_self->tail = native_tail;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -182,7 +180,6 @@ mrb_GLib_GQueue_set_length(mrb_state* mrb, mrb_value self) {
 
   native_self->length = native_length;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;

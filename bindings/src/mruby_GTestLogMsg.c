@@ -15,7 +15,7 @@
 mrb_value
 mrb_GLib_GTestLogMsg_initialize(mrb_state* mrb, mrb_value self) {
   GTestLogMsg* native_object = (GTestLogMsg*)calloc(1, sizeof(GTestLogMsg));
-  mruby_gift_GTestLogMsg_data_ptr(self, native_object);
+  mruby_giftwrap_GTestLogMsg_data_ptr(self, native_object);
   return self;
 }
 #endif
@@ -88,7 +88,6 @@ mrb_GLib_GTestLogMsg_set_log_type(mrb_state* mrb, mrb_value self) {
 
   native_self->log_type = native_log_type;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -127,7 +126,6 @@ mrb_GLib_GTestLogMsg_set_n_strings(mrb_state* mrb, mrb_value self) {
 
   native_self->n_strings = native_n_strings;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -171,7 +169,6 @@ mrb_GLib_GTestLogMsg_set_strings(mrb_state* mrb, mrb_value self) {
 
   native_self->strings = native_strings;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -210,7 +207,6 @@ mrb_GLib_GTestLogMsg_set_n_nums(mrb_state* mrb, mrb_value self) {
 
   native_self->n_nums = native_n_nums;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -254,7 +250,6 @@ mrb_GLib_GTestLogMsg_set_nums(mrb_state* mrb, mrb_value self) {
 
   native_self->nums = native_nums;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;

@@ -15,7 +15,7 @@
 mrb_value
 mrb_GLib_GMainLoop_initialize(mrb_state* mrb, mrb_value self) {
   struct _GMainLoop* native_object = (struct _GMainLoop*)calloc(1, sizeof(struct _GMainLoop));
-  mruby_gift_struct _GMainLoop_data_ptr(self, native_object);
+  mruby_giftwrap__GMainLoop_data_ptr(self, native_object);
   return self;
 }
 #endif

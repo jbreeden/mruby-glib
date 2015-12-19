@@ -15,7 +15,7 @@
 mrb_value
 mrb_GLib_GThreadPool_initialize(mrb_state* mrb, mrb_value self) {
   struct _GThreadPool* native_object = (struct _GThreadPool*)calloc(1, sizeof(struct _GThreadPool));
-  mruby_gift_struct _GThreadPool_data_ptr(self, native_object);
+  mruby_giftwrap__GThreadPool_data_ptr(self, native_object);
   return self;
 }
 #endif
@@ -93,7 +93,6 @@ mrb_GLib_GThreadPool_set_func(mrb_state* mrb, mrb_value self) {
 
   native_self->func = native_func;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -137,7 +136,6 @@ mrb_GLib_GThreadPool_set_user_data(mrb_state* mrb, mrb_value self) {
 
   native_self->user_data = native_user_data;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -176,7 +174,6 @@ mrb_GLib_GThreadPool_set_exclusive(mrb_state* mrb, mrb_value self) {
 
   native_self->exclusive = native_exclusive;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;

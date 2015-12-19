@@ -15,7 +15,7 @@
 mrb_value
 mrb_GLib_GSourceFuncs_initialize(mrb_state* mrb, mrb_value self) {
   struct _GSourceFuncs* native_object = (struct _GSourceFuncs*)calloc(1, sizeof(struct _GSourceFuncs));
-  mruby_gift_struct _GSourceFuncs_data_ptr(self, native_object);
+  mruby_giftwrap__GSourceFuncs_data_ptr(self, native_object);
   return self;
 }
 #endif
@@ -93,7 +93,6 @@ mrb_GLib_GSourceFuncs_set_prepare(mrb_state* mrb, mrb_value self) {
 
   native_self->prepare = native_prepare;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -137,7 +136,6 @@ mrb_GLib_GSourceFuncs_set_check(mrb_state* mrb, mrb_value self) {
 
   native_self->check = native_check;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -181,7 +179,6 @@ mrb_GLib_GSourceFuncs_set_dispatch(mrb_state* mrb, mrb_value self) {
 
   native_self->dispatch = native_dispatch;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -225,7 +222,6 @@ mrb_GLib_GSourceFuncs_set_finalize(mrb_state* mrb, mrb_value self) {
 
   native_self->finalize = native_finalize;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -269,7 +265,6 @@ mrb_GLib_GSourceFuncs_set_closure_callback(mrb_state* mrb, mrb_value self) {
 
   native_self->closure_callback = native_closure_callback;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -313,7 +308,6 @@ mrb_GLib_GSourceFuncs_set_closure_marshal(mrb_state* mrb, mrb_value self) {
 
   native_self->closure_marshal = native_closure_marshal;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;

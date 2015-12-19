@@ -15,7 +15,7 @@
 mrb_value
 mrb_GLib_GRecMutex_initialize(mrb_state* mrb, mrb_value self) {
   struct _GRecMutex* native_object = (struct _GRecMutex*)calloc(1, sizeof(struct _GRecMutex));
-  mruby_gift_struct _GRecMutex_data_ptr(self, native_object);
+  mruby_giftwrap__GRecMutex_data_ptr(self, native_object);
   return self;
 }
 #endif
@@ -93,7 +93,6 @@ mrb_GLib_GRecMutex_set_p(mrb_state* mrb, mrb_value self) {
 
   native_self->p = native_p;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -137,7 +136,6 @@ mrb_GLib_GRecMutex_set_i(mrb_state* mrb, mrb_value self) {
 
   native_self->i = native_i;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;

@@ -15,7 +15,7 @@
 mrb_value
 mrb_GLib_GTimeVal_initialize(mrb_state* mrb, mrb_value self) {
   struct _GTimeVal* native_object = (struct _GTimeVal*)calloc(1, sizeof(struct _GTimeVal));
-  mruby_gift_struct _GTimeVal_data_ptr(self, native_object);
+  mruby_giftwrap__GTimeVal_data_ptr(self, native_object);
   return self;
 }
 #endif
@@ -88,7 +88,6 @@ mrb_GLib_GTimeVal_set_tv_sec(mrb_state* mrb, mrb_value self) {
 
   native_self->tv_sec = native_tv_sec;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -127,7 +126,6 @@ mrb_GLib_GTimeVal_set_tv_usec(mrb_state* mrb, mrb_value self) {
 
   native_self->tv_usec = native_tv_usec;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;

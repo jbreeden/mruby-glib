@@ -15,7 +15,7 @@
 mrb_value
 mrb_GLib_GIOChannel_initialize(mrb_state* mrb, mrb_value self) {
   struct _GIOChannel* native_object = (struct _GIOChannel*)calloc(1, sizeof(struct _GIOChannel));
-  mruby_gift_struct _GIOChannel_data_ptr(self, native_object);
+  mruby_giftwrap__GIOChannel_data_ptr(self, native_object);
   return self;
 }
 #endif
@@ -88,7 +88,6 @@ mrb_GLib_GIOChannel_set_ref_count(mrb_state* mrb, mrb_value self) {
 
   native_self->ref_count = native_ref_count;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -135,7 +134,6 @@ mrb_GLib_GIOChannel_set_funcs(mrb_state* mrb, mrb_value self) {
 
   native_self->funcs = native_funcs;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -168,13 +166,16 @@ mrb_GLib_GIOChannel_get_encoding(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_GIOChannel_set_encoding(mrb_state* mrb, mrb_value self) {
   struct _GIOChannel * native_self = mruby_unbox__GIOChannel(self);
-  char * native_encoding = NULL;
+  char * encoding = NULL;
 
-  mrb_get_args(mrb, "z!", &native_encoding);
+  mrb_get_args(mrb, "z!", &encoding);
 
+  /* WARNING: String is strdup'ed to avoid mutable reference to internal MRuby memory */
+  char * native_encoding = strdup(encoding);
+
+  if (NULL != native_self->encoding) free(native_self->encoding);
   native_self->encoding = native_encoding;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -218,7 +219,6 @@ mrb_GLib_GIOChannel_set_read_cd(mrb_state* mrb, mrb_value self) {
 
   native_self->read_cd = native_read_cd;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -262,7 +262,6 @@ mrb_GLib_GIOChannel_set_write_cd(mrb_state* mrb, mrb_value self) {
 
   native_self->write_cd = native_write_cd;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -295,13 +294,16 @@ mrb_GLib_GIOChannel_get_line_term(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_GIOChannel_set_line_term(mrb_state* mrb, mrb_value self) {
   struct _GIOChannel * native_self = mruby_unbox__GIOChannel(self);
-  char * native_line_term = NULL;
+  char * line_term = NULL;
 
-  mrb_get_args(mrb, "z!", &native_line_term);
+  mrb_get_args(mrb, "z!", &line_term);
 
+  /* WARNING: String is strdup'ed to avoid mutable reference to internal MRuby memory */
+  char * native_line_term = strdup(line_term);
+
+  if (NULL != native_self->line_term) free(native_self->line_term);
   native_self->line_term = native_line_term;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -340,7 +342,6 @@ mrb_GLib_GIOChannel_set_line_term_len(mrb_state* mrb, mrb_value self) {
 
   native_self->line_term_len = native_line_term_len;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -379,7 +380,6 @@ mrb_GLib_GIOChannel_set_buf_size(mrb_state* mrb, mrb_value self) {
 
   native_self->buf_size = native_buf_size;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -426,7 +426,6 @@ mrb_GLib_GIOChannel_set_read_buf(mrb_state* mrb, mrb_value self) {
 
   native_self->read_buf = native_read_buf;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -473,7 +472,6 @@ mrb_GLib_GIOChannel_set_encoded_read_buf(mrb_state* mrb, mrb_value self) {
 
   native_self->encoded_read_buf = native_encoded_read_buf;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -520,7 +518,6 @@ mrb_GLib_GIOChannel_set_write_buf(mrb_state* mrb, mrb_value self) {
 
   native_self->write_buf = native_write_buf;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -564,7 +561,6 @@ mrb_GLib_GIOChannel_set_partial_write_buf(mrb_state* mrb, mrb_value self) {
 
   native_self->partial_write_buf = native_partial_write_buf;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -603,7 +599,6 @@ mrb_GLib_GIOChannel_set_use_buffer(mrb_state* mrb, mrb_value self) {
 
   native_self->use_buffer = native_use_buffer;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -642,7 +637,6 @@ mrb_GLib_GIOChannel_set_do_encode(mrb_state* mrb, mrb_value self) {
 
   native_self->do_encode = native_do_encode;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -681,7 +675,6 @@ mrb_GLib_GIOChannel_set_close_on_unref(mrb_state* mrb, mrb_value self) {
 
   native_self->close_on_unref = native_close_on_unref;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -720,7 +713,6 @@ mrb_GLib_GIOChannel_set_is_readable(mrb_state* mrb, mrb_value self) {
 
   native_self->is_readable = native_is_readable;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -759,7 +751,6 @@ mrb_GLib_GIOChannel_set_is_writeable(mrb_state* mrb, mrb_value self) {
 
   native_self->is_writeable = native_is_writeable;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -798,7 +789,6 @@ mrb_GLib_GIOChannel_set_is_seekable(mrb_state* mrb, mrb_value self) {
 
   native_self->is_seekable = native_is_seekable;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -842,7 +832,6 @@ mrb_GLib_GIOChannel_set_reserved1(mrb_state* mrb, mrb_value self) {
 
   native_self->reserved1 = native_reserved1;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -886,7 +875,6 @@ mrb_GLib_GIOChannel_set_reserved2(mrb_state* mrb, mrb_value self) {
 
   native_self->reserved2 = native_reserved2;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;

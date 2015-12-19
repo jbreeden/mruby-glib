@@ -15,7 +15,7 @@
 mrb_value
 mrb_GLib_GTestConfig_initialize(mrb_state* mrb, mrb_value self) {
   GTestConfig* native_object = (GTestConfig*)calloc(1, sizeof(GTestConfig));
-  mruby_gift_GTestConfig_data_ptr(self, native_object);
+  mruby_giftwrap_GTestConfig_data_ptr(self, native_object);
   return self;
 }
 #endif
@@ -88,7 +88,6 @@ mrb_GLib_GTestConfig_set_test_initialized(mrb_state* mrb, mrb_value self) {
 
   native_self->test_initialized = native_test_initialized;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -127,7 +126,6 @@ mrb_GLib_GTestConfig_set_test_quick(mrb_state* mrb, mrb_value self) {
 
   native_self->test_quick = native_test_quick;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -166,7 +164,6 @@ mrb_GLib_GTestConfig_set_test_perf(mrb_state* mrb, mrb_value self) {
 
   native_self->test_perf = native_test_perf;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -205,7 +202,6 @@ mrb_GLib_GTestConfig_set_test_verbose(mrb_state* mrb, mrb_value self) {
 
   native_self->test_verbose = native_test_verbose;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -244,7 +240,6 @@ mrb_GLib_GTestConfig_set_test_quiet(mrb_state* mrb, mrb_value self) {
 
   native_self->test_quiet = native_test_quiet;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -283,7 +278,6 @@ mrb_GLib_GTestConfig_set_test_undefined(mrb_state* mrb, mrb_value self) {
 
   native_self->test_undefined = native_test_undefined;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;

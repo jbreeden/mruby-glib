@@ -15,7 +15,7 @@
 mrb_value
 mrb_GLib_GSList_initialize(mrb_state* mrb, mrb_value self) {
   struct _GSList* native_object = (struct _GSList*)calloc(1, sizeof(struct _GSList));
-  mruby_gift_struct _GSList_data_ptr(self, native_object);
+  mruby_giftwrap__GSList_data_ptr(self, native_object);
   return self;
 }
 #endif
@@ -93,7 +93,6 @@ mrb_GLib_GSList_set_data(mrb_state* mrb, mrb_value self) {
 
   native_self->data = native_data;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -140,7 +139,6 @@ mrb_GLib_GSList_set_next(mrb_state* mrb, mrb_value self) {
 
   native_self->next = native_next;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;

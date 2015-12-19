@@ -15,7 +15,7 @@
 mrb_value
 mrb_GLib_GSourceCallbackFuncs_initialize(mrb_state* mrb, mrb_value self) {
   struct _GSourceCallbackFuncs* native_object = (struct _GSourceCallbackFuncs*)calloc(1, sizeof(struct _GSourceCallbackFuncs));
-  mruby_gift_struct _GSourceCallbackFuncs_data_ptr(self, native_object);
+  mruby_giftwrap__GSourceCallbackFuncs_data_ptr(self, native_object);
   return self;
 }
 #endif
@@ -93,7 +93,6 @@ mrb_GLib_GSourceCallbackFuncs_set_ref(mrb_state* mrb, mrb_value self) {
 
   native_self->ref = native_ref;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -137,7 +136,6 @@ mrb_GLib_GSourceCallbackFuncs_set_unref(mrb_state* mrb, mrb_value self) {
 
   native_self->unref = native_unref;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -181,7 +179,6 @@ mrb_GLib_GSourceCallbackFuncs_set_get(mrb_state* mrb, mrb_value self) {
 
   native_self->get = native_get;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;

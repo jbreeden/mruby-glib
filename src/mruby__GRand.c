@@ -15,7 +15,7 @@
 mrb_value
 mrb_GLib_GRand_initialize(mrb_state* mrb, mrb_value self) {
   struct _GRand* native_object = (struct _GRand*)calloc(1, sizeof(struct _GRand));
-  mruby_gift_struct _GRand_data_ptr(self, native_object);
+  mruby_giftwrap__GRand_data_ptr(self, native_object);
   return self;
 }
 #endif

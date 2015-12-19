@@ -15,7 +15,7 @@
 mrb_value
 mrb_GLib_GByteArray_initialize(mrb_state* mrb, mrb_value self) {
   struct _GByteArray* native_object = (struct _GByteArray*)calloc(1, sizeof(struct _GByteArray));
-  mruby_gift_struct _GByteArray_data_ptr(self, native_object);
+  mruby_giftwrap__GByteArray_data_ptr(self, native_object);
   return self;
 }
 #endif
@@ -93,7 +93,6 @@ mrb_GLib_GByteArray_set_data(mrb_state* mrb, mrb_value self) {
 
   native_self->data = native_data;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -132,7 +131,6 @@ mrb_GLib_GByteArray_set_len(mrb_state* mrb, mrb_value self) {
 
   native_self->len = native_len;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;

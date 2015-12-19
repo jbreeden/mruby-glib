@@ -15,7 +15,7 @@
 mrb_value
 mrb_GLib_GDate_initialize(mrb_state* mrb, mrb_value self) {
   struct _GDate* native_object = (struct _GDate*)calloc(1, sizeof(struct _GDate));
-  mruby_gift_struct _GDate_data_ptr(self, native_object);
+  mruby_giftwrap__GDate_data_ptr(self, native_object);
   return self;
 }
 #endif
@@ -88,7 +88,6 @@ mrb_GLib_GDate_set_julian_days(mrb_state* mrb, mrb_value self) {
 
   native_self->julian_days = native_julian_days;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -127,7 +126,6 @@ mrb_GLib_GDate_set_julian(mrb_state* mrb, mrb_value self) {
 
   native_self->julian = native_julian;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -166,7 +164,6 @@ mrb_GLib_GDate_set_dmy(mrb_state* mrb, mrb_value self) {
 
   native_self->dmy = native_dmy;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -205,7 +202,6 @@ mrb_GLib_GDate_set_day(mrb_state* mrb, mrb_value self) {
 
   native_self->day = native_day;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -244,7 +240,6 @@ mrb_GLib_GDate_set_month(mrb_state* mrb, mrb_value self) {
 
   native_self->month = native_month;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -283,7 +278,6 @@ mrb_GLib_GDate_set_year(mrb_state* mrb, mrb_value self) {
 
   native_self->year = native_year;
   
-
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
