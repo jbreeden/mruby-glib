@@ -17,6 +17,8 @@ task :bindings do
     ruby ~/projects/mruby-bindings/mruby_bindings.rb
       --includes mruby_bindings_config/includes.h
       -l mruby_bindings_config/ctypes.rb
+      -l mruby_bindings_config/fn_types.rb
+      -l mruby_bindings_config/macro_types.rb
       --input mruby_bindings_config/declarations.json
       --gem mruby-glib
       --module GLib

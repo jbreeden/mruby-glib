@@ -38341,9 +38341,9 @@ mrb_value
 mrb_GLib_g_spawn_command_line_sync(mrb_state* mrb, mrb_value self) {
   mrb_value results = mrb_ary_new(mrb);
   char * native_command_line = NULL;
-  int native_standard_output;
-  int native_standard_error;
-  char * native_exit_status = NULL;
+  char * native_standard_output = NULL;
+  char * native_standard_error = NULL;
+  int native_exit_status;
   struct GError * native_error = NULL;
 
   /* Fetch the args */
@@ -38357,13 +38357,15 @@ mrb_GLib_g_spawn_command_line_sync(mrb_state* mrb, mrb_value self) {
   mrb_ary_push(mrb, results, return_value);
   
   /* Box out param: standard_output */
-  mrb_value standard_output = mrb_fixnum_value(native_standard_output);
+  mrb_value standard_output = mrb_str_new_cstr(mrb, native_standard_output);
+  /* Clean out param: standard_output */
+  free(native_standard_output);
   /* Box out param: standard_error */
-  mrb_value standard_error = mrb_fixnum_value(native_standard_error);
+  mrb_value standard_error = mrb_str_new_cstr(mrb, native_standard_error);
+  /* Clean out param: standard_error */
+  free(native_standard_error);
   /* Box out param: exit_status */
-  mrb_value exit_status = mrb_str_new_cstr(mrb, native_exit_status);
-  /* Clean out param: exit_status */
-  free(native_exit_status);
+  mrb_value exit_status = mrb_fixnum_value(native_exit_status);
   /* Box out param: error */
   mrb_value error = (native_error == NULL ? mrb_nil_value() : mruby_giftwrap__GError(mrb, native_error));
 
