@@ -47,7 +47,7 @@ namespace :pull do
   
   desc 'Pull mrbgem.rake file from the generated bindings into the mrbgem'
   task :mrbgem do
-    sh "cp bindings/mrbgem.rake ./mrbgem.rake"
+    sh "cp bindings/mrbgem.rake ./mrbgem.rake" if File.exists?('bindings/mrbgem.rake')
   end
   
   desc 'Pull all files from the generated bindings into the mrbgem'

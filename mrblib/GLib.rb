@@ -1,6 +1,6 @@
 module GLib
 
-  module Gasciitype
+  module GAsciiType
     G_ASCII_ALNUM = 1
     G_ASCII_ALPHA = 2
     G_ASCII_CNTRL = 4
@@ -14,7 +14,7 @@ module GLib
     G_ASCII_XDIGIT = 1024
   end
 
-  module Gbookmarkfileerror
+  module GBookmarkFileError
     G_BOOKMARK_FILE_ERROR_INVALID_URI = 0
     G_BOOKMARK_FILE_ERROR_INVALID_VALUE = 1
     G_BOOKMARK_FILE_ERROR_APP_NOT_REGISTERED = 2
@@ -25,14 +25,14 @@ module GLib
     G_BOOKMARK_FILE_ERROR_FILE_NOT_FOUND = 7
   end
 
-  module Gchecksumtype
+  module GChecksumType
     G_CHECKSUM_MD5 = 0
     G_CHECKSUM_SHA1 = 1
     G_CHECKSUM_SHA256 = 2
     G_CHECKSUM_SHA512 = 3
   end
 
-  module Gconverterror
+  module GConvertError
     G_CONVERT_ERROR_NO_CONVERSION = 0
     G_CONVERT_ERROR_ILLEGAL_SEQUENCE = 1
     G_CONVERT_ERROR_FAILED = 2
@@ -42,13 +42,13 @@ module GLib
     G_CONVERT_ERROR_NO_MEMORY = 6
   end
 
-  module Gdatedmy
+  module GDateDMY
     G_DATE_DAY = 0
     G_DATE_MONTH = 1
     G_DATE_YEAR = 2
   end
 
-  module Gdatemonth
+  module GDateMonth
     G_DATE_BAD_MONTH = 0
     G_DATE_JANUARY = 1
     G_DATE_FEBRUARY = 2
@@ -64,7 +64,7 @@ module GLib
     G_DATE_DECEMBER = 12
   end
 
-  module Gdateweekday
+  module GDateWeekday
     G_DATE_BAD_WEEKDAY = 0
     G_DATE_MONDAY = 1
     G_DATE_TUESDAY = 2
@@ -75,7 +75,7 @@ module GLib
     G_DATE_SUNDAY = 7
   end
 
-  module Gerrortype
+  module GErrorType
     G_ERR_UNKNOWN = 0
     G_ERR_UNEXP_EOF = 1
     G_ERR_UNEXP_EOF_IN_STRING = 2
@@ -86,7 +86,7 @@ module GLib
     G_ERR_FLOAT_MALFORMED = 7
   end
 
-  module Gfileerror
+  module GFileError
     G_FILE_ERROR_EXIST = 0
     G_FILE_ERROR_ISDIR = 1
     G_FILE_ERROR_ACCES = 2
@@ -114,7 +114,7 @@ module GLib
     G_FILE_ERROR_FAILED = 24
   end
 
-  module Gfiletest
+  module GFileTest
     G_FILE_TEST_IS_REGULAR = 1
     G_FILE_TEST_IS_SYMLINK = 2
     G_FILE_TEST_IS_DIR = 4
@@ -122,19 +122,19 @@ module GLib
     G_FILE_TEST_EXISTS = 16
   end
 
-  module Gformatsizeflags
+  module GFormatSizeFlags
     G_FORMAT_SIZE_DEFAULT = 0
     G_FORMAT_SIZE_LONG_FORMAT = 1
     G_FORMAT_SIZE_IEC_UNITS = 2
   end
 
-  module Ghookflagmask
+  module GHookFlagMask
     G_HOOK_FLAG_ACTIVE = 1
     G_HOOK_FLAG_IN_CALL = 2
     G_HOOK_FLAG_MASK = 15
   end
 
-  module Giochannelerror
+  module GIOChannelError
     G_IO_CHANNEL_ERROR_FBIG = 0
     G_IO_CHANNEL_ERROR_INVAL = 1
     G_IO_CHANNEL_ERROR_IO = 2
@@ -146,7 +146,7 @@ module GLib
     G_IO_CHANNEL_ERROR_FAILED = 8
   end
 
-  module Giocondition
+  module GIOCondition
     G_IO_IN = 1
     G_IO_OUT = 4
     G_IO_PRI = 2
@@ -155,14 +155,14 @@ module GLib
     G_IO_NVAL = 32
   end
 
-  module Gioerror
+  module GIOError
     G_IO_ERROR_NONE = 0
     G_IO_ERROR_AGAIN = 1
     G_IO_ERROR_INVAL = 2
     G_IO_ERROR_UNKNOWN = 3
   end
 
-  module Gioflags
+  module GIOFlags
     G_IO_FLAG_APPEND = 1
     G_IO_FLAG_NONBLOCK = 2
     G_IO_FLAG_IS_READABLE = 4
@@ -174,14 +174,14 @@ module GLib
     G_IO_FLAG_SET_MASK = 3
   end
 
-  module Giostatus
+  module GIOStatus
     G_IO_STATUS_ERROR = 0
     G_IO_STATUS_NORMAL = 1
     G_IO_STATUS_EOF = 2
     G_IO_STATUS_AGAIN = 3
   end
 
-  module Gkeyfileerror
+  module GKeyFileError
     G_KEY_FILE_ERROR_UNKNOWN_ENCODING = 0
     G_KEY_FILE_ERROR_PARSE = 1
     G_KEY_FILE_ERROR_NOT_FOUND = 2
@@ -190,13 +190,13 @@ module GLib
     G_KEY_FILE_ERROR_INVALID_VALUE = 5
   end
 
-  module Gkeyfileflags
+  module GKeyFileFlags
     G_KEY_FILE_NONE = 0
     G_KEY_FILE_KEEP_COMMENTS = 1
     G_KEY_FILE_KEEP_TRANSLATIONS = 2
   end
 
-  module Gloglevelflags
+  module GLogLevelFlags
     G_LOG_FLAG_RECURSION = 1
     G_LOG_FLAG_FATAL = 2
     G_LOG_LEVEL_ERROR = 4
@@ -208,7 +208,7 @@ module GLib
     G_LOG_LEVEL_MASK = -4
   end
 
-  module Gmarkupcollecttype
+  module GMarkupCollectType
     G_MARKUP_COLLECT_INVALID = 0
     G_MARKUP_COLLECT_STRING = 1
     G_MARKUP_COLLECT_STRDUP = 2
@@ -217,7 +217,7 @@ module GLib
     G_MARKUP_COLLECT_OPTIONAL = 65536
   end
 
-  module Gmarkuperror
+  module GMarkupError
     G_MARKUP_ERROR_BAD_UTF8 = 0
     G_MARKUP_ERROR_EMPTY = 1
     G_MARKUP_ERROR_PARSE = 2
@@ -227,14 +227,14 @@ module GLib
     G_MARKUP_ERROR_MISSING_ATTRIBUTE = 6
   end
 
-  module Gmarkupparseflags
+  module GMarkupParseFlags
     G_MARKUP_DO_NOT_USE_THIS_UNSUPPORTED_FLAG = 1
     G_MARKUP_TREAT_CDATA_AS_TEXT = 2
     G_MARKUP_PREFIX_ERROR_POSITION = 4
     G_MARKUP_IGNORE_QUALIFIED = 8
   end
 
-  module Gnormalizemode
+  module GNormalizeMode
     G_NORMALIZE_DEFAULT = 0
     G_NORMALIZE_NFD = 0
     G_NORMALIZE_DEFAULT_COMPOSE = 1
@@ -245,13 +245,13 @@ module GLib
     G_NORMALIZE_NFKC = 3
   end
 
-  module Goncestatus
+  module GOnceStatus
     G_ONCE_STATUS_NOTCALLED = 0
     G_ONCE_STATUS_PROGRESS = 1
     G_ONCE_STATUS_READY = 2
   end
 
-  module Goptionarg
+  module GOptionArg
     G_OPTION_ARG_NONE = 0
     G_OPTION_ARG_STRING = 1
     G_OPTION_ARG_INT = 2
@@ -263,13 +263,13 @@ module GLib
     G_OPTION_ARG_INT64 = 8
   end
 
-  module Goptionerror
+  module GOptionError
     G_OPTION_ERROR_UNKNOWN_OPTION = 0
     G_OPTION_ERROR_BAD_VALUE = 1
     G_OPTION_ERROR_FAILED = 2
   end
 
-  module Goptionflags
+  module GOptionFlags
     G_OPTION_FLAG_NONE = 0
     G_OPTION_FLAG_HIDDEN = 1
     G_OPTION_FLAG_IN_MAIN = 2
@@ -280,7 +280,7 @@ module GLib
     G_OPTION_FLAG_NOALIAS = 64
   end
 
-  module Gregexcompileflags
+  module GRegexCompileFlags
     G_REGEX_CASELESS = 1
     G_REGEX_MULTILINE = 2
     G_REGEX_DOTALL = 4
@@ -301,7 +301,7 @@ module GLib
     G_REGEX_JAVASCRIPT_COMPAT = 33554432
   end
 
-  module Gregexerror
+  module GRegexError
     G_REGEX_ERROR_COMPILE = 0
     G_REGEX_ERROR_OPTIMIZE = 1
     G_REGEX_ERROR_REPLACE = 2
@@ -361,7 +361,7 @@ module GLib
     G_REGEX_ERROR_CHARACTER_VALUE_TOO_LARGE = 176
   end
 
-  module Gregexmatchflags
+  module GRegexMatchFlags
     G_REGEX_MATCH_ANCHORED = 16
     G_REGEX_MATCH_NOTBOL = 128
     G_REGEX_MATCH_NOTEOL = 256
@@ -379,19 +379,19 @@ module GLib
     G_REGEX_MATCH_NOTEMPTY_ATSTART = 268435456
   end
 
-  module Gseektype
+  module GSeekType
     G_SEEK_CUR = 0
     G_SEEK_SET = 1
     G_SEEK_END = 2
   end
 
-  module Gshellerror
+  module GShellError
     G_SHELL_ERROR_BAD_QUOTING = 0
     G_SHELL_ERROR_EMPTY_STRING = 1
     G_SHELL_ERROR_FAILED = 2
   end
 
-  module Gsliceconfig
+  module GSliceConfig
     G_SLICE_CONFIG_ALWAYS_MALLOC = 1
     G_SLICE_CONFIG_BYPASS_MAGAZINES = 2
     G_SLICE_CONFIG_WORKING_SET_MSECS = 3
@@ -400,7 +400,7 @@ module GLib
     G_SLICE_CONFIG_CONTENTION_COUNTER = 6
   end
 
-  module Gspawnerror
+  module GSpawnError
     G_SPAWN_ERROR_FORK = 0
     G_SPAWN_ERROR_READ = 1
     G_SPAWN_ERROR_CHDIR = 2
@@ -424,7 +424,7 @@ module GLib
     G_SPAWN_ERROR_FAILED = 19
   end
 
-  module Gspawnflags
+  module GSpawnFlags
     G_SPAWN_DEFAULT = 0
     G_SPAWN_LEAVE_DESCRIPTORS_OPEN = 1
     G_SPAWN_DO_NOT_REAP_CHILD = 2
@@ -437,12 +437,12 @@ module GLib
     G_SPAWN_CLOEXEC_PIPES = 256
   end
 
-  module Gtestfiletype
+  module GTestFileType
     G_TEST_DIST = 0
     G_TEST_BUILT = 1
   end
 
-  module Gtestlogtype
+  module GTestLogType
     G_TEST_LOG_NONE = 0
     G_TEST_LOG_ERROR = 1
     G_TEST_LOG_START_BINARY = 2
@@ -457,29 +457,29 @@ module GLib
     G_TEST_LOG_STOP_SUITE = 11
   end
 
-  module Gtestsubprocessflags
+  module GTestSubprocessFlags
     G_TEST_SUBPROCESS_INHERIT_STDIN = 1
     G_TEST_SUBPROCESS_INHERIT_STDOUT = 2
     G_TEST_SUBPROCESS_INHERIT_STDERR = 4
   end
 
-  module Gtesttrapflags
+  module GTestTrapFlags
     G_TEST_TRAP_SILENCE_STDOUT = 128
     G_TEST_TRAP_SILENCE_STDERR = 256
     G_TEST_TRAP_INHERIT_STDIN = 512
   end
 
-  module Gthreaderror
+  module GThreadError
     G_THREAD_ERROR_AGAIN = 0
   end
 
-  module Gtimetype
+  module GTimeType
     G_TIME_TYPE_STANDARD = 0
     G_TIME_TYPE_DAYLIGHT = 1
     G_TIME_TYPE_UNIVERSAL = 2
   end
 
-  module Gtokentype
+  module GTokenType
     G_TOKEN_EOF = 0
     G_TOKEN_LEFT_PAREN = 40
     G_TOKEN_RIGHT_PAREN = 41
@@ -506,7 +506,7 @@ module GLib
     G_TOKEN_LAST = 270
   end
 
-  module Gtraverseflags
+  module GTraverseFlags
     G_TRAVERSE_LEAVES = 1
     G_TRAVERSE_NON_LEAVES = 2
     G_TRAVERSE_ALL = 3
@@ -515,14 +515,14 @@ module GLib
     G_TRAVERSE_NON_LEAFS = 2
   end
 
-  module Gtraversetype
+  module GTraverseType
     G_IN_ORDER = 0
     G_PRE_ORDER = 1
     G_POST_ORDER = 2
     G_LEVEL_ORDER = 3
   end
 
-  module Gunicodebreaktype
+  module GUnicodeBreakType
     G_UNICODE_BREAK_MANDATORY = 0
     G_UNICODE_BREAK_CARRIAGE_RETURN = 1
     G_UNICODE_BREAK_LINE_FEED = 2
@@ -565,7 +565,7 @@ module GLib
     G_UNICODE_BREAK_REGIONAL_INDICATOR = 39
   end
 
-  module Gunicodescript
+  module GUnicodeScript
     G_UNICODE_SCRIPT_INVALID_CODE = -1
     G_UNICODE_SCRIPT_COMMON = 0
     G_UNICODE_SCRIPT_INHERITED = 1
@@ -695,7 +695,7 @@ module GLib
     G_UNICODE_SCRIPT_WARANG_CITI = 125
   end
 
-  module Gunicodetype
+  module GUnicodeType
     G_UNICODE_CONTROL = 0
     G_UNICODE_FORMAT = 1
     G_UNICODE_UNASSIGNED = 2
@@ -728,7 +728,7 @@ module GLib
     G_UNICODE_SPACE_SEPARATOR = 29
   end
 
-  module Guserdirectory
+  module GUserDirectory
     G_USER_DIRECTORY_DESKTOP = 0
     G_USER_DIRECTORY_DOCUMENTS = 1
     G_USER_DIRECTORY_DOWNLOAD = 2
@@ -740,7 +740,7 @@ module GLib
     G_USER_N_DIRECTORIES = 8
   end
 
-  module Gvariantclass
+  module GVariantClass
     G_VARIANT_CLASS_BOOLEAN = 98
     G_VARIANT_CLASS_BYTE = 121
     G_VARIANT_CLASS_INT16 = 110
@@ -761,7 +761,7 @@ module GLib
     G_VARIANT_CLASS_DICT_ENTRY = 123
   end
 
-  module Gvariantparseerror
+  module GVariantParseError
     G_VARIANT_PARSE_ERROR_FAILED = 0
     G_VARIANT_PARSE_ERROR_BASIC_TYPE_EXPECTED = 1
     G_VARIANT_PARSE_ERROR_CANNOT_INFER_TYPE = 2

@@ -42,9 +42,6 @@
  */
 
 #define GLib_module(mrb) mrb_module_get(mrb, "GLib")
-#define GTestConfig_class(mrb) mrb_class_get_under(mrb, GLib_module(mrb), "GTestConfig")
-#define GTestLogBuffer_class(mrb) mrb_class_get_under(mrb, GLib_module(mrb), "GTestLogBuffer")
-#define GTestLogMsg_class(mrb) mrb_class_get_under(mrb, GLib_module(mrb), "GTestLogMsg")
 #define GArray_class(mrb) mrb_class_get_under(mrb, GLib_module(mrb), "GArray")
 #define GAsyncQueue_class(mrb) mrb_class_get_under(mrb, GLib_module(mrb), "GAsyncQueue")
 #define GBookmarkFile_class(mrb) mrb_class_get_under(mrb, GLib_module(mrb), "GBookmarkFile")
@@ -100,6 +97,11 @@
 #define GSourcePrivate_class(mrb) mrb_class_get_under(mrb, GLib_module(mrb), "GSourcePrivate")
 #define GString_class(mrb) mrb_class_get_under(mrb, GLib_module(mrb), "GString")
 #define GStringChunk_class(mrb) mrb_class_get_under(mrb, GLib_module(mrb), "GStringChunk")
+#define GTestCase_class(mrb) mrb_class_get_under(mrb, GLib_module(mrb), "GTestCase")
+#define GTestConfig_class(mrb) mrb_class_get_under(mrb, GLib_module(mrb), "GTestConfig")
+#define GTestLogBuffer_class(mrb) mrb_class_get_under(mrb, GLib_module(mrb), "GTestLogBuffer")
+#define GTestLogMsg_class(mrb) mrb_class_get_under(mrb, GLib_module(mrb), "GTestLogMsg")
+#define GTestSuite_class(mrb) mrb_class_get_under(mrb, GLib_module(mrb), "GTestSuite")
 #define GThread_class(mrb) mrb_class_get_under(mrb, GLib_module(mrb), "GThread")
 #define GThreadPool_class(mrb) mrb_class_get_under(mrb, GLib_module(mrb), "GThreadPool")
 #define GTimer_class(mrb) mrb_class_get_under(mrb, GLib_module(mrb), "GTimer")
@@ -112,8 +114,6 @@
 #define GVariantDict_class(mrb) mrb_class_get_under(mrb, GLib_module(mrb), "GVariantDict")
 #define GVariantIter_class(mrb) mrb_class_get_under(mrb, GLib_module(mrb), "GVariantIter")
 #define GVariantType_class(mrb) mrb_class_get_under(mrb, GLib_module(mrb), "GVariantType")
-#define GTestCase_class(mrb) mrb_class_get_under(mrb, GLib_module(mrb), "GTestCase")
-#define GTestSuite_class(mrb) mrb_class_get_under(mrb, GLib_module(mrb), "GTestSuite")
 
 /*
  * Class initialization function declarations
@@ -123,15 +123,6 @@
  * "Class Bindings Options" section above.
  */
 
-#if BIND_GTestConfig_TYPE
-void mrb_GLib_GTestConfig_init(mrb_state* mrb);
-#endif
-#if BIND_GTestLogBuffer_TYPE
-void mrb_GLib_GTestLogBuffer_init(mrb_state* mrb);
-#endif
-#if BIND_GTestLogMsg_TYPE
-void mrb_GLib_GTestLogMsg_init(mrb_state* mrb);
-#endif
 #if BIND_GArray_TYPE
 void mrb_GLib_GArray_init(mrb_state* mrb);
 #endif
@@ -297,6 +288,21 @@ void mrb_GLib_GString_init(mrb_state* mrb);
 #if BIND_GStringChunk_TYPE
 void mrb_GLib_GStringChunk_init(mrb_state* mrb);
 #endif
+#if BIND_GTestCase_TYPE
+void mrb_GLib_GTestCase_init(mrb_state* mrb);
+#endif
+#if BIND_GTestConfig_TYPE
+void mrb_GLib_GTestConfig_init(mrb_state* mrb);
+#endif
+#if BIND_GTestLogBuffer_TYPE
+void mrb_GLib_GTestLogBuffer_init(mrb_state* mrb);
+#endif
+#if BIND_GTestLogMsg_TYPE
+void mrb_GLib_GTestLogMsg_init(mrb_state* mrb);
+#endif
+#if BIND_GTestSuite_TYPE
+void mrb_GLib_GTestSuite_init(mrb_state* mrb);
+#endif
 #if BIND_GThread_TYPE
 void mrb_GLib_GThread_init(mrb_state* mrb);
 #endif
@@ -332,12 +338,6 @@ void mrb_GLib_GVariantIter_init(mrb_state* mrb);
 #endif
 #if BIND_GVariantType_TYPE
 void mrb_GLib_GVariantType_init(mrb_state* mrb);
-#endif
-#if BIND_GTestCase_TYPE
-void mrb_GLib_GTestCase_init(mrb_state* mrb);
-#endif
-#if BIND_GTestSuite_TYPE
-void mrb_GLib_GTestSuite_init(mrb_state* mrb);
 #endif
 
 /*

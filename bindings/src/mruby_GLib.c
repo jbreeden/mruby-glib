@@ -708,7 +708,7 @@ mrb_value
 mrb_GLib_g_ascii_dtostr(mrb_state* mrb, mrb_value self) {
   char * buffer = NULL;
   mrb_int native_buf_len;
-  double native_d;
+  mrb_float native_d;
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!if", &buffer, &native_buf_len, &native_d);
@@ -758,7 +758,7 @@ mrb_GLib_g_ascii_formatd(mrb_state* mrb, mrb_value self) {
   char * buffer = NULL;
   mrb_int native_buf_len;
   char * native_format = NULL;
-  double native_d;
+  mrb_float native_d;
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!iz!f", &buffer, &native_buf_len, &native_format, &native_d);
@@ -9432,7 +9432,7 @@ mrb_GLib_g_date_time_add_full(mrb_state* mrb, mrb_value self) {
   mrb_int native_days;
   mrb_int native_hours;
   mrb_int native_minutes;
-  double native_seconds;
+  mrb_float native_seconds;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oiiiiif", &datetime, &native_years, &native_months, &native_days, &native_hours, &native_minutes, &native_seconds);
@@ -9580,7 +9580,7 @@ mrb_GLib_g_date_time_add_months(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_date_time_add_seconds(mrb_state* mrb, mrb_value self) {
   mrb_value datetime;
-  double native_seconds;
+  mrb_float native_seconds;
 
   /* Fetch the args */
   mrb_get_args(mrb, "of", &datetime, &native_seconds);
@@ -10460,7 +10460,7 @@ mrb_GLib_g_date_time_new(mrb_state* mrb, mrb_value self) {
   mrb_int native_day;
   mrb_int native_hour;
   mrb_int native_minute;
-  double native_seconds;
+  mrb_float native_seconds;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oiiiiif", &tz, &native_year, &native_month, &native_day, &native_hour, &native_minute, &native_seconds);
@@ -10627,7 +10627,7 @@ mrb_GLib_g_date_time_new_local(mrb_state* mrb, mrb_value self) {
   mrb_int native_day;
   mrb_int native_hour;
   mrb_int native_minute;
-  double native_seconds;
+  mrb_float native_seconds;
 
   /* Fetch the args */
   mrb_get_args(mrb, "iiiiif", &native_year, &native_month, &native_day, &native_hour, &native_minute, &native_seconds);
@@ -10738,7 +10738,7 @@ mrb_GLib_g_date_time_new_utc(mrb_state* mrb, mrb_value self) {
   mrb_int native_day;
   mrb_int native_hour;
   mrb_int native_minute;
-  double native_seconds;
+  mrb_float native_seconds;
 
   /* Fetch the args */
   mrb_get_args(mrb, "iiiiif", &native_year, &native_month, &native_day, &native_hour, &native_minute, &native_seconds);
@@ -12063,25 +12063,28 @@ mrb_GLib_g_file_get_contents(mrb_state* mrb, mrb_value self) {
   mrb_value results = mrb_ary_new(mrb);
   char * native_filename = NULL;
   char * native_contents = NULL;
-  int native_length;
+  int native_contents_length = 0;
   struct GError * native_error = NULL;
 
   /* Fetch the args */
   mrb_get_args(mrb, "z!", &native_filename);
 
   /* Invocation */
-  gboolean native_return_value = g_file_get_contents(native_filename, &native_contents, &native_length, &native_error);
+  gboolean native_return_value = g_file_get_contents(native_filename, &native_contents, &native_contents_length, &native_error);
 
   /* Box the return value */
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   mrb_ary_push(mrb, results, return_value);
   
   /* Box the out parameters */
-  mrb_value contents = mrb_str_new_cstr(mrb, native_contents);
+  mrb_value contents;
+  if (native_contents == NULL) {
+    contents = mrb_nil_value();
+  } else {
+    contents = mrb_str_new(mrb, native_contents, native_contents_length);
+  }
   free(native_contents);
   mrb_ary_push(mrb, results, contents);
-  mrb_value length = mrb_fixnum_value(native_length);
-  mrb_ary_push(mrb, results, length);
   mrb_value error = (native_error == NULL ? mrb_nil_value() : mruby_giftwrap__GError(mrb, native_error));
   mrb_ary_push(mrb, results, error);
 
@@ -19145,7 +19148,7 @@ mrb_GLib_g_key_file_set_double(mrb_state* mrb, mrb_value self) {
   mrb_value key_file;
   char * native_group_name = NULL;
   char * native_key = NULL;
-  double native_value;
+  mrb_float native_value;
 
   /* Fetch the args */
   mrb_get_args(mrb, "oz!z!f", &key_file, &native_group_name, &native_key, &native_value);
@@ -30260,8 +30263,8 @@ mrb_GLib_g_rand_double(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_rand_double_range(mrb_state* mrb, mrb_value self) {
   mrb_value rand_;
-  double native_begin;
-  double native_end;
+  mrb_float native_begin;
+  mrb_float native_end;
 
   /* Fetch the args */
   mrb_get_args(mrb, "off", &rand_, &native_begin, &native_end);
@@ -30576,8 +30579,8 @@ mrb_GLib_g_random_double(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_random_double_range(mrb_state* mrb, mrb_value self) {
-  double native_begin;
-  double native_end;
+  mrb_float native_begin;
+  mrb_float native_end;
 
   /* Fetch the args */
   mrb_get_args(mrb, "ff", &native_begin, &native_end);
@@ -41732,7 +41735,7 @@ mrb_GLib_g_test_log_type_name(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_test_maximized_result(mrb_state* mrb, mrb_value self) {
-  double native_maximized_quantity;
+  mrb_float native_maximized_quantity;
   char * native_format = NULL;
 
   /* Fetch the args */
@@ -41780,7 +41783,7 @@ mrb_GLib_g_test_message(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_test_minimized_result(mrb_state* mrb, mrb_value self) {
-  double native_minimized_quantity;
+  mrb_float native_minimized_quantity;
   char * native_format = NULL;
 
   /* Fetch the args */
@@ -41888,8 +41891,8 @@ mrb_GLib_g_test_rand_double(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_test_rand_double_range(mrb_state* mrb, mrb_value self) {
-  double native_range_start;
-  double native_range_end;
+  mrb_float native_range_start;
+  mrb_float native_range_end;
 
   /* Fetch the args */
   mrb_get_args(mrb, "ff", &native_range_start, &native_range_end);
@@ -50252,7 +50255,7 @@ mrb_GLib_g_variant_new_dict_entry(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_variant_new_double(mrb_state* mrb, mrb_value self) {
-  double native_value;
+  mrb_float native_value;
 
   /* Fetch the args */
   mrb_get_args(mrb, "f", &native_value);
@@ -52722,15 +52725,6 @@ void mrb_mruby_glib_gem_init(mrb_state* mrb) {
   /*
    * Initialize class bindings
    */
-#if BIND_GTestConfig_TYPE
-  mrb_GLib_GTestConfig_init(mrb);
-#endif
-#if BIND_GTestLogBuffer_TYPE
-  mrb_GLib_GTestLogBuffer_init(mrb);
-#endif
-#if BIND_GTestLogMsg_TYPE
-  mrb_GLib_GTestLogMsg_init(mrb);
-#endif
 #if BIND_GArray_TYPE
   mrb_GLib_GArray_init(mrb);
 #endif
@@ -52896,6 +52890,21 @@ void mrb_mruby_glib_gem_init(mrb_state* mrb) {
 #if BIND_GStringChunk_TYPE
   mrb_GLib_GStringChunk_init(mrb);
 #endif
+#if BIND_GTestCase_TYPE
+  mrb_GLib_GTestCase_init(mrb);
+#endif
+#if BIND_GTestConfig_TYPE
+  mrb_GLib_GTestConfig_init(mrb);
+#endif
+#if BIND_GTestLogBuffer_TYPE
+  mrb_GLib_GTestLogBuffer_init(mrb);
+#endif
+#if BIND_GTestLogMsg_TYPE
+  mrb_GLib_GTestLogMsg_init(mrb);
+#endif
+#if BIND_GTestSuite_TYPE
+  mrb_GLib_GTestSuite_init(mrb);
+#endif
 #if BIND_GThread_TYPE
   mrb_GLib_GThread_init(mrb);
 #endif
@@ -52931,12 +52940,6 @@ void mrb_mruby_glib_gem_init(mrb_state* mrb) {
 #endif
 #if BIND_GVariantType_TYPE
   mrb_GLib_GVariantType_init(mrb);
-#endif
-#if BIND_GTestCase_TYPE
-  mrb_GLib_GTestCase_init(mrb);
-#endif
-#if BIND_GTestSuite_TYPE
-  mrb_GLib_GTestSuite_init(mrb);
 #endif
 
   /*

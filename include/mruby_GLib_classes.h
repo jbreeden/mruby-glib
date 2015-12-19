@@ -19,41 +19,6 @@
  * tested incrementally.
  */
 
-#define BIND_GTestConfig_TYPE TRUE
-#define BIND_GTestConfig_INITIALIZE FALSE
-#define BIND_GTestConfig_test_initialized_FIELD_READER FALSE
-#define BIND_GTestConfig_test_initialized_FIELD_WRITER FALSE
-#define BIND_GTestConfig_test_perf_FIELD_READER FALSE
-#define BIND_GTestConfig_test_perf_FIELD_WRITER FALSE
-#define BIND_GTestConfig_test_quick_FIELD_READER FALSE
-#define BIND_GTestConfig_test_quick_FIELD_WRITER FALSE
-#define BIND_GTestConfig_test_quiet_FIELD_READER FALSE
-#define BIND_GTestConfig_test_quiet_FIELD_WRITER FALSE
-#define BIND_GTestConfig_test_undefined_FIELD_READER FALSE
-#define BIND_GTestConfig_test_undefined_FIELD_WRITER FALSE
-#define BIND_GTestConfig_test_verbose_FIELD_READER FALSE
-#define BIND_GTestConfig_test_verbose_FIELD_WRITER FALSE
-
-#define BIND_GTestLogBuffer_TYPE TRUE
-#define BIND_GTestLogBuffer_INITIALIZE FALSE
-#define BIND_GTestLogBuffer_data_FIELD_READER FALSE
-#define BIND_GTestLogBuffer_data_FIELD_WRITER FALSE
-#define BIND_GTestLogBuffer_msgs_FIELD_READER FALSE
-#define BIND_GTestLogBuffer_msgs_FIELD_WRITER FALSE
-
-#define BIND_GTestLogMsg_TYPE TRUE
-#define BIND_GTestLogMsg_INITIALIZE FALSE
-#define BIND_GTestLogMsg_log_type_FIELD_READER FALSE
-#define BIND_GTestLogMsg_log_type_FIELD_WRITER FALSE
-#define BIND_GTestLogMsg_n_nums_FIELD_READER FALSE
-#define BIND_GTestLogMsg_n_nums_FIELD_WRITER FALSE
-#define BIND_GTestLogMsg_n_strings_FIELD_READER FALSE
-#define BIND_GTestLogMsg_n_strings_FIELD_WRITER FALSE
-#define BIND_GTestLogMsg_nums_FIELD_READER FALSE
-#define BIND_GTestLogMsg_nums_FIELD_WRITER FALSE
-#define BIND_GTestLogMsg_strings_FIELD_READER FALSE
-#define BIND_GTestLogMsg_strings_FIELD_WRITER FALSE
-
 #define BIND_GArray_TYPE TRUE
 #define BIND_GArray_INITIALIZE FALSE
 #define BIND_GArray_data_FIELD_READER FALSE
@@ -587,6 +552,47 @@
 #define BIND_GStringChunk_TYPE TRUE
 #define BIND_GStringChunk_INITIALIZE FALSE
 
+#define BIND_GTestCase_TYPE TRUE
+#define BIND_GTestCase_INITIALIZE FALSE
+
+#define BIND_GTestConfig_TYPE TRUE
+#define BIND_GTestConfig_INITIALIZE FALSE
+#define BIND_GTestConfig_test_initialized_FIELD_READER FALSE
+#define BIND_GTestConfig_test_initialized_FIELD_WRITER FALSE
+#define BIND_GTestConfig_test_perf_FIELD_READER FALSE
+#define BIND_GTestConfig_test_perf_FIELD_WRITER FALSE
+#define BIND_GTestConfig_test_quick_FIELD_READER FALSE
+#define BIND_GTestConfig_test_quick_FIELD_WRITER FALSE
+#define BIND_GTestConfig_test_quiet_FIELD_READER FALSE
+#define BIND_GTestConfig_test_quiet_FIELD_WRITER FALSE
+#define BIND_GTestConfig_test_undefined_FIELD_READER FALSE
+#define BIND_GTestConfig_test_undefined_FIELD_WRITER FALSE
+#define BIND_GTestConfig_test_verbose_FIELD_READER FALSE
+#define BIND_GTestConfig_test_verbose_FIELD_WRITER FALSE
+
+#define BIND_GTestLogBuffer_TYPE TRUE
+#define BIND_GTestLogBuffer_INITIALIZE FALSE
+#define BIND_GTestLogBuffer_data_FIELD_READER FALSE
+#define BIND_GTestLogBuffer_data_FIELD_WRITER FALSE
+#define BIND_GTestLogBuffer_msgs_FIELD_READER FALSE
+#define BIND_GTestLogBuffer_msgs_FIELD_WRITER FALSE
+
+#define BIND_GTestLogMsg_TYPE TRUE
+#define BIND_GTestLogMsg_INITIALIZE FALSE
+#define BIND_GTestLogMsg_log_type_FIELD_READER FALSE
+#define BIND_GTestLogMsg_log_type_FIELD_WRITER FALSE
+#define BIND_GTestLogMsg_n_nums_FIELD_READER FALSE
+#define BIND_GTestLogMsg_n_nums_FIELD_WRITER FALSE
+#define BIND_GTestLogMsg_n_strings_FIELD_READER FALSE
+#define BIND_GTestLogMsg_n_strings_FIELD_WRITER FALSE
+#define BIND_GTestLogMsg_nums_FIELD_READER FALSE
+#define BIND_GTestLogMsg_nums_FIELD_WRITER FALSE
+#define BIND_GTestLogMsg_strings_FIELD_READER FALSE
+#define BIND_GTestLogMsg_strings_FIELD_WRITER FALSE
+
+#define BIND_GTestSuite_TYPE TRUE
+#define BIND_GTestSuite_INITIALIZE FALSE
+
 #define BIND_GThread_TYPE TRUE
 #define BIND_GThread_INITIALIZE FALSE
 
@@ -640,12 +646,6 @@
 
 #define BIND_GVariantType_TYPE TRUE
 #define BIND_GVariantType_INITIALIZE FALSE
-
-#define BIND_GTestCase_TYPE TRUE
-#define BIND_GTestCase_INITIALIZE FALSE
-
-#define BIND_GTestSuite_TYPE TRUE
-#define BIND_GTestSuite_INITIALIZE FALSE
 
 
 #endif

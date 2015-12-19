@@ -36,57 +36,6 @@ typedef struct mruby_to_native_ref_ {
   void* data;
 } mruby_to_native_ref;
 
-#if BIND_GTestConfig_TYPE
-mrb_value
-mruby_box_GTestConfig(mrb_state* mrb, GTestConfig *unboxed);
-
-mrb_value
-mruby_giftwrap_GTestConfig(mrb_state* mrb, GTestConfig *unboxed);
-
-void
-mruby_set_GTestConfig_data_ptr(mrb_value obj, GTestConfig *unboxed);
-
-void
-mruby_gift_GTestConfig_data_ptr(mrb_value obj, GTestConfig *unboxed);
-
-GTestConfig *
-mruby_unbox_GTestConfig(mrb_value boxed);
-#endif
-
-#if BIND_GTestLogBuffer_TYPE
-mrb_value
-mruby_box_GTestLogBuffer(mrb_state* mrb, GTestLogBuffer *unboxed);
-
-mrb_value
-mruby_giftwrap_GTestLogBuffer(mrb_state* mrb, GTestLogBuffer *unboxed);
-
-void
-mruby_set_GTestLogBuffer_data_ptr(mrb_value obj, GTestLogBuffer *unboxed);
-
-void
-mruby_gift_GTestLogBuffer_data_ptr(mrb_value obj, GTestLogBuffer *unboxed);
-
-GTestLogBuffer *
-mruby_unbox_GTestLogBuffer(mrb_value boxed);
-#endif
-
-#if BIND_GTestLogMsg_TYPE
-mrb_value
-mruby_box_GTestLogMsg(mrb_state* mrb, GTestLogMsg *unboxed);
-
-mrb_value
-mruby_giftwrap_GTestLogMsg(mrb_state* mrb, GTestLogMsg *unboxed);
-
-void
-mruby_set_GTestLogMsg_data_ptr(mrb_value obj, GTestLogMsg *unboxed);
-
-void
-mruby_gift_GTestLogMsg_data_ptr(mrb_value obj, GTestLogMsg *unboxed);
-
-GTestLogMsg *
-mruby_unbox_GTestLogMsg(mrb_value boxed);
-#endif
-
 #if BIND_GArray_TYPE
 mrb_value
 mruby_box__GArray(mrb_state* mrb, struct _GArray *unboxed);
@@ -1022,6 +971,91 @@ struct _GStringChunk *
 mruby_unbox__GStringChunk(mrb_value boxed);
 #endif
 
+#if BIND_GTestCase_TYPE
+mrb_value
+mruby_box_GTestCase(mrb_state* mrb, struct GTestCase *unboxed);
+
+mrb_value
+mruby_giftwrap_GTestCase(mrb_state* mrb, struct GTestCase *unboxed);
+
+void
+mruby_set_GTestCase_data_ptr(mrb_value obj, struct GTestCase *unboxed);
+
+void
+mruby_gift_GTestCase_data_ptr(mrb_value obj, struct GTestCase *unboxed);
+
+struct GTestCase *
+mruby_unbox_GTestCase(mrb_value boxed);
+#endif
+
+#if BIND_GTestConfig_TYPE
+mrb_value
+mruby_box_GTestConfig(mrb_state* mrb, GTestConfig *unboxed);
+
+mrb_value
+mruby_giftwrap_GTestConfig(mrb_state* mrb, GTestConfig *unboxed);
+
+void
+mruby_set_GTestConfig_data_ptr(mrb_value obj, GTestConfig *unboxed);
+
+void
+mruby_gift_GTestConfig_data_ptr(mrb_value obj, GTestConfig *unboxed);
+
+GTestConfig *
+mruby_unbox_GTestConfig(mrb_value boxed);
+#endif
+
+#if BIND_GTestLogBuffer_TYPE
+mrb_value
+mruby_box_GTestLogBuffer(mrb_state* mrb, GTestLogBuffer *unboxed);
+
+mrb_value
+mruby_giftwrap_GTestLogBuffer(mrb_state* mrb, GTestLogBuffer *unboxed);
+
+void
+mruby_set_GTestLogBuffer_data_ptr(mrb_value obj, GTestLogBuffer *unboxed);
+
+void
+mruby_gift_GTestLogBuffer_data_ptr(mrb_value obj, GTestLogBuffer *unboxed);
+
+GTestLogBuffer *
+mruby_unbox_GTestLogBuffer(mrb_value boxed);
+#endif
+
+#if BIND_GTestLogMsg_TYPE
+mrb_value
+mruby_box_GTestLogMsg(mrb_state* mrb, GTestLogMsg *unboxed);
+
+mrb_value
+mruby_giftwrap_GTestLogMsg(mrb_state* mrb, GTestLogMsg *unboxed);
+
+void
+mruby_set_GTestLogMsg_data_ptr(mrb_value obj, GTestLogMsg *unboxed);
+
+void
+mruby_gift_GTestLogMsg_data_ptr(mrb_value obj, GTestLogMsg *unboxed);
+
+GTestLogMsg *
+mruby_unbox_GTestLogMsg(mrb_value boxed);
+#endif
+
+#if BIND_GTestSuite_TYPE
+mrb_value
+mruby_box_GTestSuite(mrb_state* mrb, struct GTestSuite *unboxed);
+
+mrb_value
+mruby_giftwrap_GTestSuite(mrb_state* mrb, struct GTestSuite *unboxed);
+
+void
+mruby_set_GTestSuite_data_ptr(mrb_value obj, struct GTestSuite *unboxed);
+
+void
+mruby_gift_GTestSuite_data_ptr(mrb_value obj, struct GTestSuite *unboxed);
+
+struct GTestSuite *
+mruby_unbox_GTestSuite(mrb_value boxed);
+#endif
+
 #if BIND_GThread_TYPE
 mrb_value
 mruby_box__GThread(mrb_state* mrb, struct _GThread *unboxed);
@@ -1224,40 +1258,6 @@ mruby_gift__GVariantType_data_ptr(mrb_value obj, struct _GVariantType *unboxed);
 
 struct _GVariantType *
 mruby_unbox__GVariantType(mrb_value boxed);
-#endif
-
-#if BIND_GTestCase_TYPE
-mrb_value
-mruby_box_GTestCase(mrb_state* mrb, struct GTestCase *unboxed);
-
-mrb_value
-mruby_giftwrap_GTestCase(mrb_state* mrb, struct GTestCase *unboxed);
-
-void
-mruby_set_GTestCase_data_ptr(mrb_value obj, struct GTestCase *unboxed);
-
-void
-mruby_gift_GTestCase_data_ptr(mrb_value obj, struct GTestCase *unboxed);
-
-struct GTestCase *
-mruby_unbox_GTestCase(mrb_value boxed);
-#endif
-
-#if BIND_GTestSuite_TYPE
-mrb_value
-mruby_box_GTestSuite(mrb_state* mrb, struct GTestSuite *unboxed);
-
-mrb_value
-mruby_giftwrap_GTestSuite(mrb_state* mrb, struct GTestSuite *unboxed);
-
-void
-mruby_set_GTestSuite_data_ptr(mrb_value obj, struct GTestSuite *unboxed);
-
-void
-mruby_gift_GTestSuite_data_ptr(mrb_value obj, struct GTestSuite *unboxed);
-
-struct GTestSuite *
-mruby_unbox_GTestSuite(mrb_value boxed);
 #endif
 
 

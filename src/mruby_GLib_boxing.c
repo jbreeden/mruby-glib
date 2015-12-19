@@ -1,5 +1,36 @@
 /*
- * TODO: Update includes
+ * Boxing Code (Generated)
+ * =======================
+ *
+ * The code generator learns the data types declared in the C/C++ source files
+ * it is run against, and generates this boxing, unboxing, and GC code.
+ * 
+ * Terms
+ * ------
+ *
+ * ### Boxing
+ * In general refers to wrapping a native object in an mrb_value.
+ * 
+ * ### Gift Wrapping
+ * A specific type of boxing, indicating that the object belongs
+ * to Ruby and should be free'd when the mrb_value is GC'ed.
+ * 
+ * ### Unboxing
+ * Retrieving the wrapped native object from an mrb_value.
+ *
+ * Customizing
+ * -----------
+ * 
+ * By default, all data types are assumed to be destructable by the `free`
+ * function. To use a custom destructor for your type, provide a CType::Definition
+ * to mruby-bindings with a `gc_template` member.
+ *
+ * Example
+ * ```
+ * CTypes.define("MyType") do
+ *   self.gc_template = "free_my_type(%{value});"
+ * end
+ * ```
  */
  #include "mruby_GLib.h"
 
@@ -12,9 +43,6 @@
 static void free_GTestConfig(mrb_state* mrb, void* ptr) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)ptr;
   if (box->belongs_to_ruby) {
-    /* TODO: free is the default. Should be changed if a type-specific
-     *       destructor is provided for this type.
-     */
     if (box->obj != NULL) {
       free(box->obj);
       box->obj = NULL;
@@ -73,9 +101,6 @@ mruby_unbox_GTestConfig(mrb_value boxed) {
 static void free_GTestLogBuffer(mrb_state* mrb, void* ptr) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)ptr;
   if (box->belongs_to_ruby) {
-    /* TODO: free is the default. Should be changed if a type-specific
-     *       destructor is provided for this type.
-     */
     if (box->obj != NULL) {
       free(box->obj);
       box->obj = NULL;
@@ -134,9 +159,6 @@ mruby_unbox_GTestLogBuffer(mrb_value boxed) {
 static void free_GTestLogMsg(mrb_state* mrb, void* ptr) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)ptr;
   if (box->belongs_to_ruby) {
-    /* TODO: free is the default. Should be changed if a type-specific
-     *       destructor is provided for this type.
-     */
     if (box->obj != NULL) {
       free(box->obj);
       box->obj = NULL;
@@ -195,9 +217,6 @@ mruby_unbox_GTestLogMsg(mrb_value boxed) {
 static void free_GTestCase(mrb_state* mrb, void* ptr) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)ptr;
   if (box->belongs_to_ruby) {
-    /* TODO: free is the default. Should be changed if a type-specific
-     *       destructor is provided for this type.
-     */
     if (box->obj != NULL) {
       free(box->obj);
       box->obj = NULL;
@@ -256,9 +275,6 @@ mruby_unbox_GTestCase(mrb_value boxed) {
 static void free_GTestSuite(mrb_state* mrb, void* ptr) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)ptr;
   if (box->belongs_to_ruby) {
-    /* TODO: free is the default. Should be changed if a type-specific
-     *       destructor is provided for this type.
-     */
     if (box->obj != NULL) {
       free(box->obj);
       box->obj = NULL;
@@ -317,9 +333,6 @@ mruby_unbox_GTestSuite(mrb_value boxed) {
 static void free__GArray(mrb_state* mrb, void* ptr) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)ptr;
   if (box->belongs_to_ruby) {
-    /* TODO: free is the default. Should be changed if a type-specific
-     *       destructor is provided for this type.
-     */
     if (box->obj != NULL) {
       free(box->obj);
       box->obj = NULL;
@@ -378,9 +391,6 @@ mruby_unbox__GArray(mrb_value boxed) {
 static void free__GAsyncQueue(mrb_state* mrb, void* ptr) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)ptr;
   if (box->belongs_to_ruby) {
-    /* TODO: free is the default. Should be changed if a type-specific
-     *       destructor is provided for this type.
-     */
     if (box->obj != NULL) {
       free(box->obj);
       box->obj = NULL;
@@ -439,9 +449,6 @@ mruby_unbox__GAsyncQueue(mrb_value boxed) {
 static void free__GBookmarkFile(mrb_state* mrb, void* ptr) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)ptr;
   if (box->belongs_to_ruby) {
-    /* TODO: free is the default. Should be changed if a type-specific
-     *       destructor is provided for this type.
-     */
     if (box->obj != NULL) {
       free(box->obj);
       box->obj = NULL;
@@ -500,9 +507,6 @@ mruby_unbox__GBookmarkFile(mrb_value boxed) {
 static void free__GByteArray(mrb_state* mrb, void* ptr) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)ptr;
   if (box->belongs_to_ruby) {
-    /* TODO: free is the default. Should be changed if a type-specific
-     *       destructor is provided for this type.
-     */
     if (box->obj != NULL) {
       free(box->obj);
       box->obj = NULL;
@@ -561,9 +565,6 @@ mruby_unbox__GByteArray(mrb_value boxed) {
 static void free__GBytes(mrb_state* mrb, void* ptr) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)ptr;
   if (box->belongs_to_ruby) {
-    /* TODO: free is the default. Should be changed if a type-specific
-     *       destructor is provided for this type.
-     */
     if (box->obj != NULL) {
       free(box->obj);
       box->obj = NULL;
@@ -622,9 +623,6 @@ mruby_unbox__GBytes(mrb_value boxed) {
 static void free__GChecksum(mrb_state* mrb, void* ptr) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)ptr;
   if (box->belongs_to_ruby) {
-    /* TODO: free is the default. Should be changed if a type-specific
-     *       destructor is provided for this type.
-     */
     if (box->obj != NULL) {
       free(box->obj);
       box->obj = NULL;
@@ -683,9 +681,6 @@ mruby_unbox__GChecksum(mrb_value boxed) {
 static void free__GCond(mrb_state* mrb, void* ptr) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)ptr;
   if (box->belongs_to_ruby) {
-    /* TODO: free is the default. Should be changed if a type-specific
-     *       destructor is provided for this type.
-     */
     if (box->obj != NULL) {
       free(box->obj);
       box->obj = NULL;
@@ -744,9 +739,6 @@ mruby_unbox__GCond(mrb_value boxed) {
 static void free__GData(mrb_state* mrb, void* ptr) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)ptr;
   if (box->belongs_to_ruby) {
-    /* TODO: free is the default. Should be changed if a type-specific
-     *       destructor is provided for this type.
-     */
     if (box->obj != NULL) {
       free(box->obj);
       box->obj = NULL;
@@ -805,9 +797,6 @@ mruby_unbox__GData(mrb_value boxed) {
 static void free__GDate(mrb_state* mrb, void* ptr) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)ptr;
   if (box->belongs_to_ruby) {
-    /* TODO: free is the default. Should be changed if a type-specific
-     *       destructor is provided for this type.
-     */
     if (box->obj != NULL) {
       free(box->obj);
       box->obj = NULL;
@@ -866,9 +855,6 @@ mruby_unbox__GDate(mrb_value boxed) {
 static void free__GDateTime(mrb_state* mrb, void* ptr) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)ptr;
   if (box->belongs_to_ruby) {
-    /* TODO: free is the default. Should be changed if a type-specific
-     *       destructor is provided for this type.
-     */
     if (box->obj != NULL) {
       free(box->obj);
       box->obj = NULL;
@@ -927,9 +913,6 @@ mruby_unbox__GDateTime(mrb_value boxed) {
 static void free__GDebugKey(mrb_state* mrb, void* ptr) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)ptr;
   if (box->belongs_to_ruby) {
-    /* TODO: free is the default. Should be changed if a type-specific
-     *       destructor is provided for this type.
-     */
     if (box->obj != NULL) {
       free(box->obj);
       box->obj = NULL;
@@ -988,9 +971,6 @@ mruby_unbox__GDebugKey(mrb_value boxed) {
 static void free__GDir(mrb_state* mrb, void* ptr) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)ptr;
   if (box->belongs_to_ruby) {
-    /* TODO: free is the default. Should be changed if a type-specific
-     *       destructor is provided for this type.
-     */
     if (box->obj != NULL) {
       free(box->obj);
       box->obj = NULL;
@@ -1049,9 +1029,6 @@ mruby_unbox__GDir(mrb_value boxed) {
 static void free__GError(mrb_state* mrb, void* ptr) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)ptr;
   if (box->belongs_to_ruby) {
-    /* TODO: free is the default. Should be changed if a type-specific
-     *       destructor is provided for this type.
-     */
     if (box->obj != NULL) {
       free(box->obj);
       box->obj = NULL;
@@ -1110,9 +1087,6 @@ mruby_unbox__GError(mrb_value boxed) {
 static void free__GHashTable(mrb_state* mrb, void* ptr) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)ptr;
   if (box->belongs_to_ruby) {
-    /* TODO: free is the default. Should be changed if a type-specific
-     *       destructor is provided for this type.
-     */
     if (box->obj != NULL) {
       free(box->obj);
       box->obj = NULL;
@@ -1171,9 +1145,6 @@ mruby_unbox__GHashTable(mrb_value boxed) {
 static void free__GHashTableIter(mrb_state* mrb, void* ptr) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)ptr;
   if (box->belongs_to_ruby) {
-    /* TODO: free is the default. Should be changed if a type-specific
-     *       destructor is provided for this type.
-     */
     if (box->obj != NULL) {
       free(box->obj);
       box->obj = NULL;
@@ -1232,9 +1203,6 @@ mruby_unbox__GHashTableIter(mrb_value boxed) {
 static void free__GHmac(mrb_state* mrb, void* ptr) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)ptr;
   if (box->belongs_to_ruby) {
-    /* TODO: free is the default. Should be changed if a type-specific
-     *       destructor is provided for this type.
-     */
     if (box->obj != NULL) {
       free(box->obj);
       box->obj = NULL;
@@ -1293,9 +1261,6 @@ mruby_unbox__GHmac(mrb_value boxed) {
 static void free__GHook(mrb_state* mrb, void* ptr) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)ptr;
   if (box->belongs_to_ruby) {
-    /* TODO: free is the default. Should be changed if a type-specific
-     *       destructor is provided for this type.
-     */
     if (box->obj != NULL) {
       free(box->obj);
       box->obj = NULL;
@@ -1354,9 +1319,6 @@ mruby_unbox__GHook(mrb_value boxed) {
 static void free__GHookList(mrb_state* mrb, void* ptr) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)ptr;
   if (box->belongs_to_ruby) {
-    /* TODO: free is the default. Should be changed if a type-specific
-     *       destructor is provided for this type.
-     */
     if (box->obj != NULL) {
       free(box->obj);
       box->obj = NULL;
@@ -1415,9 +1377,6 @@ mruby_unbox__GHookList(mrb_value boxed) {
 static void free__GIConv(mrb_state* mrb, void* ptr) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)ptr;
   if (box->belongs_to_ruby) {
-    /* TODO: free is the default. Should be changed if a type-specific
-     *       destructor is provided for this type.
-     */
     if (box->obj != NULL) {
       free(box->obj);
       box->obj = NULL;
@@ -1476,9 +1435,6 @@ mruby_unbox__GIConv(mrb_value boxed) {
 static void free__GIOChannel(mrb_state* mrb, void* ptr) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)ptr;
   if (box->belongs_to_ruby) {
-    /* TODO: free is the default. Should be changed if a type-specific
-     *       destructor is provided for this type.
-     */
     if (box->obj != NULL) {
       free(box->obj);
       box->obj = NULL;
@@ -1537,9 +1493,6 @@ mruby_unbox__GIOChannel(mrb_value boxed) {
 static void free__GIOFuncs(mrb_state* mrb, void* ptr) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)ptr;
   if (box->belongs_to_ruby) {
-    /* TODO: free is the default. Should be changed if a type-specific
-     *       destructor is provided for this type.
-     */
     if (box->obj != NULL) {
       free(box->obj);
       box->obj = NULL;
@@ -1598,9 +1551,6 @@ mruby_unbox__GIOFuncs(mrb_value boxed) {
 static void free__GKeyFile(mrb_state* mrb, void* ptr) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)ptr;
   if (box->belongs_to_ruby) {
-    /* TODO: free is the default. Should be changed if a type-specific
-     *       destructor is provided for this type.
-     */
     if (box->obj != NULL) {
       free(box->obj);
       box->obj = NULL;
@@ -1659,9 +1609,6 @@ mruby_unbox__GKeyFile(mrb_value boxed) {
 static void free__GList(mrb_state* mrb, void* ptr) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)ptr;
   if (box->belongs_to_ruby) {
-    /* TODO: free is the default. Should be changed if a type-specific
-     *       destructor is provided for this type.
-     */
     if (box->obj != NULL) {
       free(box->obj);
       box->obj = NULL;
@@ -1720,9 +1667,6 @@ mruby_unbox__GList(mrb_value boxed) {
 static void free__GMainContext(mrb_state* mrb, void* ptr) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)ptr;
   if (box->belongs_to_ruby) {
-    /* TODO: free is the default. Should be changed if a type-specific
-     *       destructor is provided for this type.
-     */
     if (box->obj != NULL) {
       free(box->obj);
       box->obj = NULL;
@@ -1781,9 +1725,6 @@ mruby_unbox__GMainContext(mrb_value boxed) {
 static void free__GMainLoop(mrb_state* mrb, void* ptr) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)ptr;
   if (box->belongs_to_ruby) {
-    /* TODO: free is the default. Should be changed if a type-specific
-     *       destructor is provided for this type.
-     */
     if (box->obj != NULL) {
       free(box->obj);
       box->obj = NULL;
@@ -1842,9 +1783,6 @@ mruby_unbox__GMainLoop(mrb_value boxed) {
 static void free__GMappedFile(mrb_state* mrb, void* ptr) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)ptr;
   if (box->belongs_to_ruby) {
-    /* TODO: free is the default. Should be changed if a type-specific
-     *       destructor is provided for this type.
-     */
     if (box->obj != NULL) {
       free(box->obj);
       box->obj = NULL;
@@ -1903,9 +1841,6 @@ mruby_unbox__GMappedFile(mrb_value boxed) {
 static void free__GMarkupParseContext(mrb_state* mrb, void* ptr) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)ptr;
   if (box->belongs_to_ruby) {
-    /* TODO: free is the default. Should be changed if a type-specific
-     *       destructor is provided for this type.
-     */
     if (box->obj != NULL) {
       free(box->obj);
       box->obj = NULL;
@@ -1964,9 +1899,6 @@ mruby_unbox__GMarkupParseContext(mrb_value boxed) {
 static void free__GMarkupParser(mrb_state* mrb, void* ptr) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)ptr;
   if (box->belongs_to_ruby) {
-    /* TODO: free is the default. Should be changed if a type-specific
-     *       destructor is provided for this type.
-     */
     if (box->obj != NULL) {
       free(box->obj);
       box->obj = NULL;
@@ -2025,9 +1957,6 @@ mruby_unbox__GMarkupParser(mrb_value boxed) {
 static void free__GMatchInfo(mrb_state* mrb, void* ptr) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)ptr;
   if (box->belongs_to_ruby) {
-    /* TODO: free is the default. Should be changed if a type-specific
-     *       destructor is provided for this type.
-     */
     if (box->obj != NULL) {
       free(box->obj);
       box->obj = NULL;
@@ -2086,9 +2015,6 @@ mruby_unbox__GMatchInfo(mrb_value boxed) {
 static void free__GMemVTable(mrb_state* mrb, void* ptr) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)ptr;
   if (box->belongs_to_ruby) {
-    /* TODO: free is the default. Should be changed if a type-specific
-     *       destructor is provided for this type.
-     */
     if (box->obj != NULL) {
       free(box->obj);
       box->obj = NULL;
@@ -2147,9 +2073,6 @@ mruby_unbox__GMemVTable(mrb_value boxed) {
 static void free__GNode(mrb_state* mrb, void* ptr) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)ptr;
   if (box->belongs_to_ruby) {
-    /* TODO: free is the default. Should be changed if a type-specific
-     *       destructor is provided for this type.
-     */
     if (box->obj != NULL) {
       free(box->obj);
       box->obj = NULL;
@@ -2208,9 +2131,6 @@ mruby_unbox__GNode(mrb_value boxed) {
 static void free__GOnce(mrb_state* mrb, void* ptr) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)ptr;
   if (box->belongs_to_ruby) {
-    /* TODO: free is the default. Should be changed if a type-specific
-     *       destructor is provided for this type.
-     */
     if (box->obj != NULL) {
       free(box->obj);
       box->obj = NULL;
@@ -2269,9 +2189,6 @@ mruby_unbox__GOnce(mrb_value boxed) {
 static void free__GOptionContext(mrb_state* mrb, void* ptr) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)ptr;
   if (box->belongs_to_ruby) {
-    /* TODO: free is the default. Should be changed if a type-specific
-     *       destructor is provided for this type.
-     */
     if (box->obj != NULL) {
       free(box->obj);
       box->obj = NULL;
@@ -2330,9 +2247,6 @@ mruby_unbox__GOptionContext(mrb_value boxed) {
 static void free__GOptionEntry(mrb_state* mrb, void* ptr) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)ptr;
   if (box->belongs_to_ruby) {
-    /* TODO: free is the default. Should be changed if a type-specific
-     *       destructor is provided for this type.
-     */
     if (box->obj != NULL) {
       free(box->obj);
       box->obj = NULL;
@@ -2391,9 +2305,6 @@ mruby_unbox__GOptionEntry(mrb_value boxed) {
 static void free__GOptionGroup(mrb_state* mrb, void* ptr) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)ptr;
   if (box->belongs_to_ruby) {
-    /* TODO: free is the default. Should be changed if a type-specific
-     *       destructor is provided for this type.
-     */
     if (box->obj != NULL) {
       free(box->obj);
       box->obj = NULL;
@@ -2452,9 +2363,6 @@ mruby_unbox__GOptionGroup(mrb_value boxed) {
 static void free__GPatternSpec(mrb_state* mrb, void* ptr) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)ptr;
   if (box->belongs_to_ruby) {
-    /* TODO: free is the default. Should be changed if a type-specific
-     *       destructor is provided for this type.
-     */
     if (box->obj != NULL) {
       free(box->obj);
       box->obj = NULL;
@@ -2513,9 +2421,6 @@ mruby_unbox__GPatternSpec(mrb_value boxed) {
 static void free__GPollFD(mrb_state* mrb, void* ptr) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)ptr;
   if (box->belongs_to_ruby) {
-    /* TODO: free is the default. Should be changed if a type-specific
-     *       destructor is provided for this type.
-     */
     if (box->obj != NULL) {
       free(box->obj);
       box->obj = NULL;
@@ -2574,9 +2479,6 @@ mruby_unbox__GPollFD(mrb_value boxed) {
 static void free__GPrivate(mrb_state* mrb, void* ptr) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)ptr;
   if (box->belongs_to_ruby) {
-    /* TODO: free is the default. Should be changed if a type-specific
-     *       destructor is provided for this type.
-     */
     if (box->obj != NULL) {
       free(box->obj);
       box->obj = NULL;
@@ -2635,9 +2537,6 @@ mruby_unbox__GPrivate(mrb_value boxed) {
 static void free__GPtrArray(mrb_state* mrb, void* ptr) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)ptr;
   if (box->belongs_to_ruby) {
-    /* TODO: free is the default. Should be changed if a type-specific
-     *       destructor is provided for this type.
-     */
     if (box->obj != NULL) {
       free(box->obj);
       box->obj = NULL;
@@ -2696,9 +2595,6 @@ mruby_unbox__GPtrArray(mrb_value boxed) {
 static void free__GQueue(mrb_state* mrb, void* ptr) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)ptr;
   if (box->belongs_to_ruby) {
-    /* TODO: free is the default. Should be changed if a type-specific
-     *       destructor is provided for this type.
-     */
     if (box->obj != NULL) {
       free(box->obj);
       box->obj = NULL;
@@ -2757,9 +2653,6 @@ mruby_unbox__GQueue(mrb_value boxed) {
 static void free__GRWLock(mrb_state* mrb, void* ptr) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)ptr;
   if (box->belongs_to_ruby) {
-    /* TODO: free is the default. Should be changed if a type-specific
-     *       destructor is provided for this type.
-     */
     if (box->obj != NULL) {
       free(box->obj);
       box->obj = NULL;
@@ -2818,9 +2711,6 @@ mruby_unbox__GRWLock(mrb_value boxed) {
 static void free__GRand(mrb_state* mrb, void* ptr) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)ptr;
   if (box->belongs_to_ruby) {
-    /* TODO: free is the default. Should be changed if a type-specific
-     *       destructor is provided for this type.
-     */
     if (box->obj != NULL) {
       free(box->obj);
       box->obj = NULL;
@@ -2879,9 +2769,6 @@ mruby_unbox__GRand(mrb_value boxed) {
 static void free__GRecMutex(mrb_state* mrb, void* ptr) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)ptr;
   if (box->belongs_to_ruby) {
-    /* TODO: free is the default. Should be changed if a type-specific
-     *       destructor is provided for this type.
-     */
     if (box->obj != NULL) {
       free(box->obj);
       box->obj = NULL;
@@ -2940,9 +2827,6 @@ mruby_unbox__GRecMutex(mrb_value boxed) {
 static void free__GRegex(mrb_state* mrb, void* ptr) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)ptr;
   if (box->belongs_to_ruby) {
-    /* TODO: free is the default. Should be changed if a type-specific
-     *       destructor is provided for this type.
-     */
     if (box->obj != NULL) {
       free(box->obj);
       box->obj = NULL;
@@ -3001,9 +2885,6 @@ mruby_unbox__GRegex(mrb_value boxed) {
 static void free__GSList(mrb_state* mrb, void* ptr) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)ptr;
   if (box->belongs_to_ruby) {
-    /* TODO: free is the default. Should be changed if a type-specific
-     *       destructor is provided for this type.
-     */
     if (box->obj != NULL) {
       free(box->obj);
       box->obj = NULL;
@@ -3062,9 +2943,6 @@ mruby_unbox__GSList(mrb_value boxed) {
 static void free__GScanner(mrb_state* mrb, void* ptr) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)ptr;
   if (box->belongs_to_ruby) {
-    /* TODO: free is the default. Should be changed if a type-specific
-     *       destructor is provided for this type.
-     */
     if (box->obj != NULL) {
       free(box->obj);
       box->obj = NULL;
@@ -3123,9 +3001,6 @@ mruby_unbox__GScanner(mrb_value boxed) {
 static void free__GScannerConfig(mrb_state* mrb, void* ptr) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)ptr;
   if (box->belongs_to_ruby) {
-    /* TODO: free is the default. Should be changed if a type-specific
-     *       destructor is provided for this type.
-     */
     if (box->obj != NULL) {
       free(box->obj);
       box->obj = NULL;
@@ -3184,9 +3059,6 @@ mruby_unbox__GScannerConfig(mrb_value boxed) {
 static void free__GSequence(mrb_state* mrb, void* ptr) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)ptr;
   if (box->belongs_to_ruby) {
-    /* TODO: free is the default. Should be changed if a type-specific
-     *       destructor is provided for this type.
-     */
     if (box->obj != NULL) {
       free(box->obj);
       box->obj = NULL;
@@ -3245,9 +3117,6 @@ mruby_unbox__GSequence(mrb_value boxed) {
 static void free__GSequenceNode(mrb_state* mrb, void* ptr) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)ptr;
   if (box->belongs_to_ruby) {
-    /* TODO: free is the default. Should be changed if a type-specific
-     *       destructor is provided for this type.
-     */
     if (box->obj != NULL) {
       free(box->obj);
       box->obj = NULL;
@@ -3306,9 +3175,6 @@ mruby_unbox__GSequenceNode(mrb_value boxed) {
 static void free__GSource(mrb_state* mrb, void* ptr) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)ptr;
   if (box->belongs_to_ruby) {
-    /* TODO: free is the default. Should be changed if a type-specific
-     *       destructor is provided for this type.
-     */
     if (box->obj != NULL) {
       free(box->obj);
       box->obj = NULL;
@@ -3367,9 +3233,6 @@ mruby_unbox__GSource(mrb_value boxed) {
 static void free__GSourceCallbackFuncs(mrb_state* mrb, void* ptr) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)ptr;
   if (box->belongs_to_ruby) {
-    /* TODO: free is the default. Should be changed if a type-specific
-     *       destructor is provided for this type.
-     */
     if (box->obj != NULL) {
       free(box->obj);
       box->obj = NULL;
@@ -3428,9 +3291,6 @@ mruby_unbox__GSourceCallbackFuncs(mrb_value boxed) {
 static void free__GSourceFuncs(mrb_state* mrb, void* ptr) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)ptr;
   if (box->belongs_to_ruby) {
-    /* TODO: free is the default. Should be changed if a type-specific
-     *       destructor is provided for this type.
-     */
     if (box->obj != NULL) {
       free(box->obj);
       box->obj = NULL;
@@ -3489,9 +3349,6 @@ mruby_unbox__GSourceFuncs(mrb_value boxed) {
 static void free__GSourcePrivate(mrb_state* mrb, void* ptr) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)ptr;
   if (box->belongs_to_ruby) {
-    /* TODO: free is the default. Should be changed if a type-specific
-     *       destructor is provided for this type.
-     */
     if (box->obj != NULL) {
       free(box->obj);
       box->obj = NULL;
@@ -3550,9 +3407,6 @@ mruby_unbox__GSourcePrivate(mrb_value boxed) {
 static void free__GString(mrb_state* mrb, void* ptr) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)ptr;
   if (box->belongs_to_ruby) {
-    /* TODO: free is the default. Should be changed if a type-specific
-     *       destructor is provided for this type.
-     */
     if (box->obj != NULL) {
       free(box->obj);
       box->obj = NULL;
@@ -3611,9 +3465,6 @@ mruby_unbox__GString(mrb_value boxed) {
 static void free__GStringChunk(mrb_state* mrb, void* ptr) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)ptr;
   if (box->belongs_to_ruby) {
-    /* TODO: free is the default. Should be changed if a type-specific
-     *       destructor is provided for this type.
-     */
     if (box->obj != NULL) {
       free(box->obj);
       box->obj = NULL;
@@ -3672,9 +3523,6 @@ mruby_unbox__GStringChunk(mrb_value boxed) {
 static void free__GThread(mrb_state* mrb, void* ptr) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)ptr;
   if (box->belongs_to_ruby) {
-    /* TODO: free is the default. Should be changed if a type-specific
-     *       destructor is provided for this type.
-     */
     if (box->obj != NULL) {
       free(box->obj);
       box->obj = NULL;
@@ -3733,9 +3581,6 @@ mruby_unbox__GThread(mrb_value boxed) {
 static void free__GThreadPool(mrb_state* mrb, void* ptr) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)ptr;
   if (box->belongs_to_ruby) {
-    /* TODO: free is the default. Should be changed if a type-specific
-     *       destructor is provided for this type.
-     */
     if (box->obj != NULL) {
       free(box->obj);
       box->obj = NULL;
@@ -3794,9 +3639,6 @@ mruby_unbox__GThreadPool(mrb_value boxed) {
 static void free__GTimeVal(mrb_state* mrb, void* ptr) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)ptr;
   if (box->belongs_to_ruby) {
-    /* TODO: free is the default. Should be changed if a type-specific
-     *       destructor is provided for this type.
-     */
     if (box->obj != NULL) {
       free(box->obj);
       box->obj = NULL;
@@ -3855,9 +3697,6 @@ mruby_unbox__GTimeVal(mrb_value boxed) {
 static void free__GTimeZone(mrb_state* mrb, void* ptr) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)ptr;
   if (box->belongs_to_ruby) {
-    /* TODO: free is the default. Should be changed if a type-specific
-     *       destructor is provided for this type.
-     */
     if (box->obj != NULL) {
       free(box->obj);
       box->obj = NULL;
@@ -3916,9 +3755,6 @@ mruby_unbox__GTimeZone(mrb_value boxed) {
 static void free__GTimer(mrb_state* mrb, void* ptr) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)ptr;
   if (box->belongs_to_ruby) {
-    /* TODO: free is the default. Should be changed if a type-specific
-     *       destructor is provided for this type.
-     */
     if (box->obj != NULL) {
       free(box->obj);
       box->obj = NULL;
@@ -3977,9 +3813,6 @@ mruby_unbox__GTimer(mrb_value boxed) {
 static void free__GTrashStack(mrb_state* mrb, void* ptr) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)ptr;
   if (box->belongs_to_ruby) {
-    /* TODO: free is the default. Should be changed if a type-specific
-     *       destructor is provided for this type.
-     */
     if (box->obj != NULL) {
       free(box->obj);
       box->obj = NULL;
@@ -4038,9 +3871,6 @@ mruby_unbox__GTrashStack(mrb_value boxed) {
 static void free__GTree(mrb_state* mrb, void* ptr) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)ptr;
   if (box->belongs_to_ruby) {
-    /* TODO: free is the default. Should be changed if a type-specific
-     *       destructor is provided for this type.
-     */
     if (box->obj != NULL) {
       free(box->obj);
       box->obj = NULL;
@@ -4099,9 +3929,6 @@ mruby_unbox__GTree(mrb_value boxed) {
 static void free__GVariant(mrb_state* mrb, void* ptr) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)ptr;
   if (box->belongs_to_ruby) {
-    /* TODO: free is the default. Should be changed if a type-specific
-     *       destructor is provided for this type.
-     */
     if (box->obj != NULL) {
       free(box->obj);
       box->obj = NULL;
@@ -4160,9 +3987,6 @@ mruby_unbox__GVariant(mrb_value boxed) {
 static void free__GVariantBuilder(mrb_state* mrb, void* ptr) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)ptr;
   if (box->belongs_to_ruby) {
-    /* TODO: free is the default. Should be changed if a type-specific
-     *       destructor is provided for this type.
-     */
     if (box->obj != NULL) {
       free(box->obj);
       box->obj = NULL;
@@ -4221,9 +4045,6 @@ mruby_unbox__GVariantBuilder(mrb_value boxed) {
 static void free__GVariantDict(mrb_state* mrb, void* ptr) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)ptr;
   if (box->belongs_to_ruby) {
-    /* TODO: free is the default. Should be changed if a type-specific
-     *       destructor is provided for this type.
-     */
     if (box->obj != NULL) {
       free(box->obj);
       box->obj = NULL;
@@ -4282,9 +4103,6 @@ mruby_unbox__GVariantDict(mrb_value boxed) {
 static void free__GVariantIter(mrb_state* mrb, void* ptr) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)ptr;
   if (box->belongs_to_ruby) {
-    /* TODO: free is the default. Should be changed if a type-specific
-     *       destructor is provided for this type.
-     */
     if (box->obj != NULL) {
       free(box->obj);
       box->obj = NULL;
@@ -4343,9 +4161,6 @@ mruby_unbox__GVariantIter(mrb_value boxed) {
 static void free__GVariantType(mrb_state* mrb, void* ptr) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)ptr;
   if (box->belongs_to_ruby) {
-    /* TODO: free is the default. Should be changed if a type-specific
-     *       destructor is provided for this type.
-     */
     if (box->obj != NULL) {
       free(box->obj);
       box->obj = NULL;
