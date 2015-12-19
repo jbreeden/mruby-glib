@@ -20,7 +20,6 @@ task :bindings do
       --input mruby_bindings_config/declarations.json
       --gem mruby-glib
       --module GLib
-      --skip macros
       --skip mrbgem.rake
       --force
 EOS
