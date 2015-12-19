@@ -3,10 +3,6 @@
  * Defined in file garray.h @ line 37
  */
 
-/*
- * TODO: INCLUDES
- */
-
 #include "mruby_GLib.h"
 
 #if BIND_GArray_TYPE
@@ -18,7 +14,7 @@
 #if BIND_GArray_INITIALIZE
 mrb_value
 mrb_GLib_GArray_initialize(mrb_state* mrb, mrb_value self) {
-  struct _GArray* native_object = (struct _GArray*)malloc(sizeof(struct _GArray));
+  struct _GArray* native_object = (struct _GArray*)calloc(1, sizeof(struct _GArray));
   mruby_gift_struct _GArray_data_ptr(self, native_object);
   return self;
 }
@@ -67,13 +63,13 @@ mrb_GLib_GArray_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GArray_get_data(mrb_state* mrb, mrb_value self) {
-  struct _GArray * native_self = mruby_unbox_struct _GArray(self);
+  struct _GArray * native_self = mruby_unbox__GArray(self);
 
-  gchar * native_field = native_self->data;
+  gchar * native_data = native_self->data;
 
-  mrb_value ruby_field = mrb_str_new_cstr(mrb, native_field);
+  mrb_value data = mrb_str_new_cstr(mrb, native_data);
 
-  return ruby_field;
+  return data;
 }
 #endif
 
@@ -85,27 +81,17 @@ mrb_GLib_GArray_get_data(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GArray_set_data(mrb_state* mrb, mrb_value self) {
-  struct _GArray * native_self = mruby_unbox_struct _GArray(self);
-  mrb_value ruby_field;
+  struct _GArray * native_self = mruby_unbox__GArray(self);
+  char * native_data = NULL;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "z!", &native_data);
 
-  /* type checking */
-  if (!mrb_obj_is_kind_of(mrb, ruby_field, mrb->string_class)) {
-    mrb_raise(mrb, E_TYPE_ERROR, "String expected");
-    return mrb_nil_value();
-  }
+  native_self->data = native_data;
+  
 
-  /* WARNING: Allocating new memory to create 'char *' from 'const char *'.
-   *          Please verify that this memory is cleaned up correctly.
-   *
-   *          Has this been verified? [No]
-   */
-  char * native_field = strdup(ruby_field);
-
-  native_self->data = native_field;
-
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -116,13 +102,13 @@ mrb_GLib_GArray_set_data(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GArray_get_len(mrb_state* mrb, mrb_value self) {
-  struct _GArray * native_self = mruby_unbox_struct _GArray(self);
+  struct _GArray * native_self = mruby_unbox__GArray(self);
 
-  guint native_field = native_self->len;
+  guint native_len = native_self->len;
 
-  mrb_value ruby_field = mrb_fixnum_value(native_field);
+  mrb_value len = mrb_fixnum_value(native_len);
 
-  return ruby_field;
+  return len;
 }
 #endif
 
@@ -134,22 +120,17 @@ mrb_GLib_GArray_get_len(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GArray_set_len(mrb_state* mrb, mrb_value self) {
-  struct _GArray * native_self = mruby_unbox_struct _GArray(self);
-  mrb_value ruby_field;
+  struct _GArray * native_self = mruby_unbox__GArray(self);
+  mrb_int native_len;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "i", &native_len);
 
-  /* type checking */
-  if (!mrb_obj_is_kind_of(mrb, ruby_field, mrb->fixnum_class)) {
-    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
-    return mrb_nil_value();
-  }
+  native_self->len = native_len;
+  
 
-  unsigned int native_field = (unsigned int)ruby_field;
-
-  native_self->len = native_field;
-
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 

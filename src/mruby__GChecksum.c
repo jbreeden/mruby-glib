@@ -3,10 +3,6 @@
  * Defined in file gchecksum.h @ line 62
  */
 
-/*
- * TODO: INCLUDES
- */
-
 #include "mruby_GLib.h"
 
 #if BIND_GChecksum_TYPE
@@ -18,7 +14,7 @@
 #if BIND_GChecksum_INITIALIZE
 mrb_value
 mrb_GLib_GChecksum_initialize(mrb_state* mrb, mrb_value self) {
-  struct _GChecksum* native_object = (struct _GChecksum*)malloc(sizeof(struct _GChecksum));
+  struct _GChecksum* native_object = (struct _GChecksum*)calloc(1, sizeof(struct _GChecksum));
   mruby_gift_struct _GChecksum_data_ptr(self, native_object);
   return self;
 }

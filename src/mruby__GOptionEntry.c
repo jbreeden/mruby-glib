@@ -3,10 +3,6 @@
  * Defined in file goption.h @ line 52
  */
 
-/*
- * TODO: INCLUDES
- */
-
 #include "mruby_GLib.h"
 
 #if BIND_GOptionEntry_TYPE
@@ -18,7 +14,7 @@
 #if BIND_GOptionEntry_INITIALIZE
 mrb_value
 mrb_GLib_GOptionEntry_initialize(mrb_state* mrb, mrb_value self) {
-  struct _GOptionEntry* native_object = (struct _GOptionEntry*)malloc(sizeof(struct _GOptionEntry));
+  struct _GOptionEntry* native_object = (struct _GOptionEntry*)calloc(1, sizeof(struct _GOptionEntry));
   mruby_gift_struct _GOptionEntry_data_ptr(self, native_object);
   return self;
 }
@@ -67,13 +63,13 @@ mrb_GLib_GOptionEntry_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GOptionEntry_get_long_name(mrb_state* mrb, mrb_value self) {
-  struct _GOptionEntry * native_self = mruby_unbox_struct _GOptionEntry(self);
+  struct _GOptionEntry * native_self = mruby_unbox__GOptionEntry(self);
 
-  const gchar * native_field = native_self->long_name;
+  const gchar * native_long_name = native_self->long_name;
 
-  mrb_value ruby_field = mrb_str_new_cstr(mrb, native_field);
+  mrb_value long_name = mrb_str_new_cstr(mrb, native_long_name);
 
-  return ruby_field;
+  return long_name;
 }
 #endif
 
@@ -85,22 +81,17 @@ mrb_GLib_GOptionEntry_get_long_name(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GOptionEntry_set_long_name(mrb_state* mrb, mrb_value self) {
-  struct _GOptionEntry * native_self = mruby_unbox_struct _GOptionEntry(self);
-  mrb_value ruby_field;
+  struct _GOptionEntry * native_self = mruby_unbox__GOptionEntry(self);
+  char * native_long_name = NULL;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "z!", &native_long_name);
 
-  /* type checking */
-  if (!mrb_obj_is_kind_of(mrb, ruby_field, mrb->string_class)) {
-    mrb_raise(mrb, E_TYPE_ERROR, "String expected");
-    return mrb_nil_value();
-  }
+  native_self->long_name = native_long_name;
+  
 
-  const char * native_field = mrb_string_value_cstr(mrb, &ruby_field);
-
-  native_self->long_name = native_field;
-
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -111,13 +102,13 @@ mrb_GLib_GOptionEntry_set_long_name(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GOptionEntry_get_short_name(mrb_state* mrb, mrb_value self) {
-  struct _GOptionEntry * native_self = mruby_unbox_struct _GOptionEntry(self);
+  struct _GOptionEntry * native_self = mruby_unbox__GOptionEntry(self);
 
-  gchar native_field = native_self->short_name;
+  gchar native_short_name = native_self->short_name;
 
-  mrb_value ruby_field = mrb_fixnum_value(native_field);
+  mrb_value short_name = mrb_fixnum_value(native_short_name);
 
-  return ruby_field;
+  return short_name;
 }
 #endif
 
@@ -129,22 +120,17 @@ mrb_GLib_GOptionEntry_get_short_name(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GOptionEntry_set_short_name(mrb_state* mrb, mrb_value self) {
-  struct _GOptionEntry * native_self = mruby_unbox_struct _GOptionEntry(self);
-  mrb_value ruby_field;
+  struct _GOptionEntry * native_self = mruby_unbox__GOptionEntry(self);
+  mrb_int native_short_name;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "i", &native_short_name);
 
-  /* type checking */
-  if (!mrb_obj_is_kind_of(mrb, ruby_field, mrb->fixnum_class)) {
-    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
-    return mrb_nil_value();
-  }
+  native_self->short_name = native_short_name;
+  
 
-  char native_field = (char)ruby_field;
-
-  native_self->short_name = native_field;
-
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -155,13 +141,13 @@ mrb_GLib_GOptionEntry_set_short_name(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GOptionEntry_get_flags(mrb_state* mrb, mrb_value self) {
-  struct _GOptionEntry * native_self = mruby_unbox_struct _GOptionEntry(self);
+  struct _GOptionEntry * native_self = mruby_unbox__GOptionEntry(self);
 
-  gint native_field = native_self->flags;
+  gint native_flags = native_self->flags;
 
-  mrb_value ruby_field = mrb_fixnum_value(native_field);
+  mrb_value flags = mrb_fixnum_value(native_flags);
 
-  return ruby_field;
+  return flags;
 }
 #endif
 
@@ -173,22 +159,17 @@ mrb_GLib_GOptionEntry_get_flags(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GOptionEntry_set_flags(mrb_state* mrb, mrb_value self) {
-  struct _GOptionEntry * native_self = mruby_unbox_struct _GOptionEntry(self);
-  mrb_value ruby_field;
+  struct _GOptionEntry * native_self = mruby_unbox__GOptionEntry(self);
+  mrb_int native_flags;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "i", &native_flags);
 
-  /* type checking */
-  if (!mrb_obj_is_kind_of(mrb, ruby_field, mrb->fixnum_class)) {
-    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
-    return mrb_nil_value();
-  }
+  native_self->flags = native_flags;
+  
 
-  int native_field = (int)ruby_field;
-
-  native_self->flags = native_field;
-
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -199,13 +180,13 @@ mrb_GLib_GOptionEntry_set_flags(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GOptionEntry_get_arg(mrb_state* mrb, mrb_value self) {
-  struct _GOptionEntry * native_self = mruby_unbox_struct _GOptionEntry(self);
+  struct _GOptionEntry * native_self = mruby_unbox__GOptionEntry(self);
 
-  GOptionArg native_field = native_self->arg;
+  GOptionArg native_arg = native_self->arg;
 
-  mrb_value ruby_field = mrb_fixnum_value(native_field);
+  mrb_value arg = mrb_fixnum_value(native_arg);
 
-  return ruby_field;
+  return arg;
 }
 #endif
 
@@ -217,22 +198,17 @@ mrb_GLib_GOptionEntry_get_arg(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GOptionEntry_set_arg(mrb_state* mrb, mrb_value self) {
-  struct _GOptionEntry * native_self = mruby_unbox_struct _GOptionEntry(self);
-  mrb_value ruby_field;
+  struct _GOptionEntry * native_self = mruby_unbox__GOptionEntry(self);
+  mrb_int native_arg;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "i", &native_arg);
 
-  /* type checking */
-  if (!mrb_obj_is_kind_of(mrb, ruby_field, mrb->fixnum_class)) {
-    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
-    return mrb_nil_value();
-  }
+  native_self->arg = native_arg;
+  
 
-  int native_field = (int)ruby_field;
-
-  native_self->arg = native_field;
-
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -243,13 +219,13 @@ mrb_GLib_GOptionEntry_set_arg(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GOptionEntry_get_arg_data(mrb_state* mrb, mrb_value self) {
-  struct _GOptionEntry * native_self = mruby_unbox_struct _GOptionEntry(self);
+  struct _GOptionEntry * native_self = mruby_unbox__GOptionEntry(self);
 
-  gpointer native_field = native_self->arg_data;
+  gpointer native_arg_data = native_self->arg_data;
 
-  mrb_value ruby_field = TODO_mruby_box_gpointer(mrb, native_field);
+  mrb_value arg_data = TODO_mruby_box_gpointer(mrb, native_arg_data);
 
-  return ruby_field;
+  return arg_data;
 }
 #endif
 
@@ -261,19 +237,22 @@ mrb_GLib_GOptionEntry_get_arg_data(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GOptionEntry_set_arg_data(mrb_state* mrb, mrb_value self) {
-  struct _GOptionEntry * native_self = mruby_unbox_struct _GOptionEntry(self);
-  mrb_value ruby_field;
+  struct _GOptionEntry * native_self = mruby_unbox__GOptionEntry(self);
+  mrb_value arg_data;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "o", &arg_data);
 
   /* type checking */
-  TODO_type_check_gpointer(ruby_field);
+  TODO_type_check_gpointer(arg_data);
 
-  gpointer native_field = TODO_mruby_unbox_gpointer(ruby_field);
+  gpointer native_arg_data = TODO_mruby_unbox_gpointer(arg_data);
 
-  native_self->arg_data = native_field;
+  native_self->arg_data = native_arg_data;
+  
 
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -284,13 +263,13 @@ mrb_GLib_GOptionEntry_set_arg_data(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GOptionEntry_get_description(mrb_state* mrb, mrb_value self) {
-  struct _GOptionEntry * native_self = mruby_unbox_struct _GOptionEntry(self);
+  struct _GOptionEntry * native_self = mruby_unbox__GOptionEntry(self);
 
-  const gchar * native_field = native_self->description;
+  const gchar * native_description = native_self->description;
 
-  mrb_value ruby_field = mrb_str_new_cstr(mrb, native_field);
+  mrb_value description = mrb_str_new_cstr(mrb, native_description);
 
-  return ruby_field;
+  return description;
 }
 #endif
 
@@ -302,22 +281,17 @@ mrb_GLib_GOptionEntry_get_description(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GOptionEntry_set_description(mrb_state* mrb, mrb_value self) {
-  struct _GOptionEntry * native_self = mruby_unbox_struct _GOptionEntry(self);
-  mrb_value ruby_field;
+  struct _GOptionEntry * native_self = mruby_unbox__GOptionEntry(self);
+  char * native_description = NULL;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "z!", &native_description);
 
-  /* type checking */
-  if (!mrb_obj_is_kind_of(mrb, ruby_field, mrb->string_class)) {
-    mrb_raise(mrb, E_TYPE_ERROR, "String expected");
-    return mrb_nil_value();
-  }
+  native_self->description = native_description;
+  
 
-  const char * native_field = mrb_string_value_cstr(mrb, &ruby_field);
-
-  native_self->description = native_field;
-
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -328,13 +302,13 @@ mrb_GLib_GOptionEntry_set_description(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GOptionEntry_get_arg_description(mrb_state* mrb, mrb_value self) {
-  struct _GOptionEntry * native_self = mruby_unbox_struct _GOptionEntry(self);
+  struct _GOptionEntry * native_self = mruby_unbox__GOptionEntry(self);
 
-  const gchar * native_field = native_self->arg_description;
+  const gchar * native_arg_description = native_self->arg_description;
 
-  mrb_value ruby_field = mrb_str_new_cstr(mrb, native_field);
+  mrb_value arg_description = mrb_str_new_cstr(mrb, native_arg_description);
 
-  return ruby_field;
+  return arg_description;
 }
 #endif
 
@@ -346,22 +320,17 @@ mrb_GLib_GOptionEntry_get_arg_description(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GOptionEntry_set_arg_description(mrb_state* mrb, mrb_value self) {
-  struct _GOptionEntry * native_self = mruby_unbox_struct _GOptionEntry(self);
-  mrb_value ruby_field;
+  struct _GOptionEntry * native_self = mruby_unbox__GOptionEntry(self);
+  char * native_arg_description = NULL;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "z!", &native_arg_description);
 
-  /* type checking */
-  if (!mrb_obj_is_kind_of(mrb, ruby_field, mrb->string_class)) {
-    mrb_raise(mrb, E_TYPE_ERROR, "String expected");
-    return mrb_nil_value();
-  }
+  native_self->arg_description = native_arg_description;
+  
 
-  const char * native_field = mrb_string_value_cstr(mrb, &ruby_field);
-
-  native_self->arg_description = native_field;
-
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 

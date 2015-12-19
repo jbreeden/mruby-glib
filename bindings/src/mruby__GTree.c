@@ -3,10 +3,6 @@
  * Defined in file gtree.h @ line 36
  */
 
-/*
- * TODO: INCLUDES
- */
-
 #include "mruby_GLib.h"
 
 #if BIND_GTree_TYPE
@@ -18,7 +14,7 @@
 #if BIND_GTree_INITIALIZE
 mrb_value
 mrb_GLib_GTree_initialize(mrb_state* mrb, mrb_value self) {
-  struct _GTree* native_object = (struct _GTree*)malloc(sizeof(struct _GTree));
+  struct _GTree* native_object = (struct _GTree*)calloc(1, sizeof(struct _GTree));
   mruby_gift_struct _GTree_data_ptr(self, native_object);
   return self;
 }

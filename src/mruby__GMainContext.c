@@ -3,10 +3,6 @@
  * Defined in file gmain.h @ line 48
  */
 
-/*
- * TODO: INCLUDES
- */
-
 #include "mruby_GLib.h"
 
 #if BIND_GMainContext_TYPE
@@ -18,7 +14,7 @@
 #if BIND_GMainContext_INITIALIZE
 mrb_value
 mrb_GLib_GMainContext_initialize(mrb_state* mrb, mrb_value self) {
-  struct _GMainContext* native_object = (struct _GMainContext*)malloc(sizeof(struct _GMainContext));
+  struct _GMainContext* native_object = (struct _GMainContext*)calloc(1, sizeof(struct _GMainContext));
   mruby_gift_struct _GMainContext_data_ptr(self, native_object);
   return self;
 }

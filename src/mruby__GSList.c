@@ -3,10 +3,6 @@
  * Defined in file gslist.h @ line 37
  */
 
-/*
- * TODO: INCLUDES
- */
-
 #include "mruby_GLib.h"
 
 #if BIND_GSList_TYPE
@@ -18,7 +14,7 @@
 #if BIND_GSList_INITIALIZE
 mrb_value
 mrb_GLib_GSList_initialize(mrb_state* mrb, mrb_value self) {
-  struct _GSList* native_object = (struct _GSList*)malloc(sizeof(struct _GSList));
+  struct _GSList* native_object = (struct _GSList*)calloc(1, sizeof(struct _GSList));
   mruby_gift_struct _GSList_data_ptr(self, native_object);
   return self;
 }
@@ -67,13 +63,13 @@ mrb_GLib_GSList_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GSList_get_data(mrb_state* mrb, mrb_value self) {
-  struct _GSList * native_self = mruby_unbox_struct _GSList(self);
+  struct _GSList * native_self = mruby_unbox__GSList(self);
 
-  gpointer native_field = native_self->data;
+  gpointer native_data = native_self->data;
 
-  mrb_value ruby_field = TODO_mruby_box_gpointer(mrb, native_field);
+  mrb_value data = TODO_mruby_box_gpointer(mrb, native_data);
 
-  return ruby_field;
+  return data;
 }
 #endif
 
@@ -85,19 +81,22 @@ mrb_GLib_GSList_get_data(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GSList_set_data(mrb_state* mrb, mrb_value self) {
-  struct _GSList * native_self = mruby_unbox_struct _GSList(self);
-  mrb_value ruby_field;
+  struct _GSList * native_self = mruby_unbox__GSList(self);
+  mrb_value data;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "o", &data);
 
   /* type checking */
-  TODO_type_check_gpointer(ruby_field);
+  TODO_type_check_gpointer(data);
 
-  gpointer native_field = TODO_mruby_unbox_gpointer(ruby_field);
+  gpointer native_data = TODO_mruby_unbox_gpointer(data);
 
-  native_self->data = native_field;
+  native_self->data = native_data;
+  
 
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -108,13 +107,13 @@ mrb_GLib_GSList_set_data(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GSList_get_next(mrb_state* mrb, mrb_value self) {
-  struct _GSList * native_self = mruby_unbox_struct _GSList(self);
+  struct _GSList * native_self = mruby_unbox__GSList(self);
 
-  GSList * native_field = native_self->next;
+  GSList * native_next = native_self->next;
 
-  mrb_value ruby_field = (native_field == NULL ? mrb_nil_value() : mruby_box__GSList(mrb, native_field));
+  mrb_value next = (native_next == NULL ? mrb_nil_value() : mruby_box__GSList(mrb, native_next));
 
-  return ruby_field;
+  return next;
 }
 #endif
 
@@ -126,22 +125,25 @@ mrb_GLib_GSList_get_next(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GSList_set_next(mrb_state* mrb, mrb_value self) {
-  struct _GSList * native_self = mruby_unbox_struct _GSList(self);
-  mrb_value ruby_field;
+  struct _GSList * native_self = mruby_unbox__GSList(self);
+  mrb_value next;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "o", &next);
 
   /* type checking */
-  if (!mrb_obj_is_kind_of(mrb, ruby_field, GSList_class(mrb))) {
+  if (!mrb_obj_is_kind_of(mrb, next, GSList_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GSList expected");
     return mrb_nil_value();
   }
 
-  GSList * native_field = (mrb_nil_p(ruby_field) ? NULL : mruby_unbox__GSList(ruby_field));
+  GSList * native_next = (mrb_nil_p(next) ? NULL : mruby_unbox__GSList(next));
 
-  native_self->next = native_field;
+  native_self->next = native_next;
+  
 
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 

@@ -3,10 +3,6 @@
  * Defined in file gdataset.h @ line 36
  */
 
-/*
- * TODO: INCLUDES
- */
-
 #include "mruby_GLib.h"
 
 #if BIND_GData_TYPE
@@ -18,7 +14,7 @@
 #if BIND_GData_INITIALIZE
 mrb_value
 mrb_GLib_GData_initialize(mrb_state* mrb, mrb_value self) {
-  struct _GData* native_object = (struct _GData*)malloc(sizeof(struct _GData));
+  struct _GData* native_object = (struct _GData*)calloc(1, sizeof(struct _GData));
   mruby_gift_struct _GData_data_ptr(self, native_object);
   return self;
 }

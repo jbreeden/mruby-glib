@@ -3,10 +3,6 @@
  * Defined in file gscanner.h @ line 37
  */
 
-/*
- * TODO: INCLUDES
- */
-
 #include "mruby_GLib.h"
 
 #if BIND_GScanner_TYPE
@@ -18,7 +14,7 @@
 #if BIND_GScanner_INITIALIZE
 mrb_value
 mrb_GLib_GScanner_initialize(mrb_state* mrb, mrb_value self) {
-  struct _GScanner* native_object = (struct _GScanner*)malloc(sizeof(struct _GScanner));
+  struct _GScanner* native_object = (struct _GScanner*)calloc(1, sizeof(struct _GScanner));
   mruby_gift_struct _GScanner_data_ptr(self, native_object);
   return self;
 }
@@ -67,13 +63,13 @@ mrb_GLib_GScanner_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GScanner_get_user_data(mrb_state* mrb, mrb_value self) {
-  struct _GScanner * native_self = mruby_unbox_struct _GScanner(self);
+  struct _GScanner * native_self = mruby_unbox__GScanner(self);
 
-  gpointer native_field = native_self->user_data;
+  gpointer native_user_data = native_self->user_data;
 
-  mrb_value ruby_field = TODO_mruby_box_gpointer(mrb, native_field);
+  mrb_value user_data = TODO_mruby_box_gpointer(mrb, native_user_data);
 
-  return ruby_field;
+  return user_data;
 }
 #endif
 
@@ -85,19 +81,22 @@ mrb_GLib_GScanner_get_user_data(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GScanner_set_user_data(mrb_state* mrb, mrb_value self) {
-  struct _GScanner * native_self = mruby_unbox_struct _GScanner(self);
-  mrb_value ruby_field;
+  struct _GScanner * native_self = mruby_unbox__GScanner(self);
+  mrb_value user_data;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "o", &user_data);
 
   /* type checking */
-  TODO_type_check_gpointer(ruby_field);
+  TODO_type_check_gpointer(user_data);
 
-  gpointer native_field = TODO_mruby_unbox_gpointer(ruby_field);
+  gpointer native_user_data = TODO_mruby_unbox_gpointer(user_data);
 
-  native_self->user_data = native_field;
+  native_self->user_data = native_user_data;
+  
 
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -108,13 +107,13 @@ mrb_GLib_GScanner_set_user_data(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GScanner_get_max_parse_errors(mrb_state* mrb, mrb_value self) {
-  struct _GScanner * native_self = mruby_unbox_struct _GScanner(self);
+  struct _GScanner * native_self = mruby_unbox__GScanner(self);
 
-  guint native_field = native_self->max_parse_errors;
+  guint native_max_parse_errors = native_self->max_parse_errors;
 
-  mrb_value ruby_field = mrb_fixnum_value(native_field);
+  mrb_value max_parse_errors = mrb_fixnum_value(native_max_parse_errors);
 
-  return ruby_field;
+  return max_parse_errors;
 }
 #endif
 
@@ -126,22 +125,17 @@ mrb_GLib_GScanner_get_max_parse_errors(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GScanner_set_max_parse_errors(mrb_state* mrb, mrb_value self) {
-  struct _GScanner * native_self = mruby_unbox_struct _GScanner(self);
-  mrb_value ruby_field;
+  struct _GScanner * native_self = mruby_unbox__GScanner(self);
+  mrb_int native_max_parse_errors;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "i", &native_max_parse_errors);
 
-  /* type checking */
-  if (!mrb_obj_is_kind_of(mrb, ruby_field, mrb->fixnum_class)) {
-    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
-    return mrb_nil_value();
-  }
+  native_self->max_parse_errors = native_max_parse_errors;
+  
 
-  unsigned int native_field = (unsigned int)ruby_field;
-
-  native_self->max_parse_errors = native_field;
-
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -152,13 +146,13 @@ mrb_GLib_GScanner_set_max_parse_errors(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GScanner_get_parse_errors(mrb_state* mrb, mrb_value self) {
-  struct _GScanner * native_self = mruby_unbox_struct _GScanner(self);
+  struct _GScanner * native_self = mruby_unbox__GScanner(self);
 
-  guint native_field = native_self->parse_errors;
+  guint native_parse_errors = native_self->parse_errors;
 
-  mrb_value ruby_field = mrb_fixnum_value(native_field);
+  mrb_value parse_errors = mrb_fixnum_value(native_parse_errors);
 
-  return ruby_field;
+  return parse_errors;
 }
 #endif
 
@@ -170,22 +164,17 @@ mrb_GLib_GScanner_get_parse_errors(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GScanner_set_parse_errors(mrb_state* mrb, mrb_value self) {
-  struct _GScanner * native_self = mruby_unbox_struct _GScanner(self);
-  mrb_value ruby_field;
+  struct _GScanner * native_self = mruby_unbox__GScanner(self);
+  mrb_int native_parse_errors;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "i", &native_parse_errors);
 
-  /* type checking */
-  if (!mrb_obj_is_kind_of(mrb, ruby_field, mrb->fixnum_class)) {
-    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
-    return mrb_nil_value();
-  }
+  native_self->parse_errors = native_parse_errors;
+  
 
-  unsigned int native_field = (unsigned int)ruby_field;
-
-  native_self->parse_errors = native_field;
-
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -196,13 +185,13 @@ mrb_GLib_GScanner_set_parse_errors(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GScanner_get_input_name(mrb_state* mrb, mrb_value self) {
-  struct _GScanner * native_self = mruby_unbox_struct _GScanner(self);
+  struct _GScanner * native_self = mruby_unbox__GScanner(self);
 
-  const gchar * native_field = native_self->input_name;
+  const gchar * native_input_name = native_self->input_name;
 
-  mrb_value ruby_field = mrb_str_new_cstr(mrb, native_field);
+  mrb_value input_name = mrb_str_new_cstr(mrb, native_input_name);
 
-  return ruby_field;
+  return input_name;
 }
 #endif
 
@@ -214,22 +203,17 @@ mrb_GLib_GScanner_get_input_name(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GScanner_set_input_name(mrb_state* mrb, mrb_value self) {
-  struct _GScanner * native_self = mruby_unbox_struct _GScanner(self);
-  mrb_value ruby_field;
+  struct _GScanner * native_self = mruby_unbox__GScanner(self);
+  char * native_input_name = NULL;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "z!", &native_input_name);
 
-  /* type checking */
-  if (!mrb_obj_is_kind_of(mrb, ruby_field, mrb->string_class)) {
-    mrb_raise(mrb, E_TYPE_ERROR, "String expected");
-    return mrb_nil_value();
-  }
+  native_self->input_name = native_input_name;
+  
 
-  const char * native_field = mrb_string_value_cstr(mrb, &ruby_field);
-
-  native_self->input_name = native_field;
-
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -240,13 +224,13 @@ mrb_GLib_GScanner_set_input_name(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GScanner_get_qdata(mrb_state* mrb, mrb_value self) {
-  struct _GScanner * native_self = mruby_unbox_struct _GScanner(self);
+  struct _GScanner * native_self = mruby_unbox__GScanner(self);
 
-  GData * native_field = native_self->qdata;
+  GData * native_qdata = native_self->qdata;
 
-  mrb_value ruby_field = (native_field == NULL ? mrb_nil_value() : mruby_box__GData(mrb, native_field));
+  mrb_value qdata = (native_qdata == NULL ? mrb_nil_value() : mruby_box__GData(mrb, native_qdata));
 
-  return ruby_field;
+  return qdata;
 }
 #endif
 
@@ -258,22 +242,25 @@ mrb_GLib_GScanner_get_qdata(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GScanner_set_qdata(mrb_state* mrb, mrb_value self) {
-  struct _GScanner * native_self = mruby_unbox_struct _GScanner(self);
-  mrb_value ruby_field;
+  struct _GScanner * native_self = mruby_unbox__GScanner(self);
+  mrb_value qdata;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "o", &qdata);
 
   /* type checking */
-  if (!mrb_obj_is_kind_of(mrb, ruby_field, GData_class(mrb))) {
+  if (!mrb_obj_is_kind_of(mrb, qdata, GData_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GData expected");
     return mrb_nil_value();
   }
 
-  GData * native_field = (mrb_nil_p(ruby_field) ? NULL : mruby_unbox__GData(ruby_field));
+  GData * native_qdata = (mrb_nil_p(qdata) ? NULL : mruby_unbox__GData(qdata));
 
-  native_self->qdata = native_field;
+  native_self->qdata = native_qdata;
+  
 
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -284,13 +271,13 @@ mrb_GLib_GScanner_set_qdata(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GScanner_get_config(mrb_state* mrb, mrb_value self) {
-  struct _GScanner * native_self = mruby_unbox_struct _GScanner(self);
+  struct _GScanner * native_self = mruby_unbox__GScanner(self);
 
-  GScannerConfig * native_field = native_self->config;
+  GScannerConfig * native_config = native_self->config;
 
-  mrb_value ruby_field = (native_field == NULL ? mrb_nil_value() : mruby_box__GScannerConfig(mrb, native_field));
+  mrb_value config = (native_config == NULL ? mrb_nil_value() : mruby_box__GScannerConfig(mrb, native_config));
 
-  return ruby_field;
+  return config;
 }
 #endif
 
@@ -302,22 +289,25 @@ mrb_GLib_GScanner_get_config(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GScanner_set_config(mrb_state* mrb, mrb_value self) {
-  struct _GScanner * native_self = mruby_unbox_struct _GScanner(self);
-  mrb_value ruby_field;
+  struct _GScanner * native_self = mruby_unbox__GScanner(self);
+  mrb_value config;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "o", &config);
 
   /* type checking */
-  if (!mrb_obj_is_kind_of(mrb, ruby_field, GScannerConfig_class(mrb))) {
+  if (!mrb_obj_is_kind_of(mrb, config, GScannerConfig_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GScannerConfig expected");
     return mrb_nil_value();
   }
 
-  GScannerConfig * native_field = (mrb_nil_p(ruby_field) ? NULL : mruby_unbox__GScannerConfig(ruby_field));
+  GScannerConfig * native_config = (mrb_nil_p(config) ? NULL : mruby_unbox__GScannerConfig(config));
 
-  native_self->config = native_field;
+  native_self->config = native_config;
+  
 
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -328,13 +318,13 @@ mrb_GLib_GScanner_set_config(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GScanner_get_token(mrb_state* mrb, mrb_value self) {
-  struct _GScanner * native_self = mruby_unbox_struct _GScanner(self);
+  struct _GScanner * native_self = mruby_unbox__GScanner(self);
 
-  GTokenType native_field = native_self->token;
+  GTokenType native_token = native_self->token;
 
-  mrb_value ruby_field = mrb_fixnum_value(native_field);
+  mrb_value token = mrb_fixnum_value(native_token);
 
-  return ruby_field;
+  return token;
 }
 #endif
 
@@ -346,22 +336,17 @@ mrb_GLib_GScanner_get_token(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GScanner_set_token(mrb_state* mrb, mrb_value self) {
-  struct _GScanner * native_self = mruby_unbox_struct _GScanner(self);
-  mrb_value ruby_field;
+  struct _GScanner * native_self = mruby_unbox__GScanner(self);
+  mrb_int native_token;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "i", &native_token);
 
-  /* type checking */
-  if (!mrb_obj_is_kind_of(mrb, ruby_field, mrb->fixnum_class)) {
-    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
-    return mrb_nil_value();
-  }
+  native_self->token = native_token;
+  
 
-  int native_field = (int)ruby_field;
-
-  native_self->token = native_field;
-
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -372,13 +357,13 @@ mrb_GLib_GScanner_set_token(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GScanner_get_value(mrb_state* mrb, mrb_value self) {
-  struct _GScanner * native_self = mruby_unbox_struct _GScanner(self);
+  struct _GScanner * native_self = mruby_unbox__GScanner(self);
 
-  GTokenValue native_field = native_self->value;
+  GTokenValue native_value = native_self->value;
 
-  mrb_value ruby_field = TODO_mruby_box_GTokenValue(mrb, native_field);
+  mrb_value value = TODO_mruby_box_GTokenValue(mrb, native_value);
 
-  return ruby_field;
+  return value;
 }
 #endif
 
@@ -390,19 +375,22 @@ mrb_GLib_GScanner_get_value(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GScanner_set_value(mrb_state* mrb, mrb_value self) {
-  struct _GScanner * native_self = mruby_unbox_struct _GScanner(self);
-  mrb_value ruby_field;
+  struct _GScanner * native_self = mruby_unbox__GScanner(self);
+  mrb_value value;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "o", &value);
 
   /* type checking */
-  TODO_type_check_GTokenValue(ruby_field);
+  TODO_type_check_GTokenValue(value);
 
-  GTokenValue native_field = TODO_mruby_unbox_GTokenValue(ruby_field);
+  GTokenValue native_value = TODO_mruby_unbox_GTokenValue(value);
 
-  native_self->value = native_field;
+  native_self->value = native_value;
+  
 
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -413,13 +401,13 @@ mrb_GLib_GScanner_set_value(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GScanner_get_line(mrb_state* mrb, mrb_value self) {
-  struct _GScanner * native_self = mruby_unbox_struct _GScanner(self);
+  struct _GScanner * native_self = mruby_unbox__GScanner(self);
 
-  guint native_field = native_self->line;
+  guint native_line = native_self->line;
 
-  mrb_value ruby_field = mrb_fixnum_value(native_field);
+  mrb_value line = mrb_fixnum_value(native_line);
 
-  return ruby_field;
+  return line;
 }
 #endif
 
@@ -431,22 +419,17 @@ mrb_GLib_GScanner_get_line(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GScanner_set_line(mrb_state* mrb, mrb_value self) {
-  struct _GScanner * native_self = mruby_unbox_struct _GScanner(self);
-  mrb_value ruby_field;
+  struct _GScanner * native_self = mruby_unbox__GScanner(self);
+  mrb_int native_line;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "i", &native_line);
 
-  /* type checking */
-  if (!mrb_obj_is_kind_of(mrb, ruby_field, mrb->fixnum_class)) {
-    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
-    return mrb_nil_value();
-  }
+  native_self->line = native_line;
+  
 
-  unsigned int native_field = (unsigned int)ruby_field;
-
-  native_self->line = native_field;
-
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -457,13 +440,13 @@ mrb_GLib_GScanner_set_line(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GScanner_get_position(mrb_state* mrb, mrb_value self) {
-  struct _GScanner * native_self = mruby_unbox_struct _GScanner(self);
+  struct _GScanner * native_self = mruby_unbox__GScanner(self);
 
-  guint native_field = native_self->position;
+  guint native_position = native_self->position;
 
-  mrb_value ruby_field = mrb_fixnum_value(native_field);
+  mrb_value position = mrb_fixnum_value(native_position);
 
-  return ruby_field;
+  return position;
 }
 #endif
 
@@ -475,22 +458,17 @@ mrb_GLib_GScanner_get_position(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GScanner_set_position(mrb_state* mrb, mrb_value self) {
-  struct _GScanner * native_self = mruby_unbox_struct _GScanner(self);
-  mrb_value ruby_field;
+  struct _GScanner * native_self = mruby_unbox__GScanner(self);
+  mrb_int native_position;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "i", &native_position);
 
-  /* type checking */
-  if (!mrb_obj_is_kind_of(mrb, ruby_field, mrb->fixnum_class)) {
-    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
-    return mrb_nil_value();
-  }
+  native_self->position = native_position;
+  
 
-  unsigned int native_field = (unsigned int)ruby_field;
-
-  native_self->position = native_field;
-
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -501,13 +479,13 @@ mrb_GLib_GScanner_set_position(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GScanner_get_next_token(mrb_state* mrb, mrb_value self) {
-  struct _GScanner * native_self = mruby_unbox_struct _GScanner(self);
+  struct _GScanner * native_self = mruby_unbox__GScanner(self);
 
-  GTokenType native_field = native_self->next_token;
+  GTokenType native_next_token = native_self->next_token;
 
-  mrb_value ruby_field = mrb_fixnum_value(native_field);
+  mrb_value next_token = mrb_fixnum_value(native_next_token);
 
-  return ruby_field;
+  return next_token;
 }
 #endif
 
@@ -519,22 +497,17 @@ mrb_GLib_GScanner_get_next_token(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GScanner_set_next_token(mrb_state* mrb, mrb_value self) {
-  struct _GScanner * native_self = mruby_unbox_struct _GScanner(self);
-  mrb_value ruby_field;
+  struct _GScanner * native_self = mruby_unbox__GScanner(self);
+  mrb_int native_next_token;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "i", &native_next_token);
 
-  /* type checking */
-  if (!mrb_obj_is_kind_of(mrb, ruby_field, mrb->fixnum_class)) {
-    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
-    return mrb_nil_value();
-  }
+  native_self->next_token = native_next_token;
+  
 
-  int native_field = (int)ruby_field;
-
-  native_self->next_token = native_field;
-
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -545,13 +518,13 @@ mrb_GLib_GScanner_set_next_token(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GScanner_get_next_value(mrb_state* mrb, mrb_value self) {
-  struct _GScanner * native_self = mruby_unbox_struct _GScanner(self);
+  struct _GScanner * native_self = mruby_unbox__GScanner(self);
 
-  GTokenValue native_field = native_self->next_value;
+  GTokenValue native_next_value = native_self->next_value;
 
-  mrb_value ruby_field = TODO_mruby_box_GTokenValue(mrb, native_field);
+  mrb_value next_value = TODO_mruby_box_GTokenValue(mrb, native_next_value);
 
-  return ruby_field;
+  return next_value;
 }
 #endif
 
@@ -563,19 +536,22 @@ mrb_GLib_GScanner_get_next_value(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GScanner_set_next_value(mrb_state* mrb, mrb_value self) {
-  struct _GScanner * native_self = mruby_unbox_struct _GScanner(self);
-  mrb_value ruby_field;
+  struct _GScanner * native_self = mruby_unbox__GScanner(self);
+  mrb_value next_value;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "o", &next_value);
 
   /* type checking */
-  TODO_type_check_GTokenValue(ruby_field);
+  TODO_type_check_GTokenValue(next_value);
 
-  GTokenValue native_field = TODO_mruby_unbox_GTokenValue(ruby_field);
+  GTokenValue native_next_value = TODO_mruby_unbox_GTokenValue(next_value);
 
-  native_self->next_value = native_field;
+  native_self->next_value = native_next_value;
+  
 
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -586,13 +562,13 @@ mrb_GLib_GScanner_set_next_value(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GScanner_get_next_line(mrb_state* mrb, mrb_value self) {
-  struct _GScanner * native_self = mruby_unbox_struct _GScanner(self);
+  struct _GScanner * native_self = mruby_unbox__GScanner(self);
 
-  guint native_field = native_self->next_line;
+  guint native_next_line = native_self->next_line;
 
-  mrb_value ruby_field = mrb_fixnum_value(native_field);
+  mrb_value next_line = mrb_fixnum_value(native_next_line);
 
-  return ruby_field;
+  return next_line;
 }
 #endif
 
@@ -604,22 +580,17 @@ mrb_GLib_GScanner_get_next_line(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GScanner_set_next_line(mrb_state* mrb, mrb_value self) {
-  struct _GScanner * native_self = mruby_unbox_struct _GScanner(self);
-  mrb_value ruby_field;
+  struct _GScanner * native_self = mruby_unbox__GScanner(self);
+  mrb_int native_next_line;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "i", &native_next_line);
 
-  /* type checking */
-  if (!mrb_obj_is_kind_of(mrb, ruby_field, mrb->fixnum_class)) {
-    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
-    return mrb_nil_value();
-  }
+  native_self->next_line = native_next_line;
+  
 
-  unsigned int native_field = (unsigned int)ruby_field;
-
-  native_self->next_line = native_field;
-
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -630,13 +601,13 @@ mrb_GLib_GScanner_set_next_line(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GScanner_get_next_position(mrb_state* mrb, mrb_value self) {
-  struct _GScanner * native_self = mruby_unbox_struct _GScanner(self);
+  struct _GScanner * native_self = mruby_unbox__GScanner(self);
 
-  guint native_field = native_self->next_position;
+  guint native_next_position = native_self->next_position;
 
-  mrb_value ruby_field = mrb_fixnum_value(native_field);
+  mrb_value next_position = mrb_fixnum_value(native_next_position);
 
-  return ruby_field;
+  return next_position;
 }
 #endif
 
@@ -648,22 +619,17 @@ mrb_GLib_GScanner_get_next_position(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GScanner_set_next_position(mrb_state* mrb, mrb_value self) {
-  struct _GScanner * native_self = mruby_unbox_struct _GScanner(self);
-  mrb_value ruby_field;
+  struct _GScanner * native_self = mruby_unbox__GScanner(self);
+  mrb_int native_next_position;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "i", &native_next_position);
 
-  /* type checking */
-  if (!mrb_obj_is_kind_of(mrb, ruby_field, mrb->fixnum_class)) {
-    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
-    return mrb_nil_value();
-  }
+  native_self->next_position = native_next_position;
+  
 
-  unsigned int native_field = (unsigned int)ruby_field;
-
-  native_self->next_position = native_field;
-
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -674,13 +640,13 @@ mrb_GLib_GScanner_set_next_position(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GScanner_get_symbol_table(mrb_state* mrb, mrb_value self) {
-  struct _GScanner * native_self = mruby_unbox_struct _GScanner(self);
+  struct _GScanner * native_self = mruby_unbox__GScanner(self);
 
-  GHashTable * native_field = native_self->symbol_table;
+  GHashTable * native_symbol_table = native_self->symbol_table;
 
-  mrb_value ruby_field = (native_field == NULL ? mrb_nil_value() : mruby_box__GHashTable(mrb, native_field));
+  mrb_value symbol_table = (native_symbol_table == NULL ? mrb_nil_value() : mruby_box__GHashTable(mrb, native_symbol_table));
 
-  return ruby_field;
+  return symbol_table;
 }
 #endif
 
@@ -692,22 +658,25 @@ mrb_GLib_GScanner_get_symbol_table(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GScanner_set_symbol_table(mrb_state* mrb, mrb_value self) {
-  struct _GScanner * native_self = mruby_unbox_struct _GScanner(self);
-  mrb_value ruby_field;
+  struct _GScanner * native_self = mruby_unbox__GScanner(self);
+  mrb_value symbol_table;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "o", &symbol_table);
 
   /* type checking */
-  if (!mrb_obj_is_kind_of(mrb, ruby_field, GHashTable_class(mrb))) {
+  if (!mrb_obj_is_kind_of(mrb, symbol_table, GHashTable_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GHashTable expected");
     return mrb_nil_value();
   }
 
-  GHashTable * native_field = (mrb_nil_p(ruby_field) ? NULL : mruby_unbox__GHashTable(ruby_field));
+  GHashTable * native_symbol_table = (mrb_nil_p(symbol_table) ? NULL : mruby_unbox__GHashTable(symbol_table));
 
-  native_self->symbol_table = native_field;
+  native_self->symbol_table = native_symbol_table;
+  
 
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -718,13 +687,13 @@ mrb_GLib_GScanner_set_symbol_table(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GScanner_get_input_fd(mrb_state* mrb, mrb_value self) {
-  struct _GScanner * native_self = mruby_unbox_struct _GScanner(self);
+  struct _GScanner * native_self = mruby_unbox__GScanner(self);
 
-  gint native_field = native_self->input_fd;
+  gint native_input_fd = native_self->input_fd;
 
-  mrb_value ruby_field = mrb_fixnum_value(native_field);
+  mrb_value input_fd = mrb_fixnum_value(native_input_fd);
 
-  return ruby_field;
+  return input_fd;
 }
 #endif
 
@@ -736,22 +705,17 @@ mrb_GLib_GScanner_get_input_fd(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GScanner_set_input_fd(mrb_state* mrb, mrb_value self) {
-  struct _GScanner * native_self = mruby_unbox_struct _GScanner(self);
-  mrb_value ruby_field;
+  struct _GScanner * native_self = mruby_unbox__GScanner(self);
+  mrb_int native_input_fd;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "i", &native_input_fd);
 
-  /* type checking */
-  if (!mrb_obj_is_kind_of(mrb, ruby_field, mrb->fixnum_class)) {
-    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
-    return mrb_nil_value();
-  }
+  native_self->input_fd = native_input_fd;
+  
 
-  int native_field = (int)ruby_field;
-
-  native_self->input_fd = native_field;
-
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -762,13 +726,13 @@ mrb_GLib_GScanner_set_input_fd(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GScanner_get_text(mrb_state* mrb, mrb_value self) {
-  struct _GScanner * native_self = mruby_unbox_struct _GScanner(self);
+  struct _GScanner * native_self = mruby_unbox__GScanner(self);
 
-  const gchar * native_field = native_self->text;
+  const gchar * native_text = native_self->text;
 
-  mrb_value ruby_field = mrb_str_new_cstr(mrb, native_field);
+  mrb_value text = mrb_str_new_cstr(mrb, native_text);
 
-  return ruby_field;
+  return text;
 }
 #endif
 
@@ -780,22 +744,17 @@ mrb_GLib_GScanner_get_text(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GScanner_set_text(mrb_state* mrb, mrb_value self) {
-  struct _GScanner * native_self = mruby_unbox_struct _GScanner(self);
-  mrb_value ruby_field;
+  struct _GScanner * native_self = mruby_unbox__GScanner(self);
+  char * native_text = NULL;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "z!", &native_text);
 
-  /* type checking */
-  if (!mrb_obj_is_kind_of(mrb, ruby_field, mrb->string_class)) {
-    mrb_raise(mrb, E_TYPE_ERROR, "String expected");
-    return mrb_nil_value();
-  }
+  native_self->text = native_text;
+  
 
-  const char * native_field = mrb_string_value_cstr(mrb, &ruby_field);
-
-  native_self->text = native_field;
-
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -806,13 +765,13 @@ mrb_GLib_GScanner_set_text(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GScanner_get_text_end(mrb_state* mrb, mrb_value self) {
-  struct _GScanner * native_self = mruby_unbox_struct _GScanner(self);
+  struct _GScanner * native_self = mruby_unbox__GScanner(self);
 
-  const gchar * native_field = native_self->text_end;
+  const gchar * native_text_end = native_self->text_end;
 
-  mrb_value ruby_field = mrb_str_new_cstr(mrb, native_field);
+  mrb_value text_end = mrb_str_new_cstr(mrb, native_text_end);
 
-  return ruby_field;
+  return text_end;
 }
 #endif
 
@@ -824,22 +783,17 @@ mrb_GLib_GScanner_get_text_end(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GScanner_set_text_end(mrb_state* mrb, mrb_value self) {
-  struct _GScanner * native_self = mruby_unbox_struct _GScanner(self);
-  mrb_value ruby_field;
+  struct _GScanner * native_self = mruby_unbox__GScanner(self);
+  char * native_text_end = NULL;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "z!", &native_text_end);
 
-  /* type checking */
-  if (!mrb_obj_is_kind_of(mrb, ruby_field, mrb->string_class)) {
-    mrb_raise(mrb, E_TYPE_ERROR, "String expected");
-    return mrb_nil_value();
-  }
+  native_self->text_end = native_text_end;
+  
 
-  const char * native_field = mrb_string_value_cstr(mrb, &ruby_field);
-
-  native_self->text_end = native_field;
-
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -850,13 +804,13 @@ mrb_GLib_GScanner_set_text_end(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GScanner_get_buffer(mrb_state* mrb, mrb_value self) {
-  struct _GScanner * native_self = mruby_unbox_struct _GScanner(self);
+  struct _GScanner * native_self = mruby_unbox__GScanner(self);
 
-  gchar * native_field = native_self->buffer;
+  gchar * native_buffer = native_self->buffer;
 
-  mrb_value ruby_field = mrb_str_new_cstr(mrb, native_field);
+  mrb_value buffer = mrb_str_new_cstr(mrb, native_buffer);
 
-  return ruby_field;
+  return buffer;
 }
 #endif
 
@@ -868,27 +822,17 @@ mrb_GLib_GScanner_get_buffer(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GScanner_set_buffer(mrb_state* mrb, mrb_value self) {
-  struct _GScanner * native_self = mruby_unbox_struct _GScanner(self);
-  mrb_value ruby_field;
+  struct _GScanner * native_self = mruby_unbox__GScanner(self);
+  char * native_buffer = NULL;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "z!", &native_buffer);
 
-  /* type checking */
-  if (!mrb_obj_is_kind_of(mrb, ruby_field, mrb->string_class)) {
-    mrb_raise(mrb, E_TYPE_ERROR, "String expected");
-    return mrb_nil_value();
-  }
+  native_self->buffer = native_buffer;
+  
 
-  /* WARNING: Allocating new memory to create 'char *' from 'const char *'.
-   *          Please verify that this memory is cleaned up correctly.
-   *
-   *          Has this been verified? [No]
-   */
-  char * native_field = strdup(ruby_field);
-
-  native_self->buffer = native_field;
-
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -899,13 +843,13 @@ mrb_GLib_GScanner_set_buffer(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GScanner_get_scope_id(mrb_state* mrb, mrb_value self) {
-  struct _GScanner * native_self = mruby_unbox_struct _GScanner(self);
+  struct _GScanner * native_self = mruby_unbox__GScanner(self);
 
-  guint native_field = native_self->scope_id;
+  guint native_scope_id = native_self->scope_id;
 
-  mrb_value ruby_field = mrb_fixnum_value(native_field);
+  mrb_value scope_id = mrb_fixnum_value(native_scope_id);
 
-  return ruby_field;
+  return scope_id;
 }
 #endif
 
@@ -917,22 +861,17 @@ mrb_GLib_GScanner_get_scope_id(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GScanner_set_scope_id(mrb_state* mrb, mrb_value self) {
-  struct _GScanner * native_self = mruby_unbox_struct _GScanner(self);
-  mrb_value ruby_field;
+  struct _GScanner * native_self = mruby_unbox__GScanner(self);
+  mrb_int native_scope_id;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "i", &native_scope_id);
 
-  /* type checking */
-  if (!mrb_obj_is_kind_of(mrb, ruby_field, mrb->fixnum_class)) {
-    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
-    return mrb_nil_value();
-  }
+  native_self->scope_id = native_scope_id;
+  
 
-  unsigned int native_field = (unsigned int)ruby_field;
-
-  native_self->scope_id = native_field;
-
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -943,13 +882,13 @@ mrb_GLib_GScanner_set_scope_id(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GScanner_get_msg_handler(mrb_state* mrb, mrb_value self) {
-  struct _GScanner * native_self = mruby_unbox_struct _GScanner(self);
+  struct _GScanner * native_self = mruby_unbox__GScanner(self);
 
-  GScannerMsgFunc native_field = native_self->msg_handler;
+  GScannerMsgFunc native_msg_handler = native_self->msg_handler;
 
-  mrb_value ruby_field = TODO_mruby_box_GScannerMsgFunc(mrb, native_field);
+  mrb_value msg_handler = TODO_mruby_box_GScannerMsgFunc(mrb, native_msg_handler);
 
-  return ruby_field;
+  return msg_handler;
 }
 #endif
 
@@ -961,19 +900,22 @@ mrb_GLib_GScanner_get_msg_handler(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GScanner_set_msg_handler(mrb_state* mrb, mrb_value self) {
-  struct _GScanner * native_self = mruby_unbox_struct _GScanner(self);
-  mrb_value ruby_field;
+  struct _GScanner * native_self = mruby_unbox__GScanner(self);
+  mrb_value msg_handler;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "o", &msg_handler);
 
   /* type checking */
-  TODO_type_check_GScannerMsgFunc(ruby_field);
+  TODO_type_check_GScannerMsgFunc(msg_handler);
 
-  GScannerMsgFunc native_field = TODO_mruby_unbox_GScannerMsgFunc(ruby_field);
+  GScannerMsgFunc native_msg_handler = TODO_mruby_unbox_GScannerMsgFunc(msg_handler);
 
-  native_self->msg_handler = native_field;
+  native_self->msg_handler = native_msg_handler;
+  
 
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 

@@ -3,10 +3,6 @@
  * Defined in file gbookmarkfile.h @ line 78
  */
 
-/*
- * TODO: INCLUDES
- */
-
 #include "mruby_GLib.h"
 
 #if BIND_GBookmarkFile_TYPE
@@ -18,7 +14,7 @@
 #if BIND_GBookmarkFile_INITIALIZE
 mrb_value
 mrb_GLib_GBookmarkFile_initialize(mrb_state* mrb, mrb_value self) {
-  struct _GBookmarkFile* native_object = (struct _GBookmarkFile*)malloc(sizeof(struct _GBookmarkFile));
+  struct _GBookmarkFile* native_object = (struct _GBookmarkFile*)calloc(1, sizeof(struct _GBookmarkFile));
   mruby_gift_struct _GBookmarkFile_data_ptr(self, native_object);
   return self;
 }

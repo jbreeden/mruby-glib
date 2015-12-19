@@ -3,10 +3,6 @@
  * Defined in file gdatetime.h @ line 99
  */
 
-/*
- * TODO: INCLUDES
- */
-
 #include "mruby_GLib.h"
 
 #if BIND_GDateTime_TYPE
@@ -18,7 +14,7 @@
 #if BIND_GDateTime_INITIALIZE
 mrb_value
 mrb_GLib_GDateTime_initialize(mrb_state* mrb, mrb_value self) {
-  struct _GDateTime* native_object = (struct _GDateTime*)malloc(sizeof(struct _GDateTime));
+  struct _GDateTime* native_object = (struct _GDateTime*)calloc(1, sizeof(struct _GDateTime));
   mruby_gift_struct _GDateTime_data_ptr(self, native_object);
   return self;
 }

@@ -3,10 +3,6 @@
  * Defined in file gtimezone.h @ line 31
  */
 
-/*
- * TODO: INCLUDES
- */
-
 #include "mruby_GLib.h"
 
 #if BIND_GTimeZone_TYPE
@@ -18,7 +14,7 @@
 #if BIND_GTimeZone_INITIALIZE
 mrb_value
 mrb_GLib_GTimeZone_initialize(mrb_state* mrb, mrb_value self) {
-  struct _GTimeZone* native_object = (struct _GTimeZone*)malloc(sizeof(struct _GTimeZone));
+  struct _GTimeZone* native_object = (struct _GTimeZone*)calloc(1, sizeof(struct _GTimeZone));
   mruby_gift_struct _GTimeZone_data_ptr(self, native_object);
   return self;
 }

@@ -3,10 +3,6 @@
  * Defined in file gpoll.h @ line 58
  */
 
-/*
- * TODO: INCLUDES
- */
-
 #include "mruby_GLib.h"
 
 #if BIND_GPollFD_TYPE
@@ -18,7 +14,7 @@
 #if BIND_GPollFD_INITIALIZE
 mrb_value
 mrb_GLib_GPollFD_initialize(mrb_state* mrb, mrb_value self) {
-  struct _GPollFD* native_object = (struct _GPollFD*)malloc(sizeof(struct _GPollFD));
+  struct _GPollFD* native_object = (struct _GPollFD*)calloc(1, sizeof(struct _GPollFD));
   mruby_gift_struct _GPollFD_data_ptr(self, native_object);
   return self;
 }
@@ -67,13 +63,13 @@ mrb_GLib_GPollFD_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GPollFD_get_fd(mrb_state* mrb, mrb_value self) {
-  struct _GPollFD * native_self = mruby_unbox_struct _GPollFD(self);
+  struct _GPollFD * native_self = mruby_unbox__GPollFD(self);
 
-  gint native_field = native_self->fd;
+  gint native_fd = native_self->fd;
 
-  mrb_value ruby_field = mrb_fixnum_value(native_field);
+  mrb_value fd = mrb_fixnum_value(native_fd);
 
-  return ruby_field;
+  return fd;
 }
 #endif
 
@@ -85,22 +81,17 @@ mrb_GLib_GPollFD_get_fd(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GPollFD_set_fd(mrb_state* mrb, mrb_value self) {
-  struct _GPollFD * native_self = mruby_unbox_struct _GPollFD(self);
-  mrb_value ruby_field;
+  struct _GPollFD * native_self = mruby_unbox__GPollFD(self);
+  mrb_int native_fd;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "i", &native_fd);
 
-  /* type checking */
-  if (!mrb_obj_is_kind_of(mrb, ruby_field, mrb->fixnum_class)) {
-    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
-    return mrb_nil_value();
-  }
+  native_self->fd = native_fd;
+  
 
-  int native_field = (int)ruby_field;
-
-  native_self->fd = native_field;
-
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -111,13 +102,13 @@ mrb_GLib_GPollFD_set_fd(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GPollFD_get_events(mrb_state* mrb, mrb_value self) {
-  struct _GPollFD * native_self = mruby_unbox_struct _GPollFD(self);
+  struct _GPollFD * native_self = mruby_unbox__GPollFD(self);
 
-  gushort native_field = native_self->events;
+  gushort native_events = native_self->events;
 
-  mrb_value ruby_field = mrb_fixnum_value(native_field);
+  mrb_value events = mrb_fixnum_value(native_events);
 
-  return ruby_field;
+  return events;
 }
 #endif
 
@@ -129,22 +120,17 @@ mrb_GLib_GPollFD_get_events(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GPollFD_set_events(mrb_state* mrb, mrb_value self) {
-  struct _GPollFD * native_self = mruby_unbox_struct _GPollFD(self);
-  mrb_value ruby_field;
+  struct _GPollFD * native_self = mruby_unbox__GPollFD(self);
+  mrb_int native_events;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "i", &native_events);
 
-  /* type checking */
-  if (!mrb_obj_is_kind_of(mrb, ruby_field, mrb->fixnum_class)) {
-    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
-    return mrb_nil_value();
-  }
+  native_self->events = native_events;
+  
 
-  unsigned short native_field = (unsigned short)ruby_field;
-
-  native_self->events = native_field;
-
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -155,13 +141,13 @@ mrb_GLib_GPollFD_set_events(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GPollFD_get_revents(mrb_state* mrb, mrb_value self) {
-  struct _GPollFD * native_self = mruby_unbox_struct _GPollFD(self);
+  struct _GPollFD * native_self = mruby_unbox__GPollFD(self);
 
-  gushort native_field = native_self->revents;
+  gushort native_revents = native_self->revents;
 
-  mrb_value ruby_field = mrb_fixnum_value(native_field);
+  mrb_value revents = mrb_fixnum_value(native_revents);
 
-  return ruby_field;
+  return revents;
 }
 #endif
 
@@ -173,22 +159,17 @@ mrb_GLib_GPollFD_get_revents(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GPollFD_set_revents(mrb_state* mrb, mrb_value self) {
-  struct _GPollFD * native_self = mruby_unbox_struct _GPollFD(self);
-  mrb_value ruby_field;
+  struct _GPollFD * native_self = mruby_unbox__GPollFD(self);
+  mrb_int native_revents;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "i", &native_revents);
 
-  /* type checking */
-  if (!mrb_obj_is_kind_of(mrb, ruby_field, mrb->fixnum_class)) {
-    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
-    return mrb_nil_value();
-  }
+  native_self->revents = native_revents;
+  
 
-  unsigned short native_field = (unsigned short)ruby_field;
-
-  native_self->revents = native_field;
-
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 

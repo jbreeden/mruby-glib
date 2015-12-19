@@ -3,10 +3,6 @@
  * Defined in file gkeyfile.h @ line 48
  */
 
-/*
- * TODO: INCLUDES
- */
-
 #include "mruby_GLib.h"
 
 #if BIND_GKeyFile_TYPE
@@ -18,7 +14,7 @@
 #if BIND_GKeyFile_INITIALIZE
 mrb_value
 mrb_GLib_GKeyFile_initialize(mrb_state* mrb, mrb_value self) {
-  struct _GKeyFile* native_object = (struct _GKeyFile*)malloc(sizeof(struct _GKeyFile));
+  struct _GKeyFile* native_object = (struct _GKeyFile*)calloc(1, sizeof(struct _GKeyFile));
   mruby_gift_struct _GKeyFile_data_ptr(self, native_object);
   return self;
 }

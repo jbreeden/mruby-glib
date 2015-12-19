@@ -3,10 +3,6 @@
  * Defined in file gerror.h @ line 42
  */
 
-/*
- * TODO: INCLUDES
- */
-
 #include "mruby_GLib.h"
 
 #if BIND_GError_TYPE
@@ -18,7 +14,7 @@
 #if BIND_GError_INITIALIZE
 mrb_value
 mrb_GLib_GError_initialize(mrb_state* mrb, mrb_value self) {
-  struct _GError* native_object = (struct _GError*)malloc(sizeof(struct _GError));
+  struct _GError* native_object = (struct _GError*)calloc(1, sizeof(struct _GError));
   mruby_gift_struct _GError_data_ptr(self, native_object);
   return self;
 }
@@ -67,13 +63,13 @@ mrb_GLib_GError_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GError_get_domain(mrb_state* mrb, mrb_value self) {
-  struct _GError * native_self = mruby_unbox_struct _GError(self);
+  struct _GError * native_self = mruby_unbox__GError(self);
 
-  GQuark native_field = native_self->domain;
+  GQuark native_domain = native_self->domain;
 
-  mrb_value ruby_field = mrb_fixnum_value(native_field);
+  mrb_value domain = mrb_fixnum_value(native_domain);
 
-  return ruby_field;
+  return domain;
 }
 #endif
 
@@ -85,22 +81,17 @@ mrb_GLib_GError_get_domain(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GError_set_domain(mrb_state* mrb, mrb_value self) {
-  struct _GError * native_self = mruby_unbox_struct _GError(self);
-  mrb_value ruby_field;
+  struct _GError * native_self = mruby_unbox__GError(self);
+  mrb_int native_domain;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "i", &native_domain);
 
-  /* type checking */
-  if (!mrb_obj_is_kind_of(mrb, ruby_field, mrb->fixnum_class)) {
-    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
-    return mrb_nil_value();
-  }
+  native_self->domain = native_domain;
+  
 
-  int native_field = (int)ruby_field;
-
-  native_self->domain = native_field;
-
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -111,13 +102,13 @@ mrb_GLib_GError_set_domain(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GError_get_code(mrb_state* mrb, mrb_value self) {
-  struct _GError * native_self = mruby_unbox_struct _GError(self);
+  struct _GError * native_self = mruby_unbox__GError(self);
 
-  gint native_field = native_self->code;
+  gint native_code = native_self->code;
 
-  mrb_value ruby_field = mrb_fixnum_value(native_field);
+  mrb_value code = mrb_fixnum_value(native_code);
 
-  return ruby_field;
+  return code;
 }
 #endif
 
@@ -129,22 +120,17 @@ mrb_GLib_GError_get_code(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GError_set_code(mrb_state* mrb, mrb_value self) {
-  struct _GError * native_self = mruby_unbox_struct _GError(self);
-  mrb_value ruby_field;
+  struct _GError * native_self = mruby_unbox__GError(self);
+  mrb_int native_code;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "i", &native_code);
 
-  /* type checking */
-  if (!mrb_obj_is_kind_of(mrb, ruby_field, mrb->fixnum_class)) {
-    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
-    return mrb_nil_value();
-  }
+  native_self->code = native_code;
+  
 
-  int native_field = (int)ruby_field;
-
-  native_self->code = native_field;
-
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -155,13 +141,13 @@ mrb_GLib_GError_set_code(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GError_get_message(mrb_state* mrb, mrb_value self) {
-  struct _GError * native_self = mruby_unbox_struct _GError(self);
+  struct _GError * native_self = mruby_unbox__GError(self);
 
-  gchar * native_field = native_self->message;
+  gchar * native_message = native_self->message;
 
-  mrb_value ruby_field = mrb_str_new_cstr(mrb, native_field);
+  mrb_value message = mrb_str_new_cstr(mrb, native_message);
 
-  return ruby_field;
+  return message;
 }
 #endif
 
@@ -173,27 +159,17 @@ mrb_GLib_GError_get_message(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GError_set_message(mrb_state* mrb, mrb_value self) {
-  struct _GError * native_self = mruby_unbox_struct _GError(self);
-  mrb_value ruby_field;
+  struct _GError * native_self = mruby_unbox__GError(self);
+  char * native_message = NULL;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "z!", &native_message);
 
-  /* type checking */
-  if (!mrb_obj_is_kind_of(mrb, ruby_field, mrb->string_class)) {
-    mrb_raise(mrb, E_TYPE_ERROR, "String expected");
-    return mrb_nil_value();
-  }
+  native_self->message = native_message;
+  
 
-  /* WARNING: Allocating new memory to create 'char *' from 'const char *'.
-   *          Please verify that this memory is cleaned up correctly.
-   *
-   *          Has this been verified? [No]
-   */
-  char * native_field = strdup(ruby_field);
-
-  native_self->message = native_field;
-
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 

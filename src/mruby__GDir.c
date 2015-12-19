@@ -3,10 +3,6 @@
  * Defined in file gdir.h @ line 37
  */
 
-/*
- * TODO: INCLUDES
- */
-
 #include "mruby_GLib.h"
 
 #if BIND_GDir_TYPE
@@ -18,7 +14,7 @@
 #if BIND_GDir_INITIALIZE
 mrb_value
 mrb_GLib_GDir_initialize(mrb_state* mrb, mrb_value self) {
-  struct _GDir* native_object = (struct _GDir*)malloc(sizeof(struct _GDir));
+  struct _GDir* native_object = (struct _GDir*)calloc(1, sizeof(struct _GDir));
   mruby_gift_struct _GDir_data_ptr(self, native_object);
   return self;
 }

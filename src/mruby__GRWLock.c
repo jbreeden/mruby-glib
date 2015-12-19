@@ -3,10 +3,6 @@
  * Defined in file gthread.h @ line 53
  */
 
-/*
- * TODO: INCLUDES
- */
-
 #include "mruby_GLib.h"
 
 #if BIND_GRWLock_TYPE
@@ -18,7 +14,7 @@
 #if BIND_GRWLock_INITIALIZE
 mrb_value
 mrb_GLib_GRWLock_initialize(mrb_state* mrb, mrb_value self) {
-  struct _GRWLock* native_object = (struct _GRWLock*)malloc(sizeof(struct _GRWLock));
+  struct _GRWLock* native_object = (struct _GRWLock*)calloc(1, sizeof(struct _GRWLock));
   mruby_gift_struct _GRWLock_data_ptr(self, native_object);
   return self;
 }
@@ -67,13 +63,13 @@ mrb_GLib_GRWLock_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GRWLock_get_p(mrb_state* mrb, mrb_value self) {
-  struct _GRWLock * native_self = mruby_unbox_struct _GRWLock(self);
+  struct _GRWLock * native_self = mruby_unbox__GRWLock(self);
 
-  gpointer native_field = native_self->p;
+  gpointer native_p = native_self->p;
 
-  mrb_value ruby_field = TODO_mruby_box_gpointer(mrb, native_field);
+  mrb_value p = TODO_mruby_box_gpointer(mrb, native_p);
 
-  return ruby_field;
+  return p;
 }
 #endif
 
@@ -85,19 +81,22 @@ mrb_GLib_GRWLock_get_p(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GRWLock_set_p(mrb_state* mrb, mrb_value self) {
-  struct _GRWLock * native_self = mruby_unbox_struct _GRWLock(self);
-  mrb_value ruby_field;
+  struct _GRWLock * native_self = mruby_unbox__GRWLock(self);
+  mrb_value p;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "o", &p);
 
   /* type checking */
-  TODO_type_check_gpointer(ruby_field);
+  TODO_type_check_gpointer(p);
 
-  gpointer native_field = TODO_mruby_unbox_gpointer(ruby_field);
+  gpointer native_p = TODO_mruby_unbox_gpointer(p);
 
-  native_self->p = native_field;
+  native_self->p = native_p;
+  
 
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -108,13 +107,13 @@ mrb_GLib_GRWLock_set_p(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GRWLock_get_i(mrb_state* mrb, mrb_value self) {
-  struct _GRWLock * native_self = mruby_unbox_struct _GRWLock(self);
+  struct _GRWLock * native_self = mruby_unbox__GRWLock(self);
 
-  guint [2] native_field = native_self->i;
+  guint [2] native_i = native_self->i;
 
-  mrb_value ruby_field = TODO_mruby_box_guint_[2](mrb, native_field);
+  mrb_value i = TODO_mruby_box_guint_[2](mrb, native_i);
 
-  return ruby_field;
+  return i;
 }
 #endif
 
@@ -126,19 +125,22 @@ mrb_GLib_GRWLock_get_i(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GRWLock_set_i(mrb_state* mrb, mrb_value self) {
-  struct _GRWLock * native_self = mruby_unbox_struct _GRWLock(self);
-  mrb_value ruby_field;
+  struct _GRWLock * native_self = mruby_unbox__GRWLock(self);
+  mrb_value i;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "o", &i);
 
   /* type checking */
-  TODO_type_check_guint_[2](ruby_field);
+  TODO_type_check_guint_[2](i);
 
-  guint [2] native_field = TODO_mruby_unbox_guint_[2](ruby_field);
+  guint [2] native_i = TODO_mruby_unbox_guint_[2](i);
 
-  native_self->i = native_field;
+  native_self->i = native_i;
+  
 
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 

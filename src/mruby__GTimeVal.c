@@ -3,10 +3,6 @@
  * Defined in file gtypes.h @ line 449
  */
 
-/*
- * TODO: INCLUDES
- */
-
 #include "mruby_GLib.h"
 
 #if BIND_GTimeVal_TYPE
@@ -18,7 +14,7 @@
 #if BIND_GTimeVal_INITIALIZE
 mrb_value
 mrb_GLib_GTimeVal_initialize(mrb_state* mrb, mrb_value self) {
-  struct _GTimeVal* native_object = (struct _GTimeVal*)malloc(sizeof(struct _GTimeVal));
+  struct _GTimeVal* native_object = (struct _GTimeVal*)calloc(1, sizeof(struct _GTimeVal));
   mruby_gift_struct _GTimeVal_data_ptr(self, native_object);
   return self;
 }
@@ -67,13 +63,13 @@ mrb_GLib_GTimeVal_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GTimeVal_get_tv_sec(mrb_state* mrb, mrb_value self) {
-  struct _GTimeVal * native_self = mruby_unbox_struct _GTimeVal(self);
+  struct _GTimeVal * native_self = mruby_unbox__GTimeVal(self);
 
-  glong native_field = native_self->tv_sec;
+  glong native_tv_sec = native_self->tv_sec;
 
-  mrb_value ruby_field = mrb_fixnum_value(native_field);
+  mrb_value tv_sec = mrb_fixnum_value(native_tv_sec);
 
-  return ruby_field;
+  return tv_sec;
 }
 #endif
 
@@ -85,22 +81,17 @@ mrb_GLib_GTimeVal_get_tv_sec(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GTimeVal_set_tv_sec(mrb_state* mrb, mrb_value self) {
-  struct _GTimeVal * native_self = mruby_unbox_struct _GTimeVal(self);
-  mrb_value ruby_field;
+  struct _GTimeVal * native_self = mruby_unbox__GTimeVal(self);
+  mrb_int native_tv_sec;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "i", &native_tv_sec);
 
-  /* type checking */
-  if (!mrb_obj_is_kind_of(mrb, ruby_field, mrb->fixnum_class)) {
-    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
-    return mrb_nil_value();
-  }
+  native_self->tv_sec = native_tv_sec;
+  
 
-  long native_field = (long)ruby_field;
-
-  native_self->tv_sec = native_field;
-
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -111,13 +102,13 @@ mrb_GLib_GTimeVal_set_tv_sec(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GTimeVal_get_tv_usec(mrb_state* mrb, mrb_value self) {
-  struct _GTimeVal * native_self = mruby_unbox_struct _GTimeVal(self);
+  struct _GTimeVal * native_self = mruby_unbox__GTimeVal(self);
 
-  glong native_field = native_self->tv_usec;
+  glong native_tv_usec = native_self->tv_usec;
 
-  mrb_value ruby_field = mrb_fixnum_value(native_field);
+  mrb_value tv_usec = mrb_fixnum_value(native_tv_usec);
 
-  return ruby_field;
+  return tv_usec;
 }
 #endif
 
@@ -129,22 +120,17 @@ mrb_GLib_GTimeVal_get_tv_usec(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GTimeVal_set_tv_usec(mrb_state* mrb, mrb_value self) {
-  struct _GTimeVal * native_self = mruby_unbox_struct _GTimeVal(self);
-  mrb_value ruby_field;
+  struct _GTimeVal * native_self = mruby_unbox__GTimeVal(self);
+  mrb_int native_tv_usec;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "i", &native_tv_usec);
 
-  /* type checking */
-  if (!mrb_obj_is_kind_of(mrb, ruby_field, mrb->fixnum_class)) {
-    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
-    return mrb_nil_value();
-  }
+  native_self->tv_usec = native_tv_usec;
+  
 
-  long native_field = (long)ruby_field;
-
-  native_self->tv_usec = native_field;
-
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 

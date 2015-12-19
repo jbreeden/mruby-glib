@@ -3,10 +3,6 @@
  * Defined in file giochannel.h @ line 42
  */
 
-/*
- * TODO: INCLUDES
- */
-
 #include "mruby_GLib.h"
 
 #if BIND_GIOFuncs_TYPE
@@ -18,7 +14,7 @@
 #if BIND_GIOFuncs_INITIALIZE
 mrb_value
 mrb_GLib_GIOFuncs_initialize(mrb_state* mrb, mrb_value self) {
-  struct _GIOFuncs* native_object = (struct _GIOFuncs*)malloc(sizeof(struct _GIOFuncs));
+  struct _GIOFuncs* native_object = (struct _GIOFuncs*)calloc(1, sizeof(struct _GIOFuncs));
   mruby_gift_struct _GIOFuncs_data_ptr(self, native_object);
   return self;
 }
@@ -67,13 +63,13 @@ mrb_GLib_GIOFuncs_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GIOFuncs_get_io_read(mrb_state* mrb, mrb_value self) {
-  struct _GIOFuncs * native_self = mruby_unbox_struct _GIOFuncs(self);
+  struct _GIOFuncs * native_self = mruby_unbox__GIOFuncs(self);
 
-  GIOStatus (*)(GIOChannel *, gchar *, gsize, gsize *, GError **) native_field = native_self->io_read;
+  GIOStatus (*)(GIOChannel *, gchar *, gsize, gsize *, GError **) native_io_read = native_self->io_read;
 
-  mrb_value ruby_field = TODO_mruby_box_GIOStatus_LPAREN_PTR_RPAREN_LPAREN_GIOChannel_PTR_COMMA_gchar_PTR_COMMA_gsizeCOMMA_gsize_PTR_COMMA_GError_PTR_PTR_RPAREN(mrb, native_field);
+  mrb_value io_read = TODO_mruby_box_GIOStatus_LPAREN_PTR_RPAREN_LPAREN_GIOChannel_PTR_COMMA_gchar_PTR_COMMA_gsizeCOMMA_gsize_PTR_COMMA_GError_PTR_PTR_RPAREN(mrb, native_io_read);
 
-  return ruby_field;
+  return io_read;
 }
 #endif
 
@@ -85,19 +81,22 @@ mrb_GLib_GIOFuncs_get_io_read(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GIOFuncs_set_io_read(mrb_state* mrb, mrb_value self) {
-  struct _GIOFuncs * native_self = mruby_unbox_struct _GIOFuncs(self);
-  mrb_value ruby_field;
+  struct _GIOFuncs * native_self = mruby_unbox__GIOFuncs(self);
+  mrb_value io_read;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "o", &io_read);
 
   /* type checking */
-  TODO_type_check_GIOStatus_LPAREN_PTR_RPAREN_LPAREN_GIOChannel_PTR_COMMA_gchar_PTR_COMMA_gsizeCOMMA_gsize_PTR_COMMA_GError_PTR_PTR_RPAREN(ruby_field);
+  TODO_type_check_GIOStatus_LPAREN_PTR_RPAREN_LPAREN_GIOChannel_PTR_COMMA_gchar_PTR_COMMA_gsizeCOMMA_gsize_PTR_COMMA_GError_PTR_PTR_RPAREN(io_read);
 
-  GIOStatus (*native_field)(GIOChannel *, gchar *, gsize, gsize *, GError **) = TODO_mruby_unbox_GIOStatus_LPAREN_PTR_RPAREN_LPAREN_GIOChannel_PTR_COMMA_gchar_PTR_COMMA_gsizeCOMMA_gsize_PTR_COMMA_GError_PTR_PTR_RPAREN(ruby_field);
+  GIOStatus (*native_io_read)(GIOChannel *, gchar *, gsize, gsize *, GError **) = TODO_mruby_unbox_GIOStatus_LPAREN_PTR_RPAREN_LPAREN_GIOChannel_PTR_COMMA_gchar_PTR_COMMA_gsizeCOMMA_gsize_PTR_COMMA_GError_PTR_PTR_RPAREN(io_read);
 
-  native_self->io_read = native_field;
+  native_self->io_read = native_io_read;
+  
 
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -108,13 +107,13 @@ mrb_GLib_GIOFuncs_set_io_read(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GIOFuncs_get_io_write(mrb_state* mrb, mrb_value self) {
-  struct _GIOFuncs * native_self = mruby_unbox_struct _GIOFuncs(self);
+  struct _GIOFuncs * native_self = mruby_unbox__GIOFuncs(self);
 
-  GIOStatus (*)(GIOChannel *, const gchar *, gsize, gsize *, GError **) native_field = native_self->io_write;
+  GIOStatus (*)(GIOChannel *, const gchar *, gsize, gsize *, GError **) native_io_write = native_self->io_write;
 
-  mrb_value ruby_field = TODO_mruby_box_GIOStatus_LPAREN_PTR_RPAREN_LPAREN_GIOChannel_PTR_COMMAgchar_PTR_COMMA_gsizeCOMMA_gsize_PTR_COMMA_GError_PTR_PTR_RPAREN(mrb, native_field);
+  mrb_value io_write = TODO_mruby_box_GIOStatus_LPAREN_PTR_RPAREN_LPAREN_GIOChannel_PTR_COMMAgchar_PTR_COMMA_gsizeCOMMA_gsize_PTR_COMMA_GError_PTR_PTR_RPAREN(mrb, native_io_write);
 
-  return ruby_field;
+  return io_write;
 }
 #endif
 
@@ -126,19 +125,22 @@ mrb_GLib_GIOFuncs_get_io_write(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GIOFuncs_set_io_write(mrb_state* mrb, mrb_value self) {
-  struct _GIOFuncs * native_self = mruby_unbox_struct _GIOFuncs(self);
-  mrb_value ruby_field;
+  struct _GIOFuncs * native_self = mruby_unbox__GIOFuncs(self);
+  mrb_value io_write;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "o", &io_write);
 
   /* type checking */
-  TODO_type_check_GIOStatus_LPAREN_PTR_RPAREN_LPAREN_GIOChannel_PTR_COMMAgchar_PTR_COMMA_gsizeCOMMA_gsize_PTR_COMMA_GError_PTR_PTR_RPAREN(ruby_field);
+  TODO_type_check_GIOStatus_LPAREN_PTR_RPAREN_LPAREN_GIOChannel_PTR_COMMAgchar_PTR_COMMA_gsizeCOMMA_gsize_PTR_COMMA_GError_PTR_PTR_RPAREN(io_write);
 
-  GIOStatus (*native_field)(GIOChannel *, const gchar *, gsize, gsize *, GError **) = TODO_mruby_unbox_GIOStatus_LPAREN_PTR_RPAREN_LPAREN_GIOChannel_PTR_COMMAgchar_PTR_COMMA_gsizeCOMMA_gsize_PTR_COMMA_GError_PTR_PTR_RPAREN(ruby_field);
+  GIOStatus (*native_io_write)(GIOChannel *, const gchar *, gsize, gsize *, GError **) = TODO_mruby_unbox_GIOStatus_LPAREN_PTR_RPAREN_LPAREN_GIOChannel_PTR_COMMAgchar_PTR_COMMA_gsizeCOMMA_gsize_PTR_COMMA_GError_PTR_PTR_RPAREN(io_write);
 
-  native_self->io_write = native_field;
+  native_self->io_write = native_io_write;
+  
 
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -149,13 +151,13 @@ mrb_GLib_GIOFuncs_set_io_write(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GIOFuncs_get_io_seek(mrb_state* mrb, mrb_value self) {
-  struct _GIOFuncs * native_self = mruby_unbox_struct _GIOFuncs(self);
+  struct _GIOFuncs * native_self = mruby_unbox__GIOFuncs(self);
 
-  GIOStatus (*)(GIOChannel *, gint64, GSeekType, GError **) native_field = native_self->io_seek;
+  GIOStatus (*)(GIOChannel *, gint64, GSeekType, GError **) native_io_seek = native_self->io_seek;
 
-  mrb_value ruby_field = TODO_mruby_box_GIOStatus_LPAREN_PTR_RPAREN_LPAREN_GIOChannel_PTR_COMMA_gint64COMMA_GSeekTypeCOMMA_GError_PTR_PTR_RPAREN(mrb, native_field);
+  mrb_value io_seek = TODO_mruby_box_GIOStatus_LPAREN_PTR_RPAREN_LPAREN_GIOChannel_PTR_COMMA_gint64COMMA_GSeekTypeCOMMA_GError_PTR_PTR_RPAREN(mrb, native_io_seek);
 
-  return ruby_field;
+  return io_seek;
 }
 #endif
 
@@ -167,19 +169,22 @@ mrb_GLib_GIOFuncs_get_io_seek(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GIOFuncs_set_io_seek(mrb_state* mrb, mrb_value self) {
-  struct _GIOFuncs * native_self = mruby_unbox_struct _GIOFuncs(self);
-  mrb_value ruby_field;
+  struct _GIOFuncs * native_self = mruby_unbox__GIOFuncs(self);
+  mrb_value io_seek;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "o", &io_seek);
 
   /* type checking */
-  TODO_type_check_GIOStatus_LPAREN_PTR_RPAREN_LPAREN_GIOChannel_PTR_COMMA_gint64COMMA_GSeekTypeCOMMA_GError_PTR_PTR_RPAREN(ruby_field);
+  TODO_type_check_GIOStatus_LPAREN_PTR_RPAREN_LPAREN_GIOChannel_PTR_COMMA_gint64COMMA_GSeekTypeCOMMA_GError_PTR_PTR_RPAREN(io_seek);
 
-  GIOStatus (*native_field)(GIOChannel *, gint64, GSeekType, GError **) = TODO_mruby_unbox_GIOStatus_LPAREN_PTR_RPAREN_LPAREN_GIOChannel_PTR_COMMA_gint64COMMA_GSeekTypeCOMMA_GError_PTR_PTR_RPAREN(ruby_field);
+  GIOStatus (*native_io_seek)(GIOChannel *, gint64, GSeekType, GError **) = TODO_mruby_unbox_GIOStatus_LPAREN_PTR_RPAREN_LPAREN_GIOChannel_PTR_COMMA_gint64COMMA_GSeekTypeCOMMA_GError_PTR_PTR_RPAREN(io_seek);
 
-  native_self->io_seek = native_field;
+  native_self->io_seek = native_io_seek;
+  
 
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -190,13 +195,13 @@ mrb_GLib_GIOFuncs_set_io_seek(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GIOFuncs_get_io_close(mrb_state* mrb, mrb_value self) {
-  struct _GIOFuncs * native_self = mruby_unbox_struct _GIOFuncs(self);
+  struct _GIOFuncs * native_self = mruby_unbox__GIOFuncs(self);
 
-  GIOStatus (*)(GIOChannel *, GError **) native_field = native_self->io_close;
+  GIOStatus (*)(GIOChannel *, GError **) native_io_close = native_self->io_close;
 
-  mrb_value ruby_field = TODO_mruby_box_GIOStatus_LPAREN_PTR_RPAREN_LPAREN_GIOChannel_PTR_COMMA_GError_PTR_PTR_RPAREN(mrb, native_field);
+  mrb_value io_close = TODO_mruby_box_GIOStatus_LPAREN_PTR_RPAREN_LPAREN_GIOChannel_PTR_COMMA_GError_PTR_PTR_RPAREN(mrb, native_io_close);
 
-  return ruby_field;
+  return io_close;
 }
 #endif
 
@@ -208,19 +213,22 @@ mrb_GLib_GIOFuncs_get_io_close(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GIOFuncs_set_io_close(mrb_state* mrb, mrb_value self) {
-  struct _GIOFuncs * native_self = mruby_unbox_struct _GIOFuncs(self);
-  mrb_value ruby_field;
+  struct _GIOFuncs * native_self = mruby_unbox__GIOFuncs(self);
+  mrb_value io_close;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "o", &io_close);
 
   /* type checking */
-  TODO_type_check_GIOStatus_LPAREN_PTR_RPAREN_LPAREN_GIOChannel_PTR_COMMA_GError_PTR_PTR_RPAREN(ruby_field);
+  TODO_type_check_GIOStatus_LPAREN_PTR_RPAREN_LPAREN_GIOChannel_PTR_COMMA_GError_PTR_PTR_RPAREN(io_close);
 
-  GIOStatus (*native_field)(GIOChannel *, GError **) = TODO_mruby_unbox_GIOStatus_LPAREN_PTR_RPAREN_LPAREN_GIOChannel_PTR_COMMA_GError_PTR_PTR_RPAREN(ruby_field);
+  GIOStatus (*native_io_close)(GIOChannel *, GError **) = TODO_mruby_unbox_GIOStatus_LPAREN_PTR_RPAREN_LPAREN_GIOChannel_PTR_COMMA_GError_PTR_PTR_RPAREN(io_close);
 
-  native_self->io_close = native_field;
+  native_self->io_close = native_io_close;
+  
 
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -231,13 +239,13 @@ mrb_GLib_GIOFuncs_set_io_close(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GIOFuncs_get_io_create_watch(mrb_state* mrb, mrb_value self) {
-  struct _GIOFuncs * native_self = mruby_unbox_struct _GIOFuncs(self);
+  struct _GIOFuncs * native_self = mruby_unbox__GIOFuncs(self);
 
-  GSource *(*)(GIOChannel *, GIOCondition) native_field = native_self->io_create_watch;
+  GSource *(*)(GIOChannel *, GIOCondition) native_io_create_watch = native_self->io_create_watch;
 
-  mrb_value ruby_field = TODO_mruby_box_GSource_PTR_LPAREN_PTR_RPAREN_LPAREN_GIOChannel_PTR_COMMA_GIOCondition_RPAREN(mrb, native_field);
+  mrb_value io_create_watch = TODO_mruby_box_GSource_PTR_LPAREN_PTR_RPAREN_LPAREN_GIOChannel_PTR_COMMA_GIOCondition_RPAREN(mrb, native_io_create_watch);
 
-  return ruby_field;
+  return io_create_watch;
 }
 #endif
 
@@ -249,19 +257,22 @@ mrb_GLib_GIOFuncs_get_io_create_watch(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GIOFuncs_set_io_create_watch(mrb_state* mrb, mrb_value self) {
-  struct _GIOFuncs * native_self = mruby_unbox_struct _GIOFuncs(self);
-  mrb_value ruby_field;
+  struct _GIOFuncs * native_self = mruby_unbox__GIOFuncs(self);
+  mrb_value io_create_watch;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "o", &io_create_watch);
 
   /* type checking */
-  TODO_type_check_GSource_PTR_LPAREN_PTR_RPAREN_LPAREN_GIOChannel_PTR_COMMA_GIOCondition_RPAREN(ruby_field);
+  TODO_type_check_GSource_PTR_LPAREN_PTR_RPAREN_LPAREN_GIOChannel_PTR_COMMA_GIOCondition_RPAREN(io_create_watch);
 
-  GSource *(*native_field)(GIOChannel *, GIOCondition) = TODO_mruby_unbox_GSource_PTR_LPAREN_PTR_RPAREN_LPAREN_GIOChannel_PTR_COMMA_GIOCondition_RPAREN(ruby_field);
+  GSource *(*native_io_create_watch)(GIOChannel *, GIOCondition) = TODO_mruby_unbox_GSource_PTR_LPAREN_PTR_RPAREN_LPAREN_GIOChannel_PTR_COMMA_GIOCondition_RPAREN(io_create_watch);
 
-  native_self->io_create_watch = native_field;
+  native_self->io_create_watch = native_io_create_watch;
+  
 
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -272,13 +283,13 @@ mrb_GLib_GIOFuncs_set_io_create_watch(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GIOFuncs_get_io_free(mrb_state* mrb, mrb_value self) {
-  struct _GIOFuncs * native_self = mruby_unbox_struct _GIOFuncs(self);
+  struct _GIOFuncs * native_self = mruby_unbox__GIOFuncs(self);
 
-  void (*)(GIOChannel *) native_field = native_self->io_free;
+  void (*)(GIOChannel *) native_io_free = native_self->io_free;
 
-  mrb_value ruby_field = TODO_mruby_box_void_LPAREN_PTR_RPAREN_LPAREN_GIOChannel_PTR_RPAREN(mrb, native_field);
+  mrb_value io_free = TODO_mruby_box_void_LPAREN_PTR_RPAREN_LPAREN_GIOChannel_PTR_RPAREN(mrb, native_io_free);
 
-  return ruby_field;
+  return io_free;
 }
 #endif
 
@@ -290,19 +301,22 @@ mrb_GLib_GIOFuncs_get_io_free(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GIOFuncs_set_io_free(mrb_state* mrb, mrb_value self) {
-  struct _GIOFuncs * native_self = mruby_unbox_struct _GIOFuncs(self);
-  mrb_value ruby_field;
+  struct _GIOFuncs * native_self = mruby_unbox__GIOFuncs(self);
+  mrb_value io_free;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "o", &io_free);
 
   /* type checking */
-  TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_GIOChannel_PTR_RPAREN(ruby_field);
+  TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_GIOChannel_PTR_RPAREN(io_free);
 
-  void (*native_field)(GIOChannel *) = TODO_mruby_unbox_void_LPAREN_PTR_RPAREN_LPAREN_GIOChannel_PTR_RPAREN(ruby_field);
+  void (*native_io_free)(GIOChannel *) = TODO_mruby_unbox_void_LPAREN_PTR_RPAREN_LPAREN_GIOChannel_PTR_RPAREN(io_free);
 
-  native_self->io_free = native_field;
+  native_self->io_free = native_io_free;
+  
 
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -313,13 +327,13 @@ mrb_GLib_GIOFuncs_set_io_free(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GIOFuncs_get_io_set_flags(mrb_state* mrb, mrb_value self) {
-  struct _GIOFuncs * native_self = mruby_unbox_struct _GIOFuncs(self);
+  struct _GIOFuncs * native_self = mruby_unbox__GIOFuncs(self);
 
-  GIOStatus (*)(GIOChannel *, GIOFlags, GError **) native_field = native_self->io_set_flags;
+  GIOStatus (*)(GIOChannel *, GIOFlags, GError **) native_io_set_flags = native_self->io_set_flags;
 
-  mrb_value ruby_field = TODO_mruby_box_GIOStatus_LPAREN_PTR_RPAREN_LPAREN_GIOChannel_PTR_COMMA_GIOFlagsCOMMA_GError_PTR_PTR_RPAREN(mrb, native_field);
+  mrb_value io_set_flags = TODO_mruby_box_GIOStatus_LPAREN_PTR_RPAREN_LPAREN_GIOChannel_PTR_COMMA_GIOFlagsCOMMA_GError_PTR_PTR_RPAREN(mrb, native_io_set_flags);
 
-  return ruby_field;
+  return io_set_flags;
 }
 #endif
 
@@ -331,19 +345,22 @@ mrb_GLib_GIOFuncs_get_io_set_flags(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GIOFuncs_set_io_set_flags(mrb_state* mrb, mrb_value self) {
-  struct _GIOFuncs * native_self = mruby_unbox_struct _GIOFuncs(self);
-  mrb_value ruby_field;
+  struct _GIOFuncs * native_self = mruby_unbox__GIOFuncs(self);
+  mrb_value io_set_flags;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "o", &io_set_flags);
 
   /* type checking */
-  TODO_type_check_GIOStatus_LPAREN_PTR_RPAREN_LPAREN_GIOChannel_PTR_COMMA_GIOFlagsCOMMA_GError_PTR_PTR_RPAREN(ruby_field);
+  TODO_type_check_GIOStatus_LPAREN_PTR_RPAREN_LPAREN_GIOChannel_PTR_COMMA_GIOFlagsCOMMA_GError_PTR_PTR_RPAREN(io_set_flags);
 
-  GIOStatus (*native_field)(GIOChannel *, GIOFlags, GError **) = TODO_mruby_unbox_GIOStatus_LPAREN_PTR_RPAREN_LPAREN_GIOChannel_PTR_COMMA_GIOFlagsCOMMA_GError_PTR_PTR_RPAREN(ruby_field);
+  GIOStatus (*native_io_set_flags)(GIOChannel *, GIOFlags, GError **) = TODO_mruby_unbox_GIOStatus_LPAREN_PTR_RPAREN_LPAREN_GIOChannel_PTR_COMMA_GIOFlagsCOMMA_GError_PTR_PTR_RPAREN(io_set_flags);
 
-  native_self->io_set_flags = native_field;
+  native_self->io_set_flags = native_io_set_flags;
+  
 
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -354,13 +371,13 @@ mrb_GLib_GIOFuncs_set_io_set_flags(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GIOFuncs_get_io_get_flags(mrb_state* mrb, mrb_value self) {
-  struct _GIOFuncs * native_self = mruby_unbox_struct _GIOFuncs(self);
+  struct _GIOFuncs * native_self = mruby_unbox__GIOFuncs(self);
 
-  GIOFlags (*)(GIOChannel *) native_field = native_self->io_get_flags;
+  GIOFlags (*)(GIOChannel *) native_io_get_flags = native_self->io_get_flags;
 
-  mrb_value ruby_field = TODO_mruby_box_GIOFlags_LPAREN_PTR_RPAREN_LPAREN_GIOChannel_PTR_RPAREN(mrb, native_field);
+  mrb_value io_get_flags = TODO_mruby_box_GIOFlags_LPAREN_PTR_RPAREN_LPAREN_GIOChannel_PTR_RPAREN(mrb, native_io_get_flags);
 
-  return ruby_field;
+  return io_get_flags;
 }
 #endif
 
@@ -372,19 +389,22 @@ mrb_GLib_GIOFuncs_get_io_get_flags(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GIOFuncs_set_io_get_flags(mrb_state* mrb, mrb_value self) {
-  struct _GIOFuncs * native_self = mruby_unbox_struct _GIOFuncs(self);
-  mrb_value ruby_field;
+  struct _GIOFuncs * native_self = mruby_unbox__GIOFuncs(self);
+  mrb_value io_get_flags;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "o", &io_get_flags);
 
   /* type checking */
-  TODO_type_check_GIOFlags_LPAREN_PTR_RPAREN_LPAREN_GIOChannel_PTR_RPAREN(ruby_field);
+  TODO_type_check_GIOFlags_LPAREN_PTR_RPAREN_LPAREN_GIOChannel_PTR_RPAREN(io_get_flags);
 
-  GIOFlags (*native_field)(GIOChannel *) = TODO_mruby_unbox_GIOFlags_LPAREN_PTR_RPAREN_LPAREN_GIOChannel_PTR_RPAREN(ruby_field);
+  GIOFlags (*native_io_get_flags)(GIOChannel *) = TODO_mruby_unbox_GIOFlags_LPAREN_PTR_RPAREN_LPAREN_GIOChannel_PTR_RPAREN(io_get_flags);
 
-  native_self->io_get_flags = native_field;
+  native_self->io_get_flags = native_io_get_flags;
+  
 
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 

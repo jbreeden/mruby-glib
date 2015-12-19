@@ -3,10 +3,6 @@
  * Defined in file gthread.h @ line 56
  */
 
-/*
- * TODO: INCLUDES
- */
-
 #include "mruby_GLib.h"
 
 #if BIND_GOnce_TYPE
@@ -18,7 +14,7 @@
 #if BIND_GOnce_INITIALIZE
 mrb_value
 mrb_GLib_GOnce_initialize(mrb_state* mrb, mrb_value self) {
-  struct _GOnce* native_object = (struct _GOnce*)malloc(sizeof(struct _GOnce));
+  struct _GOnce* native_object = (struct _GOnce*)calloc(1, sizeof(struct _GOnce));
   mruby_gift_struct _GOnce_data_ptr(self, native_object);
   return self;
 }
@@ -67,13 +63,13 @@ mrb_GLib_GOnce_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GOnce_get_status(mrb_state* mrb, mrb_value self) {
-  struct _GOnce * native_self = mruby_unbox_struct _GOnce(self);
+  struct _GOnce * native_self = mruby_unbox__GOnce(self);
 
-  volatile GOnceStatus native_field = native_self->status;
+  volatile GOnceStatus native_status = native_self->status;
 
-  mrb_value ruby_field = TODO_mruby_box_volatile_GOnceStatus(mrb, native_field);
+  mrb_value status = TODO_mruby_box_volatile_GOnceStatus(mrb, native_status);
 
-  return ruby_field;
+  return status;
 }
 #endif
 
@@ -85,19 +81,22 @@ mrb_GLib_GOnce_get_status(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GOnce_set_status(mrb_state* mrb, mrb_value self) {
-  struct _GOnce * native_self = mruby_unbox_struct _GOnce(self);
-  mrb_value ruby_field;
+  struct _GOnce * native_self = mruby_unbox__GOnce(self);
+  mrb_value status;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "o", &status);
 
   /* type checking */
-  TODO_type_check_volatile_GOnceStatus(ruby_field);
+  TODO_type_check_volatile_GOnceStatus(status);
 
-  volatile GOnceStatus native_field = TODO_mruby_unbox_volatile_GOnceStatus(ruby_field);
+  volatile GOnceStatus native_status = TODO_mruby_unbox_volatile_GOnceStatus(status);
 
-  native_self->status = native_field;
+  native_self->status = native_status;
+  
 
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -108,13 +107,13 @@ mrb_GLib_GOnce_set_status(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GOnce_get_retval(mrb_state* mrb, mrb_value self) {
-  struct _GOnce * native_self = mruby_unbox_struct _GOnce(self);
+  struct _GOnce * native_self = mruby_unbox__GOnce(self);
 
-  volatile gpointer native_field = native_self->retval;
+  volatile gpointer native_retval = native_self->retval;
 
-  mrb_value ruby_field = TODO_mruby_box_volatile_gpointer(mrb, native_field);
+  mrb_value retval = TODO_mruby_box_volatile_gpointer(mrb, native_retval);
 
-  return ruby_field;
+  return retval;
 }
 #endif
 
@@ -126,19 +125,22 @@ mrb_GLib_GOnce_get_retval(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GOnce_set_retval(mrb_state* mrb, mrb_value self) {
-  struct _GOnce * native_self = mruby_unbox_struct _GOnce(self);
-  mrb_value ruby_field;
+  struct _GOnce * native_self = mruby_unbox__GOnce(self);
+  mrb_value retval;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "o", &retval);
 
   /* type checking */
-  TODO_type_check_volatile_gpointer(ruby_field);
+  TODO_type_check_volatile_gpointer(retval);
 
-  volatile gpointer native_field = TODO_mruby_unbox_volatile_gpointer(ruby_field);
+  volatile gpointer native_retval = TODO_mruby_unbox_volatile_gpointer(retval);
 
-  native_self->retval = native_field;
+  native_self->retval = native_retval;
+  
 
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 

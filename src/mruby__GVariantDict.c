@@ -3,10 +3,6 @@
  * Defined in file gvariant.h @ line 404
  */
 
-/*
- * TODO: INCLUDES
- */
-
 #include "mruby_GLib.h"
 
 #if BIND_GVariantDict_TYPE
@@ -18,7 +14,7 @@
 #if BIND_GVariantDict_INITIALIZE
 mrb_value
 mrb_GLib_GVariantDict_initialize(mrb_state* mrb, mrb_value self) {
-  struct _GVariantDict* native_object = (struct _GVariantDict*)malloc(sizeof(struct _GVariantDict));
+  struct _GVariantDict* native_object = (struct _GVariantDict*)calloc(1, sizeof(struct _GVariantDict));
   mruby_gift_struct _GVariantDict_data_ptr(self, native_object);
   return self;
 }
@@ -67,13 +63,13 @@ mrb_GLib_GVariantDict_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GVariantDict_get_x(mrb_state* mrb, mrb_value self) {
-  struct _GVariantDict * native_self = mruby_unbox_struct _GVariantDict(self);
+  struct _GVariantDict * native_self = mruby_unbox__GVariantDict(self);
 
-  gsize [16] native_field = native_self->x;
+  gsize [16] native_x = native_self->x;
 
-  mrb_value ruby_field = TODO_mruby_box_gsize_[16](mrb, native_field);
+  mrb_value x = TODO_mruby_box_gsize_[16](mrb, native_x);
 
-  return ruby_field;
+  return x;
 }
 #endif
 
@@ -85,19 +81,22 @@ mrb_GLib_GVariantDict_get_x(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GVariantDict_set_x(mrb_state* mrb, mrb_value self) {
-  struct _GVariantDict * native_self = mruby_unbox_struct _GVariantDict(self);
-  mrb_value ruby_field;
+  struct _GVariantDict * native_self = mruby_unbox__GVariantDict(self);
+  mrb_value x;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "o", &x);
 
   /* type checking */
-  TODO_type_check_gsize_[16](ruby_field);
+  TODO_type_check_gsize_[16](x);
 
-  gsize [16] native_field = TODO_mruby_unbox_gsize_[16](ruby_field);
+  gsize [16] native_x = TODO_mruby_unbox_gsize_[16](x);
 
-  native_self->x = native_field;
+  native_self->x = native_x;
+  
 
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 

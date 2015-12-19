@@ -3,10 +3,6 @@
  * Defined in file gmain.h @ line 65
  */
 
-/*
- * TODO: INCLUDES
- */
-
 #include "mruby_GLib.h"
 
 #if BIND_GSourcePrivate_TYPE
@@ -18,7 +14,7 @@
 #if BIND_GSourcePrivate_INITIALIZE
 mrb_value
 mrb_GLib_GSourcePrivate_initialize(mrb_state* mrb, mrb_value self) {
-  struct _GSourcePrivate* native_object = (struct _GSourcePrivate*)malloc(sizeof(struct _GSourcePrivate));
+  struct _GSourcePrivate* native_object = (struct _GSourcePrivate*)calloc(1, sizeof(struct _GSourcePrivate));
   mruby_gift_struct _GSourcePrivate_data_ptr(self, native_object);
   return self;
 }

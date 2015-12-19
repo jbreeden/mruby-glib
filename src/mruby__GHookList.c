@@ -3,10 +3,6 @@
  * Defined in file ghook.h @ line 39
  */
 
-/*
- * TODO: INCLUDES
- */
-
 #include "mruby_GLib.h"
 
 #if BIND_GHookList_TYPE
@@ -18,7 +14,7 @@
 #if BIND_GHookList_INITIALIZE
 mrb_value
 mrb_GLib_GHookList_initialize(mrb_state* mrb, mrb_value self) {
-  struct _GHookList* native_object = (struct _GHookList*)malloc(sizeof(struct _GHookList));
+  struct _GHookList* native_object = (struct _GHookList*)calloc(1, sizeof(struct _GHookList));
   mruby_gift_struct _GHookList_data_ptr(self, native_object);
   return self;
 }
@@ -67,13 +63,13 @@ mrb_GLib_GHookList_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GHookList_get_seq_id(mrb_state* mrb, mrb_value self) {
-  struct _GHookList * native_self = mruby_unbox_struct _GHookList(self);
+  struct _GHookList * native_self = mruby_unbox__GHookList(self);
 
-  gulong native_field = native_self->seq_id;
+  gulong native_seq_id = native_self->seq_id;
 
-  mrb_value ruby_field = mrb_fixnum_value(native_field);
+  mrb_value seq_id = mrb_fixnum_value(native_seq_id);
 
-  return ruby_field;
+  return seq_id;
 }
 #endif
 
@@ -85,22 +81,17 @@ mrb_GLib_GHookList_get_seq_id(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GHookList_set_seq_id(mrb_state* mrb, mrb_value self) {
-  struct _GHookList * native_self = mruby_unbox_struct _GHookList(self);
-  mrb_value ruby_field;
+  struct _GHookList * native_self = mruby_unbox__GHookList(self);
+  mrb_int native_seq_id;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "i", &native_seq_id);
 
-  /* type checking */
-  if (!mrb_obj_is_kind_of(mrb, ruby_field, mrb->fixnum_class)) {
-    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
-    return mrb_nil_value();
-  }
+  native_self->seq_id = native_seq_id;
+  
 
-  unsigned long native_field = (unsigned long)ruby_field;
-
-  native_self->seq_id = native_field;
-
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -111,13 +102,13 @@ mrb_GLib_GHookList_set_seq_id(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GHookList_get_hook_size(mrb_state* mrb, mrb_value self) {
-  struct _GHookList * native_self = mruby_unbox_struct _GHookList(self);
+  struct _GHookList * native_self = mruby_unbox__GHookList(self);
 
-  guint native_field = native_self->hook_size;
+  guint native_hook_size = native_self->hook_size;
 
-  mrb_value ruby_field = mrb_fixnum_value(native_field);
+  mrb_value hook_size = mrb_fixnum_value(native_hook_size);
 
-  return ruby_field;
+  return hook_size;
 }
 #endif
 
@@ -129,22 +120,17 @@ mrb_GLib_GHookList_get_hook_size(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GHookList_set_hook_size(mrb_state* mrb, mrb_value self) {
-  struct _GHookList * native_self = mruby_unbox_struct _GHookList(self);
-  mrb_value ruby_field;
+  struct _GHookList * native_self = mruby_unbox__GHookList(self);
+  mrb_int native_hook_size;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "i", &native_hook_size);
 
-  /* type checking */
-  if (!mrb_obj_is_kind_of(mrb, ruby_field, mrb->fixnum_class)) {
-    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
-    return mrb_nil_value();
-  }
+  native_self->hook_size = native_hook_size;
+  
 
-  unsigned int native_field = (unsigned int)ruby_field;
-
-  native_self->hook_size = native_field;
-
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -155,13 +141,13 @@ mrb_GLib_GHookList_set_hook_size(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GHookList_get_is_setup(mrb_state* mrb, mrb_value self) {
-  struct _GHookList * native_self = mruby_unbox_struct _GHookList(self);
+  struct _GHookList * native_self = mruby_unbox__GHookList(self);
 
-  guint native_field = native_self->is_setup;
+  guint native_is_setup = native_self->is_setup;
 
-  mrb_value ruby_field = mrb_fixnum_value(native_field);
+  mrb_value is_setup = mrb_fixnum_value(native_is_setup);
 
-  return ruby_field;
+  return is_setup;
 }
 #endif
 
@@ -173,22 +159,17 @@ mrb_GLib_GHookList_get_is_setup(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GHookList_set_is_setup(mrb_state* mrb, mrb_value self) {
-  struct _GHookList * native_self = mruby_unbox_struct _GHookList(self);
-  mrb_value ruby_field;
+  struct _GHookList * native_self = mruby_unbox__GHookList(self);
+  mrb_int native_is_setup;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "i", &native_is_setup);
 
-  /* type checking */
-  if (!mrb_obj_is_kind_of(mrb, ruby_field, mrb->fixnum_class)) {
-    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
-    return mrb_nil_value();
-  }
+  native_self->is_setup = native_is_setup;
+  
 
-  unsigned int native_field = (unsigned int)ruby_field;
-
-  native_self->is_setup = native_field;
-
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -199,13 +180,13 @@ mrb_GLib_GHookList_set_is_setup(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GHookList_get_hooks(mrb_state* mrb, mrb_value self) {
-  struct _GHookList * native_self = mruby_unbox_struct _GHookList(self);
+  struct _GHookList * native_self = mruby_unbox__GHookList(self);
 
-  GHook * native_field = native_self->hooks;
+  GHook * native_hooks = native_self->hooks;
 
-  mrb_value ruby_field = (native_field == NULL ? mrb_nil_value() : mruby_box__GHook(mrb, native_field));
+  mrb_value hooks = (native_hooks == NULL ? mrb_nil_value() : mruby_box__GHook(mrb, native_hooks));
 
-  return ruby_field;
+  return hooks;
 }
 #endif
 
@@ -217,22 +198,25 @@ mrb_GLib_GHookList_get_hooks(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GHookList_set_hooks(mrb_state* mrb, mrb_value self) {
-  struct _GHookList * native_self = mruby_unbox_struct _GHookList(self);
-  mrb_value ruby_field;
+  struct _GHookList * native_self = mruby_unbox__GHookList(self);
+  mrb_value hooks;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "o", &hooks);
 
   /* type checking */
-  if (!mrb_obj_is_kind_of(mrb, ruby_field, GHook_class(mrb))) {
+  if (!mrb_obj_is_kind_of(mrb, hooks, GHook_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GHook expected");
     return mrb_nil_value();
   }
 
-  GHook * native_field = (mrb_nil_p(ruby_field) ? NULL : mruby_unbox__GHook(ruby_field));
+  GHook * native_hooks = (mrb_nil_p(hooks) ? NULL : mruby_unbox__GHook(hooks));
 
-  native_self->hooks = native_field;
+  native_self->hooks = native_hooks;
+  
 
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -243,13 +227,13 @@ mrb_GLib_GHookList_set_hooks(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GHookList_get_dummy3(mrb_state* mrb, mrb_value self) {
-  struct _GHookList * native_self = mruby_unbox_struct _GHookList(self);
+  struct _GHookList * native_self = mruby_unbox__GHookList(self);
 
-  gpointer native_field = native_self->dummy3;
+  gpointer native_dummy3 = native_self->dummy3;
 
-  mrb_value ruby_field = TODO_mruby_box_gpointer(mrb, native_field);
+  mrb_value dummy3 = TODO_mruby_box_gpointer(mrb, native_dummy3);
 
-  return ruby_field;
+  return dummy3;
 }
 #endif
 
@@ -261,19 +245,22 @@ mrb_GLib_GHookList_get_dummy3(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GHookList_set_dummy3(mrb_state* mrb, mrb_value self) {
-  struct _GHookList * native_self = mruby_unbox_struct _GHookList(self);
-  mrb_value ruby_field;
+  struct _GHookList * native_self = mruby_unbox__GHookList(self);
+  mrb_value dummy3;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "o", &dummy3);
 
   /* type checking */
-  TODO_type_check_gpointer(ruby_field);
+  TODO_type_check_gpointer(dummy3);
 
-  gpointer native_field = TODO_mruby_unbox_gpointer(ruby_field);
+  gpointer native_dummy3 = TODO_mruby_unbox_gpointer(dummy3);
 
-  native_self->dummy3 = native_field;
+  native_self->dummy3 = native_dummy3;
+  
 
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -284,13 +271,13 @@ mrb_GLib_GHookList_set_dummy3(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GHookList_get_finalize_hook(mrb_state* mrb, mrb_value self) {
-  struct _GHookList * native_self = mruby_unbox_struct _GHookList(self);
+  struct _GHookList * native_self = mruby_unbox__GHookList(self);
 
-  GHookFinalizeFunc native_field = native_self->finalize_hook;
+  GHookFinalizeFunc native_finalize_hook = native_self->finalize_hook;
 
-  mrb_value ruby_field = TODO_mruby_box_GHookFinalizeFunc(mrb, native_field);
+  mrb_value finalize_hook = TODO_mruby_box_GHookFinalizeFunc(mrb, native_finalize_hook);
 
-  return ruby_field;
+  return finalize_hook;
 }
 #endif
 
@@ -302,19 +289,22 @@ mrb_GLib_GHookList_get_finalize_hook(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GHookList_set_finalize_hook(mrb_state* mrb, mrb_value self) {
-  struct _GHookList * native_self = mruby_unbox_struct _GHookList(self);
-  mrb_value ruby_field;
+  struct _GHookList * native_self = mruby_unbox__GHookList(self);
+  mrb_value finalize_hook;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "o", &finalize_hook);
 
   /* type checking */
-  TODO_type_check_GHookFinalizeFunc(ruby_field);
+  TODO_type_check_GHookFinalizeFunc(finalize_hook);
 
-  GHookFinalizeFunc native_field = TODO_mruby_unbox_GHookFinalizeFunc(ruby_field);
+  GHookFinalizeFunc native_finalize_hook = TODO_mruby_unbox_GHookFinalizeFunc(finalize_hook);
 
-  native_self->finalize_hook = native_field;
+  native_self->finalize_hook = native_finalize_hook;
+  
 
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -325,13 +315,13 @@ mrb_GLib_GHookList_set_finalize_hook(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GHookList_get_dummy(mrb_state* mrb, mrb_value self) {
-  struct _GHookList * native_self = mruby_unbox_struct _GHookList(self);
+  struct _GHookList * native_self = mruby_unbox__GHookList(self);
 
-  gpointer [2] native_field = native_self->dummy;
+  gpointer [2] native_dummy = native_self->dummy;
 
-  mrb_value ruby_field = TODO_mruby_box_gpointer_[2](mrb, native_field);
+  mrb_value dummy = TODO_mruby_box_gpointer_[2](mrb, native_dummy);
 
-  return ruby_field;
+  return dummy;
 }
 #endif
 
@@ -343,19 +333,22 @@ mrb_GLib_GHookList_get_dummy(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GHookList_set_dummy(mrb_state* mrb, mrb_value self) {
-  struct _GHookList * native_self = mruby_unbox_struct _GHookList(self);
-  mrb_value ruby_field;
+  struct _GHookList * native_self = mruby_unbox__GHookList(self);
+  mrb_value dummy;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "o", &dummy);
 
   /* type checking */
-  TODO_type_check_gpointer_[2](ruby_field);
+  TODO_type_check_gpointer_[2](dummy);
 
-  gpointer [2] native_field = TODO_mruby_unbox_gpointer_[2](ruby_field);
+  gpointer [2] native_dummy = TODO_mruby_unbox_gpointer_[2](dummy);
 
-  native_self->dummy = native_field;
+  native_self->dummy = native_dummy;
+  
 
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 

@@ -3,10 +3,6 @@
  * Defined in file ghash.h @ line 43
  */
 
-/*
- * TODO: INCLUDES
- */
-
 #include "mruby_GLib.h"
 
 #if BIND_GHashTableIter_TYPE
@@ -18,7 +14,7 @@
 #if BIND_GHashTableIter_INITIALIZE
 mrb_value
 mrb_GLib_GHashTableIter_initialize(mrb_state* mrb, mrb_value self) {
-  struct _GHashTableIter* native_object = (struct _GHashTableIter*)malloc(sizeof(struct _GHashTableIter));
+  struct _GHashTableIter* native_object = (struct _GHashTableIter*)calloc(1, sizeof(struct _GHashTableIter));
   mruby_gift_struct _GHashTableIter_data_ptr(self, native_object);
   return self;
 }
@@ -67,13 +63,13 @@ mrb_GLib_GHashTableIter_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GHashTableIter_get_dummy1(mrb_state* mrb, mrb_value self) {
-  struct _GHashTableIter * native_self = mruby_unbox_struct _GHashTableIter(self);
+  struct _GHashTableIter * native_self = mruby_unbox__GHashTableIter(self);
 
-  gpointer native_field = native_self->dummy1;
+  gpointer native_dummy1 = native_self->dummy1;
 
-  mrb_value ruby_field = TODO_mruby_box_gpointer(mrb, native_field);
+  mrb_value dummy1 = TODO_mruby_box_gpointer(mrb, native_dummy1);
 
-  return ruby_field;
+  return dummy1;
 }
 #endif
 
@@ -85,19 +81,22 @@ mrb_GLib_GHashTableIter_get_dummy1(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GHashTableIter_set_dummy1(mrb_state* mrb, mrb_value self) {
-  struct _GHashTableIter * native_self = mruby_unbox_struct _GHashTableIter(self);
-  mrb_value ruby_field;
+  struct _GHashTableIter * native_self = mruby_unbox__GHashTableIter(self);
+  mrb_value dummy1;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "o", &dummy1);
 
   /* type checking */
-  TODO_type_check_gpointer(ruby_field);
+  TODO_type_check_gpointer(dummy1);
 
-  gpointer native_field = TODO_mruby_unbox_gpointer(ruby_field);
+  gpointer native_dummy1 = TODO_mruby_unbox_gpointer(dummy1);
 
-  native_self->dummy1 = native_field;
+  native_self->dummy1 = native_dummy1;
+  
 
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -108,13 +107,13 @@ mrb_GLib_GHashTableIter_set_dummy1(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GHashTableIter_get_dummy2(mrb_state* mrb, mrb_value self) {
-  struct _GHashTableIter * native_self = mruby_unbox_struct _GHashTableIter(self);
+  struct _GHashTableIter * native_self = mruby_unbox__GHashTableIter(self);
 
-  gpointer native_field = native_self->dummy2;
+  gpointer native_dummy2 = native_self->dummy2;
 
-  mrb_value ruby_field = TODO_mruby_box_gpointer(mrb, native_field);
+  mrb_value dummy2 = TODO_mruby_box_gpointer(mrb, native_dummy2);
 
-  return ruby_field;
+  return dummy2;
 }
 #endif
 
@@ -126,19 +125,22 @@ mrb_GLib_GHashTableIter_get_dummy2(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GHashTableIter_set_dummy2(mrb_state* mrb, mrb_value self) {
-  struct _GHashTableIter * native_self = mruby_unbox_struct _GHashTableIter(self);
-  mrb_value ruby_field;
+  struct _GHashTableIter * native_self = mruby_unbox__GHashTableIter(self);
+  mrb_value dummy2;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "o", &dummy2);
 
   /* type checking */
-  TODO_type_check_gpointer(ruby_field);
+  TODO_type_check_gpointer(dummy2);
 
-  gpointer native_field = TODO_mruby_unbox_gpointer(ruby_field);
+  gpointer native_dummy2 = TODO_mruby_unbox_gpointer(dummy2);
 
-  native_self->dummy2 = native_field;
+  native_self->dummy2 = native_dummy2;
+  
 
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -149,13 +151,13 @@ mrb_GLib_GHashTableIter_set_dummy2(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GHashTableIter_get_dummy3(mrb_state* mrb, mrb_value self) {
-  struct _GHashTableIter * native_self = mruby_unbox_struct _GHashTableIter(self);
+  struct _GHashTableIter * native_self = mruby_unbox__GHashTableIter(self);
 
-  gpointer native_field = native_self->dummy3;
+  gpointer native_dummy3 = native_self->dummy3;
 
-  mrb_value ruby_field = TODO_mruby_box_gpointer(mrb, native_field);
+  mrb_value dummy3 = TODO_mruby_box_gpointer(mrb, native_dummy3);
 
-  return ruby_field;
+  return dummy3;
 }
 #endif
 
@@ -167,19 +169,22 @@ mrb_GLib_GHashTableIter_get_dummy3(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GHashTableIter_set_dummy3(mrb_state* mrb, mrb_value self) {
-  struct _GHashTableIter * native_self = mruby_unbox_struct _GHashTableIter(self);
-  mrb_value ruby_field;
+  struct _GHashTableIter * native_self = mruby_unbox__GHashTableIter(self);
+  mrb_value dummy3;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "o", &dummy3);
 
   /* type checking */
-  TODO_type_check_gpointer(ruby_field);
+  TODO_type_check_gpointer(dummy3);
 
-  gpointer native_field = TODO_mruby_unbox_gpointer(ruby_field);
+  gpointer native_dummy3 = TODO_mruby_unbox_gpointer(dummy3);
 
-  native_self->dummy3 = native_field;
+  native_self->dummy3 = native_dummy3;
+  
 
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -190,13 +195,13 @@ mrb_GLib_GHashTableIter_set_dummy3(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GHashTableIter_get_dummy4(mrb_state* mrb, mrb_value self) {
-  struct _GHashTableIter * native_self = mruby_unbox_struct _GHashTableIter(self);
+  struct _GHashTableIter * native_self = mruby_unbox__GHashTableIter(self);
 
-  int native_field = native_self->dummy4;
+  int native_dummy4 = native_self->dummy4;
 
-  mrb_value ruby_field = mrb_fixnum_value(native_field);
+  mrb_value dummy4 = mrb_fixnum_value(native_dummy4);
 
-  return ruby_field;
+  return dummy4;
 }
 #endif
 
@@ -208,22 +213,17 @@ mrb_GLib_GHashTableIter_get_dummy4(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GHashTableIter_set_dummy4(mrb_state* mrb, mrb_value self) {
-  struct _GHashTableIter * native_self = mruby_unbox_struct _GHashTableIter(self);
-  mrb_value ruby_field;
+  struct _GHashTableIter * native_self = mruby_unbox__GHashTableIter(self);
+  mrb_int native_dummy4;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "i", &native_dummy4);
 
-  /* type checking */
-  if (!mrb_obj_is_kind_of(mrb, ruby_field, mrb->fixnum_class)) {
-    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
-    return mrb_nil_value();
-  }
+  native_self->dummy4 = native_dummy4;
+  
 
-  int native_field = (int)ruby_field;
-
-  native_self->dummy4 = native_field;
-
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -234,13 +234,13 @@ mrb_GLib_GHashTableIter_set_dummy4(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GHashTableIter_get_dummy5(mrb_state* mrb, mrb_value self) {
-  struct _GHashTableIter * native_self = mruby_unbox_struct _GHashTableIter(self);
+  struct _GHashTableIter * native_self = mruby_unbox__GHashTableIter(self);
 
-  gboolean native_field = native_self->dummy5;
+  gboolean native_dummy5 = native_self->dummy5;
 
-  mrb_value ruby_field = mrb_fixnum_value(native_field);
+  mrb_value dummy5 = mrb_bool_value(native_dummy5);
 
-  return ruby_field;
+  return dummy5;
 }
 #endif
 
@@ -252,22 +252,17 @@ mrb_GLib_GHashTableIter_get_dummy5(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GHashTableIter_set_dummy5(mrb_state* mrb, mrb_value self) {
-  struct _GHashTableIter * native_self = mruby_unbox_struct _GHashTableIter(self);
-  mrb_value ruby_field;
+  struct _GHashTableIter * native_self = mruby_unbox__GHashTableIter(self);
+  mrb_bool native_dummy5;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "b", &native_dummy5);
 
-  /* type checking */
-  if (!mrb_obj_is_kind_of(mrb, ruby_field, mrb->fixnum_class)) {
-    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
-    return mrb_nil_value();
-  }
+  native_self->dummy5 = native_dummy5;
+  
 
-  int native_field = (int)ruby_field;
-
-  native_self->dummy5 = native_field;
-
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -278,13 +273,13 @@ mrb_GLib_GHashTableIter_set_dummy5(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GHashTableIter_get_dummy6(mrb_state* mrb, mrb_value self) {
-  struct _GHashTableIter * native_self = mruby_unbox_struct _GHashTableIter(self);
+  struct _GHashTableIter * native_self = mruby_unbox__GHashTableIter(self);
 
-  gpointer native_field = native_self->dummy6;
+  gpointer native_dummy6 = native_self->dummy6;
 
-  mrb_value ruby_field = TODO_mruby_box_gpointer(mrb, native_field);
+  mrb_value dummy6 = TODO_mruby_box_gpointer(mrb, native_dummy6);
 
-  return ruby_field;
+  return dummy6;
 }
 #endif
 
@@ -296,19 +291,22 @@ mrb_GLib_GHashTableIter_get_dummy6(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GHashTableIter_set_dummy6(mrb_state* mrb, mrb_value self) {
-  struct _GHashTableIter * native_self = mruby_unbox_struct _GHashTableIter(self);
-  mrb_value ruby_field;
+  struct _GHashTableIter * native_self = mruby_unbox__GHashTableIter(self);
+  mrb_value dummy6;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "o", &dummy6);
 
   /* type checking */
-  TODO_type_check_gpointer(ruby_field);
+  TODO_type_check_gpointer(dummy6);
 
-  gpointer native_field = TODO_mruby_unbox_gpointer(ruby_field);
+  gpointer native_dummy6 = TODO_mruby_unbox_gpointer(dummy6);
 
-  native_self->dummy6 = native_field;
+  native_self->dummy6 = native_dummy6;
+  
 
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 

@@ -3,10 +3,6 @@
  * Defined in file gtestutils.h @ line 368
  */
 
-/*
- * TODO: INCLUDES
- */
-
 #include "mruby_GLib.h"
 
 #if BIND_GTestLogMsg_TYPE
@@ -18,7 +14,7 @@
 #if BIND_GTestLogMsg_INITIALIZE
 mrb_value
 mrb_GLib_GTestLogMsg_initialize(mrb_state* mrb, mrb_value self) {
-  GTestLogMsg* native_object = (GTestLogMsg*)malloc(sizeof(GTestLogMsg));
+  GTestLogMsg* native_object = (GTestLogMsg*)calloc(1, sizeof(GTestLogMsg));
   mruby_gift_GTestLogMsg_data_ptr(self, native_object);
   return self;
 }
@@ -69,11 +65,11 @@ mrb_value
 mrb_GLib_GTestLogMsg_get_log_type(mrb_state* mrb, mrb_value self) {
   GTestLogMsg * native_self = mruby_unbox_GTestLogMsg(self);
 
-  GTestLogType native_field = native_self->log_type;
+  GTestLogType native_log_type = native_self->log_type;
 
-  mrb_value ruby_field = mrb_fixnum_value(native_field);
+  mrb_value log_type = mrb_fixnum_value(native_log_type);
 
-  return ruby_field;
+  return log_type;
 }
 #endif
 
@@ -86,21 +82,16 @@ mrb_GLib_GTestLogMsg_get_log_type(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_GTestLogMsg_set_log_type(mrb_state* mrb, mrb_value self) {
   GTestLogMsg * native_self = mruby_unbox_GTestLogMsg(self);
-  mrb_value ruby_field;
+  mrb_int native_log_type;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "i", &native_log_type);
 
-  /* type checking */
-  if (!mrb_obj_is_kind_of(mrb, ruby_field, mrb->fixnum_class)) {
-    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
-    return mrb_nil_value();
-  }
+  native_self->log_type = native_log_type;
+  
 
-  int native_field = (int)ruby_field;
-
-  native_self->log_type = native_field;
-
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -113,11 +104,11 @@ mrb_value
 mrb_GLib_GTestLogMsg_get_n_strings(mrb_state* mrb, mrb_value self) {
   GTestLogMsg * native_self = mruby_unbox_GTestLogMsg(self);
 
-  guint native_field = native_self->n_strings;
+  guint native_n_strings = native_self->n_strings;
 
-  mrb_value ruby_field = mrb_fixnum_value(native_field);
+  mrb_value n_strings = mrb_fixnum_value(native_n_strings);
 
-  return ruby_field;
+  return n_strings;
 }
 #endif
 
@@ -130,21 +121,16 @@ mrb_GLib_GTestLogMsg_get_n_strings(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_GTestLogMsg_set_n_strings(mrb_state* mrb, mrb_value self) {
   GTestLogMsg * native_self = mruby_unbox_GTestLogMsg(self);
-  mrb_value ruby_field;
+  mrb_int native_n_strings;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "i", &native_n_strings);
 
-  /* type checking */
-  if (!mrb_obj_is_kind_of(mrb, ruby_field, mrb->fixnum_class)) {
-    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
-    return mrb_nil_value();
-  }
+  native_self->n_strings = native_n_strings;
+  
 
-  unsigned int native_field = (unsigned int)ruby_field;
-
-  native_self->n_strings = native_field;
-
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -157,11 +143,11 @@ mrb_value
 mrb_GLib_GTestLogMsg_get_strings(mrb_state* mrb, mrb_value self) {
   GTestLogMsg * native_self = mruby_unbox_GTestLogMsg(self);
 
-  gchar ** native_field = native_self->strings;
+  gchar ** native_strings = native_self->strings;
 
-  mrb_value ruby_field = TODO_mruby_box_gchar_PTR_PTR(mrb, native_field);
+  mrb_value strings = TODO_mruby_box_gchar_PTR_PTR(mrb, native_strings);
 
-  return ruby_field;
+  return strings;
 }
 #endif
 
@@ -174,18 +160,21 @@ mrb_GLib_GTestLogMsg_get_strings(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_GTestLogMsg_set_strings(mrb_state* mrb, mrb_value self) {
   GTestLogMsg * native_self = mruby_unbox_GTestLogMsg(self);
-  mrb_value ruby_field;
+  mrb_value strings;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "o", &strings);
 
   /* type checking */
-  TODO_type_check_gchar_PTR_PTR(ruby_field);
+  TODO_type_check_gchar_PTR_PTR(strings);
 
-  gchar ** native_field = TODO_mruby_unbox_gchar_PTR_PTR(ruby_field);
+  gchar ** native_strings = TODO_mruby_unbox_gchar_PTR_PTR(strings);
 
-  native_self->strings = native_field;
+  native_self->strings = native_strings;
+  
 
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -198,11 +187,11 @@ mrb_value
 mrb_GLib_GTestLogMsg_get_n_nums(mrb_state* mrb, mrb_value self) {
   GTestLogMsg * native_self = mruby_unbox_GTestLogMsg(self);
 
-  guint native_field = native_self->n_nums;
+  guint native_n_nums = native_self->n_nums;
 
-  mrb_value ruby_field = mrb_fixnum_value(native_field);
+  mrb_value n_nums = mrb_fixnum_value(native_n_nums);
 
-  return ruby_field;
+  return n_nums;
 }
 #endif
 
@@ -215,21 +204,16 @@ mrb_GLib_GTestLogMsg_get_n_nums(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_GTestLogMsg_set_n_nums(mrb_state* mrb, mrb_value self) {
   GTestLogMsg * native_self = mruby_unbox_GTestLogMsg(self);
-  mrb_value ruby_field;
+  mrb_int native_n_nums;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "i", &native_n_nums);
 
-  /* type checking */
-  if (!mrb_obj_is_kind_of(mrb, ruby_field, mrb->fixnum_class)) {
-    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
-    return mrb_nil_value();
-  }
+  native_self->n_nums = native_n_nums;
+  
 
-  unsigned int native_field = (unsigned int)ruby_field;
-
-  native_self->n_nums = native_field;
-
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -242,11 +226,11 @@ mrb_value
 mrb_GLib_GTestLogMsg_get_nums(mrb_state* mrb, mrb_value self) {
   GTestLogMsg * native_self = mruby_unbox_GTestLogMsg(self);
 
-  long double * native_field = native_self->nums;
+  long double * native_nums = native_self->nums;
 
-  mrb_value ruby_field = TODO_mruby_box_long_double_PTR(mrb, native_field);
+  mrb_value nums = TODO_mruby_box_long_double_PTR(mrb, native_nums);
 
-  return ruby_field;
+  return nums;
 }
 #endif
 
@@ -259,18 +243,21 @@ mrb_GLib_GTestLogMsg_get_nums(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_GTestLogMsg_set_nums(mrb_state* mrb, mrb_value self) {
   GTestLogMsg * native_self = mruby_unbox_GTestLogMsg(self);
-  mrb_value ruby_field;
+  mrb_value nums;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "o", &nums);
 
   /* type checking */
-  TODO_type_check_long_double_PTR(ruby_field);
+  TODO_type_check_long_double_PTR(nums);
 
-  long double * native_field = TODO_mruby_unbox_long_double_PTR(ruby_field);
+  long double * native_nums = TODO_mruby_unbox_long_double_PTR(nums);
 
-  native_self->nums = native_field;
+  native_self->nums = native_nums;
+  
 
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 

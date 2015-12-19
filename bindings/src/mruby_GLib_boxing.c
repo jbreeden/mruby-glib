@@ -22,14 +22,14 @@
  * -----------
  * 
  * By default, all data types are assumed to be destructable by the `free`
- * function. To use a custom destructor for your type, provide a CType::Definition
- * to mruby-bindings with a `gc_template` member.
+ * function. To use a custom destructor for your type, tell CTypes with
+ * `CTypes.set_destructor`.
  *
  * Example
  * ```
- * CTypes.define("MyType") do
- *   self.gc_template = "free_my_type(%{value});"
- * end
+ * // I have `struct GError` objects from glib,
+ * // which should be freed with `g_error_free`
+ * CTypes.set_destructor('struct GError', 'g_error_free')
  * ```
  */
  #include "mruby_GLib.h"
@@ -1030,7 +1030,7 @@ static void free__GError(mrb_state* mrb, void* ptr) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)ptr;
   if (box->belongs_to_ruby) {
     if (box->obj != NULL) {
-      free(box->obj);
+      g_error_free(box->obj);
       box->obj = NULL;
     }
   }

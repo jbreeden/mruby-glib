@@ -3,10 +3,6 @@
  * Defined in file garray.h @ line 36
  */
 
-/*
- * TODO: INCLUDES
- */
-
 #include "mruby_GLib.h"
 
 #if BIND_GBytes_TYPE
@@ -18,7 +14,7 @@
 #if BIND_GBytes_INITIALIZE
 mrb_value
 mrb_GLib_GBytes_initialize(mrb_state* mrb, mrb_value self) {
-  struct _GBytes* native_object = (struct _GBytes*)malloc(sizeof(struct _GBytes));
+  struct _GBytes* native_object = (struct _GBytes*)calloc(1, sizeof(struct _GBytes));
   mruby_gift_struct _GBytes_data_ptr(self, native_object);
   return self;
 }

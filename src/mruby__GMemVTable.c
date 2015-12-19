@@ -3,10 +3,6 @@
  * Defined in file gmem.h @ line 51
  */
 
-/*
- * TODO: INCLUDES
- */
-
 #include "mruby_GLib.h"
 
 #if BIND_GMemVTable_TYPE
@@ -18,7 +14,7 @@
 #if BIND_GMemVTable_INITIALIZE
 mrb_value
 mrb_GLib_GMemVTable_initialize(mrb_state* mrb, mrb_value self) {
-  struct _GMemVTable* native_object = (struct _GMemVTable*)malloc(sizeof(struct _GMemVTable));
+  struct _GMemVTable* native_object = (struct _GMemVTable*)calloc(1, sizeof(struct _GMemVTable));
   mruby_gift_struct _GMemVTable_data_ptr(self, native_object);
   return self;
 }
@@ -67,13 +63,13 @@ mrb_GLib_GMemVTable_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GMemVTable_get_malloc(mrb_state* mrb, mrb_value self) {
-  struct _GMemVTable * native_self = mruby_unbox_struct _GMemVTable(self);
+  struct _GMemVTable * native_self = mruby_unbox__GMemVTable(self);
 
-  gpointer (*)(gsize) native_field = native_self->malloc;
+  gpointer (*)(gsize) native_malloc = native_self->malloc;
 
-  mrb_value ruby_field = TODO_mruby_box_gpointer_LPAREN_PTR_RPAREN_LPAREN_gsize_RPAREN(mrb, native_field);
+  mrb_value malloc = TODO_mruby_box_gpointer_LPAREN_PTR_RPAREN_LPAREN_gsize_RPAREN(mrb, native_malloc);
 
-  return ruby_field;
+  return malloc;
 }
 #endif
 
@@ -85,19 +81,22 @@ mrb_GLib_GMemVTable_get_malloc(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GMemVTable_set_malloc(mrb_state* mrb, mrb_value self) {
-  struct _GMemVTable * native_self = mruby_unbox_struct _GMemVTable(self);
-  mrb_value ruby_field;
+  struct _GMemVTable * native_self = mruby_unbox__GMemVTable(self);
+  mrb_value malloc;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "o", &malloc);
 
   /* type checking */
-  TODO_type_check_gpointer_LPAREN_PTR_RPAREN_LPAREN_gsize_RPAREN(ruby_field);
+  TODO_type_check_gpointer_LPAREN_PTR_RPAREN_LPAREN_gsize_RPAREN(malloc);
 
-  gpointer (*native_field)(gsize) = TODO_mruby_unbox_gpointer_LPAREN_PTR_RPAREN_LPAREN_gsize_RPAREN(ruby_field);
+  gpointer (*native_malloc)(gsize) = TODO_mruby_unbox_gpointer_LPAREN_PTR_RPAREN_LPAREN_gsize_RPAREN(malloc);
 
-  native_self->malloc = native_field;
+  native_self->malloc = native_malloc;
+  
 
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -108,13 +107,13 @@ mrb_GLib_GMemVTable_set_malloc(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GMemVTable_get_realloc(mrb_state* mrb, mrb_value self) {
-  struct _GMemVTable * native_self = mruby_unbox_struct _GMemVTable(self);
+  struct _GMemVTable * native_self = mruby_unbox__GMemVTable(self);
 
-  gpointer (*)(gpointer, gsize) native_field = native_self->realloc;
+  gpointer (*)(gpointer, gsize) native_realloc = native_self->realloc;
 
-  mrb_value ruby_field = TODO_mruby_box_gpointer_LPAREN_PTR_RPAREN_LPAREN_gpointerCOMMA_gsize_RPAREN(mrb, native_field);
+  mrb_value realloc = TODO_mruby_box_gpointer_LPAREN_PTR_RPAREN_LPAREN_gpointerCOMMA_gsize_RPAREN(mrb, native_realloc);
 
-  return ruby_field;
+  return realloc;
 }
 #endif
 
@@ -126,19 +125,22 @@ mrb_GLib_GMemVTable_get_realloc(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GMemVTable_set_realloc(mrb_state* mrb, mrb_value self) {
-  struct _GMemVTable * native_self = mruby_unbox_struct _GMemVTable(self);
-  mrb_value ruby_field;
+  struct _GMemVTable * native_self = mruby_unbox__GMemVTable(self);
+  mrb_value realloc;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "o", &realloc);
 
   /* type checking */
-  TODO_type_check_gpointer_LPAREN_PTR_RPAREN_LPAREN_gpointerCOMMA_gsize_RPAREN(ruby_field);
+  TODO_type_check_gpointer_LPAREN_PTR_RPAREN_LPAREN_gpointerCOMMA_gsize_RPAREN(realloc);
 
-  gpointer (*native_field)(gpointer, gsize) = TODO_mruby_unbox_gpointer_LPAREN_PTR_RPAREN_LPAREN_gpointerCOMMA_gsize_RPAREN(ruby_field);
+  gpointer (*native_realloc)(gpointer, gsize) = TODO_mruby_unbox_gpointer_LPAREN_PTR_RPAREN_LPAREN_gpointerCOMMA_gsize_RPAREN(realloc);
 
-  native_self->realloc = native_field;
+  native_self->realloc = native_realloc;
+  
 
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -149,13 +151,13 @@ mrb_GLib_GMemVTable_set_realloc(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GMemVTable_get_free(mrb_state* mrb, mrb_value self) {
-  struct _GMemVTable * native_self = mruby_unbox_struct _GMemVTable(self);
+  struct _GMemVTable * native_self = mruby_unbox__GMemVTable(self);
 
-  void (*)(gpointer) native_field = native_self->free;
+  void (*)(gpointer) native_free = native_self->free;
 
-  mrb_value ruby_field = TODO_mruby_box_void_LPAREN_PTR_RPAREN_LPAREN_gpointer_RPAREN(mrb, native_field);
+  mrb_value free = TODO_mruby_box_void_LPAREN_PTR_RPAREN_LPAREN_gpointer_RPAREN(mrb, native_free);
 
-  return ruby_field;
+  return free;
 }
 #endif
 
@@ -167,19 +169,22 @@ mrb_GLib_GMemVTable_get_free(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GMemVTable_set_free(mrb_state* mrb, mrb_value self) {
-  struct _GMemVTable * native_self = mruby_unbox_struct _GMemVTable(self);
-  mrb_value ruby_field;
+  struct _GMemVTable * native_self = mruby_unbox__GMemVTable(self);
+  mrb_value free;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "o", &free);
 
   /* type checking */
-  TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_gpointer_RPAREN(ruby_field);
+  TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_gpointer_RPAREN(free);
 
-  void (*native_field)(gpointer) = TODO_mruby_unbox_void_LPAREN_PTR_RPAREN_LPAREN_gpointer_RPAREN(ruby_field);
+  void (*native_free)(gpointer) = TODO_mruby_unbox_void_LPAREN_PTR_RPAREN_LPAREN_gpointer_RPAREN(free);
 
-  native_self->free = native_field;
+  native_self->free = native_free;
+  
 
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -190,13 +195,13 @@ mrb_GLib_GMemVTable_set_free(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GMemVTable_get_calloc(mrb_state* mrb, mrb_value self) {
-  struct _GMemVTable * native_self = mruby_unbox_struct _GMemVTable(self);
+  struct _GMemVTable * native_self = mruby_unbox__GMemVTable(self);
 
-  gpointer (*)(gsize, gsize) native_field = native_self->calloc;
+  gpointer (*)(gsize, gsize) native_calloc = native_self->calloc;
 
-  mrb_value ruby_field = TODO_mruby_box_gpointer_LPAREN_PTR_RPAREN_LPAREN_gsizeCOMMA_gsize_RPAREN(mrb, native_field);
+  mrb_value calloc = TODO_mruby_box_gpointer_LPAREN_PTR_RPAREN_LPAREN_gsizeCOMMA_gsize_RPAREN(mrb, native_calloc);
 
-  return ruby_field;
+  return calloc;
 }
 #endif
 
@@ -208,19 +213,22 @@ mrb_GLib_GMemVTable_get_calloc(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GMemVTable_set_calloc(mrb_state* mrb, mrb_value self) {
-  struct _GMemVTable * native_self = mruby_unbox_struct _GMemVTable(self);
-  mrb_value ruby_field;
+  struct _GMemVTable * native_self = mruby_unbox__GMemVTable(self);
+  mrb_value calloc;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "o", &calloc);
 
   /* type checking */
-  TODO_type_check_gpointer_LPAREN_PTR_RPAREN_LPAREN_gsizeCOMMA_gsize_RPAREN(ruby_field);
+  TODO_type_check_gpointer_LPAREN_PTR_RPAREN_LPAREN_gsizeCOMMA_gsize_RPAREN(calloc);
 
-  gpointer (*native_field)(gsize, gsize) = TODO_mruby_unbox_gpointer_LPAREN_PTR_RPAREN_LPAREN_gsizeCOMMA_gsize_RPAREN(ruby_field);
+  gpointer (*native_calloc)(gsize, gsize) = TODO_mruby_unbox_gpointer_LPAREN_PTR_RPAREN_LPAREN_gsizeCOMMA_gsize_RPAREN(calloc);
 
-  native_self->calloc = native_field;
+  native_self->calloc = native_calloc;
+  
 
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -231,13 +239,13 @@ mrb_GLib_GMemVTable_set_calloc(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GMemVTable_get_try_malloc(mrb_state* mrb, mrb_value self) {
-  struct _GMemVTable * native_self = mruby_unbox_struct _GMemVTable(self);
+  struct _GMemVTable * native_self = mruby_unbox__GMemVTable(self);
 
-  gpointer (*)(gsize) native_field = native_self->try_malloc;
+  gpointer (*)(gsize) native_try_malloc = native_self->try_malloc;
 
-  mrb_value ruby_field = TODO_mruby_box_gpointer_LPAREN_PTR_RPAREN_LPAREN_gsize_RPAREN(mrb, native_field);
+  mrb_value try_malloc = TODO_mruby_box_gpointer_LPAREN_PTR_RPAREN_LPAREN_gsize_RPAREN(mrb, native_try_malloc);
 
-  return ruby_field;
+  return try_malloc;
 }
 #endif
 
@@ -249,19 +257,22 @@ mrb_GLib_GMemVTable_get_try_malloc(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GMemVTable_set_try_malloc(mrb_state* mrb, mrb_value self) {
-  struct _GMemVTable * native_self = mruby_unbox_struct _GMemVTable(self);
-  mrb_value ruby_field;
+  struct _GMemVTable * native_self = mruby_unbox__GMemVTable(self);
+  mrb_value try_malloc;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "o", &try_malloc);
 
   /* type checking */
-  TODO_type_check_gpointer_LPAREN_PTR_RPAREN_LPAREN_gsize_RPAREN(ruby_field);
+  TODO_type_check_gpointer_LPAREN_PTR_RPAREN_LPAREN_gsize_RPAREN(try_malloc);
 
-  gpointer (*native_field)(gsize) = TODO_mruby_unbox_gpointer_LPAREN_PTR_RPAREN_LPAREN_gsize_RPAREN(ruby_field);
+  gpointer (*native_try_malloc)(gsize) = TODO_mruby_unbox_gpointer_LPAREN_PTR_RPAREN_LPAREN_gsize_RPAREN(try_malloc);
 
-  native_self->try_malloc = native_field;
+  native_self->try_malloc = native_try_malloc;
+  
 
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -272,13 +283,13 @@ mrb_GLib_GMemVTable_set_try_malloc(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GMemVTable_get_try_realloc(mrb_state* mrb, mrb_value self) {
-  struct _GMemVTable * native_self = mruby_unbox_struct _GMemVTable(self);
+  struct _GMemVTable * native_self = mruby_unbox__GMemVTable(self);
 
-  gpointer (*)(gpointer, gsize) native_field = native_self->try_realloc;
+  gpointer (*)(gpointer, gsize) native_try_realloc = native_self->try_realloc;
 
-  mrb_value ruby_field = TODO_mruby_box_gpointer_LPAREN_PTR_RPAREN_LPAREN_gpointerCOMMA_gsize_RPAREN(mrb, native_field);
+  mrb_value try_realloc = TODO_mruby_box_gpointer_LPAREN_PTR_RPAREN_LPAREN_gpointerCOMMA_gsize_RPAREN(mrb, native_try_realloc);
 
-  return ruby_field;
+  return try_realloc;
 }
 #endif
 
@@ -290,19 +301,22 @@ mrb_GLib_GMemVTable_get_try_realloc(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GMemVTable_set_try_realloc(mrb_state* mrb, mrb_value self) {
-  struct _GMemVTable * native_self = mruby_unbox_struct _GMemVTable(self);
-  mrb_value ruby_field;
+  struct _GMemVTable * native_self = mruby_unbox__GMemVTable(self);
+  mrb_value try_realloc;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "o", &try_realloc);
 
   /* type checking */
-  TODO_type_check_gpointer_LPAREN_PTR_RPAREN_LPAREN_gpointerCOMMA_gsize_RPAREN(ruby_field);
+  TODO_type_check_gpointer_LPAREN_PTR_RPAREN_LPAREN_gpointerCOMMA_gsize_RPAREN(try_realloc);
 
-  gpointer (*native_field)(gpointer, gsize) = TODO_mruby_unbox_gpointer_LPAREN_PTR_RPAREN_LPAREN_gpointerCOMMA_gsize_RPAREN(ruby_field);
+  gpointer (*native_try_realloc)(gpointer, gsize) = TODO_mruby_unbox_gpointer_LPAREN_PTR_RPAREN_LPAREN_gpointerCOMMA_gsize_RPAREN(try_realloc);
 
-  native_self->try_realloc = native_field;
+  native_self->try_realloc = native_try_realloc;
+  
 
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 

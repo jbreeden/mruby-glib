@@ -3,10 +3,6 @@
  * Defined in file garray.h @ line 39
  */
 
-/*
- * TODO: INCLUDES
- */
-
 #include "mruby_GLib.h"
 
 #if BIND_GPtrArray_TYPE
@@ -18,7 +14,7 @@
 #if BIND_GPtrArray_INITIALIZE
 mrb_value
 mrb_GLib_GPtrArray_initialize(mrb_state* mrb, mrb_value self) {
-  struct _GPtrArray* native_object = (struct _GPtrArray*)malloc(sizeof(struct _GPtrArray));
+  struct _GPtrArray* native_object = (struct _GPtrArray*)calloc(1, sizeof(struct _GPtrArray));
   mruby_gift_struct _GPtrArray_data_ptr(self, native_object);
   return self;
 }
@@ -67,13 +63,13 @@ mrb_GLib_GPtrArray_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GPtrArray_get_pdata(mrb_state* mrb, mrb_value self) {
-  struct _GPtrArray * native_self = mruby_unbox_struct _GPtrArray(self);
+  struct _GPtrArray * native_self = mruby_unbox__GPtrArray(self);
 
-  gpointer * native_field = native_self->pdata;
+  gpointer * native_pdata = native_self->pdata;
 
-  mrb_value ruby_field = TODO_mruby_box_gpointer_PTR(mrb, native_field);
+  mrb_value pdata = TODO_mruby_box_gpointer_PTR(mrb, native_pdata);
 
-  return ruby_field;
+  return pdata;
 }
 #endif
 
@@ -85,19 +81,22 @@ mrb_GLib_GPtrArray_get_pdata(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GPtrArray_set_pdata(mrb_state* mrb, mrb_value self) {
-  struct _GPtrArray * native_self = mruby_unbox_struct _GPtrArray(self);
-  mrb_value ruby_field;
+  struct _GPtrArray * native_self = mruby_unbox__GPtrArray(self);
+  mrb_value pdata;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "o", &pdata);
 
   /* type checking */
-  TODO_type_check_gpointer_PTR(ruby_field);
+  TODO_type_check_gpointer_PTR(pdata);
 
-  gpointer * native_field = TODO_mruby_unbox_gpointer_PTR(ruby_field);
+  gpointer * native_pdata = TODO_mruby_unbox_gpointer_PTR(pdata);
 
-  native_self->pdata = native_field;
+  native_self->pdata = native_pdata;
+  
 
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -108,13 +107,13 @@ mrb_GLib_GPtrArray_set_pdata(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GPtrArray_get_len(mrb_state* mrb, mrb_value self) {
-  struct _GPtrArray * native_self = mruby_unbox_struct _GPtrArray(self);
+  struct _GPtrArray * native_self = mruby_unbox__GPtrArray(self);
 
-  guint native_field = native_self->len;
+  guint native_len = native_self->len;
 
-  mrb_value ruby_field = mrb_fixnum_value(native_field);
+  mrb_value len = mrb_fixnum_value(native_len);
 
-  return ruby_field;
+  return len;
 }
 #endif
 
@@ -126,22 +125,17 @@ mrb_GLib_GPtrArray_get_len(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GPtrArray_set_len(mrb_state* mrb, mrb_value self) {
-  struct _GPtrArray * native_self = mruby_unbox_struct _GPtrArray(self);
-  mrb_value ruby_field;
+  struct _GPtrArray * native_self = mruby_unbox__GPtrArray(self);
+  mrb_int native_len;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "i", &native_len);
 
-  /* type checking */
-  if (!mrb_obj_is_kind_of(mrb, ruby_field, mrb->fixnum_class)) {
-    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
-    return mrb_nil_value();
-  }
+  native_self->len = native_len;
+  
 
-  unsigned int native_field = (unsigned int)ruby_field;
-
-  native_self->len = native_field;
-
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 

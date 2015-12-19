@@ -3,10 +3,6 @@
  * Defined in file gtestutils.h @ line 342
  */
 
-/*
- * TODO: INCLUDES
- */
-
 #include "mruby_GLib.h"
 
 #if BIND_GTestConfig_TYPE
@@ -18,7 +14,7 @@
 #if BIND_GTestConfig_INITIALIZE
 mrb_value
 mrb_GLib_GTestConfig_initialize(mrb_state* mrb, mrb_value self) {
-  GTestConfig* native_object = (GTestConfig*)malloc(sizeof(GTestConfig));
+  GTestConfig* native_object = (GTestConfig*)calloc(1, sizeof(GTestConfig));
   mruby_gift_GTestConfig_data_ptr(self, native_object);
   return self;
 }
@@ -69,11 +65,11 @@ mrb_value
 mrb_GLib_GTestConfig_get_test_initialized(mrb_state* mrb, mrb_value self) {
   GTestConfig * native_self = mruby_unbox_GTestConfig(self);
 
-  gboolean native_field = native_self->test_initialized;
+  gboolean native_test_initialized = native_self->test_initialized;
 
-  mrb_value ruby_field = mrb_fixnum_value(native_field);
+  mrb_value test_initialized = mrb_bool_value(native_test_initialized);
 
-  return ruby_field;
+  return test_initialized;
 }
 #endif
 
@@ -86,21 +82,16 @@ mrb_GLib_GTestConfig_get_test_initialized(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_GTestConfig_set_test_initialized(mrb_state* mrb, mrb_value self) {
   GTestConfig * native_self = mruby_unbox_GTestConfig(self);
-  mrb_value ruby_field;
+  mrb_bool native_test_initialized;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "b", &native_test_initialized);
 
-  /* type checking */
-  if (!mrb_obj_is_kind_of(mrb, ruby_field, mrb->fixnum_class)) {
-    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
-    return mrb_nil_value();
-  }
+  native_self->test_initialized = native_test_initialized;
+  
 
-  int native_field = (int)ruby_field;
-
-  native_self->test_initialized = native_field;
-
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -113,11 +104,11 @@ mrb_value
 mrb_GLib_GTestConfig_get_test_quick(mrb_state* mrb, mrb_value self) {
   GTestConfig * native_self = mruby_unbox_GTestConfig(self);
 
-  gboolean native_field = native_self->test_quick;
+  gboolean native_test_quick = native_self->test_quick;
 
-  mrb_value ruby_field = mrb_fixnum_value(native_field);
+  mrb_value test_quick = mrb_bool_value(native_test_quick);
 
-  return ruby_field;
+  return test_quick;
 }
 #endif
 
@@ -130,21 +121,16 @@ mrb_GLib_GTestConfig_get_test_quick(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_GTestConfig_set_test_quick(mrb_state* mrb, mrb_value self) {
   GTestConfig * native_self = mruby_unbox_GTestConfig(self);
-  mrb_value ruby_field;
+  mrb_bool native_test_quick;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "b", &native_test_quick);
 
-  /* type checking */
-  if (!mrb_obj_is_kind_of(mrb, ruby_field, mrb->fixnum_class)) {
-    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
-    return mrb_nil_value();
-  }
+  native_self->test_quick = native_test_quick;
+  
 
-  int native_field = (int)ruby_field;
-
-  native_self->test_quick = native_field;
-
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -157,11 +143,11 @@ mrb_value
 mrb_GLib_GTestConfig_get_test_perf(mrb_state* mrb, mrb_value self) {
   GTestConfig * native_self = mruby_unbox_GTestConfig(self);
 
-  gboolean native_field = native_self->test_perf;
+  gboolean native_test_perf = native_self->test_perf;
 
-  mrb_value ruby_field = mrb_fixnum_value(native_field);
+  mrb_value test_perf = mrb_bool_value(native_test_perf);
 
-  return ruby_field;
+  return test_perf;
 }
 #endif
 
@@ -174,21 +160,16 @@ mrb_GLib_GTestConfig_get_test_perf(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_GTestConfig_set_test_perf(mrb_state* mrb, mrb_value self) {
   GTestConfig * native_self = mruby_unbox_GTestConfig(self);
-  mrb_value ruby_field;
+  mrb_bool native_test_perf;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "b", &native_test_perf);
 
-  /* type checking */
-  if (!mrb_obj_is_kind_of(mrb, ruby_field, mrb->fixnum_class)) {
-    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
-    return mrb_nil_value();
-  }
+  native_self->test_perf = native_test_perf;
+  
 
-  int native_field = (int)ruby_field;
-
-  native_self->test_perf = native_field;
-
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -201,11 +182,11 @@ mrb_value
 mrb_GLib_GTestConfig_get_test_verbose(mrb_state* mrb, mrb_value self) {
   GTestConfig * native_self = mruby_unbox_GTestConfig(self);
 
-  gboolean native_field = native_self->test_verbose;
+  gboolean native_test_verbose = native_self->test_verbose;
 
-  mrb_value ruby_field = mrb_fixnum_value(native_field);
+  mrb_value test_verbose = mrb_bool_value(native_test_verbose);
 
-  return ruby_field;
+  return test_verbose;
 }
 #endif
 
@@ -218,21 +199,16 @@ mrb_GLib_GTestConfig_get_test_verbose(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_GTestConfig_set_test_verbose(mrb_state* mrb, mrb_value self) {
   GTestConfig * native_self = mruby_unbox_GTestConfig(self);
-  mrb_value ruby_field;
+  mrb_bool native_test_verbose;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "b", &native_test_verbose);
 
-  /* type checking */
-  if (!mrb_obj_is_kind_of(mrb, ruby_field, mrb->fixnum_class)) {
-    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
-    return mrb_nil_value();
-  }
+  native_self->test_verbose = native_test_verbose;
+  
 
-  int native_field = (int)ruby_field;
-
-  native_self->test_verbose = native_field;
-
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -245,11 +221,11 @@ mrb_value
 mrb_GLib_GTestConfig_get_test_quiet(mrb_state* mrb, mrb_value self) {
   GTestConfig * native_self = mruby_unbox_GTestConfig(self);
 
-  gboolean native_field = native_self->test_quiet;
+  gboolean native_test_quiet = native_self->test_quiet;
 
-  mrb_value ruby_field = mrb_fixnum_value(native_field);
+  mrb_value test_quiet = mrb_bool_value(native_test_quiet);
 
-  return ruby_field;
+  return test_quiet;
 }
 #endif
 
@@ -262,21 +238,16 @@ mrb_GLib_GTestConfig_get_test_quiet(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_GTestConfig_set_test_quiet(mrb_state* mrb, mrb_value self) {
   GTestConfig * native_self = mruby_unbox_GTestConfig(self);
-  mrb_value ruby_field;
+  mrb_bool native_test_quiet;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "b", &native_test_quiet);
 
-  /* type checking */
-  if (!mrb_obj_is_kind_of(mrb, ruby_field, mrb->fixnum_class)) {
-    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
-    return mrb_nil_value();
-  }
+  native_self->test_quiet = native_test_quiet;
+  
 
-  int native_field = (int)ruby_field;
-
-  native_self->test_quiet = native_field;
-
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -289,11 +260,11 @@ mrb_value
 mrb_GLib_GTestConfig_get_test_undefined(mrb_state* mrb, mrb_value self) {
   GTestConfig * native_self = mruby_unbox_GTestConfig(self);
 
-  gboolean native_field = native_self->test_undefined;
+  gboolean native_test_undefined = native_self->test_undefined;
 
-  mrb_value ruby_field = mrb_fixnum_value(native_field);
+  mrb_value test_undefined = mrb_bool_value(native_test_undefined);
 
-  return ruby_field;
+  return test_undefined;
 }
 #endif
 
@@ -306,21 +277,16 @@ mrb_GLib_GTestConfig_get_test_undefined(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_GTestConfig_set_test_undefined(mrb_state* mrb, mrb_value self) {
   GTestConfig * native_self = mruby_unbox_GTestConfig(self);
-  mrb_value ruby_field;
+  mrb_bool native_test_undefined;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "b", &native_test_undefined);
 
-  /* type checking */
-  if (!mrb_obj_is_kind_of(mrb, ruby_field, mrb->fixnum_class)) {
-    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
-    return mrb_nil_value();
-  }
+  native_self->test_undefined = native_test_undefined;
+  
 
-  int native_field = (int)ruby_field;
-
-  native_self->test_undefined = native_field;
-
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 

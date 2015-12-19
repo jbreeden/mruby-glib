@@ -3,10 +3,6 @@
  * Defined in file gthread.h @ line 49
  */
 
-/*
- * TODO: INCLUDES
- */
-
 #include "mruby_GLib.h"
 
 #if BIND_GThread_TYPE
@@ -18,7 +14,7 @@
 #if BIND_GThread_INITIALIZE
 mrb_value
 mrb_GLib_GThread_initialize(mrb_state* mrb, mrb_value self) {
-  struct _GThread* native_object = (struct _GThread*)malloc(sizeof(struct _GThread));
+  struct _GThread* native_object = (struct _GThread*)calloc(1, sizeof(struct _GThread));
   mruby_gift_struct _GThread_data_ptr(self, native_object);
   return self;
 }

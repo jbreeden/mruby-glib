@@ -3,10 +3,6 @@
  * Defined in file gtrashstack.h @ line 36
  */
 
-/*
- * TODO: INCLUDES
- */
-
 #include "mruby_GLib.h"
 
 #if BIND_GTrashStack_TYPE
@@ -18,7 +14,7 @@
 #if BIND_GTrashStack_INITIALIZE
 mrb_value
 mrb_GLib_GTrashStack_initialize(mrb_state* mrb, mrb_value self) {
-  struct _GTrashStack* native_object = (struct _GTrashStack*)malloc(sizeof(struct _GTrashStack));
+  struct _GTrashStack* native_object = (struct _GTrashStack*)calloc(1, sizeof(struct _GTrashStack));
   mruby_gift_struct _GTrashStack_data_ptr(self, native_object);
   return self;
 }
@@ -67,13 +63,13 @@ mrb_GLib_GTrashStack_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GTrashStack_get_next(mrb_state* mrb, mrb_value self) {
-  struct _GTrashStack * native_self = mruby_unbox_struct _GTrashStack(self);
+  struct _GTrashStack * native_self = mruby_unbox__GTrashStack(self);
 
-  GTrashStack * native_field = native_self->next;
+  GTrashStack * native_next = native_self->next;
 
-  mrb_value ruby_field = (native_field == NULL ? mrb_nil_value() : mruby_box__GTrashStack(mrb, native_field));
+  mrb_value next = (native_next == NULL ? mrb_nil_value() : mruby_box__GTrashStack(mrb, native_next));
 
-  return ruby_field;
+  return next;
 }
 #endif
 
@@ -85,22 +81,25 @@ mrb_GLib_GTrashStack_get_next(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GTrashStack_set_next(mrb_state* mrb, mrb_value self) {
-  struct _GTrashStack * native_self = mruby_unbox_struct _GTrashStack(self);
-  mrb_value ruby_field;
+  struct _GTrashStack * native_self = mruby_unbox__GTrashStack(self);
+  mrb_value next;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "o", &next);
 
   /* type checking */
-  if (!mrb_obj_is_kind_of(mrb, ruby_field, GTrashStack_class(mrb))) {
+  if (!mrb_obj_is_kind_of(mrb, next, GTrashStack_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GTrashStack expected");
     return mrb_nil_value();
   }
 
-  GTrashStack * native_field = (mrb_nil_p(ruby_field) ? NULL : mruby_unbox__GTrashStack(ruby_field));
+  GTrashStack * native_next = (mrb_nil_p(next) ? NULL : mruby_unbox__GTrashStack(next));
 
-  native_self->next = native_field;
+  native_self->next = native_next;
+  
 
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 

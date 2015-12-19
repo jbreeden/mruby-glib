@@ -3,10 +3,6 @@
  * Defined in file giochannel.h @ line 41
  */
 
-/*
- * TODO: INCLUDES
- */
-
 #include "mruby_GLib.h"
 
 #if BIND_GIOChannel_TYPE
@@ -18,7 +14,7 @@
 #if BIND_GIOChannel_INITIALIZE
 mrb_value
 mrb_GLib_GIOChannel_initialize(mrb_state* mrb, mrb_value self) {
-  struct _GIOChannel* native_object = (struct _GIOChannel*)malloc(sizeof(struct _GIOChannel));
+  struct _GIOChannel* native_object = (struct _GIOChannel*)calloc(1, sizeof(struct _GIOChannel));
   mruby_gift_struct _GIOChannel_data_ptr(self, native_object);
   return self;
 }
@@ -67,13 +63,13 @@ mrb_GLib_GIOChannel_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GIOChannel_get_ref_count(mrb_state* mrb, mrb_value self) {
-  struct _GIOChannel * native_self = mruby_unbox_struct _GIOChannel(self);
+  struct _GIOChannel * native_self = mruby_unbox__GIOChannel(self);
 
-  gint native_field = native_self->ref_count;
+  gint native_ref_count = native_self->ref_count;
 
-  mrb_value ruby_field = mrb_fixnum_value(native_field);
+  mrb_value ref_count = mrb_fixnum_value(native_ref_count);
 
-  return ruby_field;
+  return ref_count;
 }
 #endif
 
@@ -85,22 +81,17 @@ mrb_GLib_GIOChannel_get_ref_count(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GIOChannel_set_ref_count(mrb_state* mrb, mrb_value self) {
-  struct _GIOChannel * native_self = mruby_unbox_struct _GIOChannel(self);
-  mrb_value ruby_field;
+  struct _GIOChannel * native_self = mruby_unbox__GIOChannel(self);
+  mrb_int native_ref_count;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "i", &native_ref_count);
 
-  /* type checking */
-  if (!mrb_obj_is_kind_of(mrb, ruby_field, mrb->fixnum_class)) {
-    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
-    return mrb_nil_value();
-  }
+  native_self->ref_count = native_ref_count;
+  
 
-  int native_field = (int)ruby_field;
-
-  native_self->ref_count = native_field;
-
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -111,13 +102,13 @@ mrb_GLib_GIOChannel_set_ref_count(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GIOChannel_get_funcs(mrb_state* mrb, mrb_value self) {
-  struct _GIOChannel * native_self = mruby_unbox_struct _GIOChannel(self);
+  struct _GIOChannel * native_self = mruby_unbox__GIOChannel(self);
 
-  GIOFuncs * native_field = native_self->funcs;
+  GIOFuncs * native_funcs = native_self->funcs;
 
-  mrb_value ruby_field = (native_field == NULL ? mrb_nil_value() : mruby_box__GIOFuncs(mrb, native_field));
+  mrb_value funcs = (native_funcs == NULL ? mrb_nil_value() : mruby_box__GIOFuncs(mrb, native_funcs));
 
-  return ruby_field;
+  return funcs;
 }
 #endif
 
@@ -129,22 +120,25 @@ mrb_GLib_GIOChannel_get_funcs(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GIOChannel_set_funcs(mrb_state* mrb, mrb_value self) {
-  struct _GIOChannel * native_self = mruby_unbox_struct _GIOChannel(self);
-  mrb_value ruby_field;
+  struct _GIOChannel * native_self = mruby_unbox__GIOChannel(self);
+  mrb_value funcs;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "o", &funcs);
 
   /* type checking */
-  if (!mrb_obj_is_kind_of(mrb, ruby_field, GIOFuncs_class(mrb))) {
+  if (!mrb_obj_is_kind_of(mrb, funcs, GIOFuncs_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GIOFuncs expected");
     return mrb_nil_value();
   }
 
-  GIOFuncs * native_field = (mrb_nil_p(ruby_field) ? NULL : mruby_unbox__GIOFuncs(ruby_field));
+  GIOFuncs * native_funcs = (mrb_nil_p(funcs) ? NULL : mruby_unbox__GIOFuncs(funcs));
 
-  native_self->funcs = native_field;
+  native_self->funcs = native_funcs;
+  
 
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -155,13 +149,13 @@ mrb_GLib_GIOChannel_set_funcs(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GIOChannel_get_encoding(mrb_state* mrb, mrb_value self) {
-  struct _GIOChannel * native_self = mruby_unbox_struct _GIOChannel(self);
+  struct _GIOChannel * native_self = mruby_unbox__GIOChannel(self);
 
-  gchar * native_field = native_self->encoding;
+  gchar * native_encoding = native_self->encoding;
 
-  mrb_value ruby_field = mrb_str_new_cstr(mrb, native_field);
+  mrb_value encoding = mrb_str_new_cstr(mrb, native_encoding);
 
-  return ruby_field;
+  return encoding;
 }
 #endif
 
@@ -173,27 +167,17 @@ mrb_GLib_GIOChannel_get_encoding(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GIOChannel_set_encoding(mrb_state* mrb, mrb_value self) {
-  struct _GIOChannel * native_self = mruby_unbox_struct _GIOChannel(self);
-  mrb_value ruby_field;
+  struct _GIOChannel * native_self = mruby_unbox__GIOChannel(self);
+  char * native_encoding = NULL;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "z!", &native_encoding);
 
-  /* type checking */
-  if (!mrb_obj_is_kind_of(mrb, ruby_field, mrb->string_class)) {
-    mrb_raise(mrb, E_TYPE_ERROR, "String expected");
-    return mrb_nil_value();
-  }
+  native_self->encoding = native_encoding;
+  
 
-  /* WARNING: Allocating new memory to create 'char *' from 'const char *'.
-   *          Please verify that this memory is cleaned up correctly.
-   *
-   *          Has this been verified? [No]
-   */
-  char * native_field = strdup(ruby_field);
-
-  native_self->encoding = native_field;
-
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -204,13 +188,13 @@ mrb_GLib_GIOChannel_set_encoding(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GIOChannel_get_read_cd(mrb_state* mrb, mrb_value self) {
-  struct _GIOChannel * native_self = mruby_unbox_struct _GIOChannel(self);
+  struct _GIOChannel * native_self = mruby_unbox__GIOChannel(self);
 
-  GIConv native_field = native_self->read_cd;
+  GIConv native_read_cd = native_self->read_cd;
 
-  mrb_value ruby_field = TODO_mruby_box_GIConv(mrb, native_field);
+  mrb_value read_cd = TODO_mruby_box_GIConv(mrb, native_read_cd);
 
-  return ruby_field;
+  return read_cd;
 }
 #endif
 
@@ -222,19 +206,22 @@ mrb_GLib_GIOChannel_get_read_cd(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GIOChannel_set_read_cd(mrb_state* mrb, mrb_value self) {
-  struct _GIOChannel * native_self = mruby_unbox_struct _GIOChannel(self);
-  mrb_value ruby_field;
+  struct _GIOChannel * native_self = mruby_unbox__GIOChannel(self);
+  mrb_value read_cd;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "o", &read_cd);
 
   /* type checking */
-  TODO_type_check_GIConv(ruby_field);
+  TODO_type_check_GIConv(read_cd);
 
-  GIConv native_field = TODO_mruby_unbox_GIConv(ruby_field);
+  GIConv native_read_cd = TODO_mruby_unbox_GIConv(read_cd);
 
-  native_self->read_cd = native_field;
+  native_self->read_cd = native_read_cd;
+  
 
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -245,13 +232,13 @@ mrb_GLib_GIOChannel_set_read_cd(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GIOChannel_get_write_cd(mrb_state* mrb, mrb_value self) {
-  struct _GIOChannel * native_self = mruby_unbox_struct _GIOChannel(self);
+  struct _GIOChannel * native_self = mruby_unbox__GIOChannel(self);
 
-  GIConv native_field = native_self->write_cd;
+  GIConv native_write_cd = native_self->write_cd;
 
-  mrb_value ruby_field = TODO_mruby_box_GIConv(mrb, native_field);
+  mrb_value write_cd = TODO_mruby_box_GIConv(mrb, native_write_cd);
 
-  return ruby_field;
+  return write_cd;
 }
 #endif
 
@@ -263,19 +250,22 @@ mrb_GLib_GIOChannel_get_write_cd(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GIOChannel_set_write_cd(mrb_state* mrb, mrb_value self) {
-  struct _GIOChannel * native_self = mruby_unbox_struct _GIOChannel(self);
-  mrb_value ruby_field;
+  struct _GIOChannel * native_self = mruby_unbox__GIOChannel(self);
+  mrb_value write_cd;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "o", &write_cd);
 
   /* type checking */
-  TODO_type_check_GIConv(ruby_field);
+  TODO_type_check_GIConv(write_cd);
 
-  GIConv native_field = TODO_mruby_unbox_GIConv(ruby_field);
+  GIConv native_write_cd = TODO_mruby_unbox_GIConv(write_cd);
 
-  native_self->write_cd = native_field;
+  native_self->write_cd = native_write_cd;
+  
 
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -286,13 +276,13 @@ mrb_GLib_GIOChannel_set_write_cd(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GIOChannel_get_line_term(mrb_state* mrb, mrb_value self) {
-  struct _GIOChannel * native_self = mruby_unbox_struct _GIOChannel(self);
+  struct _GIOChannel * native_self = mruby_unbox__GIOChannel(self);
 
-  gchar * native_field = native_self->line_term;
+  gchar * native_line_term = native_self->line_term;
 
-  mrb_value ruby_field = mrb_str_new_cstr(mrb, native_field);
+  mrb_value line_term = mrb_str_new_cstr(mrb, native_line_term);
 
-  return ruby_field;
+  return line_term;
 }
 #endif
 
@@ -304,27 +294,17 @@ mrb_GLib_GIOChannel_get_line_term(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GIOChannel_set_line_term(mrb_state* mrb, mrb_value self) {
-  struct _GIOChannel * native_self = mruby_unbox_struct _GIOChannel(self);
-  mrb_value ruby_field;
+  struct _GIOChannel * native_self = mruby_unbox__GIOChannel(self);
+  char * native_line_term = NULL;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "z!", &native_line_term);
 
-  /* type checking */
-  if (!mrb_obj_is_kind_of(mrb, ruby_field, mrb->string_class)) {
-    mrb_raise(mrb, E_TYPE_ERROR, "String expected");
-    return mrb_nil_value();
-  }
+  native_self->line_term = native_line_term;
+  
 
-  /* WARNING: Allocating new memory to create 'char *' from 'const char *'.
-   *          Please verify that this memory is cleaned up correctly.
-   *
-   *          Has this been verified? [No]
-   */
-  char * native_field = strdup(ruby_field);
-
-  native_self->line_term = native_field;
-
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -335,13 +315,13 @@ mrb_GLib_GIOChannel_set_line_term(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GIOChannel_get_line_term_len(mrb_state* mrb, mrb_value self) {
-  struct _GIOChannel * native_self = mruby_unbox_struct _GIOChannel(self);
+  struct _GIOChannel * native_self = mruby_unbox__GIOChannel(self);
 
-  guint native_field = native_self->line_term_len;
+  guint native_line_term_len = native_self->line_term_len;
 
-  mrb_value ruby_field = mrb_fixnum_value(native_field);
+  mrb_value line_term_len = mrb_fixnum_value(native_line_term_len);
 
-  return ruby_field;
+  return line_term_len;
 }
 #endif
 
@@ -353,22 +333,17 @@ mrb_GLib_GIOChannel_get_line_term_len(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GIOChannel_set_line_term_len(mrb_state* mrb, mrb_value self) {
-  struct _GIOChannel * native_self = mruby_unbox_struct _GIOChannel(self);
-  mrb_value ruby_field;
+  struct _GIOChannel * native_self = mruby_unbox__GIOChannel(self);
+  mrb_int native_line_term_len;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "i", &native_line_term_len);
 
-  /* type checking */
-  if (!mrb_obj_is_kind_of(mrb, ruby_field, mrb->fixnum_class)) {
-    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
-    return mrb_nil_value();
-  }
+  native_self->line_term_len = native_line_term_len;
+  
 
-  unsigned int native_field = (unsigned int)ruby_field;
-
-  native_self->line_term_len = native_field;
-
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -379,13 +354,13 @@ mrb_GLib_GIOChannel_set_line_term_len(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GIOChannel_get_buf_size(mrb_state* mrb, mrb_value self) {
-  struct _GIOChannel * native_self = mruby_unbox_struct _GIOChannel(self);
+  struct _GIOChannel * native_self = mruby_unbox__GIOChannel(self);
 
-  gsize native_field = native_self->buf_size;
+  gsize native_buf_size = native_self->buf_size;
 
-  mrb_value ruby_field = TODO_mruby_box_gsize(mrb, native_field);
+  mrb_value buf_size = mrb_fixnum_value(native_buf_size);
 
-  return ruby_field;
+  return buf_size;
 }
 #endif
 
@@ -397,19 +372,17 @@ mrb_GLib_GIOChannel_get_buf_size(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GIOChannel_set_buf_size(mrb_state* mrb, mrb_value self) {
-  struct _GIOChannel * native_self = mruby_unbox_struct _GIOChannel(self);
-  mrb_value ruby_field;
+  struct _GIOChannel * native_self = mruby_unbox__GIOChannel(self);
+  mrb_int native_buf_size;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "i", &native_buf_size);
 
-  /* type checking */
-  TODO_type_check_gsize(ruby_field);
+  native_self->buf_size = native_buf_size;
+  
 
-  gsize native_field = TODO_mruby_unbox_gsize(ruby_field);
-
-  native_self->buf_size = native_field;
-
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -420,13 +393,13 @@ mrb_GLib_GIOChannel_set_buf_size(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GIOChannel_get_read_buf(mrb_state* mrb, mrb_value self) {
-  struct _GIOChannel * native_self = mruby_unbox_struct _GIOChannel(self);
+  struct _GIOChannel * native_self = mruby_unbox__GIOChannel(self);
 
-  GString * native_field = native_self->read_buf;
+  GString * native_read_buf = native_self->read_buf;
 
-  mrb_value ruby_field = (native_field == NULL ? mrb_nil_value() : mruby_box__GString(mrb, native_field));
+  mrb_value read_buf = (native_read_buf == NULL ? mrb_nil_value() : mruby_box__GString(mrb, native_read_buf));
 
-  return ruby_field;
+  return read_buf;
 }
 #endif
 
@@ -438,22 +411,25 @@ mrb_GLib_GIOChannel_get_read_buf(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GIOChannel_set_read_buf(mrb_state* mrb, mrb_value self) {
-  struct _GIOChannel * native_self = mruby_unbox_struct _GIOChannel(self);
-  mrb_value ruby_field;
+  struct _GIOChannel * native_self = mruby_unbox__GIOChannel(self);
+  mrb_value read_buf;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "o", &read_buf);
 
   /* type checking */
-  if (!mrb_obj_is_kind_of(mrb, ruby_field, GString_class(mrb))) {
+  if (!mrb_obj_is_kind_of(mrb, read_buf, GString_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GString expected");
     return mrb_nil_value();
   }
 
-  GString * native_field = (mrb_nil_p(ruby_field) ? NULL : mruby_unbox__GString(ruby_field));
+  GString * native_read_buf = (mrb_nil_p(read_buf) ? NULL : mruby_unbox__GString(read_buf));
 
-  native_self->read_buf = native_field;
+  native_self->read_buf = native_read_buf;
+  
 
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -464,13 +440,13 @@ mrb_GLib_GIOChannel_set_read_buf(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GIOChannel_get_encoded_read_buf(mrb_state* mrb, mrb_value self) {
-  struct _GIOChannel * native_self = mruby_unbox_struct _GIOChannel(self);
+  struct _GIOChannel * native_self = mruby_unbox__GIOChannel(self);
 
-  GString * native_field = native_self->encoded_read_buf;
+  GString * native_encoded_read_buf = native_self->encoded_read_buf;
 
-  mrb_value ruby_field = (native_field == NULL ? mrb_nil_value() : mruby_box__GString(mrb, native_field));
+  mrb_value encoded_read_buf = (native_encoded_read_buf == NULL ? mrb_nil_value() : mruby_box__GString(mrb, native_encoded_read_buf));
 
-  return ruby_field;
+  return encoded_read_buf;
 }
 #endif
 
@@ -482,22 +458,25 @@ mrb_GLib_GIOChannel_get_encoded_read_buf(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GIOChannel_set_encoded_read_buf(mrb_state* mrb, mrb_value self) {
-  struct _GIOChannel * native_self = mruby_unbox_struct _GIOChannel(self);
-  mrb_value ruby_field;
+  struct _GIOChannel * native_self = mruby_unbox__GIOChannel(self);
+  mrb_value encoded_read_buf;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "o", &encoded_read_buf);
 
   /* type checking */
-  if (!mrb_obj_is_kind_of(mrb, ruby_field, GString_class(mrb))) {
+  if (!mrb_obj_is_kind_of(mrb, encoded_read_buf, GString_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GString expected");
     return mrb_nil_value();
   }
 
-  GString * native_field = (mrb_nil_p(ruby_field) ? NULL : mruby_unbox__GString(ruby_field));
+  GString * native_encoded_read_buf = (mrb_nil_p(encoded_read_buf) ? NULL : mruby_unbox__GString(encoded_read_buf));
 
-  native_self->encoded_read_buf = native_field;
+  native_self->encoded_read_buf = native_encoded_read_buf;
+  
 
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -508,13 +487,13 @@ mrb_GLib_GIOChannel_set_encoded_read_buf(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GIOChannel_get_write_buf(mrb_state* mrb, mrb_value self) {
-  struct _GIOChannel * native_self = mruby_unbox_struct _GIOChannel(self);
+  struct _GIOChannel * native_self = mruby_unbox__GIOChannel(self);
 
-  GString * native_field = native_self->write_buf;
+  GString * native_write_buf = native_self->write_buf;
 
-  mrb_value ruby_field = (native_field == NULL ? mrb_nil_value() : mruby_box__GString(mrb, native_field));
+  mrb_value write_buf = (native_write_buf == NULL ? mrb_nil_value() : mruby_box__GString(mrb, native_write_buf));
 
-  return ruby_field;
+  return write_buf;
 }
 #endif
 
@@ -526,22 +505,25 @@ mrb_GLib_GIOChannel_get_write_buf(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GIOChannel_set_write_buf(mrb_state* mrb, mrb_value self) {
-  struct _GIOChannel * native_self = mruby_unbox_struct _GIOChannel(self);
-  mrb_value ruby_field;
+  struct _GIOChannel * native_self = mruby_unbox__GIOChannel(self);
+  mrb_value write_buf;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "o", &write_buf);
 
   /* type checking */
-  if (!mrb_obj_is_kind_of(mrb, ruby_field, GString_class(mrb))) {
+  if (!mrb_obj_is_kind_of(mrb, write_buf, GString_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GString expected");
     return mrb_nil_value();
   }
 
-  GString * native_field = (mrb_nil_p(ruby_field) ? NULL : mruby_unbox__GString(ruby_field));
+  GString * native_write_buf = (mrb_nil_p(write_buf) ? NULL : mruby_unbox__GString(write_buf));
 
-  native_self->write_buf = native_field;
+  native_self->write_buf = native_write_buf;
+  
 
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -552,13 +534,13 @@ mrb_GLib_GIOChannel_set_write_buf(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GIOChannel_get_partial_write_buf(mrb_state* mrb, mrb_value self) {
-  struct _GIOChannel * native_self = mruby_unbox_struct _GIOChannel(self);
+  struct _GIOChannel * native_self = mruby_unbox__GIOChannel(self);
 
-  gchar [6] native_field = native_self->partial_write_buf;
+  gchar [6] native_partial_write_buf = native_self->partial_write_buf;
 
-  mrb_value ruby_field = TODO_mruby_box_gchar_[6](mrb, native_field);
+  mrb_value partial_write_buf = TODO_mruby_box_gchar_[6](mrb, native_partial_write_buf);
 
-  return ruby_field;
+  return partial_write_buf;
 }
 #endif
 
@@ -570,19 +552,22 @@ mrb_GLib_GIOChannel_get_partial_write_buf(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GIOChannel_set_partial_write_buf(mrb_state* mrb, mrb_value self) {
-  struct _GIOChannel * native_self = mruby_unbox_struct _GIOChannel(self);
-  mrb_value ruby_field;
+  struct _GIOChannel * native_self = mruby_unbox__GIOChannel(self);
+  mrb_value partial_write_buf;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "o", &partial_write_buf);
 
   /* type checking */
-  TODO_type_check_gchar_[6](ruby_field);
+  TODO_type_check_gchar_[6](partial_write_buf);
 
-  gchar [6] native_field = TODO_mruby_unbox_gchar_[6](ruby_field);
+  gchar [6] native_partial_write_buf = TODO_mruby_unbox_gchar_[6](partial_write_buf);
 
-  native_self->partial_write_buf = native_field;
+  native_self->partial_write_buf = native_partial_write_buf;
+  
 
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -593,13 +578,13 @@ mrb_GLib_GIOChannel_set_partial_write_buf(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GIOChannel_get_use_buffer(mrb_state* mrb, mrb_value self) {
-  struct _GIOChannel * native_self = mruby_unbox_struct _GIOChannel(self);
+  struct _GIOChannel * native_self = mruby_unbox__GIOChannel(self);
 
-  guint native_field = native_self->use_buffer;
+  guint native_use_buffer = native_self->use_buffer;
 
-  mrb_value ruby_field = mrb_fixnum_value(native_field);
+  mrb_value use_buffer = mrb_fixnum_value(native_use_buffer);
 
-  return ruby_field;
+  return use_buffer;
 }
 #endif
 
@@ -611,22 +596,17 @@ mrb_GLib_GIOChannel_get_use_buffer(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GIOChannel_set_use_buffer(mrb_state* mrb, mrb_value self) {
-  struct _GIOChannel * native_self = mruby_unbox_struct _GIOChannel(self);
-  mrb_value ruby_field;
+  struct _GIOChannel * native_self = mruby_unbox__GIOChannel(self);
+  mrb_int native_use_buffer;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "i", &native_use_buffer);
 
-  /* type checking */
-  if (!mrb_obj_is_kind_of(mrb, ruby_field, mrb->fixnum_class)) {
-    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
-    return mrb_nil_value();
-  }
+  native_self->use_buffer = native_use_buffer;
+  
 
-  unsigned int native_field = (unsigned int)ruby_field;
-
-  native_self->use_buffer = native_field;
-
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -637,13 +617,13 @@ mrb_GLib_GIOChannel_set_use_buffer(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GIOChannel_get_do_encode(mrb_state* mrb, mrb_value self) {
-  struct _GIOChannel * native_self = mruby_unbox_struct _GIOChannel(self);
+  struct _GIOChannel * native_self = mruby_unbox__GIOChannel(self);
 
-  guint native_field = native_self->do_encode;
+  guint native_do_encode = native_self->do_encode;
 
-  mrb_value ruby_field = mrb_fixnum_value(native_field);
+  mrb_value do_encode = mrb_fixnum_value(native_do_encode);
 
-  return ruby_field;
+  return do_encode;
 }
 #endif
 
@@ -655,22 +635,17 @@ mrb_GLib_GIOChannel_get_do_encode(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GIOChannel_set_do_encode(mrb_state* mrb, mrb_value self) {
-  struct _GIOChannel * native_self = mruby_unbox_struct _GIOChannel(self);
-  mrb_value ruby_field;
+  struct _GIOChannel * native_self = mruby_unbox__GIOChannel(self);
+  mrb_int native_do_encode;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "i", &native_do_encode);
 
-  /* type checking */
-  if (!mrb_obj_is_kind_of(mrb, ruby_field, mrb->fixnum_class)) {
-    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
-    return mrb_nil_value();
-  }
+  native_self->do_encode = native_do_encode;
+  
 
-  unsigned int native_field = (unsigned int)ruby_field;
-
-  native_self->do_encode = native_field;
-
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -681,13 +656,13 @@ mrb_GLib_GIOChannel_set_do_encode(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GIOChannel_get_close_on_unref(mrb_state* mrb, mrb_value self) {
-  struct _GIOChannel * native_self = mruby_unbox_struct _GIOChannel(self);
+  struct _GIOChannel * native_self = mruby_unbox__GIOChannel(self);
 
-  guint native_field = native_self->close_on_unref;
+  guint native_close_on_unref = native_self->close_on_unref;
 
-  mrb_value ruby_field = mrb_fixnum_value(native_field);
+  mrb_value close_on_unref = mrb_fixnum_value(native_close_on_unref);
 
-  return ruby_field;
+  return close_on_unref;
 }
 #endif
 
@@ -699,22 +674,17 @@ mrb_GLib_GIOChannel_get_close_on_unref(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GIOChannel_set_close_on_unref(mrb_state* mrb, mrb_value self) {
-  struct _GIOChannel * native_self = mruby_unbox_struct _GIOChannel(self);
-  mrb_value ruby_field;
+  struct _GIOChannel * native_self = mruby_unbox__GIOChannel(self);
+  mrb_int native_close_on_unref;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "i", &native_close_on_unref);
 
-  /* type checking */
-  if (!mrb_obj_is_kind_of(mrb, ruby_field, mrb->fixnum_class)) {
-    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
-    return mrb_nil_value();
-  }
+  native_self->close_on_unref = native_close_on_unref;
+  
 
-  unsigned int native_field = (unsigned int)ruby_field;
-
-  native_self->close_on_unref = native_field;
-
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -725,13 +695,13 @@ mrb_GLib_GIOChannel_set_close_on_unref(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GIOChannel_get_is_readable(mrb_state* mrb, mrb_value self) {
-  struct _GIOChannel * native_self = mruby_unbox_struct _GIOChannel(self);
+  struct _GIOChannel * native_self = mruby_unbox__GIOChannel(self);
 
-  guint native_field = native_self->is_readable;
+  guint native_is_readable = native_self->is_readable;
 
-  mrb_value ruby_field = mrb_fixnum_value(native_field);
+  mrb_value is_readable = mrb_fixnum_value(native_is_readable);
 
-  return ruby_field;
+  return is_readable;
 }
 #endif
 
@@ -743,22 +713,17 @@ mrb_GLib_GIOChannel_get_is_readable(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GIOChannel_set_is_readable(mrb_state* mrb, mrb_value self) {
-  struct _GIOChannel * native_self = mruby_unbox_struct _GIOChannel(self);
-  mrb_value ruby_field;
+  struct _GIOChannel * native_self = mruby_unbox__GIOChannel(self);
+  mrb_int native_is_readable;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "i", &native_is_readable);
 
-  /* type checking */
-  if (!mrb_obj_is_kind_of(mrb, ruby_field, mrb->fixnum_class)) {
-    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
-    return mrb_nil_value();
-  }
+  native_self->is_readable = native_is_readable;
+  
 
-  unsigned int native_field = (unsigned int)ruby_field;
-
-  native_self->is_readable = native_field;
-
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -769,13 +734,13 @@ mrb_GLib_GIOChannel_set_is_readable(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GIOChannel_get_is_writeable(mrb_state* mrb, mrb_value self) {
-  struct _GIOChannel * native_self = mruby_unbox_struct _GIOChannel(self);
+  struct _GIOChannel * native_self = mruby_unbox__GIOChannel(self);
 
-  guint native_field = native_self->is_writeable;
+  guint native_is_writeable = native_self->is_writeable;
 
-  mrb_value ruby_field = mrb_fixnum_value(native_field);
+  mrb_value is_writeable = mrb_fixnum_value(native_is_writeable);
 
-  return ruby_field;
+  return is_writeable;
 }
 #endif
 
@@ -787,22 +752,17 @@ mrb_GLib_GIOChannel_get_is_writeable(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GIOChannel_set_is_writeable(mrb_state* mrb, mrb_value self) {
-  struct _GIOChannel * native_self = mruby_unbox_struct _GIOChannel(self);
-  mrb_value ruby_field;
+  struct _GIOChannel * native_self = mruby_unbox__GIOChannel(self);
+  mrb_int native_is_writeable;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "i", &native_is_writeable);
 
-  /* type checking */
-  if (!mrb_obj_is_kind_of(mrb, ruby_field, mrb->fixnum_class)) {
-    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
-    return mrb_nil_value();
-  }
+  native_self->is_writeable = native_is_writeable;
+  
 
-  unsigned int native_field = (unsigned int)ruby_field;
-
-  native_self->is_writeable = native_field;
-
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -813,13 +773,13 @@ mrb_GLib_GIOChannel_set_is_writeable(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GIOChannel_get_is_seekable(mrb_state* mrb, mrb_value self) {
-  struct _GIOChannel * native_self = mruby_unbox_struct _GIOChannel(self);
+  struct _GIOChannel * native_self = mruby_unbox__GIOChannel(self);
 
-  guint native_field = native_self->is_seekable;
+  guint native_is_seekable = native_self->is_seekable;
 
-  mrb_value ruby_field = mrb_fixnum_value(native_field);
+  mrb_value is_seekable = mrb_fixnum_value(native_is_seekable);
 
-  return ruby_field;
+  return is_seekable;
 }
 #endif
 
@@ -831,22 +791,17 @@ mrb_GLib_GIOChannel_get_is_seekable(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GIOChannel_set_is_seekable(mrb_state* mrb, mrb_value self) {
-  struct _GIOChannel * native_self = mruby_unbox_struct _GIOChannel(self);
-  mrb_value ruby_field;
+  struct _GIOChannel * native_self = mruby_unbox__GIOChannel(self);
+  mrb_int native_is_seekable;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "i", &native_is_seekable);
 
-  /* type checking */
-  if (!mrb_obj_is_kind_of(mrb, ruby_field, mrb->fixnum_class)) {
-    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
-    return mrb_nil_value();
-  }
+  native_self->is_seekable = native_is_seekable;
+  
 
-  unsigned int native_field = (unsigned int)ruby_field;
-
-  native_self->is_seekable = native_field;
-
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -857,13 +812,13 @@ mrb_GLib_GIOChannel_set_is_seekable(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GIOChannel_get_reserved1(mrb_state* mrb, mrb_value self) {
-  struct _GIOChannel * native_self = mruby_unbox_struct _GIOChannel(self);
+  struct _GIOChannel * native_self = mruby_unbox__GIOChannel(self);
 
-  gpointer native_field = native_self->reserved1;
+  gpointer native_reserved1 = native_self->reserved1;
 
-  mrb_value ruby_field = TODO_mruby_box_gpointer(mrb, native_field);
+  mrb_value reserved1 = TODO_mruby_box_gpointer(mrb, native_reserved1);
 
-  return ruby_field;
+  return reserved1;
 }
 #endif
 
@@ -875,19 +830,22 @@ mrb_GLib_GIOChannel_get_reserved1(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GIOChannel_set_reserved1(mrb_state* mrb, mrb_value self) {
-  struct _GIOChannel * native_self = mruby_unbox_struct _GIOChannel(self);
-  mrb_value ruby_field;
+  struct _GIOChannel * native_self = mruby_unbox__GIOChannel(self);
+  mrb_value reserved1;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "o", &reserved1);
 
   /* type checking */
-  TODO_type_check_gpointer(ruby_field);
+  TODO_type_check_gpointer(reserved1);
 
-  gpointer native_field = TODO_mruby_unbox_gpointer(ruby_field);
+  gpointer native_reserved1 = TODO_mruby_unbox_gpointer(reserved1);
 
-  native_self->reserved1 = native_field;
+  native_self->reserved1 = native_reserved1;
+  
 
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -898,13 +856,13 @@ mrb_GLib_GIOChannel_set_reserved1(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GIOChannel_get_reserved2(mrb_state* mrb, mrb_value self) {
-  struct _GIOChannel * native_self = mruby_unbox_struct _GIOChannel(self);
+  struct _GIOChannel * native_self = mruby_unbox__GIOChannel(self);
 
-  gpointer native_field = native_self->reserved2;
+  gpointer native_reserved2 = native_self->reserved2;
 
-  mrb_value ruby_field = TODO_mruby_box_gpointer(mrb, native_field);
+  mrb_value reserved2 = TODO_mruby_box_gpointer(mrb, native_reserved2);
 
-  return ruby_field;
+  return reserved2;
 }
 #endif
 
@@ -916,19 +874,22 @@ mrb_GLib_GIOChannel_get_reserved2(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GIOChannel_set_reserved2(mrb_state* mrb, mrb_value self) {
-  struct _GIOChannel * native_self = mruby_unbox_struct _GIOChannel(self);
-  mrb_value ruby_field;
+  struct _GIOChannel * native_self = mruby_unbox__GIOChannel(self);
+  mrb_value reserved2;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "o", &reserved2);
 
   /* type checking */
-  TODO_type_check_gpointer(ruby_field);
+  TODO_type_check_gpointer(reserved2);
 
-  gpointer native_field = TODO_mruby_unbox_gpointer(ruby_field);
+  gpointer native_reserved2 = TODO_mruby_unbox_gpointer(reserved2);
 
-  native_self->reserved2 = native_field;
+  native_self->reserved2 = native_reserved2;
+  
 
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 

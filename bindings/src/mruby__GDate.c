@@ -3,10 +3,6 @@
  * Defined in file gdate.h @ line 51
  */
 
-/*
- * TODO: INCLUDES
- */
-
 #include "mruby_GLib.h"
 
 #if BIND_GDate_TYPE
@@ -18,7 +14,7 @@
 #if BIND_GDate_INITIALIZE
 mrb_value
 mrb_GLib_GDate_initialize(mrb_state* mrb, mrb_value self) {
-  struct _GDate* native_object = (struct _GDate*)malloc(sizeof(struct _GDate));
+  struct _GDate* native_object = (struct _GDate*)calloc(1, sizeof(struct _GDate));
   mruby_gift_struct _GDate_data_ptr(self, native_object);
   return self;
 }
@@ -67,13 +63,13 @@ mrb_GLib_GDate_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GDate_get_julian_days(mrb_state* mrb, mrb_value self) {
-  struct _GDate * native_self = mruby_unbox_struct _GDate(self);
+  struct _GDate * native_self = mruby_unbox__GDate(self);
 
-  guint native_field = native_self->julian_days;
+  guint native_julian_days = native_self->julian_days;
 
-  mrb_value ruby_field = mrb_fixnum_value(native_field);
+  mrb_value julian_days = mrb_fixnum_value(native_julian_days);
 
-  return ruby_field;
+  return julian_days;
 }
 #endif
 
@@ -85,22 +81,17 @@ mrb_GLib_GDate_get_julian_days(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GDate_set_julian_days(mrb_state* mrb, mrb_value self) {
-  struct _GDate * native_self = mruby_unbox_struct _GDate(self);
-  mrb_value ruby_field;
+  struct _GDate * native_self = mruby_unbox__GDate(self);
+  mrb_int native_julian_days;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "i", &native_julian_days);
 
-  /* type checking */
-  if (!mrb_obj_is_kind_of(mrb, ruby_field, mrb->fixnum_class)) {
-    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
-    return mrb_nil_value();
-  }
+  native_self->julian_days = native_julian_days;
+  
 
-  unsigned int native_field = (unsigned int)ruby_field;
-
-  native_self->julian_days = native_field;
-
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -111,13 +102,13 @@ mrb_GLib_GDate_set_julian_days(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GDate_get_julian(mrb_state* mrb, mrb_value self) {
-  struct _GDate * native_self = mruby_unbox_struct _GDate(self);
+  struct _GDate * native_self = mruby_unbox__GDate(self);
 
-  guint native_field = native_self->julian;
+  guint native_julian = native_self->julian;
 
-  mrb_value ruby_field = mrb_fixnum_value(native_field);
+  mrb_value julian = mrb_fixnum_value(native_julian);
 
-  return ruby_field;
+  return julian;
 }
 #endif
 
@@ -129,22 +120,17 @@ mrb_GLib_GDate_get_julian(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GDate_set_julian(mrb_state* mrb, mrb_value self) {
-  struct _GDate * native_self = mruby_unbox_struct _GDate(self);
-  mrb_value ruby_field;
+  struct _GDate * native_self = mruby_unbox__GDate(self);
+  mrb_int native_julian;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "i", &native_julian);
 
-  /* type checking */
-  if (!mrb_obj_is_kind_of(mrb, ruby_field, mrb->fixnum_class)) {
-    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
-    return mrb_nil_value();
-  }
+  native_self->julian = native_julian;
+  
 
-  unsigned int native_field = (unsigned int)ruby_field;
-
-  native_self->julian = native_field;
-
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -155,13 +141,13 @@ mrb_GLib_GDate_set_julian(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GDate_get_dmy(mrb_state* mrb, mrb_value self) {
-  struct _GDate * native_self = mruby_unbox_struct _GDate(self);
+  struct _GDate * native_self = mruby_unbox__GDate(self);
 
-  guint native_field = native_self->dmy;
+  guint native_dmy = native_self->dmy;
 
-  mrb_value ruby_field = mrb_fixnum_value(native_field);
+  mrb_value dmy = mrb_fixnum_value(native_dmy);
 
-  return ruby_field;
+  return dmy;
 }
 #endif
 
@@ -173,22 +159,17 @@ mrb_GLib_GDate_get_dmy(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GDate_set_dmy(mrb_state* mrb, mrb_value self) {
-  struct _GDate * native_self = mruby_unbox_struct _GDate(self);
-  mrb_value ruby_field;
+  struct _GDate * native_self = mruby_unbox__GDate(self);
+  mrb_int native_dmy;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "i", &native_dmy);
 
-  /* type checking */
-  if (!mrb_obj_is_kind_of(mrb, ruby_field, mrb->fixnum_class)) {
-    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
-    return mrb_nil_value();
-  }
+  native_self->dmy = native_dmy;
+  
 
-  unsigned int native_field = (unsigned int)ruby_field;
-
-  native_self->dmy = native_field;
-
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -199,13 +180,13 @@ mrb_GLib_GDate_set_dmy(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GDate_get_day(mrb_state* mrb, mrb_value self) {
-  struct _GDate * native_self = mruby_unbox_struct _GDate(self);
+  struct _GDate * native_self = mruby_unbox__GDate(self);
 
-  guint native_field = native_self->day;
+  guint native_day = native_self->day;
 
-  mrb_value ruby_field = mrb_fixnum_value(native_field);
+  mrb_value day = mrb_fixnum_value(native_day);
 
-  return ruby_field;
+  return day;
 }
 #endif
 
@@ -217,22 +198,17 @@ mrb_GLib_GDate_get_day(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GDate_set_day(mrb_state* mrb, mrb_value self) {
-  struct _GDate * native_self = mruby_unbox_struct _GDate(self);
-  mrb_value ruby_field;
+  struct _GDate * native_self = mruby_unbox__GDate(self);
+  mrb_int native_day;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "i", &native_day);
 
-  /* type checking */
-  if (!mrb_obj_is_kind_of(mrb, ruby_field, mrb->fixnum_class)) {
-    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
-    return mrb_nil_value();
-  }
+  native_self->day = native_day;
+  
 
-  unsigned int native_field = (unsigned int)ruby_field;
-
-  native_self->day = native_field;
-
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -243,13 +219,13 @@ mrb_GLib_GDate_set_day(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GDate_get_month(mrb_state* mrb, mrb_value self) {
-  struct _GDate * native_self = mruby_unbox_struct _GDate(self);
+  struct _GDate * native_self = mruby_unbox__GDate(self);
 
-  guint native_field = native_self->month;
+  guint native_month = native_self->month;
 
-  mrb_value ruby_field = mrb_fixnum_value(native_field);
+  mrb_value month = mrb_fixnum_value(native_month);
 
-  return ruby_field;
+  return month;
 }
 #endif
 
@@ -261,22 +237,17 @@ mrb_GLib_GDate_get_month(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GDate_set_month(mrb_state* mrb, mrb_value self) {
-  struct _GDate * native_self = mruby_unbox_struct _GDate(self);
-  mrb_value ruby_field;
+  struct _GDate * native_self = mruby_unbox__GDate(self);
+  mrb_int native_month;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "i", &native_month);
 
-  /* type checking */
-  if (!mrb_obj_is_kind_of(mrb, ruby_field, mrb->fixnum_class)) {
-    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
-    return mrb_nil_value();
-  }
+  native_self->month = native_month;
+  
 
-  unsigned int native_field = (unsigned int)ruby_field;
-
-  native_self->month = native_field;
-
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -287,13 +258,13 @@ mrb_GLib_GDate_set_month(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GDate_get_year(mrb_state* mrb, mrb_value self) {
-  struct _GDate * native_self = mruby_unbox_struct _GDate(self);
+  struct _GDate * native_self = mruby_unbox__GDate(self);
 
-  guint native_field = native_self->year;
+  guint native_year = native_self->year;
 
-  mrb_value ruby_field = mrb_fixnum_value(native_field);
+  mrb_value year = mrb_fixnum_value(native_year);
 
-  return ruby_field;
+  return year;
 }
 #endif
 
@@ -305,22 +276,17 @@ mrb_GLib_GDate_get_year(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GDate_set_year(mrb_state* mrb, mrb_value self) {
-  struct _GDate * native_self = mruby_unbox_struct _GDate(self);
-  mrb_value ruby_field;
+  struct _GDate * native_self = mruby_unbox__GDate(self);
+  mrb_int native_year;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "i", &native_year);
 
-  /* type checking */
-  if (!mrb_obj_is_kind_of(mrb, ruby_field, mrb->fixnum_class)) {
-    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
-    return mrb_nil_value();
-  }
+  native_self->year = native_year;
+  
 
-  unsigned int native_field = (unsigned int)ruby_field;
-
-  native_self->year = native_field;
-
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 

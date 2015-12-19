@@ -3,10 +3,6 @@
  * Defined in file glist.h @ line 37
  */
 
-/*
- * TODO: INCLUDES
- */
-
 #include "mruby_GLib.h"
 
 #if BIND_GList_TYPE
@@ -18,7 +14,7 @@
 #if BIND_GList_INITIALIZE
 mrb_value
 mrb_GLib_GList_initialize(mrb_state* mrb, mrb_value self) {
-  struct _GList* native_object = (struct _GList*)malloc(sizeof(struct _GList));
+  struct _GList* native_object = (struct _GList*)calloc(1, sizeof(struct _GList));
   mruby_gift_struct _GList_data_ptr(self, native_object);
   return self;
 }
@@ -67,13 +63,13 @@ mrb_GLib_GList_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GList_get_data(mrb_state* mrb, mrb_value self) {
-  struct _GList * native_self = mruby_unbox_struct _GList(self);
+  struct _GList * native_self = mruby_unbox__GList(self);
 
-  gpointer native_field = native_self->data;
+  gpointer native_data = native_self->data;
 
-  mrb_value ruby_field = TODO_mruby_box_gpointer(mrb, native_field);
+  mrb_value data = TODO_mruby_box_gpointer(mrb, native_data);
 
-  return ruby_field;
+  return data;
 }
 #endif
 
@@ -85,19 +81,22 @@ mrb_GLib_GList_get_data(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GList_set_data(mrb_state* mrb, mrb_value self) {
-  struct _GList * native_self = mruby_unbox_struct _GList(self);
-  mrb_value ruby_field;
+  struct _GList * native_self = mruby_unbox__GList(self);
+  mrb_value data;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "o", &data);
 
   /* type checking */
-  TODO_type_check_gpointer(ruby_field);
+  TODO_type_check_gpointer(data);
 
-  gpointer native_field = TODO_mruby_unbox_gpointer(ruby_field);
+  gpointer native_data = TODO_mruby_unbox_gpointer(data);
 
-  native_self->data = native_field;
+  native_self->data = native_data;
+  
 
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -108,13 +107,13 @@ mrb_GLib_GList_set_data(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GList_get_next(mrb_state* mrb, mrb_value self) {
-  struct _GList * native_self = mruby_unbox_struct _GList(self);
+  struct _GList * native_self = mruby_unbox__GList(self);
 
-  GList * native_field = native_self->next;
+  GList * native_next = native_self->next;
 
-  mrb_value ruby_field = (native_field == NULL ? mrb_nil_value() : mruby_box__GList(mrb, native_field));
+  mrb_value next = (native_next == NULL ? mrb_nil_value() : mruby_box__GList(mrb, native_next));
 
-  return ruby_field;
+  return next;
 }
 #endif
 
@@ -126,22 +125,25 @@ mrb_GLib_GList_get_next(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GList_set_next(mrb_state* mrb, mrb_value self) {
-  struct _GList * native_self = mruby_unbox_struct _GList(self);
-  mrb_value ruby_field;
+  struct _GList * native_self = mruby_unbox__GList(self);
+  mrb_value next;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "o", &next);
 
   /* type checking */
-  if (!mrb_obj_is_kind_of(mrb, ruby_field, GList_class(mrb))) {
+  if (!mrb_obj_is_kind_of(mrb, next, GList_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GList expected");
     return mrb_nil_value();
   }
 
-  GList * native_field = (mrb_nil_p(ruby_field) ? NULL : mruby_unbox__GList(ruby_field));
+  GList * native_next = (mrb_nil_p(next) ? NULL : mruby_unbox__GList(next));
 
-  native_self->next = native_field;
+  native_self->next = native_next;
+  
 
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -152,13 +154,13 @@ mrb_GLib_GList_set_next(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GList_get_prev(mrb_state* mrb, mrb_value self) {
-  struct _GList * native_self = mruby_unbox_struct _GList(self);
+  struct _GList * native_self = mruby_unbox__GList(self);
 
-  GList * native_field = native_self->prev;
+  GList * native_prev = native_self->prev;
 
-  mrb_value ruby_field = (native_field == NULL ? mrb_nil_value() : mruby_box__GList(mrb, native_field));
+  mrb_value prev = (native_prev == NULL ? mrb_nil_value() : mruby_box__GList(mrb, native_prev));
 
-  return ruby_field;
+  return prev;
 }
 #endif
 
@@ -170,22 +172,25 @@ mrb_GLib_GList_get_prev(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GList_set_prev(mrb_state* mrb, mrb_value self) {
-  struct _GList * native_self = mruby_unbox_struct _GList(self);
-  mrb_value ruby_field;
+  struct _GList * native_self = mruby_unbox__GList(self);
+  mrb_value prev;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "o", &prev);
 
   /* type checking */
-  if (!mrb_obj_is_kind_of(mrb, ruby_field, GList_class(mrb))) {
+  if (!mrb_obj_is_kind_of(mrb, prev, GList_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GList expected");
     return mrb_nil_value();
   }
 
-  GList * native_field = (mrb_nil_p(ruby_field) ? NULL : mruby_unbox__GList(ruby_field));
+  GList * native_prev = (mrb_nil_p(prev) ? NULL : mruby_unbox__GList(prev));
 
-  native_self->prev = native_field;
+  native_self->prev = native_prev;
+  
 
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 

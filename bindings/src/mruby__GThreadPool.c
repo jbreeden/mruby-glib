@@ -3,10 +3,6 @@
  * Defined in file gthreadpool.h @ line 36
  */
 
-/*
- * TODO: INCLUDES
- */
-
 #include "mruby_GLib.h"
 
 #if BIND_GThreadPool_TYPE
@@ -18,7 +14,7 @@
 #if BIND_GThreadPool_INITIALIZE
 mrb_value
 mrb_GLib_GThreadPool_initialize(mrb_state* mrb, mrb_value self) {
-  struct _GThreadPool* native_object = (struct _GThreadPool*)malloc(sizeof(struct _GThreadPool));
+  struct _GThreadPool* native_object = (struct _GThreadPool*)calloc(1, sizeof(struct _GThreadPool));
   mruby_gift_struct _GThreadPool_data_ptr(self, native_object);
   return self;
 }
@@ -67,13 +63,13 @@ mrb_GLib_GThreadPool_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GThreadPool_get_func(mrb_state* mrb, mrb_value self) {
-  struct _GThreadPool * native_self = mruby_unbox_struct _GThreadPool(self);
+  struct _GThreadPool * native_self = mruby_unbox__GThreadPool(self);
 
-  GFunc native_field = native_self->func;
+  GFunc native_func = native_self->func;
 
-  mrb_value ruby_field = TODO_mruby_box_GFunc(mrb, native_field);
+  mrb_value func = TODO_mruby_box_GFunc(mrb, native_func);
 
-  return ruby_field;
+  return func;
 }
 #endif
 
@@ -85,19 +81,22 @@ mrb_GLib_GThreadPool_get_func(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GThreadPool_set_func(mrb_state* mrb, mrb_value self) {
-  struct _GThreadPool * native_self = mruby_unbox_struct _GThreadPool(self);
-  mrb_value ruby_field;
+  struct _GThreadPool * native_self = mruby_unbox__GThreadPool(self);
+  mrb_value func;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "o", &func);
 
   /* type checking */
-  TODO_type_check_GFunc(ruby_field);
+  TODO_type_check_GFunc(func);
 
-  GFunc native_field = TODO_mruby_unbox_GFunc(ruby_field);
+  GFunc native_func = TODO_mruby_unbox_GFunc(func);
 
-  native_self->func = native_field;
+  native_self->func = native_func;
+  
 
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -108,13 +107,13 @@ mrb_GLib_GThreadPool_set_func(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GThreadPool_get_user_data(mrb_state* mrb, mrb_value self) {
-  struct _GThreadPool * native_self = mruby_unbox_struct _GThreadPool(self);
+  struct _GThreadPool * native_self = mruby_unbox__GThreadPool(self);
 
-  gpointer native_field = native_self->user_data;
+  gpointer native_user_data = native_self->user_data;
 
-  mrb_value ruby_field = TODO_mruby_box_gpointer(mrb, native_field);
+  mrb_value user_data = TODO_mruby_box_gpointer(mrb, native_user_data);
 
-  return ruby_field;
+  return user_data;
 }
 #endif
 
@@ -126,19 +125,22 @@ mrb_GLib_GThreadPool_get_user_data(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GThreadPool_set_user_data(mrb_state* mrb, mrb_value self) {
-  struct _GThreadPool * native_self = mruby_unbox_struct _GThreadPool(self);
-  mrb_value ruby_field;
+  struct _GThreadPool * native_self = mruby_unbox__GThreadPool(self);
+  mrb_value user_data;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "o", &user_data);
 
   /* type checking */
-  TODO_type_check_gpointer(ruby_field);
+  TODO_type_check_gpointer(user_data);
 
-  gpointer native_field = TODO_mruby_unbox_gpointer(ruby_field);
+  gpointer native_user_data = TODO_mruby_unbox_gpointer(user_data);
 
-  native_self->user_data = native_field;
+  native_self->user_data = native_user_data;
+  
 
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -149,13 +151,13 @@ mrb_GLib_GThreadPool_set_user_data(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GThreadPool_get_exclusive(mrb_state* mrb, mrb_value self) {
-  struct _GThreadPool * native_self = mruby_unbox_struct _GThreadPool(self);
+  struct _GThreadPool * native_self = mruby_unbox__GThreadPool(self);
 
-  gboolean native_field = native_self->exclusive;
+  gboolean native_exclusive = native_self->exclusive;
 
-  mrb_value ruby_field = mrb_fixnum_value(native_field);
+  mrb_value exclusive = mrb_bool_value(native_exclusive);
 
-  return ruby_field;
+  return exclusive;
 }
 #endif
 
@@ -167,22 +169,17 @@ mrb_GLib_GThreadPool_get_exclusive(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GThreadPool_set_exclusive(mrb_state* mrb, mrb_value self) {
-  struct _GThreadPool * native_self = mruby_unbox_struct _GThreadPool(self);
-  mrb_value ruby_field;
+  struct _GThreadPool * native_self = mruby_unbox__GThreadPool(self);
+  mrb_bool native_exclusive;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "b", &native_exclusive);
 
-  /* type checking */
-  if (!mrb_obj_is_kind_of(mrb, ruby_field, mrb->fixnum_class)) {
-    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
-    return mrb_nil_value();
-  }
+  native_self->exclusive = native_exclusive;
+  
 
-  int native_field = (int)ruby_field;
-
-  native_self->exclusive = native_field;
-
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 

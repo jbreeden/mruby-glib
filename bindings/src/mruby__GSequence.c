@@ -3,10 +3,6 @@
  * Defined in file gsequence.h @ line 30
  */
 
-/*
- * TODO: INCLUDES
- */
-
 #include "mruby_GLib.h"
 
 #if BIND_GSequence_TYPE
@@ -18,7 +14,7 @@
 #if BIND_GSequence_INITIALIZE
 mrb_value
 mrb_GLib_GSequence_initialize(mrb_state* mrb, mrb_value self) {
-  struct _GSequence* native_object = (struct _GSequence*)malloc(sizeof(struct _GSequence));
+  struct _GSequence* native_object = (struct _GSequence*)calloc(1, sizeof(struct _GSequence));
   mruby_gift_struct _GSequence_data_ptr(self, native_object);
   return self;
 }

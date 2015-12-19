@@ -3,10 +3,6 @@
  * Defined in file gstringchunk.h @ line 36
  */
 
-/*
- * TODO: INCLUDES
- */
-
 #include "mruby_GLib.h"
 
 #if BIND_GStringChunk_TYPE
@@ -18,7 +14,7 @@
 #if BIND_GStringChunk_INITIALIZE
 mrb_value
 mrb_GLib_GStringChunk_initialize(mrb_state* mrb, mrb_value self) {
-  struct _GStringChunk* native_object = (struct _GStringChunk*)malloc(sizeof(struct _GStringChunk));
+  struct _GStringChunk* native_object = (struct _GStringChunk*)calloc(1, sizeof(struct _GStringChunk));
   mruby_gift_struct _GStringChunk_data_ptr(self, native_object);
   return self;
 }

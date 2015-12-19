@@ -3,10 +3,6 @@
  * Defined in file gmain.h @ line 56
  */
 
-/*
- * TODO: INCLUDES
- */
-
 #include "mruby_GLib.h"
 
 #if BIND_GMainLoop_TYPE
@@ -18,7 +14,7 @@
 #if BIND_GMainLoop_INITIALIZE
 mrb_value
 mrb_GLib_GMainLoop_initialize(mrb_state* mrb, mrb_value self) {
-  struct _GMainLoop* native_object = (struct _GMainLoop*)malloc(sizeof(struct _GMainLoop));
+  struct _GMainLoop* native_object = (struct _GMainLoop*)calloc(1, sizeof(struct _GMainLoop));
   mruby_gift_struct _GMainLoop_data_ptr(self, native_object);
   return self;
 }

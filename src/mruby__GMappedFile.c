@@ -3,10 +3,6 @@
  * Defined in file gmappedfile.h @ line 32
  */
 
-/*
- * TODO: INCLUDES
- */
-
 #include "mruby_GLib.h"
 
 #if BIND_GMappedFile_TYPE
@@ -18,7 +14,7 @@
 #if BIND_GMappedFile_INITIALIZE
 mrb_value
 mrb_GLib_GMappedFile_initialize(mrb_state* mrb, mrb_value self) {
-  struct _GMappedFile* native_object = (struct _GMappedFile*)malloc(sizeof(struct _GMappedFile));
+  struct _GMappedFile* native_object = (struct _GMappedFile*)calloc(1, sizeof(struct _GMappedFile));
   mruby_gift_struct _GMappedFile_data_ptr(self, native_object);
   return self;
 }

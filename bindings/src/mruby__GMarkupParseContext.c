@@ -3,10 +3,6 @@
  * Defined in file gmarkup.h @ line 113
  */
 
-/*
- * TODO: INCLUDES
- */
-
 #include "mruby_GLib.h"
 
 #if BIND_GMarkupParseContext_TYPE
@@ -18,7 +14,7 @@
 #if BIND_GMarkupParseContext_INITIALIZE
 mrb_value
 mrb_GLib_GMarkupParseContext_initialize(mrb_state* mrb, mrb_value self) {
-  struct _GMarkupParseContext* native_object = (struct _GMarkupParseContext*)malloc(sizeof(struct _GMarkupParseContext));
+  struct _GMarkupParseContext* native_object = (struct _GMarkupParseContext*)calloc(1, sizeof(struct _GMarkupParseContext));
   mruby_gift_struct _GMarkupParseContext_data_ptr(self, native_object);
   return self;
 }

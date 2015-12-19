@@ -3,10 +3,6 @@
  * Defined in file gnode.h @ line 36
  */
 
-/*
- * TODO: INCLUDES
- */
-
 #include "mruby_GLib.h"
 
 #if BIND_GNode_TYPE
@@ -18,7 +14,7 @@
 #if BIND_GNode_INITIALIZE
 mrb_value
 mrb_GLib_GNode_initialize(mrb_state* mrb, mrb_value self) {
-  struct _GNode* native_object = (struct _GNode*)malloc(sizeof(struct _GNode));
+  struct _GNode* native_object = (struct _GNode*)calloc(1, sizeof(struct _GNode));
   mruby_gift_struct _GNode_data_ptr(self, native_object);
   return self;
 }
@@ -67,13 +63,13 @@ mrb_GLib_GNode_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GNode_get_data(mrb_state* mrb, mrb_value self) {
-  struct _GNode * native_self = mruby_unbox_struct _GNode(self);
+  struct _GNode * native_self = mruby_unbox__GNode(self);
 
-  gpointer native_field = native_self->data;
+  gpointer native_data = native_self->data;
 
-  mrb_value ruby_field = TODO_mruby_box_gpointer(mrb, native_field);
+  mrb_value data = TODO_mruby_box_gpointer(mrb, native_data);
 
-  return ruby_field;
+  return data;
 }
 #endif
 
@@ -85,19 +81,22 @@ mrb_GLib_GNode_get_data(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GNode_set_data(mrb_state* mrb, mrb_value self) {
-  struct _GNode * native_self = mruby_unbox_struct _GNode(self);
-  mrb_value ruby_field;
+  struct _GNode * native_self = mruby_unbox__GNode(self);
+  mrb_value data;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "o", &data);
 
   /* type checking */
-  TODO_type_check_gpointer(ruby_field);
+  TODO_type_check_gpointer(data);
 
-  gpointer native_field = TODO_mruby_unbox_gpointer(ruby_field);
+  gpointer native_data = TODO_mruby_unbox_gpointer(data);
 
-  native_self->data = native_field;
+  native_self->data = native_data;
+  
 
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -108,13 +107,13 @@ mrb_GLib_GNode_set_data(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GNode_get_next(mrb_state* mrb, mrb_value self) {
-  struct _GNode * native_self = mruby_unbox_struct _GNode(self);
+  struct _GNode * native_self = mruby_unbox__GNode(self);
 
-  GNode * native_field = native_self->next;
+  GNode * native_next = native_self->next;
 
-  mrb_value ruby_field = (native_field == NULL ? mrb_nil_value() : mruby_box__GNode(mrb, native_field));
+  mrb_value next = (native_next == NULL ? mrb_nil_value() : mruby_box__GNode(mrb, native_next));
 
-  return ruby_field;
+  return next;
 }
 #endif
 
@@ -126,22 +125,25 @@ mrb_GLib_GNode_get_next(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GNode_set_next(mrb_state* mrb, mrb_value self) {
-  struct _GNode * native_self = mruby_unbox_struct _GNode(self);
-  mrb_value ruby_field;
+  struct _GNode * native_self = mruby_unbox__GNode(self);
+  mrb_value next;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "o", &next);
 
   /* type checking */
-  if (!mrb_obj_is_kind_of(mrb, ruby_field, GNode_class(mrb))) {
+  if (!mrb_obj_is_kind_of(mrb, next, GNode_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GNode expected");
     return mrb_nil_value();
   }
 
-  GNode * native_field = (mrb_nil_p(ruby_field) ? NULL : mruby_unbox__GNode(ruby_field));
+  GNode * native_next = (mrb_nil_p(next) ? NULL : mruby_unbox__GNode(next));
 
-  native_self->next = native_field;
+  native_self->next = native_next;
+  
 
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -152,13 +154,13 @@ mrb_GLib_GNode_set_next(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GNode_get_prev(mrb_state* mrb, mrb_value self) {
-  struct _GNode * native_self = mruby_unbox_struct _GNode(self);
+  struct _GNode * native_self = mruby_unbox__GNode(self);
 
-  GNode * native_field = native_self->prev;
+  GNode * native_prev = native_self->prev;
 
-  mrb_value ruby_field = (native_field == NULL ? mrb_nil_value() : mruby_box__GNode(mrb, native_field));
+  mrb_value prev = (native_prev == NULL ? mrb_nil_value() : mruby_box__GNode(mrb, native_prev));
 
-  return ruby_field;
+  return prev;
 }
 #endif
 
@@ -170,22 +172,25 @@ mrb_GLib_GNode_get_prev(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GNode_set_prev(mrb_state* mrb, mrb_value self) {
-  struct _GNode * native_self = mruby_unbox_struct _GNode(self);
-  mrb_value ruby_field;
+  struct _GNode * native_self = mruby_unbox__GNode(self);
+  mrb_value prev;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "o", &prev);
 
   /* type checking */
-  if (!mrb_obj_is_kind_of(mrb, ruby_field, GNode_class(mrb))) {
+  if (!mrb_obj_is_kind_of(mrb, prev, GNode_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GNode expected");
     return mrb_nil_value();
   }
 
-  GNode * native_field = (mrb_nil_p(ruby_field) ? NULL : mruby_unbox__GNode(ruby_field));
+  GNode * native_prev = (mrb_nil_p(prev) ? NULL : mruby_unbox__GNode(prev));
 
-  native_self->prev = native_field;
+  native_self->prev = native_prev;
+  
 
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -196,13 +201,13 @@ mrb_GLib_GNode_set_prev(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GNode_get_parent(mrb_state* mrb, mrb_value self) {
-  struct _GNode * native_self = mruby_unbox_struct _GNode(self);
+  struct _GNode * native_self = mruby_unbox__GNode(self);
 
-  GNode * native_field = native_self->parent;
+  GNode * native_parent = native_self->parent;
 
-  mrb_value ruby_field = (native_field == NULL ? mrb_nil_value() : mruby_box__GNode(mrb, native_field));
+  mrb_value parent = (native_parent == NULL ? mrb_nil_value() : mruby_box__GNode(mrb, native_parent));
 
-  return ruby_field;
+  return parent;
 }
 #endif
 
@@ -214,22 +219,25 @@ mrb_GLib_GNode_get_parent(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GNode_set_parent(mrb_state* mrb, mrb_value self) {
-  struct _GNode * native_self = mruby_unbox_struct _GNode(self);
-  mrb_value ruby_field;
+  struct _GNode * native_self = mruby_unbox__GNode(self);
+  mrb_value parent;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "o", &parent);
 
   /* type checking */
-  if (!mrb_obj_is_kind_of(mrb, ruby_field, GNode_class(mrb))) {
+  if (!mrb_obj_is_kind_of(mrb, parent, GNode_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GNode expected");
     return mrb_nil_value();
   }
 
-  GNode * native_field = (mrb_nil_p(ruby_field) ? NULL : mruby_unbox__GNode(ruby_field));
+  GNode * native_parent = (mrb_nil_p(parent) ? NULL : mruby_unbox__GNode(parent));
 
-  native_self->parent = native_field;
+  native_self->parent = native_parent;
+  
 
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -240,13 +248,13 @@ mrb_GLib_GNode_set_parent(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GNode_get_children(mrb_state* mrb, mrb_value self) {
-  struct _GNode * native_self = mruby_unbox_struct _GNode(self);
+  struct _GNode * native_self = mruby_unbox__GNode(self);
 
-  GNode * native_field = native_self->children;
+  GNode * native_children = native_self->children;
 
-  mrb_value ruby_field = (native_field == NULL ? mrb_nil_value() : mruby_box__GNode(mrb, native_field));
+  mrb_value children = (native_children == NULL ? mrb_nil_value() : mruby_box__GNode(mrb, native_children));
 
-  return ruby_field;
+  return children;
 }
 #endif
 
@@ -258,22 +266,25 @@ mrb_GLib_GNode_get_children(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GNode_set_children(mrb_state* mrb, mrb_value self) {
-  struct _GNode * native_self = mruby_unbox_struct _GNode(self);
-  mrb_value ruby_field;
+  struct _GNode * native_self = mruby_unbox__GNode(self);
+  mrb_value children;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "o", &children);
 
   /* type checking */
-  if (!mrb_obj_is_kind_of(mrb, ruby_field, GNode_class(mrb))) {
+  if (!mrb_obj_is_kind_of(mrb, children, GNode_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GNode expected");
     return mrb_nil_value();
   }
 
-  GNode * native_field = (mrb_nil_p(ruby_field) ? NULL : mruby_unbox__GNode(ruby_field));
+  GNode * native_children = (mrb_nil_p(children) ? NULL : mruby_unbox__GNode(children));
 
-  native_self->children = native_field;
+  native_self->children = native_children;
+  
 
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 

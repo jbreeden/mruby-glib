@@ -3,10 +3,6 @@
  * Defined in file gconvert.h @ line 77
  */
 
-/*
- * TODO: INCLUDES
- */
-
 #include "mruby_GLib.h"
 
 #if BIND_GIConv_TYPE
@@ -18,7 +14,7 @@
 #if BIND_GIConv_INITIALIZE
 mrb_value
 mrb_GLib_GIConv_initialize(mrb_state* mrb, mrb_value self) {
-  struct _GIConv* native_object = (struct _GIConv*)malloc(sizeof(struct _GIConv));
+  struct _GIConv* native_object = (struct _GIConv*)calloc(1, sizeof(struct _GIConv));
   mruby_gift_struct _GIConv_data_ptr(self, native_object);
   return self;
 }

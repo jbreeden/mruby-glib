@@ -3,10 +3,6 @@
  * Defined in file gstring.h @ line 39
  */
 
-/*
- * TODO: INCLUDES
- */
-
 #include "mruby_GLib.h"
 
 #if BIND_GString_TYPE
@@ -18,7 +14,7 @@
 #if BIND_GString_INITIALIZE
 mrb_value
 mrb_GLib_GString_initialize(mrb_state* mrb, mrb_value self) {
-  struct _GString* native_object = (struct _GString*)malloc(sizeof(struct _GString));
+  struct _GString* native_object = (struct _GString*)calloc(1, sizeof(struct _GString));
   mruby_gift_struct _GString_data_ptr(self, native_object);
   return self;
 }
@@ -67,13 +63,13 @@ mrb_GLib_GString_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GString_get_str(mrb_state* mrb, mrb_value self) {
-  struct _GString * native_self = mruby_unbox_struct _GString(self);
+  struct _GString * native_self = mruby_unbox__GString(self);
 
-  gchar * native_field = native_self->str;
+  gchar * native_str = native_self->str;
 
-  mrb_value ruby_field = mrb_str_new_cstr(mrb, native_field);
+  mrb_value str = mrb_str_new_cstr(mrb, native_str);
 
-  return ruby_field;
+  return str;
 }
 #endif
 
@@ -85,27 +81,17 @@ mrb_GLib_GString_get_str(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GString_set_str(mrb_state* mrb, mrb_value self) {
-  struct _GString * native_self = mruby_unbox_struct _GString(self);
-  mrb_value ruby_field;
+  struct _GString * native_self = mruby_unbox__GString(self);
+  char * native_str = NULL;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "z!", &native_str);
 
-  /* type checking */
-  if (!mrb_obj_is_kind_of(mrb, ruby_field, mrb->string_class)) {
-    mrb_raise(mrb, E_TYPE_ERROR, "String expected");
-    return mrb_nil_value();
-  }
+  native_self->str = native_str;
+  
 
-  /* WARNING: Allocating new memory to create 'char *' from 'const char *'.
-   *          Please verify that this memory is cleaned up correctly.
-   *
-   *          Has this been verified? [No]
-   */
-  char * native_field = strdup(ruby_field);
-
-  native_self->str = native_field;
-
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -116,13 +102,13 @@ mrb_GLib_GString_set_str(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GString_get_len(mrb_state* mrb, mrb_value self) {
-  struct _GString * native_self = mruby_unbox_struct _GString(self);
+  struct _GString * native_self = mruby_unbox__GString(self);
 
-  gsize native_field = native_self->len;
+  gsize native_len = native_self->len;
 
-  mrb_value ruby_field = TODO_mruby_box_gsize(mrb, native_field);
+  mrb_value len = mrb_fixnum_value(native_len);
 
-  return ruby_field;
+  return len;
 }
 #endif
 
@@ -134,19 +120,17 @@ mrb_GLib_GString_get_len(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GString_set_len(mrb_state* mrb, mrb_value self) {
-  struct _GString * native_self = mruby_unbox_struct _GString(self);
-  mrb_value ruby_field;
+  struct _GString * native_self = mruby_unbox__GString(self);
+  mrb_int native_len;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "i", &native_len);
 
-  /* type checking */
-  TODO_type_check_gsize(ruby_field);
+  native_self->len = native_len;
+  
 
-  gsize native_field = TODO_mruby_unbox_gsize(ruby_field);
-
-  native_self->len = native_field;
-
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -157,13 +141,13 @@ mrb_GLib_GString_set_len(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GString_get_allocated_len(mrb_state* mrb, mrb_value self) {
-  struct _GString * native_self = mruby_unbox_struct _GString(self);
+  struct _GString * native_self = mruby_unbox__GString(self);
 
-  gsize native_field = native_self->allocated_len;
+  gsize native_allocated_len = native_self->allocated_len;
 
-  mrb_value ruby_field = TODO_mruby_box_gsize(mrb, native_field);
+  mrb_value allocated_len = mrb_fixnum_value(native_allocated_len);
 
-  return ruby_field;
+  return allocated_len;
 }
 #endif
 
@@ -175,19 +159,17 @@ mrb_GLib_GString_get_allocated_len(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GString_set_allocated_len(mrb_state* mrb, mrb_value self) {
-  struct _GString * native_self = mruby_unbox_struct _GString(self);
-  mrb_value ruby_field;
+  struct _GString * native_self = mruby_unbox__GString(self);
+  mrb_int native_allocated_len;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "i", &native_allocated_len);
 
-  /* type checking */
-  TODO_type_check_gsize(ruby_field);
+  native_self->allocated_len = native_allocated_len;
+  
 
-  gsize native_field = TODO_mruby_unbox_gsize(ruby_field);
-
-  native_self->allocated_len = native_field;
-
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 

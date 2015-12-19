@@ -159,7 +159,7 @@
 #define BIND_g_bytes_compare_FUNCTION FALSE
 #define BIND_g_bytes_equal_FUNCTION FALSE
 #define BIND_g_bytes_get_data_FUNCTION FALSE
-#define BIND_g_bytes_get_size_FUNCTION FALSE
+#define BIND_g_bytes_get_size_FUNCTION TRUE
 #define BIND_g_bytes_hash_FUNCTION FALSE
 #define BIND_g_bytes_new_FUNCTION FALSE
 #define BIND_g_bytes_new_from_bytes_FUNCTION TRUE
@@ -173,7 +173,7 @@
 #define BIND_g_chdir_FUNCTION TRUE
 #define BIND_g_checksum_copy_FUNCTION TRUE
 #define BIND_g_checksum_free_FUNCTION TRUE
-#define BIND_g_checksum_get_digest_FUNCTION FALSE
+#define BIND_g_checksum_get_digest_FUNCTION TRUE
 #define BIND_g_checksum_get_string_FUNCTION TRUE
 #define BIND_g_checksum_new_FUNCTION TRUE
 #define BIND_g_checksum_reset_FUNCTION TRUE
@@ -253,7 +253,7 @@
 #define BIND_g_date_set_time_t_FUNCTION TRUE
 #define BIND_g_date_set_time_val_FUNCTION TRUE
 #define BIND_g_date_set_year_FUNCTION TRUE
-#define BIND_g_date_strftime_FUNCTION FALSE
+#define BIND_g_date_strftime_FUNCTION TRUE
 #define BIND_g_date_subtract_days_FUNCTION TRUE
 #define BIND_g_date_subtract_months_FUNCTION TRUE
 #define BIND_g_date_subtract_years_FUNCTION TRUE
@@ -464,7 +464,7 @@
 #define BIND_g_io_channel_error_quark_FUNCTION TRUE
 #define BIND_g_io_channel_flush_FUNCTION TRUE
 #define BIND_g_io_channel_get_buffer_condition_FUNCTION TRUE
-#define BIND_g_io_channel_get_buffer_size_FUNCTION FALSE
+#define BIND_g_io_channel_get_buffer_size_FUNCTION TRUE
 #define BIND_g_io_channel_get_buffered_FUNCTION TRUE
 #define BIND_g_io_channel_get_close_on_unref_FUNCTION TRUE
 #define BIND_g_io_channel_get_encoding_FUNCTION TRUE
@@ -630,7 +630,7 @@
 #define BIND_g_mapped_file_free_FUNCTION TRUE
 #define BIND_g_mapped_file_get_bytes_FUNCTION TRUE
 #define BIND_g_mapped_file_get_contents_FUNCTION TRUE
-#define BIND_g_mapped_file_get_length_FUNCTION FALSE
+#define BIND_g_mapped_file_get_length_FUNCTION TRUE
 #define BIND_g_mapped_file_new_FUNCTION TRUE
 #define BIND_g_mapped_file_new_from_fd_FUNCTION TRUE
 #define BIND_g_mapped_file_ref_FUNCTION TRUE
@@ -765,7 +765,7 @@
 #define BIND_g_print_FUNCTION TRUE
 #define BIND_g_printerr_FUNCTION TRUE
 #define BIND_g_printf_FUNCTION TRUE
-#define BIND_g_printf_string_upper_bound_FUNCTION FALSE
+#define BIND_g_printf_string_upper_bound_FUNCTION TRUE
 #define BIND_g_private_get_FUNCTION FALSE
 #define BIND_g_private_replace_FUNCTION FALSE
 #define BIND_g_private_set_FUNCTION FALSE
@@ -1116,8 +1116,8 @@
 #define BIND_g_strip_context_FUNCTION TRUE
 #define BIND_g_strjoin_FUNCTION TRUE
 #define BIND_g_strjoinv_FUNCTION FALSE
-#define BIND_g_strlcat_FUNCTION FALSE
-#define BIND_g_strlcpy_FUNCTION FALSE
+#define BIND_g_strlcat_FUNCTION TRUE
+#define BIND_g_strlcpy_FUNCTION TRUE
 #define BIND_g_strncasecmp_FUNCTION TRUE
 #define BIND_g_strndup_FUNCTION TRUE
 #define BIND_g_strnfill_FUNCTION TRUE
@@ -1381,7 +1381,7 @@
 #define BIND_g_variant_get_maybe_FUNCTION TRUE
 #define BIND_g_variant_get_normal_form_FUNCTION TRUE
 #define BIND_g_variant_get_objv_FUNCTION FALSE
-#define BIND_g_variant_get_size_FUNCTION FALSE
+#define BIND_g_variant_get_size_FUNCTION TRUE
 #define BIND_g_variant_get_string_FUNCTION FALSE
 #define BIND_g_variant_get_strv_FUNCTION FALSE
 #define BIND_g_variant_get_type_FUNCTION TRUE
@@ -1400,15 +1400,15 @@
 #define BIND_g_variant_is_signature_FUNCTION TRUE
 #define BIND_g_variant_iter_copy_FUNCTION TRUE
 #define BIND_g_variant_iter_free_FUNCTION TRUE
-#define BIND_g_variant_iter_init_FUNCTION FALSE
+#define BIND_g_variant_iter_init_FUNCTION TRUE
 #define BIND_g_variant_iter_loop_FUNCTION TRUE
-#define BIND_g_variant_iter_n_children_FUNCTION FALSE
+#define BIND_g_variant_iter_n_children_FUNCTION TRUE
 #define BIND_g_variant_iter_new_FUNCTION TRUE
 #define BIND_g_variant_iter_next_FUNCTION TRUE
 #define BIND_g_variant_iter_next_value_FUNCTION TRUE
 #define BIND_g_variant_lookup_FUNCTION TRUE
 #define BIND_g_variant_lookup_value_FUNCTION TRUE
-#define BIND_g_variant_n_children_FUNCTION FALSE
+#define BIND_g_variant_n_children_FUNCTION TRUE
 #define BIND_g_variant_new_FUNCTION TRUE
 #define BIND_g_variant_new_array_FUNCTION FALSE
 #define BIND_g_variant_new_boolean_FUNCTION TRUE
@@ -1457,7 +1457,7 @@
 #define BIND_g_variant_type_equal_FUNCTION FALSE
 #define BIND_g_variant_type_first_FUNCTION TRUE
 #define BIND_g_variant_type_free_FUNCTION TRUE
-#define BIND_g_variant_type_get_string_length_FUNCTION FALSE
+#define BIND_g_variant_type_get_string_length_FUNCTION TRUE
 #define BIND_g_variant_type_hash_FUNCTION FALSE
 #define BIND_g_variant_type_is_array_FUNCTION TRUE
 #define BIND_g_variant_type_is_basic_FUNCTION TRUE
@@ -1469,7 +1469,7 @@
 #define BIND_g_variant_type_is_tuple_FUNCTION TRUE
 #define BIND_g_variant_type_is_variant_FUNCTION TRUE
 #define BIND_g_variant_type_key_FUNCTION TRUE
-#define BIND_g_variant_type_n_items_FUNCTION FALSE
+#define BIND_g_variant_type_n_items_FUNCTION TRUE
 #define BIND_g_variant_type_new_FUNCTION TRUE
 #define BIND_g_variant_type_new_array_FUNCTION TRUE
 #define BIND_g_variant_type_new_dict_entry_FUNCTION TRUE

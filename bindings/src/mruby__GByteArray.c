@@ -3,10 +3,6 @@
  * Defined in file garray.h @ line 38
  */
 
-/*
- * TODO: INCLUDES
- */
-
 #include "mruby_GLib.h"
 
 #if BIND_GByteArray_TYPE
@@ -18,7 +14,7 @@
 #if BIND_GByteArray_INITIALIZE
 mrb_value
 mrb_GLib_GByteArray_initialize(mrb_state* mrb, mrb_value self) {
-  struct _GByteArray* native_object = (struct _GByteArray*)malloc(sizeof(struct _GByteArray));
+  struct _GByteArray* native_object = (struct _GByteArray*)calloc(1, sizeof(struct _GByteArray));
   mruby_gift_struct _GByteArray_data_ptr(self, native_object);
   return self;
 }
@@ -67,13 +63,13 @@ mrb_GLib_GByteArray_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GByteArray_get_data(mrb_state* mrb, mrb_value self) {
-  struct _GByteArray * native_self = mruby_unbox_struct _GByteArray(self);
+  struct _GByteArray * native_self = mruby_unbox__GByteArray(self);
 
-  guint8 * native_field = native_self->data;
+  guint8 * native_data = native_self->data;
 
-  mrb_value ruby_field = TODO_mruby_box_guint8_PTR(mrb, native_field);
+  mrb_value data = TODO_mruby_box_guint8_PTR(mrb, native_data);
 
-  return ruby_field;
+  return data;
 }
 #endif
 
@@ -85,19 +81,22 @@ mrb_GLib_GByteArray_get_data(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GByteArray_set_data(mrb_state* mrb, mrb_value self) {
-  struct _GByteArray * native_self = mruby_unbox_struct _GByteArray(self);
-  mrb_value ruby_field;
+  struct _GByteArray * native_self = mruby_unbox__GByteArray(self);
+  mrb_value data;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "o", &data);
 
   /* type checking */
-  TODO_type_check_guint8_PTR(ruby_field);
+  TODO_type_check_guint8_PTR(data);
 
-  guint8 * native_field = TODO_mruby_unbox_guint8_PTR(ruby_field);
+  guint8 * native_data = TODO_mruby_unbox_guint8_PTR(data);
 
-  native_self->data = native_field;
+  native_self->data = native_data;
+  
 
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -108,13 +107,13 @@ mrb_GLib_GByteArray_set_data(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GByteArray_get_len(mrb_state* mrb, mrb_value self) {
-  struct _GByteArray * native_self = mruby_unbox_struct _GByteArray(self);
+  struct _GByteArray * native_self = mruby_unbox__GByteArray(self);
 
-  guint native_field = native_self->len;
+  guint native_len = native_self->len;
 
-  mrb_value ruby_field = mrb_fixnum_value(native_field);
+  mrb_value len = mrb_fixnum_value(native_len);
 
-  return ruby_field;
+  return len;
 }
 #endif
 
@@ -126,22 +125,17 @@ mrb_GLib_GByteArray_get_len(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GByteArray_set_len(mrb_state* mrb, mrb_value self) {
-  struct _GByteArray * native_self = mruby_unbox_struct _GByteArray(self);
-  mrb_value ruby_field;
+  struct _GByteArray * native_self = mruby_unbox__GByteArray(self);
+  mrb_int native_len;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "i", &native_len);
 
-  /* type checking */
-  if (!mrb_obj_is_kind_of(mrb, ruby_field, mrb->fixnum_class)) {
-    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
-    return mrb_nil_value();
-  }
+  native_self->len = native_len;
+  
 
-  unsigned int native_field = (unsigned int)ruby_field;
-
-  native_self->len = native_field;
-
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 

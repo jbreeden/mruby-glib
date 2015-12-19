@@ -3,10 +3,6 @@
  * Defined in file gvarianttype.h @ line 42
  */
 
-/*
- * TODO: INCLUDES
- */
-
 #include "mruby_GLib.h"
 
 #if BIND_GVariantType_TYPE
@@ -18,7 +14,7 @@
 #if BIND_GVariantType_INITIALIZE
 mrb_value
 mrb_GLib_GVariantType_initialize(mrb_state* mrb, mrb_value self) {
-  struct _GVariantType* native_object = (struct _GVariantType*)malloc(sizeof(struct _GVariantType));
+  struct _GVariantType* native_object = (struct _GVariantType*)calloc(1, sizeof(struct _GVariantType));
   mruby_gift_struct _GVariantType_data_ptr(self, native_object);
   return self;
 }

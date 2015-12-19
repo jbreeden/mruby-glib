@@ -3,10 +3,6 @@
  * Defined in file gmarkup.h @ line 114
  */
 
-/*
- * TODO: INCLUDES
- */
-
 #include "mruby_GLib.h"
 
 #if BIND_GMarkupParser_TYPE
@@ -18,7 +14,7 @@
 #if BIND_GMarkupParser_INITIALIZE
 mrb_value
 mrb_GLib_GMarkupParser_initialize(mrb_state* mrb, mrb_value self) {
-  struct _GMarkupParser* native_object = (struct _GMarkupParser*)malloc(sizeof(struct _GMarkupParser));
+  struct _GMarkupParser* native_object = (struct _GMarkupParser*)calloc(1, sizeof(struct _GMarkupParser));
   mruby_gift_struct _GMarkupParser_data_ptr(self, native_object);
   return self;
 }
@@ -67,13 +63,13 @@ mrb_GLib_GMarkupParser_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GMarkupParser_get_start_element(mrb_state* mrb, mrb_value self) {
-  struct _GMarkupParser * native_self = mruby_unbox_struct _GMarkupParser(self);
+  struct _GMarkupParser * native_self = mruby_unbox__GMarkupParser(self);
 
-  void (*)(GMarkupParseContext *, const gchar *, const gchar **, const gchar **, gpointer, GError **) native_field = native_self->start_element;
+  void (*)(GMarkupParseContext *, const gchar *, const gchar **, const gchar **, gpointer, GError **) native_start_element = native_self->start_element;
 
-  mrb_value ruby_field = TODO_mruby_box_void_LPAREN_PTR_RPAREN_LPAREN_GMarkupParseContext_PTR_COMMAgchar_PTR_COMMA_const_gchar_PTR_PTR_COMMA_const_gchar_PTR_PTR_COMMA_gpointerCOMMA_GError_PTR_PTR_RPAREN(mrb, native_field);
+  mrb_value start_element = TODO_mruby_box_void_LPAREN_PTR_RPAREN_LPAREN_GMarkupParseContext_PTR_COMMAgchar_PTR_COMMA_const_gchar_PTR_PTR_COMMA_const_gchar_PTR_PTR_COMMA_gpointerCOMMA_GError_PTR_PTR_RPAREN(mrb, native_start_element);
 
-  return ruby_field;
+  return start_element;
 }
 #endif
 
@@ -85,19 +81,22 @@ mrb_GLib_GMarkupParser_get_start_element(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GMarkupParser_set_start_element(mrb_state* mrb, mrb_value self) {
-  struct _GMarkupParser * native_self = mruby_unbox_struct _GMarkupParser(self);
-  mrb_value ruby_field;
+  struct _GMarkupParser * native_self = mruby_unbox__GMarkupParser(self);
+  mrb_value start_element;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "o", &start_element);
 
   /* type checking */
-  TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_GMarkupParseContext_PTR_COMMAgchar_PTR_COMMA_const_gchar_PTR_PTR_COMMA_const_gchar_PTR_PTR_COMMA_gpointerCOMMA_GError_PTR_PTR_RPAREN(ruby_field);
+  TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_GMarkupParseContext_PTR_COMMAgchar_PTR_COMMA_const_gchar_PTR_PTR_COMMA_const_gchar_PTR_PTR_COMMA_gpointerCOMMA_GError_PTR_PTR_RPAREN(start_element);
 
-  void (*native_field)(GMarkupParseContext *, const gchar *, const gchar **, const gchar **, gpointer, GError **) = TODO_mruby_unbox_void_LPAREN_PTR_RPAREN_LPAREN_GMarkupParseContext_PTR_COMMAgchar_PTR_COMMA_const_gchar_PTR_PTR_COMMA_const_gchar_PTR_PTR_COMMA_gpointerCOMMA_GError_PTR_PTR_RPAREN(ruby_field);
+  void (*native_start_element)(GMarkupParseContext *, const gchar *, const gchar **, const gchar **, gpointer, GError **) = TODO_mruby_unbox_void_LPAREN_PTR_RPAREN_LPAREN_GMarkupParseContext_PTR_COMMAgchar_PTR_COMMA_const_gchar_PTR_PTR_COMMA_const_gchar_PTR_PTR_COMMA_gpointerCOMMA_GError_PTR_PTR_RPAREN(start_element);
 
-  native_self->start_element = native_field;
+  native_self->start_element = native_start_element;
+  
 
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -108,13 +107,13 @@ mrb_GLib_GMarkupParser_set_start_element(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GMarkupParser_get_end_element(mrb_state* mrb, mrb_value self) {
-  struct _GMarkupParser * native_self = mruby_unbox_struct _GMarkupParser(self);
+  struct _GMarkupParser * native_self = mruby_unbox__GMarkupParser(self);
 
-  void (*)(GMarkupParseContext *, const gchar *, gpointer, GError **) native_field = native_self->end_element;
+  void (*)(GMarkupParseContext *, const gchar *, gpointer, GError **) native_end_element = native_self->end_element;
 
-  mrb_value ruby_field = TODO_mruby_box_void_LPAREN_PTR_RPAREN_LPAREN_GMarkupParseContext_PTR_COMMAgchar_PTR_COMMA_gpointerCOMMA_GError_PTR_PTR_RPAREN(mrb, native_field);
+  mrb_value end_element = TODO_mruby_box_void_LPAREN_PTR_RPAREN_LPAREN_GMarkupParseContext_PTR_COMMAgchar_PTR_COMMA_gpointerCOMMA_GError_PTR_PTR_RPAREN(mrb, native_end_element);
 
-  return ruby_field;
+  return end_element;
 }
 #endif
 
@@ -126,19 +125,22 @@ mrb_GLib_GMarkupParser_get_end_element(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GMarkupParser_set_end_element(mrb_state* mrb, mrb_value self) {
-  struct _GMarkupParser * native_self = mruby_unbox_struct _GMarkupParser(self);
-  mrb_value ruby_field;
+  struct _GMarkupParser * native_self = mruby_unbox__GMarkupParser(self);
+  mrb_value end_element;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "o", &end_element);
 
   /* type checking */
-  TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_GMarkupParseContext_PTR_COMMAgchar_PTR_COMMA_gpointerCOMMA_GError_PTR_PTR_RPAREN(ruby_field);
+  TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_GMarkupParseContext_PTR_COMMAgchar_PTR_COMMA_gpointerCOMMA_GError_PTR_PTR_RPAREN(end_element);
 
-  void (*native_field)(GMarkupParseContext *, const gchar *, gpointer, GError **) = TODO_mruby_unbox_void_LPAREN_PTR_RPAREN_LPAREN_GMarkupParseContext_PTR_COMMAgchar_PTR_COMMA_gpointerCOMMA_GError_PTR_PTR_RPAREN(ruby_field);
+  void (*native_end_element)(GMarkupParseContext *, const gchar *, gpointer, GError **) = TODO_mruby_unbox_void_LPAREN_PTR_RPAREN_LPAREN_GMarkupParseContext_PTR_COMMAgchar_PTR_COMMA_gpointerCOMMA_GError_PTR_PTR_RPAREN(end_element);
 
-  native_self->end_element = native_field;
+  native_self->end_element = native_end_element;
+  
 
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -149,13 +151,13 @@ mrb_GLib_GMarkupParser_set_end_element(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GMarkupParser_get_text(mrb_state* mrb, mrb_value self) {
-  struct _GMarkupParser * native_self = mruby_unbox_struct _GMarkupParser(self);
+  struct _GMarkupParser * native_self = mruby_unbox__GMarkupParser(self);
 
-  void (*)(GMarkupParseContext *, const gchar *, gsize, gpointer, GError **) native_field = native_self->text;
+  void (*)(GMarkupParseContext *, const gchar *, gsize, gpointer, GError **) native_text = native_self->text;
 
-  mrb_value ruby_field = TODO_mruby_box_void_LPAREN_PTR_RPAREN_LPAREN_GMarkupParseContext_PTR_COMMAgchar_PTR_COMMA_gsizeCOMMA_gpointerCOMMA_GError_PTR_PTR_RPAREN(mrb, native_field);
+  mrb_value text = TODO_mruby_box_void_LPAREN_PTR_RPAREN_LPAREN_GMarkupParseContext_PTR_COMMAgchar_PTR_COMMA_gsizeCOMMA_gpointerCOMMA_GError_PTR_PTR_RPAREN(mrb, native_text);
 
-  return ruby_field;
+  return text;
 }
 #endif
 
@@ -167,19 +169,22 @@ mrb_GLib_GMarkupParser_get_text(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GMarkupParser_set_text(mrb_state* mrb, mrb_value self) {
-  struct _GMarkupParser * native_self = mruby_unbox_struct _GMarkupParser(self);
-  mrb_value ruby_field;
+  struct _GMarkupParser * native_self = mruby_unbox__GMarkupParser(self);
+  mrb_value text;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "o", &text);
 
   /* type checking */
-  TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_GMarkupParseContext_PTR_COMMAgchar_PTR_COMMA_gsizeCOMMA_gpointerCOMMA_GError_PTR_PTR_RPAREN(ruby_field);
+  TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_GMarkupParseContext_PTR_COMMAgchar_PTR_COMMA_gsizeCOMMA_gpointerCOMMA_GError_PTR_PTR_RPAREN(text);
 
-  void (*native_field)(GMarkupParseContext *, const gchar *, gsize, gpointer, GError **) = TODO_mruby_unbox_void_LPAREN_PTR_RPAREN_LPAREN_GMarkupParseContext_PTR_COMMAgchar_PTR_COMMA_gsizeCOMMA_gpointerCOMMA_GError_PTR_PTR_RPAREN(ruby_field);
+  void (*native_text)(GMarkupParseContext *, const gchar *, gsize, gpointer, GError **) = TODO_mruby_unbox_void_LPAREN_PTR_RPAREN_LPAREN_GMarkupParseContext_PTR_COMMAgchar_PTR_COMMA_gsizeCOMMA_gpointerCOMMA_GError_PTR_PTR_RPAREN(text);
 
-  native_self->text = native_field;
+  native_self->text = native_text;
+  
 
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -190,13 +195,13 @@ mrb_GLib_GMarkupParser_set_text(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GMarkupParser_get_passthrough(mrb_state* mrb, mrb_value self) {
-  struct _GMarkupParser * native_self = mruby_unbox_struct _GMarkupParser(self);
+  struct _GMarkupParser * native_self = mruby_unbox__GMarkupParser(self);
 
-  void (*)(GMarkupParseContext *, const gchar *, gsize, gpointer, GError **) native_field = native_self->passthrough;
+  void (*)(GMarkupParseContext *, const gchar *, gsize, gpointer, GError **) native_passthrough = native_self->passthrough;
 
-  mrb_value ruby_field = TODO_mruby_box_void_LPAREN_PTR_RPAREN_LPAREN_GMarkupParseContext_PTR_COMMAgchar_PTR_COMMA_gsizeCOMMA_gpointerCOMMA_GError_PTR_PTR_RPAREN(mrb, native_field);
+  mrb_value passthrough = TODO_mruby_box_void_LPAREN_PTR_RPAREN_LPAREN_GMarkupParseContext_PTR_COMMAgchar_PTR_COMMA_gsizeCOMMA_gpointerCOMMA_GError_PTR_PTR_RPAREN(mrb, native_passthrough);
 
-  return ruby_field;
+  return passthrough;
 }
 #endif
 
@@ -208,19 +213,22 @@ mrb_GLib_GMarkupParser_get_passthrough(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GMarkupParser_set_passthrough(mrb_state* mrb, mrb_value self) {
-  struct _GMarkupParser * native_self = mruby_unbox_struct _GMarkupParser(self);
-  mrb_value ruby_field;
+  struct _GMarkupParser * native_self = mruby_unbox__GMarkupParser(self);
+  mrb_value passthrough;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "o", &passthrough);
 
   /* type checking */
-  TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_GMarkupParseContext_PTR_COMMAgchar_PTR_COMMA_gsizeCOMMA_gpointerCOMMA_GError_PTR_PTR_RPAREN(ruby_field);
+  TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_GMarkupParseContext_PTR_COMMAgchar_PTR_COMMA_gsizeCOMMA_gpointerCOMMA_GError_PTR_PTR_RPAREN(passthrough);
 
-  void (*native_field)(GMarkupParseContext *, const gchar *, gsize, gpointer, GError **) = TODO_mruby_unbox_void_LPAREN_PTR_RPAREN_LPAREN_GMarkupParseContext_PTR_COMMAgchar_PTR_COMMA_gsizeCOMMA_gpointerCOMMA_GError_PTR_PTR_RPAREN(ruby_field);
+  void (*native_passthrough)(GMarkupParseContext *, const gchar *, gsize, gpointer, GError **) = TODO_mruby_unbox_void_LPAREN_PTR_RPAREN_LPAREN_GMarkupParseContext_PTR_COMMAgchar_PTR_COMMA_gsizeCOMMA_gpointerCOMMA_GError_PTR_PTR_RPAREN(passthrough);
 
-  native_self->passthrough = native_field;
+  native_self->passthrough = native_passthrough;
+  
 
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -231,13 +239,13 @@ mrb_GLib_GMarkupParser_set_passthrough(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GMarkupParser_get_error(mrb_state* mrb, mrb_value self) {
-  struct _GMarkupParser * native_self = mruby_unbox_struct _GMarkupParser(self);
+  struct _GMarkupParser * native_self = mruby_unbox__GMarkupParser(self);
 
-  void (*)(GMarkupParseContext *, GError *, gpointer) native_field = native_self->error;
+  void (*)(GMarkupParseContext *, GError *, gpointer) native_error = native_self->error;
 
-  mrb_value ruby_field = TODO_mruby_box_void_LPAREN_PTR_RPAREN_LPAREN_GMarkupParseContext_PTR_COMMA_GError_PTR_COMMA_gpointer_RPAREN(mrb, native_field);
+  mrb_value error = TODO_mruby_box_void_LPAREN_PTR_RPAREN_LPAREN_GMarkupParseContext_PTR_COMMA_GError_PTR_COMMA_gpointer_RPAREN(mrb, native_error);
 
-  return ruby_field;
+  return error;
 }
 #endif
 
@@ -249,19 +257,22 @@ mrb_GLib_GMarkupParser_get_error(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GMarkupParser_set_error(mrb_state* mrb, mrb_value self) {
-  struct _GMarkupParser * native_self = mruby_unbox_struct _GMarkupParser(self);
-  mrb_value ruby_field;
+  struct _GMarkupParser * native_self = mruby_unbox__GMarkupParser(self);
+  mrb_value error;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "o", &error);
 
   /* type checking */
-  TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_GMarkupParseContext_PTR_COMMA_GError_PTR_COMMA_gpointer_RPAREN(ruby_field);
+  TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_GMarkupParseContext_PTR_COMMA_GError_PTR_COMMA_gpointer_RPAREN(error);
 
-  void (*native_field)(GMarkupParseContext *, GError *, gpointer) = TODO_mruby_unbox_void_LPAREN_PTR_RPAREN_LPAREN_GMarkupParseContext_PTR_COMMA_GError_PTR_COMMA_gpointer_RPAREN(ruby_field);
+  void (*native_error)(GMarkupParseContext *, GError *, gpointer) = TODO_mruby_unbox_void_LPAREN_PTR_RPAREN_LPAREN_GMarkupParseContext_PTR_COMMA_GError_PTR_COMMA_gpointer_RPAREN(error);
 
-  native_self->error = native_field;
+  native_self->error = native_error;
+  
 
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 

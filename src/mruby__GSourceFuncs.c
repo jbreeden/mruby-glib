@@ -3,10 +3,6 @@
  * Defined in file gmain.h @ line 130
  */
 
-/*
- * TODO: INCLUDES
- */
-
 #include "mruby_GLib.h"
 
 #if BIND_GSourceFuncs_TYPE
@@ -18,7 +14,7 @@
 #if BIND_GSourceFuncs_INITIALIZE
 mrb_value
 mrb_GLib_GSourceFuncs_initialize(mrb_state* mrb, mrb_value self) {
-  struct _GSourceFuncs* native_object = (struct _GSourceFuncs*)malloc(sizeof(struct _GSourceFuncs));
+  struct _GSourceFuncs* native_object = (struct _GSourceFuncs*)calloc(1, sizeof(struct _GSourceFuncs));
   mruby_gift_struct _GSourceFuncs_data_ptr(self, native_object);
   return self;
 }
@@ -67,13 +63,13 @@ mrb_GLib_GSourceFuncs_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GSourceFuncs_get_prepare(mrb_state* mrb, mrb_value self) {
-  struct _GSourceFuncs * native_self = mruby_unbox_struct _GSourceFuncs(self);
+  struct _GSourceFuncs * native_self = mruby_unbox__GSourceFuncs(self);
 
-  gboolean (*)(GSource *, gint *) native_field = native_self->prepare;
+  gboolean (*)(GSource *, gint *) native_prepare = native_self->prepare;
 
-  mrb_value ruby_field = TODO_mruby_box_gboolean_LPAREN_PTR_RPAREN_LPAREN_GSource_PTR_COMMA_gint_PTR_RPAREN(mrb, native_field);
+  mrb_value prepare = TODO_mruby_box_gboolean_LPAREN_PTR_RPAREN_LPAREN_GSource_PTR_COMMA_gint_PTR_RPAREN(mrb, native_prepare);
 
-  return ruby_field;
+  return prepare;
 }
 #endif
 
@@ -85,19 +81,22 @@ mrb_GLib_GSourceFuncs_get_prepare(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GSourceFuncs_set_prepare(mrb_state* mrb, mrb_value self) {
-  struct _GSourceFuncs * native_self = mruby_unbox_struct _GSourceFuncs(self);
-  mrb_value ruby_field;
+  struct _GSourceFuncs * native_self = mruby_unbox__GSourceFuncs(self);
+  mrb_value prepare;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "o", &prepare);
 
   /* type checking */
-  TODO_type_check_gboolean_LPAREN_PTR_RPAREN_LPAREN_GSource_PTR_COMMA_gint_PTR_RPAREN(ruby_field);
+  TODO_type_check_gboolean_LPAREN_PTR_RPAREN_LPAREN_GSource_PTR_COMMA_gint_PTR_RPAREN(prepare);
 
-  gboolean (*native_field)(GSource *, gint *) = TODO_mruby_unbox_gboolean_LPAREN_PTR_RPAREN_LPAREN_GSource_PTR_COMMA_gint_PTR_RPAREN(ruby_field);
+  gboolean (*native_prepare)(GSource *, gint *) = TODO_mruby_unbox_gboolean_LPAREN_PTR_RPAREN_LPAREN_GSource_PTR_COMMA_gint_PTR_RPAREN(prepare);
 
-  native_self->prepare = native_field;
+  native_self->prepare = native_prepare;
+  
 
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -108,13 +107,13 @@ mrb_GLib_GSourceFuncs_set_prepare(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GSourceFuncs_get_check(mrb_state* mrb, mrb_value self) {
-  struct _GSourceFuncs * native_self = mruby_unbox_struct _GSourceFuncs(self);
+  struct _GSourceFuncs * native_self = mruby_unbox__GSourceFuncs(self);
 
-  gboolean (*)(GSource *) native_field = native_self->check;
+  gboolean (*)(GSource *) native_check = native_self->check;
 
-  mrb_value ruby_field = TODO_mruby_box_gboolean_LPAREN_PTR_RPAREN_LPAREN_GSource_PTR_RPAREN(mrb, native_field);
+  mrb_value check = TODO_mruby_box_gboolean_LPAREN_PTR_RPAREN_LPAREN_GSource_PTR_RPAREN(mrb, native_check);
 
-  return ruby_field;
+  return check;
 }
 #endif
 
@@ -126,19 +125,22 @@ mrb_GLib_GSourceFuncs_get_check(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GSourceFuncs_set_check(mrb_state* mrb, mrb_value self) {
-  struct _GSourceFuncs * native_self = mruby_unbox_struct _GSourceFuncs(self);
-  mrb_value ruby_field;
+  struct _GSourceFuncs * native_self = mruby_unbox__GSourceFuncs(self);
+  mrb_value check;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "o", &check);
 
   /* type checking */
-  TODO_type_check_gboolean_LPAREN_PTR_RPAREN_LPAREN_GSource_PTR_RPAREN(ruby_field);
+  TODO_type_check_gboolean_LPAREN_PTR_RPAREN_LPAREN_GSource_PTR_RPAREN(check);
 
-  gboolean (*native_field)(GSource *) = TODO_mruby_unbox_gboolean_LPAREN_PTR_RPAREN_LPAREN_GSource_PTR_RPAREN(ruby_field);
+  gboolean (*native_check)(GSource *) = TODO_mruby_unbox_gboolean_LPAREN_PTR_RPAREN_LPAREN_GSource_PTR_RPAREN(check);
 
-  native_self->check = native_field;
+  native_self->check = native_check;
+  
 
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -149,13 +151,13 @@ mrb_GLib_GSourceFuncs_set_check(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GSourceFuncs_get_dispatch(mrb_state* mrb, mrb_value self) {
-  struct _GSourceFuncs * native_self = mruby_unbox_struct _GSourceFuncs(self);
+  struct _GSourceFuncs * native_self = mruby_unbox__GSourceFuncs(self);
 
-  gboolean (*)(GSource *, GSourceFunc, gpointer) native_field = native_self->dispatch;
+  gboolean (*)(GSource *, GSourceFunc, gpointer) native_dispatch = native_self->dispatch;
 
-  mrb_value ruby_field = TODO_mruby_box_gboolean_LPAREN_PTR_RPAREN_LPAREN_GSource_PTR_COMMA_GSourceFuncCOMMA_gpointer_RPAREN(mrb, native_field);
+  mrb_value dispatch = TODO_mruby_box_gboolean_LPAREN_PTR_RPAREN_LPAREN_GSource_PTR_COMMA_GSourceFuncCOMMA_gpointer_RPAREN(mrb, native_dispatch);
 
-  return ruby_field;
+  return dispatch;
 }
 #endif
 
@@ -167,19 +169,22 @@ mrb_GLib_GSourceFuncs_get_dispatch(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GSourceFuncs_set_dispatch(mrb_state* mrb, mrb_value self) {
-  struct _GSourceFuncs * native_self = mruby_unbox_struct _GSourceFuncs(self);
-  mrb_value ruby_field;
+  struct _GSourceFuncs * native_self = mruby_unbox__GSourceFuncs(self);
+  mrb_value dispatch;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "o", &dispatch);
 
   /* type checking */
-  TODO_type_check_gboolean_LPAREN_PTR_RPAREN_LPAREN_GSource_PTR_COMMA_GSourceFuncCOMMA_gpointer_RPAREN(ruby_field);
+  TODO_type_check_gboolean_LPAREN_PTR_RPAREN_LPAREN_GSource_PTR_COMMA_GSourceFuncCOMMA_gpointer_RPAREN(dispatch);
 
-  gboolean (*native_field)(GSource *, GSourceFunc, gpointer) = TODO_mruby_unbox_gboolean_LPAREN_PTR_RPAREN_LPAREN_GSource_PTR_COMMA_GSourceFuncCOMMA_gpointer_RPAREN(ruby_field);
+  gboolean (*native_dispatch)(GSource *, GSourceFunc, gpointer) = TODO_mruby_unbox_gboolean_LPAREN_PTR_RPAREN_LPAREN_GSource_PTR_COMMA_GSourceFuncCOMMA_gpointer_RPAREN(dispatch);
 
-  native_self->dispatch = native_field;
+  native_self->dispatch = native_dispatch;
+  
 
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -190,13 +195,13 @@ mrb_GLib_GSourceFuncs_set_dispatch(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GSourceFuncs_get_finalize(mrb_state* mrb, mrb_value self) {
-  struct _GSourceFuncs * native_self = mruby_unbox_struct _GSourceFuncs(self);
+  struct _GSourceFuncs * native_self = mruby_unbox__GSourceFuncs(self);
 
-  void (*)(GSource *) native_field = native_self->finalize;
+  void (*)(GSource *) native_finalize = native_self->finalize;
 
-  mrb_value ruby_field = TODO_mruby_box_void_LPAREN_PTR_RPAREN_LPAREN_GSource_PTR_RPAREN(mrb, native_field);
+  mrb_value finalize = TODO_mruby_box_void_LPAREN_PTR_RPAREN_LPAREN_GSource_PTR_RPAREN(mrb, native_finalize);
 
-  return ruby_field;
+  return finalize;
 }
 #endif
 
@@ -208,19 +213,22 @@ mrb_GLib_GSourceFuncs_get_finalize(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GSourceFuncs_set_finalize(mrb_state* mrb, mrb_value self) {
-  struct _GSourceFuncs * native_self = mruby_unbox_struct _GSourceFuncs(self);
-  mrb_value ruby_field;
+  struct _GSourceFuncs * native_self = mruby_unbox__GSourceFuncs(self);
+  mrb_value finalize;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "o", &finalize);
 
   /* type checking */
-  TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_GSource_PTR_RPAREN(ruby_field);
+  TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_GSource_PTR_RPAREN(finalize);
 
-  void (*native_field)(GSource *) = TODO_mruby_unbox_void_LPAREN_PTR_RPAREN_LPAREN_GSource_PTR_RPAREN(ruby_field);
+  void (*native_finalize)(GSource *) = TODO_mruby_unbox_void_LPAREN_PTR_RPAREN_LPAREN_GSource_PTR_RPAREN(finalize);
 
-  native_self->finalize = native_field;
+  native_self->finalize = native_finalize;
+  
 
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -231,13 +239,13 @@ mrb_GLib_GSourceFuncs_set_finalize(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GSourceFuncs_get_closure_callback(mrb_state* mrb, mrb_value self) {
-  struct _GSourceFuncs * native_self = mruby_unbox_struct _GSourceFuncs(self);
+  struct _GSourceFuncs * native_self = mruby_unbox__GSourceFuncs(self);
 
-  GSourceFunc native_field = native_self->closure_callback;
+  GSourceFunc native_closure_callback = native_self->closure_callback;
 
-  mrb_value ruby_field = TODO_mruby_box_GSourceFunc(mrb, native_field);
+  mrb_value closure_callback = TODO_mruby_box_GSourceFunc(mrb, native_closure_callback);
 
-  return ruby_field;
+  return closure_callback;
 }
 #endif
 
@@ -249,19 +257,22 @@ mrb_GLib_GSourceFuncs_get_closure_callback(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GSourceFuncs_set_closure_callback(mrb_state* mrb, mrb_value self) {
-  struct _GSourceFuncs * native_self = mruby_unbox_struct _GSourceFuncs(self);
-  mrb_value ruby_field;
+  struct _GSourceFuncs * native_self = mruby_unbox__GSourceFuncs(self);
+  mrb_value closure_callback;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "o", &closure_callback);
 
   /* type checking */
-  TODO_type_check_GSourceFunc(ruby_field);
+  TODO_type_check_GSourceFunc(closure_callback);
 
-  GSourceFunc native_field = TODO_mruby_unbox_GSourceFunc(ruby_field);
+  GSourceFunc native_closure_callback = TODO_mruby_unbox_GSourceFunc(closure_callback);
 
-  native_self->closure_callback = native_field;
+  native_self->closure_callback = native_closure_callback;
+  
 
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -272,13 +283,13 @@ mrb_GLib_GSourceFuncs_set_closure_callback(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GSourceFuncs_get_closure_marshal(mrb_state* mrb, mrb_value self) {
-  struct _GSourceFuncs * native_self = mruby_unbox_struct _GSourceFuncs(self);
+  struct _GSourceFuncs * native_self = mruby_unbox__GSourceFuncs(self);
 
-  GSourceDummyMarshal native_field = native_self->closure_marshal;
+  GSourceDummyMarshal native_closure_marshal = native_self->closure_marshal;
 
-  mrb_value ruby_field = TODO_mruby_box_GSourceDummyMarshal(mrb, native_field);
+  mrb_value closure_marshal = TODO_mruby_box_GSourceDummyMarshal(mrb, native_closure_marshal);
 
-  return ruby_field;
+  return closure_marshal;
 }
 #endif
 
@@ -290,19 +301,22 @@ mrb_GLib_GSourceFuncs_get_closure_marshal(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GSourceFuncs_set_closure_marshal(mrb_state* mrb, mrb_value self) {
-  struct _GSourceFuncs * native_self = mruby_unbox_struct _GSourceFuncs(self);
-  mrb_value ruby_field;
+  struct _GSourceFuncs * native_self = mruby_unbox__GSourceFuncs(self);
+  mrb_value closure_marshal;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "o", &closure_marshal);
 
   /* type checking */
-  TODO_type_check_GSourceDummyMarshal(ruby_field);
+  TODO_type_check_GSourceDummyMarshal(closure_marshal);
 
-  GSourceDummyMarshal native_field = TODO_mruby_unbox_GSourceDummyMarshal(ruby_field);
+  GSourceDummyMarshal native_closure_marshal = TODO_mruby_unbox_GSourceDummyMarshal(closure_marshal);
 
-  native_self->closure_marshal = native_field;
+  native_self->closure_marshal = native_closure_marshal;
+  
 
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 

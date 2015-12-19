@@ -3,10 +3,6 @@
  * Defined in file gregex.h @ line 423
  */
 
-/*
- * TODO: INCLUDES
- */
-
 #include "mruby_GLib.h"
 
 #if BIND_GMatchInfo_TYPE
@@ -18,7 +14,7 @@
 #if BIND_GMatchInfo_INITIALIZE
 mrb_value
 mrb_GLib_GMatchInfo_initialize(mrb_state* mrb, mrb_value self) {
-  struct _GMatchInfo* native_object = (struct _GMatchInfo*)malloc(sizeof(struct _GMatchInfo));
+  struct _GMatchInfo* native_object = (struct _GMatchInfo*)calloc(1, sizeof(struct _GMatchInfo));
   mruby_gift_struct _GMatchInfo_data_ptr(self, native_object);
   return self;
 }

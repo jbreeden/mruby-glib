@@ -3,10 +3,6 @@
  * Defined in file gtestutils.h @ line 375
  */
 
-/*
- * TODO: INCLUDES
- */
-
 #include "mruby_GLib.h"
 
 #if BIND_GTestLogBuffer_TYPE
@@ -18,7 +14,7 @@
 #if BIND_GTestLogBuffer_INITIALIZE
 mrb_value
 mrb_GLib_GTestLogBuffer_initialize(mrb_state* mrb, mrb_value self) {
-  GTestLogBuffer* native_object = (GTestLogBuffer*)malloc(sizeof(GTestLogBuffer));
+  GTestLogBuffer* native_object = (GTestLogBuffer*)calloc(1, sizeof(GTestLogBuffer));
   mruby_gift_GTestLogBuffer_data_ptr(self, native_object);
   return self;
 }
@@ -69,11 +65,11 @@ mrb_value
 mrb_GLib_GTestLogBuffer_get_data(mrb_state* mrb, mrb_value self) {
   GTestLogBuffer * native_self = mruby_unbox_GTestLogBuffer(self);
 
-  GString * native_field = native_self->data;
+  GString * native_data = native_self->data;
 
-  mrb_value ruby_field = (native_field == NULL ? mrb_nil_value() : mruby_box__GString(mrb, native_field));
+  mrb_value data = (native_data == NULL ? mrb_nil_value() : mruby_box__GString(mrb, native_data));
 
-  return ruby_field;
+  return data;
 }
 #endif
 
@@ -86,21 +82,24 @@ mrb_GLib_GTestLogBuffer_get_data(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_GTestLogBuffer_set_data(mrb_state* mrb, mrb_value self) {
   GTestLogBuffer * native_self = mruby_unbox_GTestLogBuffer(self);
-  mrb_value ruby_field;
+  mrb_value data;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "o", &data);
 
   /* type checking */
-  if (!mrb_obj_is_kind_of(mrb, ruby_field, GString_class(mrb))) {
+  if (!mrb_obj_is_kind_of(mrb, data, GString_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GString expected");
     return mrb_nil_value();
   }
 
-  GString * native_field = (mrb_nil_p(ruby_field) ? NULL : mruby_unbox__GString(ruby_field));
+  GString * native_data = (mrb_nil_p(data) ? NULL : mruby_unbox__GString(data));
 
-  native_self->data = native_field;
+  native_self->data = native_data;
+  
 
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -113,11 +112,11 @@ mrb_value
 mrb_GLib_GTestLogBuffer_get_msgs(mrb_state* mrb, mrb_value self) {
   GTestLogBuffer * native_self = mruby_unbox_GTestLogBuffer(self);
 
-  GSList * native_field = native_self->msgs;
+  GSList * native_msgs = native_self->msgs;
 
-  mrb_value ruby_field = (native_field == NULL ? mrb_nil_value() : mruby_box__GSList(mrb, native_field));
+  mrb_value msgs = (native_msgs == NULL ? mrb_nil_value() : mruby_box__GSList(mrb, native_msgs));
 
-  return ruby_field;
+  return msgs;
 }
 #endif
 
@@ -130,21 +129,24 @@ mrb_GLib_GTestLogBuffer_get_msgs(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_GTestLogBuffer_set_msgs(mrb_state* mrb, mrb_value self) {
   GTestLogBuffer * native_self = mruby_unbox_GTestLogBuffer(self);
-  mrb_value ruby_field;
+  mrb_value msgs;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "o", &msgs);
 
   /* type checking */
-  if (!mrb_obj_is_kind_of(mrb, ruby_field, GSList_class(mrb))) {
+  if (!mrb_obj_is_kind_of(mrb, msgs, GSList_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GSList expected");
     return mrb_nil_value();
   }
 
-  GSList * native_field = (mrb_nil_p(ruby_field) ? NULL : mruby_unbox__GSList(ruby_field));
+  GSList * native_msgs = (mrb_nil_p(msgs) ? NULL : mruby_unbox__GSList(msgs));
 
-  native_self->msgs = native_field;
+  native_self->msgs = native_msgs;
+  
 
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 

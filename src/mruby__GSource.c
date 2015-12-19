@@ -3,10 +3,6 @@
  * Defined in file gmain.h @ line 64
  */
 
-/*
- * TODO: INCLUDES
- */
-
 #include "mruby_GLib.h"
 
 #if BIND_GSource_TYPE
@@ -18,7 +14,7 @@
 #if BIND_GSource_INITIALIZE
 mrb_value
 mrb_GLib_GSource_initialize(mrb_state* mrb, mrb_value self) {
-  struct _GSource* native_object = (struct _GSource*)malloc(sizeof(struct _GSource));
+  struct _GSource* native_object = (struct _GSource*)calloc(1, sizeof(struct _GSource));
   mruby_gift_struct _GSource_data_ptr(self, native_object);
   return self;
 }
@@ -67,13 +63,13 @@ mrb_GLib_GSource_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GSource_get_callback_data(mrb_state* mrb, mrb_value self) {
-  struct _GSource * native_self = mruby_unbox_struct _GSource(self);
+  struct _GSource * native_self = mruby_unbox__GSource(self);
 
-  gpointer native_field = native_self->callback_data;
+  gpointer native_callback_data = native_self->callback_data;
 
-  mrb_value ruby_field = TODO_mruby_box_gpointer(mrb, native_field);
+  mrb_value callback_data = TODO_mruby_box_gpointer(mrb, native_callback_data);
 
-  return ruby_field;
+  return callback_data;
 }
 #endif
 
@@ -85,19 +81,22 @@ mrb_GLib_GSource_get_callback_data(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GSource_set_callback_data(mrb_state* mrb, mrb_value self) {
-  struct _GSource * native_self = mruby_unbox_struct _GSource(self);
-  mrb_value ruby_field;
+  struct _GSource * native_self = mruby_unbox__GSource(self);
+  mrb_value callback_data;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "o", &callback_data);
 
   /* type checking */
-  TODO_type_check_gpointer(ruby_field);
+  TODO_type_check_gpointer(callback_data);
 
-  gpointer native_field = TODO_mruby_unbox_gpointer(ruby_field);
+  gpointer native_callback_data = TODO_mruby_unbox_gpointer(callback_data);
 
-  native_self->callback_data = native_field;
+  native_self->callback_data = native_callback_data;
+  
 
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -108,13 +107,13 @@ mrb_GLib_GSource_set_callback_data(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GSource_get_callback_funcs(mrb_state* mrb, mrb_value self) {
-  struct _GSource * native_self = mruby_unbox_struct _GSource(self);
+  struct _GSource * native_self = mruby_unbox__GSource(self);
 
-  GSourceCallbackFuncs * native_field = native_self->callback_funcs;
+  GSourceCallbackFuncs * native_callback_funcs = native_self->callback_funcs;
 
-  mrb_value ruby_field = (native_field == NULL ? mrb_nil_value() : mruby_box__GSourceCallbackFuncs(mrb, native_field));
+  mrb_value callback_funcs = (native_callback_funcs == NULL ? mrb_nil_value() : mruby_box__GSourceCallbackFuncs(mrb, native_callback_funcs));
 
-  return ruby_field;
+  return callback_funcs;
 }
 #endif
 
@@ -126,22 +125,25 @@ mrb_GLib_GSource_get_callback_funcs(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GSource_set_callback_funcs(mrb_state* mrb, mrb_value self) {
-  struct _GSource * native_self = mruby_unbox_struct _GSource(self);
-  mrb_value ruby_field;
+  struct _GSource * native_self = mruby_unbox__GSource(self);
+  mrb_value callback_funcs;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "o", &callback_funcs);
 
   /* type checking */
-  if (!mrb_obj_is_kind_of(mrb, ruby_field, GSourceCallbackFuncs_class(mrb))) {
+  if (!mrb_obj_is_kind_of(mrb, callback_funcs, GSourceCallbackFuncs_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GSourceCallbackFuncs expected");
     return mrb_nil_value();
   }
 
-  GSourceCallbackFuncs * native_field = (mrb_nil_p(ruby_field) ? NULL : mruby_unbox__GSourceCallbackFuncs(ruby_field));
+  GSourceCallbackFuncs * native_callback_funcs = (mrb_nil_p(callback_funcs) ? NULL : mruby_unbox__GSourceCallbackFuncs(callback_funcs));
 
-  native_self->callback_funcs = native_field;
+  native_self->callback_funcs = native_callback_funcs;
+  
 
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -152,13 +154,13 @@ mrb_GLib_GSource_set_callback_funcs(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GSource_get_source_funcs(mrb_state* mrb, mrb_value self) {
-  struct _GSource * native_self = mruby_unbox_struct _GSource(self);
+  struct _GSource * native_self = mruby_unbox__GSource(self);
 
-  const GSourceFuncs * native_field = native_self->source_funcs;
+  const GSourceFuncs * native_source_funcs = native_self->source_funcs;
 
-  mrb_value ruby_field = (native_field == NULL ? mrb_nil_value() : mruby_box__GSourceFuncs(mrb, native_field));
+  mrb_value source_funcs = (native_source_funcs == NULL ? mrb_nil_value() : mruby_box__GSourceFuncs(mrb, native_source_funcs));
 
-  return ruby_field;
+  return source_funcs;
 }
 #endif
 
@@ -170,22 +172,25 @@ mrb_GLib_GSource_get_source_funcs(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GSource_set_source_funcs(mrb_state* mrb, mrb_value self) {
-  struct _GSource * native_self = mruby_unbox_struct _GSource(self);
-  mrb_value ruby_field;
+  struct _GSource * native_self = mruby_unbox__GSource(self);
+  mrb_value source_funcs;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "o", &source_funcs);
 
   /* type checking */
-  if (!mrb_obj_is_kind_of(mrb, ruby_field, GSourceFuncs_class(mrb))) {
+  if (!mrb_obj_is_kind_of(mrb, source_funcs, GSourceFuncs_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GSourceFuncs expected");
     return mrb_nil_value();
   }
 
-  const GSourceFuncs * native_field = (mrb_nil_p(ruby_field) ? NULL : mruby_unbox__GSourceFuncs(ruby_field));
+  const GSourceFuncs * native_source_funcs = (mrb_nil_p(source_funcs) ? NULL : mruby_unbox__GSourceFuncs(source_funcs));
 
-  native_self->source_funcs = native_field;
+  native_self->source_funcs = native_source_funcs;
+  
 
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -196,13 +201,13 @@ mrb_GLib_GSource_set_source_funcs(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GSource_get_ref_count(mrb_state* mrb, mrb_value self) {
-  struct _GSource * native_self = mruby_unbox_struct _GSource(self);
+  struct _GSource * native_self = mruby_unbox__GSource(self);
 
-  guint native_field = native_self->ref_count;
+  guint native_ref_count = native_self->ref_count;
 
-  mrb_value ruby_field = mrb_fixnum_value(native_field);
+  mrb_value ref_count = mrb_fixnum_value(native_ref_count);
 
-  return ruby_field;
+  return ref_count;
 }
 #endif
 
@@ -214,22 +219,17 @@ mrb_GLib_GSource_get_ref_count(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GSource_set_ref_count(mrb_state* mrb, mrb_value self) {
-  struct _GSource * native_self = mruby_unbox_struct _GSource(self);
-  mrb_value ruby_field;
+  struct _GSource * native_self = mruby_unbox__GSource(self);
+  mrb_int native_ref_count;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "i", &native_ref_count);
 
-  /* type checking */
-  if (!mrb_obj_is_kind_of(mrb, ruby_field, mrb->fixnum_class)) {
-    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
-    return mrb_nil_value();
-  }
+  native_self->ref_count = native_ref_count;
+  
 
-  unsigned int native_field = (unsigned int)ruby_field;
-
-  native_self->ref_count = native_field;
-
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -240,13 +240,13 @@ mrb_GLib_GSource_set_ref_count(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GSource_get_context(mrb_state* mrb, mrb_value self) {
-  struct _GSource * native_self = mruby_unbox_struct _GSource(self);
+  struct _GSource * native_self = mruby_unbox__GSource(self);
 
-  GMainContext * native_field = native_self->context;
+  GMainContext * native_context = native_self->context;
 
-  mrb_value ruby_field = (native_field == NULL ? mrb_nil_value() : mruby_box__GMainContext(mrb, native_field));
+  mrb_value context = (native_context == NULL ? mrb_nil_value() : mruby_box__GMainContext(mrb, native_context));
 
-  return ruby_field;
+  return context;
 }
 #endif
 
@@ -258,22 +258,25 @@ mrb_GLib_GSource_get_context(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GSource_set_context(mrb_state* mrb, mrb_value self) {
-  struct _GSource * native_self = mruby_unbox_struct _GSource(self);
-  mrb_value ruby_field;
+  struct _GSource * native_self = mruby_unbox__GSource(self);
+  mrb_value context;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "o", &context);
 
   /* type checking */
-  if (!mrb_obj_is_kind_of(mrb, ruby_field, GMainContext_class(mrb))) {
+  if (!mrb_obj_is_kind_of(mrb, context, GMainContext_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GMainContext expected");
     return mrb_nil_value();
   }
 
-  GMainContext * native_field = (mrb_nil_p(ruby_field) ? NULL : mruby_unbox__GMainContext(ruby_field));
+  GMainContext * native_context = (mrb_nil_p(context) ? NULL : mruby_unbox__GMainContext(context));
 
-  native_self->context = native_field;
+  native_self->context = native_context;
+  
 
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -284,13 +287,13 @@ mrb_GLib_GSource_set_context(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GSource_get_priority(mrb_state* mrb, mrb_value self) {
-  struct _GSource * native_self = mruby_unbox_struct _GSource(self);
+  struct _GSource * native_self = mruby_unbox__GSource(self);
 
-  gint native_field = native_self->priority;
+  gint native_priority = native_self->priority;
 
-  mrb_value ruby_field = mrb_fixnum_value(native_field);
+  mrb_value priority = mrb_fixnum_value(native_priority);
 
-  return ruby_field;
+  return priority;
 }
 #endif
 
@@ -302,22 +305,17 @@ mrb_GLib_GSource_get_priority(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GSource_set_priority(mrb_state* mrb, mrb_value self) {
-  struct _GSource * native_self = mruby_unbox_struct _GSource(self);
-  mrb_value ruby_field;
+  struct _GSource * native_self = mruby_unbox__GSource(self);
+  mrb_int native_priority;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "i", &native_priority);
 
-  /* type checking */
-  if (!mrb_obj_is_kind_of(mrb, ruby_field, mrb->fixnum_class)) {
-    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
-    return mrb_nil_value();
-  }
+  native_self->priority = native_priority;
+  
 
-  int native_field = (int)ruby_field;
-
-  native_self->priority = native_field;
-
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -328,13 +326,13 @@ mrb_GLib_GSource_set_priority(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GSource_get_flags(mrb_state* mrb, mrb_value self) {
-  struct _GSource * native_self = mruby_unbox_struct _GSource(self);
+  struct _GSource * native_self = mruby_unbox__GSource(self);
 
-  guint native_field = native_self->flags;
+  guint native_flags = native_self->flags;
 
-  mrb_value ruby_field = mrb_fixnum_value(native_field);
+  mrb_value flags = mrb_fixnum_value(native_flags);
 
-  return ruby_field;
+  return flags;
 }
 #endif
 
@@ -346,22 +344,17 @@ mrb_GLib_GSource_get_flags(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GSource_set_flags(mrb_state* mrb, mrb_value self) {
-  struct _GSource * native_self = mruby_unbox_struct _GSource(self);
-  mrb_value ruby_field;
+  struct _GSource * native_self = mruby_unbox__GSource(self);
+  mrb_int native_flags;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "i", &native_flags);
 
-  /* type checking */
-  if (!mrb_obj_is_kind_of(mrb, ruby_field, mrb->fixnum_class)) {
-    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
-    return mrb_nil_value();
-  }
+  native_self->flags = native_flags;
+  
 
-  unsigned int native_field = (unsigned int)ruby_field;
-
-  native_self->flags = native_field;
-
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -372,13 +365,13 @@ mrb_GLib_GSource_set_flags(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GSource_get_source_id(mrb_state* mrb, mrb_value self) {
-  struct _GSource * native_self = mruby_unbox_struct _GSource(self);
+  struct _GSource * native_self = mruby_unbox__GSource(self);
 
-  guint native_field = native_self->source_id;
+  guint native_source_id = native_self->source_id;
 
-  mrb_value ruby_field = mrb_fixnum_value(native_field);
+  mrb_value source_id = mrb_fixnum_value(native_source_id);
 
-  return ruby_field;
+  return source_id;
 }
 #endif
 
@@ -390,22 +383,17 @@ mrb_GLib_GSource_get_source_id(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GSource_set_source_id(mrb_state* mrb, mrb_value self) {
-  struct _GSource * native_self = mruby_unbox_struct _GSource(self);
-  mrb_value ruby_field;
+  struct _GSource * native_self = mruby_unbox__GSource(self);
+  mrb_int native_source_id;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "i", &native_source_id);
 
-  /* type checking */
-  if (!mrb_obj_is_kind_of(mrb, ruby_field, mrb->fixnum_class)) {
-    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
-    return mrb_nil_value();
-  }
+  native_self->source_id = native_source_id;
+  
 
-  unsigned int native_field = (unsigned int)ruby_field;
-
-  native_self->source_id = native_field;
-
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -416,13 +404,13 @@ mrb_GLib_GSource_set_source_id(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GSource_get_poll_fds(mrb_state* mrb, mrb_value self) {
-  struct _GSource * native_self = mruby_unbox_struct _GSource(self);
+  struct _GSource * native_self = mruby_unbox__GSource(self);
 
-  GSList * native_field = native_self->poll_fds;
+  GSList * native_poll_fds = native_self->poll_fds;
 
-  mrb_value ruby_field = (native_field == NULL ? mrb_nil_value() : mruby_box__GSList(mrb, native_field));
+  mrb_value poll_fds = (native_poll_fds == NULL ? mrb_nil_value() : mruby_box__GSList(mrb, native_poll_fds));
 
-  return ruby_field;
+  return poll_fds;
 }
 #endif
 
@@ -434,22 +422,25 @@ mrb_GLib_GSource_get_poll_fds(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GSource_set_poll_fds(mrb_state* mrb, mrb_value self) {
-  struct _GSource * native_self = mruby_unbox_struct _GSource(self);
-  mrb_value ruby_field;
+  struct _GSource * native_self = mruby_unbox__GSource(self);
+  mrb_value poll_fds;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "o", &poll_fds);
 
   /* type checking */
-  if (!mrb_obj_is_kind_of(mrb, ruby_field, GSList_class(mrb))) {
+  if (!mrb_obj_is_kind_of(mrb, poll_fds, GSList_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GSList expected");
     return mrb_nil_value();
   }
 
-  GSList * native_field = (mrb_nil_p(ruby_field) ? NULL : mruby_unbox__GSList(ruby_field));
+  GSList * native_poll_fds = (mrb_nil_p(poll_fds) ? NULL : mruby_unbox__GSList(poll_fds));
 
-  native_self->poll_fds = native_field;
+  native_self->poll_fds = native_poll_fds;
+  
 
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -460,13 +451,13 @@ mrb_GLib_GSource_set_poll_fds(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GSource_get_prev(mrb_state* mrb, mrb_value self) {
-  struct _GSource * native_self = mruby_unbox_struct _GSource(self);
+  struct _GSource * native_self = mruby_unbox__GSource(self);
 
-  GSource * native_field = native_self->prev;
+  GSource * native_prev = native_self->prev;
 
-  mrb_value ruby_field = (native_field == NULL ? mrb_nil_value() : mruby_box__GSource(mrb, native_field));
+  mrb_value prev = (native_prev == NULL ? mrb_nil_value() : mruby_box__GSource(mrb, native_prev));
 
-  return ruby_field;
+  return prev;
 }
 #endif
 
@@ -478,22 +469,25 @@ mrb_GLib_GSource_get_prev(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GSource_set_prev(mrb_state* mrb, mrb_value self) {
-  struct _GSource * native_self = mruby_unbox_struct _GSource(self);
-  mrb_value ruby_field;
+  struct _GSource * native_self = mruby_unbox__GSource(self);
+  mrb_value prev;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "o", &prev);
 
   /* type checking */
-  if (!mrb_obj_is_kind_of(mrb, ruby_field, GSource_class(mrb))) {
+  if (!mrb_obj_is_kind_of(mrb, prev, GSource_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GSource expected");
     return mrb_nil_value();
   }
 
-  GSource * native_field = (mrb_nil_p(ruby_field) ? NULL : mruby_unbox__GSource(ruby_field));
+  GSource * native_prev = (mrb_nil_p(prev) ? NULL : mruby_unbox__GSource(prev));
 
-  native_self->prev = native_field;
+  native_self->prev = native_prev;
+  
 
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -504,13 +498,13 @@ mrb_GLib_GSource_set_prev(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GSource_get_next(mrb_state* mrb, mrb_value self) {
-  struct _GSource * native_self = mruby_unbox_struct _GSource(self);
+  struct _GSource * native_self = mruby_unbox__GSource(self);
 
-  GSource * native_field = native_self->next;
+  GSource * native_next = native_self->next;
 
-  mrb_value ruby_field = (native_field == NULL ? mrb_nil_value() : mruby_box__GSource(mrb, native_field));
+  mrb_value next = (native_next == NULL ? mrb_nil_value() : mruby_box__GSource(mrb, native_next));
 
-  return ruby_field;
+  return next;
 }
 #endif
 
@@ -522,22 +516,25 @@ mrb_GLib_GSource_get_next(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GSource_set_next(mrb_state* mrb, mrb_value self) {
-  struct _GSource * native_self = mruby_unbox_struct _GSource(self);
-  mrb_value ruby_field;
+  struct _GSource * native_self = mruby_unbox__GSource(self);
+  mrb_value next;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "o", &next);
 
   /* type checking */
-  if (!mrb_obj_is_kind_of(mrb, ruby_field, GSource_class(mrb))) {
+  if (!mrb_obj_is_kind_of(mrb, next, GSource_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GSource expected");
     return mrb_nil_value();
   }
 
-  GSource * native_field = (mrb_nil_p(ruby_field) ? NULL : mruby_unbox__GSource(ruby_field));
+  GSource * native_next = (mrb_nil_p(next) ? NULL : mruby_unbox__GSource(next));
 
-  native_self->next = native_field;
+  native_self->next = native_next;
+  
 
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -548,13 +545,13 @@ mrb_GLib_GSource_set_next(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GSource_get_name(mrb_state* mrb, mrb_value self) {
-  struct _GSource * native_self = mruby_unbox_struct _GSource(self);
+  struct _GSource * native_self = mruby_unbox__GSource(self);
 
-  char * native_field = native_self->name;
+  char * native_name = native_self->name;
 
-  mrb_value ruby_field = mrb_str_new_cstr(mrb, native_field);
+  mrb_value name = mrb_str_new_cstr(mrb, native_name);
 
-  return ruby_field;
+  return name;
 }
 #endif
 
@@ -566,27 +563,24 @@ mrb_GLib_GSource_get_name(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GSource_set_name(mrb_state* mrb, mrb_value self) {
-  struct _GSource * native_self = mruby_unbox_struct _GSource(self);
-  mrb_value ruby_field;
+  struct _GSource * native_self = mruby_unbox__GSource(self);
+  char * name = NULL;
 
-  mrb_get_args(mrb, "o", &ruby_field);
-
-  /* type checking */
-  if (!mrb_obj_is_kind_of(mrb, ruby_field, mrb->string_class)) {
-    mrb_raise(mrb, E_TYPE_ERROR, "String expected");
-    return mrb_nil_value();
-  }
+  mrb_get_args(mrb, "z!", &name);
 
   /* WARNING: Allocating new memory to create 'char *' from 'const char *'.
    *          Please verify that this memory is cleaned up correctly.
    *
    *          Has this been verified? [No]
    */
-  char * native_field = strdup(ruby_field);
+  char * native_name = strdup(name);
 
-  native_self->name = native_field;
+  native_self->name = native_name;
+  
 
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -597,13 +591,13 @@ mrb_GLib_GSource_set_name(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GSource_get_priv(mrb_state* mrb, mrb_value self) {
-  struct _GSource * native_self = mruby_unbox_struct _GSource(self);
+  struct _GSource * native_self = mruby_unbox__GSource(self);
 
-  GSourcePrivate * native_field = native_self->priv;
+  GSourcePrivate * native_priv = native_self->priv;
 
-  mrb_value ruby_field = (native_field == NULL ? mrb_nil_value() : mruby_box__GSourcePrivate(mrb, native_field));
+  mrb_value priv = (native_priv == NULL ? mrb_nil_value() : mruby_box__GSourcePrivate(mrb, native_priv));
 
-  return ruby_field;
+  return priv;
 }
 #endif
 
@@ -615,22 +609,25 @@ mrb_GLib_GSource_get_priv(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GSource_set_priv(mrb_state* mrb, mrb_value self) {
-  struct _GSource * native_self = mruby_unbox_struct _GSource(self);
-  mrb_value ruby_field;
+  struct _GSource * native_self = mruby_unbox__GSource(self);
+  mrb_value priv;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "o", &priv);
 
   /* type checking */
-  if (!mrb_obj_is_kind_of(mrb, ruby_field, GSourcePrivate_class(mrb))) {
+  if (!mrb_obj_is_kind_of(mrb, priv, GSourcePrivate_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GSourcePrivate expected");
     return mrb_nil_value();
   }
 
-  GSourcePrivate * native_field = (mrb_nil_p(ruby_field) ? NULL : mruby_unbox__GSourcePrivate(ruby_field));
+  GSourcePrivate * native_priv = (mrb_nil_p(priv) ? NULL : mruby_unbox__GSourcePrivate(priv));
 
-  native_self->priv = native_field;
+  native_self->priv = native_priv;
+  
 
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 

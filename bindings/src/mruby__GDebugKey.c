@@ -3,10 +3,6 @@
  * Defined in file gutils.h @ line 186
  */
 
-/*
- * TODO: INCLUDES
- */
-
 #include "mruby_GLib.h"
 
 #if BIND_GDebugKey_TYPE
@@ -18,7 +14,7 @@
 #if BIND_GDebugKey_INITIALIZE
 mrb_value
 mrb_GLib_GDebugKey_initialize(mrb_state* mrb, mrb_value self) {
-  struct _GDebugKey* native_object = (struct _GDebugKey*)malloc(sizeof(struct _GDebugKey));
+  struct _GDebugKey* native_object = (struct _GDebugKey*)calloc(1, sizeof(struct _GDebugKey));
   mruby_gift_struct _GDebugKey_data_ptr(self, native_object);
   return self;
 }
@@ -67,13 +63,13 @@ mrb_GLib_GDebugKey_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GDebugKey_get_key(mrb_state* mrb, mrb_value self) {
-  struct _GDebugKey * native_self = mruby_unbox_struct _GDebugKey(self);
+  struct _GDebugKey * native_self = mruby_unbox__GDebugKey(self);
 
-  const gchar * native_field = native_self->key;
+  const gchar * native_key = native_self->key;
 
-  mrb_value ruby_field = mrb_str_new_cstr(mrb, native_field);
+  mrb_value key = mrb_str_new_cstr(mrb, native_key);
 
-  return ruby_field;
+  return key;
 }
 #endif
 
@@ -85,22 +81,17 @@ mrb_GLib_GDebugKey_get_key(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GDebugKey_set_key(mrb_state* mrb, mrb_value self) {
-  struct _GDebugKey * native_self = mruby_unbox_struct _GDebugKey(self);
-  mrb_value ruby_field;
+  struct _GDebugKey * native_self = mruby_unbox__GDebugKey(self);
+  char * native_key = NULL;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "z!", &native_key);
 
-  /* type checking */
-  if (!mrb_obj_is_kind_of(mrb, ruby_field, mrb->string_class)) {
-    mrb_raise(mrb, E_TYPE_ERROR, "String expected");
-    return mrb_nil_value();
-  }
+  native_self->key = native_key;
+  
 
-  const char * native_field = mrb_string_value_cstr(mrb, &ruby_field);
-
-  native_self->key = native_field;
-
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -111,13 +102,13 @@ mrb_GLib_GDebugKey_set_key(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GDebugKey_get_value(mrb_state* mrb, mrb_value self) {
-  struct _GDebugKey * native_self = mruby_unbox_struct _GDebugKey(self);
+  struct _GDebugKey * native_self = mruby_unbox__GDebugKey(self);
 
-  guint native_field = native_self->value;
+  guint native_value = native_self->value;
 
-  mrb_value ruby_field = mrb_fixnum_value(native_field);
+  mrb_value value = mrb_fixnum_value(native_value);
 
-  return ruby_field;
+  return value;
 }
 #endif
 
@@ -129,22 +120,17 @@ mrb_GLib_GDebugKey_get_value(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GDebugKey_set_value(mrb_state* mrb, mrb_value self) {
-  struct _GDebugKey * native_self = mruby_unbox_struct _GDebugKey(self);
-  mrb_value ruby_field;
+  struct _GDebugKey * native_self = mruby_unbox__GDebugKey(self);
+  mrb_int native_value;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "i", &native_value);
 
-  /* type checking */
-  if (!mrb_obj_is_kind_of(mrb, ruby_field, mrb->fixnum_class)) {
-    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
-    return mrb_nil_value();
-  }
+  native_self->value = native_value;
+  
 
-  unsigned int native_field = (unsigned int)ruby_field;
-
-  native_self->value = native_field;
-
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 

@@ -3,10 +3,6 @@
  * Defined in file gmain.h @ line 77
  */
 
-/*
- * TODO: INCLUDES
- */
-
 #include "mruby_GLib.h"
 
 #if BIND_GSourceCallbackFuncs_TYPE
@@ -18,7 +14,7 @@
 #if BIND_GSourceCallbackFuncs_INITIALIZE
 mrb_value
 mrb_GLib_GSourceCallbackFuncs_initialize(mrb_state* mrb, mrb_value self) {
-  struct _GSourceCallbackFuncs* native_object = (struct _GSourceCallbackFuncs*)malloc(sizeof(struct _GSourceCallbackFuncs));
+  struct _GSourceCallbackFuncs* native_object = (struct _GSourceCallbackFuncs*)calloc(1, sizeof(struct _GSourceCallbackFuncs));
   mruby_gift_struct _GSourceCallbackFuncs_data_ptr(self, native_object);
   return self;
 }
@@ -67,13 +63,13 @@ mrb_GLib_GSourceCallbackFuncs_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GSourceCallbackFuncs_get_ref(mrb_state* mrb, mrb_value self) {
-  struct _GSourceCallbackFuncs * native_self = mruby_unbox_struct _GSourceCallbackFuncs(self);
+  struct _GSourceCallbackFuncs * native_self = mruby_unbox__GSourceCallbackFuncs(self);
 
-  void (*)(gpointer) native_field = native_self->ref;
+  void (*)(gpointer) native_ref = native_self->ref;
 
-  mrb_value ruby_field = TODO_mruby_box_void_LPAREN_PTR_RPAREN_LPAREN_gpointer_RPAREN(mrb, native_field);
+  mrb_value ref = TODO_mruby_box_void_LPAREN_PTR_RPAREN_LPAREN_gpointer_RPAREN(mrb, native_ref);
 
-  return ruby_field;
+  return ref;
 }
 #endif
 
@@ -85,19 +81,22 @@ mrb_GLib_GSourceCallbackFuncs_get_ref(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GSourceCallbackFuncs_set_ref(mrb_state* mrb, mrb_value self) {
-  struct _GSourceCallbackFuncs * native_self = mruby_unbox_struct _GSourceCallbackFuncs(self);
-  mrb_value ruby_field;
+  struct _GSourceCallbackFuncs * native_self = mruby_unbox__GSourceCallbackFuncs(self);
+  mrb_value ref;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "o", &ref);
 
   /* type checking */
-  TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_gpointer_RPAREN(ruby_field);
+  TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_gpointer_RPAREN(ref);
 
-  void (*native_field)(gpointer) = TODO_mruby_unbox_void_LPAREN_PTR_RPAREN_LPAREN_gpointer_RPAREN(ruby_field);
+  void (*native_ref)(gpointer) = TODO_mruby_unbox_void_LPAREN_PTR_RPAREN_LPAREN_gpointer_RPAREN(ref);
 
-  native_self->ref = native_field;
+  native_self->ref = native_ref;
+  
 
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -108,13 +107,13 @@ mrb_GLib_GSourceCallbackFuncs_set_ref(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GSourceCallbackFuncs_get_unref(mrb_state* mrb, mrb_value self) {
-  struct _GSourceCallbackFuncs * native_self = mruby_unbox_struct _GSourceCallbackFuncs(self);
+  struct _GSourceCallbackFuncs * native_self = mruby_unbox__GSourceCallbackFuncs(self);
 
-  void (*)(gpointer) native_field = native_self->unref;
+  void (*)(gpointer) native_unref = native_self->unref;
 
-  mrb_value ruby_field = TODO_mruby_box_void_LPAREN_PTR_RPAREN_LPAREN_gpointer_RPAREN(mrb, native_field);
+  mrb_value unref = TODO_mruby_box_void_LPAREN_PTR_RPAREN_LPAREN_gpointer_RPAREN(mrb, native_unref);
 
-  return ruby_field;
+  return unref;
 }
 #endif
 
@@ -126,19 +125,22 @@ mrb_GLib_GSourceCallbackFuncs_get_unref(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GSourceCallbackFuncs_set_unref(mrb_state* mrb, mrb_value self) {
-  struct _GSourceCallbackFuncs * native_self = mruby_unbox_struct _GSourceCallbackFuncs(self);
-  mrb_value ruby_field;
+  struct _GSourceCallbackFuncs * native_self = mruby_unbox__GSourceCallbackFuncs(self);
+  mrb_value unref;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "o", &unref);
 
   /* type checking */
-  TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_gpointer_RPAREN(ruby_field);
+  TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_gpointer_RPAREN(unref);
 
-  void (*native_field)(gpointer) = TODO_mruby_unbox_void_LPAREN_PTR_RPAREN_LPAREN_gpointer_RPAREN(ruby_field);
+  void (*native_unref)(gpointer) = TODO_mruby_unbox_void_LPAREN_PTR_RPAREN_LPAREN_gpointer_RPAREN(unref);
 
-  native_self->unref = native_field;
+  native_self->unref = native_unref;
+  
 
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -149,13 +151,13 @@ mrb_GLib_GSourceCallbackFuncs_set_unref(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GSourceCallbackFuncs_get_get(mrb_state* mrb, mrb_value self) {
-  struct _GSourceCallbackFuncs * native_self = mruby_unbox_struct _GSourceCallbackFuncs(self);
+  struct _GSourceCallbackFuncs * native_self = mruby_unbox__GSourceCallbackFuncs(self);
 
-  void (*)(gpointer, GSource *, GSourceFunc *, gpointer *) native_field = native_self->get;
+  void (*)(gpointer, GSource *, GSourceFunc *, gpointer *) native_get = native_self->get;
 
-  mrb_value ruby_field = TODO_mruby_box_void_LPAREN_PTR_RPAREN_LPAREN_gpointerCOMMA_GSource_PTR_COMMA_GSourceFunc_PTR_COMMA_gpointer_PTR_RPAREN(mrb, native_field);
+  mrb_value get = TODO_mruby_box_void_LPAREN_PTR_RPAREN_LPAREN_gpointerCOMMA_GSource_PTR_COMMA_GSourceFunc_PTR_COMMA_gpointer_PTR_RPAREN(mrb, native_get);
 
-  return ruby_field;
+  return get;
 }
 #endif
 
@@ -167,19 +169,22 @@ mrb_GLib_GSourceCallbackFuncs_get_get(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GSourceCallbackFuncs_set_get(mrb_state* mrb, mrb_value self) {
-  struct _GSourceCallbackFuncs * native_self = mruby_unbox_struct _GSourceCallbackFuncs(self);
-  mrb_value ruby_field;
+  struct _GSourceCallbackFuncs * native_self = mruby_unbox__GSourceCallbackFuncs(self);
+  mrb_value get;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "o", &get);
 
   /* type checking */
-  TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_gpointerCOMMA_GSource_PTR_COMMA_GSourceFunc_PTR_COMMA_gpointer_PTR_RPAREN(ruby_field);
+  TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_gpointerCOMMA_GSource_PTR_COMMA_GSourceFunc_PTR_COMMA_gpointer_PTR_RPAREN(get);
 
-  void (*native_field)(gpointer, GSource *, GSourceFunc *, gpointer *) = TODO_mruby_unbox_void_LPAREN_PTR_RPAREN_LPAREN_gpointerCOMMA_GSource_PTR_COMMA_GSourceFunc_PTR_COMMA_gpointer_PTR_RPAREN(ruby_field);
+  void (*native_get)(gpointer, GSource *, GSourceFunc *, gpointer *) = TODO_mruby_unbox_void_LPAREN_PTR_RPAREN_LPAREN_gpointerCOMMA_GSource_PTR_COMMA_GSourceFunc_PTR_COMMA_gpointer_PTR_RPAREN(get);
 
-  native_self->get = native_field;
+  native_self->get = native_get;
+  
 
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 

@@ -3,10 +3,6 @@
  * Defined in file gqueue.h @ line 36
  */
 
-/*
- * TODO: INCLUDES
- */
-
 #include "mruby_GLib.h"
 
 #if BIND_GQueue_TYPE
@@ -18,7 +14,7 @@
 #if BIND_GQueue_INITIALIZE
 mrb_value
 mrb_GLib_GQueue_initialize(mrb_state* mrb, mrb_value self) {
-  struct _GQueue* native_object = (struct _GQueue*)malloc(sizeof(struct _GQueue));
+  struct _GQueue* native_object = (struct _GQueue*)calloc(1, sizeof(struct _GQueue));
   mruby_gift_struct _GQueue_data_ptr(self, native_object);
   return self;
 }
@@ -67,13 +63,13 @@ mrb_GLib_GQueue_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GQueue_get_head(mrb_state* mrb, mrb_value self) {
-  struct _GQueue * native_self = mruby_unbox_struct _GQueue(self);
+  struct _GQueue * native_self = mruby_unbox__GQueue(self);
 
-  GList * native_field = native_self->head;
+  GList * native_head = native_self->head;
 
-  mrb_value ruby_field = (native_field == NULL ? mrb_nil_value() : mruby_box__GList(mrb, native_field));
+  mrb_value head = (native_head == NULL ? mrb_nil_value() : mruby_box__GList(mrb, native_head));
 
-  return ruby_field;
+  return head;
 }
 #endif
 
@@ -85,22 +81,25 @@ mrb_GLib_GQueue_get_head(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GQueue_set_head(mrb_state* mrb, mrb_value self) {
-  struct _GQueue * native_self = mruby_unbox_struct _GQueue(self);
-  mrb_value ruby_field;
+  struct _GQueue * native_self = mruby_unbox__GQueue(self);
+  mrb_value head;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "o", &head);
 
   /* type checking */
-  if (!mrb_obj_is_kind_of(mrb, ruby_field, GList_class(mrb))) {
+  if (!mrb_obj_is_kind_of(mrb, head, GList_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GList expected");
     return mrb_nil_value();
   }
 
-  GList * native_field = (mrb_nil_p(ruby_field) ? NULL : mruby_unbox__GList(ruby_field));
+  GList * native_head = (mrb_nil_p(head) ? NULL : mruby_unbox__GList(head));
 
-  native_self->head = native_field;
+  native_self->head = native_head;
+  
 
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -111,13 +110,13 @@ mrb_GLib_GQueue_set_head(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GQueue_get_tail(mrb_state* mrb, mrb_value self) {
-  struct _GQueue * native_self = mruby_unbox_struct _GQueue(self);
+  struct _GQueue * native_self = mruby_unbox__GQueue(self);
 
-  GList * native_field = native_self->tail;
+  GList * native_tail = native_self->tail;
 
-  mrb_value ruby_field = (native_field == NULL ? mrb_nil_value() : mruby_box__GList(mrb, native_field));
+  mrb_value tail = (native_tail == NULL ? mrb_nil_value() : mruby_box__GList(mrb, native_tail));
 
-  return ruby_field;
+  return tail;
 }
 #endif
 
@@ -129,22 +128,25 @@ mrb_GLib_GQueue_get_tail(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GQueue_set_tail(mrb_state* mrb, mrb_value self) {
-  struct _GQueue * native_self = mruby_unbox_struct _GQueue(self);
-  mrb_value ruby_field;
+  struct _GQueue * native_self = mruby_unbox__GQueue(self);
+  mrb_value tail;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "o", &tail);
 
   /* type checking */
-  if (!mrb_obj_is_kind_of(mrb, ruby_field, GList_class(mrb))) {
+  if (!mrb_obj_is_kind_of(mrb, tail, GList_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GList expected");
     return mrb_nil_value();
   }
 
-  GList * native_field = (mrb_nil_p(ruby_field) ? NULL : mruby_unbox__GList(ruby_field));
+  GList * native_tail = (mrb_nil_p(tail) ? NULL : mruby_unbox__GList(tail));
 
-  native_self->tail = native_field;
+  native_self->tail = native_tail;
+  
 
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -155,13 +157,13 @@ mrb_GLib_GQueue_set_tail(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GQueue_get_length(mrb_state* mrb, mrb_value self) {
-  struct _GQueue * native_self = mruby_unbox_struct _GQueue(self);
+  struct _GQueue * native_self = mruby_unbox__GQueue(self);
 
-  guint native_field = native_self->length;
+  guint native_length = native_self->length;
 
-  mrb_value ruby_field = mrb_fixnum_value(native_field);
+  mrb_value length = mrb_fixnum_value(native_length);
 
-  return ruby_field;
+  return length;
 }
 #endif
 
@@ -173,22 +175,17 @@ mrb_GLib_GQueue_get_length(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_GQueue_set_length(mrb_state* mrb, mrb_value self) {
-  struct _GQueue * native_self = mruby_unbox_struct _GQueue(self);
-  mrb_value ruby_field;
+  struct _GQueue * native_self = mruby_unbox__GQueue(self);
+  mrb_int native_length;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "i", &native_length);
 
-  /* type checking */
-  if (!mrb_obj_is_kind_of(mrb, ruby_field, mrb->fixnum_class)) {
-    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
-    return mrb_nil_value();
-  }
+  native_self->length = native_length;
+  
 
-  unsigned int native_field = (unsigned int)ruby_field;
-
-  native_self->length = native_field;
-
-  return ruby_field;
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 

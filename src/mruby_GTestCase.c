@@ -3,10 +3,6 @@
  * Defined in file gtestutils.h @ line 33
  */
 
-/*
- * TODO: INCLUDES
- */
-
 #include "mruby_GLib.h"
 
 #if BIND_GTestCase_TYPE
@@ -18,7 +14,7 @@
 #if BIND_GTestCase_INITIALIZE
 mrb_value
 mrb_GLib_GTestCase_initialize(mrb_state* mrb, mrb_value self) {
-  struct GTestCase* native_object = (struct GTestCase*)malloc(sizeof(struct GTestCase));
+  struct GTestCase* native_object = (struct GTestCase*)calloc(1, sizeof(struct GTestCase));
   mruby_gift_struct GTestCase_data_ptr(self, native_object);
   return self;
 }
