@@ -9,6 +9,7 @@ CTypes.set_destructor('struct _GError', 'g_error_free')
 CTypes.typedef('bool', 'gboolean')
 CTypes.typedef('int', 'guint32')
 CTypes.typedef('int', 'gsize')
+CTypes.typedef('int', 'gssize')
 CTypes.typedef('const char *', 'const gchar *')
 
 CTypes.typedef('char *', 'gchar *')
@@ -16,7 +17,7 @@ CTypes['gchar *'].boxing_fn.cleanup_template = "g_free(%{value});"
 
 CTypes['GQuark'] = CTypes['int'].aliased_as('GQuark')
 
-CTypes.define('struct _GError **') do
+CTypes.define('GError **', 'struct _GError **') do
   self.recv_template = "struct GError * %{value} = NULL;"
   self.invocation_arg_template = "&%{value}"
   self.out_only = true

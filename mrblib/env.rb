@@ -14,16 +14,10 @@ class << ENV
   end
 
   def delete(key)
-    value = self[key]
-    ::APR.apr_env_delete(key, pool)
-    value
+    self[key] = nil
   end
-
-  def pool
-    unless @pool
-      err, env_pool = ::APR.apr_pool_create(nil)
-      @pool = env_pool
-    end
-    @pool
+  
+  def keys
+    GLib.g_listenv
   end
 end

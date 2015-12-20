@@ -5,7 +5,7 @@ MRuby::Gem::Specification.new('mruby-glib') do |spec|
   spec.license = 'MIT'
   spec.summary = 'Bindings for GLib'
   
-  spec.rbfiles = Dir["#{$APR_GEM_DIR}/mrblib/**/*.rb"]
+  spec.rbfiles = Dir["#{MRUBY_GLIB_GEM_DIR}/mrblib/**/*.rb"]
     .map { |f| File.expand_path(f) }
     .uniq
 end

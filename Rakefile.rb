@@ -6,8 +6,12 @@ task :declarations do
   headers = File.expand_path(File.dirname(__FILE__)) + "/mruby_bindings_config/headers_list.txt"
   # I just happened to put it here. Should probably use pkg-config
   # to determine this at runtime.
+  rm declarations if File.exists?(declarations)
+  ENV['PKG_CONFIG_PATH'] = "/usr/local/opt/glib2/lib/pkgconfig/"
   cd "#{GLIB_HOME}/include/glib-2.0" do
-    sh "cat #{headers} | xargs -n 1 clang2json -I . -I ../../lib/glib-2.0/include >> #{declarations}"
+    cflags = `pkg-config glib-2.0 --cflags`.sub("\n", '')
+    sh "cat #{headers} | xargs -n 1 clang2json #{cflags} | grep -v _g_utf8_make_valid >> #{declarations}"
+    sh "clang2json #{cflags} #{GLIB_HOME}/lib/glib-2.0/include/glibconfig.h | grep -v _g_utf8_make_valid >> #{declarations}"
   end
 end
 

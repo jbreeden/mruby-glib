@@ -1,5 +1,5 @@
-glib.h
 glib/gtypes.h
+glib.h
 glib/galloca.h
 glib/garray.h
 glib/gasyncqueue.h

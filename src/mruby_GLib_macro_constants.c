@@ -62,6 +62,12 @@ mruby_GLib_define_macro_constants(mrb_state* mrb) {
     mrb_define_const(mrb, GLib_module(mrb), "G_DIR_SEPARATOR", macro);
   } while (0);
 #endif
+#ifdef G_DIR_SEPARATOR_S
+  do {
+    mrb_value macro = mrb_str_new_cstr(mrb, G_DIR_SEPARATOR_S);
+    mrb_define_const(mrb, GLib_module(mrb), "G_DIR_SEPARATOR_S", macro);
+  } while (0);
+#endif
 #ifdef G_E
   do {
     mrb_value macro = mrb_float_value(mrb, G_E);
@@ -90,6 +96,162 @@ mruby_GLib_define_macro_constants(mrb_state* mrb) {
   do {
     mrb_value macro = mrb_fixnum_value(G_IO_CHANNEL_ERROR);
     mrb_define_const(mrb, GLib_module(mrb), "G_IO_CHANNEL_ERROR", macro);
+  } while (0);
+#endif
+#ifdef G_KEY_FILE_DESKTOP_GROUP
+  do {
+    mrb_value macro = mrb_str_new_cstr(mrb, G_KEY_FILE_DESKTOP_GROUP);
+    mrb_define_const(mrb, GLib_module(mrb), "G_KEY_FILE_DESKTOP_GROUP", macro);
+  } while (0);
+#endif
+#ifdef G_KEY_FILE_DESKTOP_KEY_ACTIONS
+  do {
+    mrb_value macro = mrb_str_new_cstr(mrb, G_KEY_FILE_DESKTOP_KEY_ACTIONS);
+    mrb_define_const(mrb, GLib_module(mrb), "G_KEY_FILE_DESKTOP_KEY_ACTIONS", macro);
+  } while (0);
+#endif
+#ifdef G_KEY_FILE_DESKTOP_KEY_CATEGORIES
+  do {
+    mrb_value macro = mrb_str_new_cstr(mrb, G_KEY_FILE_DESKTOP_KEY_CATEGORIES);
+    mrb_define_const(mrb, GLib_module(mrb), "G_KEY_FILE_DESKTOP_KEY_CATEGORIES", macro);
+  } while (0);
+#endif
+#ifdef G_KEY_FILE_DESKTOP_KEY_COMMENT
+  do {
+    mrb_value macro = mrb_str_new_cstr(mrb, G_KEY_FILE_DESKTOP_KEY_COMMENT);
+    mrb_define_const(mrb, GLib_module(mrb), "G_KEY_FILE_DESKTOP_KEY_COMMENT", macro);
+  } while (0);
+#endif
+#ifdef G_KEY_FILE_DESKTOP_KEY_DBUS_ACTIVATABLE
+  do {
+    mrb_value macro = mrb_str_new_cstr(mrb, G_KEY_FILE_DESKTOP_KEY_DBUS_ACTIVATABLE);
+    mrb_define_const(mrb, GLib_module(mrb), "G_KEY_FILE_DESKTOP_KEY_DBUS_ACTIVATABLE", macro);
+  } while (0);
+#endif
+#ifdef G_KEY_FILE_DESKTOP_KEY_EXEC
+  do {
+    mrb_value macro = mrb_str_new_cstr(mrb, G_KEY_FILE_DESKTOP_KEY_EXEC);
+    mrb_define_const(mrb, GLib_module(mrb), "G_KEY_FILE_DESKTOP_KEY_EXEC", macro);
+  } while (0);
+#endif
+#ifdef G_KEY_FILE_DESKTOP_KEY_GENERIC_NAME
+  do {
+    mrb_value macro = mrb_str_new_cstr(mrb, G_KEY_FILE_DESKTOP_KEY_GENERIC_NAME);
+    mrb_define_const(mrb, GLib_module(mrb), "G_KEY_FILE_DESKTOP_KEY_GENERIC_NAME", macro);
+  } while (0);
+#endif
+#ifdef G_KEY_FILE_DESKTOP_KEY_HIDDEN
+  do {
+    mrb_value macro = mrb_str_new_cstr(mrb, G_KEY_FILE_DESKTOP_KEY_HIDDEN);
+    mrb_define_const(mrb, GLib_module(mrb), "G_KEY_FILE_DESKTOP_KEY_HIDDEN", macro);
+  } while (0);
+#endif
+#ifdef G_KEY_FILE_DESKTOP_KEY_ICON
+  do {
+    mrb_value macro = mrb_str_new_cstr(mrb, G_KEY_FILE_DESKTOP_KEY_ICON);
+    mrb_define_const(mrb, GLib_module(mrb), "G_KEY_FILE_DESKTOP_KEY_ICON", macro);
+  } while (0);
+#endif
+#ifdef G_KEY_FILE_DESKTOP_KEY_MIME_TYPE
+  do {
+    mrb_value macro = mrb_str_new_cstr(mrb, G_KEY_FILE_DESKTOP_KEY_MIME_TYPE);
+    mrb_define_const(mrb, GLib_module(mrb), "G_KEY_FILE_DESKTOP_KEY_MIME_TYPE", macro);
+  } while (0);
+#endif
+#ifdef G_KEY_FILE_DESKTOP_KEY_NAME
+  do {
+    mrb_value macro = mrb_str_new_cstr(mrb, G_KEY_FILE_DESKTOP_KEY_NAME);
+    mrb_define_const(mrb, GLib_module(mrb), "G_KEY_FILE_DESKTOP_KEY_NAME", macro);
+  } while (0);
+#endif
+#ifdef G_KEY_FILE_DESKTOP_KEY_NO_DISPLAY
+  do {
+    mrb_value macro = mrb_str_new_cstr(mrb, G_KEY_FILE_DESKTOP_KEY_NO_DISPLAY);
+    mrb_define_const(mrb, GLib_module(mrb), "G_KEY_FILE_DESKTOP_KEY_NO_DISPLAY", macro);
+  } while (0);
+#endif
+#ifdef G_KEY_FILE_DESKTOP_KEY_NOT_SHOW_IN
+  do {
+    mrb_value macro = mrb_str_new_cstr(mrb, G_KEY_FILE_DESKTOP_KEY_NOT_SHOW_IN);
+    mrb_define_const(mrb, GLib_module(mrb), "G_KEY_FILE_DESKTOP_KEY_NOT_SHOW_IN", macro);
+  } while (0);
+#endif
+#ifdef G_KEY_FILE_DESKTOP_KEY_ONLY_SHOW_IN
+  do {
+    mrb_value macro = mrb_str_new_cstr(mrb, G_KEY_FILE_DESKTOP_KEY_ONLY_SHOW_IN);
+    mrb_define_const(mrb, GLib_module(mrb), "G_KEY_FILE_DESKTOP_KEY_ONLY_SHOW_IN", macro);
+  } while (0);
+#endif
+#ifdef G_KEY_FILE_DESKTOP_KEY_PATH
+  do {
+    mrb_value macro = mrb_str_new_cstr(mrb, G_KEY_FILE_DESKTOP_KEY_PATH);
+    mrb_define_const(mrb, GLib_module(mrb), "G_KEY_FILE_DESKTOP_KEY_PATH", macro);
+  } while (0);
+#endif
+#ifdef G_KEY_FILE_DESKTOP_KEY_STARTUP_NOTIFY
+  do {
+    mrb_value macro = mrb_str_new_cstr(mrb, G_KEY_FILE_DESKTOP_KEY_STARTUP_NOTIFY);
+    mrb_define_const(mrb, GLib_module(mrb), "G_KEY_FILE_DESKTOP_KEY_STARTUP_NOTIFY", macro);
+  } while (0);
+#endif
+#ifdef G_KEY_FILE_DESKTOP_KEY_STARTUP_WM_CLASS
+  do {
+    mrb_value macro = mrb_str_new_cstr(mrb, G_KEY_FILE_DESKTOP_KEY_STARTUP_WM_CLASS);
+    mrb_define_const(mrb, GLib_module(mrb), "G_KEY_FILE_DESKTOP_KEY_STARTUP_WM_CLASS", macro);
+  } while (0);
+#endif
+#ifdef G_KEY_FILE_DESKTOP_KEY_TERMINAL
+  do {
+    mrb_value macro = mrb_str_new_cstr(mrb, G_KEY_FILE_DESKTOP_KEY_TERMINAL);
+    mrb_define_const(mrb, GLib_module(mrb), "G_KEY_FILE_DESKTOP_KEY_TERMINAL", macro);
+  } while (0);
+#endif
+#ifdef G_KEY_FILE_DESKTOP_KEY_TRY_EXEC
+  do {
+    mrb_value macro = mrb_str_new_cstr(mrb, G_KEY_FILE_DESKTOP_KEY_TRY_EXEC);
+    mrb_define_const(mrb, GLib_module(mrb), "G_KEY_FILE_DESKTOP_KEY_TRY_EXEC", macro);
+  } while (0);
+#endif
+#ifdef G_KEY_FILE_DESKTOP_KEY_TYPE
+  do {
+    mrb_value macro = mrb_str_new_cstr(mrb, G_KEY_FILE_DESKTOP_KEY_TYPE);
+    mrb_define_const(mrb, GLib_module(mrb), "G_KEY_FILE_DESKTOP_KEY_TYPE", macro);
+  } while (0);
+#endif
+#ifdef G_KEY_FILE_DESKTOP_KEY_URL
+  do {
+    mrb_value macro = mrb_str_new_cstr(mrb, G_KEY_FILE_DESKTOP_KEY_URL);
+    mrb_define_const(mrb, GLib_module(mrb), "G_KEY_FILE_DESKTOP_KEY_URL", macro);
+  } while (0);
+#endif
+#ifdef G_KEY_FILE_DESKTOP_KEY_VERSION
+  do {
+    mrb_value macro = mrb_str_new_cstr(mrb, G_KEY_FILE_DESKTOP_KEY_VERSION);
+    mrb_define_const(mrb, GLib_module(mrb), "G_KEY_FILE_DESKTOP_KEY_VERSION", macro);
+  } while (0);
+#endif
+#ifdef G_KEY_FILE_DESKTOP_TYPE_APPLICATION
+  do {
+    mrb_value macro = mrb_str_new_cstr(mrb, G_KEY_FILE_DESKTOP_TYPE_APPLICATION);
+    mrb_define_const(mrb, GLib_module(mrb), "G_KEY_FILE_DESKTOP_TYPE_APPLICATION", macro);
+  } while (0);
+#endif
+#ifdef G_KEY_FILE_DESKTOP_TYPE_DIRECTORY
+  do {
+    mrb_value macro = mrb_str_new_cstr(mrb, G_KEY_FILE_DESKTOP_TYPE_DIRECTORY);
+    mrb_define_const(mrb, GLib_module(mrb), "G_KEY_FILE_DESKTOP_TYPE_DIRECTORY", macro);
+  } while (0);
+#endif
+#ifdef G_KEY_FILE_DESKTOP_TYPE_LINK
+  do {
+    mrb_value macro = mrb_str_new_cstr(mrb, G_KEY_FILE_DESKTOP_TYPE_LINK);
+    mrb_define_const(mrb, GLib_module(mrb), "G_KEY_FILE_DESKTOP_TYPE_LINK", macro);
+  } while (0);
+#endif
+#ifdef G_KEY_FILE_ERROR
+  do {
+    mrb_value macro = mrb_fixnum_value(G_KEY_FILE_ERROR);
+    mrb_define_const(mrb, GLib_module(mrb), "G_KEY_FILE_ERROR", macro);
   } while (0);
 #endif
 #ifdef G_LITTLE_ENDIAN
@@ -242,6 +404,12 @@ mruby_GLib_define_macro_constants(mrb_state* mrb) {
     mrb_define_const(mrb, GLib_module(mrb), "G_PI_4", macro);
   } while (0);
 #endif
+#ifdef G_POLLFD_FORMAT
+  do {
+    mrb_value macro = mrb_str_new_cstr(mrb, G_POLLFD_FORMAT);
+    mrb_define_const(mrb, GLib_module(mrb), "G_POLLFD_FORMAT", macro);
+  } while (0);
+#endif
 #ifdef G_PRIORITY_DEFAULT
   do {
     mrb_value macro = mrb_fixnum_value(G_PRIORITY_DEFAULT);
@@ -312,6 +480,12 @@ mruby_GLib_define_macro_constants(mrb_state* mrb) {
   do {
     mrb_value macro = mrb_float_value(mrb, G_SQRT2);
     mrb_define_const(mrb, GLib_module(mrb), "G_SQRT2", macro);
+  } while (0);
+#endif
+#ifdef G_STR_DELIMITERS
+  do {
+    mrb_value macro = mrb_str_new_cstr(mrb, G_STR_DELIMITERS);
+    mrb_define_const(mrb, GLib_module(mrb), "G_STR_DELIMITERS", macro);
   } while (0);
 #endif
 #ifdef G_THREAD_ERROR
