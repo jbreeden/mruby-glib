@@ -339,7 +339,7 @@
 #define BIND_g_file_error_quark_FUNCTION TRUE
 #define BIND_g_file_get_contents_FUNCTION TRUE
 #define BIND_g_file_open_tmp_FUNCTION TRUE
-#define BIND_g_file_read_link_FUNCTION FALSE
+#define BIND_g_file_read_link_FUNCTION TRUE
 #define BIND_g_file_set_contents_FUNCTION TRUE
 #define BIND_g_file_test_FUNCTION TRUE
 #define BIND_g_filename_display_basename_FUNCTION FALSE
@@ -747,8 +747,8 @@
 #define BIND_g_option_group_set_translation_domain_FUNCTION TRUE
 #define BIND_g_option_group_unref_FUNCTION TRUE
 #define BIND_g_parse_debug_string_FUNCTION TRUE
-#define BIND_g_path_get_basename_FUNCTION FALSE
-#define BIND_g_path_get_dirname_FUNCTION FALSE
+#define BIND_g_path_get_basename_FUNCTION TRUE
+#define BIND_g_path_get_dirname_FUNCTION TRUE
 #define BIND_g_path_is_absolute_FUNCTION TRUE
 #define BIND_g_path_skip_root_FUNCTION TRUE
 #define BIND_g_pattern_match_FUNCTION TRUE

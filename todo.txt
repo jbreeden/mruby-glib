@@ -5,12 +5,7 @@
   #define BIND_g_convert_with_iconv_FUNCTION FALSE
   
   #define BIND_g_dir_make_tmp_FUNCTION FALSE
-  
-  #define BIND_g_file_read_link_FUNCTION FALSE
-    
-  #define BIND_g_get_system_config_dirs_FUNCTION FALSE
-  #define BIND_g_get_system_data_dirs_FUNCTION FALSE
-  
+      
   #define BIND_g_iconv_FUNCTION FALSE
   #define BIND_g_iconv_close_FUNCTION FALSE
   #define BIND_g_iconv_open_FUNCTION FALSE
@@ -58,9 +53,6 @@
   #define BIND_g_mutex_locker_new_FUNCTION FALSE
   #define BIND_g_mutex_trylock_FUNCTION FALSE
   #define BIND_g_mutex_unlock_FUNCTION FALSE
-  
-  #define BIND_g_path_get_basename_FUNCTION FALSE
-  #define BIND_g_path_get_dirname_FUNCTION FALSE
   
   #define BIND_g_regex_check_replacement_FUNCTION FALSE
   #define BIND_g_regex_escape_nul_FUNCTION FALSE

@@ -13237,13 +13237,14 @@ mrb_GLib_g_file_read_link(mrb_state* mrb, mrb_value self) {
   struct GError * native_error = NULL;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "z!", &native_filename);
+  mrb_get_args(mrb, "z", &native_filename);
 
   /* Invocation */
   gchar * native_return_value = g_file_read_link(native_filename, &native_error);
 
   /* Box the return value */
-  mrb_value return_value = TODO_mruby_box_gchar_PTR(mrb, native_return_value);
+  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
+  g_free(native_return_value);
   mrb_ary_push(mrb, results, return_value);
   
   /* Box out param: error */
@@ -29583,13 +29584,14 @@ mrb_GLib_g_path_get_basename(mrb_state* mrb, mrb_value self) {
   char * native_file_name = NULL;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "z!", &native_file_name);
+  mrb_get_args(mrb, "z", &native_file_name);
 
   /* Invocation */
   gchar * native_return_value = g_path_get_basename(native_file_name);
 
   /* Box the return value */
-  mrb_value return_value = TODO_mruby_box_gchar_PTR(mrb, native_return_value);
+  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
+  g_free(native_return_value);
   
   return return_value;
 }
@@ -29618,7 +29620,8 @@ mrb_GLib_g_path_get_dirname(mrb_state* mrb, mrb_value self) {
   gchar * native_return_value = g_path_get_dirname(native_file_name);
 
   /* Box the return value */
-  mrb_value return_value = TODO_mruby_box_gchar_PTR(mrb, native_return_value);
+  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
+  g_free(native_return_value);
   
   return return_value;
 }
