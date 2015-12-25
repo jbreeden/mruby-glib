@@ -79,7 +79,5 @@
   #define BIND_g_shell_unquote_FUNCTION FALSE
   
   #define BIND_g_strcompress_FUNCTION FALSE
-  #define BIND_g_strv_contains_FUNCTION FALSE
-  #define BIND_g_strv_length_FUNCTION FALSE
   
   #define BIND_g_timer_elapsed_FUNCTION FALSE
