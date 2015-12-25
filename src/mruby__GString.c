@@ -67,7 +67,7 @@ mrb_GLib_GString_get_str(mrb_state* mrb, mrb_value self) {
 
   gchar * native_str = native_self->str;
 
-  mrb_value str = mrb_str_new_cstr(mrb, native_str);
+  mrb_value str = TODO_mruby_box_gchar_PTR(mrb, native_str);
 
   return str;
 }
@@ -82,14 +82,15 @@ mrb_GLib_GString_get_str(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_GString_set_str(mrb_state* mrb, mrb_value self) {
   struct _GString * native_self = mruby_unbox__GString(self);
-  char * str = NULL;
+  mrb_value str;
 
-  mrb_get_args(mrb, "z!", &str);
+  mrb_get_args(mrb, "o", &str);
 
-  /* WARNING: String is strdup'ed to avoid mutable reference to internal MRuby memory */
-  char * native_str = strdup(str);
+  /* type checking */
+  TODO_type_check_gchar_PTR(str);
 
-  if (NULL != native_self->str) free(native_self->str);
+  gchar * native_str = TODO_mruby_unbox_gchar_PTR(str);
+
   native_self->str = native_str;
   
   mrb_value value_as_mrb_value;

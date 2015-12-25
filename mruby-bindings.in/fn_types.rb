@@ -326,13 +326,13 @@
 # # Param: length
 # CTypes.set_fn_param_type('g_bookmark_file_to_data', 'length', CTypes['???'])
 
-# ## gchar * g_build_filenamev(char ** args)
-# # Param: args
-# CTypes.set_fn_param_type('g_build_filenamev', 'args', CTypes['???'])
+## gchar * g_build_filenamev(char ** args)
+# Param: args
+CTypes.set_fn_param_type('g_build_filenamev', 'args', CTypes['nullterminated:cstring:array'])
 
-# ## gchar * g_build_pathv(const char * separator, char ** args)
-# # Param: args
-# CTypes.set_fn_param_type('g_build_pathv', 'args', CTypes['???'])
+## gchar * g_build_pathv(const char * separator, char ** args)
+# Param: args
+CTypes.set_fn_param_type('g_build_pathv', 'args', CTypes['nullterminated:cstring:array'])
 
 # ## GByteArray * g_byte_array_append(struct _GByteArray * array, const unsigned char * data, unsigned int len)
 # # Param: data
@@ -2018,7 +2018,7 @@ CTypes.set_fn_param_type('g_spawn_async', 'child_setup', CTypes['unused:pointer'
 # Param: user_data
 CTypes.set_fn_param_type('g_spawn_async', 'user_data', CTypes['unused:pointer'])
 # Param: child_pid
-CTypes.set_fn_param_type('g_spawn_async', 'child_pid', CTypes['out:int'])
+CTypes.set_fn_param_type('g_spawn_async', 'child_pid', CTypes['out:int *'])
 
 ## gboolean g_spawn_async_with_pipes(const char * working_directory, char ** argv, char ** envp, GSpawnFlags flags, void (*)(void *) child_setup, void * user_data, int * child_pid, int * standard_input, int * standard_output, int * standard_error, struct _GError ** error)
 # Param: argv
@@ -2030,13 +2030,13 @@ CTypes.set_fn_param_type('g_spawn_async_with_pipes', 'child_setup', CTypes['unus
 # Param: user_data
 CTypes.set_fn_param_type('g_spawn_async_with_pipes', 'user_data', CTypes['unused:pointer'])
 # Param: child_pid
-CTypes.set_fn_param_type('g_spawn_async_with_pipes', 'child_pid', CTypes['out:int'])
+CTypes.set_fn_param_type('g_spawn_async_with_pipes', 'child_pid', CTypes['out:int *'])
 # Param: standard_input
-CTypes.set_fn_param_type('g_spawn_async_with_pipes', 'standard_input', CTypes['out:int'])
+CTypes.set_fn_param_type('g_spawn_async_with_pipes', 'standard_input', CTypes['out:int *'])
 # Param: standard_output
-CTypes.set_fn_param_type('g_spawn_async_with_pipes', 'standard_output', CTypes['out:int'])
+CTypes.set_fn_param_type('g_spawn_async_with_pipes', 'standard_output', CTypes['out:int *'])
 # Param: standard_error
-CTypes.set_fn_param_type('g_spawn_async_with_pipes', 'standard_error', CTypes['out:int'])
+CTypes.set_fn_param_type('g_spawn_async_with_pipes', 'standard_error', CTypes['out:int *'])
 
 ## gboolean g_spawn_command_line_sync(const char * command_line, char ** standard_output, char ** standard_error, int * exit_status, struct _GError ** error)
 # Param: standard_output
@@ -2044,7 +2044,7 @@ CTypes.set_fn_param_type('g_spawn_command_line_sync', 'standard_output', CTypes[
 # Param: standard_error
 CTypes.set_fn_param_type('g_spawn_command_line_sync', 'standard_error', CTypes['out:cstring'])
 # Param: exit_status
-CTypes.set_fn_param_type('g_spawn_command_line_sync', 'exit_status', CTypes['out:int'])
+CTypes.set_fn_param_type('g_spawn_command_line_sync', 'exit_status', CTypes['out:int *'])
 
 ## gboolean g_spawn_sync(const char * working_directory, char ** argv, char ** envp, GSpawnFlags flags, void (*)(void *) child_setup, void * user_data, char ** standard_output, char ** standard_error, int * exit_status, struct _GError ** error)
 # Param: argv
@@ -2060,7 +2060,7 @@ CTypes.set_fn_param_type('g_spawn_sync', 'standard_output', CTypes['out:cstring'
 # Param: standard_error
 CTypes.set_fn_param_type('g_spawn_sync', 'standard_error', CTypes['out:cstring'])
 # Param: exit_status
-CTypes.set_fn_param_type('g_spawn_sync', 'exit_status', CTypes['out:int'])
+CTypes.set_fn_param_type('g_spawn_sync', 'exit_status', CTypes['out:int *'])
 
 # ## gpointer g_steal_pointer(void * pp)
 # # Return value

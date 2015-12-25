@@ -67,7 +67,7 @@ mrb_GLib_GOptionEntry_get_long_name(mrb_state* mrb, mrb_value self) {
 
   const gchar * native_long_name = native_self->long_name;
 
-  mrb_value long_name = mrb_str_new_cstr(mrb, native_long_name);
+  mrb_value long_name = native_long_name == NULL ? mrb_nil_value() : mrb_str_new_cstr(mrb, native_long_name);
 
   return long_name;
 }
@@ -262,7 +262,7 @@ mrb_GLib_GOptionEntry_get_description(mrb_state* mrb, mrb_value self) {
 
   const gchar * native_description = native_self->description;
 
-  mrb_value description = mrb_str_new_cstr(mrb, native_description);
+  mrb_value description = native_description == NULL ? mrb_nil_value() : mrb_str_new_cstr(mrb, native_description);
 
   return description;
 }
@@ -300,7 +300,7 @@ mrb_GLib_GOptionEntry_get_arg_description(mrb_state* mrb, mrb_value self) {
 
   const gchar * native_arg_description = native_self->arg_description;
 
-  mrb_value arg_description = mrb_str_new_cstr(mrb, native_arg_description);
+  mrb_value arg_description = native_arg_description == NULL ? mrb_nil_value() : mrb_str_new_cstr(mrb, native_arg_description);
 
   return arg_description;
 }

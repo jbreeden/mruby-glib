@@ -120,7 +120,7 @@ mrb_GLib_g_array_append_vals(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_array_free */
-/* sha: 551e4e66dede32950bc547900b39d3e44c981a8d558a8df898fc11c53926c741 */
+/* sha: fc1e1d4039d6a51d8c2290975f96af91ec621ef0e2e2e95937780d704bc64c9e */
 #if BIND_g_array_free_FUNCTION
 #define g_array_free_REQUIRED_ARGC 2
 #define g_array_free_OPTIONAL_ARGC 0
@@ -152,8 +152,7 @@ mrb_GLib_g_array_free(mrb_state* mrb, mrb_value self) {
   gchar * native_return_value = g_array_free(native_array, native_free_segment);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
-  g_free(native_return_value);
+  mrb_value return_value = TODO_mruby_box_gchar_PTR(mrb, native_return_value);
   
   return return_value;
 }
@@ -754,7 +753,7 @@ mrb_GLib_g_ascii_digit_value(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_ascii_dtostr */
-/* sha: eaac0be95cb72ae3cd180d13f33799ea2d8e141ff456da4d4c36e6c037ce4be1 */
+/* sha: 3ebf5bbb45ad7a66fc9005af8e0c102d5a43ab0b81e4b6f4aec5b919990b7702 */
 #if BIND_g_ascii_dtostr_FUNCTION
 #define g_ascii_dtostr_REQUIRED_ARGC 3
 #define g_ascii_dtostr_OPTIONAL_ARGC 0
@@ -768,36 +767,32 @@ mrb_GLib_g_ascii_digit_value(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_ascii_dtostr(mrb_state* mrb, mrb_value self) {
-  char * buffer = NULL;
+  mrb_value buffer;
   mrb_int native_buf_len;
   mrb_float native_d;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "z!if", &buffer, &native_buf_len, &native_d);
+  mrb_get_args(mrb, "oif", &buffer, &native_buf_len, &native_d);
+
+  /* Type checking */
+  TODO_type_check_gchar_PTR(buffer);
 
   /* Unbox param: buffer */
-  /* WARNING: String is strdup'ed to avoid mutable reference to internal MRuby memory */
-  char * native_buffer = strdup(buffer);
+  gchar * native_buffer = TODO_mruby_unbox_gchar_PTR(buffer);
 
   /* Invocation */
   gchar * native_return_value = g_ascii_dtostr(native_buffer, native_buf_len, native_d);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
-  g_free(native_return_value);
+  mrb_value return_value = TODO_mruby_box_gchar_PTR(mrb, native_return_value);
   
-  /* Clean in param: buffer */
-  /* WARNING: Assuming that the new string can be deallocated after the function call. */
-  free(native_buffer);
-  native_buffer = NULL;
-
   return return_value;
 }
 #endif
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_ascii_formatd */
-/* sha: e3556821a0b2ab3c87edbb110ad227fa5a689cecf64888615901e10dbf6e62fe */
+/* sha: 20a1fadcbc6703bd43f39f154bdeb2520eb9fbe29b45377389180e818e2b127a */
 #if BIND_g_ascii_formatd_FUNCTION
 #define g_ascii_formatd_REQUIRED_ARGC 4
 #define g_ascii_formatd_OPTIONAL_ARGC 0
@@ -812,30 +807,26 @@ mrb_GLib_g_ascii_dtostr(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_ascii_formatd(mrb_state* mrb, mrb_value self) {
-  char * buffer = NULL;
+  mrb_value buffer;
   mrb_int native_buf_len;
   char * native_format = NULL;
   mrb_float native_d;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "z!iz!f", &buffer, &native_buf_len, &native_format, &native_d);
+  mrb_get_args(mrb, "oiz!f", &buffer, &native_buf_len, &native_format, &native_d);
+
+  /* Type checking */
+  TODO_type_check_gchar_PTR(buffer);
 
   /* Unbox param: buffer */
-  /* WARNING: String is strdup'ed to avoid mutable reference to internal MRuby memory */
-  char * native_buffer = strdup(buffer);
+  gchar * native_buffer = TODO_mruby_unbox_gchar_PTR(buffer);
 
   /* Invocation */
   gchar * native_return_value = g_ascii_formatd(native_buffer, native_buf_len, native_format, native_d);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
-  g_free(native_return_value);
+  mrb_value return_value = TODO_mruby_box_gchar_PTR(mrb, native_return_value);
   
-  /* Clean in param: buffer */
-  /* WARNING: Assuming that the new string can be deallocated after the function call. */
-  free(native_buffer);
-  native_buffer = NULL;
-
   return return_value;
 }
 #endif
@@ -873,7 +864,7 @@ mrb_GLib_g_ascii_strcasecmp(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_ascii_strdown */
-/* sha: 888908c9e3b6b0edd0470d72141380d4e094d0348fa4c922cf4d29038cf96dab */
+/* sha: 7548721a9cc3d3447e145b7e4f9293a5b6a547e1707dd68ab5fdd29f17f8afbf */
 #if BIND_g_ascii_strdown_FUNCTION
 #define g_ascii_strdown_REQUIRED_ARGC 2
 #define g_ascii_strdown_OPTIONAL_ARGC 0
@@ -896,8 +887,7 @@ mrb_GLib_g_ascii_strdown(mrb_state* mrb, mrb_value self) {
   gchar * native_return_value = g_ascii_strdown(native_str, native_len);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
-  g_free(native_return_value);
+  mrb_value return_value = TODO_mruby_box_gchar_PTR(mrb, native_return_value);
   
   return return_value;
 }
@@ -1053,7 +1043,7 @@ mrb_GLib_g_ascii_strtoull(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_ascii_strup */
-/* sha: a7f6eb352f3876aaa6c240e22672b4c059561e5fcd396ebda1352a4256fb884f */
+/* sha: 43265b3ec8caee0d9e1a76bb5e49915e871643b68efc26cdc92c2623229baee2 */
 #if BIND_g_ascii_strup_FUNCTION
 #define g_ascii_strup_REQUIRED_ARGC 2
 #define g_ascii_strup_OPTIONAL_ARGC 0
@@ -1076,8 +1066,7 @@ mrb_GLib_g_ascii_strup(mrb_state* mrb, mrb_value self) {
   gchar * native_return_value = g_ascii_strup(native_str, native_len);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
-  g_free(native_return_value);
+  mrb_value return_value = TODO_mruby_box_gchar_PTR(mrb, native_return_value);
   
   return return_value;
 }
@@ -3200,84 +3189,75 @@ mrb_GLib_g_atomic_pointer_xor(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_base64_decode */
-/* sha: 13daee8cc92b1f5e5b8dc64305e873210c28c8447897e96b3ddffceeec3f1123 */
+/* sha: d3d7e9be7a0482009b9d7ce472946b69b238125478948167d1317c096fab795d */
 #if BIND_g_base64_decode_FUNCTION
-#define g_base64_decode_REQUIRED_ARGC 2
+#define g_base64_decode_REQUIRED_ARGC 1
 #define g_base64_decode_OPTIONAL_ARGC 0
 /* g_base64_decode
  *
  * Parameters:
  * - text: const gchar *
- * - out_len: gsize *
  * Return Type: guchar *
  */
 mrb_value
 mrb_GLib_g_base64_decode(mrb_state* mrb, mrb_value self) {
   char * native_text = NULL;
-  mrb_value out_len;
+  int native_out_len;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "z!o", &native_text, &out_len);
-
-  /* Type checking */
-  TODO_type_check_gsize_PTR(out_len);
-
-  /* Unbox param: out_len */
-  gsize * native_out_len = TODO_mruby_unbox_gsize_PTR(out_len);
+  mrb_get_args(mrb, "z!", &native_text);
 
   /* Invocation */
-  guchar * native_return_value = g_base64_decode(native_text, native_out_len);
+  guchar * native_return_value = g_base64_decode(native_text, &native_out_len);
 
   /* Box the return value */
-  mrb_value return_value = TODO_mruby_box_guchar_PTR(mrb, native_return_value);
-  
+  mrb_value return_value = mrb_str_new(mrb, native_return_value, native_out_len);
+
   return return_value;
 }
 #endif
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_base64_decode_inplace */
-/* sha: 1c2d8e0b0ec3dab5458603ae68ff0e3509b794b11741db30d01efa55053921af */
+/* sha: 567567483724dd84386c1d0e1a788d0e04882f5fac89fcd3f2b1387f29df5382 */
 #if BIND_g_base64_decode_inplace_FUNCTION
-#define g_base64_decode_inplace_REQUIRED_ARGC 2
+#define g_base64_decode_inplace_REQUIRED_ARGC 1
 #define g_base64_decode_inplace_OPTIONAL_ARGC 0
 /* g_base64_decode_inplace
  *
  * Parameters:
  * - text: gchar *
- * - out_len: gsize *
  * Return Type: guchar *
  */
 mrb_value
 mrb_GLib_g_base64_decode_inplace(mrb_state* mrb, mrb_value self) {
-  char * text = NULL;
-  mrb_value out_len;
+  mrb_value results = mrb_ary_new(mrb);
+  mrb_value text;
+  int native_out_len;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "z!o", &text, &out_len);
+  mrb_get_args(mrb, "o", &text);
 
   /* Type checking */
-  TODO_type_check_gsize_PTR(out_len);
+  TODO_type_check_gchar_PTR(text);
 
   /* Unbox param: text */
-  /* WARNING: String is strdup'ed to avoid mutable reference to internal MRuby memory */
-  char * native_text = strdup(text);
-
-  /* Unbox param: out_len */
-  gsize * native_out_len = TODO_mruby_unbox_gsize_PTR(out_len);
+  gchar * native_text = TODO_mruby_unbox_gchar_PTR(text);
 
   /* Invocation */
-  guchar * native_return_value = g_base64_decode_inplace(native_text, native_out_len);
+  guchar * native_return_value = g_base64_decode_inplace(native_text, &native_out_len);
 
   /* Box the return value */
   mrb_value return_value = TODO_mruby_box_guchar_PTR(mrb, native_return_value);
+  mrb_ary_push(mrb, results, return_value);
   
-  /* Clean in param: text */
-  /* WARNING: Assuming that the new string can be deallocated after the function call. */
-  free(native_text);
-  native_text = NULL;
+  /* Box out param: out_len */
+  mrb_value out_len = mrb_fixnum_value(native_out_len);
 
-  return return_value;
+  /* Add out params to results */
+  mrb_ary_push(mrb, results, out_len);
+
+  return results;
 }
 #endif
 /* MRUBY_BINDING_END */
@@ -3334,7 +3314,7 @@ mrb_GLib_g_base64_decode_step(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_base64_encode */
-/* sha: 80917958b598c3d7a48336c2cf99bf94e25ce45096c781da6f6ba68713a1f324 */
+/* sha: 779e94a0310d4a31ef7e7a3b2eb15a0bed605b26d57aecf8460f9de88ecc6a61 */
 #if BIND_g_base64_encode_FUNCTION
 #define g_base64_encode_REQUIRED_ARGC 2
 #define g_base64_encode_OPTIONAL_ARGC 0
@@ -3351,13 +3331,10 @@ mrb_GLib_g_base64_encode(mrb_state* mrb, mrb_value self) {
   mrb_int native_len;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "oi", &data, &native_len);
-
-  /* Type checking */
-  TODO_type_check_guchar_PTR(data);
+  mrb_get_args(mrb, "Si", &data, &native_len);
 
   /* Unbox param: data */
-  const guchar * native_data = TODO_mruby_unbox_guchar_PTR(data);
+  const guchar * native_data = RSTRING_PTR(data);
 
   /* Invocation */
   gchar * native_return_value = g_base64_encode(native_data, native_len);
@@ -3372,7 +3349,7 @@ mrb_GLib_g_base64_encode(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_base64_encode_close */
-/* sha: bc942d35ab5cd823c0314c4b641cc4397517f9fd495703dcab7d7ba8c7984ea5 */
+/* sha: 40a3b4950ebf4f47d5dd161b5a08d7c9296cb99cdf13dc037344dcd8abcb8241 */
 #if BIND_g_base64_encode_close_FUNCTION
 #define g_base64_encode_close_REQUIRED_ARGC 4
 #define g_base64_encode_close_OPTIONAL_ARGC 0
@@ -3388,20 +3365,20 @@ mrb_GLib_g_base64_encode(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_base64_encode_close(mrb_state* mrb, mrb_value self) {
   mrb_bool native_break_lines;
-  char * out = NULL;
+  mrb_value out;
   mrb_value state;
   mrb_value save;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "bz!oo", &native_break_lines, &out, &state, &save);
+  mrb_get_args(mrb, "booo", &native_break_lines, &out, &state, &save);
 
   /* Type checking */
+  TODO_type_check_gchar_PTR(out);
   TODO_type_check_gint_PTR(state);
   TODO_type_check_gint_PTR(save);
 
   /* Unbox param: out */
-  /* WARNING: String is strdup'ed to avoid mutable reference to internal MRuby memory */
-  char * native_out = strdup(out);
+  gchar * native_out = TODO_mruby_unbox_gchar_PTR(out);
 
   /* Unbox param: state */
   gint * native_state = TODO_mruby_unbox_gint_PTR(state);
@@ -3415,18 +3392,13 @@ mrb_GLib_g_base64_encode_close(mrb_state* mrb, mrb_value self) {
   /* Box the return value */
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
-  /* Clean in param: out */
-  /* WARNING: Assuming that the new string can be deallocated after the function call. */
-  free(native_out);
-  native_out = NULL;
-
   return return_value;
 }
 #endif
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_base64_encode_step */
-/* sha: b13efcaefaac336c342c24913cbcd6034a106c2a3342c160514ce1138e32fab4 */
+/* sha: 44239be84c6e050fb6782f95e61999819e271291fed88719a87dd2762b422179 */
 #if BIND_g_base64_encode_step_FUNCTION
 #define g_base64_encode_step_REQUIRED_ARGC 6
 #define g_base64_encode_step_OPTIONAL_ARGC 0
@@ -3446,15 +3418,16 @@ mrb_GLib_g_base64_encode_step(mrb_state* mrb, mrb_value self) {
   mrb_value in;
   mrb_int native_len;
   mrb_bool native_break_lines;
-  char * out = NULL;
+  mrb_value out;
   mrb_value state;
   mrb_value save;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "oibz!oo", &in, &native_len, &native_break_lines, &out, &state, &save);
+  mrb_get_args(mrb, "oibooo", &in, &native_len, &native_break_lines, &out, &state, &save);
 
   /* Type checking */
   TODO_type_check_guchar_PTR(in);
+  TODO_type_check_gchar_PTR(out);
   TODO_type_check_gint_PTR(state);
   TODO_type_check_gint_PTR(save);
 
@@ -3462,8 +3435,7 @@ mrb_GLib_g_base64_encode_step(mrb_state* mrb, mrb_value self) {
   const guchar * native_in = TODO_mruby_unbox_guchar_PTR(in);
 
   /* Unbox param: out */
-  /* WARNING: String is strdup'ed to avoid mutable reference to internal MRuby memory */
-  char * native_out = strdup(out);
+  gchar * native_out = TODO_mruby_unbox_gchar_PTR(out);
 
   /* Unbox param: state */
   gint * native_state = TODO_mruby_unbox_gint_PTR(state);
@@ -3477,18 +3449,13 @@ mrb_GLib_g_base64_encode_step(mrb_state* mrb, mrb_value self) {
   /* Box the return value */
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
-  /* Clean in param: out */
-  /* WARNING: Assuming that the new string can be deallocated after the function call. */
-  free(native_out);
-  native_out = NULL;
-
   return return_value;
 }
 #endif
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_basename */
-/* sha: 0a715142f6f1f415af054aaf059c892a6516ce00caf0b091e89fa6b6135fb78a */
+/* sha: f53d010169af97af149da85b6255ec544730ad36616cec55305c806b29fcb37c */
 #if BIND_g_basename_FUNCTION
 #define g_basename_REQUIRED_ARGC 1
 #define g_basename_OPTIONAL_ARGC 0
@@ -3509,7 +3476,7 @@ mrb_GLib_g_basename(mrb_state* mrb, mrb_value self) {
   const gchar * native_return_value = g_basename(native_file_name);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
+  mrb_value return_value = native_return_value == NULL ? mrb_nil_value() : mrb_str_new_cstr(mrb, native_return_value);
   
   return return_value;
 }
@@ -3969,16 +3936,15 @@ mrb_GLib_g_bookmark_file_get_app_info(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_bookmark_file_get_applications */
-/* sha: 968b7b2ffbd5e79f434c0134ad1c246c2365a5378dbb15f5e097b5de3d9fc694 */
+/* sha: f61eb7b59ced4e68eb4abbbb4c38506acbc0c9dafa72c89b545f2033a65001b0 */
 #if BIND_g_bookmark_file_get_applications_FUNCTION
-#define g_bookmark_file_get_applications_REQUIRED_ARGC 3
+#define g_bookmark_file_get_applications_REQUIRED_ARGC 2
 #define g_bookmark_file_get_applications_OPTIONAL_ARGC 0
 /* g_bookmark_file_get_applications
  *
  * Parameters:
  * - bookmark: GBookmarkFile *
  * - uri: const gchar *
- * - length: gsize *
  * Return Type: gchar **
  */
 mrb_value
@@ -3986,36 +3952,35 @@ mrb_GLib_g_bookmark_file_get_applications(mrb_state* mrb, mrb_value self) {
   mrb_value results = mrb_ary_new(mrb);
   mrb_value bookmark;
   char * native_uri = NULL;
-  mrb_value length;
+  int native_length;
   struct GError * native_error = NULL;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "oz!o", &bookmark, &native_uri, &length);
+  mrb_get_args(mrb, "oz!", &bookmark, &native_uri);
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, bookmark, GBookmarkFile_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GBookmarkFile expected");
     return mrb_nil_value();
   }
-  TODO_type_check_gsize_PTR(length);
 
   /* Unbox param: bookmark */
   GBookmarkFile * native_bookmark = (mrb_nil_p(bookmark) ? NULL : mruby_unbox__GBookmarkFile(bookmark));
 
-  /* Unbox param: length */
-  gsize * native_length = TODO_mruby_unbox_gsize_PTR(length);
-
   /* Invocation */
-  gchar ** native_return_value = g_bookmark_file_get_applications(native_bookmark, native_uri, native_length, &native_error);
+  gchar ** native_return_value = g_bookmark_file_get_applications(native_bookmark, native_uri, &native_length, &native_error);
 
   /* Box the return value */
   mrb_value return_value = TODO_mruby_box_gchar_PTR_PTR(mrb, native_return_value);
   mrb_ary_push(mrb, results, return_value);
   
+  /* Box out param: length */
+  mrb_value length = mrb_fixnum_value(native_length);
   /* Box out param: error */
   mrb_value error = (native_error == NULL ? mrb_nil_value() : mruby_giftwrap__GError(mrb, native_error));
 
   /* Add out params to results */
+  mrb_ary_push(mrb, results, length);
   mrb_ary_push(mrb, results, error);
 
   return results;
@@ -4024,7 +3989,7 @@ mrb_GLib_g_bookmark_file_get_applications(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_bookmark_file_get_description */
-/* sha: d1ffa42e3b5dbbbe279e5e9917466979d73a63a177754eb4261d2c55eaec5d71 */
+/* sha: 3e994a0fa14d503977a210e8a35d2076f79e5d6625291b92aba9362c7072c36e */
 #if BIND_g_bookmark_file_get_description_FUNCTION
 #define g_bookmark_file_get_description_REQUIRED_ARGC 2
 #define g_bookmark_file_get_description_OPTIONAL_ARGC 0
@@ -4058,8 +4023,7 @@ mrb_GLib_g_bookmark_file_get_description(mrb_state* mrb, mrb_value self) {
   gchar * native_return_value = g_bookmark_file_get_description(native_bookmark, native_uri, &native_error);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
-  g_free(native_return_value);
+  mrb_value return_value = TODO_mruby_box_gchar_PTR(mrb, native_return_value);
   mrb_ary_push(mrb, results, return_value);
   
   /* Box out param: error */
@@ -4074,16 +4038,15 @@ mrb_GLib_g_bookmark_file_get_description(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_bookmark_file_get_groups */
-/* sha: 2a6fa990cc5a27ae74dcc405af2a9bb629ce3b403ed914fae75efc6028dc247d */
+/* sha: 703c490c0a4514abf29bbf501df5e8f69f16d060e824358fd405f7642ab112e9 */
 #if BIND_g_bookmark_file_get_groups_FUNCTION
-#define g_bookmark_file_get_groups_REQUIRED_ARGC 3
+#define g_bookmark_file_get_groups_REQUIRED_ARGC 2
 #define g_bookmark_file_get_groups_OPTIONAL_ARGC 0
 /* g_bookmark_file_get_groups
  *
  * Parameters:
  * - bookmark: GBookmarkFile *
  * - uri: const gchar *
- * - length: gsize *
  * Return Type: gchar **
  */
 mrb_value
@@ -4091,36 +4054,35 @@ mrb_GLib_g_bookmark_file_get_groups(mrb_state* mrb, mrb_value self) {
   mrb_value results = mrb_ary_new(mrb);
   mrb_value bookmark;
   char * native_uri = NULL;
-  mrb_value length;
+  int native_length;
   struct GError * native_error = NULL;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "oz!o", &bookmark, &native_uri, &length);
+  mrb_get_args(mrb, "oz!", &bookmark, &native_uri);
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, bookmark, GBookmarkFile_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GBookmarkFile expected");
     return mrb_nil_value();
   }
-  TODO_type_check_gsize_PTR(length);
 
   /* Unbox param: bookmark */
   GBookmarkFile * native_bookmark = (mrb_nil_p(bookmark) ? NULL : mruby_unbox__GBookmarkFile(bookmark));
 
-  /* Unbox param: length */
-  gsize * native_length = TODO_mruby_unbox_gsize_PTR(length);
-
   /* Invocation */
-  gchar ** native_return_value = g_bookmark_file_get_groups(native_bookmark, native_uri, native_length, &native_error);
+  gchar ** native_return_value = g_bookmark_file_get_groups(native_bookmark, native_uri, &native_length, &native_error);
 
   /* Box the return value */
   mrb_value return_value = TODO_mruby_box_gchar_PTR_PTR(mrb, native_return_value);
   mrb_ary_push(mrb, results, return_value);
   
+  /* Box out param: length */
+  mrb_value length = mrb_fixnum_value(native_length);
   /* Box out param: error */
   mrb_value error = (native_error == NULL ? mrb_nil_value() : mruby_giftwrap__GError(mrb, native_error));
 
   /* Add out params to results */
+  mrb_ary_push(mrb, results, length);
   mrb_ary_push(mrb, results, error);
 
   return results;
@@ -4239,7 +4201,7 @@ mrb_GLib_g_bookmark_file_get_is_private(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_bookmark_file_get_mime_type */
-/* sha: fcfe9f1bbf5ba081e5d38f08615dfe322b9b69ce180db8a488bb68eae407e6a1 */
+/* sha: b7fc6705bb43e8c1bb0b4617bfd9030dd6bd5260125cb42f3fff5d1c0606670d */
 #if BIND_g_bookmark_file_get_mime_type_FUNCTION
 #define g_bookmark_file_get_mime_type_REQUIRED_ARGC 2
 #define g_bookmark_file_get_mime_type_OPTIONAL_ARGC 0
@@ -4273,8 +4235,7 @@ mrb_GLib_g_bookmark_file_get_mime_type(mrb_state* mrb, mrb_value self) {
   gchar * native_return_value = g_bookmark_file_get_mime_type(native_bookmark, native_uri, &native_error);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
-  g_free(native_return_value);
+  mrb_value return_value = TODO_mruby_box_gchar_PTR(mrb, native_return_value);
   mrb_ary_push(mrb, results, return_value);
   
   /* Box out param: error */
@@ -4376,7 +4337,7 @@ mrb_GLib_g_bookmark_file_get_size(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_bookmark_file_get_title */
-/* sha: d6c748c9fe2d96812dc1ced221e156cde28fcfb209d3d83f43ff5f6324d31c5f */
+/* sha: d1471b5bad5030443b469edd4d65dcb5d37d5ab297309333ec491e95aa1ac29e */
 #if BIND_g_bookmark_file_get_title_FUNCTION
 #define g_bookmark_file_get_title_REQUIRED_ARGC 2
 #define g_bookmark_file_get_title_OPTIONAL_ARGC 0
@@ -4410,8 +4371,7 @@ mrb_GLib_g_bookmark_file_get_title(mrb_state* mrb, mrb_value self) {
   gchar * native_return_value = g_bookmark_file_get_title(native_bookmark, native_uri, &native_error);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
-  g_free(native_return_value);
+  mrb_value return_value = TODO_mruby_box_gchar_PTR(mrb, native_return_value);
   mrb_ary_push(mrb, results, return_value);
   
   /* Box out param: error */
@@ -4426,45 +4386,48 @@ mrb_GLib_g_bookmark_file_get_title(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_bookmark_file_get_uris */
-/* sha: 893b141b4fb79dd03eb1fb8b99593e60044bb35a775ed2b152eed03233121c25 */
+/* sha: abe3074a301dad225d14af69c811fa907049cba8af6b6c9e33b449b77a16cd7d */
 #if BIND_g_bookmark_file_get_uris_FUNCTION
-#define g_bookmark_file_get_uris_REQUIRED_ARGC 2
+#define g_bookmark_file_get_uris_REQUIRED_ARGC 1
 #define g_bookmark_file_get_uris_OPTIONAL_ARGC 0
 /* g_bookmark_file_get_uris
  *
  * Parameters:
  * - bookmark: GBookmarkFile *
- * - length: gsize *
  * Return Type: gchar **
  */
 mrb_value
 mrb_GLib_g_bookmark_file_get_uris(mrb_state* mrb, mrb_value self) {
+  mrb_value results = mrb_ary_new(mrb);
   mrb_value bookmark;
-  mrb_value length;
+  int native_length;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "oo", &bookmark, &length);
+  mrb_get_args(mrb, "o", &bookmark);
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, bookmark, GBookmarkFile_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GBookmarkFile expected");
     return mrb_nil_value();
   }
-  TODO_type_check_gsize_PTR(length);
 
   /* Unbox param: bookmark */
   GBookmarkFile * native_bookmark = (mrb_nil_p(bookmark) ? NULL : mruby_unbox__GBookmarkFile(bookmark));
 
-  /* Unbox param: length */
-  gsize * native_length = TODO_mruby_unbox_gsize_PTR(length);
-
   /* Invocation */
-  gchar ** native_return_value = g_bookmark_file_get_uris(native_bookmark, native_length);
+  gchar ** native_return_value = g_bookmark_file_get_uris(native_bookmark, &native_length);
 
   /* Box the return value */
   mrb_value return_value = TODO_mruby_box_gchar_PTR_PTR(mrb, native_return_value);
+  mrb_ary_push(mrb, results, return_value);
   
-  return return_value;
+  /* Box out param: length */
+  mrb_value length = mrb_fixnum_value(native_length);
+
+  /* Add out params to results */
+  mrb_ary_push(mrb, results, length);
+
+  return results;
 }
 #endif
 /* MRUBY_BINDING_END */
@@ -5457,52 +5420,49 @@ mrb_GLib_g_bookmark_file_set_visited(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_bookmark_file_to_data */
-/* sha: 97fab810c4a23b9c60b5690d72d55799423257a77ca59c966440abb11772f133 */
+/* sha: fad68ab02e232f04240edb740b361ecc9ff14be61586cae708f5859a516c4d3f */
 #if BIND_g_bookmark_file_to_data_FUNCTION
-#define g_bookmark_file_to_data_REQUIRED_ARGC 2
+#define g_bookmark_file_to_data_REQUIRED_ARGC 1
 #define g_bookmark_file_to_data_OPTIONAL_ARGC 0
 /* g_bookmark_file_to_data
  *
  * Parameters:
  * - bookmark: GBookmarkFile *
- * - length: gsize *
  * Return Type: gchar *
  */
 mrb_value
 mrb_GLib_g_bookmark_file_to_data(mrb_state* mrb, mrb_value self) {
   mrb_value results = mrb_ary_new(mrb);
   mrb_value bookmark;
-  mrb_value length;
+  int native_length;
   struct GError * native_error = NULL;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "oo", &bookmark, &length);
+  mrb_get_args(mrb, "o", &bookmark);
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, bookmark, GBookmarkFile_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GBookmarkFile expected");
     return mrb_nil_value();
   }
-  TODO_type_check_gsize_PTR(length);
 
   /* Unbox param: bookmark */
   GBookmarkFile * native_bookmark = (mrb_nil_p(bookmark) ? NULL : mruby_unbox__GBookmarkFile(bookmark));
 
-  /* Unbox param: length */
-  gsize * native_length = TODO_mruby_unbox_gsize_PTR(length);
-
   /* Invocation */
-  gchar * native_return_value = g_bookmark_file_to_data(native_bookmark, native_length, &native_error);
+  gchar * native_return_value = g_bookmark_file_to_data(native_bookmark, &native_length, &native_error);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
-  g_free(native_return_value);
+  mrb_value return_value = TODO_mruby_box_gchar_PTR(mrb, native_return_value);
   mrb_ary_push(mrb, results, return_value);
   
+  /* Box out param: length */
+  mrb_value length = mrb_fixnum_value(native_length);
   /* Box out param: error */
   mrb_value error = (native_error == NULL ? mrb_nil_value() : mruby_giftwrap__GError(mrb, native_error));
 
   /* Add out params to results */
+  mrb_ary_push(mrb, results, length);
   mrb_ary_push(mrb, results, error);
 
   return results;
@@ -5560,7 +5520,7 @@ mrb_GLib_g_bookmark_file_to_file(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_build_filename */
-/* sha: 378a236bff62748358c99fdcb4f9e3a9f4845d20f4b176879ea7562ce8c9c036 */
+/* sha: 8ac91c10e86818089ecf1509b63355e0e8dfdb3fa59978c7821ec8f1db307533 */
 #if BIND_g_build_filename_FUNCTION
 #define g_build_filename_REQUIRED_ARGC 1
 #define g_build_filename_OPTIONAL_ARGC 0
@@ -5581,8 +5541,7 @@ mrb_GLib_g_build_filename(mrb_state* mrb, mrb_value self) {
   gchar * native_return_value = g_build_filename(native_first_element);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
-  g_free(native_return_value);
+  mrb_value return_value = TODO_mruby_box_gchar_PTR(mrb, native_return_value);
   
   return return_value;
 }
@@ -5590,7 +5549,7 @@ mrb_GLib_g_build_filename(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_build_filenamev */
-/* sha: 288af136a20f47d480c5aad2dd62b10f1bb1d5d576e63674e35a602056e551e9 */
+/* sha: 8b5df75b9768b77236fc5125ff5f8af56849c329b329c5e01af7d4fba2e50cc7 */
 #if BIND_g_build_filenamev_FUNCTION
 #define g_build_filenamev_REQUIRED_ARGC 1
 #define g_build_filenamev_OPTIONAL_ARGC 0
@@ -5605,13 +5564,23 @@ mrb_GLib_g_build_filenamev(mrb_state* mrb, mrb_value self) {
   mrb_value args;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "o", &args);
-
-  /* Type checking */
-  TODO_type_check_gchar_PTR_PTR(args);
+  mrb_get_args(mrb, "A!", &args);
 
   /* Unbox param: args */
-  gchar ** native_args = TODO_mruby_unbox_gchar_PTR_PTR(args);
+  char ** native_args = NULL;
+  do {
+    if (mrb_nil_p(args)) {
+      native_args = NULL;
+    } else {
+      int len = mrb_ary_len(mrb, args);
+      native_args = (char**)calloc((len + 1), sizeof(char*));
+      for (int i = 0; i < len; i++) {
+        mrb_value str = mrb_ary_ref(mrb, args, i);
+        native_args[i] = mrb_string_value_cstr(mrb, &str);
+      }
+      native_args[len] = NULL;
+    }
+  } while (0);
 
   /* Invocation */
   gchar * native_return_value = g_build_filenamev(native_args);
@@ -5620,13 +5589,16 @@ mrb_GLib_g_build_filenamev(mrb_state* mrb, mrb_value self) {
   mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
   g_free(native_return_value);
   
+  /* Clean in param: args */
+  if (native_args != NULL) free(native_args);
+
   return return_value;
 }
 #endif
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_build_path */
-/* sha: 95c0a0ffef44b08274e09c9165eb21cb800ee8e1f4d3c5fedb4bfd9f0995878b */
+/* sha: 19516b444318fee942c9f4a9409a39ac0771de5ad40d01c9c2bdea44f489f4a1 */
 #if BIND_g_build_path_FUNCTION
 #define g_build_path_REQUIRED_ARGC 2
 #define g_build_path_OPTIONAL_ARGC 0
@@ -5649,8 +5621,7 @@ mrb_GLib_g_build_path(mrb_state* mrb, mrb_value self) {
   gchar * native_return_value = g_build_path(native_separator, native_first_element);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
-  g_free(native_return_value);
+  mrb_value return_value = TODO_mruby_box_gchar_PTR(mrb, native_return_value);
   
   return return_value;
 }
@@ -5658,7 +5629,7 @@ mrb_GLib_g_build_path(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_build_pathv */
-/* sha: fa84ccedde386423c4e9b34f67aff85f130c5a6aebd2dfaebd01046fe611b2dd */
+/* sha: f2fef06d3b556fa9555bfa166c25dee57d191723c8f4bfbcad25c70ee960008a */
 #if BIND_g_build_pathv_FUNCTION
 #define g_build_pathv_REQUIRED_ARGC 2
 #define g_build_pathv_OPTIONAL_ARGC 0
@@ -5675,13 +5646,23 @@ mrb_GLib_g_build_pathv(mrb_state* mrb, mrb_value self) {
   mrb_value args;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "z!o", &native_separator, &args);
-
-  /* Type checking */
-  TODO_type_check_gchar_PTR_PTR(args);
+  mrb_get_args(mrb, "z!A!", &native_separator, &args);
 
   /* Unbox param: args */
-  gchar ** native_args = TODO_mruby_unbox_gchar_PTR_PTR(args);
+  char ** native_args = NULL;
+  do {
+    if (mrb_nil_p(args)) {
+      native_args = NULL;
+    } else {
+      int len = mrb_ary_len(mrb, args);
+      native_args = (char**)calloc((len + 1), sizeof(char*));
+      for (int i = 0; i < len; i++) {
+        mrb_value str = mrb_ary_ref(mrb, args, i);
+        native_args[i] = mrb_string_value_cstr(mrb, &str);
+      }
+      native_args[len] = NULL;
+    }
+  } while (0);
 
   /* Invocation */
   gchar * native_return_value = g_build_pathv(native_separator, native_args);
@@ -5690,6 +5671,9 @@ mrb_GLib_g_build_pathv(mrb_state* mrb, mrb_value self) {
   mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
   g_free(native_return_value);
   
+  /* Clean in param: args */
+  if (native_args != NULL) free(native_args);
+
   return return_value;
 }
 #endif
@@ -6360,45 +6344,48 @@ mrb_GLib_g_bytes_equal(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_bytes_get_data */
-/* sha: e268925ee76ce5b70146981c986950b59789ac9f0ef9b17c5b0a7e851cacf52c */
+/* sha: d29b309c6eae4f2f85175b64b9be1f2c6b17978337e6070194fe76b4f41e5c07 */
 #if BIND_g_bytes_get_data_FUNCTION
-#define g_bytes_get_data_REQUIRED_ARGC 2
+#define g_bytes_get_data_REQUIRED_ARGC 1
 #define g_bytes_get_data_OPTIONAL_ARGC 0
 /* g_bytes_get_data
  *
  * Parameters:
  * - bytes: GBytes *
- * - size: gsize *
  * Return Type: gconstpointer
  */
 mrb_value
 mrb_GLib_g_bytes_get_data(mrb_state* mrb, mrb_value self) {
+  mrb_value results = mrb_ary_new(mrb);
   mrb_value bytes;
-  mrb_value size;
+  int native_size;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "oo", &bytes, &size);
+  mrb_get_args(mrb, "o", &bytes);
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, bytes, GBytes_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GBytes expected");
     return mrb_nil_value();
   }
-  TODO_type_check_gsize_PTR(size);
 
   /* Unbox param: bytes */
   GBytes * native_bytes = (mrb_nil_p(bytes) ? NULL : mruby_unbox__GBytes(bytes));
 
-  /* Unbox param: size */
-  gsize * native_size = TODO_mruby_unbox_gsize_PTR(size);
-
   /* Invocation */
-  gconstpointer native_return_value = g_bytes_get_data(native_bytes, native_size);
+  gconstpointer native_return_value = g_bytes_get_data(native_bytes, &native_size);
 
   /* Box the return value */
   mrb_value return_value = TODO_mruby_box_gpointer(mrb, native_return_value);
+  mrb_ary_push(mrb, results, return_value);
   
-  return return_value;
+  /* Box out param: size */
+  mrb_value size = mrb_fixnum_value(native_size);
+
+  /* Add out params to results */
+  mrb_ary_push(mrb, results, size);
+
+  return results;
 }
 #endif
 /* MRUBY_BINDING_END */
@@ -6790,45 +6777,48 @@ mrb_GLib_g_bytes_unref_to_array(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_bytes_unref_to_data */
-/* sha: 5719c8cba091e54e8f946cd939a77e6e69f4d1f816802e1a5160a381f69820e2 */
+/* sha: bc86a221a94449ade27b3e13b4a4dce5169dc73e646df528fd08f8cfa129df6f */
 #if BIND_g_bytes_unref_to_data_FUNCTION
-#define g_bytes_unref_to_data_REQUIRED_ARGC 2
+#define g_bytes_unref_to_data_REQUIRED_ARGC 1
 #define g_bytes_unref_to_data_OPTIONAL_ARGC 0
 /* g_bytes_unref_to_data
  *
  * Parameters:
  * - bytes: GBytes *
- * - size: gsize *
  * Return Type: gpointer
  */
 mrb_value
 mrb_GLib_g_bytes_unref_to_data(mrb_state* mrb, mrb_value self) {
+  mrb_value results = mrb_ary_new(mrb);
   mrb_value bytes;
-  mrb_value size;
+  int native_size;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "oo", &bytes, &size);
+  mrb_get_args(mrb, "o", &bytes);
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, bytes, GBytes_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GBytes expected");
     return mrb_nil_value();
   }
-  TODO_type_check_gsize_PTR(size);
 
   /* Unbox param: bytes */
   GBytes * native_bytes = (mrb_nil_p(bytes) ? NULL : mruby_unbox__GBytes(bytes));
 
-  /* Unbox param: size */
-  gsize * native_size = TODO_mruby_unbox_gsize_PTR(size);
-
   /* Invocation */
-  gpointer native_return_value = g_bytes_unref_to_data(native_bytes, native_size);
+  gpointer native_return_value = g_bytes_unref_to_data(native_bytes, &native_size);
 
   /* Box the return value */
   mrb_value return_value = TODO_mruby_box_gpointer(mrb, native_return_value);
+  mrb_ary_push(mrb, results, return_value);
   
-  return return_value;
+  /* Box out param: size */
+  mrb_value size = mrb_fixnum_value(native_size);
+
+  /* Add out params to results */
+  mrb_ary_push(mrb, results, size);
+
+  return results;
 }
 #endif
 /* MRUBY_BINDING_END */
@@ -6983,7 +6973,7 @@ mrb_GLib_g_checksum_get_digest(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_checksum_get_string */
-/* sha: f1fafad2387f52848fc32d20ea775bf8c87dc19de512f37671458dfeeb1372f7 */
+/* sha: ac5ca3e6e57afda36e5f8886b8a6c4d8f98d86b532a899d86abfb427de2b74af */
 #if BIND_g_checksum_get_string_FUNCTION
 #define g_checksum_get_string_REQUIRED_ARGC 1
 #define g_checksum_get_string_OPTIONAL_ARGC 0
@@ -7013,7 +7003,7 @@ mrb_GLib_g_checksum_get_string(mrb_state* mrb, mrb_value self) {
   const gchar * native_return_value = g_checksum_get_string(native_checksum);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
+  mrb_value return_value = native_return_value == NULL ? mrb_nil_value() : mrb_str_new_cstr(mrb, native_return_value);
   
   return return_value;
 }
@@ -7382,7 +7372,7 @@ mrb_GLib_g_close(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_compute_checksum_for_bytes */
-/* sha: 2160d2f07dc1f10e46e67533f25337e8409a40f17abc99a9849d6f63f0f71c6b */
+/* sha: a7c381599eca0260d7c93c3e3157a1113a341067a5e32433937491a3f7fd9fd5 */
 #if BIND_g_compute_checksum_for_bytes_FUNCTION
 #define g_compute_checksum_for_bytes_REQUIRED_ARGC 2
 #define g_compute_checksum_for_bytes_OPTIONAL_ARGC 0
@@ -7414,8 +7404,7 @@ mrb_GLib_g_compute_checksum_for_bytes(mrb_state* mrb, mrb_value self) {
   gchar * native_return_value = g_compute_checksum_for_bytes(native_checksum_type, native_data);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
-  g_free(native_return_value);
+  mrb_value return_value = TODO_mruby_box_gchar_PTR(mrb, native_return_value);
   
   return return_value;
 }
@@ -7423,7 +7412,7 @@ mrb_GLib_g_compute_checksum_for_bytes(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_compute_checksum_for_data */
-/* sha: 5eb97e93097fe3d63275bef4aa1d20ba73cbb803b94b7202c554f7ceeac1da05 */
+/* sha: 3b63dcc5b2ac65b42f787cf93bd517d50c5ff1b1e0ceed64809215f3a487392d */
 #if BIND_g_compute_checksum_for_data_FUNCTION
 #define g_compute_checksum_for_data_REQUIRED_ARGC 3
 #define g_compute_checksum_for_data_OPTIONAL_ARGC 0
@@ -7454,8 +7443,7 @@ mrb_GLib_g_compute_checksum_for_data(mrb_state* mrb, mrb_value self) {
   gchar * native_return_value = g_compute_checksum_for_data(native_checksum_type, native_data, native_length);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
-  g_free(native_return_value);
+  mrb_value return_value = TODO_mruby_box_gchar_PTR(mrb, native_return_value);
   
   return return_value;
 }
@@ -7463,7 +7451,7 @@ mrb_GLib_g_compute_checksum_for_data(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_compute_checksum_for_string */
-/* sha: aa7c3e8c81b4da5f77d7022e1e3bbc11946967bc2b5edcce370caa5ee01fa17c */
+/* sha: 8b54986b260dd7edcb0bdf135d903857d57796e84d5dc18a093139c9f85b417b */
 #if BIND_g_compute_checksum_for_string_FUNCTION
 #define g_compute_checksum_for_string_REQUIRED_ARGC 3
 #define g_compute_checksum_for_string_OPTIONAL_ARGC 0
@@ -7482,7 +7470,7 @@ mrb_GLib_g_compute_checksum_for_string(mrb_state* mrb, mrb_value self) {
   mrb_int native_length;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "iz!i", &native_checksum_type, &native_str, &native_length);
+  mrb_get_args(mrb, "is", &native_checksum_type, &native_str, &native_length);
 
   /* Invocation */
   gchar * native_return_value = g_compute_checksum_for_string(native_checksum_type, native_str, native_length);
@@ -7497,7 +7485,7 @@ mrb_GLib_g_compute_checksum_for_string(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_compute_hmac_for_data */
-/* sha: 40a418d257dcb6ffef2a3d23a1c719c2189499edca3610843dbdca26455d1996 */
+/* sha: 08278f8f1f46dfbbfbe50af2bb182358a0b4f1359794f8177e7ef0d8c84814c3 */
 #if BIND_g_compute_hmac_for_data_FUNCTION
 #define g_compute_hmac_for_data_REQUIRED_ARGC 5
 #define g_compute_hmac_for_data_OPTIONAL_ARGC 0
@@ -7536,8 +7524,7 @@ mrb_GLib_g_compute_hmac_for_data(mrb_state* mrb, mrb_value self) {
   gchar * native_return_value = g_compute_hmac_for_data(native_digest_type, native_key, native_key_len, native_data, native_length);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
-  g_free(native_return_value);
+  mrb_value return_value = TODO_mruby_box_gchar_PTR(mrb, native_return_value);
   
   return return_value;
 }
@@ -7545,7 +7532,7 @@ mrb_GLib_g_compute_hmac_for_data(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_compute_hmac_for_string */
-/* sha: 12b16794c862897e07ba62941c8cfc3ae9103d9f23432e4e632904c3aa2820f6 */
+/* sha: 908ffb7fee03ef4f46cef08eb7fdf381b5eb971adf450a4985a5652abbba63ab */
 #if BIND_g_compute_hmac_for_string_FUNCTION
 #define g_compute_hmac_for_string_REQUIRED_ARGC 5
 #define g_compute_hmac_for_string_OPTIONAL_ARGC 0
@@ -7580,8 +7567,7 @@ mrb_GLib_g_compute_hmac_for_string(mrb_state* mrb, mrb_value self) {
   gchar * native_return_value = g_compute_hmac_for_string(native_digest_type, native_key, native_key_len, native_str, native_length);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
-  g_free(native_return_value);
+  mrb_value return_value = TODO_mruby_box_gchar_PTR(mrb, native_return_value);
   
   return return_value;
 }
@@ -7816,9 +7802,9 @@ mrb_GLib_g_cond_wait_until(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_convert */
-/* sha: 1842cf10dee2eff1173910234b3b69ae0b01b9210b0d9396c7e4cfd2175fd044 */
+/* sha: 54fde67e4d5a784aca3c2c359f7ded35932b3e42b54e84ec86e830d15cccf598 */
 #if BIND_g_convert_FUNCTION
-#define g_convert_REQUIRED_ARGC 6
+#define g_convert_REQUIRED_ARGC 4
 #define g_convert_OPTIONAL_ARGC 0
 /* g_convert
  *
@@ -7827,8 +7813,6 @@ mrb_GLib_g_cond_wait_until(mrb_state* mrb, mrb_value self) {
  * - len: gssize
  * - to_codeset: const gchar *
  * - from_codeset: const gchar *
- * - bytes_read: gsize *
- * - bytes_written: gsize *
  * Return Type: gchar *
  */
 mrb_value
@@ -7838,35 +7822,30 @@ mrb_GLib_g_convert(mrb_state* mrb, mrb_value self) {
   mrb_int native_len;
   char * native_to_codeset = NULL;
   char * native_from_codeset = NULL;
-  mrb_value bytes_read;
-  mrb_value bytes_written;
+  int native_bytes_read;
+  int native_bytes_written;
   struct GError * native_error = NULL;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "z!iz!z!oo", &native_str, &native_len, &native_to_codeset, &native_from_codeset, &bytes_read, &bytes_written);
-
-  /* Type checking */
-  TODO_type_check_gsize_PTR(bytes_read);
-  TODO_type_check_gsize_PTR(bytes_written);
-
-  /* Unbox param: bytes_read */
-  gsize * native_bytes_read = TODO_mruby_unbox_gsize_PTR(bytes_read);
-
-  /* Unbox param: bytes_written */
-  gsize * native_bytes_written = TODO_mruby_unbox_gsize_PTR(bytes_written);
+  mrb_get_args(mrb, "z!iz!z!", &native_str, &native_len, &native_to_codeset, &native_from_codeset);
 
   /* Invocation */
-  gchar * native_return_value = g_convert(native_str, native_len, native_to_codeset, native_from_codeset, native_bytes_read, native_bytes_written, &native_error);
+  gchar * native_return_value = g_convert(native_str, native_len, native_to_codeset, native_from_codeset, &native_bytes_read, &native_bytes_written, &native_error);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
-  g_free(native_return_value);
+  mrb_value return_value = TODO_mruby_box_gchar_PTR(mrb, native_return_value);
   mrb_ary_push(mrb, results, return_value);
   
+  /* Box out param: bytes_read */
+  mrb_value bytes_read = mrb_fixnum_value(native_bytes_read);
+  /* Box out param: bytes_written */
+  mrb_value bytes_written = mrb_fixnum_value(native_bytes_written);
   /* Box out param: error */
   mrb_value error = (native_error == NULL ? mrb_nil_value() : mruby_giftwrap__GError(mrb, native_error));
 
   /* Add out params to results */
+  mrb_ary_push(mrb, results, bytes_read);
+  mrb_ary_push(mrb, results, bytes_written);
   mrb_ary_push(mrb, results, error);
 
   return results;
@@ -7898,9 +7877,9 @@ mrb_GLib_g_convert_error_quark(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_convert_with_fallback */
-/* sha: f64b3092e372eb19def6e19bf53467c78ed03637899c55665aed1ae30ff72a1f */
+/* sha: e7d4dc2ffe9164bebdcbb1d8875fd6b65b142978c171db11ee0a917091f90c72 */
 #if BIND_g_convert_with_fallback_FUNCTION
-#define g_convert_with_fallback_REQUIRED_ARGC 7
+#define g_convert_with_fallback_REQUIRED_ARGC 5
 #define g_convert_with_fallback_OPTIONAL_ARGC 0
 /* g_convert_with_fallback
  *
@@ -7910,8 +7889,6 @@ mrb_GLib_g_convert_error_quark(mrb_state* mrb, mrb_value self) {
  * - to_codeset: const gchar *
  * - from_codeset: const gchar *
  * - fallback: const gchar *
- * - bytes_read: gsize *
- * - bytes_written: gsize *
  * Return Type: gchar *
  */
 mrb_value
@@ -7922,35 +7899,30 @@ mrb_GLib_g_convert_with_fallback(mrb_state* mrb, mrb_value self) {
   char * native_to_codeset = NULL;
   char * native_from_codeset = NULL;
   char * native_fallback = NULL;
-  mrb_value bytes_read;
-  mrb_value bytes_written;
+  int native_bytes_read;
+  int native_bytes_written;
   struct GError * native_error = NULL;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "z!iz!z!z!oo", &native_str, &native_len, &native_to_codeset, &native_from_codeset, &native_fallback, &bytes_read, &bytes_written);
-
-  /* Type checking */
-  TODO_type_check_gsize_PTR(bytes_read);
-  TODO_type_check_gsize_PTR(bytes_written);
-
-  /* Unbox param: bytes_read */
-  gsize * native_bytes_read = TODO_mruby_unbox_gsize_PTR(bytes_read);
-
-  /* Unbox param: bytes_written */
-  gsize * native_bytes_written = TODO_mruby_unbox_gsize_PTR(bytes_written);
+  mrb_get_args(mrb, "z!iz!z!z!", &native_str, &native_len, &native_to_codeset, &native_from_codeset, &native_fallback);
 
   /* Invocation */
-  gchar * native_return_value = g_convert_with_fallback(native_str, native_len, native_to_codeset, native_from_codeset, native_fallback, native_bytes_read, native_bytes_written, &native_error);
+  gchar * native_return_value = g_convert_with_fallback(native_str, native_len, native_to_codeset, native_from_codeset, native_fallback, &native_bytes_read, &native_bytes_written, &native_error);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
-  g_free(native_return_value);
+  mrb_value return_value = TODO_mruby_box_gchar_PTR(mrb, native_return_value);
   mrb_ary_push(mrb, results, return_value);
   
+  /* Box out param: bytes_read */
+  mrb_value bytes_read = mrb_fixnum_value(native_bytes_read);
+  /* Box out param: bytes_written */
+  mrb_value bytes_written = mrb_fixnum_value(native_bytes_written);
   /* Box out param: error */
   mrb_value error = (native_error == NULL ? mrb_nil_value() : mruby_giftwrap__GError(mrb, native_error));
 
   /* Add out params to results */
+  mrb_ary_push(mrb, results, bytes_read);
+  mrb_ary_push(mrb, results, bytes_written);
   mrb_ary_push(mrb, results, error);
 
   return results;
@@ -7959,9 +7931,9 @@ mrb_GLib_g_convert_with_fallback(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_convert_with_iconv */
-/* sha: 4ccc3398cd9344ba7fc2456cb9d80a10fa9f3567b6cc4e301666488b4c812bd6 */
+/* sha: 86dd89edec9a9fc91bf6e74a62eff8c829bb430461781ffb359ff3df192e8f20 */
 #if BIND_g_convert_with_iconv_FUNCTION
-#define g_convert_with_iconv_REQUIRED_ARGC 5
+#define g_convert_with_iconv_REQUIRED_ARGC 3
 #define g_convert_with_iconv_OPTIONAL_ARGC 0
 /* g_convert_with_iconv
  *
@@ -7969,8 +7941,6 @@ mrb_GLib_g_convert_with_fallback(mrb_state* mrb, mrb_value self) {
  * - str: const gchar *
  * - len: gssize
  * - converter: GIConv
- * - bytes_read: gsize *
- * - bytes_written: gsize *
  * Return Type: gchar *
  */
 mrb_value
@@ -7979,39 +7949,36 @@ mrb_GLib_g_convert_with_iconv(mrb_state* mrb, mrb_value self) {
   char * native_str = NULL;
   mrb_int native_len;
   mrb_value converter;
-  mrb_value bytes_read;
-  mrb_value bytes_written;
+  int native_bytes_read;
+  int native_bytes_written;
   struct GError * native_error = NULL;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "z!iooo", &native_str, &native_len, &converter, &bytes_read, &bytes_written);
+  mrb_get_args(mrb, "z!io", &native_str, &native_len, &converter);
 
   /* Type checking */
   TODO_type_check_GIConv(converter);
-  TODO_type_check_gsize_PTR(bytes_read);
-  TODO_type_check_gsize_PTR(bytes_written);
 
   /* Unbox param: converter */
   GIConv native_converter = TODO_mruby_unbox_GIConv(converter);
 
-  /* Unbox param: bytes_read */
-  gsize * native_bytes_read = TODO_mruby_unbox_gsize_PTR(bytes_read);
-
-  /* Unbox param: bytes_written */
-  gsize * native_bytes_written = TODO_mruby_unbox_gsize_PTR(bytes_written);
-
   /* Invocation */
-  gchar * native_return_value = g_convert_with_iconv(native_str, native_len, native_converter, native_bytes_read, native_bytes_written, &native_error);
+  gchar * native_return_value = g_convert_with_iconv(native_str, native_len, native_converter, &native_bytes_read, &native_bytes_written, &native_error);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
-  g_free(native_return_value);
+  mrb_value return_value = TODO_mruby_box_gchar_PTR(mrb, native_return_value);
   mrb_ary_push(mrb, results, return_value);
   
+  /* Box out param: bytes_read */
+  mrb_value bytes_read = mrb_fixnum_value(native_bytes_read);
+  /* Box out param: bytes_written */
+  mrb_value bytes_written = mrb_fixnum_value(native_bytes_written);
   /* Box out param: error */
   mrb_value error = (native_error == NULL ? mrb_nil_value() : mruby_giftwrap__GError(mrb, native_error));
 
   /* Add out params to results */
+  mrb_ary_push(mrb, results, bytes_read);
+  mrb_ary_push(mrb, results, bytes_written);
   mrb_ary_push(mrb, results, error);
 
   return results;
@@ -10033,7 +10000,7 @@ mrb_GLib_g_date_set_year(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_date_strftime */
-/* sha: c8521906dcd3bf11ca3f89936c97dd8683e28c863700ec0a5d3ef7e936d4da26 */
+/* sha: 51f9717a3b69a637b62a248377a09268a68d33dea0d9c47465461f722dc5fb35 */
 #if BIND_g_date_strftime_FUNCTION
 #define g_date_strftime_REQUIRED_ARGC 4
 #define g_date_strftime_OPTIONAL_ARGC 0
@@ -10048,23 +10015,23 @@ mrb_GLib_g_date_set_year(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_date_strftime(mrb_state* mrb, mrb_value self) {
-  char * s = NULL;
+  mrb_value s;
   mrb_int native_slen;
   char * native_format = NULL;
   mrb_value date;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "z!iz!o", &s, &native_slen, &native_format, &date);
+  mrb_get_args(mrb, "oiz!o", &s, &native_slen, &native_format, &date);
 
   /* Type checking */
+  TODO_type_check_gchar_PTR(s);
   if (!mrb_obj_is_kind_of(mrb, date, GDate_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GDate expected");
     return mrb_nil_value();
   }
 
   /* Unbox param: s */
-  /* WARNING: String is strdup'ed to avoid mutable reference to internal MRuby memory */
-  char * native_s = strdup(s);
+  gchar * native_s = TODO_mruby_unbox_gchar_PTR(s);
 
   /* Unbox param: date */
   const GDate * native_date = (mrb_nil_p(date) ? NULL : mruby_unbox__GDate(date));
@@ -10075,11 +10042,6 @@ mrb_GLib_g_date_strftime(mrb_state* mrb, mrb_value self) {
   /* Box the return value */
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
-  /* Clean in param: s */
-  /* WARNING: Assuming that the new string can be deallocated after the function call. */
-  free(native_s);
-  native_s = NULL;
-
   return return_value;
 }
 #endif
@@ -10696,7 +10658,7 @@ mrb_GLib_g_date_time_equal(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_date_time_format */
-/* sha: f69406d403f09df8da718dda510258baf1a1487a48635919f380b1875b1ae355 */
+/* sha: ca12c80a445e16c0c98beb55141dca8baa1d6bacff9f06d841b7c4a5916775c6 */
 #if BIND_g_date_time_format_FUNCTION
 #define g_date_time_format_REQUIRED_ARGC 2
 #define g_date_time_format_OPTIONAL_ARGC 0
@@ -10728,8 +10690,7 @@ mrb_GLib_g_date_time_format(mrb_state* mrb, mrb_value self) {
   gchar * native_return_value = g_date_time_format(native_datetime, native_format);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
-  g_free(native_return_value);
+  mrb_value return_value = TODO_mruby_box_gchar_PTR(mrb, native_return_value);
   
   return return_value;
 }
@@ -11079,7 +11040,7 @@ mrb_GLib_g_date_time_get_seconds(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_date_time_get_timezone_abbreviation */
-/* sha: 532f517d1e0dbd231ed77187a4c5d97af9f66d6a18e37a5391279a2fad44c9c2 */
+/* sha: 13fcd05d68598090f919131a26455a0823b625889ddc07a4d351a9c2006fc126 */
 #if BIND_g_date_time_get_timezone_abbreviation_FUNCTION
 #define g_date_time_get_timezone_abbreviation_REQUIRED_ARGC 1
 #define g_date_time_get_timezone_abbreviation_OPTIONAL_ARGC 0
@@ -11109,7 +11070,7 @@ mrb_GLib_g_date_time_get_timezone_abbreviation(mrb_state* mrb, mrb_value self) {
   const gchar * native_return_value = g_date_time_get_timezone_abbreviation(native_datetime);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
+  mrb_value return_value = native_return_value == NULL ? mrb_nil_value() : mrb_str_new_cstr(mrb, native_return_value);
   
   return return_value;
 }
@@ -12279,7 +12240,7 @@ mrb_GLib_g_date_valid_year(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_dcgettext */
-/* sha: fed2c89b658eaea27c2ee223c9904b8806924f57a178533ae498daf0b629793b */
+/* sha: e244598ac60111cfa388fb6e8bc9cb9e25569595d47e4bee5b3552d54dd4bdc4 */
 #if BIND_g_dcgettext_FUNCTION
 #define g_dcgettext_REQUIRED_ARGC 3
 #define g_dcgettext_OPTIONAL_ARGC 0
@@ -12304,7 +12265,7 @@ mrb_GLib_g_dcgettext(mrb_state* mrb, mrb_value self) {
   const gchar * native_return_value = g_dcgettext(native_domain, native_msgid, native_category);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
+  mrb_value return_value = native_return_value == NULL ? mrb_nil_value() : mrb_str_new_cstr(mrb, native_return_value);
   
   return return_value;
 }
@@ -12312,7 +12273,7 @@ mrb_GLib_g_dcgettext(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_dgettext */
-/* sha: f078fea598afd5026338d6835d8f05c38eecf8238beaa1a238e3fa1633edc758 */
+/* sha: ecfcca84dc9ec932e8568ac7dc3a3d08064587fc61b3199c4c8d0853ca11bd9c */
 #if BIND_g_dgettext_FUNCTION
 #define g_dgettext_REQUIRED_ARGC 2
 #define g_dgettext_OPTIONAL_ARGC 0
@@ -12335,7 +12296,7 @@ mrb_GLib_g_dgettext(mrb_state* mrb, mrb_value self) {
   const gchar * native_return_value = g_dgettext(native_domain, native_msgid);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
+  mrb_value return_value = native_return_value == NULL ? mrb_nil_value() : mrb_str_new_cstr(mrb, native_return_value);
   
   return return_value;
 }
@@ -12378,7 +12339,7 @@ mrb_GLib_g_dir_close(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_dir_make_tmp */
-/* sha: 03b4ea20b60cf61af927b259d4e0671a264b8778b135a02c3ab0f2b4917bdc14 */
+/* sha: b173c759239ad816f075ac19fcf88150e0092d8bd0b24947fe6c1762f15917e6 */
 #if BIND_g_dir_make_tmp_FUNCTION
 #define g_dir_make_tmp_REQUIRED_ARGC 1
 #define g_dir_make_tmp_OPTIONAL_ARGC 0
@@ -12401,8 +12362,7 @@ mrb_GLib_g_dir_make_tmp(mrb_state* mrb, mrb_value self) {
   gchar * native_return_value = g_dir_make_tmp(native_tmpl, &native_error);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
-  g_free(native_return_value);
+  mrb_value return_value = TODO_mruby_box_gchar_PTR(mrb, native_return_value);
   mrb_ary_push(mrb, results, return_value);
   
   /* Box out param: error */
@@ -12457,7 +12417,7 @@ mrb_GLib_g_dir_open(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_dir_read_name */
-/* sha: 47122cc3a16de7bf5813cff2232f83e6a14da03b391f6f2089f6c59f67433a10 */
+/* sha: f9c8d66e2ad3aa0256695cc81514ba6359f82e21a90eb937510cdc570b10c20c */
 #if BIND_g_dir_read_name_FUNCTION
 #define g_dir_read_name_REQUIRED_ARGC 1
 #define g_dir_read_name_OPTIONAL_ARGC 0
@@ -12487,7 +12447,7 @@ mrb_GLib_g_dir_read_name(mrb_state* mrb, mrb_value self) {
   const gchar * native_return_value = g_dir_read_name(native_dir);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
+  mrb_value return_value = native_return_value == NULL ? mrb_nil_value() : mrb_str_new_cstr(mrb, native_return_value);
   
   return return_value;
 }
@@ -12606,7 +12566,7 @@ mrb_GLib_g_direct_hash(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_dngettext */
-/* sha: fb3230b211ef949b08fe8ef49a0934acea4be361cc06141c5b043f5e55f64ef8 */
+/* sha: 1fc19c7fb98fbbe9c940a2c8832b8c8c8fb9567768db9edba0a698a41a7f25bd */
 #if BIND_g_dngettext_FUNCTION
 #define g_dngettext_REQUIRED_ARGC 4
 #define g_dngettext_OPTIONAL_ARGC 0
@@ -12633,7 +12593,7 @@ mrb_GLib_g_dngettext(mrb_state* mrb, mrb_value self) {
   const gchar * native_return_value = g_dngettext(native_domain, native_msgid, native_msgid_plural, native_n);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
+  mrb_value return_value = native_return_value == NULL ? mrb_nil_value() : mrb_str_new_cstr(mrb, native_return_value);
   
   return return_value;
 }
@@ -12717,7 +12677,7 @@ mrb_GLib_g_double_hash(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_dpgettext */
-/* sha: f978dab46db8e91b241cbff18ecda7954b6549f6bf2ac380639d0d9eb7be3b0c */
+/* sha: 59552942fa56e421f2e3c785a5864a9a4952c948a7ede0b85687802c2234f3e7 */
 #if BIND_g_dpgettext_FUNCTION
 #define g_dpgettext_REQUIRED_ARGC 3
 #define g_dpgettext_OPTIONAL_ARGC 0
@@ -12742,7 +12702,7 @@ mrb_GLib_g_dpgettext(mrb_state* mrb, mrb_value self) {
   const gchar * native_return_value = g_dpgettext(native_domain, native_msgctxtid, native_msgidoffset);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
+  mrb_value return_value = native_return_value == NULL ? mrb_nil_value() : mrb_str_new_cstr(mrb, native_return_value);
   
   return return_value;
 }
@@ -12750,7 +12710,7 @@ mrb_GLib_g_dpgettext(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_dpgettext2 */
-/* sha: 5ca7d7c87430fed974383ccb5a0a4e69cd7feb361fad9baa53a6ff59a1d9d27f */
+/* sha: 40fa087fe0efc87f98a2de75ed6603496b8c3d1ec3c04976d8d53707768fd6b1 */
 #if BIND_g_dpgettext2_FUNCTION
 #define g_dpgettext2_REQUIRED_ARGC 3
 #define g_dpgettext2_OPTIONAL_ARGC 0
@@ -12775,7 +12735,7 @@ mrb_GLib_g_dpgettext2(mrb_state* mrb, mrb_value self) {
   const gchar * native_return_value = g_dpgettext2(native_domain, native_context, native_msgid);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
+  mrb_value return_value = native_return_value == NULL ? mrb_nil_value() : mrb_str_new_cstr(mrb, native_return_value);
   
   return return_value;
 }
@@ -12783,7 +12743,7 @@ mrb_GLib_g_dpgettext2(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_environ_getenv */
-/* sha: 2569355436764e178d972b92310e53a39fa70eb3737240094052f82054dcaa6e */
+/* sha: 21023f379611d366c0e636ac3424e503eb1e7fd31b0d454ebdb3ee16bc9e94b6 */
 #if BIND_g_environ_getenv_FUNCTION
 #define g_environ_getenv_REQUIRED_ARGC 2
 #define g_environ_getenv_OPTIONAL_ARGC 0
@@ -12812,7 +12772,7 @@ mrb_GLib_g_environ_getenv(mrb_state* mrb, mrb_value self) {
   const gchar * native_return_value = g_environ_getenv(native_envp, native_variable);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
+  mrb_value return_value = native_return_value == NULL ? mrb_nil_value() : mrb_str_new_cstr(mrb, native_return_value);
   
   return return_value;
 }
@@ -13260,7 +13220,7 @@ mrb_GLib_g_file_open_tmp(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_file_read_link */
-/* sha: 587e55847b1ee479dbd664fbc492183ae3dced4f5beb96b0a180e3374b1fe906 */
+/* sha: 07a20b967a82286c4e28d8c4f1c565b94399e0850ab0877e2add8ce55905fcf7 */
 #if BIND_g_file_read_link_FUNCTION
 #define g_file_read_link_REQUIRED_ARGC 1
 #define g_file_read_link_OPTIONAL_ARGC 0
@@ -13283,8 +13243,7 @@ mrb_GLib_g_file_read_link(mrb_state* mrb, mrb_value self) {
   gchar * native_return_value = g_file_read_link(native_filename, &native_error);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
-  g_free(native_return_value);
+  mrb_value return_value = TODO_mruby_box_gchar_PTR(mrb, native_return_value);
   mrb_ary_push(mrb, results, return_value);
   
   /* Box out param: error */
@@ -13372,7 +13331,7 @@ mrb_GLib_g_file_test(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_filename_display_basename */
-/* sha: df512575271655582ae3f7278798ed481506b57f4e37a6688907fcca0143b7c3 */
+/* sha: 5203ed9ef72eff88af32273ee563fec6bdf534dd5859435257a529664a611da9 */
 #if BIND_g_filename_display_basename_FUNCTION
 #define g_filename_display_basename_REQUIRED_ARGC 1
 #define g_filename_display_basename_OPTIONAL_ARGC 0
@@ -13393,8 +13352,7 @@ mrb_GLib_g_filename_display_basename(mrb_state* mrb, mrb_value self) {
   gchar * native_return_value = g_filename_display_basename(native_filename);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
-  g_free(native_return_value);
+  mrb_value return_value = TODO_mruby_box_gchar_PTR(mrb, native_return_value);
   
   return return_value;
 }
@@ -13402,7 +13360,7 @@ mrb_GLib_g_filename_display_basename(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_filename_display_name */
-/* sha: bb6424df00750e7e83611ec9bd706208934746bcbe5bb6ed626e89a812464515 */
+/* sha: 1e6f3ac5135c4281b528a32c3a18059819624e5b7c5b2f3fa2a329317604e584 */
 #if BIND_g_filename_display_name_FUNCTION
 #define g_filename_display_name_REQUIRED_ARGC 1
 #define g_filename_display_name_OPTIONAL_ARGC 0
@@ -13423,8 +13381,7 @@ mrb_GLib_g_filename_display_name(mrb_state* mrb, mrb_value self) {
   gchar * native_return_value = g_filename_display_name(native_filename);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
-  g_free(native_return_value);
+  mrb_value return_value = TODO_mruby_box_gchar_PTR(mrb, native_return_value);
   
   return return_value;
 }
@@ -13432,7 +13389,7 @@ mrb_GLib_g_filename_display_name(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_filename_from_uri */
-/* sha: f62b5a6fb823d25ae0ae43e3bbcf7cbdea5ae9f1e997db555f1846ad0e94d887 */
+/* sha: 5dc67709474a8d8e90e91c32c699c592600e4267848c43199d9c1198f732ff50 */
 #if BIND_g_filename_from_uri_FUNCTION
 #define g_filename_from_uri_REQUIRED_ARGC 2
 #define g_filename_from_uri_OPTIONAL_ARGC 0
@@ -13463,8 +13420,7 @@ mrb_GLib_g_filename_from_uri(mrb_state* mrb, mrb_value self) {
   gchar * native_return_value = g_filename_from_uri(native_uri, native_hostname, &native_error);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
-  g_free(native_return_value);
+  mrb_value return_value = TODO_mruby_box_gchar_PTR(mrb, native_return_value);
   mrb_ary_push(mrb, results, return_value);
   
   /* Box out param: error */
@@ -13479,17 +13435,15 @@ mrb_GLib_g_filename_from_uri(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_filename_from_utf8 */
-/* sha: a6f10d705084729fa9ddcf1136fe995cd27e63881ddef4c9727694a119ebd890 */
+/* sha: 6310e0526c42d253a6cfd5eacb2aee6255ad214b9f71115cb9edf63f278b7f35 */
 #if BIND_g_filename_from_utf8_FUNCTION
-#define g_filename_from_utf8_REQUIRED_ARGC 4
+#define g_filename_from_utf8_REQUIRED_ARGC 2
 #define g_filename_from_utf8_OPTIONAL_ARGC 0
 /* g_filename_from_utf8
  *
  * Parameters:
  * - utf8string: const gchar *
  * - len: gssize
- * - bytes_read: gsize *
- * - bytes_written: gsize *
  * Return Type: gchar *
  */
 mrb_value
@@ -13497,35 +13451,30 @@ mrb_GLib_g_filename_from_utf8(mrb_state* mrb, mrb_value self) {
   mrb_value results = mrb_ary_new(mrb);
   char * native_utf8string = NULL;
   mrb_int native_len;
-  mrb_value bytes_read;
-  mrb_value bytes_written;
+  int native_bytes_read;
+  int native_bytes_written;
   struct GError * native_error = NULL;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "z!ioo", &native_utf8string, &native_len, &bytes_read, &bytes_written);
-
-  /* Type checking */
-  TODO_type_check_gsize_PTR(bytes_read);
-  TODO_type_check_gsize_PTR(bytes_written);
-
-  /* Unbox param: bytes_read */
-  gsize * native_bytes_read = TODO_mruby_unbox_gsize_PTR(bytes_read);
-
-  /* Unbox param: bytes_written */
-  gsize * native_bytes_written = TODO_mruby_unbox_gsize_PTR(bytes_written);
+  mrb_get_args(mrb, "z!i", &native_utf8string, &native_len);
 
   /* Invocation */
-  gchar * native_return_value = g_filename_from_utf8(native_utf8string, native_len, native_bytes_read, native_bytes_written, &native_error);
+  gchar * native_return_value = g_filename_from_utf8(native_utf8string, native_len, &native_bytes_read, &native_bytes_written, &native_error);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
-  g_free(native_return_value);
+  mrb_value return_value = TODO_mruby_box_gchar_PTR(mrb, native_return_value);
   mrb_ary_push(mrb, results, return_value);
   
+  /* Box out param: bytes_read */
+  mrb_value bytes_read = mrb_fixnum_value(native_bytes_read);
+  /* Box out param: bytes_written */
+  mrb_value bytes_written = mrb_fixnum_value(native_bytes_written);
   /* Box out param: error */
   mrb_value error = (native_error == NULL ? mrb_nil_value() : mruby_giftwrap__GError(mrb, native_error));
 
   /* Add out params to results */
+  mrb_ary_push(mrb, results, bytes_read);
+  mrb_ary_push(mrb, results, bytes_written);
   mrb_ary_push(mrb, results, error);
 
   return results;
@@ -13534,7 +13483,7 @@ mrb_GLib_g_filename_from_utf8(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_filename_to_uri */
-/* sha: a30a0bbbc9e9e7faaed55829c00529c2a84ae717ab8feaec942ec3b2eb0eed57 */
+/* sha: d3b8800a78c6edc2eabdc9af4ed6eb38d70a50bd2fcc25784bef9b7636cc733e */
 #if BIND_g_filename_to_uri_FUNCTION
 #define g_filename_to_uri_REQUIRED_ARGC 2
 #define g_filename_to_uri_OPTIONAL_ARGC 0
@@ -13553,7 +13502,7 @@ mrb_GLib_g_filename_to_uri(mrb_state* mrb, mrb_value self) {
   struct GError * native_error = NULL;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "z!z!", &native_filename, &native_hostname);
+  mrb_get_args(mrb, "zz", &native_filename, &native_hostname);
 
   /* Invocation */
   gchar * native_return_value = g_filename_to_uri(native_filename, native_hostname, &native_error);
@@ -13575,17 +13524,15 @@ mrb_GLib_g_filename_to_uri(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_filename_to_utf8 */
-/* sha: d7a7f4c7c0e7ca33de32337ba407cc71b20bb028f2acc22ca62693976788cd7f */
+/* sha: 0cf7387e3592ac153c16b6394b4af5a2c6e1f59fbb81a8ae8018724eefe3396f */
 #if BIND_g_filename_to_utf8_FUNCTION
-#define g_filename_to_utf8_REQUIRED_ARGC 4
+#define g_filename_to_utf8_REQUIRED_ARGC 2
 #define g_filename_to_utf8_OPTIONAL_ARGC 0
 /* g_filename_to_utf8
  *
  * Parameters:
  * - opsysstring: const gchar *
  * - len: gssize
- * - bytes_read: gsize *
- * - bytes_written: gsize *
  * Return Type: gchar *
  */
 mrb_value
@@ -13593,35 +13540,30 @@ mrb_GLib_g_filename_to_utf8(mrb_state* mrb, mrb_value self) {
   mrb_value results = mrb_ary_new(mrb);
   char * native_opsysstring = NULL;
   mrb_int native_len;
-  mrb_value bytes_read;
-  mrb_value bytes_written;
+  int native_bytes_read;
+  int native_bytes_written;
   struct GError * native_error = NULL;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "z!ioo", &native_opsysstring, &native_len, &bytes_read, &bytes_written);
-
-  /* Type checking */
-  TODO_type_check_gsize_PTR(bytes_read);
-  TODO_type_check_gsize_PTR(bytes_written);
-
-  /* Unbox param: bytes_read */
-  gsize * native_bytes_read = TODO_mruby_unbox_gsize_PTR(bytes_read);
-
-  /* Unbox param: bytes_written */
-  gsize * native_bytes_written = TODO_mruby_unbox_gsize_PTR(bytes_written);
+  mrb_get_args(mrb, "z!i", &native_opsysstring, &native_len);
 
   /* Invocation */
-  gchar * native_return_value = g_filename_to_utf8(native_opsysstring, native_len, native_bytes_read, native_bytes_written, &native_error);
+  gchar * native_return_value = g_filename_to_utf8(native_opsysstring, native_len, &native_bytes_read, &native_bytes_written, &native_error);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
-  g_free(native_return_value);
+  mrb_value return_value = TODO_mruby_box_gchar_PTR(mrb, native_return_value);
   mrb_ary_push(mrb, results, return_value);
   
+  /* Box out param: bytes_read */
+  mrb_value bytes_read = mrb_fixnum_value(native_bytes_read);
+  /* Box out param: bytes_written */
+  mrb_value bytes_written = mrb_fixnum_value(native_bytes_written);
   /* Box out param: error */
   mrb_value error = (native_error == NULL ? mrb_nil_value() : mruby_giftwrap__GError(mrb, native_error));
 
   /* Add out params to results */
+  mrb_ary_push(mrb, results, bytes_read);
+  mrb_ary_push(mrb, results, bytes_written);
   mrb_ary_push(mrb, results, error);
 
   return results;
@@ -13630,7 +13572,7 @@ mrb_GLib_g_filename_to_utf8(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_find_program_in_path */
-/* sha: b8cb648cdac5af5a42ab6a12d31af51e84e5939c5491a251ae7fb16b635ee55e */
+/* sha: 66f82aea4c110fbc60879737753efb02b441e126fe9d51c871ddcc7c73f45bdc */
 #if BIND_g_find_program_in_path_FUNCTION
 #define g_find_program_in_path_REQUIRED_ARGC 1
 #define g_find_program_in_path_OPTIONAL_ARGC 0
@@ -13645,13 +13587,13 @@ mrb_GLib_g_find_program_in_path(mrb_state* mrb, mrb_value self) {
   char * native_program = NULL;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "z!", &native_program);
+  mrb_get_args(mrb, "z", &native_program);
 
   /* Invocation */
   gchar * native_return_value = g_find_program_in_path(native_program);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
+  mrb_value return_value = native_return_value == NULL ? mrb_nil_value() : mrb_str_new_cstr(mrb, native_return_value);
   g_free(native_return_value);
   
   return return_value;
@@ -13660,7 +13602,7 @@ mrb_GLib_g_find_program_in_path(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_format_size */
-/* sha: 03a263249f19ef6ac7deed125b4dd06b6a27ae27b972eced6fec9e973eef1f15 */
+/* sha: 5246f244b00f027505f37a89fa6cb46c0f2db3f28200d21192297a297abf809c */
 #if BIND_g_format_size_FUNCTION
 #define g_format_size_REQUIRED_ARGC 1
 #define g_format_size_OPTIONAL_ARGC 0
@@ -13681,8 +13623,7 @@ mrb_GLib_g_format_size(mrb_state* mrb, mrb_value self) {
   gchar * native_return_value = g_format_size(native_size);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
-  g_free(native_return_value);
+  mrb_value return_value = TODO_mruby_box_gchar_PTR(mrb, native_return_value);
   
   return return_value;
 }
@@ -13690,7 +13631,7 @@ mrb_GLib_g_format_size(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_format_size_for_display */
-/* sha: 7f8ae13ed6c563eaadd890b40b16fd7f9b70621cf7f4b67ff114da2084a63bfd */
+/* sha: b9cc0e8bea6104f43207f15e3fe68cca33f2a3b66e55c95786faef831d1178eb */
 #if BIND_g_format_size_for_display_FUNCTION
 #define g_format_size_for_display_REQUIRED_ARGC 1
 #define g_format_size_for_display_OPTIONAL_ARGC 0
@@ -13711,8 +13652,7 @@ mrb_GLib_g_format_size_for_display(mrb_state* mrb, mrb_value self) {
   gchar * native_return_value = g_format_size_for_display(native_size);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
-  g_free(native_return_value);
+  mrb_value return_value = TODO_mruby_box_gchar_PTR(mrb, native_return_value);
   
   return return_value;
 }
@@ -13720,7 +13660,7 @@ mrb_GLib_g_format_size_for_display(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_format_size_full */
-/* sha: 9617244ec1df06a265762f2bb2b39f65e0edc6552bf094151406a1092c9b9fdf */
+/* sha: c2722ddf05cd51011bfddfead8889e80708d88704c35e2cd896b5ee31b1b082a */
 #if BIND_g_format_size_full_FUNCTION
 #define g_format_size_full_REQUIRED_ARGC 2
 #define g_format_size_full_OPTIONAL_ARGC 0
@@ -13743,8 +13683,7 @@ mrb_GLib_g_format_size_full(mrb_state* mrb, mrb_value self) {
   gchar * native_return_value = g_format_size_full(native_size, native_flags);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
-  g_free(native_return_value);
+  mrb_value return_value = TODO_mruby_box_gchar_PTR(mrb, native_return_value);
   
   return return_value;
 }
@@ -13821,7 +13760,7 @@ mrb_GLib_g_free(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_get_application_name */
-/* sha: e4148d9d3f781bf8ccc7731873ff1e3567e5ea136ad5108cd6e9c8ae331d26c6 */
+/* sha: eb94c1e55415459ac84b774125a06660cd7fff65a750f9f814945493eeadbbb0 */
 #if BIND_g_get_application_name_FUNCTION
 #define g_get_application_name_REQUIRED_ARGC 0
 #define g_get_application_name_OPTIONAL_ARGC 0
@@ -13836,7 +13775,7 @@ mrb_GLib_g_get_application_name(mrb_state* mrb, mrb_value self) {
   const gchar * native_return_value = g_get_application_name();
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
+  mrb_value return_value = native_return_value == NULL ? mrb_nil_value() : mrb_str_new_cstr(mrb, native_return_value);
   
   return return_value;
 }
@@ -13879,7 +13818,7 @@ mrb_GLib_g_get_charset(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_get_codeset */
-/* sha: e57417b6464a7208798a590079a0069873fbbf9d0057281e82503da1eb9a8a45 */
+/* sha: f558a2b5c564e6ac9b9e278f006d548a572462cdd9e7f2b577f8525f478a3f4d */
 #if BIND_g_get_codeset_FUNCTION
 #define g_get_codeset_REQUIRED_ARGC 0
 #define g_get_codeset_OPTIONAL_ARGC 0
@@ -13894,8 +13833,7 @@ mrb_GLib_g_get_codeset(mrb_state* mrb, mrb_value self) {
   gchar * native_return_value = g_get_codeset();
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
-  g_free(native_return_value);
+  mrb_value return_value = TODO_mruby_box_gchar_PTR(mrb, native_return_value);
   
   return return_value;
 }
@@ -13903,7 +13841,7 @@ mrb_GLib_g_get_codeset(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_get_current_dir */
-/* sha: 7ba5c4bdda99ab34431a4fd0d2cbac71b1d80859835107b3b1cbed3b6d70f349 */
+/* sha: 48c8ef6cbcfc160a5b2515a312596b478e8acc37bea90adf246c2e7f108f876a */
 #if BIND_g_get_current_dir_FUNCTION
 #define g_get_current_dir_REQUIRED_ARGC 0
 #define g_get_current_dir_OPTIONAL_ARGC 0
@@ -14020,7 +13958,7 @@ mrb_GLib_g_get_filename_charsets(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_get_home_dir */
-/* sha: 2b5de14edd921ee3026d04e10038f0e0fe96d8fc77ffe417a04afeba0e0c279a */
+/* sha: 96139dcd214fc1eb48fda2fa4bf106a6cb012bde2dd2150011b1c7d9f50264f4 */
 #if BIND_g_get_home_dir_FUNCTION
 #define g_get_home_dir_REQUIRED_ARGC 0
 #define g_get_home_dir_OPTIONAL_ARGC 0
@@ -14035,7 +13973,7 @@ mrb_GLib_g_get_home_dir(mrb_state* mrb, mrb_value self) {
   const gchar * native_return_value = g_get_home_dir();
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
+  mrb_value return_value = native_return_value == NULL ? mrb_nil_value() : mrb_str_new_cstr(mrb, native_return_value);
   
   return return_value;
 }
@@ -14043,7 +13981,7 @@ mrb_GLib_g_get_home_dir(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_get_host_name */
-/* sha: 158b55e7fb75fe26cd9407911d5a86760e80aaf3b29c183ceebe20d2bb3d84d3 */
+/* sha: 1a280993224980a74d86fe0e42dfe354d4ce0f0b4031630f156a6d8308c8da7d */
 #if BIND_g_get_host_name_FUNCTION
 #define g_get_host_name_REQUIRED_ARGC 0
 #define g_get_host_name_OPTIONAL_ARGC 0
@@ -14058,7 +13996,7 @@ mrb_GLib_g_get_host_name(mrb_state* mrb, mrb_value self) {
   const gchar * native_return_value = g_get_host_name();
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
+  mrb_value return_value = native_return_value == NULL ? mrb_nil_value() : mrb_str_new_cstr(mrb, native_return_value);
   
   return return_value;
 }
@@ -14164,7 +14102,7 @@ mrb_GLib_g_get_num_processors(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_get_prgname */
-/* sha: ebb46f54c6196b76d69151f0440fb13e03794ef68f75fa73c6c76adb6426ca79 */
+/* sha: fd3c8f8e8f5463059b6916b9ce79c69e6a39fb1d5b2dc1d763513c2598d5f7ef */
 #if BIND_g_get_prgname_FUNCTION
 #define g_get_prgname_REQUIRED_ARGC 0
 #define g_get_prgname_OPTIONAL_ARGC 0
@@ -14179,7 +14117,7 @@ mrb_GLib_g_get_prgname(mrb_state* mrb, mrb_value self) {
   const gchar * native_return_value = g_get_prgname();
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
+  mrb_value return_value = native_return_value == NULL ? mrb_nil_value() : mrb_str_new_cstr(mrb, native_return_value);
   
   return return_value;
 }
@@ -14187,7 +14125,7 @@ mrb_GLib_g_get_prgname(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_get_real_name */
-/* sha: b89adbcd353f05b795fd714a6499e78cd0d45176789d08227482ed8d6ac010df */
+/* sha: 5b00e66173c61b2af57514d6b085b0af04ee69bde82e8716944a4099af3fbfb7 */
 #if BIND_g_get_real_name_FUNCTION
 #define g_get_real_name_REQUIRED_ARGC 0
 #define g_get_real_name_OPTIONAL_ARGC 0
@@ -14202,7 +14140,7 @@ mrb_GLib_g_get_real_name(mrb_state* mrb, mrb_value self) {
   const gchar * native_return_value = g_get_real_name();
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
+  mrb_value return_value = native_return_value == NULL ? mrb_nil_value() : mrb_str_new_cstr(mrb, native_return_value);
   
   return return_value;
 }
@@ -14279,7 +14217,7 @@ mrb_GLib_g_get_system_data_dirs(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_get_tmp_dir */
-/* sha: 58170fdd02aa1bd9689d2bc0199219a3fe6f1ceb1e0b4b501bb8a6991342fe55 */
+/* sha: 0fd7546faae421476f8eac741d2c0d99d456d71cb33cf6c8619636e1a0a4ebce */
 #if BIND_g_get_tmp_dir_FUNCTION
 #define g_get_tmp_dir_REQUIRED_ARGC 0
 #define g_get_tmp_dir_OPTIONAL_ARGC 0
@@ -14294,7 +14232,7 @@ mrb_GLib_g_get_tmp_dir(mrb_state* mrb, mrb_value self) {
   const gchar * native_return_value = g_get_tmp_dir();
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
+  mrb_value return_value = native_return_value == NULL ? mrb_nil_value() : mrb_str_new_cstr(mrb, native_return_value);
   
   return return_value;
 }
@@ -14302,7 +14240,7 @@ mrb_GLib_g_get_tmp_dir(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_get_user_cache_dir */
-/* sha: 1f187a4e4f2a2ac516e4e93552be2e7cf1f7b5c1358cb84818298055f437a429 */
+/* sha: f68a9131675c0ef3033606f216d91551c378ab251b73380cd4698a3174ffc14d */
 #if BIND_g_get_user_cache_dir_FUNCTION
 #define g_get_user_cache_dir_REQUIRED_ARGC 0
 #define g_get_user_cache_dir_OPTIONAL_ARGC 0
@@ -14317,7 +14255,7 @@ mrb_GLib_g_get_user_cache_dir(mrb_state* mrb, mrb_value self) {
   const gchar * native_return_value = g_get_user_cache_dir();
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
+  mrb_value return_value = native_return_value == NULL ? mrb_nil_value() : mrb_str_new_cstr(mrb, native_return_value);
   
   return return_value;
 }
@@ -14325,7 +14263,7 @@ mrb_GLib_g_get_user_cache_dir(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_get_user_config_dir */
-/* sha: 0efe203b7cdaa7ffc2bad019de7e22e7134686161dcb9cd01dfec531e2c3ba98 */
+/* sha: 690e745328259fe8d28a118a0a48ee403aceb3bec1ef5d708c5c4f36c50d5383 */
 #if BIND_g_get_user_config_dir_FUNCTION
 #define g_get_user_config_dir_REQUIRED_ARGC 0
 #define g_get_user_config_dir_OPTIONAL_ARGC 0
@@ -14340,7 +14278,7 @@ mrb_GLib_g_get_user_config_dir(mrb_state* mrb, mrb_value self) {
   const gchar * native_return_value = g_get_user_config_dir();
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
+  mrb_value return_value = native_return_value == NULL ? mrb_nil_value() : mrb_str_new_cstr(mrb, native_return_value);
   
   return return_value;
 }
@@ -14348,7 +14286,7 @@ mrb_GLib_g_get_user_config_dir(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_get_user_data_dir */
-/* sha: 5fbfc951d292a0cec7f675b52cb3677d315b84b58fed72fc177e74b0041899e6 */
+/* sha: 7c75178694c67399f53c5f36d212ab5ecf09996336ce981f4b242d31470a76ed */
 #if BIND_g_get_user_data_dir_FUNCTION
 #define g_get_user_data_dir_REQUIRED_ARGC 0
 #define g_get_user_data_dir_OPTIONAL_ARGC 0
@@ -14363,7 +14301,7 @@ mrb_GLib_g_get_user_data_dir(mrb_state* mrb, mrb_value self) {
   const gchar * native_return_value = g_get_user_data_dir();
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
+  mrb_value return_value = native_return_value == NULL ? mrb_nil_value() : mrb_str_new_cstr(mrb, native_return_value);
   
   return return_value;
 }
@@ -14371,7 +14309,7 @@ mrb_GLib_g_get_user_data_dir(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_get_user_name */
-/* sha: d6ed50c720c8b4125a4049cd529ab89761c97049d8236123dad1dc98c570e7e5 */
+/* sha: 3e06b5b70f53391ba5c677ebfae67c24a321ce957c134b4f4c357722dd135ab8 */
 #if BIND_g_get_user_name_FUNCTION
 #define g_get_user_name_REQUIRED_ARGC 0
 #define g_get_user_name_OPTIONAL_ARGC 0
@@ -14386,7 +14324,7 @@ mrb_GLib_g_get_user_name(mrb_state* mrb, mrb_value self) {
   const gchar * native_return_value = g_get_user_name();
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
+  mrb_value return_value = native_return_value == NULL ? mrb_nil_value() : mrb_str_new_cstr(mrb, native_return_value);
   
   return return_value;
 }
@@ -14394,7 +14332,7 @@ mrb_GLib_g_get_user_name(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_get_user_runtime_dir */
-/* sha: 736cbe6535bde0851393117b888a5a796f287d99f0d4388e0b50e9c443564700 */
+/* sha: f1af8caaa627e5f220930746ca7c26be1e6abab51777066838d0b4d88a66c442 */
 #if BIND_g_get_user_runtime_dir_FUNCTION
 #define g_get_user_runtime_dir_REQUIRED_ARGC 0
 #define g_get_user_runtime_dir_OPTIONAL_ARGC 0
@@ -14409,7 +14347,7 @@ mrb_GLib_g_get_user_runtime_dir(mrb_state* mrb, mrb_value self) {
   const gchar * native_return_value = g_get_user_runtime_dir();
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
+  mrb_value return_value = native_return_value == NULL ? mrb_nil_value() : mrb_str_new_cstr(mrb, native_return_value);
   
   return return_value;
 }
@@ -14417,7 +14355,7 @@ mrb_GLib_g_get_user_runtime_dir(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_get_user_special_dir */
-/* sha: 60ccf941d1b81f7fad1899f4e713011b3a2e82c6809bb3e9a609fb62708aded0 */
+/* sha: 819fb1182bf596dad58e3abfc466519d4d2f7d45b2a639ce8bb1b14569076abb */
 #if BIND_g_get_user_special_dir_FUNCTION
 #define g_get_user_special_dir_REQUIRED_ARGC 1
 #define g_get_user_special_dir_OPTIONAL_ARGC 0
@@ -14438,7 +14376,7 @@ mrb_GLib_g_get_user_special_dir(mrb_state* mrb, mrb_value self) {
   const gchar * native_return_value = g_get_user_special_dir(native_directory);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
+  mrb_value return_value = native_return_value == NULL ? mrb_nil_value() : mrb_str_new_cstr(mrb, native_return_value);
   
   return return_value;
 }
@@ -14446,7 +14384,7 @@ mrb_GLib_g_get_user_special_dir(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_getenv */
-/* sha: e3541949f8d444439e3f4639df0ae854a60ba2636e7fff42eefc6733ad8232db */
+/* sha: fe0a832898e286d6f2466bac99f832c99f945f0e41a582495033c0033bb82b32 */
 #if BIND_g_getenv_FUNCTION
 #define g_getenv_REQUIRED_ARGC 1
 #define g_getenv_OPTIONAL_ARGC 0
@@ -14467,7 +14405,7 @@ mrb_GLib_g_getenv(mrb_state* mrb, mrb_value self) {
   const gchar * native_return_value = g_getenv(native_variable);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
+  mrb_value return_value = native_return_value == NULL ? mrb_nil_value() : mrb_str_new_cstr(mrb, native_return_value);
   
   return return_value;
 }
@@ -15759,26 +15697,25 @@ mrb_GLib_g_hmac_copy(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_hmac_get_digest */
-/* sha: 92002b7fa831030119faa73f3adcdbaefac1af643799528e2e796ac727c83aa4 */
+/* sha: c87d38ef0610cabd0f32e4282bfb6c34a016e5f376256f0ffd30f273ea8282e5 */
 #if BIND_g_hmac_get_digest_FUNCTION
-#define g_hmac_get_digest_REQUIRED_ARGC 3
+#define g_hmac_get_digest_REQUIRED_ARGC 2
 #define g_hmac_get_digest_OPTIONAL_ARGC 0
 /* g_hmac_get_digest
  *
  * Parameters:
  * - hmac: GHmac *
  * - buffer: guint8 *
- * - digest_len: gsize *
  * Return Type: void
  */
 mrb_value
 mrb_GLib_g_hmac_get_digest(mrb_state* mrb, mrb_value self) {
   mrb_value hmac;
   mrb_value buffer;
-  mrb_value digest_len;
+  int native_digest_len;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "ooo", &hmac, &buffer, &digest_len);
+  mrb_get_args(mrb, "oo", &hmac, &buffer);
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, hmac, GHmac_class(mrb))) {
@@ -15786,7 +15723,6 @@ mrb_GLib_g_hmac_get_digest(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
   TODO_type_check_guint8_PTR(buffer);
-  TODO_type_check_gsize_PTR(digest_len);
 
   /* Unbox param: hmac */
   GHmac * native_hmac = (mrb_nil_p(hmac) ? NULL : mruby_unbox__GHmac(hmac));
@@ -15794,19 +15730,19 @@ mrb_GLib_g_hmac_get_digest(mrb_state* mrb, mrb_value self) {
   /* Unbox param: buffer */
   guint8 * native_buffer = TODO_mruby_unbox_guint8_PTR(buffer);
 
-  /* Unbox param: digest_len */
-  gsize * native_digest_len = TODO_mruby_unbox_gsize_PTR(digest_len);
-
   /* Invocation */
-  g_hmac_get_digest(native_hmac, native_buffer, native_digest_len);
+  g_hmac_get_digest(native_hmac, native_buffer, &native_digest_len);
 
-  return mrb_nil_value();
+  /* Box out param: digest_len */
+  mrb_value digest_len = mrb_fixnum_value(native_digest_len);
+
+  return digest_len;
 }
 #endif
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_hmac_get_string */
-/* sha: c84abcbcc348076488f11cea9a76d031436fb2335b24cf527f26000866c069bd */
+/* sha: 218a38cbefa9dd47e0cfbb08860dcdca90c0d03426d7775a003f0cf2d3dfc020 */
 #if BIND_g_hmac_get_string_FUNCTION
 #define g_hmac_get_string_REQUIRED_ARGC 1
 #define g_hmac_get_string_OPTIONAL_ARGC 0
@@ -15836,7 +15772,7 @@ mrb_GLib_g_hmac_get_string(mrb_state* mrb, mrb_value self) {
   const gchar * native_return_value = g_hmac_get_string(native_hmac);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
+  mrb_value return_value = native_return_value == NULL ? mrb_nil_value() : mrb_str_new_cstr(mrb, native_return_value);
   
   return return_value;
 }
@@ -17106,7 +17042,7 @@ mrb_GLib_g_hostname_is_non_ascii(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_hostname_to_ascii */
-/* sha: b07ee37f85d29fcc92513b5d79eb8d12ced05dec8bde4e6bd9132f4bba5c2c78 */
+/* sha: 803a9f35bd869d65b9e15fb1131b46ea5d0f15b8ecd07a0269307fd7317083e5 */
 #if BIND_g_hostname_to_ascii_FUNCTION
 #define g_hostname_to_ascii_REQUIRED_ARGC 1
 #define g_hostname_to_ascii_OPTIONAL_ARGC 0
@@ -17127,8 +17063,7 @@ mrb_GLib_g_hostname_to_ascii(mrb_state* mrb, mrb_value self) {
   gchar * native_return_value = g_hostname_to_ascii(native_hostname);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
-  g_free(native_return_value);
+  mrb_value return_value = TODO_mruby_box_gchar_PTR(mrb, native_return_value);
   
   return return_value;
 }
@@ -17136,7 +17071,7 @@ mrb_GLib_g_hostname_to_ascii(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_hostname_to_unicode */
-/* sha: 26a154789ac0fddc70e84220438b23f437af5803c3e8cfdf66bd05f7b015c54b */
+/* sha: 4f2144f2860ae009a918b7202310449b97089f2c039d64dc56f72c64738fe076 */
 #if BIND_g_hostname_to_unicode_FUNCTION
 #define g_hostname_to_unicode_REQUIRED_ARGC 1
 #define g_hostname_to_unicode_OPTIONAL_ARGC 0
@@ -17157,8 +17092,7 @@ mrb_GLib_g_hostname_to_unicode(mrb_state* mrb, mrb_value self) {
   gchar * native_return_value = g_hostname_to_unicode(native_hostname);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
-  g_free(native_return_value);
+  mrb_value return_value = TODO_mruby_box_gchar_PTR(mrb, native_return_value);
   
   return return_value;
 }
@@ -17166,37 +17100,34 @@ mrb_GLib_g_hostname_to_unicode(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_iconv */
-/* sha: d4a0ddb01175c9bf58f484b87e1a41f746d276e3ccd3eeffbd11f2e61eb6999e */
+/* sha: ef51183f7a4ba104fff6c70764321ae8cabd5be8953aa0a88151034f23c80a10 */
 #if BIND_g_iconv_FUNCTION
-#define g_iconv_REQUIRED_ARGC 5
+#define g_iconv_REQUIRED_ARGC 3
 #define g_iconv_OPTIONAL_ARGC 0
 /* g_iconv
  *
  * Parameters:
  * - converter: GIConv
  * - inbuf: gchar **
- * - inbytes_left: gsize *
  * - outbuf: gchar **
- * - outbytes_left: gsize *
  * Return Type: gsize
  */
 mrb_value
 mrb_GLib_g_iconv(mrb_state* mrb, mrb_value self) {
+  mrb_value results = mrb_ary_new(mrb);
   mrb_value converter;
   mrb_value inbuf;
-  mrb_value inbytes_left;
+  int native_inbytes_left;
   mrb_value outbuf;
-  mrb_value outbytes_left;
+  int native_outbytes_left;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "ooooo", &converter, &inbuf, &inbytes_left, &outbuf, &outbytes_left);
+  mrb_get_args(mrb, "ooo", &converter, &inbuf, &outbuf);
 
   /* Type checking */
   TODO_type_check_GIConv(converter);
   TODO_type_check_gchar_PTR_PTR(inbuf);
-  TODO_type_check_gsize_PTR(inbytes_left);
   TODO_type_check_gchar_PTR_PTR(outbuf);
-  TODO_type_check_gsize_PTR(outbytes_left);
 
   /* Unbox param: converter */
   GIConv native_converter = TODO_mruby_unbox_GIConv(converter);
@@ -17204,22 +17135,26 @@ mrb_GLib_g_iconv(mrb_state* mrb, mrb_value self) {
   /* Unbox param: inbuf */
   gchar ** native_inbuf = TODO_mruby_unbox_gchar_PTR_PTR(inbuf);
 
-  /* Unbox param: inbytes_left */
-  gsize * native_inbytes_left = TODO_mruby_unbox_gsize_PTR(inbytes_left);
-
   /* Unbox param: outbuf */
   gchar ** native_outbuf = TODO_mruby_unbox_gchar_PTR_PTR(outbuf);
 
-  /* Unbox param: outbytes_left */
-  gsize * native_outbytes_left = TODO_mruby_unbox_gsize_PTR(outbytes_left);
-
   /* Invocation */
-  gsize native_return_value = g_iconv(native_converter, native_inbuf, native_inbytes_left, native_outbuf, native_outbytes_left);
+  gsize native_return_value = g_iconv(native_converter, native_inbuf, &native_inbytes_left, native_outbuf, &native_outbytes_left);
 
   /* Box the return value */
   mrb_value return_value = mrb_fixnum_value(native_return_value);
+  mrb_ary_push(mrb, results, return_value);
   
-  return return_value;
+  /* Box out param: inbytes_left */
+  mrb_value inbytes_left = mrb_fixnum_value(native_inbytes_left);
+  /* Box out param: outbytes_left */
+  mrb_value outbytes_left = mrb_fixnum_value(native_outbytes_left);
+
+  /* Add out params to results */
+  mrb_ary_push(mrb, results, inbytes_left);
+  mrb_ary_push(mrb, results, outbytes_left);
+
+  return results;
 }
 #endif
 /* MRUBY_BINDING_END */
@@ -17591,7 +17526,7 @@ mrb_GLib_g_int_hash(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_intern_static_string */
-/* sha: c87fa5359a499fac9224ea3e5d0f67a6e5cca8bee60f5ea1617955579701f92b */
+/* sha: 82b2667f5eb0120aa501d154558653be87b6a97404766a13764eb7a05aa0638b */
 #if BIND_g_intern_static_string_FUNCTION
 #define g_intern_static_string_REQUIRED_ARGC 1
 #define g_intern_static_string_OPTIONAL_ARGC 0
@@ -17612,7 +17547,7 @@ mrb_GLib_g_intern_static_string(mrb_state* mrb, mrb_value self) {
   const gchar * native_return_value = g_intern_static_string(native_string);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
+  mrb_value return_value = native_return_value == NULL ? mrb_nil_value() : mrb_str_new_cstr(mrb, native_return_value);
   
   return return_value;
 }
@@ -17620,7 +17555,7 @@ mrb_GLib_g_intern_static_string(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_intern_string */
-/* sha: a83d2af1159adedb85df506321faef7c755b6027b0f2955aff9c5a83495a1786 */
+/* sha: 630d119e2213341d87d481f71dd3596d20b17b806f44b0f1f8b32b7e85a60a8e */
 #if BIND_g_intern_string_FUNCTION
 #define g_intern_string_REQUIRED_ARGC 1
 #define g_intern_string_OPTIONAL_ARGC 0
@@ -17641,7 +17576,7 @@ mrb_GLib_g_intern_string(mrb_state* mrb, mrb_value self) {
   const gchar * native_return_value = g_intern_string(native_string);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
+  mrb_value return_value = native_return_value == NULL ? mrb_nil_value() : mrb_str_new_cstr(mrb, native_return_value);
   
   return return_value;
 }
@@ -18047,7 +17982,7 @@ mrb_GLib_g_io_channel_get_close_on_unref(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_io_channel_get_encoding */
-/* sha: 9fb350ba16e39b1d8ef91d08869a3527aef622f58a223d466ccfc575c62598b3 */
+/* sha: 030989d61ffc483f6668b04a629d49d32b4516e6c2950e7bf4d29106d458505a */
 #if BIND_g_io_channel_get_encoding_FUNCTION
 #define g_io_channel_get_encoding_REQUIRED_ARGC 1
 #define g_io_channel_get_encoding_OPTIONAL_ARGC 0
@@ -18077,7 +18012,7 @@ mrb_GLib_g_io_channel_get_encoding(mrb_state* mrb, mrb_value self) {
   const gchar * native_return_value = g_io_channel_get_encoding(native_channel);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
+  mrb_value return_value = native_return_value == NULL ? mrb_nil_value() : mrb_str_new_cstr(mrb, native_return_value);
   
   return return_value;
 }
@@ -18123,7 +18058,7 @@ mrb_GLib_g_io_channel_get_flags(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_io_channel_get_line_term */
-/* sha: fe402e8db4c6e884dd6796c8dfaf4bd3069476204b39fc8f3344cff3974587ff */
+/* sha: 1cac97b03caf165a7a85fc92d711abe14f1ca0c895122b02290a99d48ebf8cb1 */
 #if BIND_g_io_channel_get_line_term_FUNCTION
 #define g_io_channel_get_line_term_REQUIRED_ARGC 2
 #define g_io_channel_get_line_term_OPTIONAL_ARGC 0
@@ -18159,7 +18094,7 @@ mrb_GLib_g_io_channel_get_line_term(mrb_state* mrb, mrb_value self) {
   const gchar * native_return_value = g_io_channel_get_line_term(native_channel, native_length);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
+  mrb_value return_value = native_return_value == NULL ? mrb_nil_value() : mrb_str_new_cstr(mrb, native_return_value);
   
   return return_value;
 }
@@ -18242,9 +18177,9 @@ mrb_GLib_g_io_channel_new_file(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_io_channel_read */
-/* sha: a6b14295518e756982d1910354d34f81e65deaf613c10010dc2c699202e923bd */
+/* sha: 2f53a3bfedadb5d0498314e847e85dc4205c481be4f5fd06cbb6bcdc01706166 */
 #if BIND_g_io_channel_read_FUNCTION
-#define g_io_channel_read_REQUIRED_ARGC 4
+#define g_io_channel_read_REQUIRED_ARGC 3
 #define g_io_channel_read_OPTIONAL_ARGC 0
 /* g_io_channel_read
  *
@@ -18252,56 +18187,54 @@ mrb_GLib_g_io_channel_new_file(mrb_state* mrb, mrb_value self) {
  * - channel: GIOChannel *
  * - buf: gchar *
  * - count: gsize
- * - bytes_read: gsize *
  * Return Type: GIOError
  */
 mrb_value
 mrb_GLib_g_io_channel_read(mrb_state* mrb, mrb_value self) {
+  mrb_value results = mrb_ary_new(mrb);
   mrb_value channel;
-  char * buf = NULL;
+  mrb_value buf;
   mrb_int native_count;
-  mrb_value bytes_read;
+  int native_bytes_read;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "oz!io", &channel, &buf, &native_count, &bytes_read);
+  mrb_get_args(mrb, "ooi", &channel, &buf, &native_count);
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, channel, GIOChannel_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GIOChannel expected");
     return mrb_nil_value();
   }
-  TODO_type_check_gsize_PTR(bytes_read);
+  TODO_type_check_gchar_PTR(buf);
 
   /* Unbox param: channel */
   GIOChannel * native_channel = (mrb_nil_p(channel) ? NULL : mruby_unbox__GIOChannel(channel));
 
   /* Unbox param: buf */
-  /* WARNING: String is strdup'ed to avoid mutable reference to internal MRuby memory */
-  char * native_buf = strdup(buf);
-
-  /* Unbox param: bytes_read */
-  gsize * native_bytes_read = TODO_mruby_unbox_gsize_PTR(bytes_read);
+  gchar * native_buf = TODO_mruby_unbox_gchar_PTR(buf);
 
   /* Invocation */
-  GIOError native_return_value = g_io_channel_read(native_channel, native_buf, native_count, native_bytes_read);
+  GIOError native_return_value = g_io_channel_read(native_channel, native_buf, native_count, &native_bytes_read);
 
   /* Box the return value */
   mrb_value return_value = mrb_fixnum_value(native_return_value);
+  mrb_ary_push(mrb, results, return_value);
   
-  /* Clean in param: buf */
-  /* WARNING: Assuming that the new string can be deallocated after the function call. */
-  free(native_buf);
-  native_buf = NULL;
+  /* Box out param: bytes_read */
+  mrb_value bytes_read = mrb_fixnum_value(native_bytes_read);
 
-  return return_value;
+  /* Add out params to results */
+  mrb_ary_push(mrb, results, bytes_read);
+
+  return results;
 }
 #endif
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_io_channel_read_chars */
-/* sha: 3d3b326345591137cf39b1ec491377354b77b396e4db17f9cd3c9baaee13d05b */
+/* sha: 0bcdfd19af4c0577cdfea9b6ffb1c5b9f4836d9a09541317b3f3604df0de38f6 */
 #if BIND_g_io_channel_read_chars_FUNCTION
-#define g_io_channel_read_chars_REQUIRED_ARGC 4
+#define g_io_channel_read_chars_REQUIRED_ARGC 3
 #define g_io_channel_read_chars_OPTIONAL_ARGC 0
 /* g_io_channel_read_chars
  *
@@ -18309,55 +18242,48 @@ mrb_GLib_g_io_channel_read(mrb_state* mrb, mrb_value self) {
  * - channel: GIOChannel *
  * - buf: gchar *
  * - count: gsize
- * - bytes_read: gsize *
  * Return Type: GIOStatus
  */
 mrb_value
 mrb_GLib_g_io_channel_read_chars(mrb_state* mrb, mrb_value self) {
   mrb_value results = mrb_ary_new(mrb);
   mrb_value channel;
-  char * buf = NULL;
+  mrb_value buf;
   mrb_int native_count;
-  mrb_value bytes_read;
+  int native_bytes_read;
   struct GError * native_error = NULL;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "oz!io", &channel, &buf, &native_count, &bytes_read);
+  mrb_get_args(mrb, "ooi", &channel, &buf, &native_count);
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, channel, GIOChannel_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GIOChannel expected");
     return mrb_nil_value();
   }
-  TODO_type_check_gsize_PTR(bytes_read);
+  TODO_type_check_gchar_PTR(buf);
 
   /* Unbox param: channel */
   GIOChannel * native_channel = (mrb_nil_p(channel) ? NULL : mruby_unbox__GIOChannel(channel));
 
   /* Unbox param: buf */
-  /* WARNING: String is strdup'ed to avoid mutable reference to internal MRuby memory */
-  char * native_buf = strdup(buf);
-
-  /* Unbox param: bytes_read */
-  gsize * native_bytes_read = TODO_mruby_unbox_gsize_PTR(bytes_read);
+  gchar * native_buf = TODO_mruby_unbox_gchar_PTR(buf);
 
   /* Invocation */
-  GIOStatus native_return_value = g_io_channel_read_chars(native_channel, native_buf, native_count, native_bytes_read, &native_error);
+  GIOStatus native_return_value = g_io_channel_read_chars(native_channel, native_buf, native_count, &native_bytes_read, &native_error);
 
   /* Box the return value */
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   mrb_ary_push(mrb, results, return_value);
   
+  /* Box out param: bytes_read */
+  mrb_value bytes_read = mrb_fixnum_value(native_bytes_read);
   /* Box out param: error */
   mrb_value error = (native_error == NULL ? mrb_nil_value() : mruby_giftwrap__GError(mrb, native_error));
 
   /* Add out params to results */
+  mrb_ary_push(mrb, results, bytes_read);
   mrb_ary_push(mrb, results, error);
-
-  /* Clean in param: buf */
-  /* WARNING: Assuming that the new string can be deallocated after the function call. */
-  free(native_buf);
-  native_buf = NULL;
 
   return results;
 }
@@ -18365,17 +18291,15 @@ mrb_GLib_g_io_channel_read_chars(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_io_channel_read_line */
-/* sha: 5e6df76a781f3281c43a369a9e18796b818c9d22c6dbc6a7725ad5fa2aa52244 */
+/* sha: fc624e0ee22a1e7e9beae14c03ee8c166e1b986f0bfb79e3cf647855d1d666ea */
 #if BIND_g_io_channel_read_line_FUNCTION
-#define g_io_channel_read_line_REQUIRED_ARGC 4
+#define g_io_channel_read_line_REQUIRED_ARGC 2
 #define g_io_channel_read_line_OPTIONAL_ARGC 0
 /* g_io_channel_read_line
  *
  * Parameters:
  * - channel: GIOChannel *
  * - str_return: gchar **
- * - length: gsize *
- * - terminator_pos: gsize *
  * Return Type: GIOStatus
  */
 mrb_value
@@ -18383,12 +18307,12 @@ mrb_GLib_g_io_channel_read_line(mrb_state* mrb, mrb_value self) {
   mrb_value results = mrb_ary_new(mrb);
   mrb_value channel;
   mrb_value str_return;
-  mrb_value length;
-  mrb_value terminator_pos;
+  int native_length;
+  int native_terminator_pos;
   struct GError * native_error = NULL;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "oooo", &channel, &str_return, &length, &terminator_pos);
+  mrb_get_args(mrb, "oo", &channel, &str_return);
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, channel, GIOChannel_class(mrb))) {
@@ -18396,8 +18320,6 @@ mrb_GLib_g_io_channel_read_line(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
   TODO_type_check_gchar_PTR_PTR(str_return);
-  TODO_type_check_gsize_PTR(length);
-  TODO_type_check_gsize_PTR(terminator_pos);
 
   /* Unbox param: channel */
   GIOChannel * native_channel = (mrb_nil_p(channel) ? NULL : mruby_unbox__GIOChannel(channel));
@@ -18405,23 +18327,23 @@ mrb_GLib_g_io_channel_read_line(mrb_state* mrb, mrb_value self) {
   /* Unbox param: str_return */
   gchar ** native_str_return = TODO_mruby_unbox_gchar_PTR_PTR(str_return);
 
-  /* Unbox param: length */
-  gsize * native_length = TODO_mruby_unbox_gsize_PTR(length);
-
-  /* Unbox param: terminator_pos */
-  gsize * native_terminator_pos = TODO_mruby_unbox_gsize_PTR(terminator_pos);
-
   /* Invocation */
-  GIOStatus native_return_value = g_io_channel_read_line(native_channel, native_str_return, native_length, native_terminator_pos, &native_error);
+  GIOStatus native_return_value = g_io_channel_read_line(native_channel, native_str_return, &native_length, &native_terminator_pos, &native_error);
 
   /* Box the return value */
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   mrb_ary_push(mrb, results, return_value);
   
+  /* Box out param: length */
+  mrb_value length = mrb_fixnum_value(native_length);
+  /* Box out param: terminator_pos */
+  mrb_value terminator_pos = mrb_fixnum_value(native_terminator_pos);
   /* Box out param: error */
   mrb_value error = (native_error == NULL ? mrb_nil_value() : mruby_giftwrap__GError(mrb, native_error));
 
   /* Add out params to results */
+  mrb_ary_push(mrb, results, length);
+  mrb_ary_push(mrb, results, terminator_pos);
   mrb_ary_push(mrb, results, error);
 
   return results;
@@ -18430,16 +18352,15 @@ mrb_GLib_g_io_channel_read_line(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_io_channel_read_line_string */
-/* sha: abf81178792b7e5ce85daeafbf7d00ff8ae2a7ef7bee568eda3e975e34dc400a */
+/* sha: d251e5c49f1e2650defcef7d672bf5603e36ef3fb8388724afa5a21ff5023502 */
 #if BIND_g_io_channel_read_line_string_FUNCTION
-#define g_io_channel_read_line_string_REQUIRED_ARGC 3
+#define g_io_channel_read_line_string_REQUIRED_ARGC 2
 #define g_io_channel_read_line_string_OPTIONAL_ARGC 0
 /* g_io_channel_read_line_string
  *
  * Parameters:
  * - channel: GIOChannel *
  * - buffer: GString *
- * - terminator_pos: gsize *
  * Return Type: GIOStatus
  */
 mrb_value
@@ -18447,11 +18368,11 @@ mrb_GLib_g_io_channel_read_line_string(mrb_state* mrb, mrb_value self) {
   mrb_value results = mrb_ary_new(mrb);
   mrb_value channel;
   mrb_value buffer;
-  mrb_value terminator_pos;
+  int native_terminator_pos;
   struct GError * native_error = NULL;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "ooo", &channel, &buffer, &terminator_pos);
+  mrb_get_args(mrb, "oo", &channel, &buffer);
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, channel, GIOChannel_class(mrb))) {
@@ -18462,7 +18383,6 @@ mrb_GLib_g_io_channel_read_line_string(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GString expected");
     return mrb_nil_value();
   }
-  TODO_type_check_gsize_PTR(terminator_pos);
 
   /* Unbox param: channel */
   GIOChannel * native_channel = (mrb_nil_p(channel) ? NULL : mruby_unbox__GIOChannel(channel));
@@ -18470,20 +18390,20 @@ mrb_GLib_g_io_channel_read_line_string(mrb_state* mrb, mrb_value self) {
   /* Unbox param: buffer */
   GString * native_buffer = (mrb_nil_p(buffer) ? NULL : mruby_unbox__GString(buffer));
 
-  /* Unbox param: terminator_pos */
-  gsize * native_terminator_pos = TODO_mruby_unbox_gsize_PTR(terminator_pos);
-
   /* Invocation */
-  GIOStatus native_return_value = g_io_channel_read_line_string(native_channel, native_buffer, native_terminator_pos, &native_error);
+  GIOStatus native_return_value = g_io_channel_read_line_string(native_channel, native_buffer, &native_terminator_pos, &native_error);
 
   /* Box the return value */
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   mrb_ary_push(mrb, results, return_value);
   
+  /* Box out param: terminator_pos */
+  mrb_value terminator_pos = mrb_fixnum_value(native_terminator_pos);
   /* Box out param: error */
   mrb_value error = (native_error == NULL ? mrb_nil_value() : mruby_giftwrap__GError(mrb, native_error));
 
   /* Add out params to results */
+  mrb_ary_push(mrb, results, terminator_pos);
   mrb_ary_push(mrb, results, error);
 
   return results;
@@ -18492,16 +18412,15 @@ mrb_GLib_g_io_channel_read_line_string(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_io_channel_read_to_end */
-/* sha: 528c1f9763755037f83128229449f59995fc21faf1297f3cc76f253f29ba2ec6 */
+/* sha: 874bc33e5359eda08b3b099e6facd366f588f49fe4041a11deb238aba52340a9 */
 #if BIND_g_io_channel_read_to_end_FUNCTION
-#define g_io_channel_read_to_end_REQUIRED_ARGC 3
+#define g_io_channel_read_to_end_REQUIRED_ARGC 2
 #define g_io_channel_read_to_end_OPTIONAL_ARGC 0
 /* g_io_channel_read_to_end
  *
  * Parameters:
  * - channel: GIOChannel *
  * - str_return: gchar **
- * - length: gsize *
  * Return Type: GIOStatus
  */
 mrb_value
@@ -18509,11 +18428,11 @@ mrb_GLib_g_io_channel_read_to_end(mrb_state* mrb, mrb_value self) {
   mrb_value results = mrb_ary_new(mrb);
   mrb_value channel;
   mrb_value str_return;
-  mrb_value length;
+  int native_length;
   struct GError * native_error = NULL;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "ooo", &channel, &str_return, &length);
+  mrb_get_args(mrb, "oo", &channel, &str_return);
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, channel, GIOChannel_class(mrb))) {
@@ -18521,7 +18440,6 @@ mrb_GLib_g_io_channel_read_to_end(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
   TODO_type_check_gchar_PTR_PTR(str_return);
-  TODO_type_check_gsize_PTR(length);
 
   /* Unbox param: channel */
   GIOChannel * native_channel = (mrb_nil_p(channel) ? NULL : mruby_unbox__GIOChannel(channel));
@@ -18529,20 +18447,20 @@ mrb_GLib_g_io_channel_read_to_end(mrb_state* mrb, mrb_value self) {
   /* Unbox param: str_return */
   gchar ** native_str_return = TODO_mruby_unbox_gchar_PTR_PTR(str_return);
 
-  /* Unbox param: length */
-  gsize * native_length = TODO_mruby_unbox_gsize_PTR(length);
-
   /* Invocation */
-  GIOStatus native_return_value = g_io_channel_read_to_end(native_channel, native_str_return, native_length, &native_error);
+  GIOStatus native_return_value = g_io_channel_read_to_end(native_channel, native_str_return, &native_length, &native_error);
 
   /* Box the return value */
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   mrb_ary_push(mrb, results, return_value);
   
+  /* Box out param: length */
+  mrb_value length = mrb_fixnum_value(native_length);
   /* Box out param: error */
   mrb_value error = (native_error == NULL ? mrb_nil_value() : mruby_giftwrap__GError(mrb, native_error));
 
   /* Add out params to results */
+  mrb_ary_push(mrb, results, length);
   mrb_ary_push(mrb, results, error);
 
   return results;
@@ -19134,9 +19052,9 @@ mrb_GLib_g_io_channel_unref(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_io_channel_write */
-/* sha: 33d78cb2c162b85533245df6a2443f23e81ec5ce99b443b874f41185d9116a6c */
+/* sha: 9f87cfb15705294a96c4aae5f3f9ffb281847ab99eb5eaac880b7fe568c60bcd */
 #if BIND_g_io_channel_write_FUNCTION
-#define g_io_channel_write_REQUIRED_ARGC 4
+#define g_io_channel_write_REQUIRED_ARGC 3
 #define g_io_channel_write_OPTIONAL_ARGC 0
 /* g_io_channel_write
  *
@@ -19144,47 +19062,50 @@ mrb_GLib_g_io_channel_unref(mrb_state* mrb, mrb_value self) {
  * - channel: GIOChannel *
  * - buf: const gchar *
  * - count: gsize
- * - bytes_written: gsize *
  * Return Type: GIOError
  */
 mrb_value
 mrb_GLib_g_io_channel_write(mrb_state* mrb, mrb_value self) {
+  mrb_value results = mrb_ary_new(mrb);
   mrb_value channel;
   char * native_buf = NULL;
   mrb_int native_count;
-  mrb_value bytes_written;
+  int native_bytes_written;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "oz!io", &channel, &native_buf, &native_count, &bytes_written);
+  mrb_get_args(mrb, "oz!i", &channel, &native_buf, &native_count);
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, channel, GIOChannel_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GIOChannel expected");
     return mrb_nil_value();
   }
-  TODO_type_check_gsize_PTR(bytes_written);
 
   /* Unbox param: channel */
   GIOChannel * native_channel = (mrb_nil_p(channel) ? NULL : mruby_unbox__GIOChannel(channel));
 
-  /* Unbox param: bytes_written */
-  gsize * native_bytes_written = TODO_mruby_unbox_gsize_PTR(bytes_written);
-
   /* Invocation */
-  GIOError native_return_value = g_io_channel_write(native_channel, native_buf, native_count, native_bytes_written);
+  GIOError native_return_value = g_io_channel_write(native_channel, native_buf, native_count, &native_bytes_written);
 
   /* Box the return value */
   mrb_value return_value = mrb_fixnum_value(native_return_value);
+  mrb_ary_push(mrb, results, return_value);
   
-  return return_value;
+  /* Box out param: bytes_written */
+  mrb_value bytes_written = mrb_fixnum_value(native_bytes_written);
+
+  /* Add out params to results */
+  mrb_ary_push(mrb, results, bytes_written);
+
+  return results;
 }
 #endif
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_io_channel_write_chars */
-/* sha: 575916a687ce312c9c380e1d632f6d7a1de1d510234c09d27a9b0983599c5faf */
+/* sha: 7e5c8b77a34f451d43888434f8a0efdc67fe5ad3f89c3325534326c98a814c90 */
 #if BIND_g_io_channel_write_chars_FUNCTION
-#define g_io_channel_write_chars_REQUIRED_ARGC 4
+#define g_io_channel_write_chars_REQUIRED_ARGC 3
 #define g_io_channel_write_chars_OPTIONAL_ARGC 0
 /* g_io_channel_write_chars
  *
@@ -19192,7 +19113,6 @@ mrb_GLib_g_io_channel_write(mrb_state* mrb, mrb_value self) {
  * - channel: GIOChannel *
  * - buf: const gchar *
  * - count: gssize
- * - bytes_written: gsize *
  * Return Type: GIOStatus
  */
 mrb_value
@@ -19201,36 +19121,35 @@ mrb_GLib_g_io_channel_write_chars(mrb_state* mrb, mrb_value self) {
   mrb_value channel;
   char * native_buf = NULL;
   mrb_int native_count;
-  mrb_value bytes_written;
+  int native_bytes_written;
   struct GError * native_error = NULL;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "oz!io", &channel, &native_buf, &native_count, &bytes_written);
+  mrb_get_args(mrb, "oz!i", &channel, &native_buf, &native_count);
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, channel, GIOChannel_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GIOChannel expected");
     return mrb_nil_value();
   }
-  TODO_type_check_gsize_PTR(bytes_written);
 
   /* Unbox param: channel */
   GIOChannel * native_channel = (mrb_nil_p(channel) ? NULL : mruby_unbox__GIOChannel(channel));
 
-  /* Unbox param: bytes_written */
-  gsize * native_bytes_written = TODO_mruby_unbox_gsize_PTR(bytes_written);
-
   /* Invocation */
-  GIOStatus native_return_value = g_io_channel_write_chars(native_channel, native_buf, native_count, native_bytes_written, &native_error);
+  GIOStatus native_return_value = g_io_channel_write_chars(native_channel, native_buf, native_count, &native_bytes_written, &native_error);
 
   /* Box the return value */
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   mrb_ary_push(mrb, results, return_value);
   
+  /* Box out param: bytes_written */
+  mrb_value bytes_written = mrb_fixnum_value(native_bytes_written);
   /* Box out param: error */
   mrb_value error = (native_error == NULL ? mrb_nil_value() : mruby_giftwrap__GError(mrb, native_error));
 
   /* Add out params to results */
+  mrb_ary_push(mrb, results, bytes_written);
   mrb_ary_push(mrb, results, error);
 
   return results;
@@ -19437,9 +19356,9 @@ mrb_GLib_g_key_file_get_boolean(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_key_file_get_boolean_list */
-/* sha: 96195e16f8b7c209e6de689f14ff652e60c48db86e3cc41edfb06a55730e8c32 */
+/* sha: f8659c4507779843d39294660600bbdfaa29a5b06ca79571d689baa72d877a17 */
 #if BIND_g_key_file_get_boolean_list_FUNCTION
-#define g_key_file_get_boolean_list_REQUIRED_ARGC 4
+#define g_key_file_get_boolean_list_REQUIRED_ARGC 3
 #define g_key_file_get_boolean_list_OPTIONAL_ARGC 0
 /* g_key_file_get_boolean_list
  *
@@ -19447,7 +19366,6 @@ mrb_GLib_g_key_file_get_boolean(mrb_state* mrb, mrb_value self) {
  * - key_file: GKeyFile *
  * - group_name: const gchar *
  * - key: const gchar *
- * - length: gsize *
  * Return Type: gboolean *
  */
 mrb_value
@@ -19456,36 +19374,35 @@ mrb_GLib_g_key_file_get_boolean_list(mrb_state* mrb, mrb_value self) {
   mrb_value key_file;
   char * native_group_name = NULL;
   char * native_key = NULL;
-  mrb_value length;
+  int native_length;
   struct GError * native_error = NULL;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "oz!z!o", &key_file, &native_group_name, &native_key, &length);
+  mrb_get_args(mrb, "oz!z!", &key_file, &native_group_name, &native_key);
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, key_file, GKeyFile_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GKeyFile expected");
     return mrb_nil_value();
   }
-  TODO_type_check_gsize_PTR(length);
 
   /* Unbox param: key_file */
   GKeyFile * native_key_file = (mrb_nil_p(key_file) ? NULL : mruby_unbox__GKeyFile(key_file));
 
-  /* Unbox param: length */
-  gsize * native_length = TODO_mruby_unbox_gsize_PTR(length);
-
   /* Invocation */
-  gboolean * native_return_value = g_key_file_get_boolean_list(native_key_file, native_group_name, native_key, native_length, &native_error);
+  gboolean * native_return_value = g_key_file_get_boolean_list(native_key_file, native_group_name, native_key, &native_length, &native_error);
 
   /* Box the return value */
   mrb_value return_value = TODO_mruby_box_gboolean_PTR(mrb, native_return_value);
   mrb_ary_push(mrb, results, return_value);
   
+  /* Box out param: length */
+  mrb_value length = mrb_fixnum_value(native_length);
   /* Box out param: error */
   mrb_value error = (native_error == NULL ? mrb_nil_value() : mruby_giftwrap__GError(mrb, native_error));
 
   /* Add out params to results */
+  mrb_ary_push(mrb, results, length);
   mrb_ary_push(mrb, results, error);
 
   return results;
@@ -19494,7 +19411,7 @@ mrb_GLib_g_key_file_get_boolean_list(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_key_file_get_comment */
-/* sha: c83def019f4bf107d7be82d74c653399a74a32455f9b00437e99d66fbc27bc5a */
+/* sha: 87ee643e832c07d41c7644545ecc9f0a2465509c9a96f298a58a6c2d896f3e44 */
 #if BIND_g_key_file_get_comment_FUNCTION
 #define g_key_file_get_comment_REQUIRED_ARGC 3
 #define g_key_file_get_comment_OPTIONAL_ARGC 0
@@ -19530,8 +19447,7 @@ mrb_GLib_g_key_file_get_comment(mrb_state* mrb, mrb_value self) {
   gchar * native_return_value = g_key_file_get_comment(native_key_file, native_group_name, native_key, &native_error);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
-  g_free(native_return_value);
+  mrb_value return_value = TODO_mruby_box_gchar_PTR(mrb, native_return_value);
   mrb_ary_push(mrb, results, return_value);
   
   /* Box out param: error */
@@ -19597,9 +19513,9 @@ mrb_GLib_g_key_file_get_double(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_key_file_get_double_list */
-/* sha: 6d902532e623b257650c3b1a835db35556a0faa4a782070e641794afd1176f25 */
+/* sha: c5fa39fdd7b7f7735b3dabcf6dd45c3ac086e1e6197edd9d8b7597cddca7af3c */
 #if BIND_g_key_file_get_double_list_FUNCTION
-#define g_key_file_get_double_list_REQUIRED_ARGC 4
+#define g_key_file_get_double_list_REQUIRED_ARGC 3
 #define g_key_file_get_double_list_OPTIONAL_ARGC 0
 /* g_key_file_get_double_list
  *
@@ -19607,7 +19523,6 @@ mrb_GLib_g_key_file_get_double(mrb_state* mrb, mrb_value self) {
  * - key_file: GKeyFile *
  * - group_name: const gchar *
  * - key: const gchar *
- * - length: gsize *
  * Return Type: gdouble *
  */
 mrb_value
@@ -19616,36 +19531,35 @@ mrb_GLib_g_key_file_get_double_list(mrb_state* mrb, mrb_value self) {
   mrb_value key_file;
   char * native_group_name = NULL;
   char * native_key = NULL;
-  mrb_value length;
+  int native_length;
   struct GError * native_error = NULL;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "oz!z!o", &key_file, &native_group_name, &native_key, &length);
+  mrb_get_args(mrb, "oz!z!", &key_file, &native_group_name, &native_key);
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, key_file, GKeyFile_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GKeyFile expected");
     return mrb_nil_value();
   }
-  TODO_type_check_gsize_PTR(length);
 
   /* Unbox param: key_file */
   GKeyFile * native_key_file = (mrb_nil_p(key_file) ? NULL : mruby_unbox__GKeyFile(key_file));
 
-  /* Unbox param: length */
-  gsize * native_length = TODO_mruby_unbox_gsize_PTR(length);
-
   /* Invocation */
-  gdouble * native_return_value = g_key_file_get_double_list(native_key_file, native_group_name, native_key, native_length, &native_error);
+  gdouble * native_return_value = g_key_file_get_double_list(native_key_file, native_group_name, native_key, &native_length, &native_error);
 
   /* Box the return value */
   mrb_value return_value = TODO_mruby_box_gdouble_PTR(mrb, native_return_value);
   mrb_ary_push(mrb, results, return_value);
   
+  /* Box out param: length */
+  mrb_value length = mrb_fixnum_value(native_length);
   /* Box out param: error */
   mrb_value error = (native_error == NULL ? mrb_nil_value() : mruby_giftwrap__GError(mrb, native_error));
 
   /* Add out params to results */
+  mrb_ary_push(mrb, results, length);
   mrb_ary_push(mrb, results, error);
 
   return results;
@@ -19654,45 +19568,48 @@ mrb_GLib_g_key_file_get_double_list(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_key_file_get_groups */
-/* sha: c36a00d79374c489cd0be534fefbbb13625a186ab51db28f976cb45cbdd57e10 */
+/* sha: 8297cf61d49acc6d36edb31459359f324db4db59edd1ae7a7afdf4c521c34884 */
 #if BIND_g_key_file_get_groups_FUNCTION
-#define g_key_file_get_groups_REQUIRED_ARGC 2
+#define g_key_file_get_groups_REQUIRED_ARGC 1
 #define g_key_file_get_groups_OPTIONAL_ARGC 0
 /* g_key_file_get_groups
  *
  * Parameters:
  * - key_file: GKeyFile *
- * - length: gsize *
  * Return Type: gchar **
  */
 mrb_value
 mrb_GLib_g_key_file_get_groups(mrb_state* mrb, mrb_value self) {
+  mrb_value results = mrb_ary_new(mrb);
   mrb_value key_file;
-  mrb_value length;
+  int native_length;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "oo", &key_file, &length);
+  mrb_get_args(mrb, "o", &key_file);
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, key_file, GKeyFile_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GKeyFile expected");
     return mrb_nil_value();
   }
-  TODO_type_check_gsize_PTR(length);
 
   /* Unbox param: key_file */
   GKeyFile * native_key_file = (mrb_nil_p(key_file) ? NULL : mruby_unbox__GKeyFile(key_file));
 
-  /* Unbox param: length */
-  gsize * native_length = TODO_mruby_unbox_gsize_PTR(length);
-
   /* Invocation */
-  gchar ** native_return_value = g_key_file_get_groups(native_key_file, native_length);
+  gchar ** native_return_value = g_key_file_get_groups(native_key_file, &native_length);
 
   /* Box the return value */
   mrb_value return_value = TODO_mruby_box_gchar_PTR_PTR(mrb, native_return_value);
+  mrb_ary_push(mrb, results, return_value);
   
-  return return_value;
+  /* Box out param: length */
+  mrb_value length = mrb_fixnum_value(native_length);
+
+  /* Add out params to results */
+  mrb_ary_push(mrb, results, length);
+
+  return results;
 }
 #endif
 /* MRUBY_BINDING_END */
@@ -19800,9 +19717,9 @@ mrb_GLib_g_key_file_get_integer(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_key_file_get_integer_list */
-/* sha: 79e83206e9c206595ccee192ca331b77ccf3f49f3033b9ed9e59e72aedc22aa5 */
+/* sha: 012e971270a3e1f6149cd8274a7dab8d1f70824a014a004e27d4c19820c2d345 */
 #if BIND_g_key_file_get_integer_list_FUNCTION
-#define g_key_file_get_integer_list_REQUIRED_ARGC 4
+#define g_key_file_get_integer_list_REQUIRED_ARGC 3
 #define g_key_file_get_integer_list_OPTIONAL_ARGC 0
 /* g_key_file_get_integer_list
  *
@@ -19810,7 +19727,6 @@ mrb_GLib_g_key_file_get_integer(mrb_state* mrb, mrb_value self) {
  * - key_file: GKeyFile *
  * - group_name: const gchar *
  * - key: const gchar *
- * - length: gsize *
  * Return Type: gint *
  */
 mrb_value
@@ -19819,36 +19735,35 @@ mrb_GLib_g_key_file_get_integer_list(mrb_state* mrb, mrb_value self) {
   mrb_value key_file;
   char * native_group_name = NULL;
   char * native_key = NULL;
-  mrb_value length;
+  int native_length;
   struct GError * native_error = NULL;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "oz!z!o", &key_file, &native_group_name, &native_key, &length);
+  mrb_get_args(mrb, "oz!z!", &key_file, &native_group_name, &native_key);
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, key_file, GKeyFile_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GKeyFile expected");
     return mrb_nil_value();
   }
-  TODO_type_check_gsize_PTR(length);
 
   /* Unbox param: key_file */
   GKeyFile * native_key_file = (mrb_nil_p(key_file) ? NULL : mruby_unbox__GKeyFile(key_file));
 
-  /* Unbox param: length */
-  gsize * native_length = TODO_mruby_unbox_gsize_PTR(length);
-
   /* Invocation */
-  gint * native_return_value = g_key_file_get_integer_list(native_key_file, native_group_name, native_key, native_length, &native_error);
+  gint * native_return_value = g_key_file_get_integer_list(native_key_file, native_group_name, native_key, &native_length, &native_error);
 
   /* Box the return value */
   mrb_value return_value = TODO_mruby_box_gint_PTR(mrb, native_return_value);
   mrb_ary_push(mrb, results, return_value);
   
+  /* Box out param: length */
+  mrb_value length = mrb_fixnum_value(native_length);
   /* Box out param: error */
   mrb_value error = (native_error == NULL ? mrb_nil_value() : mruby_giftwrap__GError(mrb, native_error));
 
   /* Add out params to results */
+  mrb_ary_push(mrb, results, length);
   mrb_ary_push(mrb, results, error);
 
   return results;
@@ -19857,16 +19772,15 @@ mrb_GLib_g_key_file_get_integer_list(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_key_file_get_keys */
-/* sha: c4bad575f5580f2e70f6a5d1b96ac17c2ea7ad2a1845cd42fcfd08fc640d111a */
+/* sha: f416e9ffe1f58cc7458c8cb7088456f52dbaadd642fd121cc13bd1e9f44cd2bb */
 #if BIND_g_key_file_get_keys_FUNCTION
-#define g_key_file_get_keys_REQUIRED_ARGC 3
+#define g_key_file_get_keys_REQUIRED_ARGC 2
 #define g_key_file_get_keys_OPTIONAL_ARGC 0
 /* g_key_file_get_keys
  *
  * Parameters:
  * - key_file: GKeyFile *
  * - group_name: const gchar *
- * - length: gsize *
  * Return Type: gchar **
  */
 mrb_value
@@ -19874,36 +19788,35 @@ mrb_GLib_g_key_file_get_keys(mrb_state* mrb, mrb_value self) {
   mrb_value results = mrb_ary_new(mrb);
   mrb_value key_file;
   char * native_group_name = NULL;
-  mrb_value length;
+  int native_length;
   struct GError * native_error = NULL;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "oz!o", &key_file, &native_group_name, &length);
+  mrb_get_args(mrb, "oz!", &key_file, &native_group_name);
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, key_file, GKeyFile_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GKeyFile expected");
     return mrb_nil_value();
   }
-  TODO_type_check_gsize_PTR(length);
 
   /* Unbox param: key_file */
   GKeyFile * native_key_file = (mrb_nil_p(key_file) ? NULL : mruby_unbox__GKeyFile(key_file));
 
-  /* Unbox param: length */
-  gsize * native_length = TODO_mruby_unbox_gsize_PTR(length);
-
   /* Invocation */
-  gchar ** native_return_value = g_key_file_get_keys(native_key_file, native_group_name, native_length, &native_error);
+  gchar ** native_return_value = g_key_file_get_keys(native_key_file, native_group_name, &native_length, &native_error);
 
   /* Box the return value */
   mrb_value return_value = TODO_mruby_box_gchar_PTR_PTR(mrb, native_return_value);
   mrb_ary_push(mrb, results, return_value);
   
+  /* Box out param: length */
+  mrb_value length = mrb_fixnum_value(native_length);
   /* Box out param: error */
   mrb_value error = (native_error == NULL ? mrb_nil_value() : mruby_giftwrap__GError(mrb, native_error));
 
   /* Add out params to results */
+  mrb_ary_push(mrb, results, length);
   mrb_ary_push(mrb, results, error);
 
   return results;
@@ -19912,7 +19825,7 @@ mrb_GLib_g_key_file_get_keys(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_key_file_get_locale_string */
-/* sha: 83d65f1de96f4b3509fb7ecc22bfc91bd2c2f16a24d27826a6f29741d3b1ca30 */
+/* sha: 9d628e131885b36f82fc4c23c4cbe260feca89610474a6512afe57095e0036e2 */
 #if BIND_g_key_file_get_locale_string_FUNCTION
 #define g_key_file_get_locale_string_REQUIRED_ARGC 4
 #define g_key_file_get_locale_string_OPTIONAL_ARGC 0
@@ -19950,8 +19863,7 @@ mrb_GLib_g_key_file_get_locale_string(mrb_state* mrb, mrb_value self) {
   gchar * native_return_value = g_key_file_get_locale_string(native_key_file, native_group_name, native_key, native_locale, &native_error);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
-  g_free(native_return_value);
+  mrb_value return_value = TODO_mruby_box_gchar_PTR(mrb, native_return_value);
   mrb_ary_push(mrb, results, return_value);
   
   /* Box out param: error */
@@ -19966,9 +19878,9 @@ mrb_GLib_g_key_file_get_locale_string(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_key_file_get_locale_string_list */
-/* sha: b7f66adb8073cccaad74c75a72fcdba664ef7fd63117ede707cab845e1a10a70 */
+/* sha: 12887e53186e4deaa89d51c9f9441485bcb95d6444e01fe085b93e9758a3e486 */
 #if BIND_g_key_file_get_locale_string_list_FUNCTION
-#define g_key_file_get_locale_string_list_REQUIRED_ARGC 5
+#define g_key_file_get_locale_string_list_REQUIRED_ARGC 4
 #define g_key_file_get_locale_string_list_OPTIONAL_ARGC 0
 /* g_key_file_get_locale_string_list
  *
@@ -19977,7 +19889,6 @@ mrb_GLib_g_key_file_get_locale_string(mrb_state* mrb, mrb_value self) {
  * - group_name: const gchar *
  * - key: const gchar *
  * - locale: const gchar *
- * - length: gsize *
  * Return Type: gchar **
  */
 mrb_value
@@ -19987,36 +19898,35 @@ mrb_GLib_g_key_file_get_locale_string_list(mrb_state* mrb, mrb_value self) {
   char * native_group_name = NULL;
   char * native_key = NULL;
   char * native_locale = NULL;
-  mrb_value length;
+  int native_length;
   struct GError * native_error = NULL;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "oz!z!z!o", &key_file, &native_group_name, &native_key, &native_locale, &length);
+  mrb_get_args(mrb, "oz!z!z!", &key_file, &native_group_name, &native_key, &native_locale);
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, key_file, GKeyFile_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GKeyFile expected");
     return mrb_nil_value();
   }
-  TODO_type_check_gsize_PTR(length);
 
   /* Unbox param: key_file */
   GKeyFile * native_key_file = (mrb_nil_p(key_file) ? NULL : mruby_unbox__GKeyFile(key_file));
 
-  /* Unbox param: length */
-  gsize * native_length = TODO_mruby_unbox_gsize_PTR(length);
-
   /* Invocation */
-  gchar ** native_return_value = g_key_file_get_locale_string_list(native_key_file, native_group_name, native_key, native_locale, native_length, &native_error);
+  gchar ** native_return_value = g_key_file_get_locale_string_list(native_key_file, native_group_name, native_key, native_locale, &native_length, &native_error);
 
   /* Box the return value */
   mrb_value return_value = TODO_mruby_box_gchar_PTR_PTR(mrb, native_return_value);
   mrb_ary_push(mrb, results, return_value);
   
+  /* Box out param: length */
+  mrb_value length = mrb_fixnum_value(native_length);
   /* Box out param: error */
   mrb_value error = (native_error == NULL ? mrb_nil_value() : mruby_giftwrap__GError(mrb, native_error));
 
   /* Add out params to results */
+  mrb_ary_push(mrb, results, length);
   mrb_ary_push(mrb, results, error);
 
   return results;
@@ -20025,7 +19935,7 @@ mrb_GLib_g_key_file_get_locale_string_list(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_key_file_get_start_group */
-/* sha: 887a845ff87adee288fa71d7a001faf7d2a25bb05708734b55075ff0005997cd */
+/* sha: a621bec1bc31e4649f1749db95aac3e829b60622587f840f37f3cdef864180f6 */
 #if BIND_g_key_file_get_start_group_FUNCTION
 #define g_key_file_get_start_group_REQUIRED_ARGC 1
 #define g_key_file_get_start_group_OPTIONAL_ARGC 0
@@ -20055,8 +19965,7 @@ mrb_GLib_g_key_file_get_start_group(mrb_state* mrb, mrb_value self) {
   gchar * native_return_value = g_key_file_get_start_group(native_key_file);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
-  g_free(native_return_value);
+  mrb_value return_value = TODO_mruby_box_gchar_PTR(mrb, native_return_value);
   
   return return_value;
 }
@@ -20064,7 +19973,7 @@ mrb_GLib_g_key_file_get_start_group(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_key_file_get_string */
-/* sha: de42200dea60af4120f9fbd34986453ec3031b8a706e02f9be3357299a335690 */
+/* sha: cc6ac05af3610883e53a3b6094f075cfc0070f04b211a8c2351780f421f9d80a */
 #if BIND_g_key_file_get_string_FUNCTION
 #define g_key_file_get_string_REQUIRED_ARGC 3
 #define g_key_file_get_string_OPTIONAL_ARGC 0
@@ -20100,8 +20009,7 @@ mrb_GLib_g_key_file_get_string(mrb_state* mrb, mrb_value self) {
   gchar * native_return_value = g_key_file_get_string(native_key_file, native_group_name, native_key, &native_error);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
-  g_free(native_return_value);
+  mrb_value return_value = TODO_mruby_box_gchar_PTR(mrb, native_return_value);
   mrb_ary_push(mrb, results, return_value);
   
   /* Box out param: error */
@@ -20116,9 +20024,9 @@ mrb_GLib_g_key_file_get_string(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_key_file_get_string_list */
-/* sha: 99fe42a31ce061654c8b861b97cf00b1f6017fbb34454392eeca12849655055e */
+/* sha: 37f41af2b279c0970f841a196d8fc21704787f87a9024eace8abcf91f6f2688a */
 #if BIND_g_key_file_get_string_list_FUNCTION
-#define g_key_file_get_string_list_REQUIRED_ARGC 4
+#define g_key_file_get_string_list_REQUIRED_ARGC 3
 #define g_key_file_get_string_list_OPTIONAL_ARGC 0
 /* g_key_file_get_string_list
  *
@@ -20126,7 +20034,6 @@ mrb_GLib_g_key_file_get_string(mrb_state* mrb, mrb_value self) {
  * - key_file: GKeyFile *
  * - group_name: const gchar *
  * - key: const gchar *
- * - length: gsize *
  * Return Type: gchar **
  */
 mrb_value
@@ -20135,36 +20042,35 @@ mrb_GLib_g_key_file_get_string_list(mrb_state* mrb, mrb_value self) {
   mrb_value key_file;
   char * native_group_name = NULL;
   char * native_key = NULL;
-  mrb_value length;
+  int native_length;
   struct GError * native_error = NULL;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "oz!z!o", &key_file, &native_group_name, &native_key, &length);
+  mrb_get_args(mrb, "oz!z!", &key_file, &native_group_name, &native_key);
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, key_file, GKeyFile_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GKeyFile expected");
     return mrb_nil_value();
   }
-  TODO_type_check_gsize_PTR(length);
 
   /* Unbox param: key_file */
   GKeyFile * native_key_file = (mrb_nil_p(key_file) ? NULL : mruby_unbox__GKeyFile(key_file));
 
-  /* Unbox param: length */
-  gsize * native_length = TODO_mruby_unbox_gsize_PTR(length);
-
   /* Invocation */
-  gchar ** native_return_value = g_key_file_get_string_list(native_key_file, native_group_name, native_key, native_length, &native_error);
+  gchar ** native_return_value = g_key_file_get_string_list(native_key_file, native_group_name, native_key, &native_length, &native_error);
 
   /* Box the return value */
   mrb_value return_value = TODO_mruby_box_gchar_PTR_PTR(mrb, native_return_value);
   mrb_ary_push(mrb, results, return_value);
   
+  /* Box out param: length */
+  mrb_value length = mrb_fixnum_value(native_length);
   /* Box out param: error */
   mrb_value error = (native_error == NULL ? mrb_nil_value() : mruby_giftwrap__GError(mrb, native_error));
 
   /* Add out params to results */
+  mrb_ary_push(mrb, results, length);
   mrb_ary_push(mrb, results, error);
 
   return results;
@@ -20224,7 +20130,7 @@ mrb_GLib_g_key_file_get_uint64(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_key_file_get_value */
-/* sha: ac0d827b2ade0501898cfbb829a75458f429e5e0bfd3e7e8cf8168f832860e7f */
+/* sha: f4ac61d08466b188376f9e748b7c97419af0cd89d8943d69128923145f0419b6 */
 #if BIND_g_key_file_get_value_FUNCTION
 #define g_key_file_get_value_REQUIRED_ARGC 3
 #define g_key_file_get_value_OPTIONAL_ARGC 0
@@ -20260,8 +20166,7 @@ mrb_GLib_g_key_file_get_value(mrb_state* mrb, mrb_value self) {
   gchar * native_return_value = g_key_file_get_value(native_key_file, native_group_name, native_key, &native_error);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
-  g_free(native_return_value);
+  mrb_value return_value = TODO_mruby_box_gchar_PTR(mrb, native_return_value);
   mrb_ary_push(mrb, results, return_value);
   
   /* Box out param: error */
@@ -21509,52 +21414,49 @@ mrb_GLib_g_key_file_set_value(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_key_file_to_data */
-/* sha: 15f554c46fd8c521f5bde9d4f87eef26eb1379255d8cb92ff2cfd3fc172f9d9d */
+/* sha: 0e3ea698a31ba8d9e8f7c4e2c2ee23befa474609596dafe572137b29e620a316 */
 #if BIND_g_key_file_to_data_FUNCTION
-#define g_key_file_to_data_REQUIRED_ARGC 2
+#define g_key_file_to_data_REQUIRED_ARGC 1
 #define g_key_file_to_data_OPTIONAL_ARGC 0
 /* g_key_file_to_data
  *
  * Parameters:
  * - key_file: GKeyFile *
- * - length: gsize *
  * Return Type: gchar *
  */
 mrb_value
 mrb_GLib_g_key_file_to_data(mrb_state* mrb, mrb_value self) {
   mrb_value results = mrb_ary_new(mrb);
   mrb_value key_file;
-  mrb_value length;
+  int native_length;
   struct GError * native_error = NULL;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "oo", &key_file, &length);
+  mrb_get_args(mrb, "o", &key_file);
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, key_file, GKeyFile_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GKeyFile expected");
     return mrb_nil_value();
   }
-  TODO_type_check_gsize_PTR(length);
 
   /* Unbox param: key_file */
   GKeyFile * native_key_file = (mrb_nil_p(key_file) ? NULL : mruby_unbox__GKeyFile(key_file));
 
-  /* Unbox param: length */
-  gsize * native_length = TODO_mruby_unbox_gsize_PTR(length);
-
   /* Invocation */
-  gchar * native_return_value = g_key_file_to_data(native_key_file, native_length, &native_error);
+  gchar * native_return_value = g_key_file_to_data(native_key_file, &native_length, &native_error);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
-  g_free(native_return_value);
+  mrb_value return_value = TODO_mruby_box_gchar_PTR(mrb, native_return_value);
   mrb_ary_push(mrb, results, return_value);
   
+  /* Box out param: length */
+  mrb_value length = mrb_fixnum_value(native_length);
   /* Box out param: error */
   mrb_value error = (native_error == NULL ? mrb_nil_value() : mruby_giftwrap__GError(mrb, native_error));
 
   /* Add out params to results */
+  mrb_ary_push(mrb, results, length);
   mrb_ary_push(mrb, results, error);
 
   return results;
@@ -22978,17 +22880,15 @@ mrb_GLib_g_listenv(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_locale_from_utf8 */
-/* sha: d972ce3e61d51c6d8bf490031cbcadff69255bcd65ac74a5f85870e45b0b7e79 */
+/* sha: 55e4f186e4a26e1f716d411a8b847c98d257858afe5a760dfb6f423316de5c6d */
 #if BIND_g_locale_from_utf8_FUNCTION
-#define g_locale_from_utf8_REQUIRED_ARGC 4
+#define g_locale_from_utf8_REQUIRED_ARGC 2
 #define g_locale_from_utf8_OPTIONAL_ARGC 0
 /* g_locale_from_utf8
  *
  * Parameters:
  * - utf8string: const gchar *
  * - len: gssize
- * - bytes_read: gsize *
- * - bytes_written: gsize *
  * Return Type: gchar *
  */
 mrb_value
@@ -22996,35 +22896,30 @@ mrb_GLib_g_locale_from_utf8(mrb_state* mrb, mrb_value self) {
   mrb_value results = mrb_ary_new(mrb);
   char * native_utf8string = NULL;
   mrb_int native_len;
-  mrb_value bytes_read;
-  mrb_value bytes_written;
+  int native_bytes_read;
+  int native_bytes_written;
   struct GError * native_error = NULL;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "z!ioo", &native_utf8string, &native_len, &bytes_read, &bytes_written);
-
-  /* Type checking */
-  TODO_type_check_gsize_PTR(bytes_read);
-  TODO_type_check_gsize_PTR(bytes_written);
-
-  /* Unbox param: bytes_read */
-  gsize * native_bytes_read = TODO_mruby_unbox_gsize_PTR(bytes_read);
-
-  /* Unbox param: bytes_written */
-  gsize * native_bytes_written = TODO_mruby_unbox_gsize_PTR(bytes_written);
+  mrb_get_args(mrb, "z!i", &native_utf8string, &native_len);
 
   /* Invocation */
-  gchar * native_return_value = g_locale_from_utf8(native_utf8string, native_len, native_bytes_read, native_bytes_written, &native_error);
+  gchar * native_return_value = g_locale_from_utf8(native_utf8string, native_len, &native_bytes_read, &native_bytes_written, &native_error);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
-  g_free(native_return_value);
+  mrb_value return_value = TODO_mruby_box_gchar_PTR(mrb, native_return_value);
   mrb_ary_push(mrb, results, return_value);
   
+  /* Box out param: bytes_read */
+  mrb_value bytes_read = mrb_fixnum_value(native_bytes_read);
+  /* Box out param: bytes_written */
+  mrb_value bytes_written = mrb_fixnum_value(native_bytes_written);
   /* Box out param: error */
   mrb_value error = (native_error == NULL ? mrb_nil_value() : mruby_giftwrap__GError(mrb, native_error));
 
   /* Add out params to results */
+  mrb_ary_push(mrb, results, bytes_read);
+  mrb_ary_push(mrb, results, bytes_written);
   mrb_ary_push(mrb, results, error);
 
   return results;
@@ -23033,17 +22928,15 @@ mrb_GLib_g_locale_from_utf8(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_locale_to_utf8 */
-/* sha: bdfa6dad10e9d79ab8d95fbb4c69fdaa136875680cc3d489b61ec8b10b006fc3 */
+/* sha: 1154e3a03e7700faad297476854ff66d6b1b67713a193dbd3e76e8cdab22b42a */
 #if BIND_g_locale_to_utf8_FUNCTION
-#define g_locale_to_utf8_REQUIRED_ARGC 4
+#define g_locale_to_utf8_REQUIRED_ARGC 2
 #define g_locale_to_utf8_OPTIONAL_ARGC 0
 /* g_locale_to_utf8
  *
  * Parameters:
  * - opsysstring: const gchar *
  * - len: gssize
- * - bytes_read: gsize *
- * - bytes_written: gsize *
  * Return Type: gchar *
  */
 mrb_value
@@ -23051,35 +22944,30 @@ mrb_GLib_g_locale_to_utf8(mrb_state* mrb, mrb_value self) {
   mrb_value results = mrb_ary_new(mrb);
   char * native_opsysstring = NULL;
   mrb_int native_len;
-  mrb_value bytes_read;
-  mrb_value bytes_written;
+  int native_bytes_read;
+  int native_bytes_written;
   struct GError * native_error = NULL;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "z!ioo", &native_opsysstring, &native_len, &bytes_read, &bytes_written);
-
-  /* Type checking */
-  TODO_type_check_gsize_PTR(bytes_read);
-  TODO_type_check_gsize_PTR(bytes_written);
-
-  /* Unbox param: bytes_read */
-  gsize * native_bytes_read = TODO_mruby_unbox_gsize_PTR(bytes_read);
-
-  /* Unbox param: bytes_written */
-  gsize * native_bytes_written = TODO_mruby_unbox_gsize_PTR(bytes_written);
+  mrb_get_args(mrb, "z!i", &native_opsysstring, &native_len);
 
   /* Invocation */
-  gchar * native_return_value = g_locale_to_utf8(native_opsysstring, native_len, native_bytes_read, native_bytes_written, &native_error);
+  gchar * native_return_value = g_locale_to_utf8(native_opsysstring, native_len, &native_bytes_read, &native_bytes_written, &native_error);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
-  g_free(native_return_value);
+  mrb_value return_value = TODO_mruby_box_gchar_PTR(mrb, native_return_value);
   mrb_ary_push(mrb, results, return_value);
   
+  /* Box out param: bytes_read */
+  mrb_value bytes_read = mrb_fixnum_value(native_bytes_read);
+  /* Box out param: bytes_written */
+  mrb_value bytes_written = mrb_fixnum_value(native_bytes_written);
   /* Box out param: error */
   mrb_value error = (native_error == NULL ? mrb_nil_value() : mruby_giftwrap__GError(mrb, native_error));
 
   /* Add out params to results */
+  mrb_ary_push(mrb, results, bytes_read);
+  mrb_ary_push(mrb, results, bytes_written);
   mrb_ary_push(mrb, results, error);
 
   return results;
@@ -25018,7 +24906,7 @@ mrb_GLib_g_mapped_file_get_bytes(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_mapped_file_get_contents */
-/* sha: 76ba5df14c892eaa68b1dcf21bb21c25ab487da40b44f7d55c3c387155b9e832 */
+/* sha: faa886dc75b77fdb320e89a343dc9a8dbd8ca5d74ea316402ac95d1019ac114c */
 #if BIND_g_mapped_file_get_contents_FUNCTION
 #define g_mapped_file_get_contents_REQUIRED_ARGC 1
 #define g_mapped_file_get_contents_OPTIONAL_ARGC 0
@@ -25048,8 +24936,7 @@ mrb_GLib_g_mapped_file_get_contents(mrb_state* mrb, mrb_value self) {
   gchar * native_return_value = g_mapped_file_get_contents(native_file);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
-  g_free(native_return_value);
+  mrb_value return_value = TODO_mruby_box_gchar_PTR(mrb, native_return_value);
   
   return return_value;
 }
@@ -25327,7 +25214,7 @@ mrb_GLib_g_markup_error_quark(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_markup_escape_text */
-/* sha: f596b268df05b4c880b0ccfd51e2ab8a0ddb895692b05ec0837c8f905b768f76 */
+/* sha: 8721e6bdafa0356bfe446b96193bc86b0115457cf40a863cc87b5620edf9a815 */
 #if BIND_g_markup_escape_text_FUNCTION
 #define g_markup_escape_text_REQUIRED_ARGC 2
 #define g_markup_escape_text_OPTIONAL_ARGC 0
@@ -25350,8 +25237,7 @@ mrb_GLib_g_markup_escape_text(mrb_state* mrb, mrb_value self) {
   gchar * native_return_value = g_markup_escape_text(native_text, native_length);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
-  g_free(native_return_value);
+  mrb_value return_value = TODO_mruby_box_gchar_PTR(mrb, native_return_value);
   
   return return_value;
 }
@@ -25441,7 +25327,7 @@ mrb_GLib_g_markup_parse_context_free(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_markup_parse_context_get_element */
-/* sha: e3b8f0f4eb226fe2ef9fcf06e6e4bc4364f4069e44c336eaab26087e88bcda5d */
+/* sha: b1fec515b17bd256ec9d5865d1a4eafc7800afc7ed0b48edffe3cbb5c0bdacf5 */
 #if BIND_g_markup_parse_context_get_element_FUNCTION
 #define g_markup_parse_context_get_element_REQUIRED_ARGC 1
 #define g_markup_parse_context_get_element_OPTIONAL_ARGC 0
@@ -25471,7 +25357,7 @@ mrb_GLib_g_markup_parse_context_get_element(mrb_state* mrb, mrb_value self) {
   const gchar * native_return_value = g_markup_parse_context_get_element(native_context);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
+  mrb_value return_value = native_return_value == NULL ? mrb_nil_value() : mrb_str_new_cstr(mrb, native_return_value);
   
   return return_value;
 }
@@ -25866,7 +25752,7 @@ mrb_GLib_g_markup_parse_context_unref(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_markup_printf_escaped */
-/* sha: e9aadd7b0b9e9348a017fdada5e51711b55722b90143dca2240521b19d527a01 */
+/* sha: 9f1985b67d1cd340b84dc8778706e5da2cf8be9dd0972d67884c8c456dceb3d2 */
 #if BIND_g_markup_printf_escaped_FUNCTION
 #define g_markup_printf_escaped_REQUIRED_ARGC 1
 #define g_markup_printf_escaped_OPTIONAL_ARGC 0
@@ -25887,8 +25773,7 @@ mrb_GLib_g_markup_printf_escaped(mrb_state* mrb, mrb_value self) {
   gchar * native_return_value = g_markup_printf_escaped(native_format);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
-  g_free(native_return_value);
+  mrb_value return_value = TODO_mruby_box_gchar_PTR(mrb, native_return_value);
   
   return return_value;
 }
@@ -25896,7 +25781,7 @@ mrb_GLib_g_markup_printf_escaped(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_markup_vprintf_escaped */
-/* sha: 73589a37e0540597055204d8a309aa321e4e448af502a39657fd27de8cca5d2f */
+/* sha: 31a1527da18019a34dd9942da539edc160d380998da3e855a2db0ec07f763960 */
 #if BIND_g_markup_vprintf_escaped_FUNCTION
 #define g_markup_vprintf_escaped_REQUIRED_ARGC 2
 #define g_markup_vprintf_escaped_OPTIONAL_ARGC 0
@@ -25919,8 +25804,7 @@ mrb_GLib_g_markup_vprintf_escaped(mrb_state* mrb, mrb_value self) {
   gchar * native_return_value = g_markup_vprintf_escaped(native_format, native_args);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
-  g_free(native_return_value);
+  mrb_value return_value = TODO_mruby_box_gchar_PTR(mrb, native_return_value);
   
   return return_value;
 }
@@ -25928,7 +25812,7 @@ mrb_GLib_g_markup_vprintf_escaped(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_match_info_expand_references */
-/* sha: 39721e73e572ce814ade7971c1153975648f6faaf2ae895792e26e5421974074 */
+/* sha: 7ff35e5d3854c49671c1eb938cb6ad0123dbe6e2f69e52235b904a34e89aa362 */
 #if BIND_g_match_info_expand_references_FUNCTION
 #define g_match_info_expand_references_REQUIRED_ARGC 2
 #define g_match_info_expand_references_OPTIONAL_ARGC 0
@@ -25962,8 +25846,7 @@ mrb_GLib_g_match_info_expand_references(mrb_state* mrb, mrb_value self) {
   gchar * native_return_value = g_match_info_expand_references(native_match_info, native_string_to_expand, &native_error);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
-  g_free(native_return_value);
+  mrb_value return_value = TODO_mruby_box_gchar_PTR(mrb, native_return_value);
   mrb_ary_push(mrb, results, return_value);
   
   /* Box out param: error */
@@ -25978,7 +25861,7 @@ mrb_GLib_g_match_info_expand_references(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_match_info_fetch */
-/* sha: 8d8dbd5da078744aeb0337c5d0229b2514686a35959b69b659333ee4e9231ff5 */
+/* sha: 127536ab976e0c8670a1c64ff871a6888b1dc7358df8b05fa56cb09da51be06c */
 #if BIND_g_match_info_fetch_FUNCTION
 #define g_match_info_fetch_REQUIRED_ARGC 2
 #define g_match_info_fetch_OPTIONAL_ARGC 0
@@ -26010,8 +25893,7 @@ mrb_GLib_g_match_info_fetch(mrb_state* mrb, mrb_value self) {
   gchar * native_return_value = g_match_info_fetch(native_match_info, native_match_num);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
-  g_free(native_return_value);
+  mrb_value return_value = TODO_mruby_box_gchar_PTR(mrb, native_return_value);
   
   return return_value;
 }
@@ -26057,7 +25939,7 @@ mrb_GLib_g_match_info_fetch_all(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_match_info_fetch_named */
-/* sha: f8d53bf36b41cb3393e94421737b0456aa73931b1e11cef0dde4044e03bd8254 */
+/* sha: 0d4bec14e1b45e5214872e3901fa5a905da93721e80001804fa0d9e66d2457e1 */
 #if BIND_g_match_info_fetch_named_FUNCTION
 #define g_match_info_fetch_named_REQUIRED_ARGC 2
 #define g_match_info_fetch_named_OPTIONAL_ARGC 0
@@ -26089,8 +25971,7 @@ mrb_GLib_g_match_info_fetch_named(mrb_state* mrb, mrb_value self) {
   gchar * native_return_value = g_match_info_fetch_named(native_match_info, native_name);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
-  g_free(native_return_value);
+  mrb_value return_value = TODO_mruby_box_gchar_PTR(mrb, native_return_value);
   
   return return_value;
 }
@@ -26313,7 +26194,7 @@ mrb_GLib_g_match_info_get_regex(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_match_info_get_string */
-/* sha: 7aa29ca22cb13a9f3c6d8201eca87412c2901f9b5a6b623436899e8c6a2296e9 */
+/* sha: 793a9ad43e0c2310d6952de1b01db4cd813d9fdb88bae6dd6fcc23c77477b438 */
 #if BIND_g_match_info_get_string_FUNCTION
 #define g_match_info_get_string_REQUIRED_ARGC 1
 #define g_match_info_get_string_OPTIONAL_ARGC 0
@@ -26343,7 +26224,7 @@ mrb_GLib_g_match_info_get_string(mrb_state* mrb, mrb_value self) {
   const gchar * native_return_value = g_match_info_get_string(native_match_info);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
+  mrb_value return_value = native_return_value == NULL ? mrb_nil_value() : mrb_str_new_cstr(mrb, native_return_value);
   
   return return_value;
 }
@@ -26693,7 +26574,7 @@ mrb_GLib_g_mkdir_with_parents(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_mkdtemp */
-/* sha: 9a8c2101a21a96f8d08afbfeca14077992476f04107686dd12c0c6f29fcce5ea */
+/* sha: 2c265d3cbbab7ef6ecd346d1f8085ed58c1d4942b04ba1911ae0d64cb2d12333 */
 #if BIND_g_mkdtemp_FUNCTION
 #define g_mkdtemp_REQUIRED_ARGC 1
 #define g_mkdtemp_OPTIONAL_ARGC 0
@@ -26705,34 +26586,25 @@ mrb_GLib_g_mkdir_with_parents(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_mkdtemp(mrb_state* mrb, mrb_value self) {
-  char * tmpl = NULL;
+  char* native_tmpl;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "z!", &tmpl);
-
-  /* Unbox param: tmpl */
-  /* WARNING: String is strdup'ed to avoid mutable reference to internal MRuby memory */
-  char * native_tmpl = strdup(tmpl);
+  mrb_get_args(mrb, "z", &native_tmpl);
 
   /* Invocation */
-  gchar * native_return_value = g_mkdtemp(native_tmpl);
+  char* tmpl_dup = strdup(native_tmpl);
+  gchar * native_return_value = g_mkdtemp(tmpl_dup);
 
   /* Box the return value */
   mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
-  g_free(native_return_value);
   
-  /* Clean in param: tmpl */
-  /* WARNING: Assuming that the new string can be deallocated after the function call. */
-  free(native_tmpl);
-  native_tmpl = NULL;
-
   return return_value;
 }
 #endif
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_mkdtemp_full */
-/* sha: 6dde7b5572e6fdb04e43a857a6a232a590351938b1541529a3d97e05e39a7b1e */
+/* sha: 54c4606d35dadd81164a8c3b0e98fdacab01f9fa1ed3cb95774ee42e2bd83a87 */
 #if BIND_g_mkdtemp_full_FUNCTION
 #define g_mkdtemp_full_REQUIRED_ARGC 2
 #define g_mkdtemp_full_OPTIONAL_ARGC 0
@@ -26745,35 +26617,31 @@ mrb_GLib_g_mkdtemp(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_mkdtemp_full(mrb_state* mrb, mrb_value self) {
-  char * tmpl = NULL;
+  mrb_value tmpl;
   mrb_int native_mode;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "z!i", &tmpl, &native_mode);
+  mrb_get_args(mrb, "oi", &tmpl, &native_mode);
+
+  /* Type checking */
+  TODO_type_check_gchar_PTR(tmpl);
 
   /* Unbox param: tmpl */
-  /* WARNING: String is strdup'ed to avoid mutable reference to internal MRuby memory */
-  char * native_tmpl = strdup(tmpl);
+  gchar * native_tmpl = TODO_mruby_unbox_gchar_PTR(tmpl);
 
   /* Invocation */
   gchar * native_return_value = g_mkdtemp_full(native_tmpl, native_mode);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
-  g_free(native_return_value);
+  mrb_value return_value = TODO_mruby_box_gchar_PTR(mrb, native_return_value);
   
-  /* Clean in param: tmpl */
-  /* WARNING: Assuming that the new string can be deallocated after the function call. */
-  free(native_tmpl);
-  native_tmpl = NULL;
-
   return return_value;
 }
 #endif
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_mkstemp */
-/* sha: 9d6c82fdd54708a834188bb79bc01cfe2c3125ec13c4572625ea2b891a748d0e */
+/* sha: 6d05ceac1bac8be9a3853a182c3ed5a06a0728c71a1d187e3231416a7f5f5472 */
 #if BIND_g_mkstemp_FUNCTION
 #define g_mkstemp_REQUIRED_ARGC 1
 #define g_mkstemp_OPTIONAL_ARGC 0
@@ -26785,14 +26653,16 @@ mrb_GLib_g_mkdtemp_full(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_mkstemp(mrb_state* mrb, mrb_value self) {
-  char * tmpl = NULL;
+  mrb_value tmpl;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "z!", &tmpl);
+  mrb_get_args(mrb, "o", &tmpl);
+
+  /* Type checking */
+  TODO_type_check_gchar_PTR(tmpl);
 
   /* Unbox param: tmpl */
-  /* WARNING: String is strdup'ed to avoid mutable reference to internal MRuby memory */
-  char * native_tmpl = strdup(tmpl);
+  gchar * native_tmpl = TODO_mruby_unbox_gchar_PTR(tmpl);
 
   /* Invocation */
   gint native_return_value = g_mkstemp(native_tmpl);
@@ -26800,18 +26670,13 @@ mrb_GLib_g_mkstemp(mrb_state* mrb, mrb_value self) {
   /* Box the return value */
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
-  /* Clean in param: tmpl */
-  /* WARNING: Assuming that the new string can be deallocated after the function call. */
-  free(native_tmpl);
-  native_tmpl = NULL;
-
   return return_value;
 }
 #endif
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_mkstemp_full */
-/* sha: b3e0e26f1ac08ff36163fbf130c630c55a89f8bd6f2314c9e3c215f1593c2eb3 */
+/* sha: 5ef1f17613b55460348b01e4ba319aec101048c0303fde6d26592ed1102bf5d1 */
 #if BIND_g_mkstemp_full_FUNCTION
 #define g_mkstemp_full_REQUIRED_ARGC 3
 #define g_mkstemp_full_OPTIONAL_ARGC 0
@@ -26825,16 +26690,18 @@ mrb_GLib_g_mkstemp(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_mkstemp_full(mrb_state* mrb, mrb_value self) {
-  char * tmpl = NULL;
+  mrb_value tmpl;
   mrb_int native_flags;
   mrb_int native_mode;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "z!ii", &tmpl, &native_flags, &native_mode);
+  mrb_get_args(mrb, "oii", &tmpl, &native_flags, &native_mode);
+
+  /* Type checking */
+  TODO_type_check_gchar_PTR(tmpl);
 
   /* Unbox param: tmpl */
-  /* WARNING: String is strdup'ed to avoid mutable reference to internal MRuby memory */
-  char * native_tmpl = strdup(tmpl);
+  gchar * native_tmpl = TODO_mruby_unbox_gchar_PTR(tmpl);
 
   /* Invocation */
   gint native_return_value = g_mkstemp_full(native_tmpl, native_flags, native_mode);
@@ -26842,11 +26709,6 @@ mrb_GLib_g_mkstemp_full(mrb_state* mrb, mrb_value self) {
   /* Box the return value */
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
-  /* Clean in param: tmpl */
-  /* WARNING: Assuming that the new string can be deallocated after the function call. */
-  free(native_tmpl);
-  native_tmpl = NULL;
-
   return return_value;
 }
 #endif
@@ -28527,7 +28389,7 @@ mrb_GLib_g_option_context_free(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_option_context_get_description */
-/* sha: 160853d9fd1cd37e0947db55927f5f210b4ae18dfb1644f8252557729706a525 */
+/* sha: 4ba764b8f3a64beec410939714baf621b9d56df8841cd32a7c728f57eff23d8f */
 #if BIND_g_option_context_get_description_FUNCTION
 #define g_option_context_get_description_REQUIRED_ARGC 1
 #define g_option_context_get_description_OPTIONAL_ARGC 0
@@ -28557,7 +28419,7 @@ mrb_GLib_g_option_context_get_description(mrb_state* mrb, mrb_value self) {
   const gchar * native_return_value = g_option_context_get_description(native_context);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
+  mrb_value return_value = native_return_value == NULL ? mrb_nil_value() : mrb_str_new_cstr(mrb, native_return_value);
   
   return return_value;
 }
@@ -28565,7 +28427,7 @@ mrb_GLib_g_option_context_get_description(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_option_context_get_help */
-/* sha: 7f7d39b520519cfc994f9ee3d712dd1dadde930d2cd8c802cf4dc1b0d4fbae6a */
+/* sha: cd235e2a2aabd1e233c8850a504b1ff415417535d4ca810122e193a585d7af0c */
 #if BIND_g_option_context_get_help_FUNCTION
 #define g_option_context_get_help_REQUIRED_ARGC 3
 #define g_option_context_get_help_OPTIONAL_ARGC 0
@@ -28606,8 +28468,7 @@ mrb_GLib_g_option_context_get_help(mrb_state* mrb, mrb_value self) {
   gchar * native_return_value = g_option_context_get_help(native_context, native_main_help, native_group);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
-  g_free(native_return_value);
+  mrb_value return_value = TODO_mruby_box_gchar_PTR(mrb, native_return_value);
   
   return return_value;
 }
@@ -28767,7 +28628,7 @@ mrb_GLib_g_option_context_get_strict_posix(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_option_context_get_summary */
-/* sha: 90090a2efd5851f74b2de161a96c2e9c1fb9fe5220123a38f8e00c13792f3193 */
+/* sha: dd52cd7fe388cb4eb0672f0dd970f05dcf6f4615d479e204f7f845e474eec2f7 */
 #if BIND_g_option_context_get_summary_FUNCTION
 #define g_option_context_get_summary_REQUIRED_ARGC 1
 #define g_option_context_get_summary_OPTIONAL_ARGC 0
@@ -28797,7 +28658,7 @@ mrb_GLib_g_option_context_get_summary(mrb_state* mrb, mrb_value self) {
   const gchar * native_return_value = g_option_context_get_summary(native_context);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
+  mrb_value return_value = native_return_value == NULL ? mrb_nil_value() : mrb_str_new_cstr(mrb, native_return_value);
   
   return return_value;
 }
@@ -29707,7 +29568,7 @@ mrb_GLib_g_parse_debug_string(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_path_get_basename */
-/* sha: 7a41454bf4097e7355f1ec5103e56301a3e59cd086418c62ccdd85f9cd63c86b */
+/* sha: 3af335db836b80915e505db7c6a4a491e2839534809ec5697d29f62423ec8534 */
 #if BIND_g_path_get_basename_FUNCTION
 #define g_path_get_basename_REQUIRED_ARGC 1
 #define g_path_get_basename_OPTIONAL_ARGC 0
@@ -29728,8 +29589,7 @@ mrb_GLib_g_path_get_basename(mrb_state* mrb, mrb_value self) {
   gchar * native_return_value = g_path_get_basename(native_file_name);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
-  g_free(native_return_value);
+  mrb_value return_value = TODO_mruby_box_gchar_PTR(mrb, native_return_value);
   
   return return_value;
 }
@@ -29737,7 +29597,7 @@ mrb_GLib_g_path_get_basename(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_path_get_dirname */
-/* sha: 0af37caf043155c3a77878dcf6f13106530fe1e1829ef7b4115f9ebdcec806db */
+/* sha: 854c75595fa122fa8638cd4c7402cfa0c7985971dc7cce1912a55151efb7f947 */
 #if BIND_g_path_get_dirname_FUNCTION
 #define g_path_get_dirname_REQUIRED_ARGC 1
 #define g_path_get_dirname_OPTIONAL_ARGC 0
@@ -29758,8 +29618,7 @@ mrb_GLib_g_path_get_dirname(mrb_state* mrb, mrb_value self) {
   gchar * native_return_value = g_path_get_dirname(native_file_name);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
-  g_free(native_return_value);
+  mrb_value return_value = TODO_mruby_box_gchar_PTR(mrb, native_return_value);
   
   return return_value;
 }
@@ -29796,7 +29655,7 @@ mrb_GLib_g_path_is_absolute(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_path_skip_root */
-/* sha: b8fb569c1993feabc8c0790c65599ab7ff68958597950d7db4df48f49151c831 */
+/* sha: 084644e785ba761ab88d5d25957bf40876a8a3096a7c1b60a87c46e6e06f50e9 */
 #if BIND_g_path_skip_root_FUNCTION
 #define g_path_skip_root_REQUIRED_ARGC 1
 #define g_path_skip_root_OPTIONAL_ARGC 0
@@ -29817,7 +29676,7 @@ mrb_GLib_g_path_skip_root(mrb_state* mrb, mrb_value self) {
   const gchar * native_return_value = g_path_skip_root(native_file_name);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
+  mrb_value return_value = native_return_value == NULL ? mrb_nil_value() : mrb_str_new_cstr(mrb, native_return_value);
   
   return return_value;
 }
@@ -31390,7 +31249,7 @@ mrb_GLib_g_quark_from_string(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_quark_to_string */
-/* sha: 581d4fb8aa51797db9ca4d90aa59e4c09016083d98062caea72af9a69f7211c4 */
+/* sha: 2b0b86130f946d1fb784ebc2055a56b424235c461577f6c50b98ab8794bf6cce */
 #if BIND_g_quark_to_string_FUNCTION
 #define g_quark_to_string_REQUIRED_ARGC 1
 #define g_quark_to_string_OPTIONAL_ARGC 0
@@ -31411,7 +31270,7 @@ mrb_GLib_g_quark_to_string(mrb_state* mrb, mrb_value self) {
   const gchar * native_return_value = g_quark_to_string(native_quark);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
+  mrb_value return_value = native_return_value == NULL ? mrb_nil_value() : mrb_str_new_cstr(mrb, native_return_value);
   
   return return_value;
 }
@@ -33956,7 +33815,7 @@ mrb_GLib_g_regex_error_quark(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_regex_escape_nul */
-/* sha: bedae5751bc4b4b66e261c451c01f46699ce523d5df6874408151316c3279a88 */
+/* sha: 6f46d87be07fdd9feb283cde978feae36cc12a5ee481e26c82889189a66a7279 */
 #if BIND_g_regex_escape_nul_FUNCTION
 #define g_regex_escape_nul_REQUIRED_ARGC 2
 #define g_regex_escape_nul_OPTIONAL_ARGC 0
@@ -33979,8 +33838,7 @@ mrb_GLib_g_regex_escape_nul(mrb_state* mrb, mrb_value self) {
   gchar * native_return_value = g_regex_escape_nul(native_string, native_length);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
-  g_free(native_return_value);
+  mrb_value return_value = TODO_mruby_box_gchar_PTR(mrb, native_return_value);
   
   return return_value;
 }
@@ -33988,7 +33846,7 @@ mrb_GLib_g_regex_escape_nul(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_regex_escape_string */
-/* sha: f2ca4183bae51d796fd7807660a8e748a59860516fe7b251dcace54bcd34f618 */
+/* sha: 53e43e9bc661f4300d5b83da8fc338db3f36cb3a2ab94bd20639eb17887f3c52 */
 #if BIND_g_regex_escape_string_FUNCTION
 #define g_regex_escape_string_REQUIRED_ARGC 2
 #define g_regex_escape_string_OPTIONAL_ARGC 0
@@ -34011,8 +33869,7 @@ mrb_GLib_g_regex_escape_string(mrb_state* mrb, mrb_value self) {
   gchar * native_return_value = g_regex_escape_string(native_string, native_length);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
-  g_free(native_return_value);
+  mrb_value return_value = TODO_mruby_box_gchar_PTR(mrb, native_return_value);
   
   return return_value;
 }
@@ -34248,7 +34105,7 @@ mrb_GLib_g_regex_get_max_lookbehind(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_regex_get_pattern */
-/* sha: 9ef9d7a4a3befc03092969af7c5755ba205b3dc77848708a60b558148c52bec9 */
+/* sha: b42dee3405a67f0d5b5b61653b86b84d42645d824c0a70447e521a56b2712a16 */
 #if BIND_g_regex_get_pattern_FUNCTION
 #define g_regex_get_pattern_REQUIRED_ARGC 1
 #define g_regex_get_pattern_OPTIONAL_ARGC 0
@@ -34278,7 +34135,7 @@ mrb_GLib_g_regex_get_pattern(mrb_state* mrb, mrb_value self) {
   const gchar * native_return_value = g_regex_get_pattern(native_regex);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
+  mrb_value return_value = native_return_value == NULL ? mrb_nil_value() : mrb_str_new_cstr(mrb, native_return_value);
   
   return return_value;
 }
@@ -34659,7 +34516,7 @@ mrb_GLib_g_regex_ref(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_regex_replace */
-/* sha: faee5159d39744c12a82a1846dc21942da5e1dda7a7b1000e23f82def035f10a */
+/* sha: 9ef8e2b795634356637589d989a6e88249c1879eaeec6ae7fbec834ff1ea00f0 */
 #if BIND_g_regex_replace_FUNCTION
 #define g_regex_replace_REQUIRED_ARGC 6
 #define g_regex_replace_OPTIONAL_ARGC 0
@@ -34701,8 +34558,7 @@ mrb_GLib_g_regex_replace(mrb_state* mrb, mrb_value self) {
   gchar * native_return_value = g_regex_replace(native_regex, native_string, native_string_len, native_start_position, native_replacement, native_match_options, &native_error);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
-  g_free(native_return_value);
+  mrb_value return_value = TODO_mruby_box_gchar_PTR(mrb, native_return_value);
   mrb_ary_push(mrb, results, return_value);
   
   /* Box out param: error */
@@ -34717,7 +34573,7 @@ mrb_GLib_g_regex_replace(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_regex_replace_eval */
-/* sha: ef2922e883a453053c26d1ee3dff15ec38996d7fba62b02688e134295d7768fd */
+/* sha: a4248534e2c7232859feb7ed7e6293cda468de90caf765c2523e5cd11d6bf5c0 */
 #if BIND_g_regex_replace_eval_FUNCTION
 #define g_regex_replace_eval_REQUIRED_ARGC 7
 #define g_regex_replace_eval_OPTIONAL_ARGC 0
@@ -34769,8 +34625,7 @@ mrb_GLib_g_regex_replace_eval(mrb_state* mrb, mrb_value self) {
   gchar * native_return_value = g_regex_replace_eval(native_regex, native_string, native_string_len, native_start_position, native_match_options, native_eval, native_user_data, &native_error);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
-  g_free(native_return_value);
+  mrb_value return_value = TODO_mruby_box_gchar_PTR(mrb, native_return_value);
   mrb_ary_push(mrb, results, return_value);
   
   /* Box out param: error */
@@ -34785,7 +34640,7 @@ mrb_GLib_g_regex_replace_eval(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_regex_replace_literal */
-/* sha: 3f8803a49afd1badd9ee30af34c934a6896255fa7d31285f27ba1cc5f8c07657 */
+/* sha: fa32c7617538caa9bb653851fdd45aea9e17af16e8e62e3dcbc8189393939d71 */
 #if BIND_g_regex_replace_literal_FUNCTION
 #define g_regex_replace_literal_REQUIRED_ARGC 6
 #define g_regex_replace_literal_OPTIONAL_ARGC 0
@@ -34827,8 +34682,7 @@ mrb_GLib_g_regex_replace_literal(mrb_state* mrb, mrb_value self) {
   gchar * native_return_value = g_regex_replace_literal(native_regex, native_string, native_string_len, native_start_position, native_replacement, native_match_options, &native_error);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
-  g_free(native_return_value);
+  mrb_value return_value = TODO_mruby_box_gchar_PTR(mrb, native_return_value);
   mrb_ary_push(mrb, results, return_value);
   
   /* Box out param: error */
@@ -38145,7 +37999,7 @@ mrb_GLib_g_shell_parse_argv(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_shell_quote */
-/* sha: 8657fcf24d354e4c75025479820a618198489d3c69af9bfe8b62f7c75449a374 */
+/* sha: 86e1438a27cb60f823d7fd0fbf14c31c67fd743e8778759335f7cd5228839fff */
 #if BIND_g_shell_quote_FUNCTION
 #define g_shell_quote_REQUIRED_ARGC 1
 #define g_shell_quote_OPTIONAL_ARGC 0
@@ -38166,8 +38020,7 @@ mrb_GLib_g_shell_quote(mrb_state* mrb, mrb_value self) {
   gchar * native_return_value = g_shell_quote(native_unquoted_string);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
-  g_free(native_return_value);
+  mrb_value return_value = TODO_mruby_box_gchar_PTR(mrb, native_return_value);
   
   return return_value;
 }
@@ -38175,7 +38028,7 @@ mrb_GLib_g_shell_quote(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_shell_unquote */
-/* sha: a8187a8d12d577054107b671108705a63d83b934c82fec719de5b6cdf148b138 */
+/* sha: 029b98c515a07f03fa59b3f1a9891da853208d25c27e395e037362b52e0f3c00 */
 #if BIND_g_shell_unquote_FUNCTION
 #define g_shell_unquote_REQUIRED_ARGC 1
 #define g_shell_unquote_OPTIONAL_ARGC 0
@@ -38198,8 +38051,7 @@ mrb_GLib_g_shell_unquote(mrb_state* mrb, mrb_value self) {
   gchar * native_return_value = g_shell_unquote(native_quoted_string, &native_error);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
-  g_free(native_return_value);
+  mrb_value return_value = TODO_mruby_box_gchar_PTR(mrb, native_return_value);
   mrb_ary_push(mrb, results, return_value);
   
   /* Box out param: error */
@@ -39739,7 +39591,7 @@ mrb_GLib_g_slist_sort_with_data(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_snprintf */
-/* sha: 0ffea54f36cffcd15aa5d08f0e81425e8918b5e389d68743306b82aea27e8f22 */
+/* sha: c1ac836bfc04bfd3eda791809d5c2e4622c7a1aa39db164fa4245e35914973ec */
 #if BIND_g_snprintf_FUNCTION
 #define g_snprintf_REQUIRED_ARGC 3
 #define g_snprintf_OPTIONAL_ARGC 0
@@ -39753,16 +39605,18 @@ mrb_GLib_g_slist_sort_with_data(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_snprintf(mrb_state* mrb, mrb_value self) {
-  char * string = NULL;
+  mrb_value string;
   mrb_int native_n;
   char * native_format = NULL;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "z!iz!", &string, &native_n, &native_format);
+  mrb_get_args(mrb, "oiz!", &string, &native_n, &native_format);
+
+  /* Type checking */
+  TODO_type_check_gchar_PTR(string);
 
   /* Unbox param: string */
-  /* WARNING: String is strdup'ed to avoid mutable reference to internal MRuby memory */
-  char * native_string = strdup(string);
+  gchar * native_string = TODO_mruby_unbox_gchar_PTR(string);
 
   /* Invocation */
   gint native_return_value = g_snprintf(native_string, native_n, native_format);
@@ -39770,11 +39624,6 @@ mrb_GLib_g_snprintf(mrb_state* mrb, mrb_value self) {
   /* Box the return value */
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
-  /* Clean in param: string */
-  /* WARNING: Assuming that the new string can be deallocated after the function call. */
-  free(native_string);
-  native_string = NULL;
-
   return return_value;
 }
 #endif
@@ -40151,7 +40000,7 @@ mrb_GLib_g_source_get_id(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_source_get_name */
-/* sha: cc7e4196e6b8e8a4c8e3816e1a190899edb6fe4656fa6b3d3b84f87217b6fccc */
+/* sha: 662b0892375266b622bd6f51a4aa1c5a8ae0b814698d662f8b1a1b111ab88d66 */
 #if BIND_g_source_get_name_FUNCTION
 #define g_source_get_name_REQUIRED_ARGC 1
 #define g_source_get_name_OPTIONAL_ARGC 0
@@ -40181,7 +40030,7 @@ mrb_GLib_g_source_get_name(mrb_state* mrb, mrb_value self) {
   const char * native_return_value = g_source_get_name(native_source);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
+  mrb_value return_value = native_return_value == NULL ? mrb_nil_value() : mrb_str_new_cstr(mrb, native_return_value);
   
   return return_value;
 }
@@ -41644,7 +41493,7 @@ mrb_GLib_g_spawn_sync(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_sprintf */
-/* sha: f87710862114c7c8112c3aafd0cfb5f5a28bd3d6891f44cf0ecfb315633a7fd9 */
+/* sha: a14976e5afe3c8e7088b1b53c3671fb128b0c0a68992c8067cdd99b9aea65602 */
 #if BIND_g_sprintf_FUNCTION
 #define g_sprintf_REQUIRED_ARGC 2
 #define g_sprintf_OPTIONAL_ARGC 0
@@ -41657,15 +41506,17 @@ mrb_GLib_g_spawn_sync(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_sprintf(mrb_state* mrb, mrb_value self) {
-  char * string = NULL;
+  mrb_value string;
   char * native_format = NULL;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "z!z!", &string, &native_format);
+  mrb_get_args(mrb, "oz!", &string, &native_format);
+
+  /* Type checking */
+  TODO_type_check_gchar_PTR(string);
 
   /* Unbox param: string */
-  /* WARNING: String is strdup'ed to avoid mutable reference to internal MRuby memory */
-  char * native_string = strdup(string);
+  gchar * native_string = TODO_mruby_unbox_gchar_PTR(string);
 
   /* Invocation */
   gint native_return_value = g_sprintf(native_string, native_format);
@@ -41673,11 +41524,6 @@ mrb_GLib_g_sprintf(mrb_state* mrb, mrb_value self) {
   /* Box the return value */
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
-  /* Clean in param: string */
-  /* WARNING: Assuming that the new string can be deallocated after the function call. */
-  free(native_string);
-  native_string = NULL;
-
   return return_value;
 }
 #endif
@@ -41719,7 +41565,7 @@ mrb_GLib_g_steal_pointer(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_stpcpy */
-/* sha: 4db068e33756284dd0c1bab87c34342f3feb593dd940ad06f6b23672fff94260 */
+/* sha: e37e877a6919d564616946a4e3b560957d2d6a007aad924f929d4ed84a4b0499 */
 #if BIND_g_stpcpy_FUNCTION
 #define g_stpcpy_REQUIRED_ARGC 2
 #define g_stpcpy_OPTIONAL_ARGC 0
@@ -41732,28 +41578,24 @@ mrb_GLib_g_steal_pointer(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_stpcpy(mrb_state* mrb, mrb_value self) {
-  char * dest = NULL;
+  mrb_value dest;
   char * native_src = NULL;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "z!z!", &dest, &native_src);
+  mrb_get_args(mrb, "oz!", &dest, &native_src);
+
+  /* Type checking */
+  TODO_type_check_gchar_PTR(dest);
 
   /* Unbox param: dest */
-  /* WARNING: String is strdup'ed to avoid mutable reference to internal MRuby memory */
-  char * native_dest = strdup(dest);
+  gchar * native_dest = TODO_mruby_unbox_gchar_PTR(dest);
 
   /* Invocation */
   gchar * native_return_value = g_stpcpy(native_dest, native_src);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
-  g_free(native_return_value);
+  mrb_value return_value = TODO_mruby_box_gchar_PTR(mrb, native_return_value);
   
-  /* Clean in param: dest */
-  /* WARNING: Assuming that the new string can be deallocated after the function call. */
-  free(native_dest);
-  native_dest = NULL;
-
   return return_value;
 }
 #endif
@@ -41960,7 +41802,7 @@ mrb_GLib_g_str_match_string(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_str_to_ascii */
-/* sha: e6023215c3f2b6d8fc03548baeeb967133f566eb66a96010fdad6e182a69f191 */
+/* sha: d38912dff60efe8c328b4c96bbe5e9d4a0cd18de63bbccbc029ab23c121614c9 */
 #if BIND_g_str_to_ascii_FUNCTION
 #define g_str_to_ascii_REQUIRED_ARGC 2
 #define g_str_to_ascii_OPTIONAL_ARGC 0
@@ -41983,8 +41825,7 @@ mrb_GLib_g_str_to_ascii(mrb_state* mrb, mrb_value self) {
   gchar * native_return_value = g_str_to_ascii(native_str, native_from_locale);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
-  g_free(native_return_value);
+  mrb_value return_value = TODO_mruby_box_gchar_PTR(mrb, native_return_value);
   
   return return_value;
 }
@@ -42031,7 +41872,7 @@ mrb_GLib_g_str_tokenize_and_fold(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_strcanon */
-/* sha: 9e92af4fcdbe305f1cd15c4fda8f7970c3a8ade960bd2d52d1c93c701c7be180 */
+/* sha: 1bbbcf84c42db9b43804c29ca641039f2d0c7f0dc14442df7cef6ec32290a66f */
 #if BIND_g_strcanon_FUNCTION
 #define g_strcanon_REQUIRED_ARGC 3
 #define g_strcanon_OPTIONAL_ARGC 0
@@ -42045,29 +41886,25 @@ mrb_GLib_g_str_tokenize_and_fold(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_strcanon(mrb_state* mrb, mrb_value self) {
-  char * string = NULL;
+  mrb_value string;
   char * native_valid_chars = NULL;
   mrb_int native_substitutor;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "z!z!i", &string, &native_valid_chars, &native_substitutor);
+  mrb_get_args(mrb, "oz!i", &string, &native_valid_chars, &native_substitutor);
+
+  /* Type checking */
+  TODO_type_check_gchar_PTR(string);
 
   /* Unbox param: string */
-  /* WARNING: String is strdup'ed to avoid mutable reference to internal MRuby memory */
-  char * native_string = strdup(string);
+  gchar * native_string = TODO_mruby_unbox_gchar_PTR(string);
 
   /* Invocation */
   gchar * native_return_value = g_strcanon(native_string, native_valid_chars, native_substitutor);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
-  g_free(native_return_value);
+  mrb_value return_value = TODO_mruby_box_gchar_PTR(mrb, native_return_value);
   
-  /* Clean in param: string */
-  /* WARNING: Assuming that the new string can be deallocated after the function call. */
-  free(native_string);
-  native_string = NULL;
-
   return return_value;
 }
 #endif
@@ -42105,7 +41942,7 @@ mrb_GLib_g_strcasecmp(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_strchomp */
-/* sha: 314d1491fc5349b6f4f81879ffc6eb6e17d98996945dc6f36c3c6a02f2e216b7 */
+/* sha: e839ee70559fbd432fdf5b3aa334d171c4b5cb0812b8e039df8c7b4c56bc0248 */
 #if BIND_g_strchomp_FUNCTION
 #define g_strchomp_REQUIRED_ARGC 1
 #define g_strchomp_OPTIONAL_ARGC 0
@@ -42117,34 +41954,30 @@ mrb_GLib_g_strcasecmp(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_strchomp(mrb_state* mrb, mrb_value self) {
-  char * string = NULL;
+  mrb_value string;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "z!", &string);
+  mrb_get_args(mrb, "o", &string);
+
+  /* Type checking */
+  TODO_type_check_gchar_PTR(string);
 
   /* Unbox param: string */
-  /* WARNING: String is strdup'ed to avoid mutable reference to internal MRuby memory */
-  char * native_string = strdup(string);
+  gchar * native_string = TODO_mruby_unbox_gchar_PTR(string);
 
   /* Invocation */
   gchar * native_return_value = g_strchomp(native_string);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
-  g_free(native_return_value);
+  mrb_value return_value = TODO_mruby_box_gchar_PTR(mrb, native_return_value);
   
-  /* Clean in param: string */
-  /* WARNING: Assuming that the new string can be deallocated after the function call. */
-  free(native_string);
-  native_string = NULL;
-
   return return_value;
 }
 #endif
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_strchug */
-/* sha: 55056fb421c0718f0007604ef3b2b6c9d60bb6350b0ddcf9545f2ffc5911c155 */
+/* sha: 7d76da9474862262d29b171e9442b83cf8b7a79686db6b55d28036b89a159a9c */
 #if BIND_g_strchug_FUNCTION
 #define g_strchug_REQUIRED_ARGC 1
 #define g_strchug_OPTIONAL_ARGC 0
@@ -42156,27 +41989,23 @@ mrb_GLib_g_strchomp(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_strchug(mrb_state* mrb, mrb_value self) {
-  char * string = NULL;
+  mrb_value string;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "z!", &string);
+  mrb_get_args(mrb, "o", &string);
+
+  /* Type checking */
+  TODO_type_check_gchar_PTR(string);
 
   /* Unbox param: string */
-  /* WARNING: String is strdup'ed to avoid mutable reference to internal MRuby memory */
-  char * native_string = strdup(string);
+  gchar * native_string = TODO_mruby_unbox_gchar_PTR(string);
 
   /* Invocation */
   gchar * native_return_value = g_strchug(native_string);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
-  g_free(native_return_value);
+  mrb_value return_value = TODO_mruby_box_gchar_PTR(mrb, native_return_value);
   
-  /* Clean in param: string */
-  /* WARNING: Assuming that the new string can be deallocated after the function call. */
-  free(native_string);
-  native_string = NULL;
-
   return return_value;
 }
 #endif
@@ -42214,7 +42043,7 @@ mrb_GLib_g_strcmp0(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_strcompress */
-/* sha: f054f0df93438b1967ef5b3fb366f4e1b189c3487d0775825574f189e58aa2ed */
+/* sha: 0ade7530d928c9a9aa3641613c1bd05199399e0d64e3a87e936fc5bdbe4d9b5a */
 #if BIND_g_strcompress_FUNCTION
 #define g_strcompress_REQUIRED_ARGC 1
 #define g_strcompress_OPTIONAL_ARGC 0
@@ -42235,8 +42064,7 @@ mrb_GLib_g_strcompress(mrb_state* mrb, mrb_value self) {
   gchar * native_return_value = g_strcompress(native_source);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
-  g_free(native_return_value);
+  mrb_value return_value = TODO_mruby_box_gchar_PTR(mrb, native_return_value);
   
   return return_value;
 }
@@ -42244,7 +42072,7 @@ mrb_GLib_g_strcompress(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_strconcat */
-/* sha: c608a740f9a9404aec4a891479937bc454d3ec5a3a3c970e75807401499d19c4 */
+/* sha: 7a7f773cb7c49b246da70545aff5d5148097fee2393af4179ccfd5972ec9a095 */
 #if BIND_g_strconcat_FUNCTION
 #define g_strconcat_REQUIRED_ARGC 1
 #define g_strconcat_OPTIONAL_ARGC 0
@@ -42265,8 +42093,7 @@ mrb_GLib_g_strconcat(mrb_state* mrb, mrb_value self) {
   gchar * native_return_value = g_strconcat(native_string1);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
-  g_free(native_return_value);
+  mrb_value return_value = TODO_mruby_box_gchar_PTR(mrb, native_return_value);
   
   return return_value;
 }
@@ -42274,7 +42101,7 @@ mrb_GLib_g_strconcat(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_strdelimit */
-/* sha: 6f8ea97e5b07f8956a884dcc5dd62083ada157740ca723cdd0a1eccf797125b5 */
+/* sha: 449e2cba3c62865035c73f68ed3b0b84dfcb6d97df9a8ef198a5cf451019eef3 */
 #if BIND_g_strdelimit_FUNCTION
 #define g_strdelimit_REQUIRED_ARGC 3
 #define g_strdelimit_OPTIONAL_ARGC 0
@@ -42288,36 +42115,32 @@ mrb_GLib_g_strconcat(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_strdelimit(mrb_state* mrb, mrb_value self) {
-  char * string = NULL;
+  mrb_value string;
   char * native_delimiters = NULL;
   mrb_int native_new_delimiter;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "z!z!i", &string, &native_delimiters, &native_new_delimiter);
+  mrb_get_args(mrb, "oz!i", &string, &native_delimiters, &native_new_delimiter);
+
+  /* Type checking */
+  TODO_type_check_gchar_PTR(string);
 
   /* Unbox param: string */
-  /* WARNING: String is strdup'ed to avoid mutable reference to internal MRuby memory */
-  char * native_string = strdup(string);
+  gchar * native_string = TODO_mruby_unbox_gchar_PTR(string);
 
   /* Invocation */
   gchar * native_return_value = g_strdelimit(native_string, native_delimiters, native_new_delimiter);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
-  g_free(native_return_value);
+  mrb_value return_value = TODO_mruby_box_gchar_PTR(mrb, native_return_value);
   
-  /* Clean in param: string */
-  /* WARNING: Assuming that the new string can be deallocated after the function call. */
-  free(native_string);
-  native_string = NULL;
-
   return return_value;
 }
 #endif
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_strdown */
-/* sha: 81b6269225a7f8dd78eef43c9591e3347903201cbd9791f0906ab67acd07fd24 */
+/* sha: 15a69ab899db962ef49a377bdc3a8b39a5dd0de4ef25dda1753ffdaf9d3db1a7 */
 #if BIND_g_strdown_FUNCTION
 #define g_strdown_REQUIRED_ARGC 1
 #define g_strdown_OPTIONAL_ARGC 0
@@ -42329,34 +42152,30 @@ mrb_GLib_g_strdelimit(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_strdown(mrb_state* mrb, mrb_value self) {
-  char * string = NULL;
+  mrb_value string;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "z!", &string);
+  mrb_get_args(mrb, "o", &string);
+
+  /* Type checking */
+  TODO_type_check_gchar_PTR(string);
 
   /* Unbox param: string */
-  /* WARNING: String is strdup'ed to avoid mutable reference to internal MRuby memory */
-  char * native_string = strdup(string);
+  gchar * native_string = TODO_mruby_unbox_gchar_PTR(string);
 
   /* Invocation */
   gchar * native_return_value = g_strdown(native_string);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
-  g_free(native_return_value);
+  mrb_value return_value = TODO_mruby_box_gchar_PTR(mrb, native_return_value);
   
-  /* Clean in param: string */
-  /* WARNING: Assuming that the new string can be deallocated after the function call. */
-  free(native_string);
-  native_string = NULL;
-
   return return_value;
 }
 #endif
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_strdup */
-/* sha: 996fa98306fd8a3e99f0925cfdfbb3873806bfb9ba68e471e4d457b2dbe93605 */
+/* sha: b2da669feb6c510666c80b10ee6c17668ea49f2914cd0950ebf9e5b80b825708 */
 #if BIND_g_strdup_FUNCTION
 #define g_strdup_REQUIRED_ARGC 1
 #define g_strdup_OPTIONAL_ARGC 0
@@ -42377,8 +42196,7 @@ mrb_GLib_g_strdup(mrb_state* mrb, mrb_value self) {
   gchar * native_return_value = g_strdup(native_str);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
-  g_free(native_return_value);
+  mrb_value return_value = TODO_mruby_box_gchar_PTR(mrb, native_return_value);
   
   return return_value;
 }
@@ -42386,7 +42204,7 @@ mrb_GLib_g_strdup(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_strdup_printf */
-/* sha: 2308141bf2fa111e055b8ae8258926e58bc67f52e62b2c8d58f0de74729f5bf8 */
+/* sha: a7446b9fcf2208060a107c3ea522cc05c8003819b93716e980e1f766a213a949 */
 #if BIND_g_strdup_printf_FUNCTION
 #define g_strdup_printf_REQUIRED_ARGC 1
 #define g_strdup_printf_OPTIONAL_ARGC 0
@@ -42407,8 +42225,7 @@ mrb_GLib_g_strdup_printf(mrb_state* mrb, mrb_value self) {
   gchar * native_return_value = g_strdup_printf(native_format);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
-  g_free(native_return_value);
+  mrb_value return_value = TODO_mruby_box_gchar_PTR(mrb, native_return_value);
   
   return return_value;
 }
@@ -42416,7 +42233,7 @@ mrb_GLib_g_strdup_printf(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_strdup_vprintf */
-/* sha: d4ec599eec39d6c79ee92206163b6653c3c0b47b762eb36fb1f551d9611ed069 */
+/* sha: 4e310a50f47dfc41a772679eda1d1c0efef2a1ede615617346fd4b234d0237b1 */
 #if BIND_g_strdup_vprintf_FUNCTION
 #define g_strdup_vprintf_REQUIRED_ARGC 2
 #define g_strdup_vprintf_OPTIONAL_ARGC 0
@@ -42439,8 +42256,7 @@ mrb_GLib_g_strdup_vprintf(mrb_state* mrb, mrb_value self) {
   gchar * native_return_value = g_strdup_vprintf(native_format, native_args);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
-  g_free(native_return_value);
+  mrb_value return_value = TODO_mruby_box_gchar_PTR(mrb, native_return_value);
   
   return return_value;
 }
@@ -42483,7 +42299,7 @@ mrb_GLib_g_strdupv(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_strerror */
-/* sha: f9ea1ac56fcd454febe4b09c88e1f238b142cea951e76d35f2e1549b9c85477e */
+/* sha: 12f7def052629f1cf8a5220ea96c619aacddad2a7cd7fcaef5436095e3dd948e */
 #if BIND_g_strerror_FUNCTION
 #define g_strerror_REQUIRED_ARGC 1
 #define g_strerror_OPTIONAL_ARGC 0
@@ -42504,7 +42320,7 @@ mrb_GLib_g_strerror(mrb_state* mrb, mrb_value self) {
   const gchar * native_return_value = g_strerror(native_errnum);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
+  mrb_value return_value = native_return_value == NULL ? mrb_nil_value() : mrb_str_new_cstr(mrb, native_return_value);
   
   return return_value;
 }
@@ -42512,7 +42328,7 @@ mrb_GLib_g_strerror(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_strescape */
-/* sha: 26a2e576c9cb6c75d590a3d534eb5ff9e3bf3abc11f972c5379be4105103350a */
+/* sha: 6a06e514b96175efc9e357ec6391dc7a5c14f6f0fe732663b2798312ad0404cc */
 #if BIND_g_strescape_FUNCTION
 #define g_strescape_REQUIRED_ARGC 2
 #define g_strescape_OPTIONAL_ARGC 0
@@ -42535,8 +42351,7 @@ mrb_GLib_g_strescape(mrb_state* mrb, mrb_value self) {
   gchar * native_return_value = g_strescape(native_source, native_exceptions);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
-  g_free(native_return_value);
+  mrb_value return_value = TODO_mruby_box_gchar_PTR(mrb, native_return_value);
   
   return return_value;
 }
@@ -43084,7 +42899,7 @@ mrb_GLib_g_string_chunk_free(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_string_chunk_insert */
-/* sha: 8b40eb3ab21d77b4f0f4c47c4bcc994abc7f1f7f854ada45f36bf35a7c0effe8 */
+/* sha: 62924f42e9fa723ae2155cc0445778a6a274ce50b98d961b54e90bdea66489bf */
 #if BIND_g_string_chunk_insert_FUNCTION
 #define g_string_chunk_insert_REQUIRED_ARGC 2
 #define g_string_chunk_insert_OPTIONAL_ARGC 0
@@ -43116,8 +42931,7 @@ mrb_GLib_g_string_chunk_insert(mrb_state* mrb, mrb_value self) {
   gchar * native_return_value = g_string_chunk_insert(native_chunk, native_string);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
-  g_free(native_return_value);
+  mrb_value return_value = TODO_mruby_box_gchar_PTR(mrb, native_return_value);
   
   return return_value;
 }
@@ -43125,7 +42939,7 @@ mrb_GLib_g_string_chunk_insert(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_string_chunk_insert_const */
-/* sha: 9928f55bb97af0edf83b1c522c03e0e73ed779a0b2cc388f3b48894bb3015a92 */
+/* sha: 795f3892e6368244c48f1605a9266b984a30786b3d7d40f76b8776b915fa2499 */
 #if BIND_g_string_chunk_insert_const_FUNCTION
 #define g_string_chunk_insert_const_REQUIRED_ARGC 2
 #define g_string_chunk_insert_const_OPTIONAL_ARGC 0
@@ -43157,8 +42971,7 @@ mrb_GLib_g_string_chunk_insert_const(mrb_state* mrb, mrb_value self) {
   gchar * native_return_value = g_string_chunk_insert_const(native_chunk, native_string);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
-  g_free(native_return_value);
+  mrb_value return_value = TODO_mruby_box_gchar_PTR(mrb, native_return_value);
   
   return return_value;
 }
@@ -43166,7 +42979,7 @@ mrb_GLib_g_string_chunk_insert_const(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_string_chunk_insert_len */
-/* sha: e90dbc405c813ba4855f34c9523c59ebcfb9ab76aaa87dcc66d3ff51ec591c07 */
+/* sha: d324e7fb45b6889525801b21cff1176acb880b9f2eaa5cf28d35ea17044bd30d */
 #if BIND_g_string_chunk_insert_len_FUNCTION
 #define g_string_chunk_insert_len_REQUIRED_ARGC 3
 #define g_string_chunk_insert_len_OPTIONAL_ARGC 0
@@ -43200,8 +43013,7 @@ mrb_GLib_g_string_chunk_insert_len(mrb_state* mrb, mrb_value self) {
   gchar * native_return_value = g_string_chunk_insert_len(native_chunk, native_string, native_len);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
-  g_free(native_return_value);
+  mrb_value return_value = TODO_mruby_box_gchar_PTR(mrb, native_return_value);
   
   return return_value;
 }
@@ -43365,7 +43177,7 @@ mrb_GLib_g_string_erase(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_string_free */
-/* sha: a9f4b561a8689b0916d83f7560ea50823b31e6d1e662a564bdd6152edf5d4473 */
+/* sha: 6b8de93655049ac14dd59fece2feea28dc24b0ff890d9cf49cda300708c22385 */
 #if BIND_g_string_free_FUNCTION
 #define g_string_free_REQUIRED_ARGC 2
 #define g_string_free_OPTIONAL_ARGC 0
@@ -43397,8 +43209,7 @@ mrb_GLib_g_string_free(mrb_state* mrb, mrb_value self) {
   gchar * native_return_value = g_string_free(native_string, native_free_segment);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
-  g_free(native_return_value);
+  mrb_value return_value = TODO_mruby_box_gchar_PTR(mrb, native_return_value);
   
   return return_value;
 }
@@ -44183,7 +43994,7 @@ mrb_GLib_g_string_vprintf(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_strip_context */
-/* sha: a4197693afe96f9630fff1321e10b2b8be3548a06f32bb159f2808e3e9f02502 */
+/* sha: a7d95c164fb6c6359af8b9834b63dfb1c9dc5ff8c1a14cf310daafc88e626967 */
 #if BIND_g_strip_context_FUNCTION
 #define g_strip_context_REQUIRED_ARGC 2
 #define g_strip_context_OPTIONAL_ARGC 0
@@ -44206,7 +44017,7 @@ mrb_GLib_g_strip_context(mrb_state* mrb, mrb_value self) {
   const gchar * native_return_value = g_strip_context(native_msgid, native_msgval);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
+  mrb_value return_value = native_return_value == NULL ? mrb_nil_value() : mrb_str_new_cstr(mrb, native_return_value);
   
   return return_value;
 }
@@ -44214,7 +44025,7 @@ mrb_GLib_g_strip_context(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_strjoin */
-/* sha: 713b02be1447357e844d9140f80a8016d2ecfadf620e90426b07d8ba8b6873e7 */
+/* sha: 887a6e98a9f89824227482461887a1cc57d426e09fec1ea3dc22e31f578903b6 */
 #if BIND_g_strjoin_FUNCTION
 #define g_strjoin_REQUIRED_ARGC 1
 #define g_strjoin_OPTIONAL_ARGC 0
@@ -44235,8 +44046,7 @@ mrb_GLib_g_strjoin(mrb_state* mrb, mrb_value self) {
   gchar * native_return_value = g_strjoin(native_separator);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
-  g_free(native_return_value);
+  mrb_value return_value = TODO_mruby_box_gchar_PTR(mrb, native_return_value);
   
   return return_value;
 }
@@ -44244,7 +44054,7 @@ mrb_GLib_g_strjoin(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_strjoinv */
-/* sha: db52607f3ca4f4a3747408711b856e89c238c4651835b4cdb6c51bfd47085759 */
+/* sha: 9312888d33d9c7b7d0ac09bf0b4ffbb8e24a1f2b3633e9a7210f6afe3506d28d */
 #if BIND_g_strjoinv_FUNCTION
 #define g_strjoinv_REQUIRED_ARGC 2
 #define g_strjoinv_OPTIONAL_ARGC 0
@@ -44273,8 +44083,7 @@ mrb_GLib_g_strjoinv(mrb_state* mrb, mrb_value self) {
   gchar * native_return_value = g_strjoinv(native_separator, native_str_array);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
-  g_free(native_return_value);
+  mrb_value return_value = TODO_mruby_box_gchar_PTR(mrb, native_return_value);
   
   return return_value;
 }
@@ -44282,7 +44091,7 @@ mrb_GLib_g_strjoinv(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_strlcat */
-/* sha: 5fc24173f1437d3ea4ecdc92979247c492c52b78a2f9c19adfdb3f016036b7c9 */
+/* sha: af4c67ef8d6e650bf9f04316476771d3d56d2a024635d1192c301e95adc9fa52 */
 #if BIND_g_strlcat_FUNCTION
 #define g_strlcat_REQUIRED_ARGC 3
 #define g_strlcat_OPTIONAL_ARGC 0
@@ -44296,16 +44105,18 @@ mrb_GLib_g_strjoinv(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_strlcat(mrb_state* mrb, mrb_value self) {
-  char * dest = NULL;
+  mrb_value dest;
   char * native_src = NULL;
   mrb_int native_dest_size;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "z!z!i", &dest, &native_src, &native_dest_size);
+  mrb_get_args(mrb, "oz!i", &dest, &native_src, &native_dest_size);
+
+  /* Type checking */
+  TODO_type_check_gchar_PTR(dest);
 
   /* Unbox param: dest */
-  /* WARNING: String is strdup'ed to avoid mutable reference to internal MRuby memory */
-  char * native_dest = strdup(dest);
+  gchar * native_dest = TODO_mruby_unbox_gchar_PTR(dest);
 
   /* Invocation */
   gsize native_return_value = g_strlcat(native_dest, native_src, native_dest_size);
@@ -44313,18 +44124,13 @@ mrb_GLib_g_strlcat(mrb_state* mrb, mrb_value self) {
   /* Box the return value */
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
-  /* Clean in param: dest */
-  /* WARNING: Assuming that the new string can be deallocated after the function call. */
-  free(native_dest);
-  native_dest = NULL;
-
   return return_value;
 }
 #endif
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_strlcpy */
-/* sha: f16f62466db1a47fc075f250346211f487ac997016454c884e3c761dcec67819 */
+/* sha: d581d842123f8682998dd249496c64b7acf4d18d4465542ba5cf20d0c2720abd */
 #if BIND_g_strlcpy_FUNCTION
 #define g_strlcpy_REQUIRED_ARGC 3
 #define g_strlcpy_OPTIONAL_ARGC 0
@@ -44338,16 +44144,18 @@ mrb_GLib_g_strlcat(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_strlcpy(mrb_state* mrb, mrb_value self) {
-  char * dest = NULL;
+  mrb_value dest;
   char * native_src = NULL;
   mrb_int native_dest_size;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "z!z!i", &dest, &native_src, &native_dest_size);
+  mrb_get_args(mrb, "oz!i", &dest, &native_src, &native_dest_size);
+
+  /* Type checking */
+  TODO_type_check_gchar_PTR(dest);
 
   /* Unbox param: dest */
-  /* WARNING: String is strdup'ed to avoid mutable reference to internal MRuby memory */
-  char * native_dest = strdup(dest);
+  gchar * native_dest = TODO_mruby_unbox_gchar_PTR(dest);
 
   /* Invocation */
   gsize native_return_value = g_strlcpy(native_dest, native_src, native_dest_size);
@@ -44355,11 +44163,6 @@ mrb_GLib_g_strlcpy(mrb_state* mrb, mrb_value self) {
   /* Box the return value */
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
-  /* Clean in param: dest */
-  /* WARNING: Assuming that the new string can be deallocated after the function call. */
-  free(native_dest);
-  native_dest = NULL;
-
   return return_value;
 }
 #endif
@@ -44399,7 +44202,7 @@ mrb_GLib_g_strncasecmp(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_strndup */
-/* sha: de8ed3163db9f2390e8b5a0f89014a3cdabf939b8fa1476d913c36a26da108f9 */
+/* sha: 4424a2adbddf83c18cfc1ffb8c176f7e9cda3372d9b246911c2b93a50fb30b81 */
 #if BIND_g_strndup_FUNCTION
 #define g_strndup_REQUIRED_ARGC 2
 #define g_strndup_OPTIONAL_ARGC 0
@@ -44422,8 +44225,7 @@ mrb_GLib_g_strndup(mrb_state* mrb, mrb_value self) {
   gchar * native_return_value = g_strndup(native_str, native_n);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
-  g_free(native_return_value);
+  mrb_value return_value = TODO_mruby_box_gchar_PTR(mrb, native_return_value);
   
   return return_value;
 }
@@ -44431,7 +44233,7 @@ mrb_GLib_g_strndup(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_strnfill */
-/* sha: f4e48b41eedfa969b001df8bda02ce08c613c8f00d4799fa5d9185feae47f134 */
+/* sha: 13cc60ea4991e57c70ae82580262e26f9384c20a122603b6a7e1fc6a887dfba0 */
 #if BIND_g_strnfill_FUNCTION
 #define g_strnfill_REQUIRED_ARGC 2
 #define g_strnfill_OPTIONAL_ARGC 0
@@ -44454,8 +44256,7 @@ mrb_GLib_g_strnfill(mrb_state* mrb, mrb_value self) {
   gchar * native_return_value = g_strnfill(native_length, native_fill_char);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
-  g_free(native_return_value);
+  mrb_value return_value = TODO_mruby_box_gchar_PTR(mrb, native_return_value);
   
   return return_value;
 }
@@ -44463,7 +44264,7 @@ mrb_GLib_g_strnfill(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_strreverse */
-/* sha: 7118bc0f30ad37ffbe1220398915bbeae80b28b28edf4c1f76d66bc7b123afec */
+/* sha: d0d94461637d3a659cdc3ec12abf2e4182b85d493a81fe6ac6356be95966bbd1 */
 #if BIND_g_strreverse_FUNCTION
 #define g_strreverse_REQUIRED_ARGC 1
 #define g_strreverse_OPTIONAL_ARGC 0
@@ -44475,34 +44276,30 @@ mrb_GLib_g_strnfill(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_strreverse(mrb_state* mrb, mrb_value self) {
-  char * string = NULL;
+  mrb_value string;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "z!", &string);
+  mrb_get_args(mrb, "o", &string);
+
+  /* Type checking */
+  TODO_type_check_gchar_PTR(string);
 
   /* Unbox param: string */
-  /* WARNING: String is strdup'ed to avoid mutable reference to internal MRuby memory */
-  char * native_string = strdup(string);
+  gchar * native_string = TODO_mruby_unbox_gchar_PTR(string);
 
   /* Invocation */
   gchar * native_return_value = g_strreverse(native_string);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
-  g_free(native_return_value);
+  mrb_value return_value = TODO_mruby_box_gchar_PTR(mrb, native_return_value);
   
-  /* Clean in param: string */
-  /* WARNING: Assuming that the new string can be deallocated after the function call. */
-  free(native_string);
-  native_string = NULL;
-
   return return_value;
 }
 #endif
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_strrstr */
-/* sha: 762951c28f732e439cd7ebb7759c288a989dc3ad406ea4494dfc81d2e305f795 */
+/* sha: 71d6d48a59358291a5bc8c8a225ff20389f9b49996d26347b8fffa06c74a3d9d */
 #if BIND_g_strrstr_FUNCTION
 #define g_strrstr_REQUIRED_ARGC 2
 #define g_strrstr_OPTIONAL_ARGC 0
@@ -44525,8 +44322,7 @@ mrb_GLib_g_strrstr(mrb_state* mrb, mrb_value self) {
   gchar * native_return_value = g_strrstr(native_haystack, native_needle);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
-  g_free(native_return_value);
+  mrb_value return_value = TODO_mruby_box_gchar_PTR(mrb, native_return_value);
   
   return return_value;
 }
@@ -44534,7 +44330,7 @@ mrb_GLib_g_strrstr(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_strrstr_len */
-/* sha: f183641a3706019fd09244094bb6bec1188fa94af4b079015311c70ecfd7acf0 */
+/* sha: 8bffc7a2a2325e9b83f5dff84ebfec00da5ffcd7950df93c5391e2aa6e34bb52 */
 #if BIND_g_strrstr_len_FUNCTION
 #define g_strrstr_len_REQUIRED_ARGC 3
 #define g_strrstr_len_OPTIONAL_ARGC 0
@@ -44559,8 +44355,7 @@ mrb_GLib_g_strrstr_len(mrb_state* mrb, mrb_value self) {
   gchar * native_return_value = g_strrstr_len(native_haystack, native_haystack_len, native_needle);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
-  g_free(native_return_value);
+  mrb_value return_value = TODO_mruby_box_gchar_PTR(mrb, native_return_value);
   
   return return_value;
 }
@@ -44568,7 +44363,7 @@ mrb_GLib_g_strrstr_len(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_strsignal */
-/* sha: 3ebd70c532b0adcbcdf588d73486b29c12929f619889093f21884dd50f261bd7 */
+/* sha: a3638a2dc98d2318dde07f292e47310d49cae4bd911921e8fd6ff1a2b6d7f728 */
 #if BIND_g_strsignal_FUNCTION
 #define g_strsignal_REQUIRED_ARGC 1
 #define g_strsignal_OPTIONAL_ARGC 0
@@ -44589,7 +44384,7 @@ mrb_GLib_g_strsignal(mrb_state* mrb, mrb_value self) {
   const gchar * native_return_value = g_strsignal(native_signum);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
+  mrb_value return_value = native_return_value == NULL ? mrb_nil_value() : mrb_str_new_cstr(mrb, native_return_value);
   
   return return_value;
 }
@@ -44663,7 +44458,7 @@ mrb_GLib_g_strsplit_set(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_strstr_len */
-/* sha: 2ec11e56dc43a10950f839226cffe88fb1c8cc73d6cc174f26ef3033fe863ed3 */
+/* sha: 3a27a23655a41cfda21799b881fd31def44574b5f585d9d6333c2d1245a5ca8c */
 #if BIND_g_strstr_len_FUNCTION
 #define g_strstr_len_REQUIRED_ARGC 3
 #define g_strstr_len_OPTIONAL_ARGC 0
@@ -44688,8 +44483,7 @@ mrb_GLib_g_strstr_len(mrb_state* mrb, mrb_value self) {
   gchar * native_return_value = g_strstr_len(native_haystack, native_haystack_len, native_needle);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
-  g_free(native_return_value);
+  mrb_value return_value = TODO_mruby_box_gchar_PTR(mrb, native_return_value);
   
   return return_value;
 }
@@ -44734,7 +44528,7 @@ mrb_GLib_g_strtod(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_strup */
-/* sha: 1f3dd394b4a2c80a4c1494de0a325f01bd51baeae65f7493e44fe35c3cdc0998 */
+/* sha: db5f555d4ae37cdded6c56a1a54766128da4b5eed39360fa08e86fbf52057f72 */
 #if BIND_g_strup_FUNCTION
 #define g_strup_REQUIRED_ARGC 1
 #define g_strup_OPTIONAL_ARGC 0
@@ -44746,27 +44540,23 @@ mrb_GLib_g_strtod(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_strup(mrb_state* mrb, mrb_value self) {
-  char * string = NULL;
+  mrb_value string;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "z!", &string);
+  mrb_get_args(mrb, "o", &string);
+
+  /* Type checking */
+  TODO_type_check_gchar_PTR(string);
 
   /* Unbox param: string */
-  /* WARNING: String is strdup'ed to avoid mutable reference to internal MRuby memory */
-  char * native_string = strdup(string);
+  gchar * native_string = TODO_mruby_unbox_gchar_PTR(string);
 
   /* Invocation */
   gchar * native_return_value = g_strup(native_string);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
-  g_free(native_return_value);
+  mrb_value return_value = TODO_mruby_box_gchar_PTR(mrb, native_return_value);
   
-  /* Clean in param: string */
-  /* WARNING: Assuming that the new string can be deallocated after the function call. */
-  free(native_string);
-  native_string = NULL;
-
   return return_value;
 }
 #endif
@@ -45103,7 +44893,7 @@ mrb_GLib_g_test_bug_base(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_test_build_filename */
-/* sha: 64ca118c33588c91c02f03b912dd60d19960fb46e35f8d2a0ac052ef0dd2cbf5 */
+/* sha: f27c68e3b3751c03cd63b24b201441c1e6b1f7978c014d7814c20d2db97dec3d */
 #if BIND_g_test_build_filename_FUNCTION
 #define g_test_build_filename_REQUIRED_ARGC 2
 #define g_test_build_filename_OPTIONAL_ARGC 0
@@ -45294,7 +45084,7 @@ mrb_GLib_g_test_failed(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_test_get_dir */
-/* sha: 1bf6b9b8c0a64376e42e9beb2bdb690a687e03c8c8dafc90c739bc8c2effc394 */
+/* sha: ed95b8a0b8afc7a4637e220ee6bead061ad28dbe86c3eb1d31c2f2609cd1be55 */
 #if BIND_g_test_get_dir_FUNCTION
 #define g_test_get_dir_REQUIRED_ARGC 1
 #define g_test_get_dir_OPTIONAL_ARGC 0
@@ -45315,7 +45105,7 @@ mrb_GLib_g_test_get_dir(mrb_state* mrb, mrb_value self) {
   const gchar * native_return_value = g_test_get_dir(native_file_type);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
+  mrb_value return_value = native_return_value == NULL ? mrb_nil_value() : mrb_str_new_cstr(mrb, native_return_value);
   
   return return_value;
 }
@@ -45323,7 +45113,7 @@ mrb_GLib_g_test_get_dir(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_test_get_filename */
-/* sha: c3c4a82c83e51988cf5fcf9748f5b21353dfff39820d32ee673201617fbb3d64 */
+/* sha: c167ed4167c3f13b6b5114297a69c2a73342c323a342c09cf1955db8004d798f */
 #if BIND_g_test_get_filename_FUNCTION
 #define g_test_get_filename_REQUIRED_ARGC 2
 #define g_test_get_filename_OPTIONAL_ARGC 0
@@ -45346,7 +45136,7 @@ mrb_GLib_g_test_get_filename(mrb_state* mrb, mrb_value self) {
   const gchar * native_return_value = g_test_get_filename(native_file_type, native_first_path);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
+  mrb_value return_value = native_return_value == NULL ? mrb_nil_value() : mrb_str_new_cstr(mrb, native_return_value);
   
   return return_value;
 }
@@ -45653,7 +45443,7 @@ mrb_GLib_g_test_log_set_fatal_handler(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_test_log_type_name */
-/* sha: 0a4cebeb6a25e96567fedda0cf64bdc315e2eb354df9b6f8792c06308140f108 */
+/* sha: 26c2a421e5bcf8b81e413be1c916483d5bc6e70cbbeadc94b5b2b3549c9d9ecb */
 #if BIND_g_test_log_type_name_FUNCTION
 #define g_test_log_type_name_REQUIRED_ARGC 1
 #define g_test_log_type_name_OPTIONAL_ARGC 0
@@ -45674,7 +45464,7 @@ mrb_GLib_g_test_log_type_name(mrb_state* mrb, mrb_value self) {
   const char * native_return_value = g_test_log_type_name(native_log_type);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
+  mrb_value return_value = native_return_value == NULL ? mrb_nil_value() : mrb_str_new_cstr(mrb, native_return_value);
   
   return return_value;
 }
@@ -47291,7 +47081,7 @@ mrb_GLib_g_time_val_from_iso8601(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_time_val_to_iso8601 */
-/* sha: b93dbddaf9a91f59afbf2303bb00c4def82719fb45f8224937c84e6c467702d6 */
+/* sha: 4b0b888627a2b71ab4031372eb8f45671c89f758c6c71a579267afcb2234af7c */
 #if BIND_g_time_val_to_iso8601_FUNCTION
 #define g_time_val_to_iso8601_REQUIRED_ARGC 1
 #define g_time_val_to_iso8601_OPTIONAL_ARGC 0
@@ -47321,8 +47111,7 @@ mrb_GLib_g_time_val_to_iso8601(mrb_state* mrb, mrb_value self) {
   gchar * native_return_value = g_time_val_to_iso8601(native_time_);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
-  g_free(native_return_value);
+  mrb_value return_value = TODO_mruby_box_gchar_PTR(mrb, native_return_value);
   
   return return_value;
 }
@@ -47418,7 +47207,7 @@ mrb_GLib_g_time_zone_find_interval(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_time_zone_get_abbreviation */
-/* sha: d044aa2e339adade5b4116027e81235a0c62c767a344a581c5ecbac25b0461b8 */
+/* sha: cecacade610b6f55ffca0e82e11a947deb15a30d3384e1bdbbda88a56bdb2ca2 */
 #if BIND_g_time_zone_get_abbreviation_FUNCTION
 #define g_time_zone_get_abbreviation_REQUIRED_ARGC 2
 #define g_time_zone_get_abbreviation_OPTIONAL_ARGC 0
@@ -47450,7 +47239,7 @@ mrb_GLib_g_time_zone_get_abbreviation(mrb_state* mrb, mrb_value self) {
   const gchar * native_return_value = g_time_zone_get_abbreviation(native_tz, native_interval);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
+  mrb_value return_value = native_return_value == NULL ? mrb_nil_value() : mrb_str_new_cstr(mrb, native_return_value);
   
   return return_value;
 }
@@ -49312,7 +49101,7 @@ mrb_GLib_g_ucs4_to_utf16(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_ucs4_to_utf8 */
-/* sha: b2a358a956e258df7431dd86d6b4a7e4736fcc09b705063e5c8b630d6cf7f8ee */
+/* sha: 9227e5dac2a238e79d13784e53e55e5e8bb1724c769a57dce35ec7a6891bd0e4 */
 #if BIND_g_ucs4_to_utf8_FUNCTION
 #define g_ucs4_to_utf8_REQUIRED_ARGC 4
 #define g_ucs4_to_utf8_OPTIONAL_ARGC 0
@@ -49355,8 +49144,7 @@ mrb_GLib_g_ucs4_to_utf8(mrb_state* mrb, mrb_value self) {
   gchar * native_return_value = g_ucs4_to_utf8(native_str, native_len, native_items_read, native_items_written, &native_error);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
-  g_free(native_return_value);
+  mrb_value return_value = TODO_mruby_box_gchar_PTR(mrb, native_return_value);
   mrb_ary_push(mrb, results, return_value);
   
   /* Box out param: error */
@@ -50140,7 +49928,7 @@ mrb_GLib_g_unichar_iszerowidth(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_unichar_to_utf8 */
-/* sha: 3d7a7f3c3434a6d216eaa847f2a9034529a566806a937b01d8c46cf33494fd64 */
+/* sha: 9e2fb8c67f27561298fb32e4f50d9bc148d2ef488186d32205db0d0f93142b98 */
 #if BIND_g_unichar_to_utf8_FUNCTION
 #define g_unichar_to_utf8_REQUIRED_ARGC 2
 #define g_unichar_to_utf8_OPTIONAL_ARGC 0
@@ -50154,14 +49942,16 @@ mrb_GLib_g_unichar_iszerowidth(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_g_unichar_to_utf8(mrb_state* mrb, mrb_value self) {
   mrb_int native_c;
-  char * outbuf = NULL;
+  mrb_value outbuf;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "iz!", &native_c, &outbuf);
+  mrb_get_args(mrb, "io", &native_c, &outbuf);
+
+  /* Type checking */
+  TODO_type_check_gchar_PTR(outbuf);
 
   /* Unbox param: outbuf */
-  /* WARNING: String is strdup'ed to avoid mutable reference to internal MRuby memory */
-  char * native_outbuf = strdup(outbuf);
+  gchar * native_outbuf = TODO_mruby_unbox_gchar_PTR(outbuf);
 
   /* Invocation */
   gint native_return_value = g_unichar_to_utf8(native_c, native_outbuf);
@@ -50169,11 +49959,6 @@ mrb_GLib_g_unichar_to_utf8(mrb_state* mrb, mrb_value self) {
   /* Box the return value */
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
-  /* Clean in param: outbuf */
-  /* WARNING: Assuming that the new string can be deallocated after the function call. */
-  free(native_outbuf);
-  native_outbuf = NULL;
-
   return return_value;
 }
 #endif
@@ -50354,38 +50139,39 @@ mrb_GLib_g_unichar_xdigit_value(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_unicode_canonical_decomposition */
-/* sha: 56ecc86f4cb41d2c1bc2baf0ff4c369cbc7b3b276303831649179a967760fc8a */
+/* sha: 6d4cd6dd2d659a3d4cf9a8e72c2302c5961579118dd68e2ca6f9c038622f7b14 */
 #if BIND_g_unicode_canonical_decomposition_FUNCTION
-#define g_unicode_canonical_decomposition_REQUIRED_ARGC 2
+#define g_unicode_canonical_decomposition_REQUIRED_ARGC 1
 #define g_unicode_canonical_decomposition_OPTIONAL_ARGC 0
 /* g_unicode_canonical_decomposition
  *
  * Parameters:
  * - ch: gunichar
- * - result_len: gsize *
  * Return Type: gunichar *
  */
 mrb_value
 mrb_GLib_g_unicode_canonical_decomposition(mrb_state* mrb, mrb_value self) {
+  mrb_value results = mrb_ary_new(mrb);
   mrb_int native_ch;
-  mrb_value result_len;
+  int native_result_len;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "io", &native_ch, &result_len);
-
-  /* Type checking */
-  TODO_type_check_gsize_PTR(result_len);
-
-  /* Unbox param: result_len */
-  gsize * native_result_len = TODO_mruby_unbox_gsize_PTR(result_len);
+  mrb_get_args(mrb, "i", &native_ch);
 
   /* Invocation */
-  gunichar * native_return_value = g_unicode_canonical_decomposition(native_ch, native_result_len);
+  gunichar * native_return_value = g_unicode_canonical_decomposition(native_ch, &native_result_len);
 
   /* Box the return value */
   mrb_value return_value = TODO_mruby_box_gunichar_PTR(mrb, native_return_value);
+  mrb_ary_push(mrb, results, return_value);
   
-  return return_value;
+  /* Box out param: result_len */
+  mrb_value result_len = mrb_fixnum_value(native_result_len);
+
+  /* Add out params to results */
+  mrb_ary_push(mrb, results, result_len);
+
+  return results;
 }
 #endif
 /* MRUBY_BINDING_END */
@@ -50538,7 +50324,7 @@ mrb_GLib_g_unsetenv(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_uri_escape_string */
-/* sha: 7032d5c69fc315f83e694c14fb077b81d4b67688ca95ec310a79c2abcde76f48 */
+/* sha: f7d60d3535ff16538e092229e42dfe6c44f2ce324169d50e59c46fd89b758c69 */
 #if BIND_g_uri_escape_string_FUNCTION
 #define g_uri_escape_string_REQUIRED_ARGC 3
 #define g_uri_escape_string_OPTIONAL_ARGC 0
@@ -50563,8 +50349,7 @@ mrb_GLib_g_uri_escape_string(mrb_state* mrb, mrb_value self) {
   char * native_return_value = g_uri_escape_string(native_unescaped, native_reserved_chars_allowed, native_allow_utf8);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
-  free(native_return_value);
+  mrb_value return_value = TODO_mruby_box_char_PTR(mrb, native_return_value);
   
   return return_value;
 }
@@ -50601,7 +50386,7 @@ mrb_GLib_g_uri_list_extract_uris(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_uri_parse_scheme */
-/* sha: ef8baa8cbf696b1f705303e4c1d2f2b7d045ec6b7d2a00581fe551743e6293da */
+/* sha: 18d8994b86eb5f39735e903f0f6a8e450cba5915b60732f92b4b715c4e014109 */
 #if BIND_g_uri_parse_scheme_FUNCTION
 #define g_uri_parse_scheme_REQUIRED_ARGC 1
 #define g_uri_parse_scheme_OPTIONAL_ARGC 0
@@ -50622,8 +50407,7 @@ mrb_GLib_g_uri_parse_scheme(mrb_state* mrb, mrb_value self) {
   char * native_return_value = g_uri_parse_scheme(native_uri);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
-  free(native_return_value);
+  mrb_value return_value = TODO_mruby_box_char_PTR(mrb, native_return_value);
   
   return return_value;
 }
@@ -50631,7 +50415,7 @@ mrb_GLib_g_uri_parse_scheme(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_uri_unescape_segment */
-/* sha: f6b601e8a8ad63c5e69839f02c79f57486942dd78bea6f586f3f0a77ef669051 */
+/* sha: d8e1701f057a64af3bba0c3a4649c89f35ecfa1c9a0ebde2e868538309a2f038 */
 #if BIND_g_uri_unescape_segment_FUNCTION
 #define g_uri_unescape_segment_REQUIRED_ARGC 3
 #define g_uri_unescape_segment_OPTIONAL_ARGC 0
@@ -50656,8 +50440,7 @@ mrb_GLib_g_uri_unescape_segment(mrb_state* mrb, mrb_value self) {
   char * native_return_value = g_uri_unescape_segment(native_escaped_string, native_escaped_string_end, native_illegal_characters);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
-  free(native_return_value);
+  mrb_value return_value = TODO_mruby_box_char_PTR(mrb, native_return_value);
   
   return return_value;
 }
@@ -50665,7 +50448,7 @@ mrb_GLib_g_uri_unescape_segment(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_uri_unescape_string */
-/* sha: 2d178b6ac49a5c6df9ee46e77bc78c11e0f01d40b09bd734a189025953157624 */
+/* sha: ef9a74d80a8e144c42f2fea54430620964d9074f7a69a7b736cffb34a5fa06d5 */
 #if BIND_g_uri_unescape_string_FUNCTION
 #define g_uri_unescape_string_REQUIRED_ARGC 2
 #define g_uri_unescape_string_OPTIONAL_ARGC 0
@@ -50688,8 +50471,7 @@ mrb_GLib_g_uri_unescape_string(mrb_state* mrb, mrb_value self) {
   char * native_return_value = g_uri_unescape_string(native_escaped_string, native_illegal_characters);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
-  free(native_return_value);
+  mrb_value return_value = TODO_mruby_box_char_PTR(mrb, native_return_value);
   
   return return_value;
 }
@@ -50781,7 +50563,7 @@ mrb_GLib_g_utf16_to_ucs4(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_utf16_to_utf8 */
-/* sha: dbd94196fc6a7acebdf8a2da69029c8535cd24b60b314605c631590e6cef5ec9 */
+/* sha: 98b847ac3fc9e3169956bfd9a70f0f199ad336e38020f75ec329da63c72778f4 */
 #if BIND_g_utf16_to_utf8_FUNCTION
 #define g_utf16_to_utf8_REQUIRED_ARGC 4
 #define g_utf16_to_utf8_OPTIONAL_ARGC 0
@@ -50824,8 +50606,7 @@ mrb_GLib_g_utf16_to_utf8(mrb_state* mrb, mrb_value self) {
   gchar * native_return_value = g_utf16_to_utf8(native_str, native_len, native_items_read, native_items_written, &native_error);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
-  g_free(native_return_value);
+  mrb_value return_value = TODO_mruby_box_gchar_PTR(mrb, native_return_value);
   mrb_ary_push(mrb, results, return_value);
   
   /* Box out param: error */
@@ -50840,7 +50621,7 @@ mrb_GLib_g_utf16_to_utf8(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_utf8_casefold */
-/* sha: 2b053d27d3997d0679b4fcff140aba9dd5aec40f41b80a94e10d4c8f85b078e0 */
+/* sha: 94569b63cce2000deb6ff2d1a83d9787f4f7c56a24aba7efbd5c9ac8f73bf118 */
 #if BIND_g_utf8_casefold_FUNCTION
 #define g_utf8_casefold_REQUIRED_ARGC 2
 #define g_utf8_casefold_OPTIONAL_ARGC 0
@@ -50863,8 +50644,7 @@ mrb_GLib_g_utf8_casefold(mrb_state* mrb, mrb_value self) {
   gchar * native_return_value = g_utf8_casefold(native_str, native_len);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
-  g_free(native_return_value);
+  mrb_value return_value = TODO_mruby_box_gchar_PTR(mrb, native_return_value);
   
   return return_value;
 }
@@ -50903,7 +50683,7 @@ mrb_GLib_g_utf8_collate(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_utf8_collate_key */
-/* sha: 561ed6ba1c90d908fdbe243ed515cee00f46cb97d27ba40116e4449d66b766f2 */
+/* sha: 19c00738ab7caa3538eca13c3ffc1ae186e5dd4200045d354470a871e04e2d54 */
 #if BIND_g_utf8_collate_key_FUNCTION
 #define g_utf8_collate_key_REQUIRED_ARGC 2
 #define g_utf8_collate_key_OPTIONAL_ARGC 0
@@ -50926,8 +50706,7 @@ mrb_GLib_g_utf8_collate_key(mrb_state* mrb, mrb_value self) {
   gchar * native_return_value = g_utf8_collate_key(native_str, native_len);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
-  g_free(native_return_value);
+  mrb_value return_value = TODO_mruby_box_gchar_PTR(mrb, native_return_value);
   
   return return_value;
 }
@@ -50935,7 +50714,7 @@ mrb_GLib_g_utf8_collate_key(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_utf8_collate_key_for_filename */
-/* sha: 11fb8481818527c2568750428df35a589f2aed5935c968e0365cbd1e384a7023 */
+/* sha: 18d978308f8da02353bee5c9dc764483ab81496048447fa5fd175e3394a405a1 */
 #if BIND_g_utf8_collate_key_for_filename_FUNCTION
 #define g_utf8_collate_key_for_filename_REQUIRED_ARGC 2
 #define g_utf8_collate_key_for_filename_OPTIONAL_ARGC 0
@@ -50958,8 +50737,7 @@ mrb_GLib_g_utf8_collate_key_for_filename(mrb_state* mrb, mrb_value self) {
   gchar * native_return_value = g_utf8_collate_key_for_filename(native_str, native_len);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
-  g_free(native_return_value);
+  mrb_value return_value = TODO_mruby_box_gchar_PTR(mrb, native_return_value);
   
   return return_value;
 }
@@ -50967,7 +50745,7 @@ mrb_GLib_g_utf8_collate_key_for_filename(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_utf8_find_next_char */
-/* sha: 5c65e7be221ab39bd1ea9923bc6062a902dc55f0ee4a20674b57b7df6aa97426 */
+/* sha: fbb5a23ac6cb7b7b8fd4d832577fd91abf9cfee19f197c241be295e0f663aeea */
 #if BIND_g_utf8_find_next_char_FUNCTION
 #define g_utf8_find_next_char_REQUIRED_ARGC 2
 #define g_utf8_find_next_char_OPTIONAL_ARGC 0
@@ -50990,8 +50768,7 @@ mrb_GLib_g_utf8_find_next_char(mrb_state* mrb, mrb_value self) {
   gchar * native_return_value = g_utf8_find_next_char(native_p, native_end);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
-  g_free(native_return_value);
+  mrb_value return_value = TODO_mruby_box_gchar_PTR(mrb, native_return_value);
   
   return return_value;
 }
@@ -50999,7 +50776,7 @@ mrb_GLib_g_utf8_find_next_char(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_utf8_find_prev_char */
-/* sha: 61e2e4686431fb6eb12b7d4f39707e1c549605faf0a948737ee851436754e137 */
+/* sha: 45d4b7469f46ef774fffb031c96b4fc3bb7c1bc60984fa17a8bfbef330a7b58b */
 #if BIND_g_utf8_find_prev_char_FUNCTION
 #define g_utf8_find_prev_char_REQUIRED_ARGC 2
 #define g_utf8_find_prev_char_OPTIONAL_ARGC 0
@@ -51022,8 +50799,7 @@ mrb_GLib_g_utf8_find_prev_char(mrb_state* mrb, mrb_value self) {
   gchar * native_return_value = g_utf8_find_prev_char(native_str, native_p);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
-  g_free(native_return_value);
+  mrb_value return_value = TODO_mruby_box_gchar_PTR(mrb, native_return_value);
   
   return return_value;
 }
@@ -51091,7 +50867,7 @@ mrb_GLib_g_utf8_get_char_validated(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_utf8_normalize */
-/* sha: ed4231e5793b55b5c45423e14dcab8aabae4f55f380459cd7b1b3387f41c2112 */
+/* sha: 9973e52f601d5210bac10fec5a74fcbb16de45f58eefa6916b676e3d376adef0 */
 #if BIND_g_utf8_normalize_FUNCTION
 #define g_utf8_normalize_REQUIRED_ARGC 3
 #define g_utf8_normalize_OPTIONAL_ARGC 0
@@ -51116,8 +50892,7 @@ mrb_GLib_g_utf8_normalize(mrb_state* mrb, mrb_value self) {
   gchar * native_return_value = g_utf8_normalize(native_str, native_len, native_mode);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
-  g_free(native_return_value);
+  mrb_value return_value = TODO_mruby_box_gchar_PTR(mrb, native_return_value);
   
   return return_value;
 }
@@ -51125,7 +50900,7 @@ mrb_GLib_g_utf8_normalize(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_utf8_offset_to_pointer */
-/* sha: 050f39a28a65b37cb7b96e831b41d04aab1ba244028fb75ddf59994c82a50e0a */
+/* sha: fa6c24f01624f62a91ed7cadb25d92654b906a66a819dfc9d52a49b0abca8308 */
 #if BIND_g_utf8_offset_to_pointer_FUNCTION
 #define g_utf8_offset_to_pointer_REQUIRED_ARGC 2
 #define g_utf8_offset_to_pointer_OPTIONAL_ARGC 0
@@ -51148,8 +50923,7 @@ mrb_GLib_g_utf8_offset_to_pointer(mrb_state* mrb, mrb_value self) {
   gchar * native_return_value = g_utf8_offset_to_pointer(native_str, native_offset);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
-  g_free(native_return_value);
+  mrb_value return_value = TODO_mruby_box_gchar_PTR(mrb, native_return_value);
   
   return return_value;
 }
@@ -51188,7 +50962,7 @@ mrb_GLib_g_utf8_pointer_to_offset(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_utf8_prev_char */
-/* sha: ef412dd8acbdab78da7df6329b700f3ab999fbd52c5fc56b620da4d4e4782c18 */
+/* sha: 1e40852d81c25c847569c0b5330ae2e11735b997df1522fb4f5eb690c7d74291 */
 #if BIND_g_utf8_prev_char_FUNCTION
 #define g_utf8_prev_char_REQUIRED_ARGC 1
 #define g_utf8_prev_char_OPTIONAL_ARGC 0
@@ -51209,8 +50983,7 @@ mrb_GLib_g_utf8_prev_char(mrb_state* mrb, mrb_value self) {
   gchar * native_return_value = g_utf8_prev_char(native_p);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
-  g_free(native_return_value);
+  mrb_value return_value = TODO_mruby_box_gchar_PTR(mrb, native_return_value);
   
   return return_value;
 }
@@ -51218,7 +50991,7 @@ mrb_GLib_g_utf8_prev_char(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_utf8_strchr */
-/* sha: 6faf3d71b48eb96b608581fb824d65a97103a789e96d2713693806d8f4cea0c9 */
+/* sha: a9523e9f99d705f6f30673634c455550cd1334b8d956016436a2251b6434d08e */
 #if BIND_g_utf8_strchr_FUNCTION
 #define g_utf8_strchr_REQUIRED_ARGC 3
 #define g_utf8_strchr_OPTIONAL_ARGC 0
@@ -51243,8 +51016,7 @@ mrb_GLib_g_utf8_strchr(mrb_state* mrb, mrb_value self) {
   gchar * native_return_value = g_utf8_strchr(native_p, native_len, native_c);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
-  g_free(native_return_value);
+  mrb_value return_value = TODO_mruby_box_gchar_PTR(mrb, native_return_value);
   
   return return_value;
 }
@@ -51252,7 +51024,7 @@ mrb_GLib_g_utf8_strchr(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_utf8_strdown */
-/* sha: 9b2a9c2f516e43ebb005dee3a3f821a4a23db5c198bc4cd261d465412cff3faa */
+/* sha: fc685419be478ea56fa6107f936f6b22f0dafefd6e9ed6471a94489099d11960 */
 #if BIND_g_utf8_strdown_FUNCTION
 #define g_utf8_strdown_REQUIRED_ARGC 2
 #define g_utf8_strdown_OPTIONAL_ARGC 0
@@ -51275,8 +51047,7 @@ mrb_GLib_g_utf8_strdown(mrb_state* mrb, mrb_value self) {
   gchar * native_return_value = g_utf8_strdown(native_str, native_len);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
-  g_free(native_return_value);
+  mrb_value return_value = TODO_mruby_box_gchar_PTR(mrb, native_return_value);
   
   return return_value;
 }
@@ -51315,7 +51086,7 @@ mrb_GLib_g_utf8_strlen(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_utf8_strncpy */
-/* sha: bbdb3c87cec6840f4304e676e514f03bce375f477914e459e142b9f2a85ed7e2 */
+/* sha: 58b5e14aa3f4d61ea15d7726cc7f5d26bce90a13a96307b8c0b782eeb797e952 */
 #if BIND_g_utf8_strncpy_FUNCTION
 #define g_utf8_strncpy_REQUIRED_ARGC 3
 #define g_utf8_strncpy_OPTIONAL_ARGC 0
@@ -51329,36 +51100,32 @@ mrb_GLib_g_utf8_strlen(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_utf8_strncpy(mrb_state* mrb, mrb_value self) {
-  char * dest = NULL;
+  mrb_value dest;
   char * native_src = NULL;
   mrb_int native_n;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "z!z!i", &dest, &native_src, &native_n);
+  mrb_get_args(mrb, "oz!i", &dest, &native_src, &native_n);
+
+  /* Type checking */
+  TODO_type_check_gchar_PTR(dest);
 
   /* Unbox param: dest */
-  /* WARNING: String is strdup'ed to avoid mutable reference to internal MRuby memory */
-  char * native_dest = strdup(dest);
+  gchar * native_dest = TODO_mruby_unbox_gchar_PTR(dest);
 
   /* Invocation */
   gchar * native_return_value = g_utf8_strncpy(native_dest, native_src, native_n);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
-  g_free(native_return_value);
+  mrb_value return_value = TODO_mruby_box_gchar_PTR(mrb, native_return_value);
   
-  /* Clean in param: dest */
-  /* WARNING: Assuming that the new string can be deallocated after the function call. */
-  free(native_dest);
-  native_dest = NULL;
-
   return return_value;
 }
 #endif
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_utf8_strrchr */
-/* sha: 5644902a5c8fcad5f6787bbd512e8b3811fd143cd19857a3b147bd693ac974b5 */
+/* sha: 65cf081ef6279e3562858423227af39b324c0c8bd0a97878161ad560accc5f63 */
 #if BIND_g_utf8_strrchr_FUNCTION
 #define g_utf8_strrchr_REQUIRED_ARGC 3
 #define g_utf8_strrchr_OPTIONAL_ARGC 0
@@ -51383,8 +51150,7 @@ mrb_GLib_g_utf8_strrchr(mrb_state* mrb, mrb_value self) {
   gchar * native_return_value = g_utf8_strrchr(native_p, native_len, native_c);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
-  g_free(native_return_value);
+  mrb_value return_value = TODO_mruby_box_gchar_PTR(mrb, native_return_value);
   
   return return_value;
 }
@@ -51392,7 +51158,7 @@ mrb_GLib_g_utf8_strrchr(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_utf8_strreverse */
-/* sha: 447e15de83d10a69237452a92efcbb31140f98a151e7ff26185080615116ffa8 */
+/* sha: 735c0fea9ceb280227c50b528aa072a47796323fd30b145996d489e596717b23 */
 #if BIND_g_utf8_strreverse_FUNCTION
 #define g_utf8_strreverse_REQUIRED_ARGC 2
 #define g_utf8_strreverse_OPTIONAL_ARGC 0
@@ -51415,8 +51181,7 @@ mrb_GLib_g_utf8_strreverse(mrb_state* mrb, mrb_value self) {
   gchar * native_return_value = g_utf8_strreverse(native_str, native_len);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
-  g_free(native_return_value);
+  mrb_value return_value = TODO_mruby_box_gchar_PTR(mrb, native_return_value);
   
   return return_value;
 }
@@ -51424,7 +51189,7 @@ mrb_GLib_g_utf8_strreverse(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_utf8_strup */
-/* sha: 80fcf569a55b9341b9f47bbc739cbb6d896fe7aecf7ff3396379d1c444ce8612 */
+/* sha: 759741c6790ce281d86f0289b3db8b5955fe2ccebda30c90c6599a975d93b5ce */
 #if BIND_g_utf8_strup_FUNCTION
 #define g_utf8_strup_REQUIRED_ARGC 2
 #define g_utf8_strup_OPTIONAL_ARGC 0
@@ -51447,8 +51212,7 @@ mrb_GLib_g_utf8_strup(mrb_state* mrb, mrb_value self) {
   gchar * native_return_value = g_utf8_strup(native_str, native_len);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
-  g_free(native_return_value);
+  mrb_value return_value = TODO_mruby_box_gchar_PTR(mrb, native_return_value);
   
   return return_value;
 }
@@ -51456,7 +51220,7 @@ mrb_GLib_g_utf8_strup(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_utf8_substring */
-/* sha: 384d5ec915149e54afa12df117b5016281ecdc7fdb6f8021e331c421843a6f13 */
+/* sha: 49cc43909261a5e2d7833206e7b561ff16fc2d10123631820fa035c3dc297823 */
 #if BIND_g_utf8_substring_FUNCTION
 #define g_utf8_substring_REQUIRED_ARGC 3
 #define g_utf8_substring_OPTIONAL_ARGC 0
@@ -51481,8 +51245,7 @@ mrb_GLib_g_utf8_substring(mrb_state* mrb, mrb_value self) {
   gchar * native_return_value = g_utf8_substring(native_str, native_start_pos, native_end_pos);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
-  g_free(native_return_value);
+  mrb_value return_value = TODO_mruby_box_gchar_PTR(mrb, native_return_value);
   
   return return_value;
 }
@@ -52744,223 +52507,236 @@ mrb_GLib_g_variant_dict_unref(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_variant_dup_bytestring */
-/* sha: 2875bbd572b90732600e6edf5233c58291a2ac4ff118057902cef7c5a0086a96 */
+/* sha: 80128a693f13fec96a32dfbd9a1bd2e7dfea8c930a41882bb4d5fe7e69dba1ea */
 #if BIND_g_variant_dup_bytestring_FUNCTION
-#define g_variant_dup_bytestring_REQUIRED_ARGC 2
+#define g_variant_dup_bytestring_REQUIRED_ARGC 1
 #define g_variant_dup_bytestring_OPTIONAL_ARGC 0
 /* g_variant_dup_bytestring
  *
  * Parameters:
  * - value: GVariant *
- * - length: gsize *
  * Return Type: gchar *
  */
 mrb_value
 mrb_GLib_g_variant_dup_bytestring(mrb_state* mrb, mrb_value self) {
+  mrb_value results = mrb_ary_new(mrb);
   mrb_value value;
-  mrb_value length;
+  int native_length;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "oo", &value, &length);
+  mrb_get_args(mrb, "o", &value);
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, value, GVariant_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GVariant expected");
     return mrb_nil_value();
   }
-  TODO_type_check_gsize_PTR(length);
 
   /* Unbox param: value */
   GVariant * native_value = (mrb_nil_p(value) ? NULL : mruby_unbox__GVariant(value));
 
-  /* Unbox param: length */
-  gsize * native_length = TODO_mruby_unbox_gsize_PTR(length);
-
   /* Invocation */
-  gchar * native_return_value = g_variant_dup_bytestring(native_value, native_length);
+  gchar * native_return_value = g_variant_dup_bytestring(native_value, &native_length);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
-  g_free(native_return_value);
+  mrb_value return_value = TODO_mruby_box_gchar_PTR(mrb, native_return_value);
+  mrb_ary_push(mrb, results, return_value);
   
-  return return_value;
+  /* Box out param: length */
+  mrb_value length = mrb_fixnum_value(native_length);
+
+  /* Add out params to results */
+  mrb_ary_push(mrb, results, length);
+
+  return results;
 }
 #endif
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_variant_dup_bytestring_array */
-/* sha: eceef966ecdbb6dc07c9ec9c3a8eeb00cf49a86ebea1cbd7576c053c47d3529b */
+/* sha: 7e7e011fceae8be5628c3b25b1d051ca4afdbbe1497afce7cc6216143cce85f9 */
 #if BIND_g_variant_dup_bytestring_array_FUNCTION
-#define g_variant_dup_bytestring_array_REQUIRED_ARGC 2
+#define g_variant_dup_bytestring_array_REQUIRED_ARGC 1
 #define g_variant_dup_bytestring_array_OPTIONAL_ARGC 0
 /* g_variant_dup_bytestring_array
  *
  * Parameters:
  * - value: GVariant *
- * - length: gsize *
  * Return Type: gchar **
  */
 mrb_value
 mrb_GLib_g_variant_dup_bytestring_array(mrb_state* mrb, mrb_value self) {
+  mrb_value results = mrb_ary_new(mrb);
   mrb_value value;
-  mrb_value length;
+  int native_length;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "oo", &value, &length);
+  mrb_get_args(mrb, "o", &value);
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, value, GVariant_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GVariant expected");
     return mrb_nil_value();
   }
-  TODO_type_check_gsize_PTR(length);
 
   /* Unbox param: value */
   GVariant * native_value = (mrb_nil_p(value) ? NULL : mruby_unbox__GVariant(value));
 
-  /* Unbox param: length */
-  gsize * native_length = TODO_mruby_unbox_gsize_PTR(length);
-
   /* Invocation */
-  gchar ** native_return_value = g_variant_dup_bytestring_array(native_value, native_length);
+  gchar ** native_return_value = g_variant_dup_bytestring_array(native_value, &native_length);
 
   /* Box the return value */
   mrb_value return_value = TODO_mruby_box_gchar_PTR_PTR(mrb, native_return_value);
+  mrb_ary_push(mrb, results, return_value);
   
-  return return_value;
+  /* Box out param: length */
+  mrb_value length = mrb_fixnum_value(native_length);
+
+  /* Add out params to results */
+  mrb_ary_push(mrb, results, length);
+
+  return results;
 }
 #endif
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_variant_dup_objv */
-/* sha: e1f8be07aae1b00ccd3c8a11906be99750ac31c192fc20d899c3c0d441f21795 */
+/* sha: 6c7f50cb2f3589caea8d81766e751d834369e54e74f68b813a5223c634f771b9 */
 #if BIND_g_variant_dup_objv_FUNCTION
-#define g_variant_dup_objv_REQUIRED_ARGC 2
+#define g_variant_dup_objv_REQUIRED_ARGC 1
 #define g_variant_dup_objv_OPTIONAL_ARGC 0
 /* g_variant_dup_objv
  *
  * Parameters:
  * - value: GVariant *
- * - length: gsize *
  * Return Type: gchar **
  */
 mrb_value
 mrb_GLib_g_variant_dup_objv(mrb_state* mrb, mrb_value self) {
+  mrb_value results = mrb_ary_new(mrb);
   mrb_value value;
-  mrb_value length;
+  int native_length;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "oo", &value, &length);
+  mrb_get_args(mrb, "o", &value);
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, value, GVariant_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GVariant expected");
     return mrb_nil_value();
   }
-  TODO_type_check_gsize_PTR(length);
 
   /* Unbox param: value */
   GVariant * native_value = (mrb_nil_p(value) ? NULL : mruby_unbox__GVariant(value));
 
-  /* Unbox param: length */
-  gsize * native_length = TODO_mruby_unbox_gsize_PTR(length);
-
   /* Invocation */
-  gchar ** native_return_value = g_variant_dup_objv(native_value, native_length);
+  gchar ** native_return_value = g_variant_dup_objv(native_value, &native_length);
 
   /* Box the return value */
   mrb_value return_value = TODO_mruby_box_gchar_PTR_PTR(mrb, native_return_value);
+  mrb_ary_push(mrb, results, return_value);
   
-  return return_value;
+  /* Box out param: length */
+  mrb_value length = mrb_fixnum_value(native_length);
+
+  /* Add out params to results */
+  mrb_ary_push(mrb, results, length);
+
+  return results;
 }
 #endif
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_variant_dup_string */
-/* sha: 5c2457539d5a6557a43ae537f251ae44455ffe7ee0273c023526decdebc5ec12 */
+/* sha: fffe08f952ab9e1389ef4c712b3ae3147e87297b8ec8e9e9be6b7f14c4be1351 */
 #if BIND_g_variant_dup_string_FUNCTION
-#define g_variant_dup_string_REQUIRED_ARGC 2
+#define g_variant_dup_string_REQUIRED_ARGC 1
 #define g_variant_dup_string_OPTIONAL_ARGC 0
 /* g_variant_dup_string
  *
  * Parameters:
  * - value: GVariant *
- * - length: gsize *
  * Return Type: gchar *
  */
 mrb_value
 mrb_GLib_g_variant_dup_string(mrb_state* mrb, mrb_value self) {
+  mrb_value results = mrb_ary_new(mrb);
   mrb_value value;
-  mrb_value length;
+  int native_length;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "oo", &value, &length);
+  mrb_get_args(mrb, "o", &value);
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, value, GVariant_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GVariant expected");
     return mrb_nil_value();
   }
-  TODO_type_check_gsize_PTR(length);
 
   /* Unbox param: value */
   GVariant * native_value = (mrb_nil_p(value) ? NULL : mruby_unbox__GVariant(value));
 
-  /* Unbox param: length */
-  gsize * native_length = TODO_mruby_unbox_gsize_PTR(length);
-
   /* Invocation */
-  gchar * native_return_value = g_variant_dup_string(native_value, native_length);
+  gchar * native_return_value = g_variant_dup_string(native_value, &native_length);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
-  g_free(native_return_value);
+  mrb_value return_value = TODO_mruby_box_gchar_PTR(mrb, native_return_value);
+  mrb_ary_push(mrb, results, return_value);
   
-  return return_value;
+  /* Box out param: length */
+  mrb_value length = mrb_fixnum_value(native_length);
+
+  /* Add out params to results */
+  mrb_ary_push(mrb, results, length);
+
+  return results;
 }
 #endif
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_variant_dup_strv */
-/* sha: 12614374b03f7a397bb6dbf4c931073a14bc941900b1255874a2f047b96162f5 */
+/* sha: 6aa984b9e45bcdc6d61216455de0907ad35af8f94cf89a1ef941b541561f7797 */
 #if BIND_g_variant_dup_strv_FUNCTION
-#define g_variant_dup_strv_REQUIRED_ARGC 2
+#define g_variant_dup_strv_REQUIRED_ARGC 1
 #define g_variant_dup_strv_OPTIONAL_ARGC 0
 /* g_variant_dup_strv
  *
  * Parameters:
  * - value: GVariant *
- * - length: gsize *
  * Return Type: gchar **
  */
 mrb_value
 mrb_GLib_g_variant_dup_strv(mrb_state* mrb, mrb_value self) {
+  mrb_value results = mrb_ary_new(mrb);
   mrb_value value;
-  mrb_value length;
+  int native_length;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "oo", &value, &length);
+  mrb_get_args(mrb, "o", &value);
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, value, GVariant_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GVariant expected");
     return mrb_nil_value();
   }
-  TODO_type_check_gsize_PTR(length);
 
   /* Unbox param: value */
   GVariant * native_value = (mrb_nil_p(value) ? NULL : mruby_unbox__GVariant(value));
 
-  /* Unbox param: length */
-  gsize * native_length = TODO_mruby_unbox_gsize_PTR(length);
-
   /* Invocation */
-  gchar ** native_return_value = g_variant_dup_strv(native_value, native_length);
+  gchar ** native_return_value = g_variant_dup_strv(native_value, &native_length);
 
   /* Box the return value */
   mrb_value return_value = TODO_mruby_box_gchar_PTR_PTR(mrb, native_return_value);
+  mrb_ary_push(mrb, results, return_value);
   
-  return return_value;
+  /* Box out param: length */
+  mrb_value length = mrb_fixnum_value(native_length);
+
+  /* Add out params to results */
+  mrb_ary_push(mrb, results, length);
+
+  return results;
 }
 #endif
 /* MRUBY_BINDING_END */
@@ -53120,7 +52896,7 @@ mrb_GLib_g_variant_get_byte(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_variant_get_bytestring */
-/* sha: 790e1941ff7a95abd16e0d62583c805683e00d725d716ead30faab240393479e */
+/* sha: f0d25ecca00456b13d97482409927be108c62d5dcf7c2170e7f4cba6a5f9b3a6 */
 #if BIND_g_variant_get_bytestring_FUNCTION
 #define g_variant_get_bytestring_REQUIRED_ARGC 1
 #define g_variant_get_bytestring_OPTIONAL_ARGC 0
@@ -53150,7 +52926,7 @@ mrb_GLib_g_variant_get_bytestring(mrb_state* mrb, mrb_value self) {
   const gchar * native_return_value = g_variant_get_bytestring(native_value);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
+  mrb_value return_value = native_return_value == NULL ? mrb_nil_value() : mrb_str_new_cstr(mrb, native_return_value);
   
   return return_value;
 }
@@ -53158,45 +52934,48 @@ mrb_GLib_g_variant_get_bytestring(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_variant_get_bytestring_array */
-/* sha: 62c6d52104aa4af8f92b0466167f1f07d6eeb36989cf51ced5480a3b8aaf8b66 */
+/* sha: d79bdfdc9d0a02e8e028b6436355a5233c883c506677c21674e00910c06d1094 */
 #if BIND_g_variant_get_bytestring_array_FUNCTION
-#define g_variant_get_bytestring_array_REQUIRED_ARGC 2
+#define g_variant_get_bytestring_array_REQUIRED_ARGC 1
 #define g_variant_get_bytestring_array_OPTIONAL_ARGC 0
 /* g_variant_get_bytestring_array
  *
  * Parameters:
  * - value: GVariant *
- * - length: gsize *
  * Return Type: const gchar **
  */
 mrb_value
 mrb_GLib_g_variant_get_bytestring_array(mrb_state* mrb, mrb_value self) {
+  mrb_value results = mrb_ary_new(mrb);
   mrb_value value;
-  mrb_value length;
+  int native_length;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "oo", &value, &length);
+  mrb_get_args(mrb, "o", &value);
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, value, GVariant_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GVariant expected");
     return mrb_nil_value();
   }
-  TODO_type_check_gsize_PTR(length);
 
   /* Unbox param: value */
   GVariant * native_value = (mrb_nil_p(value) ? NULL : mruby_unbox__GVariant(value));
 
-  /* Unbox param: length */
-  gsize * native_length = TODO_mruby_unbox_gsize_PTR(length);
-
   /* Invocation */
-  const gchar ** native_return_value = g_variant_get_bytestring_array(native_value, native_length);
+  const gchar ** native_return_value = g_variant_get_bytestring_array(native_value, &native_length);
 
   /* Box the return value */
   mrb_value return_value = TODO_mruby_box_gchar_PTR_PTR(mrb, native_return_value);
+  mrb_ary_push(mrb, results, return_value);
   
-  return return_value;
+  /* Box out param: length */
+  mrb_value length = mrb_fixnum_value(native_length);
+
+  /* Add out params to results */
+  mrb_ary_push(mrb, results, length);
+
+  return results;
 }
 #endif
 /* MRUBY_BINDING_END */
@@ -53395,47 +53174,50 @@ mrb_GLib_g_variant_get_double(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_variant_get_fixed_array */
-/* sha: 44b32817d525e619fe9870fa66175a675397c856ac8838f30ddba47bde19a205 */
+/* sha: 1ddd3a5d3412b3f3934f52116166dea963b6e53878a3f13f5930c151e7a72ef4 */
 #if BIND_g_variant_get_fixed_array_FUNCTION
-#define g_variant_get_fixed_array_REQUIRED_ARGC 3
+#define g_variant_get_fixed_array_REQUIRED_ARGC 2
 #define g_variant_get_fixed_array_OPTIONAL_ARGC 0
 /* g_variant_get_fixed_array
  *
  * Parameters:
  * - value: GVariant *
- * - n_elements: gsize *
  * - element_size: gsize
  * Return Type: gconstpointer
  */
 mrb_value
 mrb_GLib_g_variant_get_fixed_array(mrb_state* mrb, mrb_value self) {
+  mrb_value results = mrb_ary_new(mrb);
   mrb_value value;
-  mrb_value n_elements;
+  int native_n_elements;
   mrb_int native_element_size;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "ooi", &value, &n_elements, &native_element_size);
+  mrb_get_args(mrb, "oi", &value, &native_element_size);
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, value, GVariant_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GVariant expected");
     return mrb_nil_value();
   }
-  TODO_type_check_gsize_PTR(n_elements);
 
   /* Unbox param: value */
   GVariant * native_value = (mrb_nil_p(value) ? NULL : mruby_unbox__GVariant(value));
 
-  /* Unbox param: n_elements */
-  gsize * native_n_elements = TODO_mruby_unbox_gsize_PTR(n_elements);
-
   /* Invocation */
-  gconstpointer native_return_value = g_variant_get_fixed_array(native_value, native_n_elements, native_element_size);
+  gconstpointer native_return_value = g_variant_get_fixed_array(native_value, &native_n_elements, native_element_size);
 
   /* Box the return value */
   mrb_value return_value = TODO_mruby_box_gpointer(mrb, native_return_value);
+  mrb_ary_push(mrb, results, return_value);
   
-  return return_value;
+  /* Box out param: n_elements */
+  mrb_value n_elements = mrb_fixnum_value(native_n_elements);
+
+  /* Add out params to results */
+  mrb_ary_push(mrb, results, n_elements);
+
+  return results;
 }
 #endif
 /* MRUBY_BINDING_END */
@@ -53669,45 +53451,48 @@ mrb_GLib_g_variant_get_normal_form(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_variant_get_objv */
-/* sha: 64320ff9176170f6ab253242933565ba74041b450c79bf7570c9b9883b43fd83 */
+/* sha: 2f0d2354c36d592a320d5fc4dc137615b173376bd7d7699ada3cbd9b8712bdcd */
 #if BIND_g_variant_get_objv_FUNCTION
-#define g_variant_get_objv_REQUIRED_ARGC 2
+#define g_variant_get_objv_REQUIRED_ARGC 1
 #define g_variant_get_objv_OPTIONAL_ARGC 0
 /* g_variant_get_objv
  *
  * Parameters:
  * - value: GVariant *
- * - length: gsize *
  * Return Type: const gchar **
  */
 mrb_value
 mrb_GLib_g_variant_get_objv(mrb_state* mrb, mrb_value self) {
+  mrb_value results = mrb_ary_new(mrb);
   mrb_value value;
-  mrb_value length;
+  int native_length;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "oo", &value, &length);
+  mrb_get_args(mrb, "o", &value);
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, value, GVariant_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GVariant expected");
     return mrb_nil_value();
   }
-  TODO_type_check_gsize_PTR(length);
 
   /* Unbox param: value */
   GVariant * native_value = (mrb_nil_p(value) ? NULL : mruby_unbox__GVariant(value));
 
-  /* Unbox param: length */
-  gsize * native_length = TODO_mruby_unbox_gsize_PTR(length);
-
   /* Invocation */
-  const gchar ** native_return_value = g_variant_get_objv(native_value, native_length);
+  const gchar ** native_return_value = g_variant_get_objv(native_value, &native_length);
 
   /* Box the return value */
   mrb_value return_value = TODO_mruby_box_gchar_PTR_PTR(mrb, native_return_value);
+  mrb_ary_push(mrb, results, return_value);
   
-  return return_value;
+  /* Box out param: length */
+  mrb_value length = mrb_fixnum_value(native_length);
+
+  /* Add out params to results */
+  mrb_ary_push(mrb, results, length);
+
+  return results;
 }
 #endif
 /* MRUBY_BINDING_END */
@@ -53751,89 +53536,95 @@ mrb_GLib_g_variant_get_size(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_variant_get_string */
-/* sha: aff4c79d1a047770deaac2b6a56b7d0f1731f24e4fad960d8c7997941d6f9602 */
+/* sha: c8edabf53838fcccad8395b1255342c68f7beaec2745f171a2ef7bb8f4e93474 */
 #if BIND_g_variant_get_string_FUNCTION
-#define g_variant_get_string_REQUIRED_ARGC 2
+#define g_variant_get_string_REQUIRED_ARGC 1
 #define g_variant_get_string_OPTIONAL_ARGC 0
 /* g_variant_get_string
  *
  * Parameters:
  * - value: GVariant *
- * - length: gsize *
  * Return Type: const gchar *
  */
 mrb_value
 mrb_GLib_g_variant_get_string(mrb_state* mrb, mrb_value self) {
+  mrb_value results = mrb_ary_new(mrb);
   mrb_value value;
-  mrb_value length;
+  int native_length;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "oo", &value, &length);
+  mrb_get_args(mrb, "o", &value);
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, value, GVariant_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GVariant expected");
     return mrb_nil_value();
   }
-  TODO_type_check_gsize_PTR(length);
 
   /* Unbox param: value */
   GVariant * native_value = (mrb_nil_p(value) ? NULL : mruby_unbox__GVariant(value));
 
-  /* Unbox param: length */
-  gsize * native_length = TODO_mruby_unbox_gsize_PTR(length);
-
   /* Invocation */
-  const gchar * native_return_value = g_variant_get_string(native_value, native_length);
+  const gchar * native_return_value = g_variant_get_string(native_value, &native_length);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
+  mrb_value return_value = native_return_value == NULL ? mrb_nil_value() : mrb_str_new_cstr(mrb, native_return_value);
+  mrb_ary_push(mrb, results, return_value);
   
-  return return_value;
+  /* Box out param: length */
+  mrb_value length = mrb_fixnum_value(native_length);
+
+  /* Add out params to results */
+  mrb_ary_push(mrb, results, length);
+
+  return results;
 }
 #endif
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_variant_get_strv */
-/* sha: 7f6b06ffee56243ba5e13c72fde23ffaefdbb4c04410ee994619b45d9ae8f311 */
+/* sha: e170a9196527f6a71bb9774f148207d730f9e41f83991b6ce7020a45a55edc0b */
 #if BIND_g_variant_get_strv_FUNCTION
-#define g_variant_get_strv_REQUIRED_ARGC 2
+#define g_variant_get_strv_REQUIRED_ARGC 1
 #define g_variant_get_strv_OPTIONAL_ARGC 0
 /* g_variant_get_strv
  *
  * Parameters:
  * - value: GVariant *
- * - length: gsize *
  * Return Type: const gchar **
  */
 mrb_value
 mrb_GLib_g_variant_get_strv(mrb_state* mrb, mrb_value self) {
+  mrb_value results = mrb_ary_new(mrb);
   mrb_value value;
-  mrb_value length;
+  int native_length;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "oo", &value, &length);
+  mrb_get_args(mrb, "o", &value);
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, value, GVariant_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "GVariant expected");
     return mrb_nil_value();
   }
-  TODO_type_check_gsize_PTR(length);
 
   /* Unbox param: value */
   GVariant * native_value = (mrb_nil_p(value) ? NULL : mruby_unbox__GVariant(value));
 
-  /* Unbox param: length */
-  gsize * native_length = TODO_mruby_unbox_gsize_PTR(length);
-
   /* Invocation */
-  const gchar ** native_return_value = g_variant_get_strv(native_value, native_length);
+  const gchar ** native_return_value = g_variant_get_strv(native_value, &native_length);
 
   /* Box the return value */
   mrb_value return_value = TODO_mruby_box_gchar_PTR_PTR(mrb, native_return_value);
+  mrb_ary_push(mrb, results, return_value);
   
-  return return_value;
+  /* Box out param: length */
+  mrb_value length = mrb_fixnum_value(native_length);
+
+  /* Add out params to results */
+  mrb_ary_push(mrb, results, length);
+
+  return results;
 }
 #endif
 /* MRUBY_BINDING_END */
@@ -53877,7 +53668,7 @@ mrb_GLib_g_variant_get_type(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_variant_get_type_string */
-/* sha: 596c83b8d36a53560cf595be74151e8c04704f717c823d9d5d69f2c00daad76b */
+/* sha: e91cc63da1e580a9edda7b6ac4633e71ebcb4de4f78ed866a89e715f73115d46 */
 #if BIND_g_variant_get_type_string_FUNCTION
 #define g_variant_get_type_string_REQUIRED_ARGC 1
 #define g_variant_get_type_string_OPTIONAL_ARGC 0
@@ -53907,7 +53698,7 @@ mrb_GLib_g_variant_get_type_string(mrb_state* mrb, mrb_value self) {
   const gchar * native_return_value = g_variant_get_type_string(native_value);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
+  mrb_value return_value = native_return_value == NULL ? mrb_nil_value() : mrb_str_new_cstr(mrb, native_return_value);
   
   return return_value;
 }
@@ -55664,7 +55455,7 @@ mrb_GLib_g_variant_new_strv(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_variant_new_take_string */
-/* sha: d7ae9c0fa4d1d6f84671c3bcfadf59b081668cd7be0a19b19f70d9f582508c57 */
+/* sha: aefa41fd3dcaaa7263bff3c2bd35d2127505fde53b13c0c7f1302ab009d45ebf */
 #if BIND_g_variant_new_take_string_FUNCTION
 #define g_variant_new_take_string_REQUIRED_ARGC 1
 #define g_variant_new_take_string_OPTIONAL_ARGC 0
@@ -55676,14 +55467,16 @@ mrb_GLib_g_variant_new_strv(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_variant_new_take_string(mrb_state* mrb, mrb_value self) {
-  char * string = NULL;
+  mrb_value string;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "z!", &string);
+  mrb_get_args(mrb, "o", &string);
+
+  /* Type checking */
+  TODO_type_check_gchar_PTR(string);
 
   /* Unbox param: string */
-  /* WARNING: String is strdup'ed to avoid mutable reference to internal MRuby memory */
-  char * native_string = strdup(string);
+  gchar * native_string = TODO_mruby_unbox_gchar_PTR(string);
 
   /* Invocation */
   GVariant * native_return_value = g_variant_new_take_string(native_string);
@@ -55691,11 +55484,6 @@ mrb_GLib_g_variant_new_take_string(mrb_state* mrb, mrb_value self) {
   /* Box the return value */
   mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_box__GVariant(mrb, native_return_value));
   
-  /* Clean in param: string */
-  /* WARNING: Assuming that the new string can be deallocated after the function call. */
-  free(native_string);
-  native_string = NULL;
-
   return return_value;
 }
 #endif
@@ -55964,7 +55752,7 @@ mrb_GLib_g_variant_parse(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_variant_parse_error_print_context */
-/* sha: d731df9898376e396e416197b2fce2071799eb42661966949e3f5cb4fd516ee0 */
+/* sha: 9776680c7677103bf63fefa8e3afee7249bd3c254a16868bdb3fa0c68b31cea4 */
 #if BIND_g_variant_parse_error_print_context_FUNCTION
 #define g_variant_parse_error_print_context_REQUIRED_ARGC 2
 #define g_variant_parse_error_print_context_OPTIONAL_ARGC 0
@@ -55996,8 +55784,7 @@ mrb_GLib_g_variant_parse_error_print_context(mrb_state* mrb, mrb_value self) {
   gchar * native_return_value = g_variant_parse_error_print_context(native_error, native_source_str);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
-  g_free(native_return_value);
+  mrb_value return_value = TODO_mruby_box_gchar_PTR(mrb, native_return_value);
   
   return return_value;
 }
@@ -56051,7 +55838,7 @@ mrb_GLib_g_variant_parser_get_error_quark(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_variant_print */
-/* sha: 46c93352d11e74cd1fd289ba29fc44722527c53521264fc0271518fb81ffd86c */
+/* sha: d0b27495db107c6d078dca64a56a726c691151ed559f289736a047fb7e30a8dc */
 #if BIND_g_variant_print_FUNCTION
 #define g_variant_print_REQUIRED_ARGC 2
 #define g_variant_print_OPTIONAL_ARGC 0
@@ -56083,8 +55870,7 @@ mrb_GLib_g_variant_print(mrb_state* mrb, mrb_value self) {
   gchar * native_return_value = g_variant_print(native_value, native_type_annotate);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
-  g_free(native_return_value);
+  mrb_value return_value = TODO_mruby_box_gchar_PTR(mrb, native_return_value);
   
   return return_value;
 }
@@ -56363,7 +56149,7 @@ mrb_GLib_g_variant_type_copy(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_variant_type_dup_string */
-/* sha: b3cc76c3fd55da4c6521b7ccff3e39b95a61c4c540b1bcf3fceb6918a8991a96 */
+/* sha: 9eb0d5d421cb146e65fbb59f00fa8efb4f16010188843523c60b613e4fdc5622 */
 #if BIND_g_variant_type_dup_string_FUNCTION
 #define g_variant_type_dup_string_REQUIRED_ARGC 1
 #define g_variant_type_dup_string_OPTIONAL_ARGC 0
@@ -56393,8 +56179,7 @@ mrb_GLib_g_variant_type_dup_string(mrb_state* mrb, mrb_value self) {
   gchar * native_return_value = g_variant_type_dup_string(native_type);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
-  g_free(native_return_value);
+  mrb_value return_value = TODO_mruby_box_gchar_PTR(mrb, native_return_value);
   
   return return_value;
 }
@@ -57281,7 +57066,7 @@ mrb_GLib_g_variant_type_next(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_variant_type_peek_string */
-/* sha: a451c3dcf703862427147e3cc017e6896febea144ebdb252671b515e6e5e96bb */
+/* sha: 158e78f04e8ac2e220345a1c133ff36095e0ebce6ef7f00533158e4cf4c7627a */
 #if BIND_g_variant_type_peek_string_FUNCTION
 #define g_variant_type_peek_string_REQUIRED_ARGC 1
 #define g_variant_type_peek_string_OPTIONAL_ARGC 0
@@ -57311,7 +57096,7 @@ mrb_GLib_g_variant_type_peek_string(mrb_state* mrb, mrb_value self) {
   const gchar * native_return_value = g_variant_type_peek_string(native_type);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
+  mrb_value return_value = native_return_value == NULL ? mrb_nil_value() : mrb_str_new_cstr(mrb, native_return_value);
   
   return return_value;
 }
@@ -57583,7 +57368,7 @@ mrb_GLib_g_vprintf(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_vsnprintf */
-/* sha: 432b9ffd608f6b3ae561a9822f1e9333a6ff68c879557699e5c3d47235ce08ae */
+/* sha: 7c3ecb4b4d2a0eced3249a3179a8e7a107883da863b869d252eb63e35056ddb1 */
 #if BIND_g_vsnprintf_FUNCTION
 #define g_vsnprintf_REQUIRED_ARGC 4
 #define g_vsnprintf_OPTIONAL_ARGC 0
@@ -57598,17 +57383,19 @@ mrb_GLib_g_vprintf(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_vsnprintf(mrb_state* mrb, mrb_value self) {
-  char * string = NULL;
+  mrb_value string;
   mrb_int native_n;
   char * native_format = NULL;
   mrb_int native_args;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "z!iz!i", &string, &native_n, &native_format, &native_args);
+  mrb_get_args(mrb, "oiz!i", &string, &native_n, &native_format, &native_args);
+
+  /* Type checking */
+  TODO_type_check_gchar_PTR(string);
 
   /* Unbox param: string */
-  /* WARNING: String is strdup'ed to avoid mutable reference to internal MRuby memory */
-  char * native_string = strdup(string);
+  gchar * native_string = TODO_mruby_unbox_gchar_PTR(string);
 
   /* Invocation */
   gint native_return_value = g_vsnprintf(native_string, native_n, native_format, native_args);
@@ -57616,18 +57403,13 @@ mrb_GLib_g_vsnprintf(mrb_state* mrb, mrb_value self) {
   /* Box the return value */
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
-  /* Clean in param: string */
-  /* WARNING: Assuming that the new string can be deallocated after the function call. */
-  free(native_string);
-  native_string = NULL;
-
   return return_value;
 }
 #endif
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_vsprintf */
-/* sha: 64fea542ef726da792aa42f1b5a4808a71947979cf4a7115e13293435f74030a */
+/* sha: 074dbe0551f93d2def8589e77f9423a38ad0265ae16ada60bce0c65edaf15af3 */
 #if BIND_g_vsprintf_FUNCTION
 #define g_vsprintf_REQUIRED_ARGC 3
 #define g_vsprintf_OPTIONAL_ARGC 0
@@ -57641,19 +57423,19 @@ mrb_GLib_g_vsnprintf(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_GLib_g_vsprintf(mrb_state* mrb, mrb_value self) {
-  char * string = NULL;
+  mrb_value string;
   char * native_format = NULL;
   mrb_value args;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "z!z!o", &string, &native_format, &args);
+  mrb_get_args(mrb, "oz!o", &string, &native_format, &args);
 
   /* Type checking */
+  TODO_type_check_gchar_PTR(string);
   TODO_type_check_va_list(args);
 
   /* Unbox param: string */
-  /* WARNING: String is strdup'ed to avoid mutable reference to internal MRuby memory */
-  char * native_string = strdup(string);
+  gchar * native_string = TODO_mruby_unbox_gchar_PTR(string);
 
   /* Unbox param: args */
   va_list native_args = TODO_mruby_unbox_va_list(args);
@@ -57664,11 +57446,6 @@ mrb_GLib_g_vsprintf(mrb_state* mrb, mrb_value self) {
   /* Box the return value */
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
-  /* Clean in param: string */
-  /* WARNING: Assuming that the new string can be deallocated after the function call. */
-  free(native_string);
-  native_string = NULL;
-
   return return_value;
 }
 #endif
@@ -57709,7 +57486,7 @@ mrb_GLib_g_warn_message(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: glib_check_version */
-/* sha: 1f96becf27db24ba75804519e2b3b217200425316ae21d71d725ae7db691fba5 */
+/* sha: b4618e9c84e35dd80c47457e83b97d1f4e8645dd43c1d13f5f8f164498329c90 */
 #if BIND_glib_check_version_FUNCTION
 #define glib_check_version_REQUIRED_ARGC 3
 #define glib_check_version_OPTIONAL_ARGC 0
@@ -57734,7 +57511,7 @@ mrb_GLib_glib_check_version(mrb_state* mrb, mrb_value self) {
   const gchar * native_return_value = glib_check_version(native_required_major, native_required_minor, native_required_micro);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
+  mrb_value return_value = native_return_value == NULL ? mrb_nil_value() : mrb_str_new_cstr(mrb, native_return_value);
   
   return return_value;
 }

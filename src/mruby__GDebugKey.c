@@ -67,7 +67,7 @@ mrb_GLib_GDebugKey_get_key(mrb_state* mrb, mrb_value self) {
 
   const gchar * native_key = native_self->key;
 
-  mrb_value key = mrb_str_new_cstr(mrb, native_key);
+  mrb_value key = native_key == NULL ? mrb_nil_value() : mrb_str_new_cstr(mrb, native_key);
 
   return key;
 }

@@ -151,7 +151,7 @@ mrb_GLib_GIOChannel_get_encoding(mrb_state* mrb, mrb_value self) {
 
   gchar * native_encoding = native_self->encoding;
 
-  mrb_value encoding = mrb_str_new_cstr(mrb, native_encoding);
+  mrb_value encoding = TODO_mruby_box_gchar_PTR(mrb, native_encoding);
 
   return encoding;
 }
@@ -166,14 +166,15 @@ mrb_GLib_GIOChannel_get_encoding(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_GIOChannel_set_encoding(mrb_state* mrb, mrb_value self) {
   struct _GIOChannel * native_self = mruby_unbox__GIOChannel(self);
-  char * encoding = NULL;
+  mrb_value encoding;
 
-  mrb_get_args(mrb, "z!", &encoding);
+  mrb_get_args(mrb, "o", &encoding);
 
-  /* WARNING: String is strdup'ed to avoid mutable reference to internal MRuby memory */
-  char * native_encoding = strdup(encoding);
+  /* type checking */
+  TODO_type_check_gchar_PTR(encoding);
 
-  if (NULL != native_self->encoding) free(native_self->encoding);
+  gchar * native_encoding = TODO_mruby_unbox_gchar_PTR(encoding);
+
   native_self->encoding = native_encoding;
   
   mrb_value value_as_mrb_value;
@@ -279,7 +280,7 @@ mrb_GLib_GIOChannel_get_line_term(mrb_state* mrb, mrb_value self) {
 
   gchar * native_line_term = native_self->line_term;
 
-  mrb_value line_term = mrb_str_new_cstr(mrb, native_line_term);
+  mrb_value line_term = TODO_mruby_box_gchar_PTR(mrb, native_line_term);
 
   return line_term;
 }
@@ -294,14 +295,15 @@ mrb_GLib_GIOChannel_get_line_term(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_GIOChannel_set_line_term(mrb_state* mrb, mrb_value self) {
   struct _GIOChannel * native_self = mruby_unbox__GIOChannel(self);
-  char * line_term = NULL;
+  mrb_value line_term;
 
-  mrb_get_args(mrb, "z!", &line_term);
+  mrb_get_args(mrb, "o", &line_term);
 
-  /* WARNING: String is strdup'ed to avoid mutable reference to internal MRuby memory */
-  char * native_line_term = strdup(line_term);
+  /* type checking */
+  TODO_type_check_gchar_PTR(line_term);
 
-  if (NULL != native_self->line_term) free(native_self->line_term);
+  gchar * native_line_term = TODO_mruby_unbox_gchar_PTR(line_term);
+
   native_self->line_term = native_line_term;
   
   mrb_value value_as_mrb_value;

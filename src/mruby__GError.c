@@ -143,7 +143,7 @@ mrb_GLib_GError_get_message(mrb_state* mrb, mrb_value self) {
 
   gchar * native_message = native_self->message;
 
-  mrb_value message = mrb_str_new_cstr(mrb, native_message);
+  mrb_value message = TODO_mruby_box_gchar_PTR(mrb, native_message);
 
   return message;
 }
@@ -158,14 +158,15 @@ mrb_GLib_GError_get_message(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_GError_set_message(mrb_state* mrb, mrb_value self) {
   struct _GError * native_self = mruby_unbox__GError(self);
-  char * message = NULL;
+  mrb_value message;
 
-  mrb_get_args(mrb, "z!", &message);
+  mrb_get_args(mrb, "o", &message);
 
-  /* WARNING: String is strdup'ed to avoid mutable reference to internal MRuby memory */
-  char * native_message = strdup(message);
+  /* type checking */
+  TODO_type_check_gchar_PTR(message);
 
-  if (NULL != native_self->message) free(native_self->message);
+  gchar * native_message = TODO_mruby_unbox_gchar_PTR(message);
+
   native_self->message = native_message;
   
   mrb_value value_as_mrb_value;

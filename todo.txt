@@ -1,42 +1,93 @@
-- Have mruby_bindings output a list of unbound function signatures
-  + To be used as quick ref for defining CTypes
-  + Same deal for macros
-
-#define BIND_g_atexit_FUNCTION FALSE
-
-#define BIND_g_atomic_int_add_FUNCTION FALSE
-#define BIND_g_atomic_int_and_FUNCTION FALSE
-#define BIND_g_atomic_int_compare_and_exchange_FUNCTION FALSE
-#define BIND_g_atomic_int_dec_and_test_FUNCTION FALSE
-#define BIND_g_atomic_int_exchange_and_add_FUNCTION FALSE
-#define BIND_g_atomic_int_get_FUNCTION FALSE
-#define BIND_g_atomic_int_inc_FUNCTION FALSE
-#define BIND_g_atomic_int_or_FUNCTION FALSE
-#define BIND_g_atomic_int_set_FUNCTION FALSE
-#define BIND_g_atomic_int_xor_FUNCTION FALSE
-#define BIND_g_atomic_pointer_add_FUNCTION FALSE
-#define BIND_g_atomic_pointer_and_FUNCTION FALSE
-#define BIND_g_atomic_pointer_compare_and_exchange_FUNCTION FALSE
-#define BIND_g_atomic_pointer_get_FUNCTION FALSE
-#define BIND_g_atomic_pointer_or_FUNCTION FALSE
-#define BIND_g_atomic_pointer_set_FUNCTION FALSE
-#define BIND_g_atomic_pointer_xor_FUNCTION FALSE
-
-#define BIND_g_base64_decode_FUNCTION FALSE
-#define BIND_g_base64_decode_inplace_FUNCTION FALSE
-#define BIND_g_base64_decode_step_FUNCTION FALSE
-#define BIND_g_base64_encode_FUNCTION FALSE
-#define BIND_g_base64_encode_close_FUNCTION FALSE
-#define BIND_g_base64_encode_step_FUNCTION FALSE
-
-#define BIND_g_checksum_get_digest_FUNCTION FALSE
-#define BIND_g_checksum_type_get_length_FUNCTION FALSE
-#define BIND_g_checksum_update_FUNCTION FALSE
-
-/* Current binding doesn't work if File contains null character (binary much?) */
-#define BIND_g_file_get_contents_FUNCTION FALSE
-
-#define BIND_g_iconv_FUNCTION FALSE
-#define BIND_g_iconv_open_FUNCTION FALSE
-
-#define BIND_g_shell_parse_argv_FUNCTION FALSE
+  #define BIND_g_atexit_FUNCTION FALSE
+  
+  #define BIND_g_convert_FUNCTION FALSE
+  #define BIND_g_convert_with_fallback_FUNCTION FALSE
+  #define BIND_g_convert_with_iconv_FUNCTION FALSE
+  
+  #define BIND_g_dir_make_tmp_FUNCTION FALSE
+  
+  #define BIND_g_file_read_link_FUNCTION FALSE
+    
+  #define BIND_g_get_system_config_dirs_FUNCTION FALSE
+  #define BIND_g_get_system_data_dirs_FUNCTION FALSE
+  
+  #define BIND_g_iconv_FUNCTION FALSE
+  #define BIND_g_iconv_close_FUNCTION FALSE
+  #define BIND_g_iconv_open_FUNCTION FALSE
+  
+  #define BIND_g_io_add_watch_FUNCTION FALSE
+  #define BIND_g_io_add_watch_full_FUNCTION FALSE
+  #define BIND_g_io_channel_get_line_term_FUNCTION FALSE
+  #define BIND_g_io_channel_read_FUNCTION FALSE
+  #define BIND_g_io_channel_read_chars_FUNCTION FALSE
+  #define BIND_g_io_channel_read_line_FUNCTION FALSE
+  #define BIND_g_io_channel_read_line_string_FUNCTION FALSE
+  #define BIND_g_io_channel_read_to_end_FUNCTION FALSE
+  #define BIND_g_io_channel_read_unichar_FUNCTION FALSE
+  #define BIND_g_io_channel_write_FUNCTION FALSE
+  #define BIND_g_io_channel_write_chars_FUNCTION FALSE
+  
+  #define BIND_g_mapped_file_get_contents_FUNCTION FALSE
+  
+  #define BIND_g_markup_collect_attributes_FUNCTION FALSE
+  #define BIND_g_markup_escape_text_FUNCTION FALSE
+  #define BIND_g_markup_parse_context_get_position_FUNCTION FALSE
+  #define BIND_g_markup_parse_context_get_user_data_FUNCTION FALSE
+  #define BIND_g_markup_parse_context_new_FUNCTION FALSE
+  #define BIND_g_markup_parse_context_pop_FUNCTION FALSE
+  #define BIND_g_markup_parse_context_push_FUNCTION FALSE
+  #define BIND_g_markup_printf_escaped_FUNCTION FALSE
+  #define BIND_g_markup_vprintf_escaped_FUNCTION FALSE
+  
+  #define BIND_g_match_info_expand_references_FUNCTION FALSE
+  #define BIND_g_match_info_fetch_FUNCTION FALSE
+  #define BIND_g_match_info_fetch_all_FUNCTION FALSE
+  #define BIND_g_match_info_fetch_named_FUNCTION FALSE
+  #define BIND_g_match_info_fetch_named_pos_FUNCTION FALSE
+  #define BIND_g_match_info_fetch_pos_FUNCTION FALSE
+  
+  #define BIND_g_mkdtemp_FUNCTION FALSE
+  #define BIND_g_mkdtemp_full_FUNCTION FALSE
+  #define BIND_g_mkstemp_FUNCTION FALSE
+  #define BIND_g_mkstemp_full_FUNCTION FALSE
+  
+  #define BIND_g_mutex_clear_FUNCTION FALSE
+  #define BIND_g_mutex_init_FUNCTION FALSE
+  #define BIND_g_mutex_lock_FUNCTION FALSE
+  #define BIND_g_mutex_locker_free_FUNCTION FALSE
+  #define BIND_g_mutex_locker_new_FUNCTION FALSE
+  #define BIND_g_mutex_trylock_FUNCTION FALSE
+  #define BIND_g_mutex_unlock_FUNCTION FALSE
+  
+  #define BIND_g_path_get_basename_FUNCTION FALSE
+  #define BIND_g_path_get_dirname_FUNCTION FALSE
+  
+  #define BIND_g_regex_check_replacement_FUNCTION FALSE
+  #define BIND_g_regex_escape_nul_FUNCTION FALSE
+  #define BIND_g_regex_escape_string_FUNCTION FALSE
+  #define BIND_g_regex_match_FUNCTION FALSE
+  #define BIND_g_regex_match_all_FUNCTION FALSE
+  #define BIND_g_regex_match_all_full_FUNCTION FALSE
+  #define BIND_g_regex_match_full_FUNCTION FALSE
+  #define BIND_g_regex_replace_FUNCTION FALSE
+  #define BIND_g_regex_replace_eval_FUNCTION FALSE
+  #define BIND_g_regex_replace_literal_FUNCTION FALSE
+  #define BIND_g_regex_split_FUNCTION FALSE
+  #define BIND_g_regex_split_full_FUNCTION FALSE
+  #define BIND_g_regex_split_simple_FUNCTION FALSE
+  
+  #define BIND_g_scanner_cur_value_FUNCTION FALSE
+  #define BIND_g_scanner_lookup_symbol_FUNCTION FALSE
+  #define BIND_g_scanner_scope_add_symbol_FUNCTION FALSE
+  #define BIND_g_scanner_scope_foreach_symbol_FUNCTION FALSE
+  #define BIND_g_scanner_scope_lookup_symbol_FUNCTION FALSE
+  
+  #define BIND_g_shell_parse_argv_FUNCTION FALSE
+  #define BIND_g_shell_quote_FUNCTION FALSE
+  #define BIND_g_shell_unquote_FUNCTION FALSE
+  
+  #define BIND_g_strcompress_FUNCTION FALSE
+  #define BIND_g_strv_contains_FUNCTION FALSE
+  #define BIND_g_strv_length_FUNCTION FALSE
+  
+  #define BIND_g_timer_elapsed_FUNCTION FALSE

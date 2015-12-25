@@ -186,7 +186,7 @@ mrb_GLib_GScanner_get_input_name(mrb_state* mrb, mrb_value self) {
 
   const gchar * native_input_name = native_self->input_name;
 
-  mrb_value input_name = mrb_str_new_cstr(mrb, native_input_name);
+  mrb_value input_name = native_input_name == NULL ? mrb_nil_value() : mrb_str_new_cstr(mrb, native_input_name);
 
   return input_name;
 }
@@ -714,7 +714,7 @@ mrb_GLib_GScanner_get_text(mrb_state* mrb, mrb_value self) {
 
   const gchar * native_text = native_self->text;
 
-  mrb_value text = mrb_str_new_cstr(mrb, native_text);
+  mrb_value text = native_text == NULL ? mrb_nil_value() : mrb_str_new_cstr(mrb, native_text);
 
   return text;
 }
@@ -752,7 +752,7 @@ mrb_GLib_GScanner_get_text_end(mrb_state* mrb, mrb_value self) {
 
   const gchar * native_text_end = native_self->text_end;
 
-  mrb_value text_end = mrb_str_new_cstr(mrb, native_text_end);
+  mrb_value text_end = native_text_end == NULL ? mrb_nil_value() : mrb_str_new_cstr(mrb, native_text_end);
 
   return text_end;
 }
@@ -790,7 +790,7 @@ mrb_GLib_GScanner_get_buffer(mrb_state* mrb, mrb_value self) {
 
   gchar * native_buffer = native_self->buffer;
 
-  mrb_value buffer = mrb_str_new_cstr(mrb, native_buffer);
+  mrb_value buffer = TODO_mruby_box_gchar_PTR(mrb, native_buffer);
 
   return buffer;
 }
@@ -805,14 +805,15 @@ mrb_GLib_GScanner_get_buffer(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_GScanner_set_buffer(mrb_state* mrb, mrb_value self) {
   struct _GScanner * native_self = mruby_unbox__GScanner(self);
-  char * buffer = NULL;
+  mrb_value buffer;
 
-  mrb_get_args(mrb, "z!", &buffer);
+  mrb_get_args(mrb, "o", &buffer);
 
-  /* WARNING: String is strdup'ed to avoid mutable reference to internal MRuby memory */
-  char * native_buffer = strdup(buffer);
+  /* type checking */
+  TODO_type_check_gchar_PTR(buffer);
 
-  if (NULL != native_self->buffer) free(native_self->buffer);
+  gchar * native_buffer = TODO_mruby_unbox_gchar_PTR(buffer);
+
   native_self->buffer = native_buffer;
   
   mrb_value value_as_mrb_value;

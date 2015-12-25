@@ -538,7 +538,7 @@ mrb_GLib_GSource_get_name(mrb_state* mrb, mrb_value self) {
 
   char * native_name = native_self->name;
 
-  mrb_value name = mrb_str_new_cstr(mrb, native_name);
+  mrb_value name = TODO_mruby_box_char_PTR(mrb, native_name);
 
   return name;
 }
@@ -553,14 +553,15 @@ mrb_GLib_GSource_get_name(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_GSource_set_name(mrb_state* mrb, mrb_value self) {
   struct _GSource * native_self = mruby_unbox__GSource(self);
-  char * name = NULL;
+  mrb_value name;
 
-  mrb_get_args(mrb, "z!", &name);
+  mrb_get_args(mrb, "o", &name);
 
-  /* WARNING: String is strdup'ed to avoid mutable reference to internal MRuby memory */
-  char * native_name = strdup(name);
+  /* type checking */
+  TODO_type_check_char_PTR(name);
 
-  if (NULL != native_self->name) free(native_self->name);
+  char * native_name = TODO_mruby_unbox_char_PTR(name);
+
   native_self->name = native_name;
   
   mrb_value value_as_mrb_value;

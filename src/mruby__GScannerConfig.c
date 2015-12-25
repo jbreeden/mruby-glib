@@ -67,7 +67,7 @@ mrb_GLib_GScannerConfig_get_cset_skip_characters(mrb_state* mrb, mrb_value self)
 
   gchar * native_cset_skip_characters = native_self->cset_skip_characters;
 
-  mrb_value cset_skip_characters = mrb_str_new_cstr(mrb, native_cset_skip_characters);
+  mrb_value cset_skip_characters = TODO_mruby_box_gchar_PTR(mrb, native_cset_skip_characters);
 
   return cset_skip_characters;
 }
@@ -82,14 +82,15 @@ mrb_GLib_GScannerConfig_get_cset_skip_characters(mrb_state* mrb, mrb_value self)
 mrb_value
 mrb_GLib_GScannerConfig_set_cset_skip_characters(mrb_state* mrb, mrb_value self) {
   struct _GScannerConfig * native_self = mruby_unbox__GScannerConfig(self);
-  char * cset_skip_characters = NULL;
+  mrb_value cset_skip_characters;
 
-  mrb_get_args(mrb, "z!", &cset_skip_characters);
+  mrb_get_args(mrb, "o", &cset_skip_characters);
 
-  /* WARNING: String is strdup'ed to avoid mutable reference to internal MRuby memory */
-  char * native_cset_skip_characters = strdup(cset_skip_characters);
+  /* type checking */
+  TODO_type_check_gchar_PTR(cset_skip_characters);
 
-  if (NULL != native_self->cset_skip_characters) free(native_self->cset_skip_characters);
+  gchar * native_cset_skip_characters = TODO_mruby_unbox_gchar_PTR(cset_skip_characters);
+
   native_self->cset_skip_characters = native_cset_skip_characters;
   
   mrb_value value_as_mrb_value;
@@ -109,7 +110,7 @@ mrb_GLib_GScannerConfig_get_cset_identifier_first(mrb_state* mrb, mrb_value self
 
   gchar * native_cset_identifier_first = native_self->cset_identifier_first;
 
-  mrb_value cset_identifier_first = mrb_str_new_cstr(mrb, native_cset_identifier_first);
+  mrb_value cset_identifier_first = TODO_mruby_box_gchar_PTR(mrb, native_cset_identifier_first);
 
   return cset_identifier_first;
 }
@@ -124,14 +125,15 @@ mrb_GLib_GScannerConfig_get_cset_identifier_first(mrb_state* mrb, mrb_value self
 mrb_value
 mrb_GLib_GScannerConfig_set_cset_identifier_first(mrb_state* mrb, mrb_value self) {
   struct _GScannerConfig * native_self = mruby_unbox__GScannerConfig(self);
-  char * cset_identifier_first = NULL;
+  mrb_value cset_identifier_first;
 
-  mrb_get_args(mrb, "z!", &cset_identifier_first);
+  mrb_get_args(mrb, "o", &cset_identifier_first);
 
-  /* WARNING: String is strdup'ed to avoid mutable reference to internal MRuby memory */
-  char * native_cset_identifier_first = strdup(cset_identifier_first);
+  /* type checking */
+  TODO_type_check_gchar_PTR(cset_identifier_first);
 
-  if (NULL != native_self->cset_identifier_first) free(native_self->cset_identifier_first);
+  gchar * native_cset_identifier_first = TODO_mruby_unbox_gchar_PTR(cset_identifier_first);
+
   native_self->cset_identifier_first = native_cset_identifier_first;
   
   mrb_value value_as_mrb_value;
@@ -151,7 +153,7 @@ mrb_GLib_GScannerConfig_get_cset_identifier_nth(mrb_state* mrb, mrb_value self) 
 
   gchar * native_cset_identifier_nth = native_self->cset_identifier_nth;
 
-  mrb_value cset_identifier_nth = mrb_str_new_cstr(mrb, native_cset_identifier_nth);
+  mrb_value cset_identifier_nth = TODO_mruby_box_gchar_PTR(mrb, native_cset_identifier_nth);
 
   return cset_identifier_nth;
 }
@@ -166,14 +168,15 @@ mrb_GLib_GScannerConfig_get_cset_identifier_nth(mrb_state* mrb, mrb_value self) 
 mrb_value
 mrb_GLib_GScannerConfig_set_cset_identifier_nth(mrb_state* mrb, mrb_value self) {
   struct _GScannerConfig * native_self = mruby_unbox__GScannerConfig(self);
-  char * cset_identifier_nth = NULL;
+  mrb_value cset_identifier_nth;
 
-  mrb_get_args(mrb, "z!", &cset_identifier_nth);
+  mrb_get_args(mrb, "o", &cset_identifier_nth);
 
-  /* WARNING: String is strdup'ed to avoid mutable reference to internal MRuby memory */
-  char * native_cset_identifier_nth = strdup(cset_identifier_nth);
+  /* type checking */
+  TODO_type_check_gchar_PTR(cset_identifier_nth);
 
-  if (NULL != native_self->cset_identifier_nth) free(native_self->cset_identifier_nth);
+  gchar * native_cset_identifier_nth = TODO_mruby_unbox_gchar_PTR(cset_identifier_nth);
+
   native_self->cset_identifier_nth = native_cset_identifier_nth;
   
   mrb_value value_as_mrb_value;
@@ -193,7 +196,7 @@ mrb_GLib_GScannerConfig_get_cpair_comment_single(mrb_state* mrb, mrb_value self)
 
   gchar * native_cpair_comment_single = native_self->cpair_comment_single;
 
-  mrb_value cpair_comment_single = mrb_str_new_cstr(mrb, native_cpair_comment_single);
+  mrb_value cpair_comment_single = TODO_mruby_box_gchar_PTR(mrb, native_cpair_comment_single);
 
   return cpair_comment_single;
 }
@@ -208,14 +211,15 @@ mrb_GLib_GScannerConfig_get_cpair_comment_single(mrb_state* mrb, mrb_value self)
 mrb_value
 mrb_GLib_GScannerConfig_set_cpair_comment_single(mrb_state* mrb, mrb_value self) {
   struct _GScannerConfig * native_self = mruby_unbox__GScannerConfig(self);
-  char * cpair_comment_single = NULL;
+  mrb_value cpair_comment_single;
 
-  mrb_get_args(mrb, "z!", &cpair_comment_single);
+  mrb_get_args(mrb, "o", &cpair_comment_single);
 
-  /* WARNING: String is strdup'ed to avoid mutable reference to internal MRuby memory */
-  char * native_cpair_comment_single = strdup(cpair_comment_single);
+  /* type checking */
+  TODO_type_check_gchar_PTR(cpair_comment_single);
 
-  if (NULL != native_self->cpair_comment_single) free(native_self->cpair_comment_single);
+  gchar * native_cpair_comment_single = TODO_mruby_unbox_gchar_PTR(cpair_comment_single);
+
   native_self->cpair_comment_single = native_cpair_comment_single;
   
   mrb_value value_as_mrb_value;

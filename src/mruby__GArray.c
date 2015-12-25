@@ -67,7 +67,7 @@ mrb_GLib_GArray_get_data(mrb_state* mrb, mrb_value self) {
 
   gchar * native_data = native_self->data;
 
-  mrb_value data = mrb_str_new_cstr(mrb, native_data);
+  mrb_value data = TODO_mruby_box_gchar_PTR(mrb, native_data);
 
   return data;
 }
@@ -82,14 +82,15 @@ mrb_GLib_GArray_get_data(mrb_state* mrb, mrb_value self) {
 mrb_value
 mrb_GLib_GArray_set_data(mrb_state* mrb, mrb_value self) {
   struct _GArray * native_self = mruby_unbox__GArray(self);
-  char * data = NULL;
+  mrb_value data;
 
-  mrb_get_args(mrb, "z!", &data);
+  mrb_get_args(mrb, "o", &data);
 
-  /* WARNING: String is strdup'ed to avoid mutable reference to internal MRuby memory */
-  char * native_data = strdup(data);
+  /* type checking */
+  TODO_type_check_gchar_PTR(data);
 
-  if (NULL != native_self->data) free(native_self->data);
+  gchar * native_data = TODO_mruby_unbox_gchar_PTR(data);
+
   native_self->data = native_data;
   
   mrb_value value_as_mrb_value;

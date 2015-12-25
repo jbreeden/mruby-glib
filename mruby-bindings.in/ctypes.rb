@@ -10,10 +10,11 @@ CTypes.typedef('bool', 'gboolean')
 CTypes.typedef('int', 'guint32')
 CTypes.typedef('int', 'gsize')
 CTypes.typedef('int', 'gssize')
+CTypes.typedef('out:int *', 'gsize *')
 CTypes.typedef('const char *', 'const gchar *')
 
-CTypes.typedef('char *', 'gchar *')
-CTypes['gchar *'].boxing_fn.cleanup_template = "g_free(%{value});"
+# CTypes.typedef('char *', 'gchar *')
+# CTypes['gchar *'].boxing_fn.cleanup_template = "g_free(%{value});"
 
 CTypes['GQuark'] = CTypes['int'].aliased_as('GQuark')
 
