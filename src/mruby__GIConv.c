@@ -11,6 +11,8 @@
  * Class Methods
  */
 
+/* MRUBY_BINDING: GIConv::initialize */
+/* sha: 90e47469a9d90396d3ad4c1a2fad1be401afb4bf299220fa8f77c47acfb5780c */
 #if BIND_GIConv_INITIALIZE
 mrb_value
 mrb_GLib_GIConv_initialize(mrb_state* mrb, mrb_value self) {
@@ -19,7 +21,10 @@ mrb_GLib_GIConv_initialize(mrb_state* mrb, mrb_value self) {
   return self;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GIConv::initialize */
+/* sha: 6879976e205a72080779e0c0812095e5f4f3dda020267b7c66a2fbb5f0a4d101 */
 mrb_value
 mrb_GLib_GIConv_disown(mrb_state* mrb, mrb_value self) {
   mrb_value ruby_object;
@@ -34,7 +39,10 @@ mrb_GLib_GIConv_disown(mrb_state* mrb, mrb_value self) {
 
   return mrb_nil_value();
 }
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GIConv::belongs_to_ruby */
+/* sha: 1b0e34403631dc64797a09ec0e066a57b4fce67627d116d8f889f56c8c2649ea */
 mrb_value
 mrb_GLib_GIConv_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
   mrb_value ruby_object;
@@ -51,6 +59,7 @@ mrb_GLib_GIConv_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
     return mrb_false_value();
   }
 }
+/* MRUBY_BINDING_END */
 
 
 void mrb_GLib_GIConv_init(mrb_state* mrb) {

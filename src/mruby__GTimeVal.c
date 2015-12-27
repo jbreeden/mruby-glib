@@ -11,6 +11,8 @@
  * Class Methods
  */
 
+/* MRUBY_BINDING: GTimeVal::initialize */
+/* sha: b2da67fc1e9de0d4c2bd2cc4676c3959fc41f891984c8e68577cfd58b66bce8f */
 #if BIND_GTimeVal_INITIALIZE
 mrb_value
 mrb_GLib_GTimeVal_initialize(mrb_state* mrb, mrb_value self) {
@@ -19,7 +21,10 @@ mrb_GLib_GTimeVal_initialize(mrb_state* mrb, mrb_value self) {
   return self;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GTimeVal::initialize */
+/* sha: 864a66a276484459113d9c6c4e3e84569bcd0f5899c1a73ff768ef9d7ed726bc */
 mrb_value
 mrb_GLib_GTimeVal_disown(mrb_state* mrb, mrb_value self) {
   mrb_value ruby_object;
@@ -34,7 +39,10 @@ mrb_GLib_GTimeVal_disown(mrb_state* mrb, mrb_value self) {
 
   return mrb_nil_value();
 }
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GTimeVal::belongs_to_ruby */
+/* sha: c68e1d0d8ac8b6eb69768937cdf9df4b963b046e250a9e7d89788b37d5f726a1 */
 mrb_value
 mrb_GLib_GTimeVal_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
   mrb_value ruby_object;
@@ -51,11 +59,14 @@ mrb_GLib_GTimeVal_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
     return mrb_false_value();
   }
 }
+/* MRUBY_BINDING_END */
 
 /*
  * Fields
  */
 
+/* MRUBY_BINDING: GTimeVal::tv_sec_reader */
+/* sha: 68c4c3def6e76969ed8918f8446ee2f20dbd531209eae26b3fb5ba40638de70c */
 #if BIND_GTimeVal_tv_sec_FIELD_READER
 /* get_tv_sec
  *
@@ -72,7 +83,10 @@ mrb_GLib_GTimeVal_get_tv_sec(mrb_state* mrb, mrb_value self) {
   return tv_sec;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GTimeVal::tv_sec_writer */
+/* sha: bec3b36701d93b81c684c1dec2d32ef00e0d992babf9c20962407d8ecf9a2b64 */
 #if BIND_GTimeVal_tv_sec_FIELD_WRITER
 /* set_tv_sec
  *
@@ -93,7 +107,10 @@ mrb_GLib_GTimeVal_set_tv_sec(mrb_state* mrb, mrb_value self) {
   return value_as_mrb_value;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GTimeVal::tv_usec_reader */
+/* sha: 771bf499ca69eed60adf6722d5b60541e3cd6ea40c3b505908521bc71e4b573c */
 #if BIND_GTimeVal_tv_usec_FIELD_READER
 /* get_tv_usec
  *
@@ -110,7 +127,10 @@ mrb_GLib_GTimeVal_get_tv_usec(mrb_state* mrb, mrb_value self) {
   return tv_usec;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GTimeVal::tv_usec_writer */
+/* sha: a15049bc9c4f8c4ec19a240052aefe6897e5706a78e4bdc3f8b88d6bab25b79f */
 #if BIND_GTimeVal_tv_usec_FIELD_WRITER
 /* set_tv_usec
  *
@@ -131,6 +151,7 @@ mrb_GLib_GTimeVal_set_tv_usec(mrb_state* mrb, mrb_value self) {
   return value_as_mrb_value;
 }
 #endif
+/* MRUBY_BINDING_END */
 
 
 void mrb_GLib_GTimeVal_init(mrb_state* mrb) {

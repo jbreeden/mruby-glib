@@ -11,6 +11,8 @@
  * Class Methods
  */
 
+/* MRUBY_BINDING: GScanner::initialize */
+/* sha: 0999d801a768d4e00ac69d69b12255079367da259db69595e027dd5b250b129a */
 #if BIND_GScanner_INITIALIZE
 mrb_value
 mrb_GLib_GScanner_initialize(mrb_state* mrb, mrb_value self) {
@@ -19,7 +21,10 @@ mrb_GLib_GScanner_initialize(mrb_state* mrb, mrb_value self) {
   return self;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GScanner::initialize */
+/* sha: 4bcc9906ada7629f03ec387c1cccef0eadd1287e87dc60f54b03ed0a9e24a6d2 */
 mrb_value
 mrb_GLib_GScanner_disown(mrb_state* mrb, mrb_value self) {
   mrb_value ruby_object;
@@ -34,7 +39,10 @@ mrb_GLib_GScanner_disown(mrb_state* mrb, mrb_value self) {
 
   return mrb_nil_value();
 }
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GScanner::belongs_to_ruby */
+/* sha: ecdc6fcc7ae7aeb8a7c218c0807cd867c2cb251ee2815080f1c7a598a11684c0 */
 mrb_value
 mrb_GLib_GScanner_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
   mrb_value ruby_object;
@@ -51,11 +59,14 @@ mrb_GLib_GScanner_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
     return mrb_false_value();
   }
 }
+/* MRUBY_BINDING_END */
 
 /*
  * Fields
  */
 
+/* MRUBY_BINDING: GScanner::user_data_reader */
+/* sha: 948147b64314582fb4b7b20ee3ab26cb57b3739c8caf4fb37cd3e9d005a1d041 */
 #if BIND_GScanner_user_data_FIELD_READER
 /* get_user_data
  *
@@ -72,7 +83,10 @@ mrb_GLib_GScanner_get_user_data(mrb_state* mrb, mrb_value self) {
   return user_data;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GScanner::user_data_writer */
+/* sha: 70688d1e4a364326490f15f85cefa2f66d639df32032ae4d1c5b11e1c88f31b9 */
 #if BIND_GScanner_user_data_FIELD_WRITER
 /* set_user_data
  *
@@ -98,7 +112,10 @@ mrb_GLib_GScanner_set_user_data(mrb_state* mrb, mrb_value self) {
   return value_as_mrb_value;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GScanner::max_parse_errors_reader */
+/* sha: 1a07fe2663cf795c52b09990db4d5d6d51ca380115476874c3efc67800557809 */
 #if BIND_GScanner_max_parse_errors_FIELD_READER
 /* get_max_parse_errors
  *
@@ -115,7 +132,10 @@ mrb_GLib_GScanner_get_max_parse_errors(mrb_state* mrb, mrb_value self) {
   return max_parse_errors;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GScanner::max_parse_errors_writer */
+/* sha: f812198b3164e4962c45c09e66c77f9ff039d7b528e876dcc315c28ae73abc4b */
 #if BIND_GScanner_max_parse_errors_FIELD_WRITER
 /* set_max_parse_errors
  *
@@ -136,7 +156,10 @@ mrb_GLib_GScanner_set_max_parse_errors(mrb_state* mrb, mrb_value self) {
   return value_as_mrb_value;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GScanner::parse_errors_reader */
+/* sha: 2f91f575011d313d58b81c686a4680e8d29c2ca3be4d74e6502de5d9bec87826 */
 #if BIND_GScanner_parse_errors_FIELD_READER
 /* get_parse_errors
  *
@@ -153,7 +176,10 @@ mrb_GLib_GScanner_get_parse_errors(mrb_state* mrb, mrb_value self) {
   return parse_errors;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GScanner::parse_errors_writer */
+/* sha: eae30ca8cf8552e1746ef974a692b6b3c8ab9f2ff0b9058de029386ad738f145 */
 #if BIND_GScanner_parse_errors_FIELD_WRITER
 /* set_parse_errors
  *
@@ -174,7 +200,10 @@ mrb_GLib_GScanner_set_parse_errors(mrb_state* mrb, mrb_value self) {
   return value_as_mrb_value;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GScanner::input_name_reader */
+/* sha: 31e9ca8c88c2c869ef1a143ef39f2264b3795a3a3186985e3be1c8de71472482 */
 #if BIND_GScanner_input_name_FIELD_READER
 /* get_input_name
  *
@@ -191,7 +220,10 @@ mrb_GLib_GScanner_get_input_name(mrb_state* mrb, mrb_value self) {
   return input_name;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GScanner::input_name_writer */
+/* sha: 2ac0aea151e7125bb629fff40436f7d7788aa496a769a521fe852f5d4857964c */
 #if BIND_GScanner_input_name_FIELD_WRITER
 /* set_input_name
  *
@@ -212,7 +244,10 @@ mrb_GLib_GScanner_set_input_name(mrb_state* mrb, mrb_value self) {
   return value_as_mrb_value;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GScanner::qdata_reader */
+/* sha: a0127bb5500e7f0e8f124c2e335a7c6ffce19c538f4d375da30f04a89ff60902 */
 #if BIND_GScanner_qdata_FIELD_READER
 /* get_qdata
  *
@@ -229,7 +264,10 @@ mrb_GLib_GScanner_get_qdata(mrb_state* mrb, mrb_value self) {
   return qdata;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GScanner::qdata_writer */
+/* sha: 3b03a5df52309b3612ab27ff43420b477a2954aa4c19594fb7012114b2a4d4bc */
 #if BIND_GScanner_qdata_FIELD_WRITER
 /* set_qdata
  *
@@ -258,7 +296,10 @@ mrb_GLib_GScanner_set_qdata(mrb_state* mrb, mrb_value self) {
   return value_as_mrb_value;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GScanner::config_reader */
+/* sha: a1af0e07b054b0ffd8352e474dd9beedb2c8e2b02b3de001512762f656c6f5d8 */
 #if BIND_GScanner_config_FIELD_READER
 /* get_config
  *
@@ -275,7 +316,10 @@ mrb_GLib_GScanner_get_config(mrb_state* mrb, mrb_value self) {
   return config;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GScanner::config_writer */
+/* sha: 9de25a142a286584d31c5ff6a75ef0aba18b2d7c378fc1b802c6949ea2f701be */
 #if BIND_GScanner_config_FIELD_WRITER
 /* set_config
  *
@@ -304,7 +348,10 @@ mrb_GLib_GScanner_set_config(mrb_state* mrb, mrb_value self) {
   return value_as_mrb_value;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GScanner::token_reader */
+/* sha: 217398a00cd4a296f817b290334352ecd4ffcc21e8f5c164afd89033655f73dd */
 #if BIND_GScanner_token_FIELD_READER
 /* get_token
  *
@@ -321,7 +368,10 @@ mrb_GLib_GScanner_get_token(mrb_state* mrb, mrb_value self) {
   return token;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GScanner::token_writer */
+/* sha: 97b07154924e8abd0931579d45ef96ef14ab34fc6c1905b1ae5500491b584e78 */
 #if BIND_GScanner_token_FIELD_WRITER
 /* set_token
  *
@@ -342,7 +392,10 @@ mrb_GLib_GScanner_set_token(mrb_state* mrb, mrb_value self) {
   return value_as_mrb_value;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GScanner::value_reader */
+/* sha: 94411dc205da2211885c3a65d7c161576f429db5cd4dcf855dac3f5376246823 */
 #if BIND_GScanner_value_FIELD_READER
 /* get_value
  *
@@ -359,7 +412,10 @@ mrb_GLib_GScanner_get_value(mrb_state* mrb, mrb_value self) {
   return value;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GScanner::value_writer */
+/* sha: 99e8b526df7ae4475f4cf13bd09dcd49a16a199c2603469f499fac9f81cc4498 */
 #if BIND_GScanner_value_FIELD_WRITER
 /* set_value
  *
@@ -385,7 +441,10 @@ mrb_GLib_GScanner_set_value(mrb_state* mrb, mrb_value self) {
   return value_as_mrb_value;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GScanner::line_reader */
+/* sha: 8f20a6cb28185f1c7157dfa5e2197a498de36434f77046bca914d63b29da6d99 */
 #if BIND_GScanner_line_FIELD_READER
 /* get_line
  *
@@ -402,7 +461,10 @@ mrb_GLib_GScanner_get_line(mrb_state* mrb, mrb_value self) {
   return line;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GScanner::line_writer */
+/* sha: c6144bd0fad9511b48667f10207f67372bc90120a41956871d452d3528e3af26 */
 #if BIND_GScanner_line_FIELD_WRITER
 /* set_line
  *
@@ -423,7 +485,10 @@ mrb_GLib_GScanner_set_line(mrb_state* mrb, mrb_value self) {
   return value_as_mrb_value;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GScanner::position_reader */
+/* sha: 7afaedd8b5c3c11087c59dbfa1f0dd3c58e87e779524b0e69a2c3075c58448ef */
 #if BIND_GScanner_position_FIELD_READER
 /* get_position
  *
@@ -440,7 +505,10 @@ mrb_GLib_GScanner_get_position(mrb_state* mrb, mrb_value self) {
   return position;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GScanner::position_writer */
+/* sha: ebd9805062c5aad46865d2295aee7a0a2c0dac8ccf3a687de57caf0081414901 */
 #if BIND_GScanner_position_FIELD_WRITER
 /* set_position
  *
@@ -461,7 +529,10 @@ mrb_GLib_GScanner_set_position(mrb_state* mrb, mrb_value self) {
   return value_as_mrb_value;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GScanner::next_token_reader */
+/* sha: cb862a46a9407615b3fb597db296bd1f9230da0447aebf4617ce259689a73d90 */
 #if BIND_GScanner_next_token_FIELD_READER
 /* get_next_token
  *
@@ -478,7 +549,10 @@ mrb_GLib_GScanner_get_next_token(mrb_state* mrb, mrb_value self) {
   return next_token;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GScanner::next_token_writer */
+/* sha: a1bc4fa125dc165a9b4f45f8cb426d2e0e2e124a61d718b7d384c55c31b18ef2 */
 #if BIND_GScanner_next_token_FIELD_WRITER
 /* set_next_token
  *
@@ -499,7 +573,10 @@ mrb_GLib_GScanner_set_next_token(mrb_state* mrb, mrb_value self) {
   return value_as_mrb_value;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GScanner::next_value_reader */
+/* sha: 56ba283b5f8b7e21ee986f3b0156a9d6f282ed9c25f52e459fe18d85069d91cd */
 #if BIND_GScanner_next_value_FIELD_READER
 /* get_next_value
  *
@@ -516,7 +593,10 @@ mrb_GLib_GScanner_get_next_value(mrb_state* mrb, mrb_value self) {
   return next_value;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GScanner::next_value_writer */
+/* sha: 007e7414611927be810b7c29a227f0987d740324983c10d593cb163b88a6e31c */
 #if BIND_GScanner_next_value_FIELD_WRITER
 /* set_next_value
  *
@@ -542,7 +622,10 @@ mrb_GLib_GScanner_set_next_value(mrb_state* mrb, mrb_value self) {
   return value_as_mrb_value;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GScanner::next_line_reader */
+/* sha: 0de8c738cee9ece541fb679751067f8f0f10ccbdd461735327246b7898f3a77b */
 #if BIND_GScanner_next_line_FIELD_READER
 /* get_next_line
  *
@@ -559,7 +642,10 @@ mrb_GLib_GScanner_get_next_line(mrb_state* mrb, mrb_value self) {
   return next_line;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GScanner::next_line_writer */
+/* sha: 01c1814888d60ddfbf2155951f4fccf2d0fa78e5f6fa7227171232af9276ae4c */
 #if BIND_GScanner_next_line_FIELD_WRITER
 /* set_next_line
  *
@@ -580,7 +666,10 @@ mrb_GLib_GScanner_set_next_line(mrb_state* mrb, mrb_value self) {
   return value_as_mrb_value;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GScanner::next_position_reader */
+/* sha: d0e27feddd9e53aa1daf97b9b358b3079403ffa712c34f0e379c05773cab735d */
 #if BIND_GScanner_next_position_FIELD_READER
 /* get_next_position
  *
@@ -597,7 +686,10 @@ mrb_GLib_GScanner_get_next_position(mrb_state* mrb, mrb_value self) {
   return next_position;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GScanner::next_position_writer */
+/* sha: a0b9b318f9ba4f92473e7eb0149bc0465ad4b583baf3db0be521774ecce82214 */
 #if BIND_GScanner_next_position_FIELD_WRITER
 /* set_next_position
  *
@@ -618,7 +710,10 @@ mrb_GLib_GScanner_set_next_position(mrb_state* mrb, mrb_value self) {
   return value_as_mrb_value;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GScanner::symbol_table_reader */
+/* sha: c20071ebc7f00e0f478984228daee6e407006fe2f33c51284390727bbf38f254 */
 #if BIND_GScanner_symbol_table_FIELD_READER
 /* get_symbol_table
  *
@@ -635,7 +730,10 @@ mrb_GLib_GScanner_get_symbol_table(mrb_state* mrb, mrb_value self) {
   return symbol_table;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GScanner::symbol_table_writer */
+/* sha: 14164d30a733df7a0eca3eb6aceeff3deb86eca70e8c4e56190f2a1e2264d44c */
 #if BIND_GScanner_symbol_table_FIELD_WRITER
 /* set_symbol_table
  *
@@ -664,7 +762,10 @@ mrb_GLib_GScanner_set_symbol_table(mrb_state* mrb, mrb_value self) {
   return value_as_mrb_value;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GScanner::input_fd_reader */
+/* sha: ddb027dbb6786c98cd95aec47a965283d70d87b4c1c2b931753334a4f6d6c325 */
 #if BIND_GScanner_input_fd_FIELD_READER
 /* get_input_fd
  *
@@ -681,7 +782,10 @@ mrb_GLib_GScanner_get_input_fd(mrb_state* mrb, mrb_value self) {
   return input_fd;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GScanner::input_fd_writer */
+/* sha: f6dcdf56faebae0ca5f3a822a03b33c4ae58f59212c30b270110416b5a2985d8 */
 #if BIND_GScanner_input_fd_FIELD_WRITER
 /* set_input_fd
  *
@@ -702,7 +806,10 @@ mrb_GLib_GScanner_set_input_fd(mrb_state* mrb, mrb_value self) {
   return value_as_mrb_value;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GScanner::text_reader */
+/* sha: 3151bfb00a46c1388d8775a71b0f45ba3f1019cea5ced637b25806a5ebdceeed */
 #if BIND_GScanner_text_FIELD_READER
 /* get_text
  *
@@ -719,7 +826,10 @@ mrb_GLib_GScanner_get_text(mrb_state* mrb, mrb_value self) {
   return text;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GScanner::text_writer */
+/* sha: a348a0857944166131f2fe642df8ddbb81e6540d9d47beebfba81cfed8c34261 */
 #if BIND_GScanner_text_FIELD_WRITER
 /* set_text
  *
@@ -740,7 +850,10 @@ mrb_GLib_GScanner_set_text(mrb_state* mrb, mrb_value self) {
   return value_as_mrb_value;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GScanner::text_end_reader */
+/* sha: af124d7f1c128dd5f517ec10056e9a03d719d249ba34051659f417d4393e9809 */
 #if BIND_GScanner_text_end_FIELD_READER
 /* get_text_end
  *
@@ -757,7 +870,10 @@ mrb_GLib_GScanner_get_text_end(mrb_state* mrb, mrb_value self) {
   return text_end;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GScanner::text_end_writer */
+/* sha: 89a15691e25cd47e1d8c2aff1980367f9c1ffaa0bc589d58b96dfd8fc85c1152 */
 #if BIND_GScanner_text_end_FIELD_WRITER
 /* set_text_end
  *
@@ -778,7 +894,10 @@ mrb_GLib_GScanner_set_text_end(mrb_state* mrb, mrb_value self) {
   return value_as_mrb_value;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GScanner::buffer_reader */
+/* sha: 0b83777e1b346f893f88c262db88ae886c9a471586821b52acd02897628dca60 */
 #if BIND_GScanner_buffer_FIELD_READER
 /* get_buffer
  *
@@ -795,7 +914,10 @@ mrb_GLib_GScanner_get_buffer(mrb_state* mrb, mrb_value self) {
   return buffer;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GScanner::buffer_writer */
+/* sha: 461fd9f059f37ec625496d437fb60cd03741032332d9d59bcd835f97626459a8 */
 #if BIND_GScanner_buffer_FIELD_WRITER
 /* set_buffer
  *
@@ -821,7 +943,10 @@ mrb_GLib_GScanner_set_buffer(mrb_state* mrb, mrb_value self) {
   return value_as_mrb_value;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GScanner::scope_id_reader */
+/* sha: 7f25235a57946ae76b68b40aa8d047e09e036ff215bb8d86c18f398d9851a555 */
 #if BIND_GScanner_scope_id_FIELD_READER
 /* get_scope_id
  *
@@ -838,7 +963,10 @@ mrb_GLib_GScanner_get_scope_id(mrb_state* mrb, mrb_value self) {
   return scope_id;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GScanner::scope_id_writer */
+/* sha: d2ad366020d36bab84ee28b19beae3206327db87d02878f7556a2eae46f1492c */
 #if BIND_GScanner_scope_id_FIELD_WRITER
 /* set_scope_id
  *
@@ -859,7 +987,10 @@ mrb_GLib_GScanner_set_scope_id(mrb_state* mrb, mrb_value self) {
   return value_as_mrb_value;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GScanner::msg_handler_reader */
+/* sha: 3912250db57a53a5fbde6132c88f5e930238d61eb285556a5087cb4cfb1f1dc7 */
 #if BIND_GScanner_msg_handler_FIELD_READER
 /* get_msg_handler
  *
@@ -876,7 +1007,10 @@ mrb_GLib_GScanner_get_msg_handler(mrb_state* mrb, mrb_value self) {
   return msg_handler;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GScanner::msg_handler_writer */
+/* sha: 7a5170315ce52707fab1befab7a6b8da6a6044092aaf3f383874b6c9b2009adb */
 #if BIND_GScanner_msg_handler_FIELD_WRITER
 /* set_msg_handler
  *
@@ -902,6 +1036,7 @@ mrb_GLib_GScanner_set_msg_handler(mrb_state* mrb, mrb_value self) {
   return value_as_mrb_value;
 }
 #endif
+/* MRUBY_BINDING_END */
 
 
 void mrb_GLib_GScanner_init(mrb_state* mrb) {

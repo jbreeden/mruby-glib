@@ -11,6 +11,8 @@
  * Class Methods
  */
 
+/* MRUBY_BINDING: GChecksum::initialize */
+/* sha: 65402e75b897ada54f0574fb3d9b0c2ceb4155b06b2492a0eac344d3eeaac494 */
 #if BIND_GChecksum_INITIALIZE
 mrb_value
 mrb_GLib_GChecksum_initialize(mrb_state* mrb, mrb_value self) {
@@ -19,7 +21,10 @@ mrb_GLib_GChecksum_initialize(mrb_state* mrb, mrb_value self) {
   return self;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GChecksum::initialize */
+/* sha: fb67ec1a8b4c7e67247aed7128cbc1558da2265c25fe225d531cb17100db7de2 */
 mrb_value
 mrb_GLib_GChecksum_disown(mrb_state* mrb, mrb_value self) {
   mrb_value ruby_object;
@@ -34,7 +39,10 @@ mrb_GLib_GChecksum_disown(mrb_state* mrb, mrb_value self) {
 
   return mrb_nil_value();
 }
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GChecksum::belongs_to_ruby */
+/* sha: ec6cf22e46476dfb5ccc44d29142735af6ce6f470be7c2a6d357f4118005c4d4 */
 mrb_value
 mrb_GLib_GChecksum_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
   mrb_value ruby_object;
@@ -51,6 +59,7 @@ mrb_GLib_GChecksum_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
     return mrb_false_value();
   }
 }
+/* MRUBY_BINDING_END */
 
 
 void mrb_GLib_GChecksum_init(mrb_state* mrb) {

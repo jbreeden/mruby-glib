@@ -11,6 +11,8 @@
  * Class Methods
  */
 
+/* MRUBY_BINDING: GHmac::initialize */
+/* sha: 16b4450e840a1a37d97397909e9ffc320b92add3fd518cf8bc04b82f7c4eab89 */
 #if BIND_GHmac_INITIALIZE
 mrb_value
 mrb_GLib_GHmac_initialize(mrb_state* mrb, mrb_value self) {
@@ -19,7 +21,10 @@ mrb_GLib_GHmac_initialize(mrb_state* mrb, mrb_value self) {
   return self;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GHmac::initialize */
+/* sha: d33ecad9e8a38579f138d6f54f3565880bc27e225ccf5564730de31d842d645b */
 mrb_value
 mrb_GLib_GHmac_disown(mrb_state* mrb, mrb_value self) {
   mrb_value ruby_object;
@@ -34,7 +39,10 @@ mrb_GLib_GHmac_disown(mrb_state* mrb, mrb_value self) {
 
   return mrb_nil_value();
 }
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GHmac::belongs_to_ruby */
+/* sha: 0e5d9d8f8846680dfa7efcaad56647a9a079cbcea5492cf68d3553c9b7467cb7 */
 mrb_value
 mrb_GLib_GHmac_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
   mrb_value ruby_object;
@@ -51,6 +59,7 @@ mrb_GLib_GHmac_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
     return mrb_false_value();
   }
 }
+/* MRUBY_BINDING_END */
 
 
 void mrb_GLib_GHmac_init(mrb_state* mrb) {

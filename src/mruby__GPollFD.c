@@ -11,6 +11,8 @@
  * Class Methods
  */
 
+/* MRUBY_BINDING: GPollFD::initialize */
+/* sha: d560de80a3e3e9e7297e2cf62f23b7020d94c3a008d7441576a2633b7b77cc41 */
 #if BIND_GPollFD_INITIALIZE
 mrb_value
 mrb_GLib_GPollFD_initialize(mrb_state* mrb, mrb_value self) {
@@ -19,7 +21,10 @@ mrb_GLib_GPollFD_initialize(mrb_state* mrb, mrb_value self) {
   return self;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GPollFD::initialize */
+/* sha: 6cf06571932ac38ee3ea95eab232e4c7e7ecb35579859f412a13cce1f2883e4c */
 mrb_value
 mrb_GLib_GPollFD_disown(mrb_state* mrb, mrb_value self) {
   mrb_value ruby_object;
@@ -34,7 +39,10 @@ mrb_GLib_GPollFD_disown(mrb_state* mrb, mrb_value self) {
 
   return mrb_nil_value();
 }
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GPollFD::belongs_to_ruby */
+/* sha: 965bb443548bc84e8c97b417bddaf381792eceb29732b04acd35d02cb261cfae */
 mrb_value
 mrb_GLib_GPollFD_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
   mrb_value ruby_object;
@@ -51,11 +59,14 @@ mrb_GLib_GPollFD_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
     return mrb_false_value();
   }
 }
+/* MRUBY_BINDING_END */
 
 /*
  * Fields
  */
 
+/* MRUBY_BINDING: GPollFD::fd_reader */
+/* sha: d2a48d1360beccdcf38029e197ed2ab3e7a710063ffc2035b74626575a00f946 */
 #if BIND_GPollFD_fd_FIELD_READER
 /* get_fd
  *
@@ -72,7 +83,10 @@ mrb_GLib_GPollFD_get_fd(mrb_state* mrb, mrb_value self) {
   return fd;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GPollFD::fd_writer */
+/* sha: 59422a3b9226a12bc3a4bcb1d4cda1e20242bf42fdc5005ec7b5c23ea3902230 */
 #if BIND_GPollFD_fd_FIELD_WRITER
 /* set_fd
  *
@@ -93,7 +107,10 @@ mrb_GLib_GPollFD_set_fd(mrb_state* mrb, mrb_value self) {
   return value_as_mrb_value;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GPollFD::events_reader */
+/* sha: b293e5d3c5cc8e20c28ac19853f6e7e750fcdb47b68253ebe386e4d34f864104 */
 #if BIND_GPollFD_events_FIELD_READER
 /* get_events
  *
@@ -110,7 +127,10 @@ mrb_GLib_GPollFD_get_events(mrb_state* mrb, mrb_value self) {
   return events;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GPollFD::events_writer */
+/* sha: 4f10771fe7b0be9b48e787f94736069cc699e9fd1654b6b219503a58df78a621 */
 #if BIND_GPollFD_events_FIELD_WRITER
 /* set_events
  *
@@ -131,7 +151,10 @@ mrb_GLib_GPollFD_set_events(mrb_state* mrb, mrb_value self) {
   return value_as_mrb_value;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GPollFD::revents_reader */
+/* sha: 137c424624e74ebf6e48d766edb0e78593d3920b81d576e65d554106d8707e65 */
 #if BIND_GPollFD_revents_FIELD_READER
 /* get_revents
  *
@@ -148,7 +171,10 @@ mrb_GLib_GPollFD_get_revents(mrb_state* mrb, mrb_value self) {
   return revents;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GPollFD::revents_writer */
+/* sha: d8b44df1370eb59f48a49095d9721deb5a55e6da51a8f143508991d3bea2ef0e */
 #if BIND_GPollFD_revents_FIELD_WRITER
 /* set_revents
  *
@@ -169,6 +195,7 @@ mrb_GLib_GPollFD_set_revents(mrb_state* mrb, mrb_value self) {
   return value_as_mrb_value;
 }
 #endif
+/* MRUBY_BINDING_END */
 
 
 void mrb_GLib_GPollFD_init(mrb_state* mrb) {

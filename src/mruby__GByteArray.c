@@ -11,6 +11,8 @@
  * Class Methods
  */
 
+/* MRUBY_BINDING: GByteArray::initialize */
+/* sha: e669951ff5bd7209890810bfe648b0c6460c4fc057fb8ec8ea0694b115af3931 */
 #if BIND_GByteArray_INITIALIZE
 mrb_value
 mrb_GLib_GByteArray_initialize(mrb_state* mrb, mrb_value self) {
@@ -19,7 +21,10 @@ mrb_GLib_GByteArray_initialize(mrb_state* mrb, mrb_value self) {
   return self;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GByteArray::initialize */
+/* sha: 2f8648fb1c8b83361a01d4750c01879ccf612db0fb1265eb8b3b49f2693bb143 */
 mrb_value
 mrb_GLib_GByteArray_disown(mrb_state* mrb, mrb_value self) {
   mrb_value ruby_object;
@@ -34,7 +39,10 @@ mrb_GLib_GByteArray_disown(mrb_state* mrb, mrb_value self) {
 
   return mrb_nil_value();
 }
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GByteArray::belongs_to_ruby */
+/* sha: ee56d59951d0a9ced74afb3f117888b337e4c4514d2a6c2b757bb3a0bf0f0473 */
 mrb_value
 mrb_GLib_GByteArray_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
   mrb_value ruby_object;
@@ -51,11 +59,14 @@ mrb_GLib_GByteArray_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
     return mrb_false_value();
   }
 }
+/* MRUBY_BINDING_END */
 
 /*
  * Fields
  */
 
+/* MRUBY_BINDING: GByteArray::data_reader */
+/* sha: 5ddd3d4358d4fe21a4db0755de62160a376cce6d0a39f6f0c586965e71590fb6 */
 #if BIND_GByteArray_data_FIELD_READER
 /* get_data
  *
@@ -72,7 +83,10 @@ mrb_GLib_GByteArray_get_data(mrb_state* mrb, mrb_value self) {
   return data;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GByteArray::data_writer */
+/* sha: 2c4a6d09134cfbad5dd1e98820854a9998cbe539fa3699266c56b6231d750e71 */
 #if BIND_GByteArray_data_FIELD_WRITER
 /* set_data
  *
@@ -98,7 +112,10 @@ mrb_GLib_GByteArray_set_data(mrb_state* mrb, mrb_value self) {
   return value_as_mrb_value;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GByteArray::len_reader */
+/* sha: 300c6e1137da3e48a4fecde9c4687dd3da00b666c3ca8adade551233e15b0584 */
 #if BIND_GByteArray_len_FIELD_READER
 /* get_len
  *
@@ -115,7 +132,10 @@ mrb_GLib_GByteArray_get_len(mrb_state* mrb, mrb_value self) {
   return len;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GByteArray::len_writer */
+/* sha: 81ee8e0ca9b598b6876fbb80255f0539744bfec70568591afd130355f0b314a0 */
 #if BIND_GByteArray_len_FIELD_WRITER
 /* set_len
  *
@@ -136,6 +156,7 @@ mrb_GLib_GByteArray_set_len(mrb_state* mrb, mrb_value self) {
   return value_as_mrb_value;
 }
 #endif
+/* MRUBY_BINDING_END */
 
 
 void mrb_GLib_GByteArray_init(mrb_state* mrb) {

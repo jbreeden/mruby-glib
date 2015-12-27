@@ -11,6 +11,8 @@
  * Class Methods
  */
 
+/* MRUBY_BINDING: GStringChunk::initialize */
+/* sha: 0072d128930013af3d69f7beca8cf30f28be9ddb724f301e6a1a96b7e1fceb99 */
 #if BIND_GStringChunk_INITIALIZE
 mrb_value
 mrb_GLib_GStringChunk_initialize(mrb_state* mrb, mrb_value self) {
@@ -19,7 +21,10 @@ mrb_GLib_GStringChunk_initialize(mrb_state* mrb, mrb_value self) {
   return self;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GStringChunk::initialize */
+/* sha: b7b54cb4ba73590b9ed718ed8e7bc974c091c3fdc15c2e93cbf0f0428364e108 */
 mrb_value
 mrb_GLib_GStringChunk_disown(mrb_state* mrb, mrb_value self) {
   mrb_value ruby_object;
@@ -34,7 +39,10 @@ mrb_GLib_GStringChunk_disown(mrb_state* mrb, mrb_value self) {
 
   return mrb_nil_value();
 }
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GStringChunk::belongs_to_ruby */
+/* sha: bd41b7c0be8fd05de6e88bf85abb2b2e0b03a7dd259460535f0e25d77dea40a2 */
 mrb_value
 mrb_GLib_GStringChunk_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
   mrb_value ruby_object;
@@ -51,6 +59,7 @@ mrb_GLib_GStringChunk_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
     return mrb_false_value();
   }
 }
+/* MRUBY_BINDING_END */
 
 
 void mrb_GLib_GStringChunk_init(mrb_state* mrb) {

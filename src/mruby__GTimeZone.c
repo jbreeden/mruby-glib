@@ -11,6 +11,8 @@
  * Class Methods
  */
 
+/* MRUBY_BINDING: GTimeZone::initialize */
+/* sha: 4d7fc39c53c6558e9e4d0bb7dfff22c1a04ae8c622a918879a9f088087487537 */
 #if BIND_GTimeZone_INITIALIZE
 mrb_value
 mrb_GLib_GTimeZone_initialize(mrb_state* mrb, mrb_value self) {
@@ -19,7 +21,10 @@ mrb_GLib_GTimeZone_initialize(mrb_state* mrb, mrb_value self) {
   return self;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GTimeZone::initialize */
+/* sha: c58087f4e37cc80f100c0d83bf5a37729d4847f542226b97e4a5d52af1f06fd8 */
 mrb_value
 mrb_GLib_GTimeZone_disown(mrb_state* mrb, mrb_value self) {
   mrb_value ruby_object;
@@ -34,7 +39,10 @@ mrb_GLib_GTimeZone_disown(mrb_state* mrb, mrb_value self) {
 
   return mrb_nil_value();
 }
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GTimeZone::belongs_to_ruby */
+/* sha: 00a35c5a7742b0db0e32b2cd20289df9a078545cc9a5e74ed76009c9618d7213 */
 mrb_value
 mrb_GLib_GTimeZone_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
   mrb_value ruby_object;
@@ -51,6 +59,7 @@ mrb_GLib_GTimeZone_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
     return mrb_false_value();
   }
 }
+/* MRUBY_BINDING_END */
 
 
 void mrb_GLib_GTimeZone_init(mrb_state* mrb) {

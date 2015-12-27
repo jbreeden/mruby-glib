@@ -11,6 +11,8 @@
  * Class Methods
  */
 
+/* MRUBY_BINDING: GBytes::initialize */
+/* sha: 4882be9b8b7995bd2441719c0e7347698418a9cc3006b3adba4b56cf58ddda82 */
 #if BIND_GBytes_INITIALIZE
 mrb_value
 mrb_GLib_GBytes_initialize(mrb_state* mrb, mrb_value self) {
@@ -19,7 +21,10 @@ mrb_GLib_GBytes_initialize(mrb_state* mrb, mrb_value self) {
   return self;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GBytes::initialize */
+/* sha: ec61031ac9c7f52564927f47c2ac80cdce7877170a102000b12e5bc52f088c64 */
 mrb_value
 mrb_GLib_GBytes_disown(mrb_state* mrb, mrb_value self) {
   mrb_value ruby_object;
@@ -34,7 +39,10 @@ mrb_GLib_GBytes_disown(mrb_state* mrb, mrb_value self) {
 
   return mrb_nil_value();
 }
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GBytes::belongs_to_ruby */
+/* sha: 020a42c42264393d2ee6dc540a7669a461339817d2e3c99100694157d5556b76 */
 mrb_value
 mrb_GLib_GBytes_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
   mrb_value ruby_object;
@@ -51,6 +59,7 @@ mrb_GLib_GBytes_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
     return mrb_false_value();
   }
 }
+/* MRUBY_BINDING_END */
 
 
 void mrb_GLib_GBytes_init(mrb_state* mrb) {

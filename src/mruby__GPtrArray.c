@@ -11,6 +11,8 @@
  * Class Methods
  */
 
+/* MRUBY_BINDING: GPtrArray::initialize */
+/* sha: c46b90508486f360f610d7e2cf6af5b5ba2d7fa75cd3a99d8b105d3e0fb717b9 */
 #if BIND_GPtrArray_INITIALIZE
 mrb_value
 mrb_GLib_GPtrArray_initialize(mrb_state* mrb, mrb_value self) {
@@ -19,7 +21,10 @@ mrb_GLib_GPtrArray_initialize(mrb_state* mrb, mrb_value self) {
   return self;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GPtrArray::initialize */
+/* sha: 55586f47c43c110a2865f6eaecd39939758cb4abd436c3e33a3a6f901155c9ce */
 mrb_value
 mrb_GLib_GPtrArray_disown(mrb_state* mrb, mrb_value self) {
   mrb_value ruby_object;
@@ -34,7 +39,10 @@ mrb_GLib_GPtrArray_disown(mrb_state* mrb, mrb_value self) {
 
   return mrb_nil_value();
 }
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GPtrArray::belongs_to_ruby */
+/* sha: 618b0fd11a722a86c0bfa99c908cffbbb5009d79e5e2b993344f19671885b0d1 */
 mrb_value
 mrb_GLib_GPtrArray_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
   mrb_value ruby_object;
@@ -51,11 +59,14 @@ mrb_GLib_GPtrArray_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
     return mrb_false_value();
   }
 }
+/* MRUBY_BINDING_END */
 
 /*
  * Fields
  */
 
+/* MRUBY_BINDING: GPtrArray::pdata_reader */
+/* sha: 1da97f7da66ee332379dd9752927fe7d4350aebf71fe62f5a25397c8325dbf7d */
 #if BIND_GPtrArray_pdata_FIELD_READER
 /* get_pdata
  *
@@ -72,7 +83,10 @@ mrb_GLib_GPtrArray_get_pdata(mrb_state* mrb, mrb_value self) {
   return pdata;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GPtrArray::pdata_writer */
+/* sha: 4b7649f2d26b3aee8a94ba149500303500bc208550ee036630363cbc67b3738d */
 #if BIND_GPtrArray_pdata_FIELD_WRITER
 /* set_pdata
  *
@@ -98,7 +112,10 @@ mrb_GLib_GPtrArray_set_pdata(mrb_state* mrb, mrb_value self) {
   return value_as_mrb_value;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GPtrArray::len_reader */
+/* sha: 0ca3304b43ca0142deb3ce4e6293959caebfc6c4fac1f13f93ce18202f66c8cf */
 #if BIND_GPtrArray_len_FIELD_READER
 /* get_len
  *
@@ -115,7 +132,10 @@ mrb_GLib_GPtrArray_get_len(mrb_state* mrb, mrb_value self) {
   return len;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GPtrArray::len_writer */
+/* sha: 866c534bf734db744bb9509c6d475d415d5a733187a72022e879ac97fe3f6245 */
 #if BIND_GPtrArray_len_FIELD_WRITER
 /* set_len
  *
@@ -136,6 +156,7 @@ mrb_GLib_GPtrArray_set_len(mrb_state* mrb, mrb_value self) {
   return value_as_mrb_value;
 }
 #endif
+/* MRUBY_BINDING_END */
 
 
 void mrb_GLib_GPtrArray_init(mrb_state* mrb) {

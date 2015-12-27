@@ -43,10 +43,10 @@
 #define BIND_GDir_TYPE TRUE
 #define BIND_GError_TYPE TRUE
 #define BIND_GError_domain_FIELD_READER TRUE
-#define BIND_GError_domain_FIELD_WRITER TRUE
+#define BIND_GError_domain_FIELD_WRITER FALSE
 #define BIND_GError_code_FIELD_READER TRUE
-#define BIND_GError_code_FIELD_WRITER TRUE
-#define BIND_GError_message_FIELD_READER FALSE
+#define BIND_GError_code_FIELD_WRITER FALSE
+#define BIND_GError_message_FIELD_READER TRUE
 #define BIND_GError_message_FIELD_WRITER FALSE
 #define BIND_GHashTable_TYPE TRUE
 #define BIND_GHashTableIter_TYPE TRUE

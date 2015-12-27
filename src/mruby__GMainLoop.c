@@ -11,6 +11,8 @@
  * Class Methods
  */
 
+/* MRUBY_BINDING: GMainLoop::initialize */
+/* sha: adc179f16f2961a15e67dc361c9242581699e17f6b00b37d60074abff0156f98 */
 #if BIND_GMainLoop_INITIALIZE
 mrb_value
 mrb_GLib_GMainLoop_initialize(mrb_state* mrb, mrb_value self) {
@@ -19,7 +21,10 @@ mrb_GLib_GMainLoop_initialize(mrb_state* mrb, mrb_value self) {
   return self;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GMainLoop::initialize */
+/* sha: 8a4be76e8707571dd3eb7d0cc0b4fd7527ee4bba7fd9bb9d3a907bf575aea082 */
 mrb_value
 mrb_GLib_GMainLoop_disown(mrb_state* mrb, mrb_value self) {
   mrb_value ruby_object;
@@ -34,7 +39,10 @@ mrb_GLib_GMainLoop_disown(mrb_state* mrb, mrb_value self) {
 
   return mrb_nil_value();
 }
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GMainLoop::belongs_to_ruby */
+/* sha: cac3f8b74dbbbecd39d7c23aa98b6d7ebd610677655450360d758a5ae67b0375 */
 mrb_value
 mrb_GLib_GMainLoop_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
   mrb_value ruby_object;
@@ -51,6 +59,7 @@ mrb_GLib_GMainLoop_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
     return mrb_false_value();
   }
 }
+/* MRUBY_BINDING_END */
 
 
 void mrb_GLib_GMainLoop_init(mrb_state* mrb) {

@@ -11,6 +11,8 @@
  * Class Methods
  */
 
+/* MRUBY_BINDING: GData::initialize */
+/* sha: ef43a7b715fe1ddedca15ecf2f97eb0085a40b86e15c88bcec0a71b532beadee */
 #if BIND_GData_INITIALIZE
 mrb_value
 mrb_GLib_GData_initialize(mrb_state* mrb, mrb_value self) {
@@ -19,7 +21,10 @@ mrb_GLib_GData_initialize(mrb_state* mrb, mrb_value self) {
   return self;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GData::initialize */
+/* sha: 96c4bb9c6cdc028b863e86fc93da719a8fe3a4275ac54e501214703cf4840d43 */
 mrb_value
 mrb_GLib_GData_disown(mrb_state* mrb, mrb_value self) {
   mrb_value ruby_object;
@@ -34,7 +39,10 @@ mrb_GLib_GData_disown(mrb_state* mrb, mrb_value self) {
 
   return mrb_nil_value();
 }
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GData::belongs_to_ruby */
+/* sha: ad22e5d04e62760f5f4c0a1fc2f8d7bc9ad6415d13ec4e37a5eb9670ec0c29d0 */
 mrb_value
 mrb_GLib_GData_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
   mrb_value ruby_object;
@@ -51,6 +59,7 @@ mrb_GLib_GData_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
     return mrb_false_value();
   }
 }
+/* MRUBY_BINDING_END */
 
 
 void mrb_GLib_GData_init(mrb_state* mrb) {

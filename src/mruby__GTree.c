@@ -11,6 +11,8 @@
  * Class Methods
  */
 
+/* MRUBY_BINDING: GTree::initialize */
+/* sha: 3046d5eb166c1a6b7e60257534d9a799a956a462ff2027d9766a31e0f495cc6b */
 #if BIND_GTree_INITIALIZE
 mrb_value
 mrb_GLib_GTree_initialize(mrb_state* mrb, mrb_value self) {
@@ -19,7 +21,10 @@ mrb_GLib_GTree_initialize(mrb_state* mrb, mrb_value self) {
   return self;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GTree::initialize */
+/* sha: 927121b4b0f8d4ac20c8b26ca6adafe5cbbc7b4cea71859e86d336ae82bcdbe9 */
 mrb_value
 mrb_GLib_GTree_disown(mrb_state* mrb, mrb_value self) {
   mrb_value ruby_object;
@@ -34,7 +39,10 @@ mrb_GLib_GTree_disown(mrb_state* mrb, mrb_value self) {
 
   return mrb_nil_value();
 }
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GTree::belongs_to_ruby */
+/* sha: 296c3d294fd7cbd5f6b3f035bf458050c0e2d670b72fdfc48c69dd21a9aed119 */
 mrb_value
 mrb_GLib_GTree_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
   mrb_value ruby_object;
@@ -51,6 +59,7 @@ mrb_GLib_GTree_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
     return mrb_false_value();
   }
 }
+/* MRUBY_BINDING_END */
 
 
 void mrb_GLib_GTree_init(mrb_state* mrb) {

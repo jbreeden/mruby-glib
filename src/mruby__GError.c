@@ -11,6 +11,8 @@
  * Class Methods
  */
 
+/* MRUBY_BINDING: GError::initialize */
+/* sha: 874e3e52d6e67902b0502116a3c12d1f82b19b214d398b094f517fe768485a28 */
 #if BIND_GError_INITIALIZE
 mrb_value
 mrb_GLib_GError_initialize(mrb_state* mrb, mrb_value self) {
@@ -19,7 +21,10 @@ mrb_GLib_GError_initialize(mrb_state* mrb, mrb_value self) {
   return self;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GError::initialize */
+/* sha: 9ae04c07038f00ae7d6ba7edbcab56ebb807eff6aefe467026f380cbd1f34c03 */
 mrb_value
 mrb_GLib_GError_disown(mrb_state* mrb, mrb_value self) {
   mrb_value ruby_object;
@@ -34,7 +39,10 @@ mrb_GLib_GError_disown(mrb_state* mrb, mrb_value self) {
 
   return mrb_nil_value();
 }
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GError::belongs_to_ruby */
+/* sha: dc4a056ca9bfda2145dd0b8c4e75e799dd997060f48030b9b160cf9eda12d23f */
 mrb_value
 mrb_GLib_GError_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
   mrb_value ruby_object;
@@ -51,11 +59,14 @@ mrb_GLib_GError_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
     return mrb_false_value();
   }
 }
+/* MRUBY_BINDING_END */
 
 /*
  * Fields
  */
 
+/* MRUBY_BINDING: GError::domain_reader */
+/* sha: be0006f5ef58dfa5a57aec229859ef4ebde4a2861d4c0e7b032c28beb933e769 */
 #if BIND_GError_domain_FIELD_READER
 /* get_domain
  *
@@ -72,7 +83,10 @@ mrb_GLib_GError_get_domain(mrb_state* mrb, mrb_value self) {
   return domain;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GError::domain_writer */
+/* sha: d4e3f06c409ec5d547560bcfd7d4e69baf1e6bb68b5e7a64d0f890ac85e439a4 */
 #if BIND_GError_domain_FIELD_WRITER
 /* set_domain
  *
@@ -93,7 +107,10 @@ mrb_GLib_GError_set_domain(mrb_state* mrb, mrb_value self) {
   return value_as_mrb_value;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GError::code_reader */
+/* sha: 9c71dfdac668cdb14bb14c135a79198bf459a942e0fda7025ea9f5b7d125f8c5 */
 #if BIND_GError_code_FIELD_READER
 /* get_code
  *
@@ -110,7 +127,10 @@ mrb_GLib_GError_get_code(mrb_state* mrb, mrb_value self) {
   return code;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GError::code_writer */
+/* sha: 06de2bf83240f26501c7286275173d87a5b1663f56c9d79860b072728f03940e */
 #if BIND_GError_code_FIELD_WRITER
 /* set_code
  *
@@ -131,7 +151,10 @@ mrb_GLib_GError_set_code(mrb_state* mrb, mrb_value self) {
   return value_as_mrb_value;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GError::message_reader */
+/* sha: ea8e834002bf79aa611b2ade565ac483aaf038a9708fa9009360cd0fce5f0f63 */
 #if BIND_GError_message_FIELD_READER
 /* get_message
  *
@@ -143,12 +166,15 @@ mrb_GLib_GError_get_message(mrb_state* mrb, mrb_value self) {
 
   gchar * native_message = native_self->message;
 
-  mrb_value message = TODO_mruby_box_gchar_PTR(mrb, native_message);
+  mrb_value message = mrb_str_new_cstr(mrb, native_message);
 
   return message;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GError::message_writer */
+/* sha: 29222a48c687a74652e5aa728c0b3b4e6d408c2d13426db26d235004f97fc404 */
 #if BIND_GError_message_FIELD_WRITER
 /* set_message
  *
@@ -174,6 +200,7 @@ mrb_GLib_GError_set_message(mrb_state* mrb, mrb_value self) {
   return value_as_mrb_value;
 }
 #endif
+/* MRUBY_BINDING_END */
 
 
 void mrb_GLib_GError_init(mrb_state* mrb) {

@@ -11,6 +11,8 @@
  * Class Methods
  */
 
+/* MRUBY_BINDING: GHook::initialize */
+/* sha: 3ab441e598913f1132bd035d05b3a5a65e31cadb0ee74129bbb556f00f972204 */
 #if BIND_GHook_INITIALIZE
 mrb_value
 mrb_GLib_GHook_initialize(mrb_state* mrb, mrb_value self) {
@@ -19,7 +21,10 @@ mrb_GLib_GHook_initialize(mrb_state* mrb, mrb_value self) {
   return self;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GHook::initialize */
+/* sha: b0b9043b7c5f0b56b8bc413b990565b22a43a4cad3c92baed11c073feca3cbca */
 mrb_value
 mrb_GLib_GHook_disown(mrb_state* mrb, mrb_value self) {
   mrb_value ruby_object;
@@ -34,7 +39,10 @@ mrb_GLib_GHook_disown(mrb_state* mrb, mrb_value self) {
 
   return mrb_nil_value();
 }
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GHook::belongs_to_ruby */
+/* sha: 9e1c6a4aa37579fe0ca1b1783549449e8a0041c4725ba16c0f050665a6dc4a81 */
 mrb_value
 mrb_GLib_GHook_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
   mrb_value ruby_object;
@@ -51,11 +59,14 @@ mrb_GLib_GHook_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
     return mrb_false_value();
   }
 }
+/* MRUBY_BINDING_END */
 
 /*
  * Fields
  */
 
+/* MRUBY_BINDING: GHook::data_reader */
+/* sha: db50bf49f8b106960bebab17224acb5c2d00b5cfd1fa9654dfb89f4a8c740dd7 */
 #if BIND_GHook_data_FIELD_READER
 /* get_data
  *
@@ -72,7 +83,10 @@ mrb_GLib_GHook_get_data(mrb_state* mrb, mrb_value self) {
   return data;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GHook::data_writer */
+/* sha: 18ce19115108d93f5bed9275f4963f3a2a81083461919daa2228df6cba05fec3 */
 #if BIND_GHook_data_FIELD_WRITER
 /* set_data
  *
@@ -98,7 +112,10 @@ mrb_GLib_GHook_set_data(mrb_state* mrb, mrb_value self) {
   return value_as_mrb_value;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GHook::next_reader */
+/* sha: 34858b21ea98ddddf26977c093f6d61bbed2d6b716e719cee466e2649330e109 */
 #if BIND_GHook_next_FIELD_READER
 /* get_next
  *
@@ -115,7 +132,10 @@ mrb_GLib_GHook_get_next(mrb_state* mrb, mrb_value self) {
   return next;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GHook::next_writer */
+/* sha: bd4d4298b7de1a0af00e245c89fe0d8f2ff853c809d169d00686fb8b8cb1e3ed */
 #if BIND_GHook_next_FIELD_WRITER
 /* set_next
  *
@@ -144,7 +164,10 @@ mrb_GLib_GHook_set_next(mrb_state* mrb, mrb_value self) {
   return value_as_mrb_value;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GHook::prev_reader */
+/* sha: 40a28667874961366e9c3343fc83796ee31b5e56a10ffbe626dc2391dc13b859 */
 #if BIND_GHook_prev_FIELD_READER
 /* get_prev
  *
@@ -161,7 +184,10 @@ mrb_GLib_GHook_get_prev(mrb_state* mrb, mrb_value self) {
   return prev;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GHook::prev_writer */
+/* sha: 0ae57e8b778c82ac18006e922e8df1722156d4ff8442a707682e5ca30d1ec671 */
 #if BIND_GHook_prev_FIELD_WRITER
 /* set_prev
  *
@@ -190,7 +216,10 @@ mrb_GLib_GHook_set_prev(mrb_state* mrb, mrb_value self) {
   return value_as_mrb_value;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GHook::ref_count_reader */
+/* sha: c7f7b66541f6556b92ebe62e750062d9348a9a384dd7c8118e81e1a7326ef89e */
 #if BIND_GHook_ref_count_FIELD_READER
 /* get_ref_count
  *
@@ -207,7 +236,10 @@ mrb_GLib_GHook_get_ref_count(mrb_state* mrb, mrb_value self) {
   return ref_count;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GHook::ref_count_writer */
+/* sha: dfd02913cfa086b1cf98d6e2c0f16cb186adab024cf8ff07ae2414a0bee4e5db */
 #if BIND_GHook_ref_count_FIELD_WRITER
 /* set_ref_count
  *
@@ -228,7 +260,10 @@ mrb_GLib_GHook_set_ref_count(mrb_state* mrb, mrb_value self) {
   return value_as_mrb_value;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GHook::hook_id_reader */
+/* sha: e37d982247342eb910cacf652cd8d2cf443660d6f4ac22de7e8a5603c8865093 */
 #if BIND_GHook_hook_id_FIELD_READER
 /* get_hook_id
  *
@@ -245,7 +280,10 @@ mrb_GLib_GHook_get_hook_id(mrb_state* mrb, mrb_value self) {
   return hook_id;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GHook::hook_id_writer */
+/* sha: 60f2ae023e5e00c744fe53f8578e0d60c629fdf35a38c75bc84b7730cc68ef74 */
 #if BIND_GHook_hook_id_FIELD_WRITER
 /* set_hook_id
  *
@@ -266,7 +304,10 @@ mrb_GLib_GHook_set_hook_id(mrb_state* mrb, mrb_value self) {
   return value_as_mrb_value;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GHook::flags_reader */
+/* sha: 5ae979ce133809f5086e062faeacb0e4e12318c678d21998ebc1afbae1721cb6 */
 #if BIND_GHook_flags_FIELD_READER
 /* get_flags
  *
@@ -283,7 +324,10 @@ mrb_GLib_GHook_get_flags(mrb_state* mrb, mrb_value self) {
   return flags;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GHook::flags_writer */
+/* sha: a5f7b75851c16ac3353a1f469495bfed736e4317c10af9eb682456c9a1cb31f0 */
 #if BIND_GHook_flags_FIELD_WRITER
 /* set_flags
  *
@@ -304,7 +348,10 @@ mrb_GLib_GHook_set_flags(mrb_state* mrb, mrb_value self) {
   return value_as_mrb_value;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GHook::func_reader */
+/* sha: c5a098d27bb4cf27419bc7a8c5d5de0ff6f4cbfce5af33b30b0705d013342ee5 */
 #if BIND_GHook_func_FIELD_READER
 /* get_func
  *
@@ -321,7 +368,10 @@ mrb_GLib_GHook_get_func(mrb_state* mrb, mrb_value self) {
   return func;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GHook::func_writer */
+/* sha: f011b07633a0b550750b22e85a9b759ec00f92a7d0cc8bd0b122fde8c229b79d */
 #if BIND_GHook_func_FIELD_WRITER
 /* set_func
  *
@@ -347,7 +397,10 @@ mrb_GLib_GHook_set_func(mrb_state* mrb, mrb_value self) {
   return value_as_mrb_value;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GHook::destroy_reader */
+/* sha: 9613fbe99f68202c252f1bb3de8c8efdd84eb113724c1a2b1f18301510fe0baa */
 #if BIND_GHook_destroy_FIELD_READER
 /* get_destroy
  *
@@ -364,7 +417,10 @@ mrb_GLib_GHook_get_destroy(mrb_state* mrb, mrb_value self) {
   return destroy;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GHook::destroy_writer */
+/* sha: 60796a99dd9b32429206fcef224f8ed0cc201b20ac29d00e138ddeb3bc1cb203 */
 #if BIND_GHook_destroy_FIELD_WRITER
 /* set_destroy
  *
@@ -390,6 +446,7 @@ mrb_GLib_GHook_set_destroy(mrb_state* mrb, mrb_value self) {
   return value_as_mrb_value;
 }
 #endif
+/* MRUBY_BINDING_END */
 
 
 void mrb_GLib_GHook_init(mrb_state* mrb) {

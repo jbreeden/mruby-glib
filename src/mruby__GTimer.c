@@ -11,6 +11,8 @@
  * Class Methods
  */
 
+/* MRUBY_BINDING: GTimer::initialize */
+/* sha: 8b0ecf874c4173f01ef4263986ac54fbae1e568a22183ae3477d0b3a82d010d0 */
 #if BIND_GTimer_INITIALIZE
 mrb_value
 mrb_GLib_GTimer_initialize(mrb_state* mrb, mrb_value self) {
@@ -19,7 +21,10 @@ mrb_GLib_GTimer_initialize(mrb_state* mrb, mrb_value self) {
   return self;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GTimer::initialize */
+/* sha: af57771214a097d01350b63e62bfbaedb5b3b1b2f8acff3aa8ab39779ae1ea73 */
 mrb_value
 mrb_GLib_GTimer_disown(mrb_state* mrb, mrb_value self) {
   mrb_value ruby_object;
@@ -34,7 +39,10 @@ mrb_GLib_GTimer_disown(mrb_state* mrb, mrb_value self) {
 
   return mrb_nil_value();
 }
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GTimer::belongs_to_ruby */
+/* sha: f81785a340b8e92a37e290a8fc125c9e22673bfcdcba94fdc50486287f7281d6 */
 mrb_value
 mrb_GLib_GTimer_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
   mrb_value ruby_object;
@@ -51,6 +59,7 @@ mrb_GLib_GTimer_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
     return mrb_false_value();
   }
 }
+/* MRUBY_BINDING_END */
 
 
 void mrb_GLib_GTimer_init(mrb_state* mrb) {

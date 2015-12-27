@@ -11,6 +11,8 @@
  * Class Methods
  */
 
+/* MRUBY_BINDING: GMappedFile::initialize */
+/* sha: 6966dfacf8d8744fffbdfe74e9a96b55cdcad97554f58f6710b01c54986666e0 */
 #if BIND_GMappedFile_INITIALIZE
 mrb_value
 mrb_GLib_GMappedFile_initialize(mrb_state* mrb, mrb_value self) {
@@ -19,7 +21,10 @@ mrb_GLib_GMappedFile_initialize(mrb_state* mrb, mrb_value self) {
   return self;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GMappedFile::initialize */
+/* sha: 009f288c7c2dc9f29f90b8f97c7fcf7b9c16d2803866084b80d6d991242d0d14 */
 mrb_value
 mrb_GLib_GMappedFile_disown(mrb_state* mrb, mrb_value self) {
   mrb_value ruby_object;
@@ -34,7 +39,10 @@ mrb_GLib_GMappedFile_disown(mrb_state* mrb, mrb_value self) {
 
   return mrb_nil_value();
 }
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GMappedFile::belongs_to_ruby */
+/* sha: d63bab55790e2bbe6e0823a1744373888441aafa7cc3a904132d83828a636dfe */
 mrb_value
 mrb_GLib_GMappedFile_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
   mrb_value ruby_object;
@@ -51,6 +59,7 @@ mrb_GLib_GMappedFile_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
     return mrb_false_value();
   }
 }
+/* MRUBY_BINDING_END */
 
 
 void mrb_GLib_GMappedFile_init(mrb_state* mrb) {

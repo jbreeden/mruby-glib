@@ -11,6 +11,8 @@
  * Class Methods
  */
 
+/* MRUBY_BINDING: GVariant::initialize */
+/* sha: a473dc7b399145f2ae4478f56cb5a0a7806af38179947d2e4b0fb372c3e513d2 */
 #if BIND_GVariant_INITIALIZE
 mrb_value
 mrb_GLib_GVariant_initialize(mrb_state* mrb, mrb_value self) {
@@ -19,7 +21,10 @@ mrb_GLib_GVariant_initialize(mrb_state* mrb, mrb_value self) {
   return self;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GVariant::initialize */
+/* sha: 0952b8ca5750b3e055748a9a9137a76106acfba4fde467d67c39f4b70bf6375e */
 mrb_value
 mrb_GLib_GVariant_disown(mrb_state* mrb, mrb_value self) {
   mrb_value ruby_object;
@@ -34,7 +39,10 @@ mrb_GLib_GVariant_disown(mrb_state* mrb, mrb_value self) {
 
   return mrb_nil_value();
 }
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GVariant::belongs_to_ruby */
+/* sha: 66b74951feef0967b1b7601e129c94798433f5a931dbc182607191c0d5677d50 */
 mrb_value
 mrb_GLib_GVariant_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
   mrb_value ruby_object;
@@ -51,6 +59,7 @@ mrb_GLib_GVariant_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
     return mrb_false_value();
   }
 }
+/* MRUBY_BINDING_END */
 
 
 void mrb_GLib_GVariant_init(mrb_state* mrb) {

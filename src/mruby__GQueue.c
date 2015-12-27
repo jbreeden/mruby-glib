@@ -11,6 +11,8 @@
  * Class Methods
  */
 
+/* MRUBY_BINDING: GQueue::initialize */
+/* sha: 173a1f7e4437dd7c460f7440bb047213b8c07903305b27c5af7a8e9f9e942f51 */
 #if BIND_GQueue_INITIALIZE
 mrb_value
 mrb_GLib_GQueue_initialize(mrb_state* mrb, mrb_value self) {
@@ -19,7 +21,10 @@ mrb_GLib_GQueue_initialize(mrb_state* mrb, mrb_value self) {
   return self;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GQueue::initialize */
+/* sha: 4d6063308b2c76ec77a0d6273e16da4238cadafd2f529eaf043636131cfb4530 */
 mrb_value
 mrb_GLib_GQueue_disown(mrb_state* mrb, mrb_value self) {
   mrb_value ruby_object;
@@ -34,7 +39,10 @@ mrb_GLib_GQueue_disown(mrb_state* mrb, mrb_value self) {
 
   return mrb_nil_value();
 }
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GQueue::belongs_to_ruby */
+/* sha: 915b5b4cec98e908affd1b89f44b55f8123db9a7fcc82886934a43d4e762b6cc */
 mrb_value
 mrb_GLib_GQueue_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
   mrb_value ruby_object;
@@ -51,11 +59,14 @@ mrb_GLib_GQueue_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
     return mrb_false_value();
   }
 }
+/* MRUBY_BINDING_END */
 
 /*
  * Fields
  */
 
+/* MRUBY_BINDING: GQueue::head_reader */
+/* sha: fcd6dbd890d17d97c6945d1c2833324ccabab539d248a4c5e5d0c1729b36db71 */
 #if BIND_GQueue_head_FIELD_READER
 /* get_head
  *
@@ -72,7 +83,10 @@ mrb_GLib_GQueue_get_head(mrb_state* mrb, mrb_value self) {
   return head;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GQueue::head_writer */
+/* sha: 6bccc7f8f1437a9f9a2156c6e3b38bc7f22e6e75661bf6e1f0ff9459254d1f84 */
 #if BIND_GQueue_head_FIELD_WRITER
 /* set_head
  *
@@ -101,7 +115,10 @@ mrb_GLib_GQueue_set_head(mrb_state* mrb, mrb_value self) {
   return value_as_mrb_value;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GQueue::tail_reader */
+/* sha: c66ca429967e4c46ccc17350a94d0615d42abaf0c9be66d7bf6b2df9839b7c6d */
 #if BIND_GQueue_tail_FIELD_READER
 /* get_tail
  *
@@ -118,7 +135,10 @@ mrb_GLib_GQueue_get_tail(mrb_state* mrb, mrb_value self) {
   return tail;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GQueue::tail_writer */
+/* sha: f5a9adcc222881f48e8fd5cee4b856b02e16351aed6575a6258b1789d677d796 */
 #if BIND_GQueue_tail_FIELD_WRITER
 /* set_tail
  *
@@ -147,7 +167,10 @@ mrb_GLib_GQueue_set_tail(mrb_state* mrb, mrb_value self) {
   return value_as_mrb_value;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GQueue::length_reader */
+/* sha: d8baddd64dd055b8fc09bd08b5dfd9bd2d0d562268eca011494dcd87d200cd38 */
 #if BIND_GQueue_length_FIELD_READER
 /* get_length
  *
@@ -164,7 +187,10 @@ mrb_GLib_GQueue_get_length(mrb_state* mrb, mrb_value self) {
   return length;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GQueue::length_writer */
+/* sha: 4979431968e66c15ddc9033ef52399034470642e9c5045d94cd5f6219d79e4c1 */
 #if BIND_GQueue_length_FIELD_WRITER
 /* set_length
  *
@@ -185,6 +211,7 @@ mrb_GLib_GQueue_set_length(mrb_state* mrb, mrb_value self) {
   return value_as_mrb_value;
 }
 #endif
+/* MRUBY_BINDING_END */
 
 
 void mrb_GLib_GQueue_init(mrb_state* mrb) {

@@ -34,23 +34,40 @@ namespace :bindings do
     sh "mrbind merge -from bindings -to ."
   end
   
+  namespace :merge do
+    desc "Merge generated code from src folder"
+    task :src do
+      sh "mrbind merge -from bindings -to . src"
+    end
+    
+    desc "Merge generated code from include folder"
+    task :include do
+      sh "mrbind merge -from bindings -to . include"
+    end
+    
+    desc "Merge generated code from mrblib folder"
+    task :mrblib do
+      sh "mrbind merge -from bindings -to . mrblib"
+    end
+  end
+  
   task :fn_count do
-    sh "cat bindings/include/mruby_GLib_functions.h | egrep 'TRUE|FALSE' | wc -l"
+    sh "cat include/mruby_GLib_functions.h | egrep 'TRUE|FALSE' | wc -l"
   end
 
   task :bound_fns do
-    sh "cat bindings/include/mruby_GLib_functions.h | egrep 'TRUE'"
+    sh "cat include/mruby_GLib_functions.h | egrep 'TRUE'"
   end
 
   task :bound_fn_count do
-    sh "cat bindings/include/mruby_GLib_functions.h | egrep 'TRUE' | wc -l"
+    sh "cat include/mruby_GLib_functions.h | egrep 'TRUE' | wc -l"
   end
 
   task :unbound_fns do
-    sh "cat bindings/include/mruby_GLib_functions.h | egrep 'FALSE'"
+    sh "cat include/mruby_GLib_functions.h | egrep 'FALSE'"
   end
 
   task :unbound_fn_count do
-    sh "cat bindings/include/mruby_GLib_functions.h | egrep 'FALSE' | wc -l"
+    sh "cat include/mruby_GLib_functions.h | egrep 'FALSE' | wc -l"
   end
 end

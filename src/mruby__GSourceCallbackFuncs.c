@@ -11,6 +11,8 @@
  * Class Methods
  */
 
+/* MRUBY_BINDING: GSourceCallbackFuncs::initialize */
+/* sha: d3e9ed3daae07a1bc0a8fe4b8e52c220d53175c669ac8d44cd608c8662c3cd3a */
 #if BIND_GSourceCallbackFuncs_INITIALIZE
 mrb_value
 mrb_GLib_GSourceCallbackFuncs_initialize(mrb_state* mrb, mrb_value self) {
@@ -19,7 +21,10 @@ mrb_GLib_GSourceCallbackFuncs_initialize(mrb_state* mrb, mrb_value self) {
   return self;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GSourceCallbackFuncs::initialize */
+/* sha: f9fc74aa45fbfcfddd2f94b7870fc625abaa6899b4b6a7cca9bdd002daa89b3b */
 mrb_value
 mrb_GLib_GSourceCallbackFuncs_disown(mrb_state* mrb, mrb_value self) {
   mrb_value ruby_object;
@@ -34,7 +39,10 @@ mrb_GLib_GSourceCallbackFuncs_disown(mrb_state* mrb, mrb_value self) {
 
   return mrb_nil_value();
 }
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GSourceCallbackFuncs::belongs_to_ruby */
+/* sha: 84ffdfd15e5046929c12506d2e07c29b5c16d1fb65d3a2b69c85cb084568cd29 */
 mrb_value
 mrb_GLib_GSourceCallbackFuncs_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
   mrb_value ruby_object;
@@ -51,11 +59,14 @@ mrb_GLib_GSourceCallbackFuncs_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
     return mrb_false_value();
   }
 }
+/* MRUBY_BINDING_END */
 
 /*
  * Fields
  */
 
+/* MRUBY_BINDING: GSourceCallbackFuncs::ref_reader */
+/* sha: 12ecc336b0343c66b230cd80ca7e9c170eb171ef20917951d3b94a2370f8e9c6 */
 #if BIND_GSourceCallbackFuncs_ref_FIELD_READER
 /* get_ref
  *
@@ -72,7 +83,10 @@ mrb_GLib_GSourceCallbackFuncs_get_ref(mrb_state* mrb, mrb_value self) {
   return ref;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GSourceCallbackFuncs::ref_writer */
+/* sha: b0e76b04eb97c2cba1a2404e19b1b5e595ebd5c665866f370fecf54bfee50418 */
 #if BIND_GSourceCallbackFuncs_ref_FIELD_WRITER
 /* set_ref
  *
@@ -98,7 +112,10 @@ mrb_GLib_GSourceCallbackFuncs_set_ref(mrb_state* mrb, mrb_value self) {
   return value_as_mrb_value;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GSourceCallbackFuncs::unref_reader */
+/* sha: 38f972aecf595507a3d4351ac09e78d0c5291ee5c86a5d4cfcc818065b07af7e */
 #if BIND_GSourceCallbackFuncs_unref_FIELD_READER
 /* get_unref
  *
@@ -115,7 +132,10 @@ mrb_GLib_GSourceCallbackFuncs_get_unref(mrb_state* mrb, mrb_value self) {
   return unref;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GSourceCallbackFuncs::unref_writer */
+/* sha: 0f1c237466b1e30ec4b1c26fcdb2d9e3108a34f31b69029351c549867bc33855 */
 #if BIND_GSourceCallbackFuncs_unref_FIELD_WRITER
 /* set_unref
  *
@@ -141,7 +161,10 @@ mrb_GLib_GSourceCallbackFuncs_set_unref(mrb_state* mrb, mrb_value self) {
   return value_as_mrb_value;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GSourceCallbackFuncs::get_reader */
+/* sha: 501fb3f3c74fb14f582985b7244f47c77ecf71c17e13e53fbff8b81cb39c58db */
 #if BIND_GSourceCallbackFuncs_get_FIELD_READER
 /* get_get
  *
@@ -158,7 +181,10 @@ mrb_GLib_GSourceCallbackFuncs_get_get(mrb_state* mrb, mrb_value self) {
   return get;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GSourceCallbackFuncs::get_writer */
+/* sha: 9a46afd445104ef1a04235c3b64f9a4c525b2246362f82a1a41180be4bf39231 */
 #if BIND_GSourceCallbackFuncs_get_FIELD_WRITER
 /* set_get
  *
@@ -184,6 +210,7 @@ mrb_GLib_GSourceCallbackFuncs_set_get(mrb_state* mrb, mrb_value self) {
   return value_as_mrb_value;
 }
 #endif
+/* MRUBY_BINDING_END */
 
 
 void mrb_GLib_GSourceCallbackFuncs_init(mrb_state* mrb) {

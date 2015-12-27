@@ -11,6 +11,8 @@
  * Class Methods
  */
 
+/* MRUBY_BINDING: GCond::initialize */
+/* sha: d28d28498babc0cc0b0f30f3fa6a5bf74037472890b5dff95f775e0f2792143e */
 #if BIND_GCond_INITIALIZE
 mrb_value
 mrb_GLib_GCond_initialize(mrb_state* mrb, mrb_value self) {
@@ -19,7 +21,10 @@ mrb_GLib_GCond_initialize(mrb_state* mrb, mrb_value self) {
   return self;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GCond::initialize */
+/* sha: 301c4898979ea11946261cc856828e191857acb1141728dc37b4bf0f38f72538 */
 mrb_value
 mrb_GLib_GCond_disown(mrb_state* mrb, mrb_value self) {
   mrb_value ruby_object;
@@ -34,7 +39,10 @@ mrb_GLib_GCond_disown(mrb_state* mrb, mrb_value self) {
 
   return mrb_nil_value();
 }
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GCond::belongs_to_ruby */
+/* sha: 48d3ade6d45d4130d3712387a5c4a93d39d6f3e93ebdba90d8ec583d38f4b181 */
 mrb_value
 mrb_GLib_GCond_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
   mrb_value ruby_object;
@@ -51,11 +59,14 @@ mrb_GLib_GCond_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
     return mrb_false_value();
   }
 }
+/* MRUBY_BINDING_END */
 
 /*
  * Fields
  */
 
+/* MRUBY_BINDING: GCond::p_reader */
+/* sha: 5208d006fca2f6be4313c3523c2e5066de81309b174f886459519d760375e779 */
 #if BIND_GCond_p_FIELD_READER
 /* get_p
  *
@@ -72,7 +83,10 @@ mrb_GLib_GCond_get_p(mrb_state* mrb, mrb_value self) {
   return p;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GCond::p_writer */
+/* sha: cdd89ea1f038fa07f0f76c31118c8144f6b6b85d9c6cd3f34d69330db77133fb */
 #if BIND_GCond_p_FIELD_WRITER
 /* set_p
  *
@@ -98,7 +112,10 @@ mrb_GLib_GCond_set_p(mrb_state* mrb, mrb_value self) {
   return value_as_mrb_value;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GCond::i_reader */
+/* sha: b19158a02141ed1478a45fa37d6540f474324683219415404ac53df9139eb14a */
 #if BIND_GCond_i_FIELD_READER
 /* get_i
  *
@@ -115,7 +132,10 @@ mrb_GLib_GCond_get_i(mrb_state* mrb, mrb_value self) {
   return i;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GCond::i_writer */
+/* sha: c04cda325397ba3356619bb07108ea3af388ea6ba3faec9eb9cba2273c161738 */
 #if BIND_GCond_i_FIELD_WRITER
 /* set_i
  *
@@ -141,6 +161,7 @@ mrb_GLib_GCond_set_i(mrb_state* mrb, mrb_value self) {
   return value_as_mrb_value;
 }
 #endif
+/* MRUBY_BINDING_END */
 
 
 void mrb_GLib_GCond_init(mrb_state* mrb) {

@@ -11,6 +11,8 @@
  * Class Methods
  */
 
+/* MRUBY_BINDING: GMarkupParser::initialize */
+/* sha: 2270c92d7027652f172d3999eb52c9118f354966604f2d08b9c90612169080cc */
 #if BIND_GMarkupParser_INITIALIZE
 mrb_value
 mrb_GLib_GMarkupParser_initialize(mrb_state* mrb, mrb_value self) {
@@ -19,7 +21,10 @@ mrb_GLib_GMarkupParser_initialize(mrb_state* mrb, mrb_value self) {
   return self;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GMarkupParser::initialize */
+/* sha: 9fb10716a01f8ab7d39bf714bd51e00f6e6f532666adddb4491e886ea8f7570c */
 mrb_value
 mrb_GLib_GMarkupParser_disown(mrb_state* mrb, mrb_value self) {
   mrb_value ruby_object;
@@ -34,7 +39,10 @@ mrb_GLib_GMarkupParser_disown(mrb_state* mrb, mrb_value self) {
 
   return mrb_nil_value();
 }
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GMarkupParser::belongs_to_ruby */
+/* sha: abda519adb021721f6e249af04669b3738e02c9bc5ccaaf2c137b93afb74d59b */
 mrb_value
 mrb_GLib_GMarkupParser_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
   mrb_value ruby_object;
@@ -51,11 +59,14 @@ mrb_GLib_GMarkupParser_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
     return mrb_false_value();
   }
 }
+/* MRUBY_BINDING_END */
 
 /*
  * Fields
  */
 
+/* MRUBY_BINDING: GMarkupParser::start_element_reader */
+/* sha: ae61e1aee09fdebbf90608bab0d684760a2bc25803f01fbf6f5151d900ca7c63 */
 #if BIND_GMarkupParser_start_element_FIELD_READER
 /* get_start_element
  *
@@ -72,7 +83,10 @@ mrb_GLib_GMarkupParser_get_start_element(mrb_state* mrb, mrb_value self) {
   return start_element;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GMarkupParser::start_element_writer */
+/* sha: 7165dfcdf51e2a36edf2d40143960973555fc3a91f8197fb797c34584d8f0710 */
 #if BIND_GMarkupParser_start_element_FIELD_WRITER
 /* set_start_element
  *
@@ -98,7 +112,10 @@ mrb_GLib_GMarkupParser_set_start_element(mrb_state* mrb, mrb_value self) {
   return value_as_mrb_value;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GMarkupParser::end_element_reader */
+/* sha: 3224dd77e12a8b1efa4d08a8ea7656489b9953ccc3879ab4ffde2ad438dab484 */
 #if BIND_GMarkupParser_end_element_FIELD_READER
 /* get_end_element
  *
@@ -115,7 +132,10 @@ mrb_GLib_GMarkupParser_get_end_element(mrb_state* mrb, mrb_value self) {
   return end_element;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GMarkupParser::end_element_writer */
+/* sha: 06fcfaeea4c4421a8889861612d908a76dd6683e462ce31f4b51f54609fbb3e5 */
 #if BIND_GMarkupParser_end_element_FIELD_WRITER
 /* set_end_element
  *
@@ -141,7 +161,10 @@ mrb_GLib_GMarkupParser_set_end_element(mrb_state* mrb, mrb_value self) {
   return value_as_mrb_value;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GMarkupParser::text_reader */
+/* sha: 3c54503d16a0c9f562b00e5bb74d8d6516a08f7bd4f07daf99dadc3fc8bb9c39 */
 #if BIND_GMarkupParser_text_FIELD_READER
 /* get_text
  *
@@ -158,7 +181,10 @@ mrb_GLib_GMarkupParser_get_text(mrb_state* mrb, mrb_value self) {
   return text;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GMarkupParser::text_writer */
+/* sha: 474a3cfe83396d24335ff882c4cea29e010fb0113b30fde2318ac11f86378e6d */
 #if BIND_GMarkupParser_text_FIELD_WRITER
 /* set_text
  *
@@ -184,7 +210,10 @@ mrb_GLib_GMarkupParser_set_text(mrb_state* mrb, mrb_value self) {
   return value_as_mrb_value;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GMarkupParser::passthrough_reader */
+/* sha: 03e0f5886aa94a6ef5848bc8cc17c3d6cd458c4f3cb6406f61b87c9dbc5e5435 */
 #if BIND_GMarkupParser_passthrough_FIELD_READER
 /* get_passthrough
  *
@@ -201,7 +230,10 @@ mrb_GLib_GMarkupParser_get_passthrough(mrb_state* mrb, mrb_value self) {
   return passthrough;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GMarkupParser::passthrough_writer */
+/* sha: 4130449d38dd7135c738a4881703fed58f4e6d2335f96bd33386b7a346b95b8e */
 #if BIND_GMarkupParser_passthrough_FIELD_WRITER
 /* set_passthrough
  *
@@ -227,7 +259,10 @@ mrb_GLib_GMarkupParser_set_passthrough(mrb_state* mrb, mrb_value self) {
   return value_as_mrb_value;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GMarkupParser::error_reader */
+/* sha: 390024e2267b3f01be482b21bf33a7664315b8129d95d3c3c1ed81363eec5e78 */
 #if BIND_GMarkupParser_error_FIELD_READER
 /* get_error
  *
@@ -244,7 +279,10 @@ mrb_GLib_GMarkupParser_get_error(mrb_state* mrb, mrb_value self) {
   return error;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GMarkupParser::error_writer */
+/* sha: 84bd40e99b02bd3904cde043c50b7baee48c5d0baa75bf6cf3a40d0e787a52bb */
 #if BIND_GMarkupParser_error_FIELD_WRITER
 /* set_error
  *
@@ -270,6 +308,7 @@ mrb_GLib_GMarkupParser_set_error(mrb_state* mrb, mrb_value self) {
   return value_as_mrb_value;
 }
 #endif
+/* MRUBY_BINDING_END */
 
 
 void mrb_GLib_GMarkupParser_init(mrb_state* mrb) {

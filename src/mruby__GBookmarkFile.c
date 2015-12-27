@@ -11,6 +11,8 @@
  * Class Methods
  */
 
+/* MRUBY_BINDING: GBookmarkFile::initialize */
+/* sha: 5a9724387bd94fe97974b5dd612713657df341434af14c01605098dd972b54a1 */
 #if BIND_GBookmarkFile_INITIALIZE
 mrb_value
 mrb_GLib_GBookmarkFile_initialize(mrb_state* mrb, mrb_value self) {
@@ -19,7 +21,10 @@ mrb_GLib_GBookmarkFile_initialize(mrb_state* mrb, mrb_value self) {
   return self;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GBookmarkFile::initialize */
+/* sha: 3a63e6ddd6c641f648988dcbcbf1b6b644a1a39e55bb23b36ec311117ce7fae0 */
 mrb_value
 mrb_GLib_GBookmarkFile_disown(mrb_state* mrb, mrb_value self) {
   mrb_value ruby_object;
@@ -34,7 +39,10 @@ mrb_GLib_GBookmarkFile_disown(mrb_state* mrb, mrb_value self) {
 
   return mrb_nil_value();
 }
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GBookmarkFile::belongs_to_ruby */
+/* sha: 3cf707d7fef09c2eba023e7e50154ce2c6ce90ab9c88fa80adf372427c5ae865 */
 mrb_value
 mrb_GLib_GBookmarkFile_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
   mrb_value ruby_object;
@@ -51,6 +59,7 @@ mrb_GLib_GBookmarkFile_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
     return mrb_false_value();
   }
 }
+/* MRUBY_BINDING_END */
 
 
 void mrb_GLib_GBookmarkFile_init(mrb_state* mrb) {

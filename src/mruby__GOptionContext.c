@@ -11,6 +11,8 @@
  * Class Methods
  */
 
+/* MRUBY_BINDING: GOptionContext::initialize */
+/* sha: 36a0c7effcff83488fb230520bcd8aedb6946f805d7fba6f8fe865a9aa914292 */
 #if BIND_GOptionContext_INITIALIZE
 mrb_value
 mrb_GLib_GOptionContext_initialize(mrb_state* mrb, mrb_value self) {
@@ -19,7 +21,10 @@ mrb_GLib_GOptionContext_initialize(mrb_state* mrb, mrb_value self) {
   return self;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GOptionContext::initialize */
+/* sha: 9be79735b67f3a525bf8a0a32079eb422a489a6bdceba971b6f95d0c27414e59 */
 mrb_value
 mrb_GLib_GOptionContext_disown(mrb_state* mrb, mrb_value self) {
   mrb_value ruby_object;
@@ -34,7 +39,10 @@ mrb_GLib_GOptionContext_disown(mrb_state* mrb, mrb_value self) {
 
   return mrb_nil_value();
 }
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GOptionContext::belongs_to_ruby */
+/* sha: 2902facf514e0a627ea2a9aa084cba15c9d8ff3af1d4a612e6db9116657d4ea0 */
 mrb_value
 mrb_GLib_GOptionContext_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
   mrb_value ruby_object;
@@ -51,6 +59,7 @@ mrb_GLib_GOptionContext_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
     return mrb_false_value();
   }
 }
+/* MRUBY_BINDING_END */
 
 
 void mrb_GLib_GOptionContext_init(mrb_state* mrb) {

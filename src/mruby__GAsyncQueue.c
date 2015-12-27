@@ -11,6 +11,8 @@
  * Class Methods
  */
 
+/* MRUBY_BINDING: GAsyncQueue::initialize */
+/* sha: 22ebb3cbf3952588739af5eae0aaecee7c0e2731d0d2ab1940fb77a33636abb7 */
 #if BIND_GAsyncQueue_INITIALIZE
 mrb_value
 mrb_GLib_GAsyncQueue_initialize(mrb_state* mrb, mrb_value self) {
@@ -19,7 +21,10 @@ mrb_GLib_GAsyncQueue_initialize(mrb_state* mrb, mrb_value self) {
   return self;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GAsyncQueue::initialize */
+/* sha: 5e0504f9d9e9d3de172fcf13fe6a31f3beb016090575fb2ea715e9346a9b4ed7 */
 mrb_value
 mrb_GLib_GAsyncQueue_disown(mrb_state* mrb, mrb_value self) {
   mrb_value ruby_object;
@@ -34,7 +39,10 @@ mrb_GLib_GAsyncQueue_disown(mrb_state* mrb, mrb_value self) {
 
   return mrb_nil_value();
 }
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GAsyncQueue::belongs_to_ruby */
+/* sha: d49a4b7d5df4110bf110c6d7a6757b87f59e791d43a2f8f31ecfae8b4c61566a */
 mrb_value
 mrb_GLib_GAsyncQueue_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
   mrb_value ruby_object;
@@ -51,6 +59,7 @@ mrb_GLib_GAsyncQueue_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
     return mrb_false_value();
   }
 }
+/* MRUBY_BINDING_END */
 
 
 void mrb_GLib_GAsyncQueue_init(mrb_state* mrb) {

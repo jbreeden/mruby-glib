@@ -11,6 +11,8 @@
  * Class Methods
  */
 
+/* MRUBY_BINDING: GSourceFuncs::initialize */
+/* sha: 3ebcef515f6b3481ffcf8d2e423a43ac646ce96afe1ea35675205358bee5b0e7 */
 #if BIND_GSourceFuncs_INITIALIZE
 mrb_value
 mrb_GLib_GSourceFuncs_initialize(mrb_state* mrb, mrb_value self) {
@@ -19,7 +21,10 @@ mrb_GLib_GSourceFuncs_initialize(mrb_state* mrb, mrb_value self) {
   return self;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GSourceFuncs::initialize */
+/* sha: ff1597286257e5a706f74e050f7c1eca1a3ea031adbf7d768bb8c2b21421f324 */
 mrb_value
 mrb_GLib_GSourceFuncs_disown(mrb_state* mrb, mrb_value self) {
   mrb_value ruby_object;
@@ -34,7 +39,10 @@ mrb_GLib_GSourceFuncs_disown(mrb_state* mrb, mrb_value self) {
 
   return mrb_nil_value();
 }
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GSourceFuncs::belongs_to_ruby */
+/* sha: ffa2515cfb5203ce6f2d410c61b587185e639f149d011513100013d0ec938942 */
 mrb_value
 mrb_GLib_GSourceFuncs_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
   mrb_value ruby_object;
@@ -51,11 +59,14 @@ mrb_GLib_GSourceFuncs_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
     return mrb_false_value();
   }
 }
+/* MRUBY_BINDING_END */
 
 /*
  * Fields
  */
 
+/* MRUBY_BINDING: GSourceFuncs::prepare_reader */
+/* sha: 9622a4ca243d19481ab8d530d637e4b1a9b8ca87412912f4ead6d032407a6e97 */
 #if BIND_GSourceFuncs_prepare_FIELD_READER
 /* get_prepare
  *
@@ -72,7 +83,10 @@ mrb_GLib_GSourceFuncs_get_prepare(mrb_state* mrb, mrb_value self) {
   return prepare;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GSourceFuncs::prepare_writer */
+/* sha: 8a051cad487463be082eb79ed1a219f4b90847b706c3f5b9ed6c98fcfa2ed9b0 */
 #if BIND_GSourceFuncs_prepare_FIELD_WRITER
 /* set_prepare
  *
@@ -98,7 +112,10 @@ mrb_GLib_GSourceFuncs_set_prepare(mrb_state* mrb, mrb_value self) {
   return value_as_mrb_value;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GSourceFuncs::check_reader */
+/* sha: 7399585808ad7b669e67ed4666d573a17154a9714fddc918f55d9ac18f8986b8 */
 #if BIND_GSourceFuncs_check_FIELD_READER
 /* get_check
  *
@@ -115,7 +132,10 @@ mrb_GLib_GSourceFuncs_get_check(mrb_state* mrb, mrb_value self) {
   return check;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GSourceFuncs::check_writer */
+/* sha: 69e0a41046f792214d2085f74c400367790e6af43d3c6c095401cf2be890faed */
 #if BIND_GSourceFuncs_check_FIELD_WRITER
 /* set_check
  *
@@ -141,7 +161,10 @@ mrb_GLib_GSourceFuncs_set_check(mrb_state* mrb, mrb_value self) {
   return value_as_mrb_value;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GSourceFuncs::dispatch_reader */
+/* sha: 84716ac1e6e944ffeba2a2b20e9ca341ec906bfffdb1e4ac6d3d026eefdd0210 */
 #if BIND_GSourceFuncs_dispatch_FIELD_READER
 /* get_dispatch
  *
@@ -158,7 +181,10 @@ mrb_GLib_GSourceFuncs_get_dispatch(mrb_state* mrb, mrb_value self) {
   return dispatch;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GSourceFuncs::dispatch_writer */
+/* sha: 6bcaef0c7894e10a20e4647a6edafebc72c816cc5519639cd675eee0fbfa36cc */
 #if BIND_GSourceFuncs_dispatch_FIELD_WRITER
 /* set_dispatch
  *
@@ -184,7 +210,10 @@ mrb_GLib_GSourceFuncs_set_dispatch(mrb_state* mrb, mrb_value self) {
   return value_as_mrb_value;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GSourceFuncs::finalize_reader */
+/* sha: 1c988d629174e6d9dbcf7567d5716169a9c8c766edbf985b6b1d3a4d00b16f36 */
 #if BIND_GSourceFuncs_finalize_FIELD_READER
 /* get_finalize
  *
@@ -201,7 +230,10 @@ mrb_GLib_GSourceFuncs_get_finalize(mrb_state* mrb, mrb_value self) {
   return finalize;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GSourceFuncs::finalize_writer */
+/* sha: 57a409746bb13b79545c29265ee97ac13604f694f19883a9279614855d9309bb */
 #if BIND_GSourceFuncs_finalize_FIELD_WRITER
 /* set_finalize
  *
@@ -227,7 +259,10 @@ mrb_GLib_GSourceFuncs_set_finalize(mrb_state* mrb, mrb_value self) {
   return value_as_mrb_value;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GSourceFuncs::closure_callback_reader */
+/* sha: 8c0bd28ab13aacd5fcbf0f153e44b262d9adb47b1ad01494225a92497e01e64e */
 #if BIND_GSourceFuncs_closure_callback_FIELD_READER
 /* get_closure_callback
  *
@@ -244,7 +279,10 @@ mrb_GLib_GSourceFuncs_get_closure_callback(mrb_state* mrb, mrb_value self) {
   return closure_callback;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GSourceFuncs::closure_callback_writer */
+/* sha: dd0d6c51ed75e645515efd1f1529804382e2ac242700013f16fe95687c84316a */
 #if BIND_GSourceFuncs_closure_callback_FIELD_WRITER
 /* set_closure_callback
  *
@@ -270,7 +308,10 @@ mrb_GLib_GSourceFuncs_set_closure_callback(mrb_state* mrb, mrb_value self) {
   return value_as_mrb_value;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GSourceFuncs::closure_marshal_reader */
+/* sha: 2eb6d642c1ce83f77fcccd9a4440248ddb97a775617f3e232da33500338f1d34 */
 #if BIND_GSourceFuncs_closure_marshal_FIELD_READER
 /* get_closure_marshal
  *
@@ -287,7 +328,10 @@ mrb_GLib_GSourceFuncs_get_closure_marshal(mrb_state* mrb, mrb_value self) {
   return closure_marshal;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GSourceFuncs::closure_marshal_writer */
+/* sha: 8d3d65c83898dacb40041c8272f7efff31684e48bcd1c6a6d3b12a215a6a428f */
 #if BIND_GSourceFuncs_closure_marshal_FIELD_WRITER
 /* set_closure_marshal
  *
@@ -313,6 +357,7 @@ mrb_GLib_GSourceFuncs_set_closure_marshal(mrb_state* mrb, mrb_value self) {
   return value_as_mrb_value;
 }
 #endif
+/* MRUBY_BINDING_END */
 
 
 void mrb_GLib_GSourceFuncs_init(mrb_state* mrb) {

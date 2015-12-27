@@ -11,6 +11,8 @@
  * Class Methods
  */
 
+/* MRUBY_BINDING: GRegex::initialize */
+/* sha: 34b46c4e17614ed85ccaea0aa2c52449ece2ccd7b463d81af713b41bcd90939f */
 #if BIND_GRegex_INITIALIZE
 mrb_value
 mrb_GLib_GRegex_initialize(mrb_state* mrb, mrb_value self) {
@@ -19,7 +21,10 @@ mrb_GLib_GRegex_initialize(mrb_state* mrb, mrb_value self) {
   return self;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GRegex::initialize */
+/* sha: b79accb55973c9d5070662d3b66615e83a99641c300c2912c652e357b78c6d37 */
 mrb_value
 mrb_GLib_GRegex_disown(mrb_state* mrb, mrb_value self) {
   mrb_value ruby_object;
@@ -34,7 +39,10 @@ mrb_GLib_GRegex_disown(mrb_state* mrb, mrb_value self) {
 
   return mrb_nil_value();
 }
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GRegex::belongs_to_ruby */
+/* sha: 45060104a7eba29faa934809af63a287e53a82b71690d03a3597112b2a2c2eb4 */
 mrb_value
 mrb_GLib_GRegex_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
   mrb_value ruby_object;
@@ -51,6 +59,7 @@ mrb_GLib_GRegex_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
     return mrb_false_value();
   }
 }
+/* MRUBY_BINDING_END */
 
 
 void mrb_GLib_GRegex_init(mrb_state* mrb) {

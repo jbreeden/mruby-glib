@@ -11,6 +11,8 @@
  * Class Methods
  */
 
+/* MRUBY_BINDING: GRand::initialize */
+/* sha: 707d5aeefaf0efa8d1bd8fb72096e17189c98101bfcc4d332b82afbe49f2b8df */
 #if BIND_GRand_INITIALIZE
 mrb_value
 mrb_GLib_GRand_initialize(mrb_state* mrb, mrb_value self) {
@@ -19,7 +21,10 @@ mrb_GLib_GRand_initialize(mrb_state* mrb, mrb_value self) {
   return self;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GRand::initialize */
+/* sha: bce0d65d4295b7f91c00a115947beead5489c0ce35c3bef83ccf6a1f21b71e75 */
 mrb_value
 mrb_GLib_GRand_disown(mrb_state* mrb, mrb_value self) {
   mrb_value ruby_object;
@@ -34,7 +39,10 @@ mrb_GLib_GRand_disown(mrb_state* mrb, mrb_value self) {
 
   return mrb_nil_value();
 }
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GRand::belongs_to_ruby */
+/* sha: 6e26152bad2c6c97a11191b76d76d65479ef55bc9abebffe528010a68ea35eec */
 mrb_value
 mrb_GLib_GRand_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
   mrb_value ruby_object;
@@ -51,6 +59,7 @@ mrb_GLib_GRand_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
     return mrb_false_value();
   }
 }
+/* MRUBY_BINDING_END */
 
 
 void mrb_GLib_GRand_init(mrb_state* mrb) {

@@ -11,6 +11,8 @@
  * Class Methods
  */
 
+/* MRUBY_BINDING: GNode::initialize */
+/* sha: 5057e89fea8b4e59686f4eeb0f8ae400d4477e646869ad5a196e74697d07902e */
 #if BIND_GNode_INITIALIZE
 mrb_value
 mrb_GLib_GNode_initialize(mrb_state* mrb, mrb_value self) {
@@ -19,7 +21,10 @@ mrb_GLib_GNode_initialize(mrb_state* mrb, mrb_value self) {
   return self;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GNode::initialize */
+/* sha: edea9923995b88805e8ac32f79262ad847bfc0c64e9b6499cc0e5e1e2259c07f */
 mrb_value
 mrb_GLib_GNode_disown(mrb_state* mrb, mrb_value self) {
   mrb_value ruby_object;
@@ -34,7 +39,10 @@ mrb_GLib_GNode_disown(mrb_state* mrb, mrb_value self) {
 
   return mrb_nil_value();
 }
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GNode::belongs_to_ruby */
+/* sha: 820dbae98aebe7276529cdd466aa1df636b3ef07e021ac87e5e27114439a7696 */
 mrb_value
 mrb_GLib_GNode_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
   mrb_value ruby_object;
@@ -51,11 +59,14 @@ mrb_GLib_GNode_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
     return mrb_false_value();
   }
 }
+/* MRUBY_BINDING_END */
 
 /*
  * Fields
  */
 
+/* MRUBY_BINDING: GNode::data_reader */
+/* sha: bdd7ac11f9f8f2ba6c5e5c3f6eb3c3067fadd8b79c5cacbe68b10a99fdcbb3fc */
 #if BIND_GNode_data_FIELD_READER
 /* get_data
  *
@@ -72,7 +83,10 @@ mrb_GLib_GNode_get_data(mrb_state* mrb, mrb_value self) {
   return data;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GNode::data_writer */
+/* sha: a06dd48feacdcbfd6565ad621e8c25f8692edd3d241e9a7f25e415a311a75272 */
 #if BIND_GNode_data_FIELD_WRITER
 /* set_data
  *
@@ -98,7 +112,10 @@ mrb_GLib_GNode_set_data(mrb_state* mrb, mrb_value self) {
   return value_as_mrb_value;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GNode::next_reader */
+/* sha: 9679af499b3eeb0e3b92dacb8a932e4b92313c05b6a32490e8c2909505901c79 */
 #if BIND_GNode_next_FIELD_READER
 /* get_next
  *
@@ -115,7 +132,10 @@ mrb_GLib_GNode_get_next(mrb_state* mrb, mrb_value self) {
   return next;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GNode::next_writer */
+/* sha: d77fb4e5d90b169813fdaf5a92d2e4a1099cd299cbd5ce42b4c9e844dbb1fdfb */
 #if BIND_GNode_next_FIELD_WRITER
 /* set_next
  *
@@ -144,7 +164,10 @@ mrb_GLib_GNode_set_next(mrb_state* mrb, mrb_value self) {
   return value_as_mrb_value;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GNode::prev_reader */
+/* sha: 2e1e47cd28f366707eb0f1a735f2abcbd294681d5df6965c06e0a041766a032a */
 #if BIND_GNode_prev_FIELD_READER
 /* get_prev
  *
@@ -161,7 +184,10 @@ mrb_GLib_GNode_get_prev(mrb_state* mrb, mrb_value self) {
   return prev;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GNode::prev_writer */
+/* sha: 1f62f163b374a7f63cfaaa379a7d1883f1370b77b89adae0e10160a47364a949 */
 #if BIND_GNode_prev_FIELD_WRITER
 /* set_prev
  *
@@ -190,7 +216,10 @@ mrb_GLib_GNode_set_prev(mrb_state* mrb, mrb_value self) {
   return value_as_mrb_value;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GNode::parent_reader */
+/* sha: edf7a94bfa226e2517f128178c2917f91d3da717a431668623accc4b8957cebc */
 #if BIND_GNode_parent_FIELD_READER
 /* get_parent
  *
@@ -207,7 +236,10 @@ mrb_GLib_GNode_get_parent(mrb_state* mrb, mrb_value self) {
   return parent;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GNode::parent_writer */
+/* sha: 40bf4fff16e57e5f7f34613971aee582508751365abfc8400ab0d302fd927bd8 */
 #if BIND_GNode_parent_FIELD_WRITER
 /* set_parent
  *
@@ -236,7 +268,10 @@ mrb_GLib_GNode_set_parent(mrb_state* mrb, mrb_value self) {
   return value_as_mrb_value;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GNode::children_reader */
+/* sha: 3c3c2c8fa2e4b3dd6c7373a76aee7fbec1ee4a578de3ce25d9ad3173547b5433 */
 #if BIND_GNode_children_FIELD_READER
 /* get_children
  *
@@ -253,7 +288,10 @@ mrb_GLib_GNode_get_children(mrb_state* mrb, mrb_value self) {
   return children;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GNode::children_writer */
+/* sha: 7cbbed9b1f22cfdbf77b00a1cd57542db18326f6b6a86c95ed0b6b3b9bb2dc15 */
 #if BIND_GNode_children_FIELD_WRITER
 /* set_children
  *
@@ -282,6 +320,7 @@ mrb_GLib_GNode_set_children(mrb_state* mrb, mrb_value self) {
   return value_as_mrb_value;
 }
 #endif
+/* MRUBY_BINDING_END */
 
 
 void mrb_GLib_GNode_init(mrb_state* mrb) {

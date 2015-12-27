@@ -11,6 +11,8 @@
  * Class Methods
  */
 
+/* MRUBY_BINDING: GOnce::initialize */
+/* sha: 1c8e9ca345c69ea13c3483d4e6bc6a3ec462bea30e87244508e503a8a9a2ca12 */
 #if BIND_GOnce_INITIALIZE
 mrb_value
 mrb_GLib_GOnce_initialize(mrb_state* mrb, mrb_value self) {
@@ -19,7 +21,10 @@ mrb_GLib_GOnce_initialize(mrb_state* mrb, mrb_value self) {
   return self;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GOnce::initialize */
+/* sha: dcefcf4a5b4a28f75b7aaa937450cb3ad2c53f1a66b447331055fce6f60733f8 */
 mrb_value
 mrb_GLib_GOnce_disown(mrb_state* mrb, mrb_value self) {
   mrb_value ruby_object;
@@ -34,7 +39,10 @@ mrb_GLib_GOnce_disown(mrb_state* mrb, mrb_value self) {
 
   return mrb_nil_value();
 }
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GOnce::belongs_to_ruby */
+/* sha: ebd48607efe5603e77b9f54243c5ed36de6ec9f29855642a021a989667206daa */
 mrb_value
 mrb_GLib_GOnce_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
   mrb_value ruby_object;
@@ -51,11 +59,14 @@ mrb_GLib_GOnce_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
     return mrb_false_value();
   }
 }
+/* MRUBY_BINDING_END */
 
 /*
  * Fields
  */
 
+/* MRUBY_BINDING: GOnce::status_reader */
+/* sha: 7e6d8700838b08b2503de7879b2835e3704c6765459008f7c869556daedb94a6 */
 #if BIND_GOnce_status_FIELD_READER
 /* get_status
  *
@@ -72,7 +83,10 @@ mrb_GLib_GOnce_get_status(mrb_state* mrb, mrb_value self) {
   return status;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GOnce::status_writer */
+/* sha: b47ba2be3a422425a8b2d599aeed857ed67bd54ed76f2f8e0d53b9ae00fc35f3 */
 #if BIND_GOnce_status_FIELD_WRITER
 /* set_status
  *
@@ -98,7 +112,10 @@ mrb_GLib_GOnce_set_status(mrb_state* mrb, mrb_value self) {
   return value_as_mrb_value;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GOnce::retval_reader */
+/* sha: bc7bf18043faa7f7a8fba835d593d0710dac0739ae720c772913d525bd2c4d86 */
 #if BIND_GOnce_retval_FIELD_READER
 /* get_retval
  *
@@ -115,7 +132,10 @@ mrb_GLib_GOnce_get_retval(mrb_state* mrb, mrb_value self) {
   return retval;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GOnce::retval_writer */
+/* sha: 9fa31cf584711422060e5513408980deed1b183e55d94473ae71ecbd8c963887 */
 #if BIND_GOnce_retval_FIELD_WRITER
 /* set_retval
  *
@@ -141,6 +161,7 @@ mrb_GLib_GOnce_set_retval(mrb_state* mrb, mrb_value self) {
   return value_as_mrb_value;
 }
 #endif
+/* MRUBY_BINDING_END */
 
 
 void mrb_GLib_GOnce_init(mrb_state* mrb) {

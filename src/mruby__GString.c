@@ -11,6 +11,8 @@
  * Class Methods
  */
 
+/* MRUBY_BINDING: GString::initialize */
+/* sha: b9f54ad07070f888362e9e577c0d1b0645262fc5e01b69412e7dde040c39771d */
 #if BIND_GString_INITIALIZE
 mrb_value
 mrb_GLib_GString_initialize(mrb_state* mrb, mrb_value self) {
@@ -19,7 +21,10 @@ mrb_GLib_GString_initialize(mrb_state* mrb, mrb_value self) {
   return self;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GString::initialize */
+/* sha: 00b2a5f31f8ee005512830a64db0bff4b99e52c18b918fef9dc7f2dccae1dc2e */
 mrb_value
 mrb_GLib_GString_disown(mrb_state* mrb, mrb_value self) {
   mrb_value ruby_object;
@@ -34,7 +39,10 @@ mrb_GLib_GString_disown(mrb_state* mrb, mrb_value self) {
 
   return mrb_nil_value();
 }
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GString::belongs_to_ruby */
+/* sha: a4e4e30261a67d45d478b7789619563bb8fd852a5227273e87d1c04f6e73faf1 */
 mrb_value
 mrb_GLib_GString_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
   mrb_value ruby_object;
@@ -51,11 +59,14 @@ mrb_GLib_GString_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
     return mrb_false_value();
   }
 }
+/* MRUBY_BINDING_END */
 
 /*
  * Fields
  */
 
+/* MRUBY_BINDING: GString::str_reader */
+/* sha: 3e83b4888a6d607ceb078743426ae38661c9b6a846c7d064d45ac12c74b7b723 */
 #if BIND_GString_str_FIELD_READER
 /* get_str
  *
@@ -72,7 +83,10 @@ mrb_GLib_GString_get_str(mrb_state* mrb, mrb_value self) {
   return str;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GString::str_writer */
+/* sha: 2b0707ef3a1658ee97dd5700417e8bca31f25bc4fd8c1646eed9ff8ff881ce78 */
 #if BIND_GString_str_FIELD_WRITER
 /* set_str
  *
@@ -98,7 +112,10 @@ mrb_GLib_GString_set_str(mrb_state* mrb, mrb_value self) {
   return value_as_mrb_value;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GString::len_reader */
+/* sha: 681f3797fe45656b6f3307f89e8acf64ef2e79bd923dca494a4114510f464fa3 */
 #if BIND_GString_len_FIELD_READER
 /* get_len
  *
@@ -115,7 +132,10 @@ mrb_GLib_GString_get_len(mrb_state* mrb, mrb_value self) {
   return len;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GString::len_writer */
+/* sha: e72cb4e11869301f422d5b263b6a7498af672aab71390a64dfde2cbb78af2e12 */
 #if BIND_GString_len_FIELD_WRITER
 /* set_len
  *
@@ -136,7 +156,10 @@ mrb_GLib_GString_set_len(mrb_state* mrb, mrb_value self) {
   return value_as_mrb_value;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GString::allocated_len_reader */
+/* sha: 3df77c13014cd3a9804dc358c3dc0f14dac3ef579483adbf1050f232272e44c9 */
 #if BIND_GString_allocated_len_FIELD_READER
 /* get_allocated_len
  *
@@ -153,7 +176,10 @@ mrb_GLib_GString_get_allocated_len(mrb_state* mrb, mrb_value self) {
   return allocated_len;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GString::allocated_len_writer */
+/* sha: b29b23e9646f34c229742d6e777a0717b98ad4ae2f5c483d8fa9f98f4c11056f */
 #if BIND_GString_allocated_len_FIELD_WRITER
 /* set_allocated_len
  *
@@ -174,6 +200,7 @@ mrb_GLib_GString_set_allocated_len(mrb_state* mrb, mrb_value self) {
   return value_as_mrb_value;
 }
 #endif
+/* MRUBY_BINDING_END */
 
 
 void mrb_GLib_GString_init(mrb_state* mrb) {

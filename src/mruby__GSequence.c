@@ -11,6 +11,8 @@
  * Class Methods
  */
 
+/* MRUBY_BINDING: GSequence::initialize */
+/* sha: 5d811cfd0121f39d8cd3c9f9aa33fc83557cd3831b2eff2537549c31dc87fbbd */
 #if BIND_GSequence_INITIALIZE
 mrb_value
 mrb_GLib_GSequence_initialize(mrb_state* mrb, mrb_value self) {
@@ -19,7 +21,10 @@ mrb_GLib_GSequence_initialize(mrb_state* mrb, mrb_value self) {
   return self;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GSequence::initialize */
+/* sha: c6f231e8042503e9d9454569c744548cc416ead90ef136c2c57d6c4155b317a2 */
 mrb_value
 mrb_GLib_GSequence_disown(mrb_state* mrb, mrb_value self) {
   mrb_value ruby_object;
@@ -34,7 +39,10 @@ mrb_GLib_GSequence_disown(mrb_state* mrb, mrb_value self) {
 
   return mrb_nil_value();
 }
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GSequence::belongs_to_ruby */
+/* sha: fa21a9930c21534d82007f8b688289a6731cebf721c762c94027ac02e0702835 */
 mrb_value
 mrb_GLib_GSequence_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
   mrb_value ruby_object;
@@ -51,6 +59,7 @@ mrb_GLib_GSequence_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
     return mrb_false_value();
   }
 }
+/* MRUBY_BINDING_END */
 
 
 void mrb_GLib_GSequence_init(mrb_state* mrb) {

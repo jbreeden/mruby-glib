@@ -11,6 +11,8 @@
  * Class Methods
  */
 
+/* MRUBY_BINDING: GHookList::initialize */
+/* sha: 3339c2cdde30c0d9990cebc0653f93e342c11e3c897d93b771bbdc19fe68ea1f */
 #if BIND_GHookList_INITIALIZE
 mrb_value
 mrb_GLib_GHookList_initialize(mrb_state* mrb, mrb_value self) {
@@ -19,7 +21,10 @@ mrb_GLib_GHookList_initialize(mrb_state* mrb, mrb_value self) {
   return self;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GHookList::initialize */
+/* sha: 36b16035ff9b5802228d69ed51b4f4c037a92ffba448e170c2d4607972042a12 */
 mrb_value
 mrb_GLib_GHookList_disown(mrb_state* mrb, mrb_value self) {
   mrb_value ruby_object;
@@ -34,7 +39,10 @@ mrb_GLib_GHookList_disown(mrb_state* mrb, mrb_value self) {
 
   return mrb_nil_value();
 }
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GHookList::belongs_to_ruby */
+/* sha: d43354a5a3e75eb2b0750b4b2497dd39f5459c80e9ca1252a51b85a7547efe27 */
 mrb_value
 mrb_GLib_GHookList_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
   mrb_value ruby_object;
@@ -51,11 +59,14 @@ mrb_GLib_GHookList_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
     return mrb_false_value();
   }
 }
+/* MRUBY_BINDING_END */
 
 /*
  * Fields
  */
 
+/* MRUBY_BINDING: GHookList::seq_id_reader */
+/* sha: 96038dc008bc0cac1f5746d59576a7f709861fab25ed23e369d52d21566ceabf */
 #if BIND_GHookList_seq_id_FIELD_READER
 /* get_seq_id
  *
@@ -72,7 +83,10 @@ mrb_GLib_GHookList_get_seq_id(mrb_state* mrb, mrb_value self) {
   return seq_id;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GHookList::seq_id_writer */
+/* sha: 58ddc025aee1cd92aad9a4b36343dbc90e846a038ec46e6f4b612eaca2278ddf */
 #if BIND_GHookList_seq_id_FIELD_WRITER
 /* set_seq_id
  *
@@ -93,7 +107,10 @@ mrb_GLib_GHookList_set_seq_id(mrb_state* mrb, mrb_value self) {
   return value_as_mrb_value;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GHookList::hook_size_reader */
+/* sha: 01fdd796cc405b1d33cb97582fa61d8e4dbc122a010ed8f531f120c7ee4559c2 */
 #if BIND_GHookList_hook_size_FIELD_READER
 /* get_hook_size
  *
@@ -110,7 +127,10 @@ mrb_GLib_GHookList_get_hook_size(mrb_state* mrb, mrb_value self) {
   return hook_size;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GHookList::hook_size_writer */
+/* sha: 250c766ac4ba3eebe4ed798ce130cc67bf17595fc19a180bd903c41363b7a0b7 */
 #if BIND_GHookList_hook_size_FIELD_WRITER
 /* set_hook_size
  *
@@ -131,7 +151,10 @@ mrb_GLib_GHookList_set_hook_size(mrb_state* mrb, mrb_value self) {
   return value_as_mrb_value;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GHookList::is_setup_reader */
+/* sha: 3a9367952b8f001aa1801682d708bb17216a50775de7af851f8614cd11be6f8e */
 #if BIND_GHookList_is_setup_FIELD_READER
 /* get_is_setup
  *
@@ -148,7 +171,10 @@ mrb_GLib_GHookList_get_is_setup(mrb_state* mrb, mrb_value self) {
   return is_setup;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GHookList::is_setup_writer */
+/* sha: fa5fc35d05cd3803279845b8f69144f60a532d2ca6867bb7cde786671de69657 */
 #if BIND_GHookList_is_setup_FIELD_WRITER
 /* set_is_setup
  *
@@ -169,7 +195,10 @@ mrb_GLib_GHookList_set_is_setup(mrb_state* mrb, mrb_value self) {
   return value_as_mrb_value;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GHookList::hooks_reader */
+/* sha: a267127e4f7925c7eea58a61255595b3bb99bbbe374f8216dd99f36f484af499 */
 #if BIND_GHookList_hooks_FIELD_READER
 /* get_hooks
  *
@@ -186,7 +215,10 @@ mrb_GLib_GHookList_get_hooks(mrb_state* mrb, mrb_value self) {
   return hooks;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GHookList::hooks_writer */
+/* sha: ce5b21ce447504737de6d6a054a684de6a617a9681149f7717a597d116f8b8eb */
 #if BIND_GHookList_hooks_FIELD_WRITER
 /* set_hooks
  *
@@ -215,7 +247,10 @@ mrb_GLib_GHookList_set_hooks(mrb_state* mrb, mrb_value self) {
   return value_as_mrb_value;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GHookList::dummy3_reader */
+/* sha: 8f7975feb10b697416a998aa8435cd71bb44dfb312aab670cc59763a2c401054 */
 #if BIND_GHookList_dummy3_FIELD_READER
 /* get_dummy3
  *
@@ -232,7 +267,10 @@ mrb_GLib_GHookList_get_dummy3(mrb_state* mrb, mrb_value self) {
   return dummy3;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GHookList::dummy3_writer */
+/* sha: 0f8134d11cb424021ab4d0f6a908f8b7598058c61480190b9ba0a1f29fa626cd */
 #if BIND_GHookList_dummy3_FIELD_WRITER
 /* set_dummy3
  *
@@ -258,7 +296,10 @@ mrb_GLib_GHookList_set_dummy3(mrb_state* mrb, mrb_value self) {
   return value_as_mrb_value;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GHookList::finalize_hook_reader */
+/* sha: 884429c2d6c3286033d9e114e92cb93a2559a8f62a79ce49265d4cc75adb2eb5 */
 #if BIND_GHookList_finalize_hook_FIELD_READER
 /* get_finalize_hook
  *
@@ -275,7 +316,10 @@ mrb_GLib_GHookList_get_finalize_hook(mrb_state* mrb, mrb_value self) {
   return finalize_hook;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GHookList::finalize_hook_writer */
+/* sha: 2adba6c917a519e94e6a2daab33f88e3bfb693dbdd0ec1ebb2b71c526b8e91d7 */
 #if BIND_GHookList_finalize_hook_FIELD_WRITER
 /* set_finalize_hook
  *
@@ -301,7 +345,10 @@ mrb_GLib_GHookList_set_finalize_hook(mrb_state* mrb, mrb_value self) {
   return value_as_mrb_value;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GHookList::dummy_reader */
+/* sha: 232f522511d4cc3de7d368e1c7f3eef9844b17eaf07a2d33c3c270496bee32a0 */
 #if BIND_GHookList_dummy_FIELD_READER
 /* get_dummy
  *
@@ -318,7 +365,10 @@ mrb_GLib_GHookList_get_dummy(mrb_state* mrb, mrb_value self) {
   return dummy;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GHookList::dummy_writer */
+/* sha: 3a0865dbdccfa13a4df9adce7155a2f67098e02ca3e0070041340482a1fc3918 */
 #if BIND_GHookList_dummy_FIELD_WRITER
 /* set_dummy
  *
@@ -344,6 +394,7 @@ mrb_GLib_GHookList_set_dummy(mrb_state* mrb, mrb_value self) {
   return value_as_mrb_value;
 }
 #endif
+/* MRUBY_BINDING_END */
 
 
 void mrb_GLib_GHookList_init(mrb_state* mrb) {

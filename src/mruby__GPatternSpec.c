@@ -11,6 +11,8 @@
  * Class Methods
  */
 
+/* MRUBY_BINDING: GPatternSpec::initialize */
+/* sha: 9cbc3e5406973fa0462958d09a86a8de5269bc4706d2d5c9b9a37d57fbdfe81e */
 #if BIND_GPatternSpec_INITIALIZE
 mrb_value
 mrb_GLib_GPatternSpec_initialize(mrb_state* mrb, mrb_value self) {
@@ -19,7 +21,10 @@ mrb_GLib_GPatternSpec_initialize(mrb_state* mrb, mrb_value self) {
   return self;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GPatternSpec::initialize */
+/* sha: ba76475134eb79d225d85465a28ea57865743a04605e3cbfcd430f0a5f31a1c2 */
 mrb_value
 mrb_GLib_GPatternSpec_disown(mrb_state* mrb, mrb_value self) {
   mrb_value ruby_object;
@@ -34,7 +39,10 @@ mrb_GLib_GPatternSpec_disown(mrb_state* mrb, mrb_value self) {
 
   return mrb_nil_value();
 }
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GPatternSpec::belongs_to_ruby */
+/* sha: 0c054a28a5d85f6a1bdd867145790277cd2ef5edc61af4fc1b51fb3ca2ad90e2 */
 mrb_value
 mrb_GLib_GPatternSpec_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
   mrb_value ruby_object;
@@ -51,6 +59,7 @@ mrb_GLib_GPatternSpec_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
     return mrb_false_value();
   }
 }
+/* MRUBY_BINDING_END */
 
 
 void mrb_GLib_GPatternSpec_init(mrb_state* mrb) {

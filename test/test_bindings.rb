@@ -1,3 +1,5 @@
+$sandbox = 'sandbox'
+
 def test(title, &block)
   print "#{title}: "
   begin
@@ -63,4 +65,73 @@ end
 test 'g_get_current_dir' do
   # Assuming this test will be run in the mrbgem's dir...
   GLib.g_get_current_dir.include?('mruby-glib')
+end
+
+test 'g_io_channel_read_line' do
+  io, err = GLib.g_io_channel_new_file("#{$sandbox}/two_line_file.txt", "r")
+  status, text, len, eol, err = GLib.g_io_channel_read_line(io)
+  raise "First line didn't match" unless text.start_with? "This file has two lines."
+  status, text, len, eol, err = GLib.g_io_channel_read_line(io)
+  GLib.g_io_channel_shutdown(io, true)
+  raise "Second line didn't match" unless text.start_with? "This is the second line."
+end
+
+test 'g_io_channel_read_chars' do
+  io, err = GLib.g_io_channel_new_file("#{$sandbox}/two_line_file.txt", "r")
+  status, text, len, err = GLib.g_io_channel_read_chars(io, "This file has two lines.".length)
+  GLib.g_io_channel_shutdown(io, true)
+  text == "This file has two lines."
+end
+
+test 'g_io_channel_read_to_end' do
+  io, err = GLib.g_io_channel_new_file("#{$sandbox}/two_line_file.txt", "r")
+  status, text, len, err = GLib.g_io_channel_read_to_end(io)
+  GLib.g_io_channel_shutdown(io, true)
+  text.include?("This file has two lines.") && text.include?("This is the second line.")
+end
+
+test 'g_io_channel_write_chars' do
+  io, err = GLib.g_io_channel_new_file("#{$sandbox}/file_for_writing.txt", "w")
+  status, bytes_written, err = GLib.g_io_channel_write_chars(io, 'testing')
+  GLib.g_io_channel_shutdown(io, true)
+  bytes_written == 'testing'.length && err.nil?
+end
+
+test 'g_io_channel_write' do
+  io, err = GLib.g_io_channel_new_file("#{$sandbox}/file_for_writing.txt", "w")
+  status, bytes_written, err = GLib.g_io_channel_write(io, 'testing')
+  GLib.g_io_channel_shutdown(io, true)
+  bytes_written == 'testing'.length && err.nil?
+end
+
+test 'g_mkdtemp w/ invalid template' do
+  GLib.g_mkdtemp('invalid_template').nil?
+end
+
+test 'g_mkdtemp w/ valid template' do
+  result = GLib.g_mkdtemp('dir_XXXXXX')
+  !result.nil? && result.include?('dir_')
+end
+
+test 'g_shell_parse_argv' do
+  success, argv, err = GLib.g_shell_parse_argv('one two "three four"')
+  argv.length == 3
+end
+
+test 'g_regex_check_replacement w/ replacement' do
+  valid, has_replacements, err  = GLib.g_regex_check_replacement('test')
+  valid == true && has_replacements == false && err.nil?
+end
+
+test 'g_regex_check_replacement w/o replacement' do
+  valid, has_replacements, err  = GLib.g_regex_check_replacement('test\\0')
+  valid == true && has_replacements == true && err.nil?
+end
+
+test 'g_regex_escape_nul' do
+  GLib.g_regex_escape_nul("test\0test") == "test\\x00test"
+end
+
+test 'g_regex_escape_string' do
+  GLib.g_regex_escape_string("test.*") == "test\\.\\*"
 end

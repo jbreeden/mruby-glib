@@ -11,6 +11,8 @@
  * Class Methods
  */
 
+/* MRUBY_BINDING: GMarkupParseContext::initialize */
+/* sha: e2a8e0f41645948da79e0190a58f6704f18f405c62772a521a3056be714ff7ca */
 #if BIND_GMarkupParseContext_INITIALIZE
 mrb_value
 mrb_GLib_GMarkupParseContext_initialize(mrb_state* mrb, mrb_value self) {
@@ -19,7 +21,10 @@ mrb_GLib_GMarkupParseContext_initialize(mrb_state* mrb, mrb_value self) {
   return self;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GMarkupParseContext::initialize */
+/* sha: dbe77a76e71d0abaebeb58de7bf684c7e785d00ed325bc77d637671123c4a07d */
 mrb_value
 mrb_GLib_GMarkupParseContext_disown(mrb_state* mrb, mrb_value self) {
   mrb_value ruby_object;
@@ -34,7 +39,10 @@ mrb_GLib_GMarkupParseContext_disown(mrb_state* mrb, mrb_value self) {
 
   return mrb_nil_value();
 }
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GMarkupParseContext::belongs_to_ruby */
+/* sha: 57e9341972a34da52b9f1d471df6e1f7bdd4cd74736c0e25ab786baf9dbbe73b */
 mrb_value
 mrb_GLib_GMarkupParseContext_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
   mrb_value ruby_object;
@@ -51,6 +59,7 @@ mrb_GLib_GMarkupParseContext_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
     return mrb_false_value();
   }
 }
+/* MRUBY_BINDING_END */
 
 
 void mrb_GLib_GMarkupParseContext_init(mrb_state* mrb) {

@@ -11,6 +11,8 @@
  * Class Methods
  */
 
+/* MRUBY_BINDING: GHashTable::initialize */
+/* sha: 97b83c19f0a93a9693ba6db3d34400909b3c2a1d3850bea573b7783563966125 */
 #if BIND_GHashTable_INITIALIZE
 mrb_value
 mrb_GLib_GHashTable_initialize(mrb_state* mrb, mrb_value self) {
@@ -19,7 +21,10 @@ mrb_GLib_GHashTable_initialize(mrb_state* mrb, mrb_value self) {
   return self;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GHashTable::initialize */
+/* sha: ec656b7045444a4af3c6e1865ab84214cc86c023c022a0a58d75081916155953 */
 mrb_value
 mrb_GLib_GHashTable_disown(mrb_state* mrb, mrb_value self) {
   mrb_value ruby_object;
@@ -34,7 +39,10 @@ mrb_GLib_GHashTable_disown(mrb_state* mrb, mrb_value self) {
 
   return mrb_nil_value();
 }
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GHashTable::belongs_to_ruby */
+/* sha: ba59f342d1a8d34263921b1d55268d93c5a5b255b1ca605a846893e6791e78d4 */
 mrb_value
 mrb_GLib_GHashTable_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
   mrb_value ruby_object;
@@ -51,6 +59,7 @@ mrb_GLib_GHashTable_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
     return mrb_false_value();
   }
 }
+/* MRUBY_BINDING_END */
 
 
 void mrb_GLib_GHashTable_init(mrb_state* mrb) {

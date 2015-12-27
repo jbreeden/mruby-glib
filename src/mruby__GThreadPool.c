@@ -11,6 +11,8 @@
  * Class Methods
  */
 
+/* MRUBY_BINDING: GThreadPool::initialize */
+/* sha: 9d90cd25384e31d06d3e04e7dcd805883c7a3b454fcfb47ad6caf1eb08af61f9 */
 #if BIND_GThreadPool_INITIALIZE
 mrb_value
 mrb_GLib_GThreadPool_initialize(mrb_state* mrb, mrb_value self) {
@@ -19,7 +21,10 @@ mrb_GLib_GThreadPool_initialize(mrb_state* mrb, mrb_value self) {
   return self;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GThreadPool::initialize */
+/* sha: a6255ed884c7c38a61d7431bc27ba2962ef2aaa03705fcc7591b365316678c55 */
 mrb_value
 mrb_GLib_GThreadPool_disown(mrb_state* mrb, mrb_value self) {
   mrb_value ruby_object;
@@ -34,7 +39,10 @@ mrb_GLib_GThreadPool_disown(mrb_state* mrb, mrb_value self) {
 
   return mrb_nil_value();
 }
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GThreadPool::belongs_to_ruby */
+/* sha: a0d460e13d34b35745da6439ab6698ab0bd6665d09e628a8ff550d882d9f4bc8 */
 mrb_value
 mrb_GLib_GThreadPool_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
   mrb_value ruby_object;
@@ -51,11 +59,14 @@ mrb_GLib_GThreadPool_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
     return mrb_false_value();
   }
 }
+/* MRUBY_BINDING_END */
 
 /*
  * Fields
  */
 
+/* MRUBY_BINDING: GThreadPool::func_reader */
+/* sha: ba02f4daa0337caf66aee7aa3a8df71247c0bcb155879a3e12464e8cf52820fb */
 #if BIND_GThreadPool_func_FIELD_READER
 /* get_func
  *
@@ -72,7 +83,10 @@ mrb_GLib_GThreadPool_get_func(mrb_state* mrb, mrb_value self) {
   return func;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GThreadPool::func_writer */
+/* sha: 22eae6254a9fc6670d018d37110c01ee8a91d747a722f1515001407ed16f4991 */
 #if BIND_GThreadPool_func_FIELD_WRITER
 /* set_func
  *
@@ -98,7 +112,10 @@ mrb_GLib_GThreadPool_set_func(mrb_state* mrb, mrb_value self) {
   return value_as_mrb_value;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GThreadPool::user_data_reader */
+/* sha: 34b9dd34c94eb117d7a228d1c7f8d3cdaf63d89ffbb62fcf7268a7e973f3bf0b */
 #if BIND_GThreadPool_user_data_FIELD_READER
 /* get_user_data
  *
@@ -115,7 +132,10 @@ mrb_GLib_GThreadPool_get_user_data(mrb_state* mrb, mrb_value self) {
   return user_data;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GThreadPool::user_data_writer */
+/* sha: 6289d523507f0357294200e49e84922505552fbfe3246a20190e2a28c29c66e0 */
 #if BIND_GThreadPool_user_data_FIELD_WRITER
 /* set_user_data
  *
@@ -141,7 +161,10 @@ mrb_GLib_GThreadPool_set_user_data(mrb_state* mrb, mrb_value self) {
   return value_as_mrb_value;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GThreadPool::exclusive_reader */
+/* sha: c820bdc80d4be5a51cbfc9d9527e44a1df04deca677af543cc1cc578b6a586e4 */
 #if BIND_GThreadPool_exclusive_FIELD_READER
 /* get_exclusive
  *
@@ -158,7 +181,10 @@ mrb_GLib_GThreadPool_get_exclusive(mrb_state* mrb, mrb_value self) {
   return exclusive;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GThreadPool::exclusive_writer */
+/* sha: 7220d1fd699f75ef806b01e8c3384f45c3603c65ad502da8c2e9e488bc38da98 */
 #if BIND_GThreadPool_exclusive_FIELD_WRITER
 /* set_exclusive
  *
@@ -179,6 +205,7 @@ mrb_GLib_GThreadPool_set_exclusive(mrb_state* mrb, mrb_value self) {
   return value_as_mrb_value;
 }
 #endif
+/* MRUBY_BINDING_END */
 
 
 void mrb_GLib_GThreadPool_init(mrb_state* mrb) {

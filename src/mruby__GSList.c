@@ -11,6 +11,8 @@
  * Class Methods
  */
 
+/* MRUBY_BINDING: GSList::initialize */
+/* sha: 611b0a11dc13c2e66763950b06d76febe8e6244d72e18b353f7b096f4fe2cbab */
 #if BIND_GSList_INITIALIZE
 mrb_value
 mrb_GLib_GSList_initialize(mrb_state* mrb, mrb_value self) {
@@ -19,7 +21,10 @@ mrb_GLib_GSList_initialize(mrb_state* mrb, mrb_value self) {
   return self;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GSList::initialize */
+/* sha: 664cf88feca3ee1e85889d308197b4b094c24c5cf58c6b18418f7e7371882dcd */
 mrb_value
 mrb_GLib_GSList_disown(mrb_state* mrb, mrb_value self) {
   mrb_value ruby_object;
@@ -34,7 +39,10 @@ mrb_GLib_GSList_disown(mrb_state* mrb, mrb_value self) {
 
   return mrb_nil_value();
 }
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GSList::belongs_to_ruby */
+/* sha: e978dfaae94389a5ad7bdf05b941d482f35295e10b44edf3cc6eb9b2bb8354e1 */
 mrb_value
 mrb_GLib_GSList_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
   mrb_value ruby_object;
@@ -51,11 +59,14 @@ mrb_GLib_GSList_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
     return mrb_false_value();
   }
 }
+/* MRUBY_BINDING_END */
 
 /*
  * Fields
  */
 
+/* MRUBY_BINDING: GSList::data_reader */
+/* sha: b5eab2bd7e8877daa8f5ef0fc6326d0c804144cca89c3d840e939b712f6e3655 */
 #if BIND_GSList_data_FIELD_READER
 /* get_data
  *
@@ -72,7 +83,10 @@ mrb_GLib_GSList_get_data(mrb_state* mrb, mrb_value self) {
   return data;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GSList::data_writer */
+/* sha: 6178c4f9a6bc55d885744a355212aafe67cb980e66f9528e54ae5863d381137c */
 #if BIND_GSList_data_FIELD_WRITER
 /* set_data
  *
@@ -98,7 +112,10 @@ mrb_GLib_GSList_set_data(mrb_state* mrb, mrb_value self) {
   return value_as_mrb_value;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GSList::next_reader */
+/* sha: 9b15d51069a494b01d7e358ba0557095a0e042b30db198c7743deabd7b70cca4 */
 #if BIND_GSList_next_FIELD_READER
 /* get_next
  *
@@ -115,7 +132,10 @@ mrb_GLib_GSList_get_next(mrb_state* mrb, mrb_value self) {
   return next;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GSList::next_writer */
+/* sha: 17cb09574e4713c3cb578a869ec429df4043d36e0a27d3af5136fdc59c79b295 */
 #if BIND_GSList_next_FIELD_WRITER
 /* set_next
  *
@@ -144,6 +164,7 @@ mrb_GLib_GSList_set_next(mrb_state* mrb, mrb_value self) {
   return value_as_mrb_value;
 }
 #endif
+/* MRUBY_BINDING_END */
 
 
 void mrb_GLib_GSList_init(mrb_state* mrb) {

@@ -11,6 +11,8 @@
  * Class Methods
  */
 
+/* MRUBY_BINDING: GRWLock::initialize */
+/* sha: d641b9f6559c91fc402f71a2735ad6d72b6db66d4a2e8b1e12dc082a5a745abf */
 #if BIND_GRWLock_INITIALIZE
 mrb_value
 mrb_GLib_GRWLock_initialize(mrb_state* mrb, mrb_value self) {
@@ -19,7 +21,10 @@ mrb_GLib_GRWLock_initialize(mrb_state* mrb, mrb_value self) {
   return self;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GRWLock::initialize */
+/* sha: 3ede2f09756f369656a20b85ecd8cfc2ab3a959a471f58dd6912ec4e248037bd */
 mrb_value
 mrb_GLib_GRWLock_disown(mrb_state* mrb, mrb_value self) {
   mrb_value ruby_object;
@@ -34,7 +39,10 @@ mrb_GLib_GRWLock_disown(mrb_state* mrb, mrb_value self) {
 
   return mrb_nil_value();
 }
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GRWLock::belongs_to_ruby */
+/* sha: 2f137c87325a8e8dda944d127bd19f7b0d7d9d327f631682d50f5617d185e9d4 */
 mrb_value
 mrb_GLib_GRWLock_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
   mrb_value ruby_object;
@@ -51,11 +59,14 @@ mrb_GLib_GRWLock_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
     return mrb_false_value();
   }
 }
+/* MRUBY_BINDING_END */
 
 /*
  * Fields
  */
 
+/* MRUBY_BINDING: GRWLock::p_reader */
+/* sha: 1c13887a32fcab3f06e547b6583e9db75285e7d2646e4ee33c44b9aa8b03aab3 */
 #if BIND_GRWLock_p_FIELD_READER
 /* get_p
  *
@@ -72,7 +83,10 @@ mrb_GLib_GRWLock_get_p(mrb_state* mrb, mrb_value self) {
   return p;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GRWLock::p_writer */
+/* sha: 00f7c3b03faab70bef370880bd85b8b69d3c82f15ff66e61c0c010ed1c23af55 */
 #if BIND_GRWLock_p_FIELD_WRITER
 /* set_p
  *
@@ -98,7 +112,10 @@ mrb_GLib_GRWLock_set_p(mrb_state* mrb, mrb_value self) {
   return value_as_mrb_value;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GRWLock::i_reader */
+/* sha: e3c40de3d7a1b86f945f1aec1d1555e080d0c7510186c7e03be6fb1dd6ce54d1 */
 #if BIND_GRWLock_i_FIELD_READER
 /* get_i
  *
@@ -115,7 +132,10 @@ mrb_GLib_GRWLock_get_i(mrb_state* mrb, mrb_value self) {
   return i;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GRWLock::i_writer */
+/* sha: efc9f664f187f93d0120994c72f35bdfc4d7f57bc8420d6b72e7378cb4fc60de */
 #if BIND_GRWLock_i_FIELD_WRITER
 /* set_i
  *
@@ -141,6 +161,7 @@ mrb_GLib_GRWLock_set_i(mrb_state* mrb, mrb_value self) {
   return value_as_mrb_value;
 }
 #endif
+/* MRUBY_BINDING_END */
 
 
 void mrb_GLib_GRWLock_init(mrb_state* mrb) {

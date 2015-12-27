@@ -11,6 +11,8 @@
  * Class Methods
  */
 
+/* MRUBY_BINDING: GIOChannel::initialize */
+/* sha: d72dcaa5f43eb30357f26d1f02342248aa199f939fd39bcead37d12c24c38962 */
 #if BIND_GIOChannel_INITIALIZE
 mrb_value
 mrb_GLib_GIOChannel_initialize(mrb_state* mrb, mrb_value self) {
@@ -19,7 +21,10 @@ mrb_GLib_GIOChannel_initialize(mrb_state* mrb, mrb_value self) {
   return self;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GIOChannel::initialize */
+/* sha: 5171768b662587fae587528396be19b4fd896e65704d60c070f65aa8f39032a8 */
 mrb_value
 mrb_GLib_GIOChannel_disown(mrb_state* mrb, mrb_value self) {
   mrb_value ruby_object;
@@ -34,7 +39,10 @@ mrb_GLib_GIOChannel_disown(mrb_state* mrb, mrb_value self) {
 
   return mrb_nil_value();
 }
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GIOChannel::belongs_to_ruby */
+/* sha: d79fbc225ad371fdbcb0c335f80d7ecd08e4f27620b1d69c26b6dea8d3f5dae7 */
 mrb_value
 mrb_GLib_GIOChannel_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
   mrb_value ruby_object;
@@ -51,11 +59,14 @@ mrb_GLib_GIOChannel_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
     return mrb_false_value();
   }
 }
+/* MRUBY_BINDING_END */
 
 /*
  * Fields
  */
 
+/* MRUBY_BINDING: GIOChannel::ref_count_reader */
+/* sha: cb3320275fb990ec1c0b6c99f4e259bfb1e65913cc63bafd5c439cb60b48b142 */
 #if BIND_GIOChannel_ref_count_FIELD_READER
 /* get_ref_count
  *
@@ -72,7 +83,10 @@ mrb_GLib_GIOChannel_get_ref_count(mrb_state* mrb, mrb_value self) {
   return ref_count;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GIOChannel::ref_count_writer */
+/* sha: 5200532a5ffec2cd5fe0a8caa3d533506afef3f4d2a95bea9571bc6b35e42d55 */
 #if BIND_GIOChannel_ref_count_FIELD_WRITER
 /* set_ref_count
  *
@@ -93,7 +107,10 @@ mrb_GLib_GIOChannel_set_ref_count(mrb_state* mrb, mrb_value self) {
   return value_as_mrb_value;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GIOChannel::funcs_reader */
+/* sha: 4ca4d0dea01eae50e58c453981adc00d396639c51624ab05ca15d6d3bd51bc5f */
 #if BIND_GIOChannel_funcs_FIELD_READER
 /* get_funcs
  *
@@ -110,7 +127,10 @@ mrb_GLib_GIOChannel_get_funcs(mrb_state* mrb, mrb_value self) {
   return funcs;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GIOChannel::funcs_writer */
+/* sha: 8b0242c5c2652f84530f9b4f95cb67b80cf7c3cc6f25292e9d7abc52074ad432 */
 #if BIND_GIOChannel_funcs_FIELD_WRITER
 /* set_funcs
  *
@@ -139,7 +159,10 @@ mrb_GLib_GIOChannel_set_funcs(mrb_state* mrb, mrb_value self) {
   return value_as_mrb_value;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GIOChannel::encoding_reader */
+/* sha: 9a67f0b31e1b566e262bb1a9db4da7c56285034eb2d26203b121f12597b66671 */
 #if BIND_GIOChannel_encoding_FIELD_READER
 /* get_encoding
  *
@@ -156,7 +179,10 @@ mrb_GLib_GIOChannel_get_encoding(mrb_state* mrb, mrb_value self) {
   return encoding;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GIOChannel::encoding_writer */
+/* sha: e6d4193ca29827ab2a450e8ce83b4db226452fea59f2e070a9b1ec0e14e9c76e */
 #if BIND_GIOChannel_encoding_FIELD_WRITER
 /* set_encoding
  *
@@ -182,7 +208,10 @@ mrb_GLib_GIOChannel_set_encoding(mrb_state* mrb, mrb_value self) {
   return value_as_mrb_value;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GIOChannel::read_cd_reader */
+/* sha: c8e8b6dc7f1e6fdde549bfc47b9982b26fefe390973394f6f5f86f6de204518c */
 #if BIND_GIOChannel_read_cd_FIELD_READER
 /* get_read_cd
  *
@@ -199,7 +228,10 @@ mrb_GLib_GIOChannel_get_read_cd(mrb_state* mrb, mrb_value self) {
   return read_cd;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GIOChannel::read_cd_writer */
+/* sha: b22e91165de3b20a7ba88f8a3e7bbf9df39c10f675e66fd6b1ee1392913cea59 */
 #if BIND_GIOChannel_read_cd_FIELD_WRITER
 /* set_read_cd
  *
@@ -225,7 +257,10 @@ mrb_GLib_GIOChannel_set_read_cd(mrb_state* mrb, mrb_value self) {
   return value_as_mrb_value;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GIOChannel::write_cd_reader */
+/* sha: 068a8cea854ae24dc2a6dfad9cd2afa6f70c7a96eb7baf4db2e5b083dfc5e7b0 */
 #if BIND_GIOChannel_write_cd_FIELD_READER
 /* get_write_cd
  *
@@ -242,7 +277,10 @@ mrb_GLib_GIOChannel_get_write_cd(mrb_state* mrb, mrb_value self) {
   return write_cd;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GIOChannel::write_cd_writer */
+/* sha: f43c188c1ad646362d7f098c8d4f40a0140b9d9dcf47a6dcf02fa6c58d3a7841 */
 #if BIND_GIOChannel_write_cd_FIELD_WRITER
 /* set_write_cd
  *
@@ -268,7 +306,10 @@ mrb_GLib_GIOChannel_set_write_cd(mrb_state* mrb, mrb_value self) {
   return value_as_mrb_value;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GIOChannel::line_term_reader */
+/* sha: 779d06e0a3ae4425ef8c62a141a66c4b0cf2d6d6341a7f7ea1053e4b2f5b6524 */
 #if BIND_GIOChannel_line_term_FIELD_READER
 /* get_line_term
  *
@@ -285,7 +326,10 @@ mrb_GLib_GIOChannel_get_line_term(mrb_state* mrb, mrb_value self) {
   return line_term;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GIOChannel::line_term_writer */
+/* sha: 644381c58d4c5d8d37495892fda11fd4311520a31cc4c3b7372c416897c2add7 */
 #if BIND_GIOChannel_line_term_FIELD_WRITER
 /* set_line_term
  *
@@ -311,7 +355,10 @@ mrb_GLib_GIOChannel_set_line_term(mrb_state* mrb, mrb_value self) {
   return value_as_mrb_value;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GIOChannel::line_term_len_reader */
+/* sha: e9999b0d621fd57114f637627e8c773925ca17bf50df5e2368e372ff6146e732 */
 #if BIND_GIOChannel_line_term_len_FIELD_READER
 /* get_line_term_len
  *
@@ -328,7 +375,10 @@ mrb_GLib_GIOChannel_get_line_term_len(mrb_state* mrb, mrb_value self) {
   return line_term_len;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GIOChannel::line_term_len_writer */
+/* sha: 4a68299a8cd2c8371b84abfa96053ee61f8d35dd30474fa3f6cea75d8ea5b6e0 */
 #if BIND_GIOChannel_line_term_len_FIELD_WRITER
 /* set_line_term_len
  *
@@ -349,7 +399,10 @@ mrb_GLib_GIOChannel_set_line_term_len(mrb_state* mrb, mrb_value self) {
   return value_as_mrb_value;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GIOChannel::buf_size_reader */
+/* sha: 983b07125fd00e68338291b07b7f76c810c87d52f05e4d732610918b10f4d4d5 */
 #if BIND_GIOChannel_buf_size_FIELD_READER
 /* get_buf_size
  *
@@ -366,7 +419,10 @@ mrb_GLib_GIOChannel_get_buf_size(mrb_state* mrb, mrb_value self) {
   return buf_size;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GIOChannel::buf_size_writer */
+/* sha: 9c2e2f1d61327a96d7447e455f7e538de3d64b03fab80bf8eb37904a93680457 */
 #if BIND_GIOChannel_buf_size_FIELD_WRITER
 /* set_buf_size
  *
@@ -387,7 +443,10 @@ mrb_GLib_GIOChannel_set_buf_size(mrb_state* mrb, mrb_value self) {
   return value_as_mrb_value;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GIOChannel::read_buf_reader */
+/* sha: 48585df1c49282d79757d4695100c2525b51eb42170d5e5e3332ebbdb2884bd8 */
 #if BIND_GIOChannel_read_buf_FIELD_READER
 /* get_read_buf
  *
@@ -404,7 +463,10 @@ mrb_GLib_GIOChannel_get_read_buf(mrb_state* mrb, mrb_value self) {
   return read_buf;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GIOChannel::read_buf_writer */
+/* sha: 4c08e9c56532e7c1f6a737573c3b3188390af6a5f163c7c8fe1c42d37f19346c */
 #if BIND_GIOChannel_read_buf_FIELD_WRITER
 /* set_read_buf
  *
@@ -433,7 +495,10 @@ mrb_GLib_GIOChannel_set_read_buf(mrb_state* mrb, mrb_value self) {
   return value_as_mrb_value;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GIOChannel::encoded_read_buf_reader */
+/* sha: f360892a5ea28ad2c2eff35e50564e47c6aa740d9de7476b74fb3dee639a3af2 */
 #if BIND_GIOChannel_encoded_read_buf_FIELD_READER
 /* get_encoded_read_buf
  *
@@ -450,7 +515,10 @@ mrb_GLib_GIOChannel_get_encoded_read_buf(mrb_state* mrb, mrb_value self) {
   return encoded_read_buf;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GIOChannel::encoded_read_buf_writer */
+/* sha: 15efc0771c6433797fd7b053cc36224dd36454a974f6c7d326a6e07f3ba34d39 */
 #if BIND_GIOChannel_encoded_read_buf_FIELD_WRITER
 /* set_encoded_read_buf
  *
@@ -479,7 +547,10 @@ mrb_GLib_GIOChannel_set_encoded_read_buf(mrb_state* mrb, mrb_value self) {
   return value_as_mrb_value;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GIOChannel::write_buf_reader */
+/* sha: 9bfc26fce8b8810ea92bb74bb910aa95b7c46545c53f4fd0e19e88cc572e5a6e */
 #if BIND_GIOChannel_write_buf_FIELD_READER
 /* get_write_buf
  *
@@ -496,7 +567,10 @@ mrb_GLib_GIOChannel_get_write_buf(mrb_state* mrb, mrb_value self) {
   return write_buf;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GIOChannel::write_buf_writer */
+/* sha: 08defb43b5b31b6c35a6b0b07396b4418082c574406e154220db34709544e28c */
 #if BIND_GIOChannel_write_buf_FIELD_WRITER
 /* set_write_buf
  *
@@ -525,7 +599,10 @@ mrb_GLib_GIOChannel_set_write_buf(mrb_state* mrb, mrb_value self) {
   return value_as_mrb_value;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GIOChannel::partial_write_buf_reader */
+/* sha: 53bb72dfb83cffa330d652e8d1284a6ae954fdfbbabd1e97e69bc36c9bba1a62 */
 #if BIND_GIOChannel_partial_write_buf_FIELD_READER
 /* get_partial_write_buf
  *
@@ -542,7 +619,10 @@ mrb_GLib_GIOChannel_get_partial_write_buf(mrb_state* mrb, mrb_value self) {
   return partial_write_buf;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GIOChannel::partial_write_buf_writer */
+/* sha: dc6d30d7a4a4af9818f01900f94ec546aa69a0430ee9d5e82dfd9b39bea4e8d3 */
 #if BIND_GIOChannel_partial_write_buf_FIELD_WRITER
 /* set_partial_write_buf
  *
@@ -568,7 +648,10 @@ mrb_GLib_GIOChannel_set_partial_write_buf(mrb_state* mrb, mrb_value self) {
   return value_as_mrb_value;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GIOChannel::use_buffer_reader */
+/* sha: 40db89e14bd233e639b4c1fb5eac0bc8983ca069d1e66545b20c8166ac3e6f15 */
 #if BIND_GIOChannel_use_buffer_FIELD_READER
 /* get_use_buffer
  *
@@ -585,7 +668,10 @@ mrb_GLib_GIOChannel_get_use_buffer(mrb_state* mrb, mrb_value self) {
   return use_buffer;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GIOChannel::use_buffer_writer */
+/* sha: 2a8a9d0868b9b0c1616d6fb1f0e94e9b92e94c88ac366d98e0574e6f7f3645f4 */
 #if BIND_GIOChannel_use_buffer_FIELD_WRITER
 /* set_use_buffer
  *
@@ -606,7 +692,10 @@ mrb_GLib_GIOChannel_set_use_buffer(mrb_state* mrb, mrb_value self) {
   return value_as_mrb_value;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GIOChannel::do_encode_reader */
+/* sha: 5656967fbcebb84dfdf2e754eb22e2c46d0067371deba91da495c3b4379f333d */
 #if BIND_GIOChannel_do_encode_FIELD_READER
 /* get_do_encode
  *
@@ -623,7 +712,10 @@ mrb_GLib_GIOChannel_get_do_encode(mrb_state* mrb, mrb_value self) {
   return do_encode;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GIOChannel::do_encode_writer */
+/* sha: 6748aa01b270547554f71239fabf8952cb63825229c438ef7a3a1699ed608308 */
 #if BIND_GIOChannel_do_encode_FIELD_WRITER
 /* set_do_encode
  *
@@ -644,7 +736,10 @@ mrb_GLib_GIOChannel_set_do_encode(mrb_state* mrb, mrb_value self) {
   return value_as_mrb_value;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GIOChannel::close_on_unref_reader */
+/* sha: 13bb8881e9a7fbfffa0ad7ecd345ca9b777048d1c218050654f9127dc6903280 */
 #if BIND_GIOChannel_close_on_unref_FIELD_READER
 /* get_close_on_unref
  *
@@ -661,7 +756,10 @@ mrb_GLib_GIOChannel_get_close_on_unref(mrb_state* mrb, mrb_value self) {
   return close_on_unref;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GIOChannel::close_on_unref_writer */
+/* sha: af05a7a76b53cf5d3e91887377819f323455d30c35e422d692185fce65bf3066 */
 #if BIND_GIOChannel_close_on_unref_FIELD_WRITER
 /* set_close_on_unref
  *
@@ -682,7 +780,10 @@ mrb_GLib_GIOChannel_set_close_on_unref(mrb_state* mrb, mrb_value self) {
   return value_as_mrb_value;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GIOChannel::is_readable_reader */
+/* sha: 7f99b809424d7c3e1a464f44105df4e071f7b2b07542eebf47760b434af36563 */
 #if BIND_GIOChannel_is_readable_FIELD_READER
 /* get_is_readable
  *
@@ -699,7 +800,10 @@ mrb_GLib_GIOChannel_get_is_readable(mrb_state* mrb, mrb_value self) {
   return is_readable;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GIOChannel::is_readable_writer */
+/* sha: 322fc9a9815075a69123bdc38323daa832ef9487142cb8591fbc1b838148fd7b */
 #if BIND_GIOChannel_is_readable_FIELD_WRITER
 /* set_is_readable
  *
@@ -720,7 +824,10 @@ mrb_GLib_GIOChannel_set_is_readable(mrb_state* mrb, mrb_value self) {
   return value_as_mrb_value;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GIOChannel::is_writeable_reader */
+/* sha: 09ba5ae420eadc7f7b66028a5b51a7c3dd41c1ead79597d776ec61662190c19b */
 #if BIND_GIOChannel_is_writeable_FIELD_READER
 /* get_is_writeable
  *
@@ -737,7 +844,10 @@ mrb_GLib_GIOChannel_get_is_writeable(mrb_state* mrb, mrb_value self) {
   return is_writeable;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GIOChannel::is_writeable_writer */
+/* sha: 1ad7bb22b05e2605c732a3a6a57553e87afacdfd48e16a4612583d1021b10b51 */
 #if BIND_GIOChannel_is_writeable_FIELD_WRITER
 /* set_is_writeable
  *
@@ -758,7 +868,10 @@ mrb_GLib_GIOChannel_set_is_writeable(mrb_state* mrb, mrb_value self) {
   return value_as_mrb_value;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GIOChannel::is_seekable_reader */
+/* sha: 79f290606365f5a94a6b531348974315fbc76c2c7a888959b81d4f50fc0d0da1 */
 #if BIND_GIOChannel_is_seekable_FIELD_READER
 /* get_is_seekable
  *
@@ -775,7 +888,10 @@ mrb_GLib_GIOChannel_get_is_seekable(mrb_state* mrb, mrb_value self) {
   return is_seekable;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GIOChannel::is_seekable_writer */
+/* sha: aa7edc28ef25b0f825287882507cedd9ba1a10a3168d2deb5846478357d479f8 */
 #if BIND_GIOChannel_is_seekable_FIELD_WRITER
 /* set_is_seekable
  *
@@ -796,7 +912,10 @@ mrb_GLib_GIOChannel_set_is_seekable(mrb_state* mrb, mrb_value self) {
   return value_as_mrb_value;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GIOChannel::reserved1_reader */
+/* sha: 8b1e0a5ecb3f7d57ecbb25e21e907f157d3d227409579599c24f70bb58d139dc */
 #if BIND_GIOChannel_reserved1_FIELD_READER
 /* get_reserved1
  *
@@ -813,7 +932,10 @@ mrb_GLib_GIOChannel_get_reserved1(mrb_state* mrb, mrb_value self) {
   return reserved1;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GIOChannel::reserved1_writer */
+/* sha: ba3105d326d8c01c231b18c316908773bc65aa95859ea0b497f17685f132d2b9 */
 #if BIND_GIOChannel_reserved1_FIELD_WRITER
 /* set_reserved1
  *
@@ -839,7 +961,10 @@ mrb_GLib_GIOChannel_set_reserved1(mrb_state* mrb, mrb_value self) {
   return value_as_mrb_value;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GIOChannel::reserved2_reader */
+/* sha: 5c08293ee100a4f2fbcbaef92efabd2315361773cadc297e2b1b9b87b83e726a */
 #if BIND_GIOChannel_reserved2_FIELD_READER
 /* get_reserved2
  *
@@ -856,7 +981,10 @@ mrb_GLib_GIOChannel_get_reserved2(mrb_state* mrb, mrb_value self) {
   return reserved2;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GIOChannel::reserved2_writer */
+/* sha: 4f138a8fae28c8a7a14146124be7098c0ac7a02e1620ae447a7218e5a218bcff */
 #if BIND_GIOChannel_reserved2_FIELD_WRITER
 /* set_reserved2
  *
@@ -882,6 +1010,7 @@ mrb_GLib_GIOChannel_set_reserved2(mrb_state* mrb, mrb_value self) {
   return value_as_mrb_value;
 }
 #endif
+/* MRUBY_BINDING_END */
 
 
 void mrb_GLib_GIOChannel_init(mrb_state* mrb) {

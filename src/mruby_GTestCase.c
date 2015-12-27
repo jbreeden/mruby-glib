@@ -11,6 +11,8 @@
  * Class Methods
  */
 
+/* MRUBY_BINDING: GTestCase::initialize */
+/* sha: 90d61566155163d83883ce9533b282be8b1ad59ea1a4639536b80164fa334ffd */
 #if BIND_GTestCase_INITIALIZE
 mrb_value
 mrb_GLib_GTestCase_initialize(mrb_state* mrb, mrb_value self) {
@@ -19,7 +21,10 @@ mrb_GLib_GTestCase_initialize(mrb_state* mrb, mrb_value self) {
   return self;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GTestCase::initialize */
+/* sha: 46beba37e76d685a983ada19d792f082eaf721f857ecda199b03b396afdd7f9e */
 mrb_value
 mrb_GLib_GTestCase_disown(mrb_state* mrb, mrb_value self) {
   mrb_value ruby_object;
@@ -34,7 +39,10 @@ mrb_GLib_GTestCase_disown(mrb_state* mrb, mrb_value self) {
 
   return mrb_nil_value();
 }
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GTestCase::belongs_to_ruby */
+/* sha: 7233b2d577735a8772d6c1c2b3176e65fd9c5cb5ff55325fc4ce0287d74a50a6 */
 mrb_value
 mrb_GLib_GTestCase_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
   mrb_value ruby_object;
@@ -51,6 +59,7 @@ mrb_GLib_GTestCase_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
     return mrb_false_value();
   }
 }
+/* MRUBY_BINDING_END */
 
 
 void mrb_GLib_GTestCase_init(mrb_state* mrb) {

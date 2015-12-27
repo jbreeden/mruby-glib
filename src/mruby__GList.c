@@ -11,6 +11,8 @@
  * Class Methods
  */
 
+/* MRUBY_BINDING: GList::initialize */
+/* sha: ac32aaf5da1b120ad48c30cef5e7235619486274a6776077644b0cf5c25332db */
 #if BIND_GList_INITIALIZE
 mrb_value
 mrb_GLib_GList_initialize(mrb_state* mrb, mrb_value self) {
@@ -19,7 +21,10 @@ mrb_GLib_GList_initialize(mrb_state* mrb, mrb_value self) {
   return self;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GList::initialize */
+/* sha: 0b33f729b2b1f20aeac0b3f6214795538d040e7c45fcf1547b8776913cb32d88 */
 mrb_value
 mrb_GLib_GList_disown(mrb_state* mrb, mrb_value self) {
   mrb_value ruby_object;
@@ -34,7 +39,10 @@ mrb_GLib_GList_disown(mrb_state* mrb, mrb_value self) {
 
   return mrb_nil_value();
 }
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GList::belongs_to_ruby */
+/* sha: 9f3894a190ec5ae37fc37599ce0c36466938c8359018d6e4e5969c3b0ceb85c5 */
 mrb_value
 mrb_GLib_GList_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
   mrb_value ruby_object;
@@ -51,11 +59,14 @@ mrb_GLib_GList_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
     return mrb_false_value();
   }
 }
+/* MRUBY_BINDING_END */
 
 /*
  * Fields
  */
 
+/* MRUBY_BINDING: GList::data_reader */
+/* sha: 8ca6a156f903328392f8c3c09bc6a28e67154b336c98515ee30ef97067705527 */
 #if BIND_GList_data_FIELD_READER
 /* get_data
  *
@@ -72,7 +83,10 @@ mrb_GLib_GList_get_data(mrb_state* mrb, mrb_value self) {
   return data;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GList::data_writer */
+/* sha: 73b2073d9a8230287696e2bbf3620dbaa7ee66c01bf5dc6958edabdb2627ef35 */
 #if BIND_GList_data_FIELD_WRITER
 /* set_data
  *
@@ -98,7 +112,10 @@ mrb_GLib_GList_set_data(mrb_state* mrb, mrb_value self) {
   return value_as_mrb_value;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GList::next_reader */
+/* sha: e65ad22e961bcee33a7ba7c29389f9bba5be27a532248044d10b2add6c64f3dd */
 #if BIND_GList_next_FIELD_READER
 /* get_next
  *
@@ -115,7 +132,10 @@ mrb_GLib_GList_get_next(mrb_state* mrb, mrb_value self) {
   return next;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GList::next_writer */
+/* sha: d99b31518226f76673f31d21837d686e816d9a22f29ec2d10316beb2c889cfed */
 #if BIND_GList_next_FIELD_WRITER
 /* set_next
  *
@@ -144,7 +164,10 @@ mrb_GLib_GList_set_next(mrb_state* mrb, mrb_value self) {
   return value_as_mrb_value;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GList::prev_reader */
+/* sha: fd35733bb29edfbad5c1c9a8b170cc712c0a237492aa2bc75bd1dc2c9152b2f8 */
 #if BIND_GList_prev_FIELD_READER
 /* get_prev
  *
@@ -161,7 +184,10 @@ mrb_GLib_GList_get_prev(mrb_state* mrb, mrb_value self) {
   return prev;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GList::prev_writer */
+/* sha: 647d28c2ac06f2670f6624792c349d19fa03724a93fc03de6a49a22a68e0b5d9 */
 #if BIND_GList_prev_FIELD_WRITER
 /* set_prev
  *
@@ -190,6 +216,7 @@ mrb_GLib_GList_set_prev(mrb_state* mrb, mrb_value self) {
   return value_as_mrb_value;
 }
 #endif
+/* MRUBY_BINDING_END */
 
 
 void mrb_GLib_GList_init(mrb_state* mrb) {

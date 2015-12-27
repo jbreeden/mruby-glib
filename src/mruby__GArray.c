@@ -11,6 +11,8 @@
  * Class Methods
  */
 
+/* MRUBY_BINDING: GArray::initialize */
+/* sha: 891c10e7cdd9894791cabe505182743b5776da07b521bd8e2ded1fc35f40bbad */
 #if BIND_GArray_INITIALIZE
 mrb_value
 mrb_GLib_GArray_initialize(mrb_state* mrb, mrb_value self) {
@@ -19,7 +21,10 @@ mrb_GLib_GArray_initialize(mrb_state* mrb, mrb_value self) {
   return self;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GArray::initialize */
+/* sha: 57d3b2d76e22425703fb52940eb80a55ac38d40f827e2d4e32ead1d96d8edfdc */
 mrb_value
 mrb_GLib_GArray_disown(mrb_state* mrb, mrb_value self) {
   mrb_value ruby_object;
@@ -34,7 +39,10 @@ mrb_GLib_GArray_disown(mrb_state* mrb, mrb_value self) {
 
   return mrb_nil_value();
 }
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GArray::belongs_to_ruby */
+/* sha: 152978887f099ed954a74100b01506a51176725f022f61f96c60887026babd91 */
 mrb_value
 mrb_GLib_GArray_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
   mrb_value ruby_object;
@@ -51,11 +59,14 @@ mrb_GLib_GArray_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
     return mrb_false_value();
   }
 }
+/* MRUBY_BINDING_END */
 
 /*
  * Fields
  */
 
+/* MRUBY_BINDING: GArray::data_reader */
+/* sha: 5e281fd102ba02c89e10a3b3effa6a610de85bf28442678cd881018fdda39ff1 */
 #if BIND_GArray_data_FIELD_READER
 /* get_data
  *
@@ -72,7 +83,10 @@ mrb_GLib_GArray_get_data(mrb_state* mrb, mrb_value self) {
   return data;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GArray::data_writer */
+/* sha: 71e742f366967cbf37040b9274c1782e2a8be946024a0ea11a2391712c5deb11 */
 #if BIND_GArray_data_FIELD_WRITER
 /* set_data
  *
@@ -98,7 +112,10 @@ mrb_GLib_GArray_set_data(mrb_state* mrb, mrb_value self) {
   return value_as_mrb_value;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GArray::len_reader */
+/* sha: cc7ba77dfd0e2ac712b5172d8046bc1064ed8022aa5556209e005c4383ad6d2d */
 #if BIND_GArray_len_FIELD_READER
 /* get_len
  *
@@ -115,7 +132,10 @@ mrb_GLib_GArray_get_len(mrb_state* mrb, mrb_value self) {
   return len;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GArray::len_writer */
+/* sha: ee71936b92433596e74c7f30739bdea8a4e3fd3f4b278f780bb909ec78fd7103 */
 #if BIND_GArray_len_FIELD_WRITER
 /* set_len
  *
@@ -136,6 +156,7 @@ mrb_GLib_GArray_set_len(mrb_state* mrb, mrb_value self) {
   return value_as_mrb_value;
 }
 #endif
+/* MRUBY_BINDING_END */
 
 
 void mrb_GLib_GArray_init(mrb_state* mrb) {

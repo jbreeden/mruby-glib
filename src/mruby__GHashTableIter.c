@@ -11,6 +11,8 @@
  * Class Methods
  */
 
+/* MRUBY_BINDING: GHashTableIter::initialize */
+/* sha: b27a5c7b0e9f81b9a2f276b99411e36f1889e0abbb9fd88e823abf8ac04bb748 */
 #if BIND_GHashTableIter_INITIALIZE
 mrb_value
 mrb_GLib_GHashTableIter_initialize(mrb_state* mrb, mrb_value self) {
@@ -19,7 +21,10 @@ mrb_GLib_GHashTableIter_initialize(mrb_state* mrb, mrb_value self) {
   return self;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GHashTableIter::initialize */
+/* sha: 23c878b5d2f0438b35c396faa11a96609197ba8a17d963dcb29232566c12a481 */
 mrb_value
 mrb_GLib_GHashTableIter_disown(mrb_state* mrb, mrb_value self) {
   mrb_value ruby_object;
@@ -34,7 +39,10 @@ mrb_GLib_GHashTableIter_disown(mrb_state* mrb, mrb_value self) {
 
   return mrb_nil_value();
 }
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GHashTableIter::belongs_to_ruby */
+/* sha: b8f5c335539111db64b6271889aa99ec7a7ba749cc64e1639fcce8f593edffaf */
 mrb_value
 mrb_GLib_GHashTableIter_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
   mrb_value ruby_object;
@@ -51,11 +59,14 @@ mrb_GLib_GHashTableIter_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
     return mrb_false_value();
   }
 }
+/* MRUBY_BINDING_END */
 
 /*
  * Fields
  */
 
+/* MRUBY_BINDING: GHashTableIter::dummy1_reader */
+/* sha: 10fa7a733ea95074f36ed1a03810101c7233573f5a7f0277cbf5a489b982d3de */
 #if BIND_GHashTableIter_dummy1_FIELD_READER
 /* get_dummy1
  *
@@ -72,7 +83,10 @@ mrb_GLib_GHashTableIter_get_dummy1(mrb_state* mrb, mrb_value self) {
   return dummy1;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GHashTableIter::dummy1_writer */
+/* sha: d754f9093075842ead53db7899e3fb60b9ebd9b1ac65d99827018c437a939196 */
 #if BIND_GHashTableIter_dummy1_FIELD_WRITER
 /* set_dummy1
  *
@@ -98,7 +112,10 @@ mrb_GLib_GHashTableIter_set_dummy1(mrb_state* mrb, mrb_value self) {
   return value_as_mrb_value;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GHashTableIter::dummy2_reader */
+/* sha: 8d1706f08089c937b86787abc7138a3b9332e76b90f6c3698783a880ae831c5a */
 #if BIND_GHashTableIter_dummy2_FIELD_READER
 /* get_dummy2
  *
@@ -115,7 +132,10 @@ mrb_GLib_GHashTableIter_get_dummy2(mrb_state* mrb, mrb_value self) {
   return dummy2;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GHashTableIter::dummy2_writer */
+/* sha: d8b690e9191a9db38bf18faa31608c0bbf7dc2c1ee2f6a6cfd9da16c25fef453 */
 #if BIND_GHashTableIter_dummy2_FIELD_WRITER
 /* set_dummy2
  *
@@ -141,7 +161,10 @@ mrb_GLib_GHashTableIter_set_dummy2(mrb_state* mrb, mrb_value self) {
   return value_as_mrb_value;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GHashTableIter::dummy3_reader */
+/* sha: ea3c46b70310e000a4f71f1df005637c8ce591ff7220f84a151398cc4188ecf8 */
 #if BIND_GHashTableIter_dummy3_FIELD_READER
 /* get_dummy3
  *
@@ -158,7 +181,10 @@ mrb_GLib_GHashTableIter_get_dummy3(mrb_state* mrb, mrb_value self) {
   return dummy3;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GHashTableIter::dummy3_writer */
+/* sha: edfcfbed3544c7261feebdcd6d78a7a5cf9e5c5f90db89ec7c371e8c5b515d38 */
 #if BIND_GHashTableIter_dummy3_FIELD_WRITER
 /* set_dummy3
  *
@@ -184,7 +210,10 @@ mrb_GLib_GHashTableIter_set_dummy3(mrb_state* mrb, mrb_value self) {
   return value_as_mrb_value;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GHashTableIter::dummy4_reader */
+/* sha: 516f31d70e24b3c03fd5a0d94b42b16f9afbaf45b5b858859d7c1c503e636d83 */
 #if BIND_GHashTableIter_dummy4_FIELD_READER
 /* get_dummy4
  *
@@ -201,7 +230,10 @@ mrb_GLib_GHashTableIter_get_dummy4(mrb_state* mrb, mrb_value self) {
   return dummy4;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GHashTableIter::dummy4_writer */
+/* sha: fa8a7b0bca370fecfce1f88ccc162f8982fc342352dfd38e92df38f884975da1 */
 #if BIND_GHashTableIter_dummy4_FIELD_WRITER
 /* set_dummy4
  *
@@ -222,7 +254,10 @@ mrb_GLib_GHashTableIter_set_dummy4(mrb_state* mrb, mrb_value self) {
   return value_as_mrb_value;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GHashTableIter::dummy5_reader */
+/* sha: c7a00a79b271c338409790dc2331cc127066e9584e719e36e93d31ac55b3565e */
 #if BIND_GHashTableIter_dummy5_FIELD_READER
 /* get_dummy5
  *
@@ -239,7 +274,10 @@ mrb_GLib_GHashTableIter_get_dummy5(mrb_state* mrb, mrb_value self) {
   return dummy5;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GHashTableIter::dummy5_writer */
+/* sha: 0b212b32f7bfa32383b2b8c19a646111545e381f3fe7f8ba815643864a6f9c09 */
 #if BIND_GHashTableIter_dummy5_FIELD_WRITER
 /* set_dummy5
  *
@@ -260,7 +298,10 @@ mrb_GLib_GHashTableIter_set_dummy5(mrb_state* mrb, mrb_value self) {
   return value_as_mrb_value;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GHashTableIter::dummy6_reader */
+/* sha: f9784ce3d200c19199aeb694a8f13085beffce0af81c072fc08ad283feb7959a */
 #if BIND_GHashTableIter_dummy6_FIELD_READER
 /* get_dummy6
  *
@@ -277,7 +318,10 @@ mrb_GLib_GHashTableIter_get_dummy6(mrb_state* mrb, mrb_value self) {
   return dummy6;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GHashTableIter::dummy6_writer */
+/* sha: 650c94895eb1238927eb9373219b20a22de3f3464c4d4c527f1da436676ec773 */
 #if BIND_GHashTableIter_dummy6_FIELD_WRITER
 /* set_dummy6
  *
@@ -303,6 +347,7 @@ mrb_GLib_GHashTableIter_set_dummy6(mrb_state* mrb, mrb_value self) {
   return value_as_mrb_value;
 }
 #endif
+/* MRUBY_BINDING_END */
 
 
 void mrb_GLib_GHashTableIter_init(mrb_state* mrb) {

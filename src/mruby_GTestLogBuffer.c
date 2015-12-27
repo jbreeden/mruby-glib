@@ -11,6 +11,8 @@
  * Class Methods
  */
 
+/* MRUBY_BINDING: GTestLogBuffer::initialize */
+/* sha: 0960f58f954f49dbcc14cb2039e8b4d5f2ce72f7e6031898f5328a02859c2972 */
 #if BIND_GTestLogBuffer_INITIALIZE
 mrb_value
 mrb_GLib_GTestLogBuffer_initialize(mrb_state* mrb, mrb_value self) {
@@ -19,7 +21,10 @@ mrb_GLib_GTestLogBuffer_initialize(mrb_state* mrb, mrb_value self) {
   return self;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GTestLogBuffer::initialize */
+/* sha: 3e177554253bb0a608f6b821ac5fbd15db01bb80ea3a0579accae7b0c7781260 */
 mrb_value
 mrb_GLib_GTestLogBuffer_disown(mrb_state* mrb, mrb_value self) {
   mrb_value ruby_object;
@@ -34,7 +39,10 @@ mrb_GLib_GTestLogBuffer_disown(mrb_state* mrb, mrb_value self) {
 
   return mrb_nil_value();
 }
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GTestLogBuffer::belongs_to_ruby */
+/* sha: 1b3fb49d4f64e3eb5417c4d667318d19e1bb9c44e42772f6c53ecef699e4cb07 */
 mrb_value
 mrb_GLib_GTestLogBuffer_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
   mrb_value ruby_object;
@@ -51,11 +59,14 @@ mrb_GLib_GTestLogBuffer_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
     return mrb_false_value();
   }
 }
+/* MRUBY_BINDING_END */
 
 /*
  * Fields
  */
 
+/* MRUBY_BINDING: GTestLogBuffer::data_reader */
+/* sha: 50f92e1c8ec3163b5edd6bda827c7473d5146eb26e85febed533f8a634085962 */
 #if BIND_GTestLogBuffer_data_FIELD_READER
 /* get_data
  *
@@ -72,7 +83,10 @@ mrb_GLib_GTestLogBuffer_get_data(mrb_state* mrb, mrb_value self) {
   return data;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GTestLogBuffer::data_writer */
+/* sha: 2425db4f0bd80af425814892f03f4407c00fc654e38254983ab4554521f980a2 */
 #if BIND_GTestLogBuffer_data_FIELD_WRITER
 /* set_data
  *
@@ -101,7 +115,10 @@ mrb_GLib_GTestLogBuffer_set_data(mrb_state* mrb, mrb_value self) {
   return value_as_mrb_value;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GTestLogBuffer::msgs_reader */
+/* sha: 131016d1f6f8f4a200cab01e9e6f4ac4b93a781caadcaf944d8f4bbb85a06815 */
 #if BIND_GTestLogBuffer_msgs_FIELD_READER
 /* get_msgs
  *
@@ -118,7 +135,10 @@ mrb_GLib_GTestLogBuffer_get_msgs(mrb_state* mrb, mrb_value self) {
   return msgs;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GTestLogBuffer::msgs_writer */
+/* sha: 3ebe5e69886e5a386f1172f59a07ef034c5476139be8602b61342bc499ece6ca */
 #if BIND_GTestLogBuffer_msgs_FIELD_WRITER
 /* set_msgs
  *
@@ -147,6 +167,7 @@ mrb_GLib_GTestLogBuffer_set_msgs(mrb_state* mrb, mrb_value self) {
   return value_as_mrb_value;
 }
 #endif
+/* MRUBY_BINDING_END */
 
 
 void mrb_GLib_GTestLogBuffer_init(mrb_state* mrb) {

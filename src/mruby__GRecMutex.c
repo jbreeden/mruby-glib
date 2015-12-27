@@ -11,6 +11,8 @@
  * Class Methods
  */
 
+/* MRUBY_BINDING: GRecMutex::initialize */
+/* sha: defea6bb7d9eedfc13e9125e2022e8cfac2b18d57cf193c57825d53adfcd5884 */
 #if BIND_GRecMutex_INITIALIZE
 mrb_value
 mrb_GLib_GRecMutex_initialize(mrb_state* mrb, mrb_value self) {
@@ -19,7 +21,10 @@ mrb_GLib_GRecMutex_initialize(mrb_state* mrb, mrb_value self) {
   return self;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GRecMutex::initialize */
+/* sha: fd6622d68847f5b63051bd4058d185d8d227e829af27bc076d44bc07f44b4f86 */
 mrb_value
 mrb_GLib_GRecMutex_disown(mrb_state* mrb, mrb_value self) {
   mrb_value ruby_object;
@@ -34,7 +39,10 @@ mrb_GLib_GRecMutex_disown(mrb_state* mrb, mrb_value self) {
 
   return mrb_nil_value();
 }
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GRecMutex::belongs_to_ruby */
+/* sha: 7f3c5830fcd131b8fc1dcf021b0bdb4026b78baa2acec41cfd0b701cba5888ea */
 mrb_value
 mrb_GLib_GRecMutex_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
   mrb_value ruby_object;
@@ -51,11 +59,14 @@ mrb_GLib_GRecMutex_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
     return mrb_false_value();
   }
 }
+/* MRUBY_BINDING_END */
 
 /*
  * Fields
  */
 
+/* MRUBY_BINDING: GRecMutex::p_reader */
+/* sha: f76dc6eb8dc6b81d602e38caddde9a38d2200d8c5032a1842cc196e8a6d65b02 */
 #if BIND_GRecMutex_p_FIELD_READER
 /* get_p
  *
@@ -72,7 +83,10 @@ mrb_GLib_GRecMutex_get_p(mrb_state* mrb, mrb_value self) {
   return p;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GRecMutex::p_writer */
+/* sha: 327a4515ed2a1548c8d92bd969c5ad77d74f09c41a1ad223f8bc3e118c7d6635 */
 #if BIND_GRecMutex_p_FIELD_WRITER
 /* set_p
  *
@@ -98,7 +112,10 @@ mrb_GLib_GRecMutex_set_p(mrb_state* mrb, mrb_value self) {
   return value_as_mrb_value;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GRecMutex::i_reader */
+/* sha: 11161ae5fc15d02c8f6318220c42096b1ef11700a7f4263a89cdff01e086320b */
 #if BIND_GRecMutex_i_FIELD_READER
 /* get_i
  *
@@ -115,7 +132,10 @@ mrb_GLib_GRecMutex_get_i(mrb_state* mrb, mrb_value self) {
   return i;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GRecMutex::i_writer */
+/* sha: 47f292256648d45e0f992147fb2a61cfa168b93b273c665f1357b489dc925f78 */
 #if BIND_GRecMutex_i_FIELD_WRITER
 /* set_i
  *
@@ -141,6 +161,7 @@ mrb_GLib_GRecMutex_set_i(mrb_state* mrb, mrb_value self) {
   return value_as_mrb_value;
 }
 #endif
+/* MRUBY_BINDING_END */
 
 
 void mrb_GLib_GRecMutex_init(mrb_state* mrb) {

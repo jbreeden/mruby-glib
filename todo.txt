@@ -4,23 +4,12 @@
   #define BIND_g_convert_with_fallback_FUNCTION FALSE
   #define BIND_g_convert_with_iconv_FUNCTION FALSE
   
-  #define BIND_g_dir_make_tmp_FUNCTION FALSE
-      
   #define BIND_g_iconv_FUNCTION FALSE
   #define BIND_g_iconv_close_FUNCTION FALSE
   #define BIND_g_iconv_open_FUNCTION FALSE
   
-  #define BIND_g_io_add_watch_FUNCTION FALSE
-  #define BIND_g_io_add_watch_full_FUNCTION FALSE
   #define BIND_g_io_channel_get_line_term_FUNCTION FALSE
-  #define BIND_g_io_channel_read_FUNCTION FALSE
-  #define BIND_g_io_channel_read_chars_FUNCTION FALSE
-  #define BIND_g_io_channel_read_line_FUNCTION FALSE
-  #define BIND_g_io_channel_read_line_string_FUNCTION FALSE
-  #define BIND_g_io_channel_read_to_end_FUNCTION FALSE
   #define BIND_g_io_channel_read_unichar_FUNCTION FALSE
-  #define BIND_g_io_channel_write_FUNCTION FALSE
-  #define BIND_g_io_channel_write_chars_FUNCTION FALSE
   
   #define BIND_g_mapped_file_get_contents_FUNCTION FALSE
   
@@ -41,11 +30,6 @@
   #define BIND_g_match_info_fetch_named_pos_FUNCTION FALSE
   #define BIND_g_match_info_fetch_pos_FUNCTION FALSE
   
-  #define BIND_g_mkdtemp_FUNCTION FALSE
-  #define BIND_g_mkdtemp_full_FUNCTION FALSE
-  #define BIND_g_mkstemp_FUNCTION FALSE
-  #define BIND_g_mkstemp_full_FUNCTION FALSE
-  
   #define BIND_g_mutex_clear_FUNCTION FALSE
   #define BIND_g_mutex_init_FUNCTION FALSE
   #define BIND_g_mutex_lock_FUNCTION FALSE
@@ -54,9 +38,6 @@
   #define BIND_g_mutex_trylock_FUNCTION FALSE
   #define BIND_g_mutex_unlock_FUNCTION FALSE
   
-  #define BIND_g_regex_check_replacement_FUNCTION FALSE
-  #define BIND_g_regex_escape_nul_FUNCTION FALSE
-  #define BIND_g_regex_escape_string_FUNCTION FALSE
   #define BIND_g_regex_match_FUNCTION FALSE
   #define BIND_g_regex_match_all_FUNCTION FALSE
   #define BIND_g_regex_match_all_full_FUNCTION FALSE
@@ -74,10 +55,4 @@
   #define BIND_g_scanner_scope_foreach_symbol_FUNCTION FALSE
   #define BIND_g_scanner_scope_lookup_symbol_FUNCTION FALSE
   
-  #define BIND_g_shell_parse_argv_FUNCTION FALSE
-  #define BIND_g_shell_quote_FUNCTION FALSE
-  #define BIND_g_shell_unquote_FUNCTION FALSE
-  
   #define BIND_g_strcompress_FUNCTION FALSE
-  
-  #define BIND_g_timer_elapsed_FUNCTION FALSE
