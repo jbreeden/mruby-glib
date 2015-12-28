@@ -1436,7 +1436,7 @@ static void free__GIOChannel(mrb_state* mrb, void* ptr) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)ptr;
   if (box->belongs_to_ruby) {
     if (box->obj != NULL) {
-      free(box->obj);
+      g_io_channel_unref(box->obj);
       box->obj = NULL;
     }
   }
@@ -1958,7 +1958,7 @@ static void free__GMatchInfo(mrb_state* mrb, void* ptr) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)ptr;
   if (box->belongs_to_ruby) {
     if (box->obj != NULL) {
-      free(box->obj);
+      g_match_info_unref(box->obj);
       box->obj = NULL;
     }
   }
@@ -2828,7 +2828,7 @@ static void free__GRegex(mrb_state* mrb, void* ptr) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)ptr;
   if (box->belongs_to_ruby) {
     if (box->obj != NULL) {
-      free(box->obj);
+      g_regex_unref(box->obj);
       box->obj = NULL;
     }
   }

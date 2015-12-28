@@ -1182,7 +1182,7 @@ CTypes.set_fn_param_type('g_file_open_tmp', 'name_used', CTypes['out:cstring'])
 
 ## gchar ** g_listenv()
 # Return value
-CTypes.set_fn_return_type('g_listenv', CTypes['nullterminated:cstring:array'])
+CTypes.set_fn_return_type('g_listenv', CTypes['nullterminated:gstring:array'])
 
 # ## gchar * g_locale_from_utf8(const char * utf8string, long len, unsigned long * bytes_read, unsigned long * bytes_written, struct _GError ** error)
 # # Param: bytes_read
@@ -1310,21 +1310,21 @@ CTypes.set_fn_return_type('g_listenv', CTypes['nullterminated:cstring:array'])
 # # Param: user_data
 # CTypes.set_fn_param_type('g_markup_parse_context_push', 'user_data', CTypes['???'])
 
-# ## gchar ** g_match_info_fetch_all(const struct _GMatchInfo * match_info)
-# # Return value
-# CTypes.set_fn_return_type('g_match_info_fetch_all', CTypes['???'])
+## gchar ** g_match_info_fetch_all(const struct _GMatchInfo * match_info)
+# Return value
+CTypes.set_fn_return_type('g_match_info_fetch_all', CTypes['nullterminated:gstring:array'])
 
-# ## gboolean g_match_info_fetch_named_pos(const struct _GMatchInfo * match_info, const char * name, int * start_pos, int * end_pos)
-# # Param: start_pos
-# CTypes.set_fn_param_type('g_match_info_fetch_named_pos', 'start_pos', CTypes['???'])
-# # Param: end_pos
-# CTypes.set_fn_param_type('g_match_info_fetch_named_pos', 'end_pos', CTypes['???'])
+## gboolean g_match_info_fetch_named_pos(const struct _GMatchInfo * match_info, const char * name, int * start_pos, int * end_pos)
+# Param: start_pos
+CTypes.set_fn_param_type('g_match_info_fetch_named_pos', 'start_pos', CTypes['out:int *'])
+# Param: end_pos
+CTypes.set_fn_param_type('g_match_info_fetch_named_pos', 'end_pos', CTypes['out:int *'])
 
-# ## gboolean g_match_info_fetch_pos(const struct _GMatchInfo * match_info, int match_num, int * start_pos, int * end_pos)
-# # Param: start_pos
-# CTypes.set_fn_param_type('g_match_info_fetch_pos', 'start_pos', CTypes['???'])
-# # Param: end_pos
-# CTypes.set_fn_param_type('g_match_info_fetch_pos', 'end_pos', CTypes['???'])
+## gboolean g_match_info_fetch_pos(const struct _GMatchInfo * match_info, int match_num, int * start_pos, int * end_pos)
+# Param: start_pos
+CTypes.set_fn_param_type('g_match_info_fetch_pos', 'start_pos', CTypes['out:int *'])
+# Param: end_pos
+CTypes.set_fn_param_type('g_match_info_fetch_pos', 'end_pos', CTypes['out:int *'])
 
 # ## gpointer g_memdup(const void * mem, unsigned int byte_size)
 # # Return value
@@ -1690,17 +1690,17 @@ CTypes.set_fn_return_type('g_listenv', CTypes['nullterminated:cstring:array'])
 # # Param: user_data
 # CTypes.set_fn_param_type('g_regex_replace_eval', 'user_data', CTypes['???'])
 
-# ## gchar ** g_regex_split(const struct _GRegex * regex, const char * string, GRegexMatchFlags match_options)
-# # Return value
-# CTypes.set_fn_return_type('g_regex_split', CTypes['???'])
+## gchar ** g_regex_split(const struct _GRegex * regex, const char * string, GRegexMatchFlags match_options)
+# Return value
+CTypes.set_fn_return_type('g_regex_split', CTypes['nullterminated:gstring:array'])
 
-# ## gchar ** g_regex_split_full(const struct _GRegex * regex, const char * string, long string_len, int start_position, GRegexMatchFlags match_options, int max_tokens, struct _GError ** error)
-# # Return value
-# CTypes.set_fn_return_type('g_regex_split_full', CTypes['???'])
+## gchar ** g_regex_split_full(const struct _GRegex * regex, const char * string, long string_len, int start_position, GRegexMatchFlags match_options, int max_tokens, struct _GError ** error)
+# Return value
+CTypes.set_fn_return_type('g_regex_split_full', CTypes['nullterminated:gstring:array'])
 
-# ## gchar ** g_regex_split_simple(const char * pattern, const char * string, GRegexCompileFlags compile_options, GRegexMatchFlags match_options)
-# # Return value
-# CTypes.set_fn_return_type('g_regex_split_simple', CTypes['???'])
+## gchar ** g_regex_split_simple(const char * pattern, const char * string, GRegexCompileFlags compile_options, GRegexMatchFlags match_options)
+# Return value
+CTypes.set_fn_return_type('g_regex_split_simple', CTypes['nullterminated:gstring:array'])
 
 # ## GTokenValue g_scanner_cur_value(struct _GScanner * scanner)
 # # Return value

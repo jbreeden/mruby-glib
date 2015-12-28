@@ -1,11 +1,13 @@
-MRUBY_GLIB_GEM_DIR = File.dirname(__FILE__)
+MRUBY_GLIB_GEM_DIR = File.expand_path(File.dirname(__FILE__))
 
 MRuby::Gem::Specification.new('mruby-glib') do |spec|
   spec.author = 'Jared Breeden'
   spec.license = 'MIT'
   spec.summary = 'Bindings for GLib'
   
-  spec.rbfiles = Dir["#{MRUBY_GLIB_GEM_DIR}/mrblib/**/*.rb"]
-    .map { |f| File.expand_path(f) }
+  spec.rbfiles = %w[
+    io.rb
+  ].map { |f| "#{MRUBY_GLIB_GEM_DIR}/mrblib/#{f}" }
+    .concat(Dir["#{MRUBY_GLIB_GEM_DIR}/mrblib/**/*.rb"])
     .uniq
 end

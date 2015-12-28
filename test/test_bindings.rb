@@ -69,23 +69,23 @@ end
 
 test 'g_io_channel_read_line' do
   io, err = GLib.g_io_channel_new_file("#{$sandbox}/two_line_file.txt", "r")
-  status, text, len, eol, err = GLib.g_io_channel_read_line(io)
+  status, text, eol, err = GLib.g_io_channel_read_line(io)
   raise "First line didn't match" unless text.start_with? "This file has two lines."
-  status, text, len, eol, err = GLib.g_io_channel_read_line(io)
+  status, text, eol, err = GLib.g_io_channel_read_line(io)
   GLib.g_io_channel_shutdown(io, true)
   raise "Second line didn't match" unless text.start_with? "This is the second line."
 end
 
 test 'g_io_channel_read_chars' do
   io, err = GLib.g_io_channel_new_file("#{$sandbox}/two_line_file.txt", "r")
-  status, text, len, err = GLib.g_io_channel_read_chars(io, "This file has two lines.".length)
+  status, text, err = GLib.g_io_channel_read_chars(io, "This file has two lines.".length)
   GLib.g_io_channel_shutdown(io, true)
   text == "This file has two lines."
 end
 
 test 'g_io_channel_read_to_end' do
   io, err = GLib.g_io_channel_new_file("#{$sandbox}/two_line_file.txt", "r")
-  status, text, len, err = GLib.g_io_channel_read_to_end(io)
+  status, text, err = GLib.g_io_channel_read_to_end(io)
   GLib.g_io_channel_shutdown(io, true)
   text.include?("This file has two lines.") && text.include?("This is the second line.")
 end
@@ -104,12 +104,17 @@ test 'g_io_channel_write' do
   bytes_written == 'testing'.length && err.nil?
 end
 
+test 'g_listenv' do
+  GLib.g_listenv.include? 'PATH'
+end
+
 test 'g_mkdtemp w/ invalid template' do
   GLib.g_mkdtemp('invalid_template').nil?
 end
 
 test 'g_mkdtemp w/ valid template' do
   result = GLib.g_mkdtemp('dir_XXXXXX')
+  GLib.g_spawn_command_line_sync("rm -r #{result}")
   !result.nil? && result.include?('dir_')
 end
 
@@ -134,4 +139,8 @@ end
 
 test 'g_regex_escape_string' do
   GLib.g_regex_escape_string("test.*") == "test\\.\\*"
+end
+
+test 'g_regex_split_simple' do
+  GLib.g_regex_split_simple('[.,]', 'a,b.c', 0, 0) == ['a', 'b', 'c']
 end

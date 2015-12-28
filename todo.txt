@@ -1,5 +1,3 @@
-  #define BIND_g_atexit_FUNCTION FALSE
-  
   #define BIND_g_convert_FUNCTION FALSE
   #define BIND_g_convert_with_fallback_FUNCTION FALSE
   #define BIND_g_convert_with_iconv_FUNCTION FALSE
@@ -8,7 +6,6 @@
   #define BIND_g_iconv_close_FUNCTION FALSE
   #define BIND_g_iconv_open_FUNCTION FALSE
   
-  #define BIND_g_io_channel_get_line_term_FUNCTION FALSE
   #define BIND_g_io_channel_read_unichar_FUNCTION FALSE
   
   #define BIND_g_mapped_file_get_contents_FUNCTION FALSE
@@ -23,13 +20,6 @@
   #define BIND_g_markup_printf_escaped_FUNCTION FALSE
   #define BIND_g_markup_vprintf_escaped_FUNCTION FALSE
   
-  #define BIND_g_match_info_expand_references_FUNCTION FALSE
-  #define BIND_g_match_info_fetch_FUNCTION FALSE
-  #define BIND_g_match_info_fetch_all_FUNCTION FALSE
-  #define BIND_g_match_info_fetch_named_FUNCTION FALSE
-  #define BIND_g_match_info_fetch_named_pos_FUNCTION FALSE
-  #define BIND_g_match_info_fetch_pos_FUNCTION FALSE
-  
   #define BIND_g_mutex_clear_FUNCTION FALSE
   #define BIND_g_mutex_init_FUNCTION FALSE
   #define BIND_g_mutex_lock_FUNCTION FALSE
@@ -38,21 +28,8 @@
   #define BIND_g_mutex_trylock_FUNCTION FALSE
   #define BIND_g_mutex_unlock_FUNCTION FALSE
   
-  #define BIND_g_regex_match_FUNCTION FALSE
-  #define BIND_g_regex_match_all_FUNCTION FALSE
-  #define BIND_g_regex_match_all_full_FUNCTION FALSE
-  #define BIND_g_regex_match_full_FUNCTION FALSE
-  #define BIND_g_regex_replace_FUNCTION FALSE
-  #define BIND_g_regex_replace_eval_FUNCTION FALSE
-  #define BIND_g_regex_replace_literal_FUNCTION FALSE
-  #define BIND_g_regex_split_FUNCTION FALSE
-  #define BIND_g_regex_split_full_FUNCTION FALSE
-  #define BIND_g_regex_split_simple_FUNCTION FALSE
-  
   #define BIND_g_scanner_cur_value_FUNCTION FALSE
   #define BIND_g_scanner_lookup_symbol_FUNCTION FALSE
   #define BIND_g_scanner_scope_add_symbol_FUNCTION FALSE
   #define BIND_g_scanner_scope_foreach_symbol_FUNCTION FALSE
   #define BIND_g_scanner_scope_lookup_symbol_FUNCTION FALSE
-  
-  #define BIND_g_strcompress_FUNCTION FALSE
