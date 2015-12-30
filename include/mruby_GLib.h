@@ -28,6 +28,8 @@
 #include "glib/gi18n.h"
 #include "glib/gprintf.h"
 #include "glib/gstdio.h"
+#include "gio/gio.h"
+#include "gio/giotypes.h"
 
 
 #include "mruby_GLib_functions.h"
@@ -55,6 +57,10 @@
 #define GDebugKey_class(mrb) mrb_class_get_under(mrb, GLib_module(mrb), "GDebugKey")
 #define GDir_class(mrb) mrb_class_get_under(mrb, GLib_module(mrb), "GDir")
 #define GError_class(mrb) mrb_class_get_under(mrb, GLib_module(mrb), "GError")
+#define GFile_class(mrb) mrb_class_get_under(mrb, GLib_module(mrb), "GFile")
+#define GFileIface_class(mrb) mrb_class_get_under(mrb, GLib_module(mrb), "GFileIface")
+#define GFileInfo_class(mrb) mrb_class_get_under(mrb, GLib_module(mrb), "GFileInfo")
+#define GFileInfoClass_class(mrb) mrb_class_get_under(mrb, GLib_module(mrb), "GFileInfoClass")
 #define GHashTable_class(mrb) mrb_class_get_under(mrb, GLib_module(mrb), "GHashTable")
 #define GHashTableIter_class(mrb) mrb_class_get_under(mrb, GLib_module(mrb), "GHashTableIter")
 #define GHmac_class(mrb) mrb_class_get_under(mrb, GLib_module(mrb), "GHmac")
@@ -161,6 +167,18 @@ void mrb_GLib_GDir_init(mrb_state* mrb);
 #endif
 #if BIND_GError_TYPE
 void mrb_GLib_GError_init(mrb_state* mrb);
+#endif
+#if BIND_GFile_TYPE
+void mrb_GLib_GFile_init(mrb_state* mrb);
+#endif
+#if BIND_GFileIface_TYPE
+void mrb_GLib_GFileIface_init(mrb_state* mrb);
+#endif
+#if BIND_GFileInfo_TYPE
+void mrb_GLib_GFileInfo_init(mrb_state* mrb);
+#endif
+#if BIND_GFileInfoClass_TYPE
+void mrb_GLib_GFileInfoClass_init(mrb_state* mrb);
 #endif
 #if BIND_GHashTable_TYPE
 void mrb_GLib_GHashTable_init(mrb_state* mrb);

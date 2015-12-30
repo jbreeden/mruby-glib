@@ -69,3 +69,6 @@ glib/gversionmacros.h
 glib/gprintf.h
 glib/gi18n.h
 glib/gstdio.h
+gio/gioenums.h
+gio/gfile.h
+gio/gfileinfo.h

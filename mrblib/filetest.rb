@@ -1,4 +1,12 @@
 module FileTest
+  module Private
+    def self.info_with(path, attribute)
+      file = GLib.g_file_new_for_path(path)
+      info, err = GLib.g_file_query_info(file, attribute, 0)
+      GLib.raise_error(err)
+      info
+    end
+  end
 
   # def blockdev?(path)
   #   FileTest.is_type?(path, APR::AprFiletypeE::APR_BLK)
@@ -53,11 +61,11 @@ module FileTest
   #   FileTest.is_type?(path, APR::AprFiletypeE::APR_PIPE)
   # end
 
-  # def readable?(path)
-  #   stat = File::Stat.new(path) rescue nil
-  #   stat.readable?
-  # end
-  #
+  def readable?(path)
+    info = Private.info_with(path, GLib::G_FILE_ATTRIBUTE_ACCESS_CAN_READ)
+    GLib.g_file_info_get_attribute_boolean(info, GLib::G_FILE_ATTRIBUTE_ACCESS_CAN_READ)
+  end
+  
   # def readable_real?(path)
   #   stat = File::Stat.new(path) rescue nil
   #   stat.readable_real?
@@ -74,8 +82,8 @@ module FileTest
   # end
 
   def size(path)
-    stat = File::Stat.new(path)
-    stat.size
+    info = Private.info_with(path, GLib::G_FILE_ATTRIBUTE_STANDARD_SIZE)
+    GLib.g_file_info_get_size(info)
   end
   alias size? size
   module_function :size
@@ -104,20 +112,19 @@ module FileTest
   #   stat = File::Stat.new(path) rescue nil
   #   stat.world_writable?
   # end
-  #
-  # def writable?(path)
-  #   stat = File::Stat.new(path) rescue nil
-  #   stat.writable?
-  # end
-  #
+  
+  def writable?(path)
+    info = Private.info_with(path, GLib::G_FILE_ATTRIBUTE_ACCESS_CAN_WRITE)
+    GLib.g_file_info_get_attribute_boolean(info, GLib::G_FILE_ATTRIBUTE_ACCESS_CAN_WRITE)
+  end
+  
   # def writable_real?(path)
   #   stat = File::Stat.new(path) rescue nil
   #   stat.writable_real?
   # end
 
   def zero?(path)
-    stat = File::Stat.new(path) rescue nil
-    !stat.nil? && stat.zero?
+    size(path) == 0
   end
 end
 

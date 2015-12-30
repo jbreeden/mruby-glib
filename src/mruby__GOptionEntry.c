@@ -86,7 +86,7 @@ mrb_GLib_GOptionEntry_get_long_name(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: GOptionEntry::long_name_writer */
-/* sha: c95896b5df9c3fbd49c9e0f834c31417318c4d4028f0bb2318b3f7325fa15ed5 */
+/* sha: de2cd45914c6eeb872d0c6703da1868eae0f47ad79343fe3831668a3c4bc2059 */
 #if BIND_GOptionEntry_long_name_FIELD_WRITER
 /* set_long_name
  *
@@ -98,7 +98,7 @@ mrb_GLib_GOptionEntry_set_long_name(mrb_state* mrb, mrb_value self) {
   struct _GOptionEntry * native_self = mruby_unbox__GOptionEntry(self);
   char * native_long_name = NULL;
 
-  mrb_get_args(mrb, "z!", &native_long_name);
+  mrb_get_args(mrb, "z", &native_long_name);
 
   native_self->long_name = native_long_name;
   
@@ -311,7 +311,7 @@ mrb_GLib_GOptionEntry_get_description(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: GOptionEntry::description_writer */
-/* sha: 6542cba23a9ad53254de9d6080c79db3e208be20ae5ced334e91c310e6656ee6 */
+/* sha: d42c0bdadb73f293506a198872f32562489402d5d4085e948b6d162d4e2591d9 */
 #if BIND_GOptionEntry_description_FIELD_WRITER
 /* set_description
  *
@@ -323,7 +323,7 @@ mrb_GLib_GOptionEntry_set_description(mrb_state* mrb, mrb_value self) {
   struct _GOptionEntry * native_self = mruby_unbox__GOptionEntry(self);
   char * native_description = NULL;
 
-  mrb_get_args(mrb, "z!", &native_description);
+  mrb_get_args(mrb, "z", &native_description);
 
   native_self->description = native_description;
   
@@ -355,7 +355,7 @@ mrb_GLib_GOptionEntry_get_arg_description(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: GOptionEntry::arg_description_writer */
-/* sha: 540963cc577388b3f185d663a6da51cc546b7b7974dddd2ac4390b829c9e9144 */
+/* sha: 5bf29e4045dc05072c3304e14c3e18d6caa1b9b023adeb76a32a5556e88ce84f */
 #if BIND_GOptionEntry_arg_description_FIELD_WRITER
 /* set_arg_description
  *
@@ -367,7 +367,7 @@ mrb_GLib_GOptionEntry_set_arg_description(mrb_state* mrb, mrb_value self) {
   struct _GOptionEntry * native_self = mruby_unbox__GOptionEntry(self);
   char * native_arg_description = NULL;
 
-  mrb_get_args(mrb, "z!", &native_arg_description);
+  mrb_get_args(mrb, "z", &native_arg_description);
 
   native_self->arg_description = native_arg_description;
   

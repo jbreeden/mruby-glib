@@ -7,11 +7,35 @@ namespace :bindings do
     # to determine this at runtime.
     rm declarations if File.exists?(declarations)
     ENV['PKG_CONFIG_PATH'] = "/usr/local/opt/glib2/lib/pkgconfig/"
+    cflags = `pkg-config glib-2.0 --cflags`.sub("\n", '')
+    
     cd "#{GLIB_HOME}/include/glib-2.0" do
-      cflags = `pkg-config glib-2.0 --cflags`.sub("\n", '')
-      sh "cat #{headers} | xargs -n 1 clang2json #{cflags} | grep -v _g_utf8_make_valid >> #{declarations}"
-      sh "clang2json #{cflags} #{GLIB_HOME}/lib/glib-2.0/include/glibconfig.h | grep -v _g_utf8_make_valid >> #{declarations}"
+      sh (<<EOS).split("\n").join(' ')
+cat #{headers}
+| xargs -n 1 clang2json #{cflags}
+| egrep -v "(FunctionDecl|ParmDecl).*_g_utf8_make_valid"
+| egrep -v "(FunctionDecl|ParmDecl).*variant"
+| egrep -v "(FunctionDecl|ParmDecl).*g_test"
+| egrep -v "(FunctionDecl|ParmDecl).*g_string"
+| egrep -v "(FunctionDecl|ParmDecl).*g_tree"
+| egrep -v "(FunctionDecl|ParmDecl).*g_array"
+| egrep -v "(FunctionDecl|ParmDecl).*g_byte_array"
+| egrep -v "(FunctionDecl|ParmDecl).*g_queue"
+| egrep -v "(FunctionDecl|ParmDecl).*g_sequence"
+| egrep -v "(FunctionDecl|ParmDecl).*g_ptr_array"
+| egrep -v "(FunctionDecl|ParmDecl).*g_node"
+| egrep -v "(FunctionDecl|ParmDecl).*g_list_"
+| egrep -v "(FunctionDecl|ParmDecl).*g_hook_"
+| egrep -v "(FunctionDecl|ParmDecl).*g_hash_table_"
+| egrep -v "(FunctionDecl|ParmDecl).*g_atomic_"
+| egrep -v "(FunctionDecl|ParmDecl).*g_slist_"
+| egrep -v "(FunctionDecl|ParmDecl).*async"
+| egrep -v "(FunctionDecl|ParmDecl).*finish"
+>> #{declarations}
+EOS
     end
+    sh "clang2json #{cflags} #{GLIB_HOME}/lib/glib-2.0/include/glibconfig.h >> #{declarations}"
+    sh "clang2json #{cflags} mruby-bindings.in/dummy_decls.h >> #{declarations}"
   end
 
   desc 'Generate bindings'
@@ -49,6 +73,11 @@ namespace :bindings do
     task :mrblib do
       sh "mrbind merge -from bindings -to . mrblib"
     end
+  end
+  
+  desc 'Regenerate functions header'
+  task :'enable-functions' do
+    sh 'mrbind enable-functions -m GLib -g mruby-glib -o .'
   end
   
   task :fn_count do

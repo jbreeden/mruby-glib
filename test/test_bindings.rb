@@ -14,6 +14,10 @@ def test(title, &block)
   end
 end
 
+def cruby(script)
+  GLib.g_spawn_command_line_sync("ruby -e '#{script}'")
+end
+
 test "g_base64_encode" do
   GLib.g_base64_encode("test", 4) == "dGVzdA=="
 end
@@ -143,4 +147,35 @@ end
 
 test 'g_regex_split_simple' do
   GLib.g_regex_split_simple('[.,]', 'a,b.c', 0, 0) == ['a', 'b', 'c']
+end
+
+test 'g_file_copy' do
+  cruby('File.delete("copied.txt") if File.exists? "copied.txt"')
+  source = GLib.g_file_new_for_path("#{$sandbox}/two_line_file.txt")
+  dest = GLib.g_file_new_for_path("copied.txt")
+  GLib.g_file_copy(source, dest, 0)
+  status, contents, err = GLib.g_file_get_contents('copied.txt')
+  passed = contents.include? 'This file has two lines.'
+  cruby('File.delete("copied.txt") if File.exists? "copied.txt"')
+  passed
+end
+
+test 'g_file_delete' do
+  cruby('File.open("delete_me.txt", "w") {}')
+  raise 'Failed to create file' unless GLib.g_file_test('delete_me.txt', GLib::GFileTest::G_FILE_TEST_EXISTS)
+  file = GLib.g_file_new_for_path('delete_me.txt')
+  GLib.g_file_delete(file)
+  !GLib.g_file_test('delete_me.txt', GLib::GFileTest::G_FILE_TEST_EXISTS)
+end
+
+test 'g_file_equal' do
+  # Tests that the GFiles refer to the same file, not that the files are identical
+  f1 = GLib.g_file_new_for_path("#{$sandbox}/two_line_file.txt")
+  f2 = GLib.g_file_new_for_path("#{$sandbox}/two_line_file.txt")
+  GLib.g_file_equal(f1, f2)
+end
+
+test 'g_file_get_basename' do
+  file = GLib.g_file_new_for_path('./path/to/file/../file.rb')
+  'file.rb' == GLib.g_file_get_basename(file)
 end

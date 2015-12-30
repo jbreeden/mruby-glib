@@ -257,6 +257,74 @@ struct _GError *
 mruby_unbox__GError(mrb_value boxed);
 #endif
 
+#if BIND_GFile_TYPE
+mrb_value
+mruby_box__GFile(mrb_state* mrb, struct _GFile *unboxed);
+
+mrb_value
+mruby_giftwrap__GFile(mrb_state* mrb, struct _GFile *unboxed);
+
+void
+mruby_set__GFile_data_ptr(mrb_value obj, struct _GFile *unboxed);
+
+void
+mruby_gift__GFile_data_ptr(mrb_value obj, struct _GFile *unboxed);
+
+struct _GFile *
+mruby_unbox__GFile(mrb_value boxed);
+#endif
+
+#if BIND_GFileIface_TYPE
+mrb_value
+mruby_box__GFileIface(mrb_state* mrb, struct _GFileIface *unboxed);
+
+mrb_value
+mruby_giftwrap__GFileIface(mrb_state* mrb, struct _GFileIface *unboxed);
+
+void
+mruby_set__GFileIface_data_ptr(mrb_value obj, struct _GFileIface *unboxed);
+
+void
+mruby_gift__GFileIface_data_ptr(mrb_value obj, struct _GFileIface *unboxed);
+
+struct _GFileIface *
+mruby_unbox__GFileIface(mrb_value boxed);
+#endif
+
+#if BIND_GFileInfo_TYPE
+mrb_value
+mruby_box__GFileInfo(mrb_state* mrb, struct _GFileInfo *unboxed);
+
+mrb_value
+mruby_giftwrap__GFileInfo(mrb_state* mrb, struct _GFileInfo *unboxed);
+
+void
+mruby_set__GFileInfo_data_ptr(mrb_value obj, struct _GFileInfo *unboxed);
+
+void
+mruby_gift__GFileInfo_data_ptr(mrb_value obj, struct _GFileInfo *unboxed);
+
+struct _GFileInfo *
+mruby_unbox__GFileInfo(mrb_value boxed);
+#endif
+
+#if BIND_GFileInfoClass_TYPE
+mrb_value
+mruby_box__GFileInfoClass(mrb_state* mrb, struct _GFileInfoClass *unboxed);
+
+mrb_value
+mruby_giftwrap__GFileInfoClass(mrb_state* mrb, struct _GFileInfoClass *unboxed);
+
+void
+mruby_set__GFileInfoClass_data_ptr(mrb_value obj, struct _GFileInfoClass *unboxed);
+
+void
+mruby_gift__GFileInfoClass_data_ptr(mrb_value obj, struct _GFileInfoClass *unboxed);
+
+struct _GFileInfoClass *
+mruby_unbox__GFileInfoClass(mrb_value boxed);
+#endif
+
 #if BIND_GHashTable_TYPE
 mrb_value
 mruby_box__GHashTable(mrb_state* mrb, struct _GHashTable *unboxed);

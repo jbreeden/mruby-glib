@@ -46,11 +46,23 @@ class File < IO
       f
     end
   end
+  
+  def self.absolute_path(path)
+    GLib.g_file_get_path(GLib.g_file_new_for_path(path))
+  end
+  class << self
+    alias expand_path absolute_path
+  end
 
   # def self.atime(path)
   #   stat = File::Stat.new(path)
   #   stat.atime
   # end
+  
+  def self.basename(file_name)
+    file = GLib.g_file_new_for_path(file_name)
+    GLib.g_file_get_basename(file)
+  end
 
   # def self.ctime(path)
   #   stat = File::Stat.new(path)
@@ -86,6 +98,10 @@ class File < IO
       result = f.read
     end
     result
+  end
+  
+  def self.join(*parts)
+    GLib.g_build_filenamev(parts)
   end
 
   # #<
@@ -162,12 +178,14 @@ class File < IO
     if length.nil?
       loop {
         status, text, err = GLib.g_io_channel_read_chars(@io, 100)
+        _set_status(status)
         GLib.raise_error(err)
         break if text.nil? || text.length == 0
         read += text
       }
     elsif length > 0
       status, text, err = GLib.g_io_channel_read_chars(@io, length)
+      _set_status(status)
       GLib.raise_error(err)
       read += text unless text.nil?
     end
@@ -188,27 +206,16 @@ class File < IO
     assert_can_write
     as_str = str.to_s
     status, bytes_written, err = GLib.g_io_channel_write_chars(@io, as_str)
+    _set_status(status)
     GLib.raise_error(err)
     bytes_written
   end
   
-  # def eof?
-  #   assert_can_read
-  #   is_eof = (APR::APR_EOF == APR.apr_file_eof(@io))
-  #   unless is_eof
-  #     # Have to cheat since CRuby returns EOF immediately for an empty file,
-  #     # while APR only returns EOF after you try to read past it.
-  #     # So, we can getc -> check -> ungetc to mimick CRuby
-  #     err, char = APR.apr_file_getc(@io)
-  #     APR.raise_apr_errno(err, ignore: APR::APR_EOF)
-  #     is_eof = (APR::APR_EOF == err)
-  #     unless char.nil?
-  #       APR.apr_file_ungetc(char, @io)
-  #     end
-  #   end
-  #   is_eof
-  # end
-  # alias eof eof?
+  def eof?
+    assert_can_read
+    @eof
+  end
+  alias eof eof?
   
   # IO Default Overrides
   # --------------------
@@ -216,6 +223,7 @@ class File < IO
   def getc
     assert_can_read
     status, text, len, err = GLib.g_io_channel_read_chars(@io, 1)
+    _set_status(status)
     GLib.raise_error(err)
     if status == GLib::GIOStatus::G_IO_STATUS_EOF
       nil
@@ -227,6 +235,7 @@ class File < IO
   def getbyte
     assert_can_read
     status, text, len, err = GLib.g_io_channel_read_chars(@io, 1)
+    _set_status(status)
     GLib.raise_error(err)
     if status == GLib::GIOStatus::G_IO_STATUS_EOF
       nil
@@ -254,7 +263,14 @@ class File < IO
   def seek(amount, whence=IO::SEEK_SET)
     whence = IO::Util.ruby_seek_to_glib(whence)
     status, err = GLib.g_io_channel_seek_position(@io, amount, whence)
+    _set_status(status)
     GLib.raise_error(err)
     # TODO: Should return current position
+  end
+  
+  def _set_status(status)
+    if status == GLib::GIOStatus::G_IO_STATUS_EOF
+      @eof = true
+    end
   end
 end

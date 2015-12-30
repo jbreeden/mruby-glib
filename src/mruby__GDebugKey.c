@@ -86,7 +86,7 @@ mrb_GLib_GDebugKey_get_key(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: GDebugKey::key_writer */
-/* sha: b8d124e0bb755e43dd25b87a99f27de4d509593f085d36043503b1fca0a9265e */
+/* sha: 2b8352c61d3ddca4b5b515ccb7b158a74622c785d4e1be2f7c1103d50cb29751 */
 #if BIND_GDebugKey_key_FIELD_WRITER
 /* set_key
  *
@@ -98,7 +98,7 @@ mrb_GLib_GDebugKey_set_key(mrb_state* mrb, mrb_value self) {
   struct _GDebugKey * native_self = mruby_unbox__GDebugKey(self);
   char * native_key = NULL;
 
-  mrb_get_args(mrb, "z!", &native_key);
+  mrb_get_args(mrb, "z", &native_key);
 
   native_self->key = native_key;
   

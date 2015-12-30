@@ -223,7 +223,7 @@ mrb_GLib_GScanner_get_input_name(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: GScanner::input_name_writer */
-/* sha: 2ac0aea151e7125bb629fff40436f7d7788aa496a769a521fe852f5d4857964c */
+/* sha: 179f3c54de90d75fbeecdbbfb1643bfbee25a587bf1802ad902fa40301be795e */
 #if BIND_GScanner_input_name_FIELD_WRITER
 /* set_input_name
  *
@@ -235,7 +235,7 @@ mrb_GLib_GScanner_set_input_name(mrb_state* mrb, mrb_value self) {
   struct _GScanner * native_self = mruby_unbox__GScanner(self);
   char * native_input_name = NULL;
 
-  mrb_get_args(mrb, "z!", &native_input_name);
+  mrb_get_args(mrb, "z", &native_input_name);
 
   native_self->input_name = native_input_name;
   
@@ -829,7 +829,7 @@ mrb_GLib_GScanner_get_text(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: GScanner::text_writer */
-/* sha: a348a0857944166131f2fe642df8ddbb81e6540d9d47beebfba81cfed8c34261 */
+/* sha: c378aa1cba060b00b4dcd1233f478d650e5f7839118e8d0c2f7bf64931fec485 */
 #if BIND_GScanner_text_FIELD_WRITER
 /* set_text
  *
@@ -841,7 +841,7 @@ mrb_GLib_GScanner_set_text(mrb_state* mrb, mrb_value self) {
   struct _GScanner * native_self = mruby_unbox__GScanner(self);
   char * native_text = NULL;
 
-  mrb_get_args(mrb, "z!", &native_text);
+  mrb_get_args(mrb, "z", &native_text);
 
   native_self->text = native_text;
   
@@ -873,7 +873,7 @@ mrb_GLib_GScanner_get_text_end(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: GScanner::text_end_writer */
-/* sha: 89a15691e25cd47e1d8c2aff1980367f9c1ffaa0bc589d58b96dfd8fc85c1152 */
+/* sha: 82a921db8f6b1c9c11decfa9d450de46fe6a569f1929684a3f014527513f9ee3 */
 #if BIND_GScanner_text_end_FIELD_WRITER
 /* set_text_end
  *
@@ -885,7 +885,7 @@ mrb_GLib_GScanner_set_text_end(mrb_state* mrb, mrb_value self) {
   struct _GScanner * native_self = mruby_unbox__GScanner(self);
   char * native_text_end = NULL;
 
-  mrb_get_args(mrb, "z!", &native_text_end);
+  mrb_get_args(mrb, "z", &native_text_end);
 
   native_self->text_end = native_text_end;
   

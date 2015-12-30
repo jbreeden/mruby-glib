@@ -1079,6 +1079,238 @@ mruby_unbox__GError(mrb_value boxed) {
 }
 #endif
 
+#if BIND_GFile_TYPE
+/*
+ * Boxing implementation for struct _GFile
+ */
+
+static void free__GFile(mrb_state* mrb, void* ptr) {
+  mruby_to_native_ref* box = (mruby_to_native_ref*)ptr;
+  if (box->belongs_to_ruby) {
+    if (box->obj != NULL) {
+      g_object_unref(box->obj);
+      box->obj = NULL;
+    }
+  }
+  free(box);
+}
+
+static const mrb_data_type _GFile_data_type = {
+   "struct _GFile", free__GFile
+};
+
+mrb_value
+mruby_box__GFile(mrb_state* mrb, struct _GFile *unboxed) {
+  mruby_to_native_ref* box = (mruby_to_native_ref*)malloc(sizeof(mruby_to_native_ref));
+  box->belongs_to_ruby = FALSE;
+  box->obj = unboxed;
+  return mrb_obj_value(Data_Wrap_Struct(mrb, GFile_class(mrb), &_GFile_data_type, box));
+}
+
+mrb_value
+mruby_giftwrap__GFile(mrb_state* mrb, struct _GFile *unboxed) {
+   mruby_to_native_ref* box = (mruby_to_native_ref*)malloc(sizeof(mruby_to_native_ref));
+   box->belongs_to_ruby = TRUE;
+   box->obj = unboxed;
+   return mrb_obj_value(Data_Wrap_Struct(mrb, GFile_class(mrb), &_GFile_data_type, box));
+}
+
+void
+mruby_set__GFile_data_ptr(mrb_value obj, struct _GFile *unboxed) {
+  mruby_to_native_ref* box = (mruby_to_native_ref*)malloc(sizeof(mruby_to_native_ref));
+  box->belongs_to_ruby = FALSE;
+  box->obj = unboxed;
+  mrb_data_init(obj, box, &_GFile_data_type);
+}
+
+void
+mruby_gift__GFile_data_ptr(mrb_value obj, struct _GFile *unboxed) {
+  mruby_to_native_ref* box = (mruby_to_native_ref*)malloc(sizeof(mruby_to_native_ref));
+  box->belongs_to_ruby = TRUE;
+  box->obj = unboxed;
+  mrb_data_init(obj, box, &_GFile_data_type);
+}
+
+struct _GFile *
+mruby_unbox__GFile(mrb_value boxed) {
+  return (struct _GFile *)((mruby_to_native_ref *)DATA_PTR(boxed))->obj;
+}
+#endif
+
+#if BIND_GFileIface_TYPE
+/*
+ * Boxing implementation for struct _GFileIface
+ */
+
+static void free__GFileIface(mrb_state* mrb, void* ptr) {
+  mruby_to_native_ref* box = (mruby_to_native_ref*)ptr;
+  if (box->belongs_to_ruby) {
+    if (box->obj != NULL) {
+      free(box->obj);
+      box->obj = NULL;
+    }
+  }
+  free(box);
+}
+
+static const mrb_data_type _GFileIface_data_type = {
+   "struct _GFileIface", free__GFileIface
+};
+
+mrb_value
+mruby_box__GFileIface(mrb_state* mrb, struct _GFileIface *unboxed) {
+  mruby_to_native_ref* box = (mruby_to_native_ref*)malloc(sizeof(mruby_to_native_ref));
+  box->belongs_to_ruby = FALSE;
+  box->obj = unboxed;
+  return mrb_obj_value(Data_Wrap_Struct(mrb, GFileIface_class(mrb), &_GFileIface_data_type, box));
+}
+
+mrb_value
+mruby_giftwrap__GFileIface(mrb_state* mrb, struct _GFileIface *unboxed) {
+   mruby_to_native_ref* box = (mruby_to_native_ref*)malloc(sizeof(mruby_to_native_ref));
+   box->belongs_to_ruby = TRUE;
+   box->obj = unboxed;
+   return mrb_obj_value(Data_Wrap_Struct(mrb, GFileIface_class(mrb), &_GFileIface_data_type, box));
+}
+
+void
+mruby_set__GFileIface_data_ptr(mrb_value obj, struct _GFileIface *unboxed) {
+  mruby_to_native_ref* box = (mruby_to_native_ref*)malloc(sizeof(mruby_to_native_ref));
+  box->belongs_to_ruby = FALSE;
+  box->obj = unboxed;
+  mrb_data_init(obj, box, &_GFileIface_data_type);
+}
+
+void
+mruby_gift__GFileIface_data_ptr(mrb_value obj, struct _GFileIface *unboxed) {
+  mruby_to_native_ref* box = (mruby_to_native_ref*)malloc(sizeof(mruby_to_native_ref));
+  box->belongs_to_ruby = TRUE;
+  box->obj = unboxed;
+  mrb_data_init(obj, box, &_GFileIface_data_type);
+}
+
+struct _GFileIface *
+mruby_unbox__GFileIface(mrb_value boxed) {
+  return (struct _GFileIface *)((mruby_to_native_ref *)DATA_PTR(boxed))->obj;
+}
+#endif
+
+#if BIND_GFileInfo_TYPE
+/*
+ * Boxing implementation for struct _GFileInfo
+ */
+
+static void free__GFileInfo(mrb_state* mrb, void* ptr) {
+  mruby_to_native_ref* box = (mruby_to_native_ref*)ptr;
+  if (box->belongs_to_ruby) {
+    if (box->obj != NULL) {
+      g_object_unref(box->obj);
+      box->obj = NULL;
+    }
+  }
+  free(box);
+}
+
+static const mrb_data_type _GFileInfo_data_type = {
+   "struct _GFileInfo", free__GFileInfo
+};
+
+mrb_value
+mruby_box__GFileInfo(mrb_state* mrb, struct _GFileInfo *unboxed) {
+  mruby_to_native_ref* box = (mruby_to_native_ref*)malloc(sizeof(mruby_to_native_ref));
+  box->belongs_to_ruby = FALSE;
+  box->obj = unboxed;
+  return mrb_obj_value(Data_Wrap_Struct(mrb, GFileInfo_class(mrb), &_GFileInfo_data_type, box));
+}
+
+mrb_value
+mruby_giftwrap__GFileInfo(mrb_state* mrb, struct _GFileInfo *unboxed) {
+   mruby_to_native_ref* box = (mruby_to_native_ref*)malloc(sizeof(mruby_to_native_ref));
+   box->belongs_to_ruby = TRUE;
+   box->obj = unboxed;
+   return mrb_obj_value(Data_Wrap_Struct(mrb, GFileInfo_class(mrb), &_GFileInfo_data_type, box));
+}
+
+void
+mruby_set__GFileInfo_data_ptr(mrb_value obj, struct _GFileInfo *unboxed) {
+  mruby_to_native_ref* box = (mruby_to_native_ref*)malloc(sizeof(mruby_to_native_ref));
+  box->belongs_to_ruby = FALSE;
+  box->obj = unboxed;
+  mrb_data_init(obj, box, &_GFileInfo_data_type);
+}
+
+void
+mruby_gift__GFileInfo_data_ptr(mrb_value obj, struct _GFileInfo *unboxed) {
+  mruby_to_native_ref* box = (mruby_to_native_ref*)malloc(sizeof(mruby_to_native_ref));
+  box->belongs_to_ruby = TRUE;
+  box->obj = unboxed;
+  mrb_data_init(obj, box, &_GFileInfo_data_type);
+}
+
+struct _GFileInfo *
+mruby_unbox__GFileInfo(mrb_value boxed) {
+  return (struct _GFileInfo *)((mruby_to_native_ref *)DATA_PTR(boxed))->obj;
+}
+#endif
+
+#if BIND_GFileInfoClass_TYPE
+/*
+ * Boxing implementation for struct _GFileInfoClass
+ */
+
+static void free__GFileInfoClass(mrb_state* mrb, void* ptr) {
+  mruby_to_native_ref* box = (mruby_to_native_ref*)ptr;
+  if (box->belongs_to_ruby) {
+    if (box->obj != NULL) {
+      free(box->obj);
+      box->obj = NULL;
+    }
+  }
+  free(box);
+}
+
+static const mrb_data_type _GFileInfoClass_data_type = {
+   "struct _GFileInfoClass", free__GFileInfoClass
+};
+
+mrb_value
+mruby_box__GFileInfoClass(mrb_state* mrb, struct _GFileInfoClass *unboxed) {
+  mruby_to_native_ref* box = (mruby_to_native_ref*)malloc(sizeof(mruby_to_native_ref));
+  box->belongs_to_ruby = FALSE;
+  box->obj = unboxed;
+  return mrb_obj_value(Data_Wrap_Struct(mrb, GFileInfoClass_class(mrb), &_GFileInfoClass_data_type, box));
+}
+
+mrb_value
+mruby_giftwrap__GFileInfoClass(mrb_state* mrb, struct _GFileInfoClass *unboxed) {
+   mruby_to_native_ref* box = (mruby_to_native_ref*)malloc(sizeof(mruby_to_native_ref));
+   box->belongs_to_ruby = TRUE;
+   box->obj = unboxed;
+   return mrb_obj_value(Data_Wrap_Struct(mrb, GFileInfoClass_class(mrb), &_GFileInfoClass_data_type, box));
+}
+
+void
+mruby_set__GFileInfoClass_data_ptr(mrb_value obj, struct _GFileInfoClass *unboxed) {
+  mruby_to_native_ref* box = (mruby_to_native_ref*)malloc(sizeof(mruby_to_native_ref));
+  box->belongs_to_ruby = FALSE;
+  box->obj = unboxed;
+  mrb_data_init(obj, box, &_GFileInfoClass_data_type);
+}
+
+void
+mruby_gift__GFileInfoClass_data_ptr(mrb_value obj, struct _GFileInfoClass *unboxed) {
+  mruby_to_native_ref* box = (mruby_to_native_ref*)malloc(sizeof(mruby_to_native_ref));
+  box->belongs_to_ruby = TRUE;
+  box->obj = unboxed;
+  mrb_data_init(obj, box, &_GFileInfoClass_data_type);
+}
+
+struct _GFileInfoClass *
+mruby_unbox__GFileInfoClass(mrb_value boxed) {
+  return (struct _GFileInfoClass *)((mruby_to_native_ref *)DATA_PTR(boxed))->obj;
+}
+#endif
+
 #if BIND_GHashTable_TYPE
 /*
  * Boxing implementation for struct _GHashTable
