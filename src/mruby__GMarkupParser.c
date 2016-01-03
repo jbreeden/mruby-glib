@@ -7,6 +7,11 @@
 
 #if BIND_GMarkupParser_TYPE
 
+/* MRUBY_BINDING: custom_header */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
+
+/* MRUBY_BINDING_END */
+
 /*
  * Class Methods
  */
@@ -312,15 +317,23 @@ mrb_GLib_GMarkupParser_set_error(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_GLib_GMarkupParser_init(mrb_state* mrb) {
+/* MRUBY_BINDING: GMarkupParser::class_definition */
+/* sha: 1fd3529db9cb1d5e587092a99e99c2783d55d5aa1c13236b21855479bbab1482 */
   struct RClass* GMarkupParser_class = mrb_define_class_under(mrb, GLib_module(mrb), "GMarkupParser", mrb->object_class);
   MRB_SET_INSTANCE_TT(GMarkupParser_class, MRB_TT_DATA);
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GMarkupParser::class_method_definitions */
+/* sha: f8b2769964544e1227bd812f06d4e0e2ff3aa707c2a9c13b4954ebdbd71efec7 */
 #if BIND_GMarkupParser_INITIALIZE
   mrb_define_method(mrb, GMarkupParser_class, "initialize", mrb_GLib_GMarkupParser_initialize, MRB_ARGS_NONE());
 #endif
   mrb_define_class_method(mrb, GMarkupParser_class, "disown", mrb_GLib_GMarkupParser_disown, MRB_ARGS_ARG(1, 0));
   mrb_define_class_method(mrb, GMarkupParser_class, "belongs_to_ruby?", mrb_GLib_GMarkupParser_belongs_to_ruby, MRB_ARGS_ARG(1, 0));
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GMarkupParser::attr_definitions */
+/* sha: f2a27580c608ae330840d900bb891aeb1c45d4fef82cd3c40022ee1be7a619d1 */
   /*
    * Fields
    */
@@ -354,7 +367,12 @@ void mrb_GLib_GMarkupParser_init(mrb_state* mrb) {
 #if BIND_GMarkupParser_error_FIELD_WRITER
   mrb_define_method(mrb, GMarkupParser_class, "error=", mrb_GLib_GMarkupParser_set_error, MRB_ARGS_ARG(1, 0));
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GMarkupParser::instance_method_definitions */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
+
+/* MRUBY_BINDING_END */
 }
 
 #endif

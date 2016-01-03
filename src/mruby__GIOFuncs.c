@@ -7,6 +7,11 @@
 
 #if BIND_GIOFuncs_TYPE
 
+/* MRUBY_BINDING: custom_header */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
+
+/* MRUBY_BINDING_END */
+
 /*
  * Class Methods
  */
@@ -459,15 +464,23 @@ mrb_GLib_GIOFuncs_set_io_get_flags(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_GLib_GIOFuncs_init(mrb_state* mrb) {
+/* MRUBY_BINDING: GIOFuncs::class_definition */
+/* sha: 84778f49bd509ec776566e0661ca094f76505f2eabf6868de8addf4e04296be4 */
   struct RClass* GIOFuncs_class = mrb_define_class_under(mrb, GLib_module(mrb), "GIOFuncs", mrb->object_class);
   MRB_SET_INSTANCE_TT(GIOFuncs_class, MRB_TT_DATA);
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GIOFuncs::class_method_definitions */
+/* sha: faddf840a93feb70f111f68f52df651a40fa240c08809953bc2cc2213397407a */
 #if BIND_GIOFuncs_INITIALIZE
   mrb_define_method(mrb, GIOFuncs_class, "initialize", mrb_GLib_GIOFuncs_initialize, MRB_ARGS_NONE());
 #endif
   mrb_define_class_method(mrb, GIOFuncs_class, "disown", mrb_GLib_GIOFuncs_disown, MRB_ARGS_ARG(1, 0));
   mrb_define_class_method(mrb, GIOFuncs_class, "belongs_to_ruby?", mrb_GLib_GIOFuncs_belongs_to_ruby, MRB_ARGS_ARG(1, 0));
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GIOFuncs::attr_definitions */
+/* sha: 0405ecf5c1a7ca639451c549ac737b1d8523ed9fbff961000b2682e58c6636ec */
   /*
    * Fields
    */
@@ -519,7 +532,12 @@ void mrb_GLib_GIOFuncs_init(mrb_state* mrb) {
 #if BIND_GIOFuncs_io_get_flags_FIELD_WRITER
   mrb_define_method(mrb, GIOFuncs_class, "io_get_flags=", mrb_GLib_GIOFuncs_set_io_get_flags, MRB_ARGS_ARG(1, 0));
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GIOFuncs::instance_method_definitions */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
+
+/* MRUBY_BINDING_END */
 }
 
 #endif

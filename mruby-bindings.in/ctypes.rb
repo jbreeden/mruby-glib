@@ -8,6 +8,16 @@ CTypes.set_destructor('struct _GMatchInfo', 'g_match_info_unref')
 CTypes.set_destructor('struct _GIOChannel', 'g_io_channel_unref')
 CTypes.set_destructor('struct _GFile', 'g_object_unref')
 CTypes.set_destructor('struct _GFileInfo', 'g_object_unref')
+CTypes.set_destructor('struct _GSocketAddress', 'g_object_unref')
+CTypes.set_destructor('struct _GInputStream', 'g_object_unref')
+CTypes.set_destructor('struct _GOutputStream', 'g_object_unref')
+CTypes.set_destructor('struct _GIOStream', 'g_object_unref')
+CTypes.set_destructor('struct _GFileInputStream', 'g_object_unref')
+CTypes.set_destructor('struct _GFileOutputStream', 'g_object_unref')
+CTypes.set_destructor('struct _GFileIOStream', 'g_object_unref')
+CTypes.set_destructor('struct _GSeekable', 'g_object_unref')
+CTypes.set_destructor('struct _GSubprocess', 'g_object_unref')
+CTypes.set_destructor('struct _GSubprocessLauncher', 'g_object_unref')
 
 # Custom Types
 # ------------

@@ -7,6 +7,11 @@
 
 #if BIND_GCond_TYPE
 
+/* MRUBY_BINDING: custom_header */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
+
+/* MRUBY_BINDING_END */
+
 /*
  * Class Methods
  */
@@ -165,15 +170,23 @@ mrb_GLib_GCond_set_i(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_GLib_GCond_init(mrb_state* mrb) {
+/* MRUBY_BINDING: GCond::class_definition */
+/* sha: 686805035c404875409acfbf2e6963a16e5fa65d909510bcc006abb49b41041d */
   struct RClass* GCond_class = mrb_define_class_under(mrb, GLib_module(mrb), "GCond", mrb->object_class);
   MRB_SET_INSTANCE_TT(GCond_class, MRB_TT_DATA);
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GCond::class_method_definitions */
+/* sha: 0c9809d363bd101bcfd668a694bc03cea268acbe6e6f9512e433c64e06dc09d8 */
 #if BIND_GCond_INITIALIZE
   mrb_define_method(mrb, GCond_class, "initialize", mrb_GLib_GCond_initialize, MRB_ARGS_NONE());
 #endif
   mrb_define_class_method(mrb, GCond_class, "disown", mrb_GLib_GCond_disown, MRB_ARGS_ARG(1, 0));
   mrb_define_class_method(mrb, GCond_class, "belongs_to_ruby?", mrb_GLib_GCond_belongs_to_ruby, MRB_ARGS_ARG(1, 0));
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GCond::attr_definitions */
+/* sha: 698e68342594b4f8a554c4a77fdf0204daff54ff87b2cd8319ea79a610b70c06 */
   /*
    * Fields
    */
@@ -189,7 +202,12 @@ void mrb_GLib_GCond_init(mrb_state* mrb) {
 #if BIND_GCond_i_FIELD_WRITER
   mrb_define_method(mrb, GCond_class, "i=", mrb_GLib_GCond_set_i, MRB_ARGS_ARG(1, 0));
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GCond::instance_method_definitions */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
+
+/* MRUBY_BINDING_END */
 }
 
 #endif

@@ -7,6 +7,11 @@
 
 #if BIND_GDebugKey_TYPE
 
+/* MRUBY_BINDING: custom_header */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
+
+/* MRUBY_BINDING_END */
+
 /*
  * Class Methods
  */
@@ -155,15 +160,23 @@ mrb_GLib_GDebugKey_set_value(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_GLib_GDebugKey_init(mrb_state* mrb) {
+/* MRUBY_BINDING: GDebugKey::class_definition */
+/* sha: 894780cdf56a23a4fbbb9e131d0d62e5317d2778bf26ba68985f46f6fcb48130 */
   struct RClass* GDebugKey_class = mrb_define_class_under(mrb, GLib_module(mrb), "GDebugKey", mrb->object_class);
   MRB_SET_INSTANCE_TT(GDebugKey_class, MRB_TT_DATA);
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GDebugKey::class_method_definitions */
+/* sha: 015cb74fd149ae569177d8deeed2c5cc1fc0ff15d765d07a929cdf08c7c67bfc */
 #if BIND_GDebugKey_INITIALIZE
   mrb_define_method(mrb, GDebugKey_class, "initialize", mrb_GLib_GDebugKey_initialize, MRB_ARGS_NONE());
 #endif
   mrb_define_class_method(mrb, GDebugKey_class, "disown", mrb_GLib_GDebugKey_disown, MRB_ARGS_ARG(1, 0));
   mrb_define_class_method(mrb, GDebugKey_class, "belongs_to_ruby?", mrb_GLib_GDebugKey_belongs_to_ruby, MRB_ARGS_ARG(1, 0));
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GDebugKey::attr_definitions */
+/* sha: f99134cd402a21995a85cdd326d517875d336b53b2c7470b476f29384c10e5b4 */
   /*
    * Fields
    */
@@ -179,7 +192,12 @@ void mrb_GLib_GDebugKey_init(mrb_state* mrb) {
 #if BIND_GDebugKey_value_FIELD_WRITER
   mrb_define_method(mrb, GDebugKey_class, "value=", mrb_GLib_GDebugKey_set_value, MRB_ARGS_ARG(1, 0));
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GDebugKey::instance_method_definitions */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
+
+/* MRUBY_BINDING_END */
 }
 
 #endif

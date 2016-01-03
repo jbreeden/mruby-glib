@@ -325,6 +325,57 @@ struct _GFileInfoClass *
 mruby_unbox__GFileInfoClass(mrb_value boxed);
 #endif
 
+#if BIND_GFileInputStream_TYPE
+mrb_value
+mruby_box__GFileInputStream(mrb_state* mrb, struct _GFileInputStream *unboxed);
+
+mrb_value
+mruby_giftwrap__GFileInputStream(mrb_state* mrb, struct _GFileInputStream *unboxed);
+
+void
+mruby_set__GFileInputStream_data_ptr(mrb_value obj, struct _GFileInputStream *unboxed);
+
+void
+mruby_gift__GFileInputStream_data_ptr(mrb_value obj, struct _GFileInputStream *unboxed);
+
+struct _GFileInputStream *
+mruby_unbox__GFileInputStream(mrb_value boxed);
+#endif
+
+#if BIND_GFileIOStream_TYPE
+mrb_value
+mruby_box__GFileIOStream(mrb_state* mrb, struct _GFileIOStream *unboxed);
+
+mrb_value
+mruby_giftwrap__GFileIOStream(mrb_state* mrb, struct _GFileIOStream *unboxed);
+
+void
+mruby_set__GFileIOStream_data_ptr(mrb_value obj, struct _GFileIOStream *unboxed);
+
+void
+mruby_gift__GFileIOStream_data_ptr(mrb_value obj, struct _GFileIOStream *unboxed);
+
+struct _GFileIOStream *
+mruby_unbox__GFileIOStream(mrb_value boxed);
+#endif
+
+#if BIND_GFileOutputStream_TYPE
+mrb_value
+mruby_box__GFileOutputStream(mrb_state* mrb, struct _GFileOutputStream *unboxed);
+
+mrb_value
+mruby_giftwrap__GFileOutputStream(mrb_state* mrb, struct _GFileOutputStream *unboxed);
+
+void
+mruby_set__GFileOutputStream_data_ptr(mrb_value obj, struct _GFileOutputStream *unboxed);
+
+void
+mruby_gift__GFileOutputStream_data_ptr(mrb_value obj, struct _GFileOutputStream *unboxed);
+
+struct _GFileOutputStream *
+mruby_unbox__GFileOutputStream(mrb_value boxed);
+#endif
+
 #if BIND_GHashTable_TYPE
 mrb_value
 mruby_box__GHashTable(mrb_state* mrb, struct _GHashTable *unboxed);
@@ -427,6 +478,159 @@ struct _GIConv *
 mruby_unbox__GIConv(mrb_value boxed);
 #endif
 
+#if BIND_GInetAddress_TYPE
+mrb_value
+mruby_box__GInetAddress(mrb_state* mrb, struct _GInetAddress *unboxed);
+
+mrb_value
+mruby_giftwrap__GInetAddress(mrb_state* mrb, struct _GInetAddress *unboxed);
+
+void
+mruby_set__GInetAddress_data_ptr(mrb_value obj, struct _GInetAddress *unboxed);
+
+void
+mruby_gift__GInetAddress_data_ptr(mrb_value obj, struct _GInetAddress *unboxed);
+
+struct _GInetAddress *
+mruby_unbox__GInetAddress(mrb_value boxed);
+#endif
+
+#if BIND_GInetAddressClass_TYPE
+mrb_value
+mruby_box__GInetAddressClass(mrb_state* mrb, struct _GInetAddressClass *unboxed);
+
+mrb_value
+mruby_giftwrap__GInetAddressClass(mrb_state* mrb, struct _GInetAddressClass *unboxed);
+
+void
+mruby_set__GInetAddressClass_data_ptr(mrb_value obj, struct _GInetAddressClass *unboxed);
+
+void
+mruby_gift__GInetAddressClass_data_ptr(mrb_value obj, struct _GInetAddressClass *unboxed);
+
+struct _GInetAddressClass *
+mruby_unbox__GInetAddressClass(mrb_value boxed);
+#endif
+
+#if BIND_GInetAddressPrivate_TYPE
+mrb_value
+mruby_box__GInetAddressPrivate(mrb_state* mrb, struct _GInetAddressPrivate *unboxed);
+
+mrb_value
+mruby_giftwrap__GInetAddressPrivate(mrb_state* mrb, struct _GInetAddressPrivate *unboxed);
+
+void
+mruby_set__GInetAddressPrivate_data_ptr(mrb_value obj, struct _GInetAddressPrivate *unboxed);
+
+void
+mruby_gift__GInetAddressPrivate_data_ptr(mrb_value obj, struct _GInetAddressPrivate *unboxed);
+
+struct _GInetAddressPrivate *
+mruby_unbox__GInetAddressPrivate(mrb_value boxed);
+#endif
+
+#if BIND_GInetSocketAddress_TYPE
+mrb_value
+mruby_box__GInetSocketAddress(mrb_state* mrb, struct _GInetSocketAddress *unboxed);
+
+mrb_value
+mruby_giftwrap__GInetSocketAddress(mrb_state* mrb, struct _GInetSocketAddress *unboxed);
+
+void
+mruby_set__GInetSocketAddress_data_ptr(mrb_value obj, struct _GInetSocketAddress *unboxed);
+
+void
+mruby_gift__GInetSocketAddress_data_ptr(mrb_value obj, struct _GInetSocketAddress *unboxed);
+
+struct _GInetSocketAddress *
+mruby_unbox__GInetSocketAddress(mrb_value boxed);
+#endif
+
+#if BIND_GInetSocketAddressClass_TYPE
+mrb_value
+mruby_box__GInetSocketAddressClass(mrb_state* mrb, struct _GInetSocketAddressClass *unboxed);
+
+mrb_value
+mruby_giftwrap__GInetSocketAddressClass(mrb_state* mrb, struct _GInetSocketAddressClass *unboxed);
+
+void
+mruby_set__GInetSocketAddressClass_data_ptr(mrb_value obj, struct _GInetSocketAddressClass *unboxed);
+
+void
+mruby_gift__GInetSocketAddressClass_data_ptr(mrb_value obj, struct _GInetSocketAddressClass *unboxed);
+
+struct _GInetSocketAddressClass *
+mruby_unbox__GInetSocketAddressClass(mrb_value boxed);
+#endif
+
+#if BIND_GInetSocketAddressPrivate_TYPE
+mrb_value
+mruby_box__GInetSocketAddressPrivate(mrb_state* mrb, struct _GInetSocketAddressPrivate *unboxed);
+
+mrb_value
+mruby_giftwrap__GInetSocketAddressPrivate(mrb_state* mrb, struct _GInetSocketAddressPrivate *unboxed);
+
+void
+mruby_set__GInetSocketAddressPrivate_data_ptr(mrb_value obj, struct _GInetSocketAddressPrivate *unboxed);
+
+void
+mruby_gift__GInetSocketAddressPrivate_data_ptr(mrb_value obj, struct _GInetSocketAddressPrivate *unboxed);
+
+struct _GInetSocketAddressPrivate *
+mruby_unbox__GInetSocketAddressPrivate(mrb_value boxed);
+#endif
+
+#if BIND_GInputStream_TYPE
+mrb_value
+mruby_box__GInputStream(mrb_state* mrb, struct _GInputStream *unboxed);
+
+mrb_value
+mruby_giftwrap__GInputStream(mrb_state* mrb, struct _GInputStream *unboxed);
+
+void
+mruby_set__GInputStream_data_ptr(mrb_value obj, struct _GInputStream *unboxed);
+
+void
+mruby_gift__GInputStream_data_ptr(mrb_value obj, struct _GInputStream *unboxed);
+
+struct _GInputStream *
+mruby_unbox__GInputStream(mrb_value boxed);
+#endif
+
+#if BIND_GInputStreamClass_TYPE
+mrb_value
+mruby_box__GInputStreamClass(mrb_state* mrb, struct _GInputStreamClass *unboxed);
+
+mrb_value
+mruby_giftwrap__GInputStreamClass(mrb_state* mrb, struct _GInputStreamClass *unboxed);
+
+void
+mruby_set__GInputStreamClass_data_ptr(mrb_value obj, struct _GInputStreamClass *unboxed);
+
+void
+mruby_gift__GInputStreamClass_data_ptr(mrb_value obj, struct _GInputStreamClass *unboxed);
+
+struct _GInputStreamClass *
+mruby_unbox__GInputStreamClass(mrb_value boxed);
+#endif
+
+#if BIND_GInputStreamPrivate_TYPE
+mrb_value
+mruby_box__GInputStreamPrivate(mrb_state* mrb, struct _GInputStreamPrivate *unboxed);
+
+mrb_value
+mruby_giftwrap__GInputStreamPrivate(mrb_state* mrb, struct _GInputStreamPrivate *unboxed);
+
+void
+mruby_set__GInputStreamPrivate_data_ptr(mrb_value obj, struct _GInputStreamPrivate *unboxed);
+
+void
+mruby_gift__GInputStreamPrivate_data_ptr(mrb_value obj, struct _GInputStreamPrivate *unboxed);
+
+struct _GInputStreamPrivate *
+mruby_unbox__GInputStreamPrivate(mrb_value boxed);
+#endif
+
 #if BIND_GIOChannel_TYPE
 mrb_value
 mruby_box__GIOChannel(mrb_state* mrb, struct _GIOChannel *unboxed);
@@ -459,6 +663,57 @@ mruby_gift__GIOFuncs_data_ptr(mrb_value obj, struct _GIOFuncs *unboxed);
 
 struct _GIOFuncs *
 mruby_unbox__GIOFuncs(mrb_value boxed);
+#endif
+
+#if BIND_GIOStream_TYPE
+mrb_value
+mruby_box__GIOStream(mrb_state* mrb, struct _GIOStream *unboxed);
+
+mrb_value
+mruby_giftwrap__GIOStream(mrb_state* mrb, struct _GIOStream *unboxed);
+
+void
+mruby_set__GIOStream_data_ptr(mrb_value obj, struct _GIOStream *unboxed);
+
+void
+mruby_gift__GIOStream_data_ptr(mrb_value obj, struct _GIOStream *unboxed);
+
+struct _GIOStream *
+mruby_unbox__GIOStream(mrb_value boxed);
+#endif
+
+#if BIND_GIOStreamClass_TYPE
+mrb_value
+mruby_box__GIOStreamClass(mrb_state* mrb, struct _GIOStreamClass *unboxed);
+
+mrb_value
+mruby_giftwrap__GIOStreamClass(mrb_state* mrb, struct _GIOStreamClass *unboxed);
+
+void
+mruby_set__GIOStreamClass_data_ptr(mrb_value obj, struct _GIOStreamClass *unboxed);
+
+void
+mruby_gift__GIOStreamClass_data_ptr(mrb_value obj, struct _GIOStreamClass *unboxed);
+
+struct _GIOStreamClass *
+mruby_unbox__GIOStreamClass(mrb_value boxed);
+#endif
+
+#if BIND_GIOStreamPrivate_TYPE
+mrb_value
+mruby_box__GIOStreamPrivate(mrb_state* mrb, struct _GIOStreamPrivate *unboxed);
+
+mrb_value
+mruby_giftwrap__GIOStreamPrivate(mrb_state* mrb, struct _GIOStreamPrivate *unboxed);
+
+void
+mruby_set__GIOStreamPrivate_data_ptr(mrb_value obj, struct _GIOStreamPrivate *unboxed);
+
+void
+mruby_gift__GIOStreamPrivate_data_ptr(mrb_value obj, struct _GIOStreamPrivate *unboxed);
+
+struct _GIOStreamPrivate *
+mruby_unbox__GIOStreamPrivate(mrb_value boxed);
 #endif
 
 #if BIND_GKeyFile_TYPE
@@ -699,6 +954,57 @@ struct _GOptionGroup *
 mruby_unbox__GOptionGroup(mrb_value boxed);
 #endif
 
+#if BIND_GOutputStream_TYPE
+mrb_value
+mruby_box__GOutputStream(mrb_state* mrb, struct _GOutputStream *unboxed);
+
+mrb_value
+mruby_giftwrap__GOutputStream(mrb_state* mrb, struct _GOutputStream *unboxed);
+
+void
+mruby_set__GOutputStream_data_ptr(mrb_value obj, struct _GOutputStream *unboxed);
+
+void
+mruby_gift__GOutputStream_data_ptr(mrb_value obj, struct _GOutputStream *unboxed);
+
+struct _GOutputStream *
+mruby_unbox__GOutputStream(mrb_value boxed);
+#endif
+
+#if BIND_GOutputStreamClass_TYPE
+mrb_value
+mruby_box__GOutputStreamClass(mrb_state* mrb, struct _GOutputStreamClass *unboxed);
+
+mrb_value
+mruby_giftwrap__GOutputStreamClass(mrb_state* mrb, struct _GOutputStreamClass *unboxed);
+
+void
+mruby_set__GOutputStreamClass_data_ptr(mrb_value obj, struct _GOutputStreamClass *unboxed);
+
+void
+mruby_gift__GOutputStreamClass_data_ptr(mrb_value obj, struct _GOutputStreamClass *unboxed);
+
+struct _GOutputStreamClass *
+mruby_unbox__GOutputStreamClass(mrb_value boxed);
+#endif
+
+#if BIND_GOutputStreamPrivate_TYPE
+mrb_value
+mruby_box__GOutputStreamPrivate(mrb_state* mrb, struct _GOutputStreamPrivate *unboxed);
+
+mrb_value
+mruby_giftwrap__GOutputStreamPrivate(mrb_state* mrb, struct _GOutputStreamPrivate *unboxed);
+
+void
+mruby_set__GOutputStreamPrivate_data_ptr(mrb_value obj, struct _GOutputStreamPrivate *unboxed);
+
+void
+mruby_gift__GOutputStreamPrivate_data_ptr(mrb_value obj, struct _GOutputStreamPrivate *unboxed);
+
+struct _GOutputStreamPrivate *
+mruby_unbox__GOutputStreamPrivate(mrb_value boxed);
+#endif
+
 #if BIND_GPatternSpec_TYPE
 mrb_value
 mruby_box__GPatternSpec(mrb_state* mrb, struct _GPatternSpec *unboxed);
@@ -886,6 +1192,40 @@ struct _GScannerConfig *
 mruby_unbox__GScannerConfig(mrb_value boxed);
 #endif
 
+#if BIND_GSeekable_TYPE
+mrb_value
+mruby_box__GSeekable(mrb_state* mrb, struct _GSeekable *unboxed);
+
+mrb_value
+mruby_giftwrap__GSeekable(mrb_state* mrb, struct _GSeekable *unboxed);
+
+void
+mruby_set__GSeekable_data_ptr(mrb_value obj, struct _GSeekable *unboxed);
+
+void
+mruby_gift__GSeekable_data_ptr(mrb_value obj, struct _GSeekable *unboxed);
+
+struct _GSeekable *
+mruby_unbox__GSeekable(mrb_value boxed);
+#endif
+
+#if BIND_GSeekableIface_TYPE
+mrb_value
+mruby_box__GSeekableIface(mrb_state* mrb, struct _GSeekableIface *unboxed);
+
+mrb_value
+mruby_giftwrap__GSeekableIface(mrb_state* mrb, struct _GSeekableIface *unboxed);
+
+void
+mruby_set__GSeekableIface_data_ptr(mrb_value obj, struct _GSeekableIface *unboxed);
+
+void
+mruby_gift__GSeekableIface_data_ptr(mrb_value obj, struct _GSeekableIface *unboxed);
+
+struct _GSeekableIface *
+mruby_unbox__GSeekableIface(mrb_value boxed);
+#endif
+
 #if BIND_GSequence_TYPE
 mrb_value
 mruby_box__GSequence(mrb_state* mrb, struct _GSequence *unboxed);
@@ -935,6 +1275,91 @@ mruby_gift__GSList_data_ptr(mrb_value obj, struct _GSList *unboxed);
 
 struct _GSList *
 mruby_unbox__GSList(mrb_value boxed);
+#endif
+
+#if BIND_GSocket_TYPE
+mrb_value
+mruby_box__GSocket(mrb_state* mrb, struct _GSocket *unboxed);
+
+mrb_value
+mruby_giftwrap__GSocket(mrb_state* mrb, struct _GSocket *unboxed);
+
+void
+mruby_set__GSocket_data_ptr(mrb_value obj, struct _GSocket *unboxed);
+
+void
+mruby_gift__GSocket_data_ptr(mrb_value obj, struct _GSocket *unboxed);
+
+struct _GSocket *
+mruby_unbox__GSocket(mrb_value boxed);
+#endif
+
+#if BIND_GSocketAddress_TYPE
+mrb_value
+mruby_box__GSocketAddress(mrb_state* mrb, struct _GSocketAddress *unboxed);
+
+mrb_value
+mruby_giftwrap__GSocketAddress(mrb_state* mrb, struct _GSocketAddress *unboxed);
+
+void
+mruby_set__GSocketAddress_data_ptr(mrb_value obj, struct _GSocketAddress *unboxed);
+
+void
+mruby_gift__GSocketAddress_data_ptr(mrb_value obj, struct _GSocketAddress *unboxed);
+
+struct _GSocketAddress *
+mruby_unbox__GSocketAddress(mrb_value boxed);
+#endif
+
+#if BIND_GSocketAddressClass_TYPE
+mrb_value
+mruby_box__GSocketAddressClass(mrb_state* mrb, struct _GSocketAddressClass *unboxed);
+
+mrb_value
+mruby_giftwrap__GSocketAddressClass(mrb_state* mrb, struct _GSocketAddressClass *unboxed);
+
+void
+mruby_set__GSocketAddressClass_data_ptr(mrb_value obj, struct _GSocketAddressClass *unboxed);
+
+void
+mruby_gift__GSocketAddressClass_data_ptr(mrb_value obj, struct _GSocketAddressClass *unboxed);
+
+struct _GSocketAddressClass *
+mruby_unbox__GSocketAddressClass(mrb_value boxed);
+#endif
+
+#if BIND_GSocketClass_TYPE
+mrb_value
+mruby_box__GSocketClass(mrb_state* mrb, struct _GSocketClass *unboxed);
+
+mrb_value
+mruby_giftwrap__GSocketClass(mrb_state* mrb, struct _GSocketClass *unboxed);
+
+void
+mruby_set__GSocketClass_data_ptr(mrb_value obj, struct _GSocketClass *unboxed);
+
+void
+mruby_gift__GSocketClass_data_ptr(mrb_value obj, struct _GSocketClass *unboxed);
+
+struct _GSocketClass *
+mruby_unbox__GSocketClass(mrb_value boxed);
+#endif
+
+#if BIND_GSocketPrivate_TYPE
+mrb_value
+mruby_box__GSocketPrivate(mrb_state* mrb, struct _GSocketPrivate *unboxed);
+
+mrb_value
+mruby_giftwrap__GSocketPrivate(mrb_state* mrb, struct _GSocketPrivate *unboxed);
+
+void
+mruby_set__GSocketPrivate_data_ptr(mrb_value obj, struct _GSocketPrivate *unboxed);
+
+void
+mruby_gift__GSocketPrivate_data_ptr(mrb_value obj, struct _GSocketPrivate *unboxed);
+
+struct _GSocketPrivate *
+mruby_unbox__GSocketPrivate(mrb_value boxed);
 #endif
 
 #if BIND_GSource_TYPE
@@ -1037,6 +1462,40 @@ mruby_gift__GStringChunk_data_ptr(mrb_value obj, struct _GStringChunk *unboxed);
 
 struct _GStringChunk *
 mruby_unbox__GStringChunk(mrb_value boxed);
+#endif
+
+#if BIND_GSubprocess_TYPE
+mrb_value
+mruby_box__GSubprocess(mrb_state* mrb, struct _GSubprocess *unboxed);
+
+mrb_value
+mruby_giftwrap__GSubprocess(mrb_state* mrb, struct _GSubprocess *unboxed);
+
+void
+mruby_set__GSubprocess_data_ptr(mrb_value obj, struct _GSubprocess *unboxed);
+
+void
+mruby_gift__GSubprocess_data_ptr(mrb_value obj, struct _GSubprocess *unboxed);
+
+struct _GSubprocess *
+mruby_unbox__GSubprocess(mrb_value boxed);
+#endif
+
+#if BIND_GSubprocessLauncher_TYPE
+mrb_value
+mruby_box__GSubprocessLauncher(mrb_state* mrb, struct _GSubprocessLauncher *unboxed);
+
+mrb_value
+mruby_giftwrap__GSubprocessLauncher(mrb_state* mrb, struct _GSubprocessLauncher *unboxed);
+
+void
+mruby_set__GSubprocessLauncher_data_ptr(mrb_value obj, struct _GSubprocessLauncher *unboxed);
+
+void
+mruby_gift__GSubprocessLauncher_data_ptr(mrb_value obj, struct _GSubprocessLauncher *unboxed);
+
+struct _GSubprocessLauncher *
+mruby_unbox__GSubprocessLauncher(mrb_value boxed);
 #endif
 
 #if BIND_GTestCase_TYPE

@@ -7,6 +7,11 @@
 
 #if BIND_GString_TYPE
 
+/* MRUBY_BINDING: custom_header */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
+
+/* MRUBY_BINDING_END */
+
 /*
  * Class Methods
  */
@@ -204,15 +209,23 @@ mrb_GLib_GString_set_allocated_len(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_GLib_GString_init(mrb_state* mrb) {
+/* MRUBY_BINDING: GString::class_definition */
+/* sha: ff4aecfe3f6121f05c64d05df2040a78c3a794dda04a1f1d22d2a45d8094248d */
   struct RClass* GString_class = mrb_define_class_under(mrb, GLib_module(mrb), "GString", mrb->object_class);
   MRB_SET_INSTANCE_TT(GString_class, MRB_TT_DATA);
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GString::class_method_definitions */
+/* sha: ed74661c82cb136ee3f7eaed66ae957592300a70bac1d5266a55bd6cc703c0ad */
 #if BIND_GString_INITIALIZE
   mrb_define_method(mrb, GString_class, "initialize", mrb_GLib_GString_initialize, MRB_ARGS_NONE());
 #endif
   mrb_define_class_method(mrb, GString_class, "disown", mrb_GLib_GString_disown, MRB_ARGS_ARG(1, 0));
   mrb_define_class_method(mrb, GString_class, "belongs_to_ruby?", mrb_GLib_GString_belongs_to_ruby, MRB_ARGS_ARG(1, 0));
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GString::attr_definitions */
+/* sha: dbe6975eadf800d75b19141171df1eb56b1f42b8ca94af5d16f67cf57a003e2b */
   /*
    * Fields
    */
@@ -234,7 +247,12 @@ void mrb_GLib_GString_init(mrb_state* mrb) {
 #if BIND_GString_allocated_len_FIELD_WRITER
   mrb_define_method(mrb, GString_class, "allocated_len=", mrb_GLib_GString_set_allocated_len, MRB_ARGS_ARG(1, 0));
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GString::instance_method_definitions */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
+
+/* MRUBY_BINDING_END */
 }
 
 #endif

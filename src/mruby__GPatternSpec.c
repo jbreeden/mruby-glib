@@ -7,6 +7,11 @@
 
 #if BIND_GPatternSpec_TYPE
 
+/* MRUBY_BINDING: custom_header */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
+
+/* MRUBY_BINDING_END */
+
 /*
  * Class Methods
  */
@@ -63,16 +68,30 @@ mrb_GLib_GPatternSpec_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_GLib_GPatternSpec_init(mrb_state* mrb) {
+/* MRUBY_BINDING: GPatternSpec::class_definition */
+/* sha: 20f3fb9a6c66efe41bea0a7cad8370a815e77b83dfe8b603fb443f7e88654ea0 */
   struct RClass* GPatternSpec_class = mrb_define_class_under(mrb, GLib_module(mrb), "GPatternSpec", mrb->object_class);
   MRB_SET_INSTANCE_TT(GPatternSpec_class, MRB_TT_DATA);
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GPatternSpec::class_method_definitions */
+/* sha: 752495ad7922445466e4cf8679dd237372a030d3ce76db692801786ae135d89e */
 #if BIND_GPatternSpec_INITIALIZE
   mrb_define_method(mrb, GPatternSpec_class, "initialize", mrb_GLib_GPatternSpec_initialize, MRB_ARGS_NONE());
 #endif
   mrb_define_class_method(mrb, GPatternSpec_class, "disown", mrb_GLib_GPatternSpec_disown, MRB_ARGS_ARG(1, 0));
   mrb_define_class_method(mrb, GPatternSpec_class, "belongs_to_ruby?", mrb_GLib_GPatternSpec_belongs_to_ruby, MRB_ARGS_ARG(1, 0));
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GPatternSpec::attr_definitions */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
 
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: GPatternSpec::instance_method_definitions */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
+
+/* MRUBY_BINDING_END */
 }
 
 #endif

@@ -1,11 +1,16 @@
 /*
  * struct _GSubprocess
- * Defined in file giotypes.h @ line 560
+ * Defined in file dummy_decls.h @ line 12
  */
 
 #include "mruby_GLib.h"
 
 #if BIND_GSubprocess_TYPE
+
+/* MRUBY_BINDING: custom_header */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
+
+/* MRUBY_BINDING_END */
 
 /*
  * Class Methods
@@ -63,16 +68,30 @@ mrb_GLib_GSubprocess_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_GLib_GSubprocess_init(mrb_state* mrb) {
+/* MRUBY_BINDING: GSubprocess::class_definition */
+/* sha: 729295fd3a0b4b433815456aef0f8155be8f80948769ce853484d5f67579d7fb */
   struct RClass* GSubprocess_class = mrb_define_class_under(mrb, GLib_module(mrb), "GSubprocess", mrb->object_class);
   MRB_SET_INSTANCE_TT(GSubprocess_class, MRB_TT_DATA);
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GSubprocess::class_method_definitions */
+/* sha: 603c88dd8f777cdcbf1cd700c6a568fe39d5c100d77abbed3bbd84c79418c3b4 */
 #if BIND_GSubprocess_INITIALIZE
   mrb_define_method(mrb, GSubprocess_class, "initialize", mrb_GLib_GSubprocess_initialize, MRB_ARGS_NONE());
 #endif
   mrb_define_class_method(mrb, GSubprocess_class, "disown", mrb_GLib_GSubprocess_disown, MRB_ARGS_ARG(1, 0));
   mrb_define_class_method(mrb, GSubprocess_class, "belongs_to_ruby?", mrb_GLib_GSubprocess_belongs_to_ruby, MRB_ARGS_ARG(1, 0));
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GSubprocess::attr_definitions */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
 
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: GSubprocess::instance_method_definitions */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
+
+/* MRUBY_BINDING_END */
 }
 
 #endif

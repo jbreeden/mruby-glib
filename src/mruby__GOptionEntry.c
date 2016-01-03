@@ -7,6 +7,11 @@
 
 #if BIND_GOptionEntry_TYPE
 
+/* MRUBY_BINDING: custom_header */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
+
+/* MRUBY_BINDING_END */
+
 /*
  * Class Methods
  */
@@ -380,15 +385,23 @@ mrb_GLib_GOptionEntry_set_arg_description(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_GLib_GOptionEntry_init(mrb_state* mrb) {
+/* MRUBY_BINDING: GOptionEntry::class_definition */
+/* sha: 0a1a8854145f1900a2e465de02552d998bdcea52f5b03fa7c8d97d17097f7561 */
   struct RClass* GOptionEntry_class = mrb_define_class_under(mrb, GLib_module(mrb), "GOptionEntry", mrb->object_class);
   MRB_SET_INSTANCE_TT(GOptionEntry_class, MRB_TT_DATA);
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GOptionEntry::class_method_definitions */
+/* sha: b90261b9fba35f4ce82df9b5e4659cf74bcedbd334e8a17f50d597c66ae59d77 */
 #if BIND_GOptionEntry_INITIALIZE
   mrb_define_method(mrb, GOptionEntry_class, "initialize", mrb_GLib_GOptionEntry_initialize, MRB_ARGS_NONE());
 #endif
   mrb_define_class_method(mrb, GOptionEntry_class, "disown", mrb_GLib_GOptionEntry_disown, MRB_ARGS_ARG(1, 0));
   mrb_define_class_method(mrb, GOptionEntry_class, "belongs_to_ruby?", mrb_GLib_GOptionEntry_belongs_to_ruby, MRB_ARGS_ARG(1, 0));
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GOptionEntry::attr_definitions */
+/* sha: a126aa1e9f8bd176826b8b49d68f0ec668b0e7d25cc7f68a484838f71fc85529 */
   /*
    * Fields
    */
@@ -434,7 +447,12 @@ void mrb_GLib_GOptionEntry_init(mrb_state* mrb) {
 #if BIND_GOptionEntry_arg_description_FIELD_WRITER
   mrb_define_method(mrb, GOptionEntry_class, "arg_description=", mrb_GLib_GOptionEntry_set_arg_description, MRB_ARGS_ARG(1, 0));
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GOptionEntry::instance_method_definitions */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
+
+/* MRUBY_BINDING_END */
 }
 
 #endif

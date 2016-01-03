@@ -7,6 +7,11 @@
 
 #if BIND_GError_TYPE
 
+/* MRUBY_BINDING: custom_header */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
+
+/* MRUBY_BINDING_END */
+
 /*
  * Class Methods
  */
@@ -204,15 +209,23 @@ mrb_GLib_GError_set_message(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_GLib_GError_init(mrb_state* mrb) {
+/* MRUBY_BINDING: GError::class_definition */
+/* sha: a24acce5b4436371649e9fc57629f0e6a7851599c9df65171b6504fb729f4b8b */
   struct RClass* GError_class = mrb_define_class_under(mrb, GLib_module(mrb), "GError", mrb->object_class);
   MRB_SET_INSTANCE_TT(GError_class, MRB_TT_DATA);
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GError::class_method_definitions */
+/* sha: b95e86a783e97039732c587e81f2c2500a99e3c604d6018c702cc37eb0d010e8 */
 #if BIND_GError_INITIALIZE
   mrb_define_method(mrb, GError_class, "initialize", mrb_GLib_GError_initialize, MRB_ARGS_NONE());
 #endif
   mrb_define_class_method(mrb, GError_class, "disown", mrb_GLib_GError_disown, MRB_ARGS_ARG(1, 0));
   mrb_define_class_method(mrb, GError_class, "belongs_to_ruby?", mrb_GLib_GError_belongs_to_ruby, MRB_ARGS_ARG(1, 0));
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GError::attr_definitions */
+/* sha: 8d99d300f9e1c17514e481fdc05f953590f9c9bc0e77dcd21ffde1694e5f3ad5 */
   /*
    * Fields
    */
@@ -234,7 +247,12 @@ void mrb_GLib_GError_init(mrb_state* mrb) {
 #if BIND_GError_message_FIELD_WRITER
   mrb_define_method(mrb, GError_class, "message=", mrb_GLib_GError_set_message, MRB_ARGS_ARG(1, 0));
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GError::instance_method_definitions */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
+
+/* MRUBY_BINDING_END */
 }
 
 #endif

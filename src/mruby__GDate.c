@@ -7,6 +7,11 @@
 
 #if BIND_GDate_TYPE
 
+/* MRUBY_BINDING: custom_header */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
+
+/* MRUBY_BINDING_END */
+
 /*
  * Class Methods
  */
@@ -331,15 +336,23 @@ mrb_GLib_GDate_set_year(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_GLib_GDate_init(mrb_state* mrb) {
+/* MRUBY_BINDING: GDate::class_definition */
+/* sha: 239345ee7cecd75927e31a3f6315472d2834ac93d40abb8e30eebe816e6753ec */
   struct RClass* GDate_class = mrb_define_class_under(mrb, GLib_module(mrb), "GDate", mrb->object_class);
   MRB_SET_INSTANCE_TT(GDate_class, MRB_TT_DATA);
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GDate::class_method_definitions */
+/* sha: 77b6c1c176df0f757518a36a2868be21877bf53dc355e29aa97d35ae0c15c809 */
 #if BIND_GDate_INITIALIZE
   mrb_define_method(mrb, GDate_class, "initialize", mrb_GLib_GDate_initialize, MRB_ARGS_NONE());
 #endif
   mrb_define_class_method(mrb, GDate_class, "disown", mrb_GLib_GDate_disown, MRB_ARGS_ARG(1, 0));
   mrb_define_class_method(mrb, GDate_class, "belongs_to_ruby?", mrb_GLib_GDate_belongs_to_ruby, MRB_ARGS_ARG(1, 0));
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GDate::attr_definitions */
+/* sha: b5b02f61d3f32f9cea9bbcc7bed18464efab03a860fef130e0b36101db6a0d92 */
   /*
    * Fields
    */
@@ -379,7 +392,12 @@ void mrb_GLib_GDate_init(mrb_state* mrb) {
 #if BIND_GDate_year_FIELD_WRITER
   mrb_define_method(mrb, GDate_class, "year=", mrb_GLib_GDate_set_year, MRB_ARGS_ARG(1, 0));
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GDate::instance_method_definitions */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
+
+/* MRUBY_BINDING_END */
 }
 
 #endif

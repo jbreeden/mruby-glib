@@ -7,6 +7,11 @@
 
 #if BIND_GTrashStack_TYPE
 
+/* MRUBY_BINDING: custom_header */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
+
+/* MRUBY_BINDING_END */
+
 /*
  * Class Methods
  */
@@ -119,15 +124,23 @@ mrb_GLib_GTrashStack_set_next(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_GLib_GTrashStack_init(mrb_state* mrb) {
+/* MRUBY_BINDING: GTrashStack::class_definition */
+/* sha: 794ed0fcc7d894070f63cf794bbffafa342b99f8fa0e042084392ad799a20665 */
   struct RClass* GTrashStack_class = mrb_define_class_under(mrb, GLib_module(mrb), "GTrashStack", mrb->object_class);
   MRB_SET_INSTANCE_TT(GTrashStack_class, MRB_TT_DATA);
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GTrashStack::class_method_definitions */
+/* sha: 0bb750cde7f73b4d4ef4920193104e3825fe7c1698b13ffa36f4ff563b02635b */
 #if BIND_GTrashStack_INITIALIZE
   mrb_define_method(mrb, GTrashStack_class, "initialize", mrb_GLib_GTrashStack_initialize, MRB_ARGS_NONE());
 #endif
   mrb_define_class_method(mrb, GTrashStack_class, "disown", mrb_GLib_GTrashStack_disown, MRB_ARGS_ARG(1, 0));
   mrb_define_class_method(mrb, GTrashStack_class, "belongs_to_ruby?", mrb_GLib_GTrashStack_belongs_to_ruby, MRB_ARGS_ARG(1, 0));
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GTrashStack::attr_definitions */
+/* sha: f1eda845cc1a8919cb35b65c28e681ebed369a66db4d93a15cb9ca1829a15465 */
   /*
    * Fields
    */
@@ -137,7 +150,12 @@ void mrb_GLib_GTrashStack_init(mrb_state* mrb) {
 #if BIND_GTrashStack_next_FIELD_WRITER
   mrb_define_method(mrb, GTrashStack_class, "next=", mrb_GLib_GTrashStack_set_next, MRB_ARGS_ARG(1, 0));
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GTrashStack::instance_method_definitions */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
+
+/* MRUBY_BINDING_END */
 }
 
 #endif

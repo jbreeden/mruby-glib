@@ -7,6 +7,11 @@
 
 #if BIND_GTestLogBuffer_TYPE
 
+/* MRUBY_BINDING: custom_header */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
+
+/* MRUBY_BINDING_END */
+
 /*
  * Class Methods
  */
@@ -171,15 +176,23 @@ mrb_GLib_GTestLogBuffer_set_msgs(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_GLib_GTestLogBuffer_init(mrb_state* mrb) {
+/* MRUBY_BINDING: GTestLogBuffer::class_definition */
+/* sha: eaadfdf2b5325bfdfff09a88e808e91d6038116d3560020703db701912b3846f */
   struct RClass* GTestLogBuffer_class = mrb_define_class_under(mrb, GLib_module(mrb), "GTestLogBuffer", mrb->object_class);
   MRB_SET_INSTANCE_TT(GTestLogBuffer_class, MRB_TT_DATA);
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GTestLogBuffer::class_method_definitions */
+/* sha: ea0df554b40a2df920fdbf034e9aeb1b9f0d70b7c6f4c4088728f383d0cfb48b */
 #if BIND_GTestLogBuffer_INITIALIZE
   mrb_define_method(mrb, GTestLogBuffer_class, "initialize", mrb_GLib_GTestLogBuffer_initialize, MRB_ARGS_NONE());
 #endif
   mrb_define_class_method(mrb, GTestLogBuffer_class, "disown", mrb_GLib_GTestLogBuffer_disown, MRB_ARGS_ARG(1, 0));
   mrb_define_class_method(mrb, GTestLogBuffer_class, "belongs_to_ruby?", mrb_GLib_GTestLogBuffer_belongs_to_ruby, MRB_ARGS_ARG(1, 0));
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GTestLogBuffer::attr_definitions */
+/* sha: a2bc5c6ad9a5acb0ed66bf778d5580fb84782d83aead3d2d311af10f3f94a35f */
   /*
    * Fields
    */
@@ -195,7 +208,12 @@ void mrb_GLib_GTestLogBuffer_init(mrb_state* mrb) {
 #if BIND_GTestLogBuffer_msgs_FIELD_WRITER
   mrb_define_method(mrb, GTestLogBuffer_class, "msgs=", mrb_GLib_GTestLogBuffer_set_msgs, MRB_ARGS_ARG(1, 0));
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GTestLogBuffer::instance_method_definitions */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
+
+/* MRUBY_BINDING_END */
 }
 
 #endif

@@ -7,6 +7,11 @@
 
 #if BIND_GHmac_TYPE
 
+/* MRUBY_BINDING: custom_header */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
+
+/* MRUBY_BINDING_END */
+
 /*
  * Class Methods
  */
@@ -63,16 +68,30 @@ mrb_GLib_GHmac_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_GLib_GHmac_init(mrb_state* mrb) {
+/* MRUBY_BINDING: GHmac::class_definition */
+/* sha: a6c7c95cabbc504adec75c4b05a8f6efbedf94d0773ce5faf3c0c118447c9b47 */
   struct RClass* GHmac_class = mrb_define_class_under(mrb, GLib_module(mrb), "GHmac", mrb->object_class);
   MRB_SET_INSTANCE_TT(GHmac_class, MRB_TT_DATA);
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GHmac::class_method_definitions */
+/* sha: 765a5160783b426c2ee4eda2c7a82c1f730a115102211c5e4b4bb66395242caa */
 #if BIND_GHmac_INITIALIZE
   mrb_define_method(mrb, GHmac_class, "initialize", mrb_GLib_GHmac_initialize, MRB_ARGS_NONE());
 #endif
   mrb_define_class_method(mrb, GHmac_class, "disown", mrb_GLib_GHmac_disown, MRB_ARGS_ARG(1, 0));
   mrb_define_class_method(mrb, GHmac_class, "belongs_to_ruby?", mrb_GLib_GHmac_belongs_to_ruby, MRB_ARGS_ARG(1, 0));
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GHmac::attr_definitions */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
 
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: GHmac::instance_method_definitions */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
+
+/* MRUBY_BINDING_END */
 }
 
 #endif

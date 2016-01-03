@@ -7,6 +7,11 @@
 
 #if BIND_GVariantBuilder_TYPE
 
+/* MRUBY_BINDING: custom_header */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
+
+/* MRUBY_BINDING_END */
+
 /*
  * Class Methods
  */
@@ -116,15 +121,23 @@ mrb_GLib_GVariantBuilder_set_x(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_GLib_GVariantBuilder_init(mrb_state* mrb) {
+/* MRUBY_BINDING: GVariantBuilder::class_definition */
+/* sha: f681b59b72ac730ef95534fed437d114bfabe8630008759a724fdcee35014ebf */
   struct RClass* GVariantBuilder_class = mrb_define_class_under(mrb, GLib_module(mrb), "GVariantBuilder", mrb->object_class);
   MRB_SET_INSTANCE_TT(GVariantBuilder_class, MRB_TT_DATA);
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GVariantBuilder::class_method_definitions */
+/* sha: 73319b891272b89187cf51b1652a2f556a4a1eb239c62cd91b9101c39e65627f */
 #if BIND_GVariantBuilder_INITIALIZE
   mrb_define_method(mrb, GVariantBuilder_class, "initialize", mrb_GLib_GVariantBuilder_initialize, MRB_ARGS_NONE());
 #endif
   mrb_define_class_method(mrb, GVariantBuilder_class, "disown", mrb_GLib_GVariantBuilder_disown, MRB_ARGS_ARG(1, 0));
   mrb_define_class_method(mrb, GVariantBuilder_class, "belongs_to_ruby?", mrb_GLib_GVariantBuilder_belongs_to_ruby, MRB_ARGS_ARG(1, 0));
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GVariantBuilder::attr_definitions */
+/* sha: 2c16069e359a137dfe9284025182c3c31d8ebd135f4578cfcb46ad80ac11f49c */
   /*
    * Fields
    */
@@ -134,7 +147,12 @@ void mrb_GLib_GVariantBuilder_init(mrb_state* mrb) {
 #if BIND_GVariantBuilder_x_FIELD_WRITER
   mrb_define_method(mrb, GVariantBuilder_class, "x=", mrb_GLib_GVariantBuilder_set_x, MRB_ARGS_ARG(1, 0));
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GVariantBuilder::instance_method_definitions */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
+
+/* MRUBY_BINDING_END */
 }
 
 #endif

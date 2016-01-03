@@ -7,6 +7,11 @@
 
 #if BIND_GTimer_TYPE
 
+/* MRUBY_BINDING: custom_header */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
+
+/* MRUBY_BINDING_END */
+
 /*
  * Class Methods
  */
@@ -63,16 +68,30 @@ mrb_GLib_GTimer_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_GLib_GTimer_init(mrb_state* mrb) {
+/* MRUBY_BINDING: GTimer::class_definition */
+/* sha: 5071980275c044d890a67798ab22d6ef11a26c152773b2fd3bbc148cfa798025 */
   struct RClass* GTimer_class = mrb_define_class_under(mrb, GLib_module(mrb), "GTimer", mrb->object_class);
   MRB_SET_INSTANCE_TT(GTimer_class, MRB_TT_DATA);
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GTimer::class_method_definitions */
+/* sha: ecde2cb8e8303250121ba0a7eb8358f419a4fc11fcea3ac90334dd5c9333f288 */
 #if BIND_GTimer_INITIALIZE
   mrb_define_method(mrb, GTimer_class, "initialize", mrb_GLib_GTimer_initialize, MRB_ARGS_NONE());
 #endif
   mrb_define_class_method(mrb, GTimer_class, "disown", mrb_GLib_GTimer_disown, MRB_ARGS_ARG(1, 0));
   mrb_define_class_method(mrb, GTimer_class, "belongs_to_ruby?", mrb_GLib_GTimer_belongs_to_ruby, MRB_ARGS_ARG(1, 0));
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GTimer::attr_definitions */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
 
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: GTimer::instance_method_definitions */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
+
+/* MRUBY_BINDING_END */
 }
 
 #endif

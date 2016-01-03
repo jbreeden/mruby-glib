@@ -7,6 +7,11 @@
 
 #if BIND_GScanner_TYPE
 
+/* MRUBY_BINDING: custom_header */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
+
+/* MRUBY_BINDING_END */
+
 /*
  * Class Methods
  */
@@ -1040,15 +1045,23 @@ mrb_GLib_GScanner_set_msg_handler(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_GLib_GScanner_init(mrb_state* mrb) {
+/* MRUBY_BINDING: GScanner::class_definition */
+/* sha: a46c4138755e59af68ceb52ef47734a76f7b7435685bd94bfcbbb0b20822dfba */
   struct RClass* GScanner_class = mrb_define_class_under(mrb, GLib_module(mrb), "GScanner", mrb->object_class);
   MRB_SET_INSTANCE_TT(GScanner_class, MRB_TT_DATA);
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GScanner::class_method_definitions */
+/* sha: d98ddaaa9712b4f3448d375e39c61ec3750db043583e1acb535ede44cef9beaf */
 #if BIND_GScanner_INITIALIZE
   mrb_define_method(mrb, GScanner_class, "initialize", mrb_GLib_GScanner_initialize, MRB_ARGS_NONE());
 #endif
   mrb_define_class_method(mrb, GScanner_class, "disown", mrb_GLib_GScanner_disown, MRB_ARGS_ARG(1, 0));
   mrb_define_class_method(mrb, GScanner_class, "belongs_to_ruby?", mrb_GLib_GScanner_belongs_to_ruby, MRB_ARGS_ARG(1, 0));
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GScanner::attr_definitions */
+/* sha: 4926deed48e383fccdd4b889b51de3e2adc2f94401ebd4defaf3e5342c020e89 */
   /*
    * Fields
    */
@@ -1178,7 +1191,12 @@ void mrb_GLib_GScanner_init(mrb_state* mrb) {
 #if BIND_GScanner_msg_handler_FIELD_WRITER
   mrb_define_method(mrb, GScanner_class, "msg_handler=", mrb_GLib_GScanner_set_msg_handler, MRB_ARGS_ARG(1, 0));
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GScanner::instance_method_definitions */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
+
+/* MRUBY_BINDING_END */
 }
 
 #endif

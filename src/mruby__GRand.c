@@ -7,6 +7,11 @@
 
 #if BIND_GRand_TYPE
 
+/* MRUBY_BINDING: custom_header */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
+
+/* MRUBY_BINDING_END */
+
 /*
  * Class Methods
  */
@@ -63,16 +68,30 @@ mrb_GLib_GRand_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_GLib_GRand_init(mrb_state* mrb) {
+/* MRUBY_BINDING: GRand::class_definition */
+/* sha: 699ff0de96b0781b6f08d46abdd17471c71769384839baeabf207fc29196aac7 */
   struct RClass* GRand_class = mrb_define_class_under(mrb, GLib_module(mrb), "GRand", mrb->object_class);
   MRB_SET_INSTANCE_TT(GRand_class, MRB_TT_DATA);
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GRand::class_method_definitions */
+/* sha: c9a4f10b3c725539ab608581becadcc42fba978db38a54f383381abf771f40f7 */
 #if BIND_GRand_INITIALIZE
   mrb_define_method(mrb, GRand_class, "initialize", mrb_GLib_GRand_initialize, MRB_ARGS_NONE());
 #endif
   mrb_define_class_method(mrb, GRand_class, "disown", mrb_GLib_GRand_disown, MRB_ARGS_ARG(1, 0));
   mrb_define_class_method(mrb, GRand_class, "belongs_to_ruby?", mrb_GLib_GRand_belongs_to_ruby, MRB_ARGS_ARG(1, 0));
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GRand::attr_definitions */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
 
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: GRand::instance_method_definitions */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
+
+/* MRUBY_BINDING_END */
 }
 
 #endif

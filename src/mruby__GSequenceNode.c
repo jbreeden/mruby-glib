@@ -7,6 +7,11 @@
 
 #if BIND_GSequenceNode_TYPE
 
+/* MRUBY_BINDING: custom_header */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
+
+/* MRUBY_BINDING_END */
+
 /*
  * Class Methods
  */
@@ -63,16 +68,30 @@ mrb_GLib_GSequenceNode_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_GLib_GSequenceNode_init(mrb_state* mrb) {
+/* MRUBY_BINDING: GSequenceNode::class_definition */
+/* sha: 3122e7deb27e2618c57571f5d47bbc64f8520f5aeb79278b58b36d4b73423fc9 */
   struct RClass* GSequenceNode_class = mrb_define_class_under(mrb, GLib_module(mrb), "GSequenceNode", mrb->object_class);
   MRB_SET_INSTANCE_TT(GSequenceNode_class, MRB_TT_DATA);
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GSequenceNode::class_method_definitions */
+/* sha: dabad6e773e938fdd1918a8ff253b6335a607f2d251d3931e498aff66ad72fcd */
 #if BIND_GSequenceNode_INITIALIZE
   mrb_define_method(mrb, GSequenceNode_class, "initialize", mrb_GLib_GSequenceNode_initialize, MRB_ARGS_NONE());
 #endif
   mrb_define_class_method(mrb, GSequenceNode_class, "disown", mrb_GLib_GSequenceNode_disown, MRB_ARGS_ARG(1, 0));
   mrb_define_class_method(mrb, GSequenceNode_class, "belongs_to_ruby?", mrb_GLib_GSequenceNode_belongs_to_ruby, MRB_ARGS_ARG(1, 0));
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GSequenceNode::attr_definitions */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
 
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: GSequenceNode::instance_method_definitions */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
+
+/* MRUBY_BINDING_END */
 }
 
 #endif

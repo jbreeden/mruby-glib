@@ -7,6 +7,11 @@
 
 #if BIND_GSourceFuncs_TYPE
 
+/* MRUBY_BINDING: custom_header */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
+
+/* MRUBY_BINDING_END */
+
 /*
  * Class Methods
  */
@@ -361,15 +366,23 @@ mrb_GLib_GSourceFuncs_set_closure_marshal(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_GLib_GSourceFuncs_init(mrb_state* mrb) {
+/* MRUBY_BINDING: GSourceFuncs::class_definition */
+/* sha: ac4aef69e18d652e4731d71a7151614c169197e4ac4b9d1c3a2d67ec87d2aaf8 */
   struct RClass* GSourceFuncs_class = mrb_define_class_under(mrb, GLib_module(mrb), "GSourceFuncs", mrb->object_class);
   MRB_SET_INSTANCE_TT(GSourceFuncs_class, MRB_TT_DATA);
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GSourceFuncs::class_method_definitions */
+/* sha: cd56adf248d774a442fac1d911d8b29e049510e7e05a3770017abfb533445caf */
 #if BIND_GSourceFuncs_INITIALIZE
   mrb_define_method(mrb, GSourceFuncs_class, "initialize", mrb_GLib_GSourceFuncs_initialize, MRB_ARGS_NONE());
 #endif
   mrb_define_class_method(mrb, GSourceFuncs_class, "disown", mrb_GLib_GSourceFuncs_disown, MRB_ARGS_ARG(1, 0));
   mrb_define_class_method(mrb, GSourceFuncs_class, "belongs_to_ruby?", mrb_GLib_GSourceFuncs_belongs_to_ruby, MRB_ARGS_ARG(1, 0));
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GSourceFuncs::attr_definitions */
+/* sha: e0567b4ff189054ff27f001a47de81f571559edd1df4c7d1ea72a2645099a213 */
   /*
    * Fields
    */
@@ -409,7 +422,12 @@ void mrb_GLib_GSourceFuncs_init(mrb_state* mrb) {
 #if BIND_GSourceFuncs_closure_marshal_FIELD_WRITER
   mrb_define_method(mrb, GSourceFuncs_class, "closure_marshal=", mrb_GLib_GSourceFuncs_set_closure_marshal, MRB_ARGS_ARG(1, 0));
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GSourceFuncs::instance_method_definitions */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
+
+/* MRUBY_BINDING_END */
 }
 
 #endif

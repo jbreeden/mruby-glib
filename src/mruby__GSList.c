@@ -7,6 +7,11 @@
 
 #if BIND_GSList_TYPE
 
+/* MRUBY_BINDING: custom_header */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
+
+/* MRUBY_BINDING_END */
+
 /*
  * Class Methods
  */
@@ -168,15 +173,23 @@ mrb_GLib_GSList_set_next(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_GLib_GSList_init(mrb_state* mrb) {
+/* MRUBY_BINDING: GSList::class_definition */
+/* sha: 1cf4c8e66c57159dcc5ed93cd6c97ac7a3b743927baeac7086b1a765c1f14fef */
   struct RClass* GSList_class = mrb_define_class_under(mrb, GLib_module(mrb), "GSList", mrb->object_class);
   MRB_SET_INSTANCE_TT(GSList_class, MRB_TT_DATA);
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GSList::class_method_definitions */
+/* sha: a7064bd1ab91eafde9cf7644a9677b57b7c18349d7d778a8aeefd0842d46711f */
 #if BIND_GSList_INITIALIZE
   mrb_define_method(mrb, GSList_class, "initialize", mrb_GLib_GSList_initialize, MRB_ARGS_NONE());
 #endif
   mrb_define_class_method(mrb, GSList_class, "disown", mrb_GLib_GSList_disown, MRB_ARGS_ARG(1, 0));
   mrb_define_class_method(mrb, GSList_class, "belongs_to_ruby?", mrb_GLib_GSList_belongs_to_ruby, MRB_ARGS_ARG(1, 0));
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GSList::attr_definitions */
+/* sha: fad6828598d257e835d401e9445d48eeba732ca20e62f10df408f5461c21645d */
   /*
    * Fields
    */
@@ -192,7 +205,12 @@ void mrb_GLib_GSList_init(mrb_state* mrb) {
 #if BIND_GSList_next_FIELD_WRITER
   mrb_define_method(mrb, GSList_class, "next=", mrb_GLib_GSList_set_next, MRB_ARGS_ARG(1, 0));
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GSList::instance_method_definitions */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
+
+/* MRUBY_BINDING_END */
 }
 
 #endif

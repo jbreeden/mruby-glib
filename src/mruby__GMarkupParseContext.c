@@ -7,6 +7,11 @@
 
 #if BIND_GMarkupParseContext_TYPE
 
+/* MRUBY_BINDING: custom_header */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
+
+/* MRUBY_BINDING_END */
+
 /*
  * Class Methods
  */
@@ -63,16 +68,30 @@ mrb_GLib_GMarkupParseContext_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_GLib_GMarkupParseContext_init(mrb_state* mrb) {
+/* MRUBY_BINDING: GMarkupParseContext::class_definition */
+/* sha: 3d6ec0de42b74130946a2982f59a39667ede0287c23467586c8532cba769f69e */
   struct RClass* GMarkupParseContext_class = mrb_define_class_under(mrb, GLib_module(mrb), "GMarkupParseContext", mrb->object_class);
   MRB_SET_INSTANCE_TT(GMarkupParseContext_class, MRB_TT_DATA);
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GMarkupParseContext::class_method_definitions */
+/* sha: 278fb0090f2647ecbc04e0e057b5183b526bacf64e014d90a6a32aad68afef83 */
 #if BIND_GMarkupParseContext_INITIALIZE
   mrb_define_method(mrb, GMarkupParseContext_class, "initialize", mrb_GLib_GMarkupParseContext_initialize, MRB_ARGS_NONE());
 #endif
   mrb_define_class_method(mrb, GMarkupParseContext_class, "disown", mrb_GLib_GMarkupParseContext_disown, MRB_ARGS_ARG(1, 0));
   mrb_define_class_method(mrb, GMarkupParseContext_class, "belongs_to_ruby?", mrb_GLib_GMarkupParseContext_belongs_to_ruby, MRB_ARGS_ARG(1, 0));
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GMarkupParseContext::attr_definitions */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
 
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: GMarkupParseContext::instance_method_definitions */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
+
+/* MRUBY_BINDING_END */
 }
 
 #endif

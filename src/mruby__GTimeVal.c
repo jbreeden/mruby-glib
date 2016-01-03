@@ -7,6 +7,11 @@
 
 #if BIND_GTimeVal_TYPE
 
+/* MRUBY_BINDING: custom_header */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
+
+/* MRUBY_BINDING_END */
+
 /*
  * Class Methods
  */
@@ -155,15 +160,23 @@ mrb_GLib_GTimeVal_set_tv_usec(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_GLib_GTimeVal_init(mrb_state* mrb) {
+/* MRUBY_BINDING: GTimeVal::class_definition */
+/* sha: f9a85d09f41ae64e5ae51e2d71598343c4363dfd41123e6eec1215476c358570 */
   struct RClass* GTimeVal_class = mrb_define_class_under(mrb, GLib_module(mrb), "GTimeVal", mrb->object_class);
   MRB_SET_INSTANCE_TT(GTimeVal_class, MRB_TT_DATA);
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GTimeVal::class_method_definitions */
+/* sha: 01269914b3b9486d3d7ebe243c33b1605580fbbc3f2e28884bd8ace566bbe7d1 */
 #if BIND_GTimeVal_INITIALIZE
   mrb_define_method(mrb, GTimeVal_class, "initialize", mrb_GLib_GTimeVal_initialize, MRB_ARGS_NONE());
 #endif
   mrb_define_class_method(mrb, GTimeVal_class, "disown", mrb_GLib_GTimeVal_disown, MRB_ARGS_ARG(1, 0));
   mrb_define_class_method(mrb, GTimeVal_class, "belongs_to_ruby?", mrb_GLib_GTimeVal_belongs_to_ruby, MRB_ARGS_ARG(1, 0));
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GTimeVal::attr_definitions */
+/* sha: f3b02024648269e5c4c509a1dd04887187b694dfc925f729a835738087d1ed34 */
   /*
    * Fields
    */
@@ -179,7 +192,12 @@ void mrb_GLib_GTimeVal_init(mrb_state* mrb) {
 #if BIND_GTimeVal_tv_usec_FIELD_WRITER
   mrb_define_method(mrb, GTimeVal_class, "tv_usec=", mrb_GLib_GTimeVal_set_tv_usec, MRB_ARGS_ARG(1, 0));
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GTimeVal::instance_method_definitions */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
+
+/* MRUBY_BINDING_END */
 }
 
 #endif

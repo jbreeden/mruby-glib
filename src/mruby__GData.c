@@ -7,6 +7,11 @@
 
 #if BIND_GData_TYPE
 
+/* MRUBY_BINDING: custom_header */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
+
+/* MRUBY_BINDING_END */
+
 /*
  * Class Methods
  */
@@ -63,16 +68,30 @@ mrb_GLib_GData_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_GLib_GData_init(mrb_state* mrb) {
+/* MRUBY_BINDING: GData::class_definition */
+/* sha: 70628c22298982a862d079ddaaca71abda9d0d9a346e49d3b8ad56020bd8654c */
   struct RClass* GData_class = mrb_define_class_under(mrb, GLib_module(mrb), "GData", mrb->object_class);
   MRB_SET_INSTANCE_TT(GData_class, MRB_TT_DATA);
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GData::class_method_definitions */
+/* sha: 1c35e30d6ea7f13227f17c0306b554dc4fc9f557736857755a310baaeb0642fc */
 #if BIND_GData_INITIALIZE
   mrb_define_method(mrb, GData_class, "initialize", mrb_GLib_GData_initialize, MRB_ARGS_NONE());
 #endif
   mrb_define_class_method(mrb, GData_class, "disown", mrb_GLib_GData_disown, MRB_ARGS_ARG(1, 0));
   mrb_define_class_method(mrb, GData_class, "belongs_to_ruby?", mrb_GLib_GData_belongs_to_ruby, MRB_ARGS_ARG(1, 0));
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GData::attr_definitions */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
 
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: GData::instance_method_definitions */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
+
+/* MRUBY_BINDING_END */
 }
 
 #endif

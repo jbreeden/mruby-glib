@@ -7,6 +7,11 @@
 
 #if BIND_GBookmarkFile_TYPE
 
+/* MRUBY_BINDING: custom_header */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
+
+/* MRUBY_BINDING_END */
+
 /*
  * Class Methods
  */
@@ -63,16 +68,30 @@ mrb_GLib_GBookmarkFile_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_GLib_GBookmarkFile_init(mrb_state* mrb) {
+/* MRUBY_BINDING: GBookmarkFile::class_definition */
+/* sha: 4387f743964c9009e2e74efaaff1822051bb5546996394df5340e44fdaeb71b6 */
   struct RClass* GBookmarkFile_class = mrb_define_class_under(mrb, GLib_module(mrb), "GBookmarkFile", mrb->object_class);
   MRB_SET_INSTANCE_TT(GBookmarkFile_class, MRB_TT_DATA);
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GBookmarkFile::class_method_definitions */
+/* sha: 9f827795f3413cec53f13792f9a8dc86a9ea6c4fa14ef0ce803d4b80ac6b0fc2 */
 #if BIND_GBookmarkFile_INITIALIZE
   mrb_define_method(mrb, GBookmarkFile_class, "initialize", mrb_GLib_GBookmarkFile_initialize, MRB_ARGS_NONE());
 #endif
   mrb_define_class_method(mrb, GBookmarkFile_class, "disown", mrb_GLib_GBookmarkFile_disown, MRB_ARGS_ARG(1, 0));
   mrb_define_class_method(mrb, GBookmarkFile_class, "belongs_to_ruby?", mrb_GLib_GBookmarkFile_belongs_to_ruby, MRB_ARGS_ARG(1, 0));
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GBookmarkFile::attr_definitions */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
 
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: GBookmarkFile::instance_method_definitions */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
+
+/* MRUBY_BINDING_END */
 }
 
 #endif

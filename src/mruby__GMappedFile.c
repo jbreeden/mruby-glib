@@ -7,6 +7,11 @@
 
 #if BIND_GMappedFile_TYPE
 
+/* MRUBY_BINDING: custom_header */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
+
+/* MRUBY_BINDING_END */
+
 /*
  * Class Methods
  */
@@ -63,16 +68,30 @@ mrb_GLib_GMappedFile_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_GLib_GMappedFile_init(mrb_state* mrb) {
+/* MRUBY_BINDING: GMappedFile::class_definition */
+/* sha: 879f70e5616f8e0820ab6a46996d06586a407eb608f1891743e579ff7d2e00e8 */
   struct RClass* GMappedFile_class = mrb_define_class_under(mrb, GLib_module(mrb), "GMappedFile", mrb->object_class);
   MRB_SET_INSTANCE_TT(GMappedFile_class, MRB_TT_DATA);
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GMappedFile::class_method_definitions */
+/* sha: 5fef4115837cc3a5953e9080f1182c6bdec0037d1b876c913a10e0da30c25935 */
 #if BIND_GMappedFile_INITIALIZE
   mrb_define_method(mrb, GMappedFile_class, "initialize", mrb_GLib_GMappedFile_initialize, MRB_ARGS_NONE());
 #endif
   mrb_define_class_method(mrb, GMappedFile_class, "disown", mrb_GLib_GMappedFile_disown, MRB_ARGS_ARG(1, 0));
   mrb_define_class_method(mrb, GMappedFile_class, "belongs_to_ruby?", mrb_GLib_GMappedFile_belongs_to_ruby, MRB_ARGS_ARG(1, 0));
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GMappedFile::attr_definitions */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
 
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: GMappedFile::instance_method_definitions */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
+
+/* MRUBY_BINDING_END */
 }
 
 #endif

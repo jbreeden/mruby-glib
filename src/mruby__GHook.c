@@ -7,6 +7,11 @@
 
 #if BIND_GHook_TYPE
 
+/* MRUBY_BINDING: custom_header */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
+
+/* MRUBY_BINDING_END */
+
 /*
  * Class Methods
  */
@@ -450,15 +455,23 @@ mrb_GLib_GHook_set_destroy(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_GLib_GHook_init(mrb_state* mrb) {
+/* MRUBY_BINDING: GHook::class_definition */
+/* sha: 8e901e11dc91fe6eed2c085c571ca71b0ef1182e3c333c6f3c87bd7d17b5cd20 */
   struct RClass* GHook_class = mrb_define_class_under(mrb, GLib_module(mrb), "GHook", mrb->object_class);
   MRB_SET_INSTANCE_TT(GHook_class, MRB_TT_DATA);
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GHook::class_method_definitions */
+/* sha: 0c71b17724e1a29f5973e0b5c52b6f8a2fd5280f8505ef613c920d21fa8812cc */
 #if BIND_GHook_INITIALIZE
   mrb_define_method(mrb, GHook_class, "initialize", mrb_GLib_GHook_initialize, MRB_ARGS_NONE());
 #endif
   mrb_define_class_method(mrb, GHook_class, "disown", mrb_GLib_GHook_disown, MRB_ARGS_ARG(1, 0));
   mrb_define_class_method(mrb, GHook_class, "belongs_to_ruby?", mrb_GLib_GHook_belongs_to_ruby, MRB_ARGS_ARG(1, 0));
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GHook::attr_definitions */
+/* sha: b462a8e6f23cd860bf80cf41cbb94bcba8827c723284f7821686fdaed4277628 */
   /*
    * Fields
    */
@@ -510,7 +523,12 @@ void mrb_GLib_GHook_init(mrb_state* mrb) {
 #if BIND_GHook_destroy_FIELD_WRITER
   mrb_define_method(mrb, GHook_class, "destroy=", mrb_GLib_GHook_set_destroy, MRB_ARGS_ARG(1, 0));
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GHook::instance_method_definitions */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
+
+/* MRUBY_BINDING_END */
 }
 
 #endif

@@ -51,11 +51,13 @@ module FileTest
   # def identical?(path1, path2)
   #
   # end
-  #
-  # def owned?(path)
-  #   stat = File::Stat.new(path) rescue nil
-  #   stat.owned?
-  # end
+  
+  def owned?(path)
+    info = Private.info_with(path, GLib::G_FILE_ATTRIBUTE_OWNER_USER)
+    owner = GLib.g_file_info_get_attribute_string(info, GLib::G_FILE_ATTRIBUTE_OWNER_USER)
+    owner == GLib.g_get_user_name()
+  end
+  module_function :owned?
 
   # def pipe?(path)
   #   FileTest.is_type?(path, APR::AprFiletypeE::APR_PIPE)
@@ -65,6 +67,7 @@ module FileTest
     info = Private.info_with(path, GLib::G_FILE_ATTRIBUTE_ACCESS_CAN_READ)
     GLib.g_file_info_get_attribute_boolean(info, GLib::G_FILE_ATTRIBUTE_ACCESS_CAN_READ)
   end
+  module_function :readable?
   
   # def readable_real?(path)
   #   stat = File::Stat.new(path) rescue nil
@@ -117,6 +120,7 @@ module FileTest
     info = Private.info_with(path, GLib::G_FILE_ATTRIBUTE_ACCESS_CAN_WRITE)
     GLib.g_file_info_get_attribute_boolean(info, GLib::G_FILE_ATTRIBUTE_ACCESS_CAN_WRITE)
   end
+  module_function :writable?
   
   # def writable_real?(path)
   #   stat = File::Stat.new(path) rescue nil
@@ -126,6 +130,7 @@ module FileTest
   def zero?(path)
     size(path) == 0
   end
+  module_function :zero?
 end
 
 class File

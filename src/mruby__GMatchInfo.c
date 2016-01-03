@@ -7,6 +7,11 @@
 
 #if BIND_GMatchInfo_TYPE
 
+/* MRUBY_BINDING: custom_header */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
+
+/* MRUBY_BINDING_END */
+
 /*
  * Class Methods
  */
@@ -63,16 +68,30 @@ mrb_GLib_GMatchInfo_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_GLib_GMatchInfo_init(mrb_state* mrb) {
+/* MRUBY_BINDING: GMatchInfo::class_definition */
+/* sha: d7b282e9d28a640ec0a08e826e078aed92f54ff29ae1d2c6a566aff0db10813d */
   struct RClass* GMatchInfo_class = mrb_define_class_under(mrb, GLib_module(mrb), "GMatchInfo", mrb->object_class);
   MRB_SET_INSTANCE_TT(GMatchInfo_class, MRB_TT_DATA);
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GMatchInfo::class_method_definitions */
+/* sha: 2a3ef4a5d2173eaf86adf623a9a5b48f48a39cf49000c9219e35839f601b1741 */
 #if BIND_GMatchInfo_INITIALIZE
   mrb_define_method(mrb, GMatchInfo_class, "initialize", mrb_GLib_GMatchInfo_initialize, MRB_ARGS_NONE());
 #endif
   mrb_define_class_method(mrb, GMatchInfo_class, "disown", mrb_GLib_GMatchInfo_disown, MRB_ARGS_ARG(1, 0));
   mrb_define_class_method(mrb, GMatchInfo_class, "belongs_to_ruby?", mrb_GLib_GMatchInfo_belongs_to_ruby, MRB_ARGS_ARG(1, 0));
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GMatchInfo::attr_definitions */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
 
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: GMatchInfo::instance_method_definitions */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
+
+/* MRUBY_BINDING_END */
 }
 
 #endif

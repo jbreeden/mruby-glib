@@ -1,5 +1,10 @@
 #include "mruby_GLib.h"
 
+/* MRUBY_BINDING: custom_header */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
+
+/* MRUBY_BINDING_END */
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -747,6 +752,1131 @@ mrb_GLib_g_assertion_message_expr(mrb_state* mrb, mrb_value self) {
 
   /* Invocation */
   g_assertion_message_expr(native_domain, native_file, native_line, native_func, native_expr);
+
+  return mrb_nil_value();
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_async_queue_length */
+/* sha: 5af9f8434e3fa565e906b8098826a1e7f6f92a2ade6f212ece645886e379f43a */
+#if BIND_g_async_queue_length_FUNCTION
+#define g_async_queue_length_REQUIRED_ARGC 1
+#define g_async_queue_length_OPTIONAL_ARGC 0
+/* g_async_queue_length
+ *
+ * Parameters:
+ * - queue: GAsyncQueue *
+ * Return Type: gint
+ */
+mrb_value
+mrb_GLib_g_async_queue_length(mrb_state* mrb, mrb_value self) {
+  mrb_value queue;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "o", &queue);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, queue, GAsyncQueue_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GAsyncQueue expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: queue */
+  GAsyncQueue * native_queue = (mrb_nil_p(queue) ? NULL : mruby_unbox__GAsyncQueue(queue));
+
+  /* Invocation */
+  gint native_return_value = g_async_queue_length(native_queue);
+
+  /* Box the return value */
+  mrb_value return_value = mrb_fixnum_value(native_return_value);
+  
+  return return_value;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_async_queue_length_unlocked */
+/* sha: d2c8f87715b60a1a635f68ba35ff9cd70255be0296b2a3d392590565d54e5b8d */
+#if BIND_g_async_queue_length_unlocked_FUNCTION
+#define g_async_queue_length_unlocked_REQUIRED_ARGC 1
+#define g_async_queue_length_unlocked_OPTIONAL_ARGC 0
+/* g_async_queue_length_unlocked
+ *
+ * Parameters:
+ * - queue: GAsyncQueue *
+ * Return Type: gint
+ */
+mrb_value
+mrb_GLib_g_async_queue_length_unlocked(mrb_state* mrb, mrb_value self) {
+  mrb_value queue;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "o", &queue);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, queue, GAsyncQueue_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GAsyncQueue expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: queue */
+  GAsyncQueue * native_queue = (mrb_nil_p(queue) ? NULL : mruby_unbox__GAsyncQueue(queue));
+
+  /* Invocation */
+  gint native_return_value = g_async_queue_length_unlocked(native_queue);
+
+  /* Box the return value */
+  mrb_value return_value = mrb_fixnum_value(native_return_value);
+  
+  return return_value;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_async_queue_lock */
+/* sha: 4fdfcce2bd2be4d9c1265730b6a6a6ff775405274b375c65c09f9bda77315156 */
+#if BIND_g_async_queue_lock_FUNCTION
+#define g_async_queue_lock_REQUIRED_ARGC 1
+#define g_async_queue_lock_OPTIONAL_ARGC 0
+/* g_async_queue_lock
+ *
+ * Parameters:
+ * - queue: GAsyncQueue *
+ * Return Type: void
+ */
+mrb_value
+mrb_GLib_g_async_queue_lock(mrb_state* mrb, mrb_value self) {
+  mrb_value queue;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "o", &queue);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, queue, GAsyncQueue_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GAsyncQueue expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: queue */
+  GAsyncQueue * native_queue = (mrb_nil_p(queue) ? NULL : mruby_unbox__GAsyncQueue(queue));
+
+  /* Invocation */
+  g_async_queue_lock(native_queue);
+
+  return mrb_nil_value();
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_async_queue_new */
+/* sha: 5ac80d523279411b1aa787d0d1a1df5a010e39732a8227eaec3bd5ce03f1aa4f */
+#if BIND_g_async_queue_new_FUNCTION
+#define g_async_queue_new_REQUIRED_ARGC 0
+#define g_async_queue_new_OPTIONAL_ARGC 0
+/* g_async_queue_new
+ *
+ * Parameters: None
+ * Return Type: GAsyncQueue *
+ */
+mrb_value
+mrb_GLib_g_async_queue_new(mrb_state* mrb, mrb_value self) {
+  /* Invocation */
+  GAsyncQueue * native_return_value = g_async_queue_new();
+
+  /* Box the return value */
+  mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_box__GAsyncQueue(mrb, native_return_value));
+  
+  return return_value;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_async_queue_new_full */
+/* sha: 77967062f48da25c6b19ec641fe941e290a678652ead26c8d4fc5f50c6b520c0 */
+#if BIND_g_async_queue_new_full_FUNCTION
+#define g_async_queue_new_full_REQUIRED_ARGC 1
+#define g_async_queue_new_full_OPTIONAL_ARGC 0
+/* g_async_queue_new_full
+ *
+ * Parameters:
+ * - item_free_func: GDestroyNotify
+ * Return Type: GAsyncQueue *
+ */
+mrb_value
+mrb_GLib_g_async_queue_new_full(mrb_state* mrb, mrb_value self) {
+  mrb_value item_free_func;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "o", &item_free_func);
+
+  /* Type checking */
+  TODO_type_check_GDestroyNotify(item_free_func);
+
+  /* Unbox param: item_free_func */
+  GDestroyNotify native_item_free_func = TODO_mruby_unbox_GDestroyNotify(item_free_func);
+
+  /* Invocation */
+  GAsyncQueue * native_return_value = g_async_queue_new_full(native_item_free_func);
+
+  /* Box the return value */
+  mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_box__GAsyncQueue(mrb, native_return_value));
+  
+  return return_value;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_async_queue_pop */
+/* sha: 0bb24ba17b2fb6269573a9011ab810cf738caf62101ee3c609507794d872507d */
+#if BIND_g_async_queue_pop_FUNCTION
+#define g_async_queue_pop_REQUIRED_ARGC 1
+#define g_async_queue_pop_OPTIONAL_ARGC 0
+/* g_async_queue_pop
+ *
+ * Parameters:
+ * - queue: GAsyncQueue *
+ * Return Type: gpointer
+ */
+mrb_value
+mrb_GLib_g_async_queue_pop(mrb_state* mrb, mrb_value self) {
+  mrb_value queue;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "o", &queue);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, queue, GAsyncQueue_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GAsyncQueue expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: queue */
+  GAsyncQueue * native_queue = (mrb_nil_p(queue) ? NULL : mruby_unbox__GAsyncQueue(queue));
+
+  /* Invocation */
+  gpointer native_return_value = g_async_queue_pop(native_queue);
+
+  /* Box the return value */
+  mrb_value return_value = TODO_mruby_box_gpointer(mrb, native_return_value);
+  
+  return return_value;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_async_queue_pop_unlocked */
+/* sha: 303f2d2ac609d6c0b80ce378c26bf115b5a04e1fde7d4eabe941534e05189a37 */
+#if BIND_g_async_queue_pop_unlocked_FUNCTION
+#define g_async_queue_pop_unlocked_REQUIRED_ARGC 1
+#define g_async_queue_pop_unlocked_OPTIONAL_ARGC 0
+/* g_async_queue_pop_unlocked
+ *
+ * Parameters:
+ * - queue: GAsyncQueue *
+ * Return Type: gpointer
+ */
+mrb_value
+mrb_GLib_g_async_queue_pop_unlocked(mrb_state* mrb, mrb_value self) {
+  mrb_value queue;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "o", &queue);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, queue, GAsyncQueue_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GAsyncQueue expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: queue */
+  GAsyncQueue * native_queue = (mrb_nil_p(queue) ? NULL : mruby_unbox__GAsyncQueue(queue));
+
+  /* Invocation */
+  gpointer native_return_value = g_async_queue_pop_unlocked(native_queue);
+
+  /* Box the return value */
+  mrb_value return_value = TODO_mruby_box_gpointer(mrb, native_return_value);
+  
+  return return_value;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_async_queue_push */
+/* sha: bff5c9bec660eb0fdba0f515858a78ef277d78906390ab8c8760e15b6fb8e703 */
+#if BIND_g_async_queue_push_FUNCTION
+#define g_async_queue_push_REQUIRED_ARGC 2
+#define g_async_queue_push_OPTIONAL_ARGC 0
+/* g_async_queue_push
+ *
+ * Parameters:
+ * - queue: GAsyncQueue *
+ * - data: gpointer
+ * Return Type: void
+ */
+mrb_value
+mrb_GLib_g_async_queue_push(mrb_state* mrb, mrb_value self) {
+  mrb_value queue;
+  mrb_value data;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "oo", &queue, &data);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, queue, GAsyncQueue_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GAsyncQueue expected");
+    return mrb_nil_value();
+  }
+  TODO_type_check_gpointer(data);
+
+  /* Unbox param: queue */
+  GAsyncQueue * native_queue = (mrb_nil_p(queue) ? NULL : mruby_unbox__GAsyncQueue(queue));
+
+  /* Unbox param: data */
+  gpointer native_data = TODO_mruby_unbox_gpointer(data);
+
+  /* Invocation */
+  g_async_queue_push(native_queue, native_data);
+
+  return mrb_nil_value();
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_async_queue_push_front */
+/* sha: 7b7a78d5c4b5c71111195a26a80d7d8a10e1f19fdfd2b2b52ad39716b0f9167f */
+#if BIND_g_async_queue_push_front_FUNCTION
+#define g_async_queue_push_front_REQUIRED_ARGC 2
+#define g_async_queue_push_front_OPTIONAL_ARGC 0
+/* g_async_queue_push_front
+ *
+ * Parameters:
+ * - queue: GAsyncQueue *
+ * - item: gpointer
+ * Return Type: void
+ */
+mrb_value
+mrb_GLib_g_async_queue_push_front(mrb_state* mrb, mrb_value self) {
+  mrb_value queue;
+  mrb_value item;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "oo", &queue, &item);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, queue, GAsyncQueue_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GAsyncQueue expected");
+    return mrb_nil_value();
+  }
+  TODO_type_check_gpointer(item);
+
+  /* Unbox param: queue */
+  GAsyncQueue * native_queue = (mrb_nil_p(queue) ? NULL : mruby_unbox__GAsyncQueue(queue));
+
+  /* Unbox param: item */
+  gpointer native_item = TODO_mruby_unbox_gpointer(item);
+
+  /* Invocation */
+  g_async_queue_push_front(native_queue, native_item);
+
+  return mrb_nil_value();
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_async_queue_push_front_unlocked */
+/* sha: 5193ce63b7d6c11ce465543589bdf6b31ad671b1d86d30b3ba006e82c196aaac */
+#if BIND_g_async_queue_push_front_unlocked_FUNCTION
+#define g_async_queue_push_front_unlocked_REQUIRED_ARGC 2
+#define g_async_queue_push_front_unlocked_OPTIONAL_ARGC 0
+/* g_async_queue_push_front_unlocked
+ *
+ * Parameters:
+ * - queue: GAsyncQueue *
+ * - item: gpointer
+ * Return Type: void
+ */
+mrb_value
+mrb_GLib_g_async_queue_push_front_unlocked(mrb_state* mrb, mrb_value self) {
+  mrb_value queue;
+  mrb_value item;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "oo", &queue, &item);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, queue, GAsyncQueue_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GAsyncQueue expected");
+    return mrb_nil_value();
+  }
+  TODO_type_check_gpointer(item);
+
+  /* Unbox param: queue */
+  GAsyncQueue * native_queue = (mrb_nil_p(queue) ? NULL : mruby_unbox__GAsyncQueue(queue));
+
+  /* Unbox param: item */
+  gpointer native_item = TODO_mruby_unbox_gpointer(item);
+
+  /* Invocation */
+  g_async_queue_push_front_unlocked(native_queue, native_item);
+
+  return mrb_nil_value();
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_async_queue_push_sorted */
+/* sha: 467ba69b0f37bfd56dffbe75d3f84f8283570148469f1c1ce81c1d3247cc30e5 */
+#if BIND_g_async_queue_push_sorted_FUNCTION
+#define g_async_queue_push_sorted_REQUIRED_ARGC 4
+#define g_async_queue_push_sorted_OPTIONAL_ARGC 0
+/* g_async_queue_push_sorted
+ *
+ * Parameters:
+ * - queue: GAsyncQueue *
+ * - data: gpointer
+ * - func: GCompareDataFunc
+ * - user_data: gpointer
+ * Return Type: void
+ */
+mrb_value
+mrb_GLib_g_async_queue_push_sorted(mrb_state* mrb, mrb_value self) {
+  mrb_value queue;
+  mrb_value data;
+  mrb_value func;
+  mrb_value user_data;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "oooo", &queue, &data, &func, &user_data);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, queue, GAsyncQueue_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GAsyncQueue expected");
+    return mrb_nil_value();
+  }
+  TODO_type_check_gpointer(data);
+  TODO_type_check_GCompareDataFunc(func);
+  TODO_type_check_gpointer(user_data);
+
+  /* Unbox param: queue */
+  GAsyncQueue * native_queue = (mrb_nil_p(queue) ? NULL : mruby_unbox__GAsyncQueue(queue));
+
+  /* Unbox param: data */
+  gpointer native_data = TODO_mruby_unbox_gpointer(data);
+
+  /* Unbox param: func */
+  GCompareDataFunc native_func = TODO_mruby_unbox_GCompareDataFunc(func);
+
+  /* Unbox param: user_data */
+  gpointer native_user_data = TODO_mruby_unbox_gpointer(user_data);
+
+  /* Invocation */
+  g_async_queue_push_sorted(native_queue, native_data, native_func, native_user_data);
+
+  return mrb_nil_value();
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_async_queue_push_sorted_unlocked */
+/* sha: f6f9fa24e7f2af31b998050b477bb460d9914b385217bcba1d50d7be2858be89 */
+#if BIND_g_async_queue_push_sorted_unlocked_FUNCTION
+#define g_async_queue_push_sorted_unlocked_REQUIRED_ARGC 4
+#define g_async_queue_push_sorted_unlocked_OPTIONAL_ARGC 0
+/* g_async_queue_push_sorted_unlocked
+ *
+ * Parameters:
+ * - queue: GAsyncQueue *
+ * - data: gpointer
+ * - func: GCompareDataFunc
+ * - user_data: gpointer
+ * Return Type: void
+ */
+mrb_value
+mrb_GLib_g_async_queue_push_sorted_unlocked(mrb_state* mrb, mrb_value self) {
+  mrb_value queue;
+  mrb_value data;
+  mrb_value func;
+  mrb_value user_data;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "oooo", &queue, &data, &func, &user_data);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, queue, GAsyncQueue_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GAsyncQueue expected");
+    return mrb_nil_value();
+  }
+  TODO_type_check_gpointer(data);
+  TODO_type_check_GCompareDataFunc(func);
+  TODO_type_check_gpointer(user_data);
+
+  /* Unbox param: queue */
+  GAsyncQueue * native_queue = (mrb_nil_p(queue) ? NULL : mruby_unbox__GAsyncQueue(queue));
+
+  /* Unbox param: data */
+  gpointer native_data = TODO_mruby_unbox_gpointer(data);
+
+  /* Unbox param: func */
+  GCompareDataFunc native_func = TODO_mruby_unbox_GCompareDataFunc(func);
+
+  /* Unbox param: user_data */
+  gpointer native_user_data = TODO_mruby_unbox_gpointer(user_data);
+
+  /* Invocation */
+  g_async_queue_push_sorted_unlocked(native_queue, native_data, native_func, native_user_data);
+
+  return mrb_nil_value();
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_async_queue_push_unlocked */
+/* sha: 96e222dfa898676bf847c37467d964b3eeed7e0552c2371577a230dc003e3e47 */
+#if BIND_g_async_queue_push_unlocked_FUNCTION
+#define g_async_queue_push_unlocked_REQUIRED_ARGC 2
+#define g_async_queue_push_unlocked_OPTIONAL_ARGC 0
+/* g_async_queue_push_unlocked
+ *
+ * Parameters:
+ * - queue: GAsyncQueue *
+ * - data: gpointer
+ * Return Type: void
+ */
+mrb_value
+mrb_GLib_g_async_queue_push_unlocked(mrb_state* mrb, mrb_value self) {
+  mrb_value queue;
+  mrb_value data;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "oo", &queue, &data);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, queue, GAsyncQueue_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GAsyncQueue expected");
+    return mrb_nil_value();
+  }
+  TODO_type_check_gpointer(data);
+
+  /* Unbox param: queue */
+  GAsyncQueue * native_queue = (mrb_nil_p(queue) ? NULL : mruby_unbox__GAsyncQueue(queue));
+
+  /* Unbox param: data */
+  gpointer native_data = TODO_mruby_unbox_gpointer(data);
+
+  /* Invocation */
+  g_async_queue_push_unlocked(native_queue, native_data);
+
+  return mrb_nil_value();
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_async_queue_ref */
+/* sha: f69a70b55c98df03b6403239f17809334676dc3fd128cb217a60df9f6e5fe763 */
+#if BIND_g_async_queue_ref_FUNCTION
+#define g_async_queue_ref_REQUIRED_ARGC 1
+#define g_async_queue_ref_OPTIONAL_ARGC 0
+/* g_async_queue_ref
+ *
+ * Parameters:
+ * - queue: GAsyncQueue *
+ * Return Type: GAsyncQueue *
+ */
+mrb_value
+mrb_GLib_g_async_queue_ref(mrb_state* mrb, mrb_value self) {
+  mrb_value queue;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "o", &queue);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, queue, GAsyncQueue_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GAsyncQueue expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: queue */
+  GAsyncQueue * native_queue = (mrb_nil_p(queue) ? NULL : mruby_unbox__GAsyncQueue(queue));
+
+  /* Invocation */
+  GAsyncQueue * native_return_value = g_async_queue_ref(native_queue);
+
+  /* Box the return value */
+  mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_box__GAsyncQueue(mrb, native_return_value));
+  
+  return return_value;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_async_queue_ref_unlocked */
+/* sha: dccefa804961ec1df2e8ee4234dcddde3d731ac7e7fc60f52458285ea239b575 */
+#if BIND_g_async_queue_ref_unlocked_FUNCTION
+#define g_async_queue_ref_unlocked_REQUIRED_ARGC 1
+#define g_async_queue_ref_unlocked_OPTIONAL_ARGC 0
+/* g_async_queue_ref_unlocked
+ *
+ * Parameters:
+ * - queue: GAsyncQueue *
+ * Return Type: void
+ */
+mrb_value
+mrb_GLib_g_async_queue_ref_unlocked(mrb_state* mrb, mrb_value self) {
+  mrb_value queue;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "o", &queue);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, queue, GAsyncQueue_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GAsyncQueue expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: queue */
+  GAsyncQueue * native_queue = (mrb_nil_p(queue) ? NULL : mruby_unbox__GAsyncQueue(queue));
+
+  /* Invocation */
+  g_async_queue_ref_unlocked(native_queue);
+
+  return mrb_nil_value();
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_async_queue_remove */
+/* sha: 7570548aa41ac287e9289c6308bb1b34a1cfee006fa0e04ff32e6357be816567 */
+#if BIND_g_async_queue_remove_FUNCTION
+#define g_async_queue_remove_REQUIRED_ARGC 2
+#define g_async_queue_remove_OPTIONAL_ARGC 0
+/* g_async_queue_remove
+ *
+ * Parameters:
+ * - queue: GAsyncQueue *
+ * - item: gpointer
+ * Return Type: gboolean
+ */
+mrb_value
+mrb_GLib_g_async_queue_remove(mrb_state* mrb, mrb_value self) {
+  mrb_value queue;
+  mrb_value item;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "oo", &queue, &item);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, queue, GAsyncQueue_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GAsyncQueue expected");
+    return mrb_nil_value();
+  }
+  TODO_type_check_gpointer(item);
+
+  /* Unbox param: queue */
+  GAsyncQueue * native_queue = (mrb_nil_p(queue) ? NULL : mruby_unbox__GAsyncQueue(queue));
+
+  /* Unbox param: item */
+  gpointer native_item = TODO_mruby_unbox_gpointer(item);
+
+  /* Invocation */
+  gboolean native_return_value = g_async_queue_remove(native_queue, native_item);
+
+  /* Box the return value */
+  mrb_value return_value = mrb_bool_value(native_return_value);
+  
+  return return_value;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_async_queue_remove_unlocked */
+/* sha: 206f320b91b7dd470565ba93af4dd37308e90adb3073b440bd665f4987379db6 */
+#if BIND_g_async_queue_remove_unlocked_FUNCTION
+#define g_async_queue_remove_unlocked_REQUIRED_ARGC 2
+#define g_async_queue_remove_unlocked_OPTIONAL_ARGC 0
+/* g_async_queue_remove_unlocked
+ *
+ * Parameters:
+ * - queue: GAsyncQueue *
+ * - item: gpointer
+ * Return Type: gboolean
+ */
+mrb_value
+mrb_GLib_g_async_queue_remove_unlocked(mrb_state* mrb, mrb_value self) {
+  mrb_value queue;
+  mrb_value item;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "oo", &queue, &item);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, queue, GAsyncQueue_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GAsyncQueue expected");
+    return mrb_nil_value();
+  }
+  TODO_type_check_gpointer(item);
+
+  /* Unbox param: queue */
+  GAsyncQueue * native_queue = (mrb_nil_p(queue) ? NULL : mruby_unbox__GAsyncQueue(queue));
+
+  /* Unbox param: item */
+  gpointer native_item = TODO_mruby_unbox_gpointer(item);
+
+  /* Invocation */
+  gboolean native_return_value = g_async_queue_remove_unlocked(native_queue, native_item);
+
+  /* Box the return value */
+  mrb_value return_value = mrb_bool_value(native_return_value);
+  
+  return return_value;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_async_queue_sort */
+/* sha: 0d875e25f1190d247285a6d05e1b78a4e45915badad03fc1aeaecdfe838c3e60 */
+#if BIND_g_async_queue_sort_FUNCTION
+#define g_async_queue_sort_REQUIRED_ARGC 3
+#define g_async_queue_sort_OPTIONAL_ARGC 0
+/* g_async_queue_sort
+ *
+ * Parameters:
+ * - queue: GAsyncQueue *
+ * - func: GCompareDataFunc
+ * - user_data: gpointer
+ * Return Type: void
+ */
+mrb_value
+mrb_GLib_g_async_queue_sort(mrb_state* mrb, mrb_value self) {
+  mrb_value queue;
+  mrb_value func;
+  mrb_value user_data;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "ooo", &queue, &func, &user_data);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, queue, GAsyncQueue_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GAsyncQueue expected");
+    return mrb_nil_value();
+  }
+  TODO_type_check_GCompareDataFunc(func);
+  TODO_type_check_gpointer(user_data);
+
+  /* Unbox param: queue */
+  GAsyncQueue * native_queue = (mrb_nil_p(queue) ? NULL : mruby_unbox__GAsyncQueue(queue));
+
+  /* Unbox param: func */
+  GCompareDataFunc native_func = TODO_mruby_unbox_GCompareDataFunc(func);
+
+  /* Unbox param: user_data */
+  gpointer native_user_data = TODO_mruby_unbox_gpointer(user_data);
+
+  /* Invocation */
+  g_async_queue_sort(native_queue, native_func, native_user_data);
+
+  return mrb_nil_value();
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_async_queue_sort_unlocked */
+/* sha: d47c7dc97cddff227bc4653387775f29328878f08f58e7f13013759cce2411cc */
+#if BIND_g_async_queue_sort_unlocked_FUNCTION
+#define g_async_queue_sort_unlocked_REQUIRED_ARGC 3
+#define g_async_queue_sort_unlocked_OPTIONAL_ARGC 0
+/* g_async_queue_sort_unlocked
+ *
+ * Parameters:
+ * - queue: GAsyncQueue *
+ * - func: GCompareDataFunc
+ * - user_data: gpointer
+ * Return Type: void
+ */
+mrb_value
+mrb_GLib_g_async_queue_sort_unlocked(mrb_state* mrb, mrb_value self) {
+  mrb_value queue;
+  mrb_value func;
+  mrb_value user_data;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "ooo", &queue, &func, &user_data);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, queue, GAsyncQueue_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GAsyncQueue expected");
+    return mrb_nil_value();
+  }
+  TODO_type_check_GCompareDataFunc(func);
+  TODO_type_check_gpointer(user_data);
+
+  /* Unbox param: queue */
+  GAsyncQueue * native_queue = (mrb_nil_p(queue) ? NULL : mruby_unbox__GAsyncQueue(queue));
+
+  /* Unbox param: func */
+  GCompareDataFunc native_func = TODO_mruby_unbox_GCompareDataFunc(func);
+
+  /* Unbox param: user_data */
+  gpointer native_user_data = TODO_mruby_unbox_gpointer(user_data);
+
+  /* Invocation */
+  g_async_queue_sort_unlocked(native_queue, native_func, native_user_data);
+
+  return mrb_nil_value();
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_async_queue_timed_pop */
+/* sha: 70ac1fac2a1cc579c1112c899992d320ff945c3f470982d52e2ee34ac9d04f3a */
+#if BIND_g_async_queue_timed_pop_FUNCTION
+#define g_async_queue_timed_pop_REQUIRED_ARGC 2
+#define g_async_queue_timed_pop_OPTIONAL_ARGC 0
+/* g_async_queue_timed_pop
+ *
+ * Parameters:
+ * - queue: GAsyncQueue *
+ * - end_time: GTimeVal *
+ * Return Type: gpointer
+ */
+mrb_value
+mrb_GLib_g_async_queue_timed_pop(mrb_state* mrb, mrb_value self) {
+  mrb_value queue;
+  mrb_value end_time;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "oo", &queue, &end_time);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, queue, GAsyncQueue_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GAsyncQueue expected");
+    return mrb_nil_value();
+  }
+  if (!mrb_obj_is_kind_of(mrb, end_time, GTimeVal_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GTimeVal expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: queue */
+  GAsyncQueue * native_queue = (mrb_nil_p(queue) ? NULL : mruby_unbox__GAsyncQueue(queue));
+
+  /* Unbox param: end_time */
+  GTimeVal * native_end_time = (mrb_nil_p(end_time) ? NULL : mruby_unbox__GTimeVal(end_time));
+
+  /* Invocation */
+  gpointer native_return_value = g_async_queue_timed_pop(native_queue, native_end_time);
+
+  /* Box the return value */
+  mrb_value return_value = TODO_mruby_box_gpointer(mrb, native_return_value);
+  
+  return return_value;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_async_queue_timed_pop_unlocked */
+/* sha: 76e111ca53ce187a1249183a844787883e0398e0f31ec9901f9838be666ecb77 */
+#if BIND_g_async_queue_timed_pop_unlocked_FUNCTION
+#define g_async_queue_timed_pop_unlocked_REQUIRED_ARGC 2
+#define g_async_queue_timed_pop_unlocked_OPTIONAL_ARGC 0
+/* g_async_queue_timed_pop_unlocked
+ *
+ * Parameters:
+ * - queue: GAsyncQueue *
+ * - end_time: GTimeVal *
+ * Return Type: gpointer
+ */
+mrb_value
+mrb_GLib_g_async_queue_timed_pop_unlocked(mrb_state* mrb, mrb_value self) {
+  mrb_value queue;
+  mrb_value end_time;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "oo", &queue, &end_time);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, queue, GAsyncQueue_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GAsyncQueue expected");
+    return mrb_nil_value();
+  }
+  if (!mrb_obj_is_kind_of(mrb, end_time, GTimeVal_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GTimeVal expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: queue */
+  GAsyncQueue * native_queue = (mrb_nil_p(queue) ? NULL : mruby_unbox__GAsyncQueue(queue));
+
+  /* Unbox param: end_time */
+  GTimeVal * native_end_time = (mrb_nil_p(end_time) ? NULL : mruby_unbox__GTimeVal(end_time));
+
+  /* Invocation */
+  gpointer native_return_value = g_async_queue_timed_pop_unlocked(native_queue, native_end_time);
+
+  /* Box the return value */
+  mrb_value return_value = TODO_mruby_box_gpointer(mrb, native_return_value);
+  
+  return return_value;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_async_queue_timeout_pop */
+/* sha: 06e60a202019d2babdf9ed7b39d292933f14f640a4be5438d50457dea5061174 */
+#if BIND_g_async_queue_timeout_pop_FUNCTION
+#define g_async_queue_timeout_pop_REQUIRED_ARGC 2
+#define g_async_queue_timeout_pop_OPTIONAL_ARGC 0
+/* g_async_queue_timeout_pop
+ *
+ * Parameters:
+ * - queue: GAsyncQueue *
+ * - timeout: guint64
+ * Return Type: gpointer
+ */
+mrb_value
+mrb_GLib_g_async_queue_timeout_pop(mrb_state* mrb, mrb_value self) {
+  mrb_value queue;
+  mrb_int native_timeout;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "oi", &queue, &native_timeout);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, queue, GAsyncQueue_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GAsyncQueue expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: queue */
+  GAsyncQueue * native_queue = (mrb_nil_p(queue) ? NULL : mruby_unbox__GAsyncQueue(queue));
+
+  /* Invocation */
+  gpointer native_return_value = g_async_queue_timeout_pop(native_queue, native_timeout);
+
+  /* Box the return value */
+  mrb_value return_value = TODO_mruby_box_gpointer(mrb, native_return_value);
+  
+  return return_value;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_async_queue_timeout_pop_unlocked */
+/* sha: b2ec9e88afe065af76ac9bc575315b5761ee947bd68afa3a32df60cfa86e80f7 */
+#if BIND_g_async_queue_timeout_pop_unlocked_FUNCTION
+#define g_async_queue_timeout_pop_unlocked_REQUIRED_ARGC 2
+#define g_async_queue_timeout_pop_unlocked_OPTIONAL_ARGC 0
+/* g_async_queue_timeout_pop_unlocked
+ *
+ * Parameters:
+ * - queue: GAsyncQueue *
+ * - timeout: guint64
+ * Return Type: gpointer
+ */
+mrb_value
+mrb_GLib_g_async_queue_timeout_pop_unlocked(mrb_state* mrb, mrb_value self) {
+  mrb_value queue;
+  mrb_int native_timeout;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "oi", &queue, &native_timeout);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, queue, GAsyncQueue_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GAsyncQueue expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: queue */
+  GAsyncQueue * native_queue = (mrb_nil_p(queue) ? NULL : mruby_unbox__GAsyncQueue(queue));
+
+  /* Invocation */
+  gpointer native_return_value = g_async_queue_timeout_pop_unlocked(native_queue, native_timeout);
+
+  /* Box the return value */
+  mrb_value return_value = TODO_mruby_box_gpointer(mrb, native_return_value);
+  
+  return return_value;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_async_queue_try_pop */
+/* sha: 81dab790760d3613c575d4d33ff214853b613cfdf53ac4df7d9c32ff801bff5c */
+#if BIND_g_async_queue_try_pop_FUNCTION
+#define g_async_queue_try_pop_REQUIRED_ARGC 1
+#define g_async_queue_try_pop_OPTIONAL_ARGC 0
+/* g_async_queue_try_pop
+ *
+ * Parameters:
+ * - queue: GAsyncQueue *
+ * Return Type: gpointer
+ */
+mrb_value
+mrb_GLib_g_async_queue_try_pop(mrb_state* mrb, mrb_value self) {
+  mrb_value queue;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "o", &queue);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, queue, GAsyncQueue_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GAsyncQueue expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: queue */
+  GAsyncQueue * native_queue = (mrb_nil_p(queue) ? NULL : mruby_unbox__GAsyncQueue(queue));
+
+  /* Invocation */
+  gpointer native_return_value = g_async_queue_try_pop(native_queue);
+
+  /* Box the return value */
+  mrb_value return_value = TODO_mruby_box_gpointer(mrb, native_return_value);
+  
+  return return_value;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_async_queue_try_pop_unlocked */
+/* sha: a5debd3197d206378a91d6e2efd41b151a5621b95c49d05c0f0e44e0c8d325ba */
+#if BIND_g_async_queue_try_pop_unlocked_FUNCTION
+#define g_async_queue_try_pop_unlocked_REQUIRED_ARGC 1
+#define g_async_queue_try_pop_unlocked_OPTIONAL_ARGC 0
+/* g_async_queue_try_pop_unlocked
+ *
+ * Parameters:
+ * - queue: GAsyncQueue *
+ * Return Type: gpointer
+ */
+mrb_value
+mrb_GLib_g_async_queue_try_pop_unlocked(mrb_state* mrb, mrb_value self) {
+  mrb_value queue;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "o", &queue);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, queue, GAsyncQueue_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GAsyncQueue expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: queue */
+  GAsyncQueue * native_queue = (mrb_nil_p(queue) ? NULL : mruby_unbox__GAsyncQueue(queue));
+
+  /* Invocation */
+  gpointer native_return_value = g_async_queue_try_pop_unlocked(native_queue);
+
+  /* Box the return value */
+  mrb_value return_value = TODO_mruby_box_gpointer(mrb, native_return_value);
+  
+  return return_value;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_async_queue_unlock */
+/* sha: db57ce06700d129f6dfee53947afeea4321d63ce58f366fc12ffb33cf885c28e */
+#if BIND_g_async_queue_unlock_FUNCTION
+#define g_async_queue_unlock_REQUIRED_ARGC 1
+#define g_async_queue_unlock_OPTIONAL_ARGC 0
+/* g_async_queue_unlock
+ *
+ * Parameters:
+ * - queue: GAsyncQueue *
+ * Return Type: void
+ */
+mrb_value
+mrb_GLib_g_async_queue_unlock(mrb_state* mrb, mrb_value self) {
+  mrb_value queue;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "o", &queue);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, queue, GAsyncQueue_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GAsyncQueue expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: queue */
+  GAsyncQueue * native_queue = (mrb_nil_p(queue) ? NULL : mruby_unbox__GAsyncQueue(queue));
+
+  /* Invocation */
+  g_async_queue_unlock(native_queue);
+
+  return mrb_nil_value();
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_async_queue_unref */
+/* sha: 398b3342425fa86875a99c66e594adca967ce08e270c5d7655bf6eb9cdbb4ad4 */
+#if BIND_g_async_queue_unref_FUNCTION
+#define g_async_queue_unref_REQUIRED_ARGC 1
+#define g_async_queue_unref_OPTIONAL_ARGC 0
+/* g_async_queue_unref
+ *
+ * Parameters:
+ * - queue: GAsyncQueue *
+ * Return Type: void
+ */
+mrb_value
+mrb_GLib_g_async_queue_unref(mrb_state* mrb, mrb_value self) {
+  mrb_value queue;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "o", &queue);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, queue, GAsyncQueue_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GAsyncQueue expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: queue */
+  GAsyncQueue * native_queue = (mrb_nil_p(queue) ? NULL : mruby_unbox__GAsyncQueue(queue));
+
+  /* Invocation */
+  g_async_queue_unref(native_queue);
+
+  return mrb_nil_value();
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_async_queue_unref_and_unlock */
+/* sha: 5923f061c4a3e08f19078049eb507a88701be5b6cd44895a6316b0b5a10f0e8a */
+#if BIND_g_async_queue_unref_and_unlock_FUNCTION
+#define g_async_queue_unref_and_unlock_REQUIRED_ARGC 1
+#define g_async_queue_unref_and_unlock_OPTIONAL_ARGC 0
+/* g_async_queue_unref_and_unlock
+ *
+ * Parameters:
+ * - queue: GAsyncQueue *
+ * Return Type: void
+ */
+mrb_value
+mrb_GLib_g_async_queue_unref_and_unlock(mrb_state* mrb, mrb_value self) {
+  mrb_value queue;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "o", &queue);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, queue, GAsyncQueue_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GAsyncQueue expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: queue */
+  GAsyncQueue * native_queue = (mrb_nil_p(queue) ? NULL : mruby_unbox__GAsyncQueue(queue));
+
+  /* Invocation */
+  g_async_queue_unref_and_unlock(native_queue);
 
   return mrb_nil_value();
 }
@@ -4997,6 +6127,37 @@ mrb_GLib_g_convert_with_iconv(mrb_state* mrb, mrb_value self) {
   mrb_ary_push(mrb, results, error);
 
   return results;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_creat */
+/* sha: 288407c9100f5911d7f1bcdfaae056890c15aa44e9c9baab81d120d1ed537768 */
+#if BIND_g_creat_FUNCTION
+#define g_creat_REQUIRED_ARGC 2
+#define g_creat_OPTIONAL_ARGC 0
+/* g_creat
+ *
+ * Parameters:
+ * - filename: const gchar *
+ * - mode: int
+ * Return Type: int
+ */
+mrb_value
+mrb_GLib_g_creat(mrb_state* mrb, mrb_value self) {
+  char * native_filename = NULL;
+  mrb_int native_mode;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "zi", &native_filename, &native_mode);
+
+  /* Invocation */
+  int native_return_value = g_creat(native_filename, native_mode);
+
+  /* Box the return value */
+  mrb_value return_value = mrb_fixnum_value(native_return_value);
+  
+  return return_value;
 }
 #endif
 /* MRUBY_BINDING_END */
@@ -10090,9 +11251,9 @@ mrb_GLib_g_error_new_valist(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_file_append_to */
-/* sha: 8f139026c00d822e73b2152830501a015f3de79ea9582524c486f748375ccd47 */
+/* sha: 049ddd012aad60ad87277f4e38612d59d6320c7a0113a056d47dc8f93ac42cb7 */
 #if BIND_g_file_append_to_FUNCTION
-#define g_file_append_to_REQUIRED_ARGC 3
+#define g_file_append_to_REQUIRED_ARGC 2
 #define g_file_append_to_OPTIONAL_ARGC 0
 /* g_file_append_to
  *
@@ -10111,7 +11272,7 @@ mrb_GLib_g_file_append_to(mrb_state* mrb, mrb_value self) {
   struct GError * native_error = NULL;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "oio", &file, &native_flags, &cancellable);
+  mrb_get_args(mrb, "oi", &file, &native_flags);
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, file, GFile_class(mrb))) {
@@ -10129,7 +11290,7 @@ mrb_GLib_g_file_append_to(mrb_state* mrb, mrb_value self) {
   GFileOutputStream * native_return_value = g_file_append_to(native_file, native_flags, native_cancellable, &native_error);
 
   /* Box the return value */
-  mrb_value return_value = TODO_mruby_box_GFileOutputStream_PTR(mrb, native_return_value);
+  mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_box__GFileOutputStream(mrb, native_return_value));
   mrb_ary_push(mrb, results, return_value);
   
   /* Box out param: error */
@@ -10139,6 +11300,62 @@ mrb_GLib_g_file_append_to(mrb_state* mrb, mrb_value self) {
   mrb_ary_push(mrb, results, error);
 
   return results;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_file_append_to_async */
+/* sha: 1051ee4d23388d5b6e8b1ff78510897c8938953ea74a44cafd96cf546f0d32ac */
+#if BIND_g_file_append_to_async_FUNCTION
+#define g_file_append_to_async_REQUIRED_ARGC 6
+#define g_file_append_to_async_OPTIONAL_ARGC 0
+/* g_file_append_to_async
+ *
+ * Parameters:
+ * - file: GFile *
+ * - flags: GFileCreateFlags
+ * - io_priority: int
+ * - cancellable: GCancellable *
+ * - callback: GAsyncReadyCallback
+ * - user_data: gpointer
+ * Return Type: void
+ */
+mrb_value
+mrb_GLib_g_file_append_to_async(mrb_state* mrb, mrb_value self) {
+  mrb_value file;
+  mrb_int native_flags;
+  mrb_int native_io_priority;
+  mrb_value cancellable;
+  mrb_value callback;
+  mrb_value user_data;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "oiiooo", &file, &native_flags, &native_io_priority, &cancellable, &callback, &user_data);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, file, GFile_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GFile expected");
+    return mrb_nil_value();
+  }
+  TODO_type_check_GAsyncReadyCallback(callback);
+  TODO_type_check_gpointer(user_data);
+
+  /* Unbox param: file */
+  GFile * native_file = (mrb_nil_p(file) ? NULL : mruby_unbox__GFile(file));
+
+  /* Unbox param: cancellable */
+  void * native_cancellable = NULL; /* Unused parameter */
+
+  /* Unbox param: callback */
+  GAsyncReadyCallback native_callback = TODO_mruby_unbox_GAsyncReadyCallback(callback);
+
+  /* Unbox param: user_data */
+  gpointer native_user_data = TODO_mruby_unbox_gpointer(user_data);
+
+  /* Invocation */
+  g_file_append_to_async(native_file, native_flags, native_io_priority, native_cancellable, native_callback, native_user_data);
+
+  return mrb_nil_value();
 }
 #endif
 /* MRUBY_BINDING_END */
@@ -10557,6 +11774,83 @@ mrb_GLib_g_file_copy(mrb_state* mrb, mrb_value self) {
 #endif
 /* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: g_file_copy_async */
+/* sha: 77143238377b3bc308492091291d3043c3a51274497c73c5c65d63ad2931b76e */
+#if BIND_g_file_copy_async_FUNCTION
+#define g_file_copy_async_REQUIRED_ARGC 9
+#define g_file_copy_async_OPTIONAL_ARGC 0
+/* g_file_copy_async
+ *
+ * Parameters:
+ * - source: GFile *
+ * - destination: GFile *
+ * - flags: GFileCopyFlags
+ * - io_priority: int
+ * - cancellable: GCancellable *
+ * - progress_callback: GFileProgressCallback
+ * - progress_callback_data: gpointer
+ * - callback: GAsyncReadyCallback
+ * - user_data: gpointer
+ * Return Type: void
+ */
+mrb_value
+mrb_GLib_g_file_copy_async(mrb_state* mrb, mrb_value self) {
+  mrb_value source;
+  mrb_value destination;
+  mrb_int native_flags;
+  mrb_int native_io_priority;
+  mrb_value cancellable;
+  mrb_value progress_callback;
+  mrb_value progress_callback_data;
+  mrb_value callback;
+  mrb_value user_data;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "ooiiooooo", &source, &destination, &native_flags, &native_io_priority, &cancellable, &progress_callback, &progress_callback_data, &callback, &user_data);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, source, GFile_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GFile expected");
+    return mrb_nil_value();
+  }
+  if (!mrb_obj_is_kind_of(mrb, destination, GFile_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GFile expected");
+    return mrb_nil_value();
+  }
+  TODO_type_check_GFileProgressCallback(progress_callback);
+  TODO_type_check_gpointer(progress_callback_data);
+  TODO_type_check_GAsyncReadyCallback(callback);
+  TODO_type_check_gpointer(user_data);
+
+  /* Unbox param: source */
+  GFile * native_source = (mrb_nil_p(source) ? NULL : mruby_unbox__GFile(source));
+
+  /* Unbox param: destination */
+  GFile * native_destination = (mrb_nil_p(destination) ? NULL : mruby_unbox__GFile(destination));
+
+  /* Unbox param: cancellable */
+  void * native_cancellable = NULL; /* Unused parameter */
+
+  /* Unbox param: progress_callback */
+  GFileProgressCallback native_progress_callback = TODO_mruby_unbox_GFileProgressCallback(progress_callback);
+
+  /* Unbox param: progress_callback_data */
+  gpointer native_progress_callback_data = TODO_mruby_unbox_gpointer(progress_callback_data);
+
+  /* Unbox param: callback */
+  GAsyncReadyCallback native_callback = TODO_mruby_unbox_GAsyncReadyCallback(callback);
+
+  /* Unbox param: user_data */
+  gpointer native_user_data = TODO_mruby_unbox_gpointer(user_data);
+
+  /* Invocation */
+  g_file_copy_async(native_source, native_destination, native_flags, native_io_priority, native_cancellable, native_progress_callback, native_progress_callback_data, native_callback, native_user_data);
+
+  return mrb_nil_value();
+}
+#endif
+/* MRUBY_BINDING_END */
+
 /* MRUBY_BINDING: g_file_copy_attributes */
 /* sha: b231a1efa235430fdee1fa3a0cc306d0daadfbdda3c6fce90b4889fa72afe6b9 */
 #if BIND_g_file_copy_attributes_FUNCTION
@@ -10621,9 +11915,9 @@ mrb_GLib_g_file_copy_attributes(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_file_create */
-/* sha: eeaab6e9c791443562fb210353502c785b0735788ef9f6893a5a1cd8d1c1ddc1 */
+/* sha: 887990e555bf7578c0f0468f3ba35242535eb1134bdd1af90653d4276e337c3a */
 #if BIND_g_file_create_FUNCTION
-#define g_file_create_REQUIRED_ARGC 3
+#define g_file_create_REQUIRED_ARGC 2
 #define g_file_create_OPTIONAL_ARGC 0
 /* g_file_create
  *
@@ -10638,11 +11932,10 @@ mrb_GLib_g_file_create(mrb_state* mrb, mrb_value self) {
   mrb_value results = mrb_ary_new(mrb);
   mrb_value file;
   mrb_int native_flags;
-  mrb_value cancellable;
   struct GError * native_error = NULL;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "oio", &file, &native_flags, &cancellable);
+  mrb_get_args(mrb, "oi", &file, &native_flags);
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, file, GFile_class(mrb))) {
@@ -10660,7 +11953,7 @@ mrb_GLib_g_file_create(mrb_state* mrb, mrb_value self) {
   GFileOutputStream * native_return_value = g_file_create(native_file, native_flags, native_cancellable, &native_error);
 
   /* Box the return value */
-  mrb_value return_value = TODO_mruby_box_GFileOutputStream_PTR(mrb, native_return_value);
+  mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_box__GFileOutputStream(mrb, native_return_value));
   mrb_ary_push(mrb, results, return_value);
   
   /* Box out param: error */
@@ -10674,10 +11967,66 @@ mrb_GLib_g_file_create(mrb_state* mrb, mrb_value self) {
 #endif
 /* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: g_file_create_async */
+/* sha: 079493384adc294a84b7131116514a203cbe2a3aaed12b025525dcf9dfd7ad12 */
+#if BIND_g_file_create_async_FUNCTION
+#define g_file_create_async_REQUIRED_ARGC 6
+#define g_file_create_async_OPTIONAL_ARGC 0
+/* g_file_create_async
+ *
+ * Parameters:
+ * - file: GFile *
+ * - flags: GFileCreateFlags
+ * - io_priority: int
+ * - cancellable: GCancellable *
+ * - callback: GAsyncReadyCallback
+ * - user_data: gpointer
+ * Return Type: void
+ */
+mrb_value
+mrb_GLib_g_file_create_async(mrb_state* mrb, mrb_value self) {
+  mrb_value file;
+  mrb_int native_flags;
+  mrb_int native_io_priority;
+  mrb_value cancellable;
+  mrb_value callback;
+  mrb_value user_data;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "oiiooo", &file, &native_flags, &native_io_priority, &cancellable, &callback, &user_data);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, file, GFile_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GFile expected");
+    return mrb_nil_value();
+  }
+  TODO_type_check_GAsyncReadyCallback(callback);
+  TODO_type_check_gpointer(user_data);
+
+  /* Unbox param: file */
+  GFile * native_file = (mrb_nil_p(file) ? NULL : mruby_unbox__GFile(file));
+
+  /* Unbox param: cancellable */
+  void * native_cancellable = NULL; /* Unused parameter */
+
+  /* Unbox param: callback */
+  GAsyncReadyCallback native_callback = TODO_mruby_unbox_GAsyncReadyCallback(callback);
+
+  /* Unbox param: user_data */
+  gpointer native_user_data = TODO_mruby_unbox_gpointer(user_data);
+
+  /* Invocation */
+  g_file_create_async(native_file, native_flags, native_io_priority, native_cancellable, native_callback, native_user_data);
+
+  return mrb_nil_value();
+}
+#endif
+/* MRUBY_BINDING_END */
+
 /* MRUBY_BINDING: g_file_create_readwrite */
-/* sha: 18791a50c81e5cf38a70d72652529b4ee6785f745b70776b2d04a6035ad58556 */
+/* sha: 1f05de2551d90b0ef27c92a9e3bd4821cfb1bc3236bf56482e12fd9f33b769e6 */
 #if BIND_g_file_create_readwrite_FUNCTION
-#define g_file_create_readwrite_REQUIRED_ARGC 3
+#define g_file_create_readwrite_REQUIRED_ARGC 2
 #define g_file_create_readwrite_OPTIONAL_ARGC 0
 /* g_file_create_readwrite
  *
@@ -10692,11 +12041,10 @@ mrb_GLib_g_file_create_readwrite(mrb_state* mrb, mrb_value self) {
   mrb_value results = mrb_ary_new(mrb);
   mrb_value file;
   mrb_int native_flags;
-  mrb_value cancellable;
   struct GError * native_error = NULL;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "oio", &file, &native_flags, &cancellable);
+  mrb_get_args(mrb, "oi", &file, &native_flags);
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, file, GFile_class(mrb))) {
@@ -10714,7 +12062,7 @@ mrb_GLib_g_file_create_readwrite(mrb_state* mrb, mrb_value self) {
   GFileIOStream * native_return_value = g_file_create_readwrite(native_file, native_flags, native_cancellable, &native_error);
 
   /* Box the return value */
-  mrb_value return_value = TODO_mruby_box_GFileIOStream_PTR(mrb, native_return_value);
+  mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_box__GFileIOStream(mrb, native_return_value));
   mrb_ary_push(mrb, results, return_value);
   
   /* Box out param: error */
@@ -10724,6 +12072,62 @@ mrb_GLib_g_file_create_readwrite(mrb_state* mrb, mrb_value self) {
   mrb_ary_push(mrb, results, error);
 
   return results;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_file_create_readwrite_async */
+/* sha: c24407317199358e30f261a29ea1eeb0c56308cf99284734d151058c6687fd3a */
+#if BIND_g_file_create_readwrite_async_FUNCTION
+#define g_file_create_readwrite_async_REQUIRED_ARGC 6
+#define g_file_create_readwrite_async_OPTIONAL_ARGC 0
+/* g_file_create_readwrite_async
+ *
+ * Parameters:
+ * - file: GFile *
+ * - flags: GFileCreateFlags
+ * - io_priority: int
+ * - cancellable: GCancellable *
+ * - callback: GAsyncReadyCallback
+ * - user_data: gpointer
+ * Return Type: void
+ */
+mrb_value
+mrb_GLib_g_file_create_readwrite_async(mrb_state* mrb, mrb_value self) {
+  mrb_value file;
+  mrb_int native_flags;
+  mrb_int native_io_priority;
+  mrb_value cancellable;
+  mrb_value callback;
+  mrb_value user_data;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "oiiooo", &file, &native_flags, &native_io_priority, &cancellable, &callback, &user_data);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, file, GFile_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GFile expected");
+    return mrb_nil_value();
+  }
+  TODO_type_check_GAsyncReadyCallback(callback);
+  TODO_type_check_gpointer(user_data);
+
+  /* Unbox param: file */
+  GFile * native_file = (mrb_nil_p(file) ? NULL : mruby_unbox__GFile(file));
+
+  /* Unbox param: cancellable */
+  void * native_cancellable = NULL; /* Unused parameter */
+
+  /* Unbox param: callback */
+  GAsyncReadyCallback native_callback = TODO_mruby_unbox_GAsyncReadyCallback(callback);
+
+  /* Unbox param: user_data */
+  gpointer native_user_data = TODO_mruby_unbox_gpointer(user_data);
+
+  /* Invocation */
+  g_file_create_readwrite_async(native_file, native_flags, native_io_priority, native_cancellable, native_callback, native_user_data);
+
+  return mrb_nil_value();
 }
 #endif
 /* MRUBY_BINDING_END */
@@ -10776,6 +12180,60 @@ mrb_GLib_g_file_delete(mrb_state* mrb, mrb_value self) {
   mrb_ary_push(mrb, results, error);
 
   return results;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_file_delete_async */
+/* sha: 934068e8709e0f0aed0e0343e4b28046cdcb03bdd3532dfac1d08dea5e3ecf22 */
+#if BIND_g_file_delete_async_FUNCTION
+#define g_file_delete_async_REQUIRED_ARGC 5
+#define g_file_delete_async_OPTIONAL_ARGC 0
+/* g_file_delete_async
+ *
+ * Parameters:
+ * - file: GFile *
+ * - io_priority: int
+ * - cancellable: GCancellable *
+ * - callback: GAsyncReadyCallback
+ * - user_data: gpointer
+ * Return Type: void
+ */
+mrb_value
+mrb_GLib_g_file_delete_async(mrb_state* mrb, mrb_value self) {
+  mrb_value file;
+  mrb_int native_io_priority;
+  mrb_value cancellable;
+  mrb_value callback;
+  mrb_value user_data;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "oiooo", &file, &native_io_priority, &cancellable, &callback, &user_data);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, file, GFile_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GFile expected");
+    return mrb_nil_value();
+  }
+  TODO_type_check_GAsyncReadyCallback(callback);
+  TODO_type_check_gpointer(user_data);
+
+  /* Unbox param: file */
+  GFile * native_file = (mrb_nil_p(file) ? NULL : mruby_unbox__GFile(file));
+
+  /* Unbox param: cancellable */
+  void * native_cancellable = NULL; /* Unused parameter */
+
+  /* Unbox param: callback */
+  GAsyncReadyCallback native_callback = TODO_mruby_unbox_GAsyncReadyCallback(callback);
+
+  /* Unbox param: user_data */
+  gpointer native_user_data = TODO_mruby_unbox_gpointer(user_data);
+
+  /* Invocation */
+  g_file_delete_async(native_file, native_io_priority, native_cancellable, native_callback, native_user_data);
+
+  return mrb_nil_value();
 }
 #endif
 /* MRUBY_BINDING_END */
@@ -10988,6 +12446,64 @@ mrb_GLib_g_file_enumerate_children(mrb_state* mrb, mrb_value self) {
 #endif
 /* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: g_file_enumerate_children_async */
+/* sha: fff9b0697e84799f8645d12924275d5561bd57dbc0683fac8d4d7c5c612fb2ad */
+#if BIND_g_file_enumerate_children_async_FUNCTION
+#define g_file_enumerate_children_async_REQUIRED_ARGC 7
+#define g_file_enumerate_children_async_OPTIONAL_ARGC 0
+/* g_file_enumerate_children_async
+ *
+ * Parameters:
+ * - file: GFile *
+ * - attributes: const char *
+ * - flags: GFileQueryInfoFlags
+ * - io_priority: int
+ * - cancellable: GCancellable *
+ * - callback: GAsyncReadyCallback
+ * - user_data: gpointer
+ * Return Type: void
+ */
+mrb_value
+mrb_GLib_g_file_enumerate_children_async(mrb_state* mrb, mrb_value self) {
+  mrb_value file;
+  char * native_attributes = NULL;
+  mrb_int native_flags;
+  mrb_int native_io_priority;
+  mrb_value cancellable;
+  mrb_value callback;
+  mrb_value user_data;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "oziiooo", &file, &native_attributes, &native_flags, &native_io_priority, &cancellable, &callback, &user_data);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, file, GFile_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GFile expected");
+    return mrb_nil_value();
+  }
+  TODO_type_check_GAsyncReadyCallback(callback);
+  TODO_type_check_gpointer(user_data);
+
+  /* Unbox param: file */
+  GFile * native_file = (mrb_nil_p(file) ? NULL : mruby_unbox__GFile(file));
+
+  /* Unbox param: cancellable */
+  void * native_cancellable = NULL; /* Unused parameter */
+
+  /* Unbox param: callback */
+  GAsyncReadyCallback native_callback = TODO_mruby_unbox_GAsyncReadyCallback(callback);
+
+  /* Unbox param: user_data */
+  gpointer native_user_data = TODO_mruby_unbox_gpointer(user_data);
+
+  /* Invocation */
+  g_file_enumerate_children_async(native_file, native_attributes, native_flags, native_io_priority, native_cancellable, native_callback, native_user_data);
+
+  return mrb_nil_value();
+}
+#endif
+/* MRUBY_BINDING_END */
+
 /* MRUBY_BINDING: g_file_equal */
 /* sha: 233126aa4ac0de609554067a08dbfde8b1e6e0ca366b629c783425f1bd617968 */
 #if BIND_g_file_equal_FUNCTION
@@ -11135,6 +12651,60 @@ mrb_GLib_g_file_find_enclosing_mount(mrb_state* mrb, mrb_value self) {
   mrb_ary_push(mrb, results, error);
 
   return results;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_file_find_enclosing_mount_async */
+/* sha: d86220dade77e0134442dfb8b5bc7818eb2531819e5f502d1149ca3d3e355da8 */
+#if BIND_g_file_find_enclosing_mount_async_FUNCTION
+#define g_file_find_enclosing_mount_async_REQUIRED_ARGC 5
+#define g_file_find_enclosing_mount_async_OPTIONAL_ARGC 0
+/* g_file_find_enclosing_mount_async
+ *
+ * Parameters:
+ * - file: GFile *
+ * - io_priority: int
+ * - cancellable: GCancellable *
+ * - callback: GAsyncReadyCallback
+ * - user_data: gpointer
+ * Return Type: void
+ */
+mrb_value
+mrb_GLib_g_file_find_enclosing_mount_async(mrb_state* mrb, mrb_value self) {
+  mrb_value file;
+  mrb_int native_io_priority;
+  mrb_value cancellable;
+  mrb_value callback;
+  mrb_value user_data;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "oiooo", &file, &native_io_priority, &cancellable, &callback, &user_data);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, file, GFile_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GFile expected");
+    return mrb_nil_value();
+  }
+  TODO_type_check_GAsyncReadyCallback(callback);
+  TODO_type_check_gpointer(user_data);
+
+  /* Unbox param: file */
+  GFile * native_file = (mrb_nil_p(file) ? NULL : mruby_unbox__GFile(file));
+
+  /* Unbox param: cancellable */
+  void * native_cancellable = NULL; /* Unused parameter */
+
+  /* Unbox param: callback */
+  GAsyncReadyCallback native_callback = TODO_mruby_unbox_GAsyncReadyCallback(callback);
+
+  /* Unbox param: user_data */
+  gpointer native_user_data = TODO_mruby_unbox_gpointer(user_data);
+
+  /* Invocation */
+  g_file_find_enclosing_mount_async(native_file, native_io_priority, native_cancellable, native_callback, native_user_data);
+
+  return mrb_nil_value();
 }
 #endif
 /* MRUBY_BINDING_END */
@@ -11607,7 +13177,7 @@ mrb_GLib_g_file_has_parent(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GFile expected");
     return mrb_nil_value();
   }
-  if (!mrb_obj_is_kind_of(mrb, parent, GFile_class(mrb))) {
+  if (!mrb_obj_is_kind_of(mrb, parent, GFile_class(mrb)) && !mrb_nil_p(parent)) {
     mrb_raise(mrb, E_TYPE_ERROR, "GFile expected");
     return mrb_nil_value();
   }
@@ -14347,6 +15917,116 @@ mrb_GLib_g_file_load_contents(mrb_state* mrb, mrb_value self) {
 #endif
 /* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: g_file_load_contents_async */
+/* sha: a5a3b742763f56874a350e7952970312710a402524bae8b5dfb95770870876bc */
+#if BIND_g_file_load_contents_async_FUNCTION
+#define g_file_load_contents_async_REQUIRED_ARGC 4
+#define g_file_load_contents_async_OPTIONAL_ARGC 0
+/* g_file_load_contents_async
+ *
+ * Parameters:
+ * - file: GFile *
+ * - cancellable: GCancellable *
+ * - callback: GAsyncReadyCallback
+ * - user_data: gpointer
+ * Return Type: void
+ */
+mrb_value
+mrb_GLib_g_file_load_contents_async(mrb_state* mrb, mrb_value self) {
+  mrb_value file;
+  mrb_value cancellable;
+  mrb_value callback;
+  mrb_value user_data;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "oooo", &file, &cancellable, &callback, &user_data);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, file, GFile_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GFile expected");
+    return mrb_nil_value();
+  }
+  TODO_type_check_GAsyncReadyCallback(callback);
+  TODO_type_check_gpointer(user_data);
+
+  /* Unbox param: file */
+  GFile * native_file = (mrb_nil_p(file) ? NULL : mruby_unbox__GFile(file));
+
+  /* Unbox param: cancellable */
+  void * native_cancellable = NULL; /* Unused parameter */
+
+  /* Unbox param: callback */
+  GAsyncReadyCallback native_callback = TODO_mruby_unbox_GAsyncReadyCallback(callback);
+
+  /* Unbox param: user_data */
+  gpointer native_user_data = TODO_mruby_unbox_gpointer(user_data);
+
+  /* Invocation */
+  g_file_load_contents_async(native_file, native_cancellable, native_callback, native_user_data);
+
+  return mrb_nil_value();
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_file_load_partial_contents_async */
+/* sha: f2515893af4608f106d51eb95fb615e1612b9b9578cd746dcd31ae1d696ebeb8 */
+#if BIND_g_file_load_partial_contents_async_FUNCTION
+#define g_file_load_partial_contents_async_REQUIRED_ARGC 5
+#define g_file_load_partial_contents_async_OPTIONAL_ARGC 0
+/* g_file_load_partial_contents_async
+ *
+ * Parameters:
+ * - file: GFile *
+ * - cancellable: GCancellable *
+ * - read_more_callback: GFileReadMoreCallback
+ * - callback: GAsyncReadyCallback
+ * - user_data: gpointer
+ * Return Type: void
+ */
+mrb_value
+mrb_GLib_g_file_load_partial_contents_async(mrb_state* mrb, mrb_value self) {
+  mrb_value file;
+  mrb_value cancellable;
+  mrb_value read_more_callback;
+  mrb_value callback;
+  mrb_value user_data;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "ooooo", &file, &cancellable, &read_more_callback, &callback, &user_data);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, file, GFile_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GFile expected");
+    return mrb_nil_value();
+  }
+  TODO_type_check_GFileReadMoreCallback(read_more_callback);
+  TODO_type_check_GAsyncReadyCallback(callback);
+  TODO_type_check_gpointer(user_data);
+
+  /* Unbox param: file */
+  GFile * native_file = (mrb_nil_p(file) ? NULL : mruby_unbox__GFile(file));
+
+  /* Unbox param: cancellable */
+  void * native_cancellable = NULL; /* Unused parameter */
+
+  /* Unbox param: read_more_callback */
+  GFileReadMoreCallback native_read_more_callback = TODO_mruby_unbox_GFileReadMoreCallback(read_more_callback);
+
+  /* Unbox param: callback */
+  GAsyncReadyCallback native_callback = TODO_mruby_unbox_GAsyncReadyCallback(callback);
+
+  /* Unbox param: user_data */
+  gpointer native_user_data = TODO_mruby_unbox_gpointer(user_data);
+
+  /* Invocation */
+  g_file_load_partial_contents_async(native_file, native_cancellable, native_read_more_callback, native_callback, native_user_data);
+
+  return mrb_nil_value();
+}
+#endif
+/* MRUBY_BINDING_END */
+
 /* MRUBY_BINDING: g_file_make_directory */
 /* sha: 7f08e759fe463eb3395dbc49e6b9ca9f80aa1202bd78a44ae3cd95304f94b942 */
 #if BIND_g_file_make_directory_FUNCTION
@@ -14395,6 +16075,60 @@ mrb_GLib_g_file_make_directory(mrb_state* mrb, mrb_value self) {
   mrb_ary_push(mrb, results, error);
 
   return results;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_file_make_directory_async */
+/* sha: 6de90f6938f7e60602189f7b22d9b0e46257d39687635f9a88437b561667c9f5 */
+#if BIND_g_file_make_directory_async_FUNCTION
+#define g_file_make_directory_async_REQUIRED_ARGC 5
+#define g_file_make_directory_async_OPTIONAL_ARGC 0
+/* g_file_make_directory_async
+ *
+ * Parameters:
+ * - file: GFile *
+ * - io_priority: int
+ * - cancellable: GCancellable *
+ * - callback: GAsyncReadyCallback
+ * - user_data: gpointer
+ * Return Type: void
+ */
+mrb_value
+mrb_GLib_g_file_make_directory_async(mrb_state* mrb, mrb_value self) {
+  mrb_value file;
+  mrb_int native_io_priority;
+  mrb_value cancellable;
+  mrb_value callback;
+  mrb_value user_data;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "oiooo", &file, &native_io_priority, &cancellable, &callback, &user_data);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, file, GFile_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GFile expected");
+    return mrb_nil_value();
+  }
+  TODO_type_check_GAsyncReadyCallback(callback);
+  TODO_type_check_gpointer(user_data);
+
+  /* Unbox param: file */
+  GFile * native_file = (mrb_nil_p(file) ? NULL : mruby_unbox__GFile(file));
+
+  /* Unbox param: cancellable */
+  void * native_cancellable = NULL; /* Unused parameter */
+
+  /* Unbox param: callback */
+  GAsyncReadyCallback native_callback = TODO_mruby_unbox_GAsyncReadyCallback(callback);
+
+  /* Unbox param: user_data */
+  gpointer native_user_data = TODO_mruby_unbox_gpointer(user_data);
+
+  /* Invocation */
+  g_file_make_directory_async(native_file, native_io_priority, native_cancellable, native_callback, native_user_data);
+
+  return mrb_nil_value();
 }
 #endif
 /* MRUBY_BINDING_END */
@@ -14577,6 +16311,74 @@ mrb_GLib_g_file_measure_disk_usage(mrb_state* mrb, mrb_value self) {
   mrb_ary_push(mrb, results, error);
 
   return results;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_file_measure_disk_usage_async */
+/* sha: f3220a5a411610360cca10d9342adaf239b88ae8ee948d127533fd5d4a67afd3 */
+#if BIND_g_file_measure_disk_usage_async_FUNCTION
+#define g_file_measure_disk_usage_async_REQUIRED_ARGC 8
+#define g_file_measure_disk_usage_async_OPTIONAL_ARGC 0
+/* g_file_measure_disk_usage_async
+ *
+ * Parameters:
+ * - file: GFile *
+ * - flags: GFileMeasureFlags
+ * - io_priority: gint
+ * - cancellable: GCancellable *
+ * - progress_callback: GFileMeasureProgressCallback
+ * - progress_data: gpointer
+ * - callback: GAsyncReadyCallback
+ * - user_data: gpointer
+ * Return Type: void
+ */
+mrb_value
+mrb_GLib_g_file_measure_disk_usage_async(mrb_state* mrb, mrb_value self) {
+  mrb_value file;
+  mrb_int native_flags;
+  mrb_int native_io_priority;
+  mrb_value cancellable;
+  mrb_value progress_callback;
+  mrb_value progress_data;
+  mrb_value callback;
+  mrb_value user_data;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "oiiooooo", &file, &native_flags, &native_io_priority, &cancellable, &progress_callback, &progress_data, &callback, &user_data);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, file, GFile_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GFile expected");
+    return mrb_nil_value();
+  }
+  TODO_type_check_GFileMeasureProgressCallback(progress_callback);
+  TODO_type_check_gpointer(progress_data);
+  TODO_type_check_GAsyncReadyCallback(callback);
+  TODO_type_check_gpointer(user_data);
+
+  /* Unbox param: file */
+  GFile * native_file = (mrb_nil_p(file) ? NULL : mruby_unbox__GFile(file));
+
+  /* Unbox param: cancellable */
+  void * native_cancellable = NULL; /* Unused parameter */
+
+  /* Unbox param: progress_callback */
+  GFileMeasureProgressCallback native_progress_callback = TODO_mruby_unbox_GFileMeasureProgressCallback(progress_callback);
+
+  /* Unbox param: progress_data */
+  gpointer native_progress_data = TODO_mruby_unbox_gpointer(progress_data);
+
+  /* Unbox param: callback */
+  GAsyncReadyCallback native_callback = TODO_mruby_unbox_GAsyncReadyCallback(callback);
+
+  /* Unbox param: user_data */
+  gpointer native_user_data = TODO_mruby_unbox_gpointer(user_data);
+
+  /* Invocation */
+  g_file_measure_disk_usage_async(native_file, native_flags, native_io_priority, native_cancellable, native_progress_callback, native_progress_data, native_callback, native_user_data);
+
+  return mrb_nil_value();
 }
 #endif
 /* MRUBY_BINDING_END */
@@ -15101,9 +16903,9 @@ mrb_GLib_g_file_new_tmp(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_file_open_readwrite */
-/* sha: 03a2492cc29c3eea374b43ba27b3888815513c5280e4a4c43b5402523e07cd49 */
+/* sha: 6bd5d11702b92493d797bf592953c9d780bd62da44d55b9da8b1a887e3baf3a4 */
 #if BIND_g_file_open_readwrite_FUNCTION
-#define g_file_open_readwrite_REQUIRED_ARGC 2
+#define g_file_open_readwrite_REQUIRED_ARGC 1
 #define g_file_open_readwrite_OPTIONAL_ARGC 0
 /* g_file_open_readwrite
  *
@@ -15116,11 +16918,10 @@ mrb_value
 mrb_GLib_g_file_open_readwrite(mrb_state* mrb, mrb_value self) {
   mrb_value results = mrb_ary_new(mrb);
   mrb_value file;
-  mrb_value cancellable;
   struct GError * native_error = NULL;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "oo", &file, &cancellable);
+  mrb_get_args(mrb, "o", &file);
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, file, GFile_class(mrb))) {
@@ -15138,7 +16939,7 @@ mrb_GLib_g_file_open_readwrite(mrb_state* mrb, mrb_value self) {
   GFileIOStream * native_return_value = g_file_open_readwrite(native_file, native_cancellable, &native_error);
 
   /* Box the return value */
-  mrb_value return_value = TODO_mruby_box_GFileIOStream_PTR(mrb, native_return_value);
+  mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_box__GFileIOStream(mrb, native_return_value));
   mrb_ary_push(mrb, results, return_value);
   
   /* Box out param: error */
@@ -15148,6 +16949,60 @@ mrb_GLib_g_file_open_readwrite(mrb_state* mrb, mrb_value self) {
   mrb_ary_push(mrb, results, error);
 
   return results;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_file_open_readwrite_async */
+/* sha: e753a50772194b27371745b02efab059164f8917ac51ade4a7f72ffea3163844 */
+#if BIND_g_file_open_readwrite_async_FUNCTION
+#define g_file_open_readwrite_async_REQUIRED_ARGC 5
+#define g_file_open_readwrite_async_OPTIONAL_ARGC 0
+/* g_file_open_readwrite_async
+ *
+ * Parameters:
+ * - file: GFile *
+ * - io_priority: int
+ * - cancellable: GCancellable *
+ * - callback: GAsyncReadyCallback
+ * - user_data: gpointer
+ * Return Type: void
+ */
+mrb_value
+mrb_GLib_g_file_open_readwrite_async(mrb_state* mrb, mrb_value self) {
+  mrb_value file;
+  mrb_int native_io_priority;
+  mrb_value cancellable;
+  mrb_value callback;
+  mrb_value user_data;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "oiooo", &file, &native_io_priority, &cancellable, &callback, &user_data);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, file, GFile_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GFile expected");
+    return mrb_nil_value();
+  }
+  TODO_type_check_GAsyncReadyCallback(callback);
+  TODO_type_check_gpointer(user_data);
+
+  /* Unbox param: file */
+  GFile * native_file = (mrb_nil_p(file) ? NULL : mruby_unbox__GFile(file));
+
+  /* Unbox param: cancellable */
+  void * native_cancellable = NULL; /* Unused parameter */
+
+  /* Unbox param: callback */
+  GAsyncReadyCallback native_callback = TODO_mruby_unbox_GAsyncReadyCallback(callback);
+
+  /* Unbox param: user_data */
+  gpointer native_user_data = TODO_mruby_unbox_gpointer(user_data);
+
+  /* Invocation */
+  g_file_open_readwrite_async(native_file, native_io_priority, native_cancellable, native_callback, native_user_data);
+
+  return mrb_nil_value();
 }
 #endif
 /* MRUBY_BINDING_END */
@@ -15471,6 +17326,62 @@ mrb_GLib_g_file_query_filesystem_info(mrb_state* mrb, mrb_value self) {
 #endif
 /* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: g_file_query_filesystem_info_async */
+/* sha: 7b84b18e2129725274948ebcaefeb35fb9e1dc45a0c8c02690b6f3461222e692 */
+#if BIND_g_file_query_filesystem_info_async_FUNCTION
+#define g_file_query_filesystem_info_async_REQUIRED_ARGC 6
+#define g_file_query_filesystem_info_async_OPTIONAL_ARGC 0
+/* g_file_query_filesystem_info_async
+ *
+ * Parameters:
+ * - file: GFile *
+ * - attributes: const char *
+ * - io_priority: int
+ * - cancellable: GCancellable *
+ * - callback: GAsyncReadyCallback
+ * - user_data: gpointer
+ * Return Type: void
+ */
+mrb_value
+mrb_GLib_g_file_query_filesystem_info_async(mrb_state* mrb, mrb_value self) {
+  mrb_value file;
+  char * native_attributes = NULL;
+  mrb_int native_io_priority;
+  mrb_value cancellable;
+  mrb_value callback;
+  mrb_value user_data;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "oziooo", &file, &native_attributes, &native_io_priority, &cancellable, &callback, &user_data);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, file, GFile_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GFile expected");
+    return mrb_nil_value();
+  }
+  TODO_type_check_GAsyncReadyCallback(callback);
+  TODO_type_check_gpointer(user_data);
+
+  /* Unbox param: file */
+  GFile * native_file = (mrb_nil_p(file) ? NULL : mruby_unbox__GFile(file));
+
+  /* Unbox param: cancellable */
+  void * native_cancellable = NULL; /* Unused parameter */
+
+  /* Unbox param: callback */
+  GAsyncReadyCallback native_callback = TODO_mruby_unbox_GAsyncReadyCallback(callback);
+
+  /* Unbox param: user_data */
+  gpointer native_user_data = TODO_mruby_unbox_gpointer(user_data);
+
+  /* Invocation */
+  g_file_query_filesystem_info_async(native_file, native_attributes, native_io_priority, native_cancellable, native_callback, native_user_data);
+
+  return mrb_nil_value();
+}
+#endif
+/* MRUBY_BINDING_END */
+
 /* MRUBY_BINDING: g_file_query_info */
 /* sha: 450ac260f8e3bfe1d7f23da54841028da2618f2cda603ed73d48ad47cf0abf7d */
 #if BIND_g_file_query_info_FUNCTION
@@ -15523,6 +17434,64 @@ mrb_GLib_g_file_query_info(mrb_state* mrb, mrb_value self) {
   mrb_ary_push(mrb, results, error);
 
   return results;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_file_query_info_async */
+/* sha: d0c58dc2d08aeb1beb9d60bafac01b328eae32172fa73623511e9336ada233ab */
+#if BIND_g_file_query_info_async_FUNCTION
+#define g_file_query_info_async_REQUIRED_ARGC 7
+#define g_file_query_info_async_OPTIONAL_ARGC 0
+/* g_file_query_info_async
+ *
+ * Parameters:
+ * - file: GFile *
+ * - attributes: const char *
+ * - flags: GFileQueryInfoFlags
+ * - io_priority: int
+ * - cancellable: GCancellable *
+ * - callback: GAsyncReadyCallback
+ * - user_data: gpointer
+ * Return Type: void
+ */
+mrb_value
+mrb_GLib_g_file_query_info_async(mrb_state* mrb, mrb_value self) {
+  mrb_value file;
+  char * native_attributes = NULL;
+  mrb_int native_flags;
+  mrb_int native_io_priority;
+  mrb_value cancellable;
+  mrb_value callback;
+  mrb_value user_data;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "oziiooo", &file, &native_attributes, &native_flags, &native_io_priority, &cancellable, &callback, &user_data);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, file, GFile_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GFile expected");
+    return mrb_nil_value();
+  }
+  TODO_type_check_GAsyncReadyCallback(callback);
+  TODO_type_check_gpointer(user_data);
+
+  /* Unbox param: file */
+  GFile * native_file = (mrb_nil_p(file) ? NULL : mruby_unbox__GFile(file));
+
+  /* Unbox param: cancellable */
+  void * native_cancellable = NULL; /* Unused parameter */
+
+  /* Unbox param: callback */
+  GAsyncReadyCallback native_callback = TODO_mruby_unbox_GAsyncReadyCallback(callback);
+
+  /* Unbox param: user_data */
+  gpointer native_user_data = TODO_mruby_unbox_gpointer(user_data);
+
+  /* Invocation */
+  g_file_query_info_async(native_file, native_attributes, native_flags, native_io_priority, native_cancellable, native_callback, native_user_data);
+
+  return mrb_nil_value();
 }
 #endif
 /* MRUBY_BINDING_END */
@@ -15632,9 +17601,9 @@ mrb_GLib_g_file_query_writable_namespaces(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_file_read */
-/* sha: 946fc232433ccd7923d58e27a646c52be9aa2b94a8974f7e5b9501d0acb86f31 */
+/* sha: d1d76ccc2e36f5d0fadd3e3e57d82561edf1d29dd25cd9d40203170d6a6b11e3 */
 #if BIND_g_file_read_FUNCTION
-#define g_file_read_REQUIRED_ARGC 2
+#define g_file_read_REQUIRED_ARGC 1
 #define g_file_read_OPTIONAL_ARGC 0
 /* g_file_read
  *
@@ -15651,7 +17620,7 @@ mrb_GLib_g_file_read(mrb_state* mrb, mrb_value self) {
   struct GError * native_error = NULL;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "oo", &file, &cancellable);
+  mrb_get_args(mrb, "o", &file);
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, file, GFile_class(mrb))) {
@@ -15669,7 +17638,7 @@ mrb_GLib_g_file_read(mrb_state* mrb, mrb_value self) {
   GFileInputStream * native_return_value = g_file_read(native_file, native_cancellable, &native_error);
 
   /* Box the return value */
-  mrb_value return_value = TODO_mruby_box_GFileInputStream_PTR(mrb, native_return_value);
+  mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_box__GFileInputStream(mrb, native_return_value));
   mrb_ary_push(mrb, results, return_value);
   
   /* Box out param: error */
@@ -15679,6 +17648,60 @@ mrb_GLib_g_file_read(mrb_state* mrb, mrb_value self) {
   mrb_ary_push(mrb, results, error);
 
   return results;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_file_read_async */
+/* sha: 347722f56f4c8b5bf8724e06a6f10ecd6bcb5d21bebf4fb1587a27ab259a722a */
+#if BIND_g_file_read_async_FUNCTION
+#define g_file_read_async_REQUIRED_ARGC 5
+#define g_file_read_async_OPTIONAL_ARGC 0
+/* g_file_read_async
+ *
+ * Parameters:
+ * - file: GFile *
+ * - io_priority: int
+ * - cancellable: GCancellable *
+ * - callback: GAsyncReadyCallback
+ * - user_data: gpointer
+ * Return Type: void
+ */
+mrb_value
+mrb_GLib_g_file_read_async(mrb_state* mrb, mrb_value self) {
+  mrb_value file;
+  mrb_int native_io_priority;
+  mrb_value cancellable;
+  mrb_value callback;
+  mrb_value user_data;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "oiooo", &file, &native_io_priority, &cancellable, &callback, &user_data);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, file, GFile_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GFile expected");
+    return mrb_nil_value();
+  }
+  TODO_type_check_GAsyncReadyCallback(callback);
+  TODO_type_check_gpointer(user_data);
+
+  /* Unbox param: file */
+  GFile * native_file = (mrb_nil_p(file) ? NULL : mruby_unbox__GFile(file));
+
+  /* Unbox param: cancellable */
+  void * native_cancellable = NULL; /* Unused parameter */
+
+  /* Unbox param: callback */
+  GAsyncReadyCallback native_callback = TODO_mruby_unbox_GAsyncReadyCallback(callback);
+
+  /* Unbox param: user_data */
+  gpointer native_user_data = TODO_mruby_unbox_gpointer(user_data);
+
+  /* Invocation */
+  g_file_read_async(native_file, native_io_priority, native_cancellable, native_callback, native_user_data);
+
+  return mrb_nil_value();
 }
 #endif
 /* MRUBY_BINDING_END */
@@ -15723,9 +17746,9 @@ mrb_GLib_g_file_read_link(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_file_replace */
-/* sha: cbc8aa05977f2a778c3a4528e03040a20b463ae1de8b013ffcae24e26f7312d7 */
+/* sha: a76f706e85a7550b57a04fac15b08e58a7fc75ee252f1f406d334b3c0e39cac0 */
 #if BIND_g_file_replace_FUNCTION
-#define g_file_replace_REQUIRED_ARGC 5
+#define g_file_replace_REQUIRED_ARGC 4
 #define g_file_replace_OPTIONAL_ARGC 0
 /* g_file_replace
  *
@@ -15748,7 +17771,7 @@ mrb_GLib_g_file_replace(mrb_state* mrb, mrb_value self) {
   struct GError * native_error = NULL;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "ozbio", &file, &native_etag, &native_make_backup, &native_flags, &cancellable);
+  mrb_get_args(mrb, "oz!bi", &file, &native_etag, &native_make_backup, &native_flags);
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, file, GFile_class(mrb))) {
@@ -15766,7 +17789,7 @@ mrb_GLib_g_file_replace(mrb_state* mrb, mrb_value self) {
   GFileOutputStream * native_return_value = g_file_replace(native_file, native_etag, native_make_backup, native_flags, native_cancellable, &native_error);
 
   /* Box the return value */
-  mrb_value return_value = TODO_mruby_box_GFileOutputStream_PTR(mrb, native_return_value);
+  mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_box__GFileOutputStream(mrb, native_return_value));
   mrb_ary_push(mrb, results, return_value);
   
   /* Box out param: error */
@@ -15776,6 +17799,66 @@ mrb_GLib_g_file_replace(mrb_state* mrb, mrb_value self) {
   mrb_ary_push(mrb, results, error);
 
   return results;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_file_replace_async */
+/* sha: 4543c16a62d150e4ec896091d9508ac3565534b396df97b69ddb102abc085efe */
+#if BIND_g_file_replace_async_FUNCTION
+#define g_file_replace_async_REQUIRED_ARGC 8
+#define g_file_replace_async_OPTIONAL_ARGC 0
+/* g_file_replace_async
+ *
+ * Parameters:
+ * - file: GFile *
+ * - etag: const char *
+ * - make_backup: gboolean
+ * - flags: GFileCreateFlags
+ * - io_priority: int
+ * - cancellable: GCancellable *
+ * - callback: GAsyncReadyCallback
+ * - user_data: gpointer
+ * Return Type: void
+ */
+mrb_value
+mrb_GLib_g_file_replace_async(mrb_state* mrb, mrb_value self) {
+  mrb_value file;
+  char * native_etag = NULL;
+  mrb_bool native_make_backup;
+  mrb_int native_flags;
+  mrb_int native_io_priority;
+  mrb_value cancellable;
+  mrb_value callback;
+  mrb_value user_data;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "ozbiiooo", &file, &native_etag, &native_make_backup, &native_flags, &native_io_priority, &cancellable, &callback, &user_data);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, file, GFile_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GFile expected");
+    return mrb_nil_value();
+  }
+  TODO_type_check_GAsyncReadyCallback(callback);
+  TODO_type_check_gpointer(user_data);
+
+  /* Unbox param: file */
+  GFile * native_file = (mrb_nil_p(file) ? NULL : mruby_unbox__GFile(file));
+
+  /* Unbox param: cancellable */
+  void * native_cancellable = NULL; /* Unused parameter */
+
+  /* Unbox param: callback */
+  GAsyncReadyCallback native_callback = TODO_mruby_unbox_GAsyncReadyCallback(callback);
+
+  /* Unbox param: user_data */
+  gpointer native_user_data = TODO_mruby_unbox_gpointer(user_data);
+
+  /* Invocation */
+  g_file_replace_async(native_file, native_etag, native_make_backup, native_flags, native_io_priority, native_cancellable, native_callback, native_user_data);
+
+  return mrb_nil_value();
 }
 #endif
 /* MRUBY_BINDING_END */
@@ -15848,10 +17931,139 @@ mrb_GLib_g_file_replace_contents(mrb_state* mrb, mrb_value self) {
 #endif
 /* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: g_file_replace_contents_async */
+/* sha: b39ef93beb5de9c5e6b31e337f27f2002599fc748ecd3b4948c81e7b1eae5b82 */
+#if BIND_g_file_replace_contents_async_FUNCTION
+#define g_file_replace_contents_async_REQUIRED_ARGC 9
+#define g_file_replace_contents_async_OPTIONAL_ARGC 0
+/* g_file_replace_contents_async
+ *
+ * Parameters:
+ * - file: GFile *
+ * - contents: const char *
+ * - length: gsize
+ * - etag: const char *
+ * - make_backup: gboolean
+ * - flags: GFileCreateFlags
+ * - cancellable: GCancellable *
+ * - callback: GAsyncReadyCallback
+ * - user_data: gpointer
+ * Return Type: void
+ */
+mrb_value
+mrb_GLib_g_file_replace_contents_async(mrb_state* mrb, mrb_value self) {
+  mrb_value file;
+  char * native_contents = NULL;
+  mrb_int native_length;
+  char * native_etag = NULL;
+  mrb_bool native_make_backup;
+  mrb_int native_flags;
+  mrb_value cancellable;
+  mrb_value callback;
+  mrb_value user_data;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "ozizbiooo", &file, &native_contents, &native_length, &native_etag, &native_make_backup, &native_flags, &cancellable, &callback, &user_data);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, file, GFile_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GFile expected");
+    return mrb_nil_value();
+  }
+  TODO_type_check_GAsyncReadyCallback(callback);
+  TODO_type_check_gpointer(user_data);
+
+  /* Unbox param: file */
+  GFile * native_file = (mrb_nil_p(file) ? NULL : mruby_unbox__GFile(file));
+
+  /* Unbox param: cancellable */
+  void * native_cancellable = NULL; /* Unused parameter */
+
+  /* Unbox param: callback */
+  GAsyncReadyCallback native_callback = TODO_mruby_unbox_GAsyncReadyCallback(callback);
+
+  /* Unbox param: user_data */
+  gpointer native_user_data = TODO_mruby_unbox_gpointer(user_data);
+
+  /* Invocation */
+  g_file_replace_contents_async(native_file, native_contents, native_length, native_etag, native_make_backup, native_flags, native_cancellable, native_callback, native_user_data);
+
+  return mrb_nil_value();
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_file_replace_contents_bytes_async */
+/* sha: 9c26a694d84412d43f76ec9ae51cb1bac50c82048d46feb02ef0b68c8c692340 */
+#if BIND_g_file_replace_contents_bytes_async_FUNCTION
+#define g_file_replace_contents_bytes_async_REQUIRED_ARGC 8
+#define g_file_replace_contents_bytes_async_OPTIONAL_ARGC 0
+/* g_file_replace_contents_bytes_async
+ *
+ * Parameters:
+ * - file: GFile *
+ * - contents: GBytes *
+ * - etag: const char *
+ * - make_backup: gboolean
+ * - flags: GFileCreateFlags
+ * - cancellable: GCancellable *
+ * - callback: GAsyncReadyCallback
+ * - user_data: gpointer
+ * Return Type: void
+ */
+mrb_value
+mrb_GLib_g_file_replace_contents_bytes_async(mrb_state* mrb, mrb_value self) {
+  mrb_value file;
+  mrb_value contents;
+  char * native_etag = NULL;
+  mrb_bool native_make_backup;
+  mrb_int native_flags;
+  mrb_value cancellable;
+  mrb_value callback;
+  mrb_value user_data;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "oozbiooo", &file, &contents, &native_etag, &native_make_backup, &native_flags, &cancellable, &callback, &user_data);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, file, GFile_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GFile expected");
+    return mrb_nil_value();
+  }
+  if (!mrb_obj_is_kind_of(mrb, contents, GBytes_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GBytes expected");
+    return mrb_nil_value();
+  }
+  TODO_type_check_GAsyncReadyCallback(callback);
+  TODO_type_check_gpointer(user_data);
+
+  /* Unbox param: file */
+  GFile * native_file = (mrb_nil_p(file) ? NULL : mruby_unbox__GFile(file));
+
+  /* Unbox param: contents */
+  GBytes * native_contents = (mrb_nil_p(contents) ? NULL : mruby_unbox__GBytes(contents));
+
+  /* Unbox param: cancellable */
+  void * native_cancellable = NULL; /* Unused parameter */
+
+  /* Unbox param: callback */
+  GAsyncReadyCallback native_callback = TODO_mruby_unbox_GAsyncReadyCallback(callback);
+
+  /* Unbox param: user_data */
+  gpointer native_user_data = TODO_mruby_unbox_gpointer(user_data);
+
+  /* Invocation */
+  g_file_replace_contents_bytes_async(native_file, native_contents, native_etag, native_make_backup, native_flags, native_cancellable, native_callback, native_user_data);
+
+  return mrb_nil_value();
+}
+#endif
+/* MRUBY_BINDING_END */
+
 /* MRUBY_BINDING: g_file_replace_readwrite */
-/* sha: c8590c47706850232b42e260be8c9ad43b2658a76e75f26b80adf2ce9f95fa9f */
+/* sha: 2bfa9b15a1d071c233ffc40084a17761826321f403e8cc75389762c6a230c43f */
 #if BIND_g_file_replace_readwrite_FUNCTION
-#define g_file_replace_readwrite_REQUIRED_ARGC 5
+#define g_file_replace_readwrite_REQUIRED_ARGC 4
 #define g_file_replace_readwrite_OPTIONAL_ARGC 0
 /* g_file_replace_readwrite
  *
@@ -15870,11 +18082,10 @@ mrb_GLib_g_file_replace_readwrite(mrb_state* mrb, mrb_value self) {
   char * native_etag = NULL;
   mrb_bool native_make_backup;
   mrb_int native_flags;
-  mrb_value cancellable;
   struct GError * native_error = NULL;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "ozbio", &file, &native_etag, &native_make_backup, &native_flags, &cancellable);
+  mrb_get_args(mrb, "ozbi", &file, &native_etag, &native_make_backup, &native_flags);
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, file, GFile_class(mrb))) {
@@ -15892,7 +18103,7 @@ mrb_GLib_g_file_replace_readwrite(mrb_state* mrb, mrb_value self) {
   GFileIOStream * native_return_value = g_file_replace_readwrite(native_file, native_etag, native_make_backup, native_flags, native_cancellable, &native_error);
 
   /* Box the return value */
-  mrb_value return_value = TODO_mruby_box_GFileIOStream_PTR(mrb, native_return_value);
+  mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_box__GFileIOStream(mrb, native_return_value));
   mrb_ary_push(mrb, results, return_value);
   
   /* Box out param: error */
@@ -15902,6 +18113,66 @@ mrb_GLib_g_file_replace_readwrite(mrb_state* mrb, mrb_value self) {
   mrb_ary_push(mrb, results, error);
 
   return results;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_file_replace_readwrite_async */
+/* sha: 7514f227e2d21c96d60aea4b869fc1805d771475a998655ac879bea8d44a2e95 */
+#if BIND_g_file_replace_readwrite_async_FUNCTION
+#define g_file_replace_readwrite_async_REQUIRED_ARGC 8
+#define g_file_replace_readwrite_async_OPTIONAL_ARGC 0
+/* g_file_replace_readwrite_async
+ *
+ * Parameters:
+ * - file: GFile *
+ * - etag: const char *
+ * - make_backup: gboolean
+ * - flags: GFileCreateFlags
+ * - io_priority: int
+ * - cancellable: GCancellable *
+ * - callback: GAsyncReadyCallback
+ * - user_data: gpointer
+ * Return Type: void
+ */
+mrb_value
+mrb_GLib_g_file_replace_readwrite_async(mrb_state* mrb, mrb_value self) {
+  mrb_value file;
+  char * native_etag = NULL;
+  mrb_bool native_make_backup;
+  mrb_int native_flags;
+  mrb_int native_io_priority;
+  mrb_value cancellable;
+  mrb_value callback;
+  mrb_value user_data;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "ozbiiooo", &file, &native_etag, &native_make_backup, &native_flags, &native_io_priority, &cancellable, &callback, &user_data);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, file, GFile_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GFile expected");
+    return mrb_nil_value();
+  }
+  TODO_type_check_GAsyncReadyCallback(callback);
+  TODO_type_check_gpointer(user_data);
+
+  /* Unbox param: file */
+  GFile * native_file = (mrb_nil_p(file) ? NULL : mruby_unbox__GFile(file));
+
+  /* Unbox param: cancellable */
+  void * native_cancellable = NULL; /* Unused parameter */
+
+  /* Unbox param: callback */
+  GAsyncReadyCallback native_callback = TODO_mruby_unbox_GAsyncReadyCallback(callback);
+
+  /* Unbox param: user_data */
+  gpointer native_user_data = TODO_mruby_unbox_gpointer(user_data);
+
+  /* Invocation */
+  g_file_replace_readwrite_async(native_file, native_etag, native_make_backup, native_flags, native_io_priority, native_cancellable, native_callback, native_user_data);
+
+  return mrb_nil_value();
 }
 #endif
 /* MRUBY_BINDING_END */
@@ -16358,6 +18629,71 @@ mrb_GLib_g_file_set_attribute_uint64(mrb_state* mrb, mrb_value self) {
 #endif
 /* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: g_file_set_attributes_async */
+/* sha: d1a9549b1e485c09c538a67b166d5c8674f60edcf228d5b204520f2025e8fe6a */
+#if BIND_g_file_set_attributes_async_FUNCTION
+#define g_file_set_attributes_async_REQUIRED_ARGC 7
+#define g_file_set_attributes_async_OPTIONAL_ARGC 0
+/* g_file_set_attributes_async
+ *
+ * Parameters:
+ * - file: GFile *
+ * - info: GFileInfo *
+ * - flags: GFileQueryInfoFlags
+ * - io_priority: int
+ * - cancellable: GCancellable *
+ * - callback: GAsyncReadyCallback
+ * - user_data: gpointer
+ * Return Type: void
+ */
+mrb_value
+mrb_GLib_g_file_set_attributes_async(mrb_state* mrb, mrb_value self) {
+  mrb_value file;
+  mrb_value info;
+  mrb_int native_flags;
+  mrb_int native_io_priority;
+  mrb_value cancellable;
+  mrb_value callback;
+  mrb_value user_data;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "ooiiooo", &file, &info, &native_flags, &native_io_priority, &cancellable, &callback, &user_data);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, file, GFile_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GFile expected");
+    return mrb_nil_value();
+  }
+  if (!mrb_obj_is_kind_of(mrb, info, GFileInfo_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GFileInfo expected");
+    return mrb_nil_value();
+  }
+  TODO_type_check_GAsyncReadyCallback(callback);
+  TODO_type_check_gpointer(user_data);
+
+  /* Unbox param: file */
+  GFile * native_file = (mrb_nil_p(file) ? NULL : mruby_unbox__GFile(file));
+
+  /* Unbox param: info */
+  GFileInfo * native_info = (mrb_nil_p(info) ? NULL : mruby_unbox__GFileInfo(info));
+
+  /* Unbox param: cancellable */
+  void * native_cancellable = NULL; /* Unused parameter */
+
+  /* Unbox param: callback */
+  GAsyncReadyCallback native_callback = TODO_mruby_unbox_GAsyncReadyCallback(callback);
+
+  /* Unbox param: user_data */
+  gpointer native_user_data = TODO_mruby_unbox_gpointer(user_data);
+
+  /* Invocation */
+  g_file_set_attributes_async(native_file, native_info, native_flags, native_io_priority, native_cancellable, native_callback, native_user_data);
+
+  return mrb_nil_value();
+}
+#endif
+/* MRUBY_BINDING_END */
+
 /* MRUBY_BINDING: g_file_set_attributes_from_info */
 /* sha: 7e06615e3e8cdc41c6eaabac44a09a975be0566eec972d08735b3be4ddad851f */
 #if BIND_g_file_set_attributes_from_info_FUNCTION
@@ -16513,6 +18849,62 @@ mrb_GLib_g_file_set_display_name(mrb_state* mrb, mrb_value self) {
   mrb_ary_push(mrb, results, error);
 
   return results;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_file_set_display_name_async */
+/* sha: 5422c44b54915e07c70c7f4da2d95fb9afaff52431f5342c55c996a020106c0d */
+#if BIND_g_file_set_display_name_async_FUNCTION
+#define g_file_set_display_name_async_REQUIRED_ARGC 6
+#define g_file_set_display_name_async_OPTIONAL_ARGC 0
+/* g_file_set_display_name_async
+ *
+ * Parameters:
+ * - file: GFile *
+ * - display_name: const char *
+ * - io_priority: int
+ * - cancellable: GCancellable *
+ * - callback: GAsyncReadyCallback
+ * - user_data: gpointer
+ * Return Type: void
+ */
+mrb_value
+mrb_GLib_g_file_set_display_name_async(mrb_state* mrb, mrb_value self) {
+  mrb_value file;
+  char * native_display_name = NULL;
+  mrb_int native_io_priority;
+  mrb_value cancellable;
+  mrb_value callback;
+  mrb_value user_data;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "oziooo", &file, &native_display_name, &native_io_priority, &cancellable, &callback, &user_data);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, file, GFile_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GFile expected");
+    return mrb_nil_value();
+  }
+  TODO_type_check_GAsyncReadyCallback(callback);
+  TODO_type_check_gpointer(user_data);
+
+  /* Unbox param: file */
+  GFile * native_file = (mrb_nil_p(file) ? NULL : mruby_unbox__GFile(file));
+
+  /* Unbox param: cancellable */
+  void * native_cancellable = NULL; /* Unused parameter */
+
+  /* Unbox param: callback */
+  GAsyncReadyCallback native_callback = TODO_mruby_unbox_GAsyncReadyCallback(callback);
+
+  /* Unbox param: user_data */
+  gpointer native_user_data = TODO_mruby_unbox_gpointer(user_data);
+
+  /* Invocation */
+  g_file_set_display_name_async(native_file, native_display_name, native_io_priority, native_cancellable, native_callback, native_user_data);
+
+  return mrb_nil_value();
 }
 #endif
 /* MRUBY_BINDING_END */
@@ -16754,6 +19146,60 @@ mrb_GLib_g_file_trash(mrb_state* mrb, mrb_value self) {
   mrb_ary_push(mrb, results, error);
 
   return results;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_file_trash_async */
+/* sha: 9970b91bc47b0d7b518f06c625154494a1c464736d56575a8dcc5c0829deb622 */
+#if BIND_g_file_trash_async_FUNCTION
+#define g_file_trash_async_REQUIRED_ARGC 5
+#define g_file_trash_async_OPTIONAL_ARGC 0
+/* g_file_trash_async
+ *
+ * Parameters:
+ * - file: GFile *
+ * - io_priority: int
+ * - cancellable: GCancellable *
+ * - callback: GAsyncReadyCallback
+ * - user_data: gpointer
+ * Return Type: void
+ */
+mrb_value
+mrb_GLib_g_file_trash_async(mrb_state* mrb, mrb_value self) {
+  mrb_value file;
+  mrb_int native_io_priority;
+  mrb_value cancellable;
+  mrb_value callback;
+  mrb_value user_data;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "oiooo", &file, &native_io_priority, &cancellable, &callback, &user_data);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, file, GFile_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GFile expected");
+    return mrb_nil_value();
+  }
+  TODO_type_check_GAsyncReadyCallback(callback);
+  TODO_type_check_gpointer(user_data);
+
+  /* Unbox param: file */
+  GFile * native_file = (mrb_nil_p(file) ? NULL : mruby_unbox__GFile(file));
+
+  /* Unbox param: cancellable */
+  void * native_cancellable = NULL; /* Unused parameter */
+
+  /* Unbox param: callback */
+  GAsyncReadyCallback native_callback = TODO_mruby_unbox_GAsyncReadyCallback(callback);
+
+  /* Unbox param: user_data */
+  gpointer native_user_data = TODO_mruby_unbox_gpointer(user_data);
+
+  /* Invocation */
+  g_file_trash_async(native_file, native_io_priority, native_cancellable, native_callback, native_user_data);
+
+  return mrb_nil_value();
 }
 #endif
 /* MRUBY_BINDING_END */
@@ -17147,6 +19593,29 @@ mrb_GLib_g_find_program_in_path(mrb_state* mrb, mrb_value self) {
 #endif
 /* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: g_fopen */
+/* sha: ffcfc701de212f3887f4e9f37d95706dd88a22c9a26e9743693c35f90a9c0420 */
+#if BIND_g_fopen_FUNCTION
+#define g_fopen_REQUIRED_ARGC 0
+#define g_fopen_OPTIONAL_ARGC 0
+/* g_fopen
+ *
+ * Parameters: None
+ * Return Type: int *
+ */
+mrb_value
+mrb_GLib_g_fopen(mrb_state* mrb, mrb_value self) {
+  /* Invocation */
+  int * native_return_value = g_fopen();
+
+  /* Box the return value */
+  mrb_value return_value = TODO_mruby_box_int_PTR(mrb, native_return_value);
+  
+  return return_value;
+}
+#endif
+/* MRUBY_BINDING_END */
+
 /* MRUBY_BINDING: g_format_size */
 /* sha: 5246f244b00f027505f37a89fa6cb46c0f2db3f28200d21192297a297abf809c */
 #if BIND_g_format_size_FUNCTION
@@ -17301,6 +19770,29 @@ mrb_GLib_g_free(mrb_state* mrb, mrb_value self) {
   g_free(native_mem);
 
   return mrb_nil_value();
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_freopen */
+/* sha: a55d7a54516ad54dfef7330418e347d03d959ea6928db866df87b56e0a9ce94b */
+#if BIND_g_freopen_FUNCTION
+#define g_freopen_REQUIRED_ARGC 0
+#define g_freopen_OPTIONAL_ARGC 0
+/* g_freopen
+ *
+ * Parameters: None
+ * Return Type: int *
+ */
+mrb_value
+mrb_GLib_g_freopen(mrb_state* mrb, mrb_value self) {
+  /* Invocation */
+  int * native_return_value = g_freopen();
+
+  /* Box the return value */
+  mrb_value return_value = TODO_mruby_box_int_PTR(mrb, native_return_value);
+  
+  return return_value;
 }
 #endif
 /* MRUBY_BINDING_END */
@@ -18624,6 +21116,1740 @@ mrb_GLib_g_idle_source_new(mrb_state* mrb, mrb_value self) {
 #endif
 /* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: g_inet_address_equal */
+/* sha: 1c18a8b4df55ec03fe5c1abb79dac17757b771cef43fe1ce5605d1296cfb474c */
+#if BIND_g_inet_address_equal_FUNCTION
+#define g_inet_address_equal_REQUIRED_ARGC 2
+#define g_inet_address_equal_OPTIONAL_ARGC 0
+/* g_inet_address_equal
+ *
+ * Parameters:
+ * - address: GInetAddress *
+ * - other_address: GInetAddress *
+ * Return Type: gboolean
+ */
+mrb_value
+mrb_GLib_g_inet_address_equal(mrb_state* mrb, mrb_value self) {
+  mrb_value address;
+  mrb_value other_address;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "oo", &address, &other_address);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, address, GInetAddress_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GInetAddress expected");
+    return mrb_nil_value();
+  }
+  if (!mrb_obj_is_kind_of(mrb, other_address, GInetAddress_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GInetAddress expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: address */
+  GInetAddress * native_address = (mrb_nil_p(address) ? NULL : mruby_unbox__GInetAddress(address));
+
+  /* Unbox param: other_address */
+  GInetAddress * native_other_address = (mrb_nil_p(other_address) ? NULL : mruby_unbox__GInetAddress(other_address));
+
+  /* Invocation */
+  gboolean native_return_value = g_inet_address_equal(native_address, native_other_address);
+
+  /* Box the return value */
+  mrb_value return_value = mrb_bool_value(native_return_value);
+  
+  return return_value;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_inet_address_get_family */
+/* sha: 2b3acac878225ef4e9db39a3118d4b7ba9cca4f96254b1da7b9d2092de7652bb */
+#if BIND_g_inet_address_get_family_FUNCTION
+#define g_inet_address_get_family_REQUIRED_ARGC 1
+#define g_inet_address_get_family_OPTIONAL_ARGC 0
+/* g_inet_address_get_family
+ *
+ * Parameters:
+ * - address: GInetAddress *
+ * Return Type: GSocketFamily
+ */
+mrb_value
+mrb_GLib_g_inet_address_get_family(mrb_state* mrb, mrb_value self) {
+  mrb_value address;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "o", &address);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, address, GInetAddress_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GInetAddress expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: address */
+  GInetAddress * native_address = (mrb_nil_p(address) ? NULL : mruby_unbox__GInetAddress(address));
+
+  /* Invocation */
+  GSocketFamily native_return_value = g_inet_address_get_family(native_address);
+
+  /* Box the return value */
+  mrb_value return_value = mrb_fixnum_value(native_return_value);
+  
+  return return_value;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_inet_address_get_is_any */
+/* sha: fc59892c6494c0a4a5cddcb74abbc271c8fcccf55c72cc60640dcf3e07f92a41 */
+#if BIND_g_inet_address_get_is_any_FUNCTION
+#define g_inet_address_get_is_any_REQUIRED_ARGC 1
+#define g_inet_address_get_is_any_OPTIONAL_ARGC 0
+/* g_inet_address_get_is_any
+ *
+ * Parameters:
+ * - address: GInetAddress *
+ * Return Type: gboolean
+ */
+mrb_value
+mrb_GLib_g_inet_address_get_is_any(mrb_state* mrb, mrb_value self) {
+  mrb_value address;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "o", &address);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, address, GInetAddress_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GInetAddress expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: address */
+  GInetAddress * native_address = (mrb_nil_p(address) ? NULL : mruby_unbox__GInetAddress(address));
+
+  /* Invocation */
+  gboolean native_return_value = g_inet_address_get_is_any(native_address);
+
+  /* Box the return value */
+  mrb_value return_value = mrb_bool_value(native_return_value);
+  
+  return return_value;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_inet_address_get_is_link_local */
+/* sha: cf8e854a0cf969b8599a50a0ce34a39da92634adeb44e3660830777d27ec8f5f */
+#if BIND_g_inet_address_get_is_link_local_FUNCTION
+#define g_inet_address_get_is_link_local_REQUIRED_ARGC 1
+#define g_inet_address_get_is_link_local_OPTIONAL_ARGC 0
+/* g_inet_address_get_is_link_local
+ *
+ * Parameters:
+ * - address: GInetAddress *
+ * Return Type: gboolean
+ */
+mrb_value
+mrb_GLib_g_inet_address_get_is_link_local(mrb_state* mrb, mrb_value self) {
+  mrb_value address;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "o", &address);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, address, GInetAddress_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GInetAddress expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: address */
+  GInetAddress * native_address = (mrb_nil_p(address) ? NULL : mruby_unbox__GInetAddress(address));
+
+  /* Invocation */
+  gboolean native_return_value = g_inet_address_get_is_link_local(native_address);
+
+  /* Box the return value */
+  mrb_value return_value = mrb_bool_value(native_return_value);
+  
+  return return_value;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_inet_address_get_is_loopback */
+/* sha: a62cd2542dc9ce3be62307ebecc20d8f3acea137398efd6d0e4f995f6a490a93 */
+#if BIND_g_inet_address_get_is_loopback_FUNCTION
+#define g_inet_address_get_is_loopback_REQUIRED_ARGC 1
+#define g_inet_address_get_is_loopback_OPTIONAL_ARGC 0
+/* g_inet_address_get_is_loopback
+ *
+ * Parameters:
+ * - address: GInetAddress *
+ * Return Type: gboolean
+ */
+mrb_value
+mrb_GLib_g_inet_address_get_is_loopback(mrb_state* mrb, mrb_value self) {
+  mrb_value address;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "o", &address);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, address, GInetAddress_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GInetAddress expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: address */
+  GInetAddress * native_address = (mrb_nil_p(address) ? NULL : mruby_unbox__GInetAddress(address));
+
+  /* Invocation */
+  gboolean native_return_value = g_inet_address_get_is_loopback(native_address);
+
+  /* Box the return value */
+  mrb_value return_value = mrb_bool_value(native_return_value);
+  
+  return return_value;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_inet_address_get_is_mc_global */
+/* sha: 48dd5a6af6a39bf31f3f787015074bae5ac9431419eab458055b2d076cb98580 */
+#if BIND_g_inet_address_get_is_mc_global_FUNCTION
+#define g_inet_address_get_is_mc_global_REQUIRED_ARGC 1
+#define g_inet_address_get_is_mc_global_OPTIONAL_ARGC 0
+/* g_inet_address_get_is_mc_global
+ *
+ * Parameters:
+ * - address: GInetAddress *
+ * Return Type: gboolean
+ */
+mrb_value
+mrb_GLib_g_inet_address_get_is_mc_global(mrb_state* mrb, mrb_value self) {
+  mrb_value address;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "o", &address);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, address, GInetAddress_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GInetAddress expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: address */
+  GInetAddress * native_address = (mrb_nil_p(address) ? NULL : mruby_unbox__GInetAddress(address));
+
+  /* Invocation */
+  gboolean native_return_value = g_inet_address_get_is_mc_global(native_address);
+
+  /* Box the return value */
+  mrb_value return_value = mrb_bool_value(native_return_value);
+  
+  return return_value;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_inet_address_get_is_mc_link_local */
+/* sha: b4f723298f3122b001f1329d80d8ac2ee585fa4459bde95960e56444693af740 */
+#if BIND_g_inet_address_get_is_mc_link_local_FUNCTION
+#define g_inet_address_get_is_mc_link_local_REQUIRED_ARGC 1
+#define g_inet_address_get_is_mc_link_local_OPTIONAL_ARGC 0
+/* g_inet_address_get_is_mc_link_local
+ *
+ * Parameters:
+ * - address: GInetAddress *
+ * Return Type: gboolean
+ */
+mrb_value
+mrb_GLib_g_inet_address_get_is_mc_link_local(mrb_state* mrb, mrb_value self) {
+  mrb_value address;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "o", &address);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, address, GInetAddress_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GInetAddress expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: address */
+  GInetAddress * native_address = (mrb_nil_p(address) ? NULL : mruby_unbox__GInetAddress(address));
+
+  /* Invocation */
+  gboolean native_return_value = g_inet_address_get_is_mc_link_local(native_address);
+
+  /* Box the return value */
+  mrb_value return_value = mrb_bool_value(native_return_value);
+  
+  return return_value;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_inet_address_get_is_mc_node_local */
+/* sha: 7f47b0db4ae4716ad532fdaca75429d4c6ab242e34540defe38acd887b6663d4 */
+#if BIND_g_inet_address_get_is_mc_node_local_FUNCTION
+#define g_inet_address_get_is_mc_node_local_REQUIRED_ARGC 1
+#define g_inet_address_get_is_mc_node_local_OPTIONAL_ARGC 0
+/* g_inet_address_get_is_mc_node_local
+ *
+ * Parameters:
+ * - address: GInetAddress *
+ * Return Type: gboolean
+ */
+mrb_value
+mrb_GLib_g_inet_address_get_is_mc_node_local(mrb_state* mrb, mrb_value self) {
+  mrb_value address;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "o", &address);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, address, GInetAddress_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GInetAddress expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: address */
+  GInetAddress * native_address = (mrb_nil_p(address) ? NULL : mruby_unbox__GInetAddress(address));
+
+  /* Invocation */
+  gboolean native_return_value = g_inet_address_get_is_mc_node_local(native_address);
+
+  /* Box the return value */
+  mrb_value return_value = mrb_bool_value(native_return_value);
+  
+  return return_value;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_inet_address_get_is_mc_org_local */
+/* sha: d40ab0417cd0fd514ce961ee8c5212f17b095f0951583c712f5ad23a496b9d46 */
+#if BIND_g_inet_address_get_is_mc_org_local_FUNCTION
+#define g_inet_address_get_is_mc_org_local_REQUIRED_ARGC 1
+#define g_inet_address_get_is_mc_org_local_OPTIONAL_ARGC 0
+/* g_inet_address_get_is_mc_org_local
+ *
+ * Parameters:
+ * - address: GInetAddress *
+ * Return Type: gboolean
+ */
+mrb_value
+mrb_GLib_g_inet_address_get_is_mc_org_local(mrb_state* mrb, mrb_value self) {
+  mrb_value address;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "o", &address);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, address, GInetAddress_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GInetAddress expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: address */
+  GInetAddress * native_address = (mrb_nil_p(address) ? NULL : mruby_unbox__GInetAddress(address));
+
+  /* Invocation */
+  gboolean native_return_value = g_inet_address_get_is_mc_org_local(native_address);
+
+  /* Box the return value */
+  mrb_value return_value = mrb_bool_value(native_return_value);
+  
+  return return_value;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_inet_address_get_is_mc_site_local */
+/* sha: 0361702658aa2bb6e997f353e6c8bb8f67f2c80685dfe6bd26eeef063c9269c7 */
+#if BIND_g_inet_address_get_is_mc_site_local_FUNCTION
+#define g_inet_address_get_is_mc_site_local_REQUIRED_ARGC 1
+#define g_inet_address_get_is_mc_site_local_OPTIONAL_ARGC 0
+/* g_inet_address_get_is_mc_site_local
+ *
+ * Parameters:
+ * - address: GInetAddress *
+ * Return Type: gboolean
+ */
+mrb_value
+mrb_GLib_g_inet_address_get_is_mc_site_local(mrb_state* mrb, mrb_value self) {
+  mrb_value address;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "o", &address);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, address, GInetAddress_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GInetAddress expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: address */
+  GInetAddress * native_address = (mrb_nil_p(address) ? NULL : mruby_unbox__GInetAddress(address));
+
+  /* Invocation */
+  gboolean native_return_value = g_inet_address_get_is_mc_site_local(native_address);
+
+  /* Box the return value */
+  mrb_value return_value = mrb_bool_value(native_return_value);
+  
+  return return_value;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_inet_address_get_is_multicast */
+/* sha: a92e7a4dbfa710d7a8341996644733e84c4c70da7461879de63d206360e6b9da */
+#if BIND_g_inet_address_get_is_multicast_FUNCTION
+#define g_inet_address_get_is_multicast_REQUIRED_ARGC 1
+#define g_inet_address_get_is_multicast_OPTIONAL_ARGC 0
+/* g_inet_address_get_is_multicast
+ *
+ * Parameters:
+ * - address: GInetAddress *
+ * Return Type: gboolean
+ */
+mrb_value
+mrb_GLib_g_inet_address_get_is_multicast(mrb_state* mrb, mrb_value self) {
+  mrb_value address;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "o", &address);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, address, GInetAddress_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GInetAddress expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: address */
+  GInetAddress * native_address = (mrb_nil_p(address) ? NULL : mruby_unbox__GInetAddress(address));
+
+  /* Invocation */
+  gboolean native_return_value = g_inet_address_get_is_multicast(native_address);
+
+  /* Box the return value */
+  mrb_value return_value = mrb_bool_value(native_return_value);
+  
+  return return_value;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_inet_address_get_is_site_local */
+/* sha: 32aa5663b593d84c8ce98b1fb4dfa17bbb2c9e34e86234b92d2c961ee3559dbc */
+#if BIND_g_inet_address_get_is_site_local_FUNCTION
+#define g_inet_address_get_is_site_local_REQUIRED_ARGC 1
+#define g_inet_address_get_is_site_local_OPTIONAL_ARGC 0
+/* g_inet_address_get_is_site_local
+ *
+ * Parameters:
+ * - address: GInetAddress *
+ * Return Type: gboolean
+ */
+mrb_value
+mrb_GLib_g_inet_address_get_is_site_local(mrb_state* mrb, mrb_value self) {
+  mrb_value address;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "o", &address);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, address, GInetAddress_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GInetAddress expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: address */
+  GInetAddress * native_address = (mrb_nil_p(address) ? NULL : mruby_unbox__GInetAddress(address));
+
+  /* Invocation */
+  gboolean native_return_value = g_inet_address_get_is_site_local(native_address);
+
+  /* Box the return value */
+  mrb_value return_value = mrb_bool_value(native_return_value);
+  
+  return return_value;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_inet_address_get_native_size */
+/* sha: 0676bd819ebe38792013826016b98198da592fd139faf2a72a74470e3cbd3194 */
+#if BIND_g_inet_address_get_native_size_FUNCTION
+#define g_inet_address_get_native_size_REQUIRED_ARGC 1
+#define g_inet_address_get_native_size_OPTIONAL_ARGC 0
+/* g_inet_address_get_native_size
+ *
+ * Parameters:
+ * - address: GInetAddress *
+ * Return Type: gsize
+ */
+mrb_value
+mrb_GLib_g_inet_address_get_native_size(mrb_state* mrb, mrb_value self) {
+  mrb_value address;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "o", &address);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, address, GInetAddress_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GInetAddress expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: address */
+  GInetAddress * native_address = (mrb_nil_p(address) ? NULL : mruby_unbox__GInetAddress(address));
+
+  /* Invocation */
+  gsize native_return_value = g_inet_address_get_native_size(native_address);
+
+  /* Box the return value */
+  mrb_value return_value = mrb_fixnum_value(native_return_value);
+  
+  return return_value;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_inet_address_get_type */
+/* sha: 3cab2c9d7b7744d0064ac03d482fb91e6fda20cd44883b649f1a845533a1bf4d */
+#if BIND_g_inet_address_get_type_FUNCTION
+#define g_inet_address_get_type_REQUIRED_ARGC 0
+#define g_inet_address_get_type_OPTIONAL_ARGC 0
+/* g_inet_address_get_type
+ *
+ * Parameters: None
+ * Return Type: GType
+ */
+mrb_value
+mrb_GLib_g_inet_address_get_type(mrb_state* mrb, mrb_value self) {
+  /* Invocation */
+  GType native_return_value = g_inet_address_get_type();
+
+  /* Box the return value */
+  mrb_value return_value = TODO_mruby_box_GType(mrb, native_return_value);
+  
+  return return_value;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_inet_address_new_any */
+/* sha: 885a90325a8e916fbc8965a6c9a730e39da5028950384431941fca97a2ba194c */
+#if BIND_g_inet_address_new_any_FUNCTION
+#define g_inet_address_new_any_REQUIRED_ARGC 1
+#define g_inet_address_new_any_OPTIONAL_ARGC 0
+/* g_inet_address_new_any
+ *
+ * Parameters:
+ * - family: GSocketFamily
+ * Return Type: GInetAddress *
+ */
+mrb_value
+mrb_GLib_g_inet_address_new_any(mrb_state* mrb, mrb_value self) {
+  mrb_int native_family;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "i", &native_family);
+
+  /* Invocation */
+  GInetAddress * native_return_value = g_inet_address_new_any(native_family);
+
+  /* Box the return value */
+  mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_box__GInetAddress(mrb, native_return_value));
+  
+  return return_value;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_inet_address_new_from_bytes */
+/* sha: c56f54036c684d2293929a1525f85141547af98ae319a8c8e378ef65e240dd1a */
+#if BIND_g_inet_address_new_from_bytes_FUNCTION
+#define g_inet_address_new_from_bytes_REQUIRED_ARGC 2
+#define g_inet_address_new_from_bytes_OPTIONAL_ARGC 0
+/* g_inet_address_new_from_bytes
+ *
+ * Parameters:
+ * - bytes: const guint8 *
+ * - family: GSocketFamily
+ * Return Type: GInetAddress *
+ */
+mrb_value
+mrb_GLib_g_inet_address_new_from_bytes(mrb_state* mrb, mrb_value self) {
+  mrb_value bytes;
+  mrb_int native_family;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "oi", &bytes, &native_family);
+
+  /* Type checking */
+  TODO_type_check_guint8_PTR(bytes);
+
+  /* Unbox param: bytes */
+  const guint8 * native_bytes = TODO_mruby_unbox_guint8_PTR(bytes);
+
+  /* Invocation */
+  GInetAddress * native_return_value = g_inet_address_new_from_bytes(native_bytes, native_family);
+
+  /* Box the return value */
+  mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_box__GInetAddress(mrb, native_return_value));
+  
+  return return_value;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_inet_address_new_from_string */
+/* sha: 04ebe0d0eab543db1242ead1e78b5c4551329eb4d0957833aabb2245039a7a3c */
+#if BIND_g_inet_address_new_from_string_FUNCTION
+#define g_inet_address_new_from_string_REQUIRED_ARGC 1
+#define g_inet_address_new_from_string_OPTIONAL_ARGC 0
+/* g_inet_address_new_from_string
+ *
+ * Parameters:
+ * - string: const gchar *
+ * Return Type: GInetAddress *
+ */
+mrb_value
+mrb_GLib_g_inet_address_new_from_string(mrb_state* mrb, mrb_value self) {
+  char * native_string = NULL;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "z", &native_string);
+
+  /* Invocation */
+  GInetAddress * native_return_value = g_inet_address_new_from_string(native_string);
+
+  /* Box the return value */
+  mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_box__GInetAddress(mrb, native_return_value));
+  
+  return return_value;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_inet_address_new_loopback */
+/* sha: 57835926e1b4dfe04d884f8f681e7ccffb8714db3d2554bd44fbeedccbfbeae3 */
+#if BIND_g_inet_address_new_loopback_FUNCTION
+#define g_inet_address_new_loopback_REQUIRED_ARGC 1
+#define g_inet_address_new_loopback_OPTIONAL_ARGC 0
+/* g_inet_address_new_loopback
+ *
+ * Parameters:
+ * - family: GSocketFamily
+ * Return Type: GInetAddress *
+ */
+mrb_value
+mrb_GLib_g_inet_address_new_loopback(mrb_state* mrb, mrb_value self) {
+  mrb_int native_family;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "i", &native_family);
+
+  /* Invocation */
+  GInetAddress * native_return_value = g_inet_address_new_loopback(native_family);
+
+  /* Box the return value */
+  mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_box__GInetAddress(mrb, native_return_value));
+  
+  return return_value;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_inet_address_to_bytes */
+/* sha: c36edc67675893b48e1167f3f708b324b9576d83146b317b3305123418e492c1 */
+#if BIND_g_inet_address_to_bytes_FUNCTION
+#define g_inet_address_to_bytes_REQUIRED_ARGC 1
+#define g_inet_address_to_bytes_OPTIONAL_ARGC 0
+/* g_inet_address_to_bytes
+ *
+ * Parameters:
+ * - address: GInetAddress *
+ * Return Type: const guint8 *
+ */
+mrb_value
+mrb_GLib_g_inet_address_to_bytes(mrb_state* mrb, mrb_value self) {
+  mrb_value address;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "o", &address);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, address, GInetAddress_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GInetAddress expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: address */
+  GInetAddress * native_address = (mrb_nil_p(address) ? NULL : mruby_unbox__GInetAddress(address));
+
+  /* Invocation */
+  const guint8 * native_return_value = g_inet_address_to_bytes(native_address);
+
+  /* Box the return value */
+  mrb_value return_value = TODO_mruby_box_guint8_PTR(mrb, native_return_value);
+  
+  return return_value;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_inet_address_to_string */
+/* sha: 670172acec1277d09add2afd3718cb216edeb623ebb857ee618ae45860d6f2ac */
+#if BIND_g_inet_address_to_string_FUNCTION
+#define g_inet_address_to_string_REQUIRED_ARGC 1
+#define g_inet_address_to_string_OPTIONAL_ARGC 0
+/* g_inet_address_to_string
+ *
+ * Parameters:
+ * - address: GInetAddress *
+ * Return Type: gchar *
+ */
+mrb_value
+mrb_GLib_g_inet_address_to_string(mrb_state* mrb, mrb_value self) {
+  mrb_value address;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "o", &address);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, address, GInetAddress_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GInetAddress expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: address */
+  GInetAddress * native_address = (mrb_nil_p(address) ? NULL : mruby_unbox__GInetAddress(address));
+
+  /* Invocation */
+  gchar * native_return_value = g_inet_address_to_string(native_address);
+
+  /* Box the return value */
+  mrb_value return_value = TODO_mruby_box_gchar_PTR(mrb, native_return_value);
+  
+  return return_value;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_inet_socket_address_get_address */
+/* sha: d6734cc756eacbb7c81d3440f2a6bcf596dfe4c1762c6893e9f723d7e3788f09 */
+#if BIND_g_inet_socket_address_get_address_FUNCTION
+#define g_inet_socket_address_get_address_REQUIRED_ARGC 1
+#define g_inet_socket_address_get_address_OPTIONAL_ARGC 0
+/* g_inet_socket_address_get_address
+ *
+ * Parameters:
+ * - address: GInetSocketAddress *
+ * Return Type: GInetAddress *
+ */
+mrb_value
+mrb_GLib_g_inet_socket_address_get_address(mrb_state* mrb, mrb_value self) {
+  mrb_value address;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "o", &address);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, address, GInetSocketAddress_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GInetSocketAddress expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: address */
+  GInetSocketAddress * native_address = (mrb_nil_p(address) ? NULL : mruby_unbox__GInetSocketAddress(address));
+
+  /* Invocation */
+  GInetAddress * native_return_value = g_inet_socket_address_get_address(native_address);
+
+  /* Box the return value */
+  mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_box__GInetAddress(mrb, native_return_value));
+  
+  return return_value;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_inet_socket_address_get_flowinfo */
+/* sha: 6a502a67d03eb5f507b2812c0231d77985aef979d9f964658992ee80a525b8e5 */
+#if BIND_g_inet_socket_address_get_flowinfo_FUNCTION
+#define g_inet_socket_address_get_flowinfo_REQUIRED_ARGC 1
+#define g_inet_socket_address_get_flowinfo_OPTIONAL_ARGC 0
+/* g_inet_socket_address_get_flowinfo
+ *
+ * Parameters:
+ * - address: GInetSocketAddress *
+ * Return Type: guint32
+ */
+mrb_value
+mrb_GLib_g_inet_socket_address_get_flowinfo(mrb_state* mrb, mrb_value self) {
+  mrb_value address;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "o", &address);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, address, GInetSocketAddress_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GInetSocketAddress expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: address */
+  GInetSocketAddress * native_address = (mrb_nil_p(address) ? NULL : mruby_unbox__GInetSocketAddress(address));
+
+  /* Invocation */
+  guint32 native_return_value = g_inet_socket_address_get_flowinfo(native_address);
+
+  /* Box the return value */
+  mrb_value return_value = mrb_fixnum_value(native_return_value);
+  
+  return return_value;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_inet_socket_address_get_port */
+/* sha: 2cffebd5a95aed6da846cbca31d5207a4cff00e56cab17ef8bbdd0daaeea93f5 */
+#if BIND_g_inet_socket_address_get_port_FUNCTION
+#define g_inet_socket_address_get_port_REQUIRED_ARGC 1
+#define g_inet_socket_address_get_port_OPTIONAL_ARGC 0
+/* g_inet_socket_address_get_port
+ *
+ * Parameters:
+ * - address: GInetSocketAddress *
+ * Return Type: guint16
+ */
+mrb_value
+mrb_GLib_g_inet_socket_address_get_port(mrb_state* mrb, mrb_value self) {
+  mrb_value address;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "o", &address);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, address, GInetSocketAddress_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GInetSocketAddress expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: address */
+  GInetSocketAddress * native_address = (mrb_nil_p(address) ? NULL : mruby_unbox__GInetSocketAddress(address));
+
+  /* Invocation */
+  guint16 native_return_value = g_inet_socket_address_get_port(native_address);
+
+  /* Box the return value */
+  mrb_value return_value = mrb_fixnum_value(native_return_value);
+  
+  return return_value;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_inet_socket_address_get_scope_id */
+/* sha: e0f5eaa14b65efe0eab3e3b12cd87c8f09a71b5bee2980276bb481c2d37ea943 */
+#if BIND_g_inet_socket_address_get_scope_id_FUNCTION
+#define g_inet_socket_address_get_scope_id_REQUIRED_ARGC 1
+#define g_inet_socket_address_get_scope_id_OPTIONAL_ARGC 0
+/* g_inet_socket_address_get_scope_id
+ *
+ * Parameters:
+ * - address: GInetSocketAddress *
+ * Return Type: guint32
+ */
+mrb_value
+mrb_GLib_g_inet_socket_address_get_scope_id(mrb_state* mrb, mrb_value self) {
+  mrb_value address;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "o", &address);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, address, GInetSocketAddress_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GInetSocketAddress expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: address */
+  GInetSocketAddress * native_address = (mrb_nil_p(address) ? NULL : mruby_unbox__GInetSocketAddress(address));
+
+  /* Invocation */
+  guint32 native_return_value = g_inet_socket_address_get_scope_id(native_address);
+
+  /* Box the return value */
+  mrb_value return_value = mrb_fixnum_value(native_return_value);
+  
+  return return_value;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_inet_socket_address_get_type */
+/* sha: d5c08e705c912e215e30170c6595d18276ee925eb9ebcc8a30225d58084cfef4 */
+#if BIND_g_inet_socket_address_get_type_FUNCTION
+#define g_inet_socket_address_get_type_REQUIRED_ARGC 0
+#define g_inet_socket_address_get_type_OPTIONAL_ARGC 0
+/* g_inet_socket_address_get_type
+ *
+ * Parameters: None
+ * Return Type: GType
+ */
+mrb_value
+mrb_GLib_g_inet_socket_address_get_type(mrb_state* mrb, mrb_value self) {
+  /* Invocation */
+  GType native_return_value = g_inet_socket_address_get_type();
+
+  /* Box the return value */
+  mrb_value return_value = TODO_mruby_box_GType(mrb, native_return_value);
+  
+  return return_value;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_inet_socket_address_new */
+/* sha: 2710d2c73ae4a0efaf009e3d59293e3247c9a0cb88c8eeabbf39d2183839ecee */
+#if BIND_g_inet_socket_address_new_FUNCTION
+#define g_inet_socket_address_new_REQUIRED_ARGC 2
+#define g_inet_socket_address_new_OPTIONAL_ARGC 0
+/* g_inet_socket_address_new
+ *
+ * Parameters:
+ * - address: GInetAddress *
+ * - port: guint16
+ * Return Type: GSocketAddress *
+ */
+mrb_value
+mrb_GLib_g_inet_socket_address_new(mrb_state* mrb, mrb_value self) {
+  mrb_value address;
+  mrb_int native_port;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "oi", &address, &native_port);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, address, GInetAddress_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GInetAddress expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: address */
+  GInetAddress * native_address = (mrb_nil_p(address) ? NULL : mruby_unbox__GInetAddress(address));
+
+  /* Invocation */
+  GSocketAddress * native_return_value = g_inet_socket_address_new(native_address, native_port);
+
+  /* Box the return value */
+  mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_box__GSocketAddress(mrb, native_return_value));
+  
+  return return_value;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_inet_socket_address_new_from_string */
+/* sha: b85c6add652245434a6b9c86ea08ef90f58f9365e540bc17af2b61f6cedf0afd */
+#if BIND_g_inet_socket_address_new_from_string_FUNCTION
+#define g_inet_socket_address_new_from_string_REQUIRED_ARGC 2
+#define g_inet_socket_address_new_from_string_OPTIONAL_ARGC 0
+/* g_inet_socket_address_new_from_string
+ *
+ * Parameters:
+ * - address: const char *
+ * - port: guint
+ * Return Type: GSocketAddress *
+ */
+mrb_value
+mrb_GLib_g_inet_socket_address_new_from_string(mrb_state* mrb, mrb_value self) {
+  char * native_address = NULL;
+  mrb_int native_port;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "zi", &native_address, &native_port);
+
+  /* Invocation */
+  GSocketAddress * native_return_value = g_inet_socket_address_new_from_string(native_address, native_port);
+
+  /* Box the return value */
+  mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_box__GSocketAddress(mrb, native_return_value));
+  
+  return return_value;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_input_stream_clear_pending */
+/* sha: 75ba77f715decba042147de69d89e9c571f069a497823e52473c66230164138e */
+#if BIND_g_input_stream_clear_pending_FUNCTION
+#define g_input_stream_clear_pending_REQUIRED_ARGC 1
+#define g_input_stream_clear_pending_OPTIONAL_ARGC 0
+/* g_input_stream_clear_pending
+ *
+ * Parameters:
+ * - stream: GInputStream *
+ * Return Type: void
+ */
+mrb_value
+mrb_GLib_g_input_stream_clear_pending(mrb_state* mrb, mrb_value self) {
+  mrb_value stream;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "o", &stream);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, stream, GInputStream_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GInputStream expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: stream */
+  GInputStream * native_stream = (mrb_nil_p(stream) ? NULL : mruby_unbox__GInputStream(stream));
+
+  /* Invocation */
+  g_input_stream_clear_pending(native_stream);
+
+  return mrb_nil_value();
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_input_stream_close */
+/* sha: 70007eb4c0338e4afd1feebad5501dd22d367999247d430ef2c6e66bea7dd548 */
+#if BIND_g_input_stream_close_FUNCTION
+#define g_input_stream_close_REQUIRED_ARGC 1
+#define g_input_stream_close_OPTIONAL_ARGC 0
+/* g_input_stream_close
+ *
+ * Parameters:
+ * - stream: GInputStream *
+ * - cancellable: GCancellable *
+ * Return Type: gboolean
+ */
+mrb_value
+mrb_GLib_g_input_stream_close(mrb_state* mrb, mrb_value self) {
+  mrb_value results = mrb_ary_new(mrb);
+  mrb_value stream;
+  mrb_value cancellable;
+  struct GError * native_error = NULL;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "o", &stream);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, stream, GInputStream_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GInputStream expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: stream */
+  GInputStream * native_stream = (mrb_nil_p(stream) ? NULL : mruby_unbox__GInputStream(stream));
+
+  /* Unbox param: cancellable */
+  void * native_cancellable = NULL; /* Unused parameter */
+
+  /* Invocation */
+  gboolean native_return_value = g_input_stream_close(native_stream, native_cancellable, &native_error);
+
+  /* Box the return value */
+  mrb_value return_value = mrb_bool_value(native_return_value);
+  mrb_ary_push(mrb, results, return_value);
+  
+  /* Box out param: error */
+  mrb_value error = (native_error == NULL ? mrb_nil_value() : mruby_giftwrap__GError(mrb, native_error));
+
+  /* Add out params to results */
+  mrb_ary_push(mrb, results, error);
+
+  return results;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_input_stream_close_async */
+/* sha: 1d31f2e1f6ed88fb3c2e0a0c01a5538d0f3939e3dd79b9658086eb61071b617c */
+#if BIND_g_input_stream_close_async_FUNCTION
+#define g_input_stream_close_async_REQUIRED_ARGC 5
+#define g_input_stream_close_async_OPTIONAL_ARGC 0
+/* g_input_stream_close_async
+ *
+ * Parameters:
+ * - stream: GInputStream *
+ * - io_priority: int
+ * - cancellable: GCancellable *
+ * - callback: GAsyncReadyCallback
+ * - user_data: gpointer
+ * Return Type: void
+ */
+mrb_value
+mrb_GLib_g_input_stream_close_async(mrb_state* mrb, mrb_value self) {
+  mrb_value stream;
+  mrb_int native_io_priority;
+  mrb_value cancellable;
+  mrb_value callback;
+  mrb_value user_data;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "oiooo", &stream, &native_io_priority, &cancellable, &callback, &user_data);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, stream, GInputStream_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GInputStream expected");
+    return mrb_nil_value();
+  }
+  TODO_type_check_GAsyncReadyCallback(callback);
+  TODO_type_check_gpointer(user_data);
+
+  /* Unbox param: stream */
+  GInputStream * native_stream = (mrb_nil_p(stream) ? NULL : mruby_unbox__GInputStream(stream));
+
+  /* Unbox param: cancellable */
+  void * native_cancellable = NULL; /* Unused parameter */
+
+  /* Unbox param: callback */
+  GAsyncReadyCallback native_callback = TODO_mruby_unbox_GAsyncReadyCallback(callback);
+
+  /* Unbox param: user_data */
+  gpointer native_user_data = TODO_mruby_unbox_gpointer(user_data);
+
+  /* Invocation */
+  g_input_stream_close_async(native_stream, native_io_priority, native_cancellable, native_callback, native_user_data);
+
+  return mrb_nil_value();
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_input_stream_get_type */
+/* sha: 22c6478d682ee33a014b8e1bf42c14967e76e1e0873d09ac3ac79af696717759 */
+#if BIND_g_input_stream_get_type_FUNCTION
+#define g_input_stream_get_type_REQUIRED_ARGC 0
+#define g_input_stream_get_type_OPTIONAL_ARGC 0
+/* g_input_stream_get_type
+ *
+ * Parameters: None
+ * Return Type: GType
+ */
+mrb_value
+mrb_GLib_g_input_stream_get_type(mrb_state* mrb, mrb_value self) {
+  /* Invocation */
+  GType native_return_value = g_input_stream_get_type();
+
+  /* Box the return value */
+  mrb_value return_value = TODO_mruby_box_GType(mrb, native_return_value);
+  
+  return return_value;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_input_stream_has_pending */
+/* sha: 33f8f68df79f90c733d3ab7d11a88695e6d14159d56b7b105ea15c946e3392c1 */
+#if BIND_g_input_stream_has_pending_FUNCTION
+#define g_input_stream_has_pending_REQUIRED_ARGC 1
+#define g_input_stream_has_pending_OPTIONAL_ARGC 0
+/* g_input_stream_has_pending
+ *
+ * Parameters:
+ * - stream: GInputStream *
+ * Return Type: gboolean
+ */
+mrb_value
+mrb_GLib_g_input_stream_has_pending(mrb_state* mrb, mrb_value self) {
+  mrb_value stream;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "o", &stream);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, stream, GInputStream_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GInputStream expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: stream */
+  GInputStream * native_stream = (mrb_nil_p(stream) ? NULL : mruby_unbox__GInputStream(stream));
+
+  /* Invocation */
+  gboolean native_return_value = g_input_stream_has_pending(native_stream);
+
+  /* Box the return value */
+  mrb_value return_value = mrb_bool_value(native_return_value);
+  
+  return return_value;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_input_stream_is_closed */
+/* sha: 1025d869f25f40abab0ef64ea812c095d492612127f085a8917d353cdbb5a58c */
+#if BIND_g_input_stream_is_closed_FUNCTION
+#define g_input_stream_is_closed_REQUIRED_ARGC 1
+#define g_input_stream_is_closed_OPTIONAL_ARGC 0
+/* g_input_stream_is_closed
+ *
+ * Parameters:
+ * - stream: GInputStream *
+ * Return Type: gboolean
+ */
+mrb_value
+mrb_GLib_g_input_stream_is_closed(mrb_state* mrb, mrb_value self) {
+  mrb_value stream;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "o", &stream);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, stream, GInputStream_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GInputStream expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: stream */
+  GInputStream * native_stream = (mrb_nil_p(stream) ? NULL : mruby_unbox__GInputStream(stream));
+
+  /* Invocation */
+  gboolean native_return_value = g_input_stream_is_closed(native_stream);
+
+  /* Box the return value */
+  mrb_value return_value = mrb_bool_value(native_return_value);
+  
+  return return_value;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_input_stream_read */
+/* sha: c013256733c58ea4f4335abda34cf0912314a71da6df7e1e0af30da2605757d0 */
+#if BIND_g_input_stream_read_FUNCTION
+#define g_input_stream_read_REQUIRED_ARGC 2
+#define g_input_stream_read_OPTIONAL_ARGC 0
+/* g_input_stream_read
+ *
+ * Parameters:
+ * - stream: GInputStream *
+ * - buffer: void *
+ * - count: gsize
+ * - cancellable: GCancellable *
+ * Return Type: gssize
+ */
+mrb_value
+mrb_GLib_g_input_stream_read(mrb_state* mrb, mrb_value self) {
+  mrb_value results = mrb_ary_new(mrb);
+  mrb_value stream;
+  mrb_int native_count;
+  struct GError * native_error = NULL;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "oi", &stream, &native_count);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, stream, GInputStream_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GInputStream expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: stream */
+  GInputStream * native_stream = (mrb_nil_p(stream) ? NULL : mruby_unbox__GInputStream(stream));
+
+  /* Unbox param: buffer */
+  gchar * native_buffer = (gchar*)calloc(native_count, sizeof(gchar));
+
+  /* Unbox param: cancellable */
+  void * native_cancellable = NULL; /* Unused parameter */
+
+  /* Invocation */
+  gssize native_return_value = g_input_stream_read(native_stream, native_buffer, native_count, native_cancellable, &native_error);
+
+  /* Box the return value */
+  mrb_value return_value = mrb_fixnum_value(native_return_value);
+  mrb_ary_push(mrb, results, return_value);
+  
+  /* Box out param: buffer */
+  mrb_value buffer = mrb_nil_value();
+  if (native_return_value >= 1) {
+    buffer = mrb_str_new(mrb, native_buffer, native_return_value);
+  }
+  free(native_buffer);
+  
+  /* Box out param: error */
+  mrb_value error = (native_error == NULL ? mrb_nil_value() : mruby_giftwrap__GError(mrb, native_error));
+
+  /* Add out params to results */
+  mrb_ary_push(mrb, results, buffer);
+  mrb_ary_push(mrb, results, error);
+
+  return results;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_input_stream_read_all */
+/* sha: a8d60fb95b0aa6ee605def41591d4dcab48fc86015631e3fbe651204a5b48cdd */
+#if BIND_g_input_stream_read_all_FUNCTION
+#define g_input_stream_read_all_REQUIRED_ARGC 2
+#define g_input_stream_read_all_OPTIONAL_ARGC 0
+/* g_input_stream_read_all
+ *
+ * Parameters:
+ * - stream: GInputStream *
+ * - buffer: void *
+ * - count: gsize
+ * - cancellable: GCancellable *
+ * Return Type: gboolean
+ */
+mrb_value
+mrb_GLib_g_input_stream_read_all(mrb_state* mrb, mrb_value self) {
+  mrb_value results = mrb_ary_new(mrb);
+  mrb_value stream;
+  mrb_int native_count;
+  int native_bytes_read;
+  struct GError * native_error = NULL;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "oi", &stream, &native_count);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, stream, GInputStream_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GInputStream expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: stream */
+  GInputStream * native_stream = (mrb_nil_p(stream) ? NULL : mruby_unbox__GInputStream(stream));
+
+  /* Unbox param: buffer */
+  void * native_buffer = (gchar *)calloc(native_count, sizeof(gchar));
+
+  /* Unbox param: cancellable */
+  void * native_cancellable = NULL; /* Unused parameter */
+
+  /* Invocation */
+  gboolean native_return_value = g_input_stream_read_all(native_stream, native_buffer, native_count, &native_bytes_read, native_cancellable, &native_error);
+
+  /* Box the return value */
+  mrb_value return_value = mrb_bool_value(native_return_value);
+  mrb_ary_push(mrb, results, return_value);
+  
+  /* Box out param: buffer */
+  mrb_value buffer = mrb_nil_value();
+  if (native_bytes_read >= 1) {
+    buffer = mrb_str_new(mrb, native_buffer, native_bytes_read);
+  }
+  free(native_buffer);
+  
+  /* Box out param: error */
+  mrb_value error = (native_error == NULL ? mrb_nil_value() : mruby_giftwrap__GError(mrb, native_error));
+
+  /* Add out params to results */
+  mrb_ary_push(mrb, results, buffer);
+  mrb_ary_push(mrb, results, error);
+
+  return results;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_input_stream_read_all_async */
+/* sha: 58ed10f6bc055f53fdf031f410266ded2680636cfaf6c59ba2f33adad698b038 */
+#if BIND_g_input_stream_read_all_async_FUNCTION
+#define g_input_stream_read_all_async_REQUIRED_ARGC 7
+#define g_input_stream_read_all_async_OPTIONAL_ARGC 0
+/* g_input_stream_read_all_async
+ *
+ * Parameters:
+ * - stream: GInputStream *
+ * - buffer: void *
+ * - count: gsize
+ * - io_priority: int
+ * - cancellable: GCancellable *
+ * - callback: GAsyncReadyCallback
+ * - user_data: gpointer
+ * Return Type: void
+ */
+mrb_value
+mrb_GLib_g_input_stream_read_all_async(mrb_state* mrb, mrb_value self) {
+  mrb_value stream;
+  mrb_value buffer;
+  mrb_int native_count;
+  mrb_int native_io_priority;
+  mrb_value cancellable;
+  mrb_value callback;
+  mrb_value user_data;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "ooiiooo", &stream, &buffer, &native_count, &native_io_priority, &cancellable, &callback, &user_data);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, stream, GInputStream_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GInputStream expected");
+    return mrb_nil_value();
+  }
+  TODO_type_check_void_PTR(buffer);
+  TODO_type_check_GAsyncReadyCallback(callback);
+  TODO_type_check_gpointer(user_data);
+
+  /* Unbox param: stream */
+  GInputStream * native_stream = (mrb_nil_p(stream) ? NULL : mruby_unbox__GInputStream(stream));
+
+  /* Unbox param: buffer */
+  void * native_buffer = TODO_mruby_unbox_void_PTR(buffer);
+
+  /* Unbox param: cancellable */
+  void * native_cancellable = NULL; /* Unused parameter */
+
+  /* Unbox param: callback */
+  GAsyncReadyCallback native_callback = TODO_mruby_unbox_GAsyncReadyCallback(callback);
+
+  /* Unbox param: user_data */
+  gpointer native_user_data = TODO_mruby_unbox_gpointer(user_data);
+
+  /* Invocation */
+  g_input_stream_read_all_async(native_stream, native_buffer, native_count, native_io_priority, native_cancellable, native_callback, native_user_data);
+
+  return mrb_nil_value();
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_input_stream_read_async */
+/* sha: 4a2b5f9bb88be75227361c25939cddc88b2c14dd1642c98506242b28d73e0fc7 */
+#if BIND_g_input_stream_read_async_FUNCTION
+#define g_input_stream_read_async_REQUIRED_ARGC 7
+#define g_input_stream_read_async_OPTIONAL_ARGC 0
+/* g_input_stream_read_async
+ *
+ * Parameters:
+ * - stream: GInputStream *
+ * - buffer: void *
+ * - count: gsize
+ * - io_priority: int
+ * - cancellable: GCancellable *
+ * - callback: GAsyncReadyCallback
+ * - user_data: gpointer
+ * Return Type: void
+ */
+mrb_value
+mrb_GLib_g_input_stream_read_async(mrb_state* mrb, mrb_value self) {
+  mrb_value stream;
+  mrb_value buffer;
+  mrb_int native_count;
+  mrb_int native_io_priority;
+  mrb_value cancellable;
+  mrb_value callback;
+  mrb_value user_data;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "ooiiooo", &stream, &buffer, &native_count, &native_io_priority, &cancellable, &callback, &user_data);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, stream, GInputStream_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GInputStream expected");
+    return mrb_nil_value();
+  }
+  TODO_type_check_void_PTR(buffer);
+  TODO_type_check_GAsyncReadyCallback(callback);
+  TODO_type_check_gpointer(user_data);
+
+  /* Unbox param: stream */
+  GInputStream * native_stream = (mrb_nil_p(stream) ? NULL : mruby_unbox__GInputStream(stream));
+
+  /* Unbox param: buffer */
+  void * native_buffer = TODO_mruby_unbox_void_PTR(buffer);
+
+  /* Unbox param: cancellable */
+  void * native_cancellable = NULL; /* Unused parameter */
+
+  /* Unbox param: callback */
+  GAsyncReadyCallback native_callback = TODO_mruby_unbox_GAsyncReadyCallback(callback);
+
+  /* Unbox param: user_data */
+  gpointer native_user_data = TODO_mruby_unbox_gpointer(user_data);
+
+  /* Invocation */
+  g_input_stream_read_async(native_stream, native_buffer, native_count, native_io_priority, native_cancellable, native_callback, native_user_data);
+
+  return mrb_nil_value();
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_input_stream_read_bytes */
+/* sha: 7381a9bed8154d04b04f8afdba5f3eade2890b0ff62155e1a54469f81d858e72 */
+#if BIND_g_input_stream_read_bytes_FUNCTION
+#define g_input_stream_read_bytes_REQUIRED_ARGC 3
+#define g_input_stream_read_bytes_OPTIONAL_ARGC 0
+/* g_input_stream_read_bytes
+ *
+ * Parameters:
+ * - stream: GInputStream *
+ * - count: gsize
+ * - cancellable: GCancellable *
+ * Return Type: GBytes *
+ */
+mrb_value
+mrb_GLib_g_input_stream_read_bytes(mrb_state* mrb, mrb_value self) {
+  mrb_value results = mrb_ary_new(mrb);
+  mrb_value stream;
+  mrb_int native_count;
+  mrb_value cancellable;
+  struct GError * native_error = NULL;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "oio", &stream, &native_count, &cancellable);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, stream, GInputStream_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GInputStream expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: stream */
+  GInputStream * native_stream = (mrb_nil_p(stream) ? NULL : mruby_unbox__GInputStream(stream));
+
+  /* Unbox param: cancellable */
+  void * native_cancellable = NULL; /* Unused parameter */
+
+  /* Invocation */
+  GBytes * native_return_value = g_input_stream_read_bytes(native_stream, native_count, native_cancellable, &native_error);
+
+  /* Box the return value */
+  mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_box__GBytes(mrb, native_return_value));
+  mrb_ary_push(mrb, results, return_value);
+  
+  /* Box out param: error */
+  mrb_value error = (native_error == NULL ? mrb_nil_value() : mruby_giftwrap__GError(mrb, native_error));
+
+  /* Add out params to results */
+  mrb_ary_push(mrb, results, error);
+
+  return results;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_input_stream_read_bytes_async */
+/* sha: ee9e88d670849d22f2f9c4ad7bd49a4633cf3adf246617421a3fb63f018428a0 */
+#if BIND_g_input_stream_read_bytes_async_FUNCTION
+#define g_input_stream_read_bytes_async_REQUIRED_ARGC 6
+#define g_input_stream_read_bytes_async_OPTIONAL_ARGC 0
+/* g_input_stream_read_bytes_async
+ *
+ * Parameters:
+ * - stream: GInputStream *
+ * - count: gsize
+ * - io_priority: int
+ * - cancellable: GCancellable *
+ * - callback: GAsyncReadyCallback
+ * - user_data: gpointer
+ * Return Type: void
+ */
+mrb_value
+mrb_GLib_g_input_stream_read_bytes_async(mrb_state* mrb, mrb_value self) {
+  mrb_value stream;
+  mrb_int native_count;
+  mrb_int native_io_priority;
+  mrb_value cancellable;
+  mrb_value callback;
+  mrb_value user_data;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "oiiooo", &stream, &native_count, &native_io_priority, &cancellable, &callback, &user_data);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, stream, GInputStream_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GInputStream expected");
+    return mrb_nil_value();
+  }
+  TODO_type_check_GAsyncReadyCallback(callback);
+  TODO_type_check_gpointer(user_data);
+
+  /* Unbox param: stream */
+  GInputStream * native_stream = (mrb_nil_p(stream) ? NULL : mruby_unbox__GInputStream(stream));
+
+  /* Unbox param: cancellable */
+  void * native_cancellable = NULL; /* Unused parameter */
+
+  /* Unbox param: callback */
+  GAsyncReadyCallback native_callback = TODO_mruby_unbox_GAsyncReadyCallback(callback);
+
+  /* Unbox param: user_data */
+  gpointer native_user_data = TODO_mruby_unbox_gpointer(user_data);
+
+  /* Invocation */
+  g_input_stream_read_bytes_async(native_stream, native_count, native_io_priority, native_cancellable, native_callback, native_user_data);
+
+  return mrb_nil_value();
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_input_stream_set_pending */
+/* sha: 3d9836fb63f23d89051985b0b5641e8e5a734eda23d6508a7ef9ee373e5f0c3c */
+#if BIND_g_input_stream_set_pending_FUNCTION
+#define g_input_stream_set_pending_REQUIRED_ARGC 1
+#define g_input_stream_set_pending_OPTIONAL_ARGC 0
+/* g_input_stream_set_pending
+ *
+ * Parameters:
+ * - stream: GInputStream *
+ * Return Type: gboolean
+ */
+mrb_value
+mrb_GLib_g_input_stream_set_pending(mrb_state* mrb, mrb_value self) {
+  mrb_value results = mrb_ary_new(mrb);
+  mrb_value stream;
+  struct GError * native_error = NULL;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "o", &stream);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, stream, GInputStream_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GInputStream expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: stream */
+  GInputStream * native_stream = (mrb_nil_p(stream) ? NULL : mruby_unbox__GInputStream(stream));
+
+  /* Invocation */
+  gboolean native_return_value = g_input_stream_set_pending(native_stream, &native_error);
+
+  /* Box the return value */
+  mrb_value return_value = mrb_bool_value(native_return_value);
+  mrb_ary_push(mrb, results, return_value);
+  
+  /* Box out param: error */
+  mrb_value error = (native_error == NULL ? mrb_nil_value() : mruby_giftwrap__GError(mrb, native_error));
+
+  /* Add out params to results */
+  mrb_ary_push(mrb, results, error);
+
+  return results;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_input_stream_skip */
+/* sha: ec4c16044ddde769b0fe7c403792481a2400e4096a65ae8067395ecf4e03a85e */
+#if BIND_g_input_stream_skip_FUNCTION
+#define g_input_stream_skip_REQUIRED_ARGC 3
+#define g_input_stream_skip_OPTIONAL_ARGC 0
+/* g_input_stream_skip
+ *
+ * Parameters:
+ * - stream: GInputStream *
+ * - count: gsize
+ * - cancellable: GCancellable *
+ * Return Type: gssize
+ */
+mrb_value
+mrb_GLib_g_input_stream_skip(mrb_state* mrb, mrb_value self) {
+  mrb_value results = mrb_ary_new(mrb);
+  mrb_value stream;
+  mrb_int native_count;
+  mrb_value cancellable;
+  struct GError * native_error = NULL;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "oio", &stream, &native_count, &cancellable);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, stream, GInputStream_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GInputStream expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: stream */
+  GInputStream * native_stream = (mrb_nil_p(stream) ? NULL : mruby_unbox__GInputStream(stream));
+
+  /* Unbox param: cancellable */
+  void * native_cancellable = NULL; /* Unused parameter */
+
+  /* Invocation */
+  gssize native_return_value = g_input_stream_skip(native_stream, native_count, native_cancellable, &native_error);
+
+  /* Box the return value */
+  mrb_value return_value = mrb_fixnum_value(native_return_value);
+  mrb_ary_push(mrb, results, return_value);
+  
+  /* Box out param: error */
+  mrb_value error = (native_error == NULL ? mrb_nil_value() : mruby_giftwrap__GError(mrb, native_error));
+
+  /* Add out params to results */
+  mrb_ary_push(mrb, results, error);
+
+  return results;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_input_stream_skip_async */
+/* sha: 527a98e588cc6e23b863b35dd42e41abc82b581ee03c2ca080c98c3a9593761d */
+#if BIND_g_input_stream_skip_async_FUNCTION
+#define g_input_stream_skip_async_REQUIRED_ARGC 6
+#define g_input_stream_skip_async_OPTIONAL_ARGC 0
+/* g_input_stream_skip_async
+ *
+ * Parameters:
+ * - stream: GInputStream *
+ * - count: gsize
+ * - io_priority: int
+ * - cancellable: GCancellable *
+ * - callback: GAsyncReadyCallback
+ * - user_data: gpointer
+ * Return Type: void
+ */
+mrb_value
+mrb_GLib_g_input_stream_skip_async(mrb_state* mrb, mrb_value self) {
+  mrb_value stream;
+  mrb_int native_count;
+  mrb_int native_io_priority;
+  mrb_value cancellable;
+  mrb_value callback;
+  mrb_value user_data;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "oiiooo", &stream, &native_count, &native_io_priority, &cancellable, &callback, &user_data);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, stream, GInputStream_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GInputStream expected");
+    return mrb_nil_value();
+  }
+  TODO_type_check_GAsyncReadyCallback(callback);
+  TODO_type_check_gpointer(user_data);
+
+  /* Unbox param: stream */
+  GInputStream * native_stream = (mrb_nil_p(stream) ? NULL : mruby_unbox__GInputStream(stream));
+
+  /* Unbox param: cancellable */
+  void * native_cancellable = NULL; /* Unused parameter */
+
+  /* Unbox param: callback */
+  GAsyncReadyCallback native_callback = TODO_mruby_unbox_GAsyncReadyCallback(callback);
+
+  /* Unbox param: user_data */
+  gpointer native_user_data = TODO_mruby_unbox_gpointer(user_data);
+
+  /* Invocation */
+  g_input_stream_skip_async(native_stream, native_count, native_io_priority, native_cancellable, native_callback, native_user_data);
+
+  return mrb_nil_value();
+}
+#endif
+/* MRUBY_BINDING_END */
+
 /* MRUBY_BINDING: g_int64_equal */
 /* sha: cd1ae3a0f713535adccad8dab32e80d3b4fe3f5cf15b323245711b3b95ffeb52 */
 #if BIND_g_int64_equal_FUNCTION
@@ -19521,8 +23747,6 @@ mrb_GLib_g_io_channel_read_chars(mrb_state* mrb, mrb_value self) {
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   mrb_ary_push(mrb, results, return_value);
   
-  /* Box out param: bytes_read */
-  mrb_value bytes_read = mrb_fixnum_value(native_bytes_read);
   /* Box out param: error */
   mrb_value error = (native_error == NULL ? mrb_nil_value() : mruby_giftwrap__GError(mrb, native_error));
 
@@ -20490,6 +24714,434 @@ mrb_GLib_g_io_create_watch(mrb_state* mrb, mrb_value self) {
   mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_box__GSource(mrb, native_return_value));
   
   return return_value;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_io_stream_clear_pending */
+/* sha: 67c84aa563ff4d396bdda1e75ca9dfd48b480e95bececaa352c7c04acf7dae93 */
+#if BIND_g_io_stream_clear_pending_FUNCTION
+#define g_io_stream_clear_pending_REQUIRED_ARGC 1
+#define g_io_stream_clear_pending_OPTIONAL_ARGC 0
+/* g_io_stream_clear_pending
+ *
+ * Parameters:
+ * - stream: GIOStream *
+ * Return Type: void
+ */
+mrb_value
+mrb_GLib_g_io_stream_clear_pending(mrb_state* mrb, mrb_value self) {
+  mrb_value stream;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "o", &stream);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, stream, GIOStream_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GIOStream expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: stream */
+  GIOStream * native_stream = (mrb_nil_p(stream) ? NULL : mruby_unbox__GIOStream(stream));
+
+  /* Invocation */
+  g_io_stream_clear_pending(native_stream);
+
+  return mrb_nil_value();
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_io_stream_close */
+/* sha: f05fa570ac7c796f2c475709d32ebb331da7fecff114dc2d14b3d2764608f7a4 */
+#if BIND_g_io_stream_close_FUNCTION
+#define g_io_stream_close_REQUIRED_ARGC 1
+#define g_io_stream_close_OPTIONAL_ARGC 0
+/* g_io_stream_close
+ *
+ * Parameters:
+ * - stream: GIOStream *
+ * - cancellable: GCancellable *
+ * Return Type: gboolean
+ */
+mrb_value
+mrb_GLib_g_io_stream_close(mrb_state* mrb, mrb_value self) {
+  mrb_value results = mrb_ary_new(mrb);
+  mrb_value stream;
+  mrb_value cancellable;
+  struct GError * native_error = NULL;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "o", &stream);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, stream, GIOStream_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GIOStream expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: stream */
+  GIOStream * native_stream = (mrb_nil_p(stream) ? NULL : mruby_unbox__GIOStream(stream));
+
+  /* Unbox param: cancellable */
+  void * native_cancellable = NULL; /* Unused parameter */
+
+  /* Invocation */
+  gboolean native_return_value = g_io_stream_close(native_stream, native_cancellable, &native_error);
+
+  /* Box the return value */
+  mrb_value return_value = mrb_bool_value(native_return_value);
+  mrb_ary_push(mrb, results, return_value);
+  
+  /* Box out param: error */
+  mrb_value error = (native_error == NULL ? mrb_nil_value() : mruby_giftwrap__GError(mrb, native_error));
+
+  /* Add out params to results */
+  mrb_ary_push(mrb, results, error);
+
+  return results;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_io_stream_close_async */
+/* sha: e2a3bd4bb968b5a3d1d318764163d285b1368661f9a8ba23ded1de124de9d303 */
+#if BIND_g_io_stream_close_async_FUNCTION
+#define g_io_stream_close_async_REQUIRED_ARGC 5
+#define g_io_stream_close_async_OPTIONAL_ARGC 0
+/* g_io_stream_close_async
+ *
+ * Parameters:
+ * - stream: GIOStream *
+ * - io_priority: int
+ * - cancellable: GCancellable *
+ * - callback: GAsyncReadyCallback
+ * - user_data: gpointer
+ * Return Type: void
+ */
+mrb_value
+mrb_GLib_g_io_stream_close_async(mrb_state* mrb, mrb_value self) {
+  mrb_value stream;
+  mrb_int native_io_priority;
+  mrb_value cancellable;
+  mrb_value callback;
+  mrb_value user_data;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "oiooo", &stream, &native_io_priority, &cancellable, &callback, &user_data);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, stream, GIOStream_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GIOStream expected");
+    return mrb_nil_value();
+  }
+  TODO_type_check_GAsyncReadyCallback(callback);
+  TODO_type_check_gpointer(user_data);
+
+  /* Unbox param: stream */
+  GIOStream * native_stream = (mrb_nil_p(stream) ? NULL : mruby_unbox__GIOStream(stream));
+
+  /* Unbox param: cancellable */
+  void * native_cancellable = NULL; /* Unused parameter */
+
+  /* Unbox param: callback */
+  GAsyncReadyCallback native_callback = TODO_mruby_unbox_GAsyncReadyCallback(callback);
+
+  /* Unbox param: user_data */
+  gpointer native_user_data = TODO_mruby_unbox_gpointer(user_data);
+
+  /* Invocation */
+  g_io_stream_close_async(native_stream, native_io_priority, native_cancellable, native_callback, native_user_data);
+
+  return mrb_nil_value();
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_io_stream_get_input_stream */
+/* sha: e040d8d0bc710215614be279b9a3ca0bf02923ce448c63907d43de5594297e74 */
+#if BIND_g_io_stream_get_input_stream_FUNCTION
+#define g_io_stream_get_input_stream_REQUIRED_ARGC 1
+#define g_io_stream_get_input_stream_OPTIONAL_ARGC 0
+/* g_io_stream_get_input_stream
+ *
+ * Parameters:
+ * - stream: GIOStream *
+ * Return Type: GInputStream *
+ */
+mrb_value
+mrb_GLib_g_io_stream_get_input_stream(mrb_state* mrb, mrb_value self) {
+  mrb_value stream;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "o", &stream);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, stream, GIOStream_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GIOStream expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: stream */
+  GIOStream * native_stream = (mrb_nil_p(stream) ? NULL : mruby_unbox__GIOStream(stream));
+
+  /* Invocation */
+  GInputStream * native_return_value = g_io_stream_get_input_stream(native_stream);
+
+  /* Box the return value */
+  mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_box__GInputStream(mrb, native_return_value));
+  
+  return return_value;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_io_stream_get_output_stream */
+/* sha: 8486f62b3f3a1184328810b6c8a6469b15d8f9dea439d7a97a6d270299d2cb40 */
+#if BIND_g_io_stream_get_output_stream_FUNCTION
+#define g_io_stream_get_output_stream_REQUIRED_ARGC 1
+#define g_io_stream_get_output_stream_OPTIONAL_ARGC 0
+/* g_io_stream_get_output_stream
+ *
+ * Parameters:
+ * - stream: GIOStream *
+ * Return Type: GOutputStream *
+ */
+mrb_value
+mrb_GLib_g_io_stream_get_output_stream(mrb_state* mrb, mrb_value self) {
+  mrb_value stream;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "o", &stream);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, stream, GIOStream_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GIOStream expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: stream */
+  GIOStream * native_stream = (mrb_nil_p(stream) ? NULL : mruby_unbox__GIOStream(stream));
+
+  /* Invocation */
+  GOutputStream * native_return_value = g_io_stream_get_output_stream(native_stream);
+
+  /* Box the return value */
+  mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_box__GOutputStream(mrb, native_return_value));
+  
+  return return_value;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_io_stream_get_type */
+/* sha: 81e1934660e18bd3703bd7dd6c3a6644f640293123c59fb2832aba5f5f63fd44 */
+#if BIND_g_io_stream_get_type_FUNCTION
+#define g_io_stream_get_type_REQUIRED_ARGC 0
+#define g_io_stream_get_type_OPTIONAL_ARGC 0
+/* g_io_stream_get_type
+ *
+ * Parameters: None
+ * Return Type: GType
+ */
+mrb_value
+mrb_GLib_g_io_stream_get_type(mrb_state* mrb, mrb_value self) {
+  /* Invocation */
+  GType native_return_value = g_io_stream_get_type();
+
+  /* Box the return value */
+  mrb_value return_value = TODO_mruby_box_GType(mrb, native_return_value);
+  
+  return return_value;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_io_stream_has_pending */
+/* sha: c83c71008574cab4824493d6845ddc6fcfa8671d6fe11459829f321c0a0ac33b */
+#if BIND_g_io_stream_has_pending_FUNCTION
+#define g_io_stream_has_pending_REQUIRED_ARGC 1
+#define g_io_stream_has_pending_OPTIONAL_ARGC 0
+/* g_io_stream_has_pending
+ *
+ * Parameters:
+ * - stream: GIOStream *
+ * Return Type: gboolean
+ */
+mrb_value
+mrb_GLib_g_io_stream_has_pending(mrb_state* mrb, mrb_value self) {
+  mrb_value stream;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "o", &stream);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, stream, GIOStream_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GIOStream expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: stream */
+  GIOStream * native_stream = (mrb_nil_p(stream) ? NULL : mruby_unbox__GIOStream(stream));
+
+  /* Invocation */
+  gboolean native_return_value = g_io_stream_has_pending(native_stream);
+
+  /* Box the return value */
+  mrb_value return_value = mrb_bool_value(native_return_value);
+  
+  return return_value;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_io_stream_is_closed */
+/* sha: 7d44f4645894e8efcd951662ddc177fbace14c55d0c42a42d888c771ca583094 */
+#if BIND_g_io_stream_is_closed_FUNCTION
+#define g_io_stream_is_closed_REQUIRED_ARGC 1
+#define g_io_stream_is_closed_OPTIONAL_ARGC 0
+/* g_io_stream_is_closed
+ *
+ * Parameters:
+ * - stream: GIOStream *
+ * Return Type: gboolean
+ */
+mrb_value
+mrb_GLib_g_io_stream_is_closed(mrb_state* mrb, mrb_value self) {
+  mrb_value stream;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "o", &stream);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, stream, GIOStream_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GIOStream expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: stream */
+  GIOStream * native_stream = (mrb_nil_p(stream) ? NULL : mruby_unbox__GIOStream(stream));
+
+  /* Invocation */
+  gboolean native_return_value = g_io_stream_is_closed(native_stream);
+
+  /* Box the return value */
+  mrb_value return_value = mrb_bool_value(native_return_value);
+  
+  return return_value;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_io_stream_set_pending */
+/* sha: 52f51a119750c344ba934a4b96783b69bc40a3a97c650c3225e6ff0ca26cb7fa */
+#if BIND_g_io_stream_set_pending_FUNCTION
+#define g_io_stream_set_pending_REQUIRED_ARGC 1
+#define g_io_stream_set_pending_OPTIONAL_ARGC 0
+/* g_io_stream_set_pending
+ *
+ * Parameters:
+ * - stream: GIOStream *
+ * Return Type: gboolean
+ */
+mrb_value
+mrb_GLib_g_io_stream_set_pending(mrb_state* mrb, mrb_value self) {
+  mrb_value results = mrb_ary_new(mrb);
+  mrb_value stream;
+  struct GError * native_error = NULL;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "o", &stream);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, stream, GIOStream_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GIOStream expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: stream */
+  GIOStream * native_stream = (mrb_nil_p(stream) ? NULL : mruby_unbox__GIOStream(stream));
+
+  /* Invocation */
+  gboolean native_return_value = g_io_stream_set_pending(native_stream, &native_error);
+
+  /* Box the return value */
+  mrb_value return_value = mrb_bool_value(native_return_value);
+  mrb_ary_push(mrb, results, return_value);
+  
+  /* Box out param: error */
+  mrb_value error = (native_error == NULL ? mrb_nil_value() : mruby_giftwrap__GError(mrb, native_error));
+
+  /* Add out params to results */
+  mrb_ary_push(mrb, results, error);
+
+  return results;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_io_stream_splice_async */
+/* sha: 897c502d63ff738cd1e091647650585d25faae3e3605687b9f51a2bcab314945 */
+#if BIND_g_io_stream_splice_async_FUNCTION
+#define g_io_stream_splice_async_REQUIRED_ARGC 7
+#define g_io_stream_splice_async_OPTIONAL_ARGC 0
+/* g_io_stream_splice_async
+ *
+ * Parameters:
+ * - stream1: GIOStream *
+ * - stream2: GIOStream *
+ * - flags: GIOStreamSpliceFlags
+ * - io_priority: int
+ * - cancellable: GCancellable *
+ * - callback: GAsyncReadyCallback
+ * - user_data: gpointer
+ * Return Type: void
+ */
+mrb_value
+mrb_GLib_g_io_stream_splice_async(mrb_state* mrb, mrb_value self) {
+  mrb_value stream1;
+  mrb_value stream2;
+  mrb_int native_flags;
+  mrb_int native_io_priority;
+  mrb_value cancellable;
+  mrb_value callback;
+  mrb_value user_data;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "ooiiooo", &stream1, &stream2, &native_flags, &native_io_priority, &cancellable, &callback, &user_data);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, stream1, GIOStream_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GIOStream expected");
+    return mrb_nil_value();
+  }
+  if (!mrb_obj_is_kind_of(mrb, stream2, GIOStream_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GIOStream expected");
+    return mrb_nil_value();
+  }
+  TODO_type_check_GAsyncReadyCallback(callback);
+  TODO_type_check_gpointer(user_data);
+
+  /* Unbox param: stream1 */
+  GIOStream * native_stream1 = (mrb_nil_p(stream1) ? NULL : mruby_unbox__GIOStream(stream1));
+
+  /* Unbox param: stream2 */
+  GIOStream * native_stream2 = (mrb_nil_p(stream2) ? NULL : mruby_unbox__GIOStream(stream2));
+
+  /* Unbox param: cancellable */
+  void * native_cancellable = NULL; /* Unused parameter */
+
+  /* Unbox param: callback */
+  GAsyncReadyCallback native_callback = TODO_mruby_unbox_GAsyncReadyCallback(callback);
+
+  /* Unbox param: user_data */
+  gpointer native_user_data = TODO_mruby_unbox_gpointer(user_data);
+
+  /* Invocation */
+  g_io_stream_splice_async(native_stream1, native_stream2, native_flags, native_io_priority, native_cancellable, native_callback, native_user_data);
+
+  return mrb_nil_value();
 }
 #endif
 /* MRUBY_BINDING_END */
@@ -26460,6 +31112,37 @@ mrb_GLib_g_memdup(mrb_state* mrb, mrb_value self) {
 #endif
 /* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: g_mkdir */
+/* sha: 30ab13ab31170e2a92a2f0f91a10e8db3a54216bc229e3a76978838079c456f9 */
+#if BIND_g_mkdir_FUNCTION
+#define g_mkdir_REQUIRED_ARGC 2
+#define g_mkdir_OPTIONAL_ARGC 0
+/* g_mkdir
+ *
+ * Parameters:
+ * - filename: const gchar *
+ * - mode: int
+ * Return Type: int
+ */
+mrb_value
+mrb_GLib_g_mkdir(mrb_state* mrb, mrb_value self) {
+  char * native_filename = NULL;
+  mrb_int native_mode;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "zi", &native_filename, &native_mode);
+
+  /* Invocation */
+  int native_return_value = g_mkdir(native_filename, native_mode);
+
+  /* Box the return value */
+  mrb_value return_value = mrb_fixnum_value(native_return_value);
+  
+  return return_value;
+}
+#endif
+/* MRUBY_BINDING_END */
+
 /* MRUBY_BINDING: g_mkdir_with_parents */
 /* sha: 2ad3e3f144c6bb9a76ca7fc4e86144a6f33b0a1c62c00653448e383b79517c04 */
 #if BIND_g_mkdir_with_parents_FUNCTION
@@ -27050,6 +31733,39 @@ mrb_GLib_g_once_init_leave(mrb_state* mrb, mrb_value self) {
   g_once_init_leave(native_location, native_result);
 
   return mrb_nil_value();
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_open */
+/* sha: 2c6c7fe60ff5112dfc21badd32cd361eb9de45a57790762aa099ecb6fbf5de66 */
+#if BIND_g_open_FUNCTION
+#define g_open_REQUIRED_ARGC 3
+#define g_open_OPTIONAL_ARGC 0
+/* g_open
+ *
+ * Parameters:
+ * - filename: const gchar *
+ * - flags: int
+ * - mode: int
+ * Return Type: int
+ */
+mrb_value
+mrb_GLib_g_open(mrb_state* mrb, mrb_value self) {
+  char * native_filename = NULL;
+  mrb_int native_flags;
+  mrb_int native_mode;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "zii", &native_filename, &native_flags, &native_mode);
+
+  /* Invocation */
+  int native_return_value = g_open(native_filename, native_flags, native_mode);
+
+  /* Box the return value */
+  mrb_value return_value = mrb_fixnum_value(native_return_value);
+  
+  return return_value;
 }
 #endif
 /* MRUBY_BINDING_END */
@@ -28310,6 +33026,1039 @@ mrb_GLib_g_option_group_unref(mrb_state* mrb, mrb_value self) {
 
   /* Invocation */
   g_option_group_unref(native_group);
+
+  return mrb_nil_value();
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_output_stream_clear_pending */
+/* sha: 3fb23b7220b00e15a4a4d88c7c63e866fed407c713ca4f933c99e07187380d97 */
+#if BIND_g_output_stream_clear_pending_FUNCTION
+#define g_output_stream_clear_pending_REQUIRED_ARGC 1
+#define g_output_stream_clear_pending_OPTIONAL_ARGC 0
+/* g_output_stream_clear_pending
+ *
+ * Parameters:
+ * - stream: GOutputStream *
+ * Return Type: void
+ */
+mrb_value
+mrb_GLib_g_output_stream_clear_pending(mrb_state* mrb, mrb_value self) {
+  mrb_value stream;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "o", &stream);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, stream, GOutputStream_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GOutputStream expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: stream */
+  GOutputStream * native_stream = (mrb_nil_p(stream) ? NULL : mruby_unbox__GOutputStream(stream));
+
+  /* Invocation */
+  g_output_stream_clear_pending(native_stream);
+
+  return mrb_nil_value();
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_output_stream_close */
+/* sha: 4c59b77c92f86275c323edd319a32cd9b0df472f5c64399474788d64fc23ea11 */
+#if BIND_g_output_stream_close_FUNCTION
+#define g_output_stream_close_REQUIRED_ARGC 1
+#define g_output_stream_close_OPTIONAL_ARGC 0
+/* g_output_stream_close
+ *
+ * Parameters:
+ * - stream: GOutputStream *
+ * - cancellable: GCancellable *
+ * Return Type: gboolean
+ */
+mrb_value
+mrb_GLib_g_output_stream_close(mrb_state* mrb, mrb_value self) {
+  mrb_value results = mrb_ary_new(mrb);
+  mrb_value stream;
+  mrb_value cancellable;
+  struct GError * native_error = NULL;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "o", &stream);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, stream, GOutputStream_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GOutputStream expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: stream */
+  GOutputStream * native_stream = (mrb_nil_p(stream) ? NULL : mruby_unbox__GOutputStream(stream));
+
+  /* Unbox param: cancellable */
+  void * native_cancellable = NULL; /* Unused parameter */
+
+  /* Invocation */
+  gboolean native_return_value = g_output_stream_close(native_stream, native_cancellable, &native_error);
+
+  /* Box the return value */
+  mrb_value return_value = mrb_bool_value(native_return_value);
+  mrb_ary_push(mrb, results, return_value);
+  
+  /* Box out param: error */
+  mrb_value error = (native_error == NULL ? mrb_nil_value() : mruby_giftwrap__GError(mrb, native_error));
+
+  /* Add out params to results */
+  mrb_ary_push(mrb, results, error);
+
+  return results;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_output_stream_close_async */
+/* sha: 1ffc8152417579bd71a40777d88ca815a8b3d6b1e0db84e5a02c85427c315b64 */
+#if BIND_g_output_stream_close_async_FUNCTION
+#define g_output_stream_close_async_REQUIRED_ARGC 5
+#define g_output_stream_close_async_OPTIONAL_ARGC 0
+/* g_output_stream_close_async
+ *
+ * Parameters:
+ * - stream: GOutputStream *
+ * - io_priority: int
+ * - cancellable: GCancellable *
+ * - callback: GAsyncReadyCallback
+ * - user_data: gpointer
+ * Return Type: void
+ */
+mrb_value
+mrb_GLib_g_output_stream_close_async(mrb_state* mrb, mrb_value self) {
+  mrb_value stream;
+  mrb_int native_io_priority;
+  mrb_value cancellable;
+  mrb_value callback;
+  mrb_value user_data;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "oiooo", &stream, &native_io_priority, &cancellable, &callback, &user_data);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, stream, GOutputStream_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GOutputStream expected");
+    return mrb_nil_value();
+  }
+  TODO_type_check_GAsyncReadyCallback(callback);
+  TODO_type_check_gpointer(user_data);
+
+  /* Unbox param: stream */
+  GOutputStream * native_stream = (mrb_nil_p(stream) ? NULL : mruby_unbox__GOutputStream(stream));
+
+  /* Unbox param: cancellable */
+  void * native_cancellable = NULL; /* Unused parameter */
+
+  /* Unbox param: callback */
+  GAsyncReadyCallback native_callback = TODO_mruby_unbox_GAsyncReadyCallback(callback);
+
+  /* Unbox param: user_data */
+  gpointer native_user_data = TODO_mruby_unbox_gpointer(user_data);
+
+  /* Invocation */
+  g_output_stream_close_async(native_stream, native_io_priority, native_cancellable, native_callback, native_user_data);
+
+  return mrb_nil_value();
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_output_stream_flush */
+/* sha: a67fc3fd2d2d41b777f7ad54cb24284c841c373820c5c61dc3547485679a5445 */
+#if BIND_g_output_stream_flush_FUNCTION
+#define g_output_stream_flush_REQUIRED_ARGC 1
+#define g_output_stream_flush_OPTIONAL_ARGC 0
+/* g_output_stream_flush
+ *
+ * Parameters:
+ * - stream: GOutputStream *
+ * - cancellable: GCancellable *
+ * Return Type: gboolean
+ */
+mrb_value
+mrb_GLib_g_output_stream_flush(mrb_state* mrb, mrb_value self) {
+  mrb_value stream;
+  struct GError * native_error = NULL;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "o", &stream);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, stream, GOutputStream_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GOutputStream expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: stream */
+  GOutputStream * native_stream = (mrb_nil_p(stream) ? NULL : mruby_unbox__GOutputStream(stream));
+
+  /* Unbox param: cancellable */
+  void * native_cancellable = NULL; /* Unused parameter */
+
+  /* Invocation */
+  /* (Ignoring return value... just tells if there was an error, in which case error is not nil) */
+  g_output_stream_flush(native_stream, native_cancellable, &native_error);
+  
+  /* Box out param: error */
+  mrb_value error = (native_error == NULL ? mrb_nil_value() : mruby_giftwrap__GError(mrb, native_error));
+
+  return error;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_output_stream_flush_async */
+/* sha: 1ee88dfe82647d232d332cb4e0adb08ad9250a22d7877e981dc12449d733460e */
+#if BIND_g_output_stream_flush_async_FUNCTION
+#define g_output_stream_flush_async_REQUIRED_ARGC 5
+#define g_output_stream_flush_async_OPTIONAL_ARGC 0
+/* g_output_stream_flush_async
+ *
+ * Parameters:
+ * - stream: GOutputStream *
+ * - io_priority: int
+ * - cancellable: GCancellable *
+ * - callback: GAsyncReadyCallback
+ * - user_data: gpointer
+ * Return Type: void
+ */
+mrb_value
+mrb_GLib_g_output_stream_flush_async(mrb_state* mrb, mrb_value self) {
+  mrb_value stream;
+  mrb_int native_io_priority;
+  mrb_value cancellable;
+  mrb_value callback;
+  mrb_value user_data;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "oiooo", &stream, &native_io_priority, &cancellable, &callback, &user_data);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, stream, GOutputStream_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GOutputStream expected");
+    return mrb_nil_value();
+  }
+  TODO_type_check_GAsyncReadyCallback(callback);
+  TODO_type_check_gpointer(user_data);
+
+  /* Unbox param: stream */
+  GOutputStream * native_stream = (mrb_nil_p(stream) ? NULL : mruby_unbox__GOutputStream(stream));
+
+  /* Unbox param: cancellable */
+  void * native_cancellable = NULL; /* Unused parameter */
+
+  /* Unbox param: callback */
+  GAsyncReadyCallback native_callback = TODO_mruby_unbox_GAsyncReadyCallback(callback);
+
+  /* Unbox param: user_data */
+  gpointer native_user_data = TODO_mruby_unbox_gpointer(user_data);
+
+  /* Invocation */
+  g_output_stream_flush_async(native_stream, native_io_priority, native_cancellable, native_callback, native_user_data);
+
+  return mrb_nil_value();
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_output_stream_get_type */
+/* sha: 74d519907f534e7b60d5ad55d003b1ebf59ecd86df22a8b1597a3f68a2313976 */
+#if BIND_g_output_stream_get_type_FUNCTION
+#define g_output_stream_get_type_REQUIRED_ARGC 0
+#define g_output_stream_get_type_OPTIONAL_ARGC 0
+/* g_output_stream_get_type
+ *
+ * Parameters: None
+ * Return Type: GType
+ */
+mrb_value
+mrb_GLib_g_output_stream_get_type(mrb_state* mrb, mrb_value self) {
+  /* Invocation */
+  GType native_return_value = g_output_stream_get_type();
+
+  /* Box the return value */
+  mrb_value return_value = TODO_mruby_box_GType(mrb, native_return_value);
+  
+  return return_value;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_output_stream_has_pending */
+/* sha: 1d313c8ab720db596421fe2be0e7731e75bf5a10494459e17db97cf740506352 */
+#if BIND_g_output_stream_has_pending_FUNCTION
+#define g_output_stream_has_pending_REQUIRED_ARGC 1
+#define g_output_stream_has_pending_OPTIONAL_ARGC 0
+/* g_output_stream_has_pending
+ *
+ * Parameters:
+ * - stream: GOutputStream *
+ * Return Type: gboolean
+ */
+mrb_value
+mrb_GLib_g_output_stream_has_pending(mrb_state* mrb, mrb_value self) {
+  mrb_value stream;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "o", &stream);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, stream, GOutputStream_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GOutputStream expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: stream */
+  GOutputStream * native_stream = (mrb_nil_p(stream) ? NULL : mruby_unbox__GOutputStream(stream));
+
+  /* Invocation */
+  gboolean native_return_value = g_output_stream_has_pending(native_stream);
+
+  /* Box the return value */
+  mrb_value return_value = mrb_bool_value(native_return_value);
+  
+  return return_value;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_output_stream_is_closed */
+/* sha: 3fb99efebf85bd0b6e21cc4ca0cd2198769006aac2474bce632888b25818dd94 */
+#if BIND_g_output_stream_is_closed_FUNCTION
+#define g_output_stream_is_closed_REQUIRED_ARGC 1
+#define g_output_stream_is_closed_OPTIONAL_ARGC 0
+/* g_output_stream_is_closed
+ *
+ * Parameters:
+ * - stream: GOutputStream *
+ * Return Type: gboolean
+ */
+mrb_value
+mrb_GLib_g_output_stream_is_closed(mrb_state* mrb, mrb_value self) {
+  mrb_value stream;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "o", &stream);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, stream, GOutputStream_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GOutputStream expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: stream */
+  GOutputStream * native_stream = (mrb_nil_p(stream) ? NULL : mruby_unbox__GOutputStream(stream));
+
+  /* Invocation */
+  gboolean native_return_value = g_output_stream_is_closed(native_stream);
+
+  /* Box the return value */
+  mrb_value return_value = mrb_bool_value(native_return_value);
+  
+  return return_value;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_output_stream_is_closing */
+/* sha: f465f80999e297c99fddea21f175299fdac95daaa3bbb9b2593aa5417f222c1b */
+#if BIND_g_output_stream_is_closing_FUNCTION
+#define g_output_stream_is_closing_REQUIRED_ARGC 1
+#define g_output_stream_is_closing_OPTIONAL_ARGC 0
+/* g_output_stream_is_closing
+ *
+ * Parameters:
+ * - stream: GOutputStream *
+ * Return Type: gboolean
+ */
+mrb_value
+mrb_GLib_g_output_stream_is_closing(mrb_state* mrb, mrb_value self) {
+  mrb_value stream;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "o", &stream);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, stream, GOutputStream_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GOutputStream expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: stream */
+  GOutputStream * native_stream = (mrb_nil_p(stream) ? NULL : mruby_unbox__GOutputStream(stream));
+
+  /* Invocation */
+  gboolean native_return_value = g_output_stream_is_closing(native_stream);
+
+  /* Box the return value */
+  mrb_value return_value = mrb_bool_value(native_return_value);
+  
+  return return_value;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_output_stream_printf */
+/* sha: aa9cf8a5deacb81db5e99f4ae104520e2dfb1d5e216653532b553bceac3cd887 */
+#if BIND_g_output_stream_printf_FUNCTION
+#define g_output_stream_printf_REQUIRED_ARGC 3
+#define g_output_stream_printf_OPTIONAL_ARGC 0
+/* g_output_stream_printf
+ *
+ * Parameters:
+ * - stream: GOutputStream *
+ * - cancellable: GCancellable *
+ * - format: const gchar *
+ * Return Type: gboolean
+ */
+mrb_value
+mrb_GLib_g_output_stream_printf(mrb_state* mrb, mrb_value self) {
+  mrb_value results = mrb_ary_new(mrb);
+  mrb_value stream;
+  int native_bytes_written;
+  mrb_value cancellable;
+  struct GError * native_error = NULL;
+  char * native_format = NULL;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "ooz", &stream, &cancellable, &native_format);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, stream, GOutputStream_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GOutputStream expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: stream */
+  GOutputStream * native_stream = (mrb_nil_p(stream) ? NULL : mruby_unbox__GOutputStream(stream));
+
+  /* Unbox param: cancellable */
+  void * native_cancellable = NULL; /* Unused parameter */
+
+  /* Invocation */
+  gboolean native_return_value = g_output_stream_printf(native_stream, &native_bytes_written, native_cancellable, &native_error, native_format);
+
+  /* Box the return value */
+  mrb_value return_value = mrb_bool_value(native_return_value);
+  mrb_ary_push(mrb, results, return_value);
+  
+  /* Box out param: bytes_written */
+  mrb_value bytes_written = mrb_fixnum_value(native_bytes_written);
+  /* Box out param: error */
+  mrb_value error = (native_error == NULL ? mrb_nil_value() : mruby_giftwrap__GError(mrb, native_error));
+
+  /* Add out params to results */
+  mrb_ary_push(mrb, results, bytes_written);
+  mrb_ary_push(mrb, results, error);
+
+  return results;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_output_stream_set_pending */
+/* sha: cbf4743be460f8a086c8d513197ce9a1482d2d2e0e621a3ee45459a41060b9e3 */
+#if BIND_g_output_stream_set_pending_FUNCTION
+#define g_output_stream_set_pending_REQUIRED_ARGC 1
+#define g_output_stream_set_pending_OPTIONAL_ARGC 0
+/* g_output_stream_set_pending
+ *
+ * Parameters:
+ * - stream: GOutputStream *
+ * Return Type: gboolean
+ */
+mrb_value
+mrb_GLib_g_output_stream_set_pending(mrb_state* mrb, mrb_value self) {
+  mrb_value results = mrb_ary_new(mrb);
+  mrb_value stream;
+  struct GError * native_error = NULL;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "o", &stream);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, stream, GOutputStream_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GOutputStream expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: stream */
+  GOutputStream * native_stream = (mrb_nil_p(stream) ? NULL : mruby_unbox__GOutputStream(stream));
+
+  /* Invocation */
+  gboolean native_return_value = g_output_stream_set_pending(native_stream, &native_error);
+
+  /* Box the return value */
+  mrb_value return_value = mrb_bool_value(native_return_value);
+  mrb_ary_push(mrb, results, return_value);
+  
+  /* Box out param: error */
+  mrb_value error = (native_error == NULL ? mrb_nil_value() : mruby_giftwrap__GError(mrb, native_error));
+
+  /* Add out params to results */
+  mrb_ary_push(mrb, results, error);
+
+  return results;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_output_stream_splice */
+/* sha: 030560696053c84c058f5652abe30900aebd8e49779c25beb401dab2e7b42b71 */
+#if BIND_g_output_stream_splice_FUNCTION
+#define g_output_stream_splice_REQUIRED_ARGC 4
+#define g_output_stream_splice_OPTIONAL_ARGC 0
+/* g_output_stream_splice
+ *
+ * Parameters:
+ * - stream: GOutputStream *
+ * - source: GInputStream *
+ * - flags: GOutputStreamSpliceFlags
+ * - cancellable: GCancellable *
+ * Return Type: gssize
+ */
+mrb_value
+mrb_GLib_g_output_stream_splice(mrb_state* mrb, mrb_value self) {
+  mrb_value results = mrb_ary_new(mrb);
+  mrb_value stream;
+  mrb_value source;
+  mrb_int native_flags;
+  mrb_value cancellable;
+  struct GError * native_error = NULL;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "ooio", &stream, &source, &native_flags, &cancellable);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, stream, GOutputStream_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GOutputStream expected");
+    return mrb_nil_value();
+  }
+  if (!mrb_obj_is_kind_of(mrb, source, GInputStream_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GInputStream expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: stream */
+  GOutputStream * native_stream = (mrb_nil_p(stream) ? NULL : mruby_unbox__GOutputStream(stream));
+
+  /* Unbox param: source */
+  GInputStream * native_source = (mrb_nil_p(source) ? NULL : mruby_unbox__GInputStream(source));
+
+  /* Unbox param: cancellable */
+  void * native_cancellable = NULL; /* Unused parameter */
+
+  /* Invocation */
+  gssize native_return_value = g_output_stream_splice(native_stream, native_source, native_flags, native_cancellable, &native_error);
+
+  /* Box the return value */
+  mrb_value return_value = mrb_fixnum_value(native_return_value);
+  mrb_ary_push(mrb, results, return_value);
+  
+  /* Box out param: error */
+  mrb_value error = (native_error == NULL ? mrb_nil_value() : mruby_giftwrap__GError(mrb, native_error));
+
+  /* Add out params to results */
+  mrb_ary_push(mrb, results, error);
+
+  return results;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_output_stream_splice_async */
+/* sha: 0b9f6ee1d4ccd16ef875392a64884322c32fc2e83dd2d7c3d5ac1d3f17ea6846 */
+#if BIND_g_output_stream_splice_async_FUNCTION
+#define g_output_stream_splice_async_REQUIRED_ARGC 7
+#define g_output_stream_splice_async_OPTIONAL_ARGC 0
+/* g_output_stream_splice_async
+ *
+ * Parameters:
+ * - stream: GOutputStream *
+ * - source: GInputStream *
+ * - flags: GOutputStreamSpliceFlags
+ * - io_priority: int
+ * - cancellable: GCancellable *
+ * - callback: GAsyncReadyCallback
+ * - user_data: gpointer
+ * Return Type: void
+ */
+mrb_value
+mrb_GLib_g_output_stream_splice_async(mrb_state* mrb, mrb_value self) {
+  mrb_value stream;
+  mrb_value source;
+  mrb_int native_flags;
+  mrb_int native_io_priority;
+  mrb_value cancellable;
+  mrb_value callback;
+  mrb_value user_data;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "ooiiooo", &stream, &source, &native_flags, &native_io_priority, &cancellable, &callback, &user_data);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, stream, GOutputStream_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GOutputStream expected");
+    return mrb_nil_value();
+  }
+  if (!mrb_obj_is_kind_of(mrb, source, GInputStream_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GInputStream expected");
+    return mrb_nil_value();
+  }
+  TODO_type_check_GAsyncReadyCallback(callback);
+  TODO_type_check_gpointer(user_data);
+
+  /* Unbox param: stream */
+  GOutputStream * native_stream = (mrb_nil_p(stream) ? NULL : mruby_unbox__GOutputStream(stream));
+
+  /* Unbox param: source */
+  GInputStream * native_source = (mrb_nil_p(source) ? NULL : mruby_unbox__GInputStream(source));
+
+  /* Unbox param: cancellable */
+  void * native_cancellable = NULL; /* Unused parameter */
+
+  /* Unbox param: callback */
+  GAsyncReadyCallback native_callback = TODO_mruby_unbox_GAsyncReadyCallback(callback);
+
+  /* Unbox param: user_data */
+  gpointer native_user_data = TODO_mruby_unbox_gpointer(user_data);
+
+  /* Invocation */
+  g_output_stream_splice_async(native_stream, native_source, native_flags, native_io_priority, native_cancellable, native_callback, native_user_data);
+
+  return mrb_nil_value();
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_output_stream_vprintf */
+/* sha: 13c638d1b8e1514004d241cfb6e25fb7d8d18e5ae7cd0bb03ab35d3ca05e764a */
+#if BIND_g_output_stream_vprintf_FUNCTION
+#define g_output_stream_vprintf_REQUIRED_ARGC 4
+#define g_output_stream_vprintf_OPTIONAL_ARGC 0
+/* g_output_stream_vprintf
+ *
+ * Parameters:
+ * - stream: GOutputStream *
+ * - cancellable: GCancellable *
+ * - format: const gchar *
+ * - args: int
+ * Return Type: gboolean
+ */
+mrb_value
+mrb_GLib_g_output_stream_vprintf(mrb_state* mrb, mrb_value self) {
+  mrb_value results = mrb_ary_new(mrb);
+  mrb_value stream;
+  int native_bytes_written;
+  mrb_value cancellable;
+  struct GError * native_error = NULL;
+  char * native_format = NULL;
+  mrb_int native_args;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "oozi", &stream, &cancellable, &native_format, &native_args);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, stream, GOutputStream_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GOutputStream expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: stream */
+  GOutputStream * native_stream = (mrb_nil_p(stream) ? NULL : mruby_unbox__GOutputStream(stream));
+
+  /* Unbox param: cancellable */
+  void * native_cancellable = NULL; /* Unused parameter */
+
+  /* Invocation */
+  gboolean native_return_value = g_output_stream_vprintf(native_stream, &native_bytes_written, native_cancellable, &native_error, native_format, native_args);
+
+  /* Box the return value */
+  mrb_value return_value = mrb_bool_value(native_return_value);
+  mrb_ary_push(mrb, results, return_value);
+  
+  /* Box out param: bytes_written */
+  mrb_value bytes_written = mrb_fixnum_value(native_bytes_written);
+  /* Box out param: error */
+  mrb_value error = (native_error == NULL ? mrb_nil_value() : mruby_giftwrap__GError(mrb, native_error));
+
+  /* Add out params to results */
+  mrb_ary_push(mrb, results, bytes_written);
+  mrb_ary_push(mrb, results, error);
+
+  return results;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_output_stream_write */
+/* sha: e111087330a89ac797a0ba9e3be876beeb150fdff85c1ec9e344f852cd0b5dfd */
+#if BIND_g_output_stream_write_FUNCTION
+#define g_output_stream_write_REQUIRED_ARGC 2
+#define g_output_stream_write_OPTIONAL_ARGC 0
+/* g_output_stream_write
+ *
+ * Parameters:
+ * - stream: GOutputStream *
+ * - buffer: const void *
+ * - count: gsize
+ * - cancellable: GCancellable *
+ * Return Type: gssize
+ */
+mrb_value
+mrb_GLib_g_output_stream_write(mrb_state* mrb, mrb_value self) {
+  mrb_value results = mrb_ary_new(mrb);
+  mrb_value stream;
+  char * native_buffer;
+  mrb_int native_count;
+  mrb_value cancellable;
+  struct GError * native_error = NULL;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "os", &stream, &native_buffer, &native_count);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, stream, GOutputStream_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GOutputStream expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: stream */
+  GOutputStream * native_stream = (mrb_nil_p(stream) ? NULL : mruby_unbox__GOutputStream(stream));
+
+  /* Unbox param: cancellable */
+  void * native_cancellable = NULL; /* Unused parameter */
+
+  /* Invocation */
+  gssize native_return_value = g_output_stream_write(native_stream, native_buffer, native_count, native_cancellable, &native_error);
+
+  /* Box the return value */
+  mrb_value return_value = mrb_fixnum_value(native_return_value);
+  mrb_ary_push(mrb, results, return_value);
+  
+  /* Box out param: error */
+  mrb_value error = (native_error == NULL ? mrb_nil_value() : mruby_giftwrap__GError(mrb, native_error));
+
+  /* Add out params to results */
+  mrb_ary_push(mrb, results, error);
+
+  return results;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_output_stream_write_all */
+/* sha: 4a141760426e3035f440766f61e363b64711db314713b97269b91f368af5bb31 */
+#if BIND_g_output_stream_write_all_FUNCTION
+#define g_output_stream_write_all_REQUIRED_ARGC 2
+#define g_output_stream_write_all_OPTIONAL_ARGC 0
+/* g_output_stream_write_all
+ *
+ * Parameters:
+ * - stream: GOutputStream *
+ * - buffer: const void *
+ * - count: gsize
+ * - cancellable: GCancellable *
+ * Return Type: gboolean
+ */
+mrb_value
+mrb_GLib_g_output_stream_write_all(mrb_state* mrb, mrb_value self) {
+  mrb_value results = mrb_ary_new(mrb);
+  mrb_value stream;
+  char * native_buffer;
+  mrb_int native_count;
+  int native_bytes_written;
+  mrb_value cancellable;
+  struct GError * native_error = NULL;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "os", &stream, &native_buffer, &native_count);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, stream, GOutputStream_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GOutputStream expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: stream */
+  GOutputStream * native_stream = (mrb_nil_p(stream) ? NULL : mruby_unbox__GOutputStream(stream));
+
+  /* Unbox param: cancellable */
+  void * native_cancellable = NULL; /* Unused parameter */
+
+  /* Invocation */
+  gboolean native_return_value = g_output_stream_write_all(native_stream, native_buffer, native_count, &native_bytes_written, native_cancellable, &native_error);
+
+  /* Box the return value */
+  mrb_value return_value = mrb_bool_value(native_return_value);
+  mrb_ary_push(mrb, results, return_value);
+  
+  /* Box out param: bytes_written */
+  mrb_value bytes_written = mrb_fixnum_value(native_bytes_written);
+  /* Box out param: error */
+  mrb_value error = (native_error == NULL ? mrb_nil_value() : mruby_giftwrap__GError(mrb, native_error));
+
+  /* Add out params to results */
+  mrb_ary_push(mrb, results, bytes_written);
+  mrb_ary_push(mrb, results, error);
+
+  return results;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_output_stream_write_all_async */
+/* sha: 0c281d016d0d4169bc701a37f82a8585b36b9715f3d898af67fc964ae157e70d */
+#if BIND_g_output_stream_write_all_async_FUNCTION
+#define g_output_stream_write_all_async_REQUIRED_ARGC 7
+#define g_output_stream_write_all_async_OPTIONAL_ARGC 0
+/* g_output_stream_write_all_async
+ *
+ * Parameters:
+ * - stream: GOutputStream *
+ * - buffer: const void *
+ * - count: gsize
+ * - io_priority: int
+ * - cancellable: GCancellable *
+ * - callback: GAsyncReadyCallback
+ * - user_data: gpointer
+ * Return Type: void
+ */
+mrb_value
+mrb_GLib_g_output_stream_write_all_async(mrb_state* mrb, mrb_value self) {
+  mrb_value stream;
+  mrb_value buffer;
+  mrb_int native_count;
+  mrb_int native_io_priority;
+  mrb_value cancellable;
+  mrb_value callback;
+  mrb_value user_data;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "ooiiooo", &stream, &buffer, &native_count, &native_io_priority, &cancellable, &callback, &user_data);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, stream, GOutputStream_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GOutputStream expected");
+    return mrb_nil_value();
+  }
+  TODO_type_check_void_PTR(buffer);
+  TODO_type_check_GAsyncReadyCallback(callback);
+  TODO_type_check_gpointer(user_data);
+
+  /* Unbox param: stream */
+  GOutputStream * native_stream = (mrb_nil_p(stream) ? NULL : mruby_unbox__GOutputStream(stream));
+
+  /* Unbox param: buffer */
+  const void * native_buffer = TODO_mruby_unbox_void_PTR(buffer);
+
+  /* Unbox param: cancellable */
+  void * native_cancellable = NULL; /* Unused parameter */
+
+  /* Unbox param: callback */
+  GAsyncReadyCallback native_callback = TODO_mruby_unbox_GAsyncReadyCallback(callback);
+
+  /* Unbox param: user_data */
+  gpointer native_user_data = TODO_mruby_unbox_gpointer(user_data);
+
+  /* Invocation */
+  g_output_stream_write_all_async(native_stream, native_buffer, native_count, native_io_priority, native_cancellable, native_callback, native_user_data);
+
+  return mrb_nil_value();
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_output_stream_write_async */
+/* sha: 3fe276e2d1b9bfad2ddf3d177fc8749ed81bac4745510efe46abeb7ae495eaaf */
+#if BIND_g_output_stream_write_async_FUNCTION
+#define g_output_stream_write_async_REQUIRED_ARGC 7
+#define g_output_stream_write_async_OPTIONAL_ARGC 0
+/* g_output_stream_write_async
+ *
+ * Parameters:
+ * - stream: GOutputStream *
+ * - buffer: const void *
+ * - count: gsize
+ * - io_priority: int
+ * - cancellable: GCancellable *
+ * - callback: GAsyncReadyCallback
+ * - user_data: gpointer
+ * Return Type: void
+ */
+mrb_value
+mrb_GLib_g_output_stream_write_async(mrb_state* mrb, mrb_value self) {
+  mrb_value stream;
+  mrb_value buffer;
+  mrb_int native_count;
+  mrb_int native_io_priority;
+  mrb_value cancellable;
+  mrb_value callback;
+  mrb_value user_data;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "ooiiooo", &stream, &buffer, &native_count, &native_io_priority, &cancellable, &callback, &user_data);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, stream, GOutputStream_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GOutputStream expected");
+    return mrb_nil_value();
+  }
+  TODO_type_check_void_PTR(buffer);
+  TODO_type_check_GAsyncReadyCallback(callback);
+  TODO_type_check_gpointer(user_data);
+
+  /* Unbox param: stream */
+  GOutputStream * native_stream = (mrb_nil_p(stream) ? NULL : mruby_unbox__GOutputStream(stream));
+
+  /* Unbox param: buffer */
+  const void * native_buffer = TODO_mruby_unbox_void_PTR(buffer);
+
+  /* Unbox param: cancellable */
+  void * native_cancellable = NULL; /* Unused parameter */
+
+  /* Unbox param: callback */
+  GAsyncReadyCallback native_callback = TODO_mruby_unbox_GAsyncReadyCallback(callback);
+
+  /* Unbox param: user_data */
+  gpointer native_user_data = TODO_mruby_unbox_gpointer(user_data);
+
+  /* Invocation */
+  g_output_stream_write_async(native_stream, native_buffer, native_count, native_io_priority, native_cancellable, native_callback, native_user_data);
+
+  return mrb_nil_value();
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_output_stream_write_bytes */
+/* sha: bf6af9592301d118801e7751d5677f7d33642ac0fc5deb7d738f6954de7b28ea */
+#if BIND_g_output_stream_write_bytes_FUNCTION
+#define g_output_stream_write_bytes_REQUIRED_ARGC 3
+#define g_output_stream_write_bytes_OPTIONAL_ARGC 0
+/* g_output_stream_write_bytes
+ *
+ * Parameters:
+ * - stream: GOutputStream *
+ * - bytes: GBytes *
+ * - cancellable: GCancellable *
+ * Return Type: gssize
+ */
+mrb_value
+mrb_GLib_g_output_stream_write_bytes(mrb_state* mrb, mrb_value self) {
+  mrb_value results = mrb_ary_new(mrb);
+  mrb_value stream;
+  mrb_value bytes;
+  mrb_value cancellable;
+  struct GError * native_error = NULL;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "ooo", &stream, &bytes, &cancellable);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, stream, GOutputStream_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GOutputStream expected");
+    return mrb_nil_value();
+  }
+  if (!mrb_obj_is_kind_of(mrb, bytes, GBytes_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GBytes expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: stream */
+  GOutputStream * native_stream = (mrb_nil_p(stream) ? NULL : mruby_unbox__GOutputStream(stream));
+
+  /* Unbox param: bytes */
+  GBytes * native_bytes = (mrb_nil_p(bytes) ? NULL : mruby_unbox__GBytes(bytes));
+
+  /* Unbox param: cancellable */
+  void * native_cancellable = NULL; /* Unused parameter */
+
+  /* Invocation */
+  gssize native_return_value = g_output_stream_write_bytes(native_stream, native_bytes, native_cancellable, &native_error);
+
+  /* Box the return value */
+  mrb_value return_value = mrb_fixnum_value(native_return_value);
+  mrb_ary_push(mrb, results, return_value);
+  
+  /* Box out param: error */
+  mrb_value error = (native_error == NULL ? mrb_nil_value() : mruby_giftwrap__GError(mrb, native_error));
+
+  /* Add out params to results */
+  mrb_ary_push(mrb, results, error);
+
+  return results;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_output_stream_write_bytes_async */
+/* sha: 6cc687d5ad4ed479e84a572e1ef462580e782e28272f330bde8ca7a38f9d4596 */
+#if BIND_g_output_stream_write_bytes_async_FUNCTION
+#define g_output_stream_write_bytes_async_REQUIRED_ARGC 6
+#define g_output_stream_write_bytes_async_OPTIONAL_ARGC 0
+/* g_output_stream_write_bytes_async
+ *
+ * Parameters:
+ * - stream: GOutputStream *
+ * - bytes: GBytes *
+ * - io_priority: int
+ * - cancellable: GCancellable *
+ * - callback: GAsyncReadyCallback
+ * - user_data: gpointer
+ * Return Type: void
+ */
+mrb_value
+mrb_GLib_g_output_stream_write_bytes_async(mrb_state* mrb, mrb_value self) {
+  mrb_value stream;
+  mrb_value bytes;
+  mrb_int native_io_priority;
+  mrb_value cancellable;
+  mrb_value callback;
+  mrb_value user_data;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "ooiooo", &stream, &bytes, &native_io_priority, &cancellable, &callback, &user_data);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, stream, GOutputStream_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GOutputStream expected");
+    return mrb_nil_value();
+  }
+  if (!mrb_obj_is_kind_of(mrb, bytes, GBytes_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GBytes expected");
+    return mrb_nil_value();
+  }
+  TODO_type_check_GAsyncReadyCallback(callback);
+  TODO_type_check_gpointer(user_data);
+
+  /* Unbox param: stream */
+  GOutputStream * native_stream = (mrb_nil_p(stream) ? NULL : mruby_unbox__GOutputStream(stream));
+
+  /* Unbox param: bytes */
+  GBytes * native_bytes = (mrb_nil_p(bytes) ? NULL : mruby_unbox__GBytes(bytes));
+
+  /* Unbox param: cancellable */
+  void * native_cancellable = NULL; /* Unused parameter */
+
+  /* Unbox param: callback */
+  GAsyncReadyCallback native_callback = TODO_mruby_unbox_GAsyncReadyCallback(callback);
+
+  /* Unbox param: user_data */
+  gpointer native_user_data = TODO_mruby_unbox_gpointer(user_data);
+
+  /* Invocation */
+  g_output_stream_write_bytes_async(native_stream, native_bytes, native_io_priority, native_cancellable, native_callback, native_user_data);
 
   return mrb_nil_value();
 }
@@ -31272,6 +37021,66 @@ mrb_GLib_g_reload_user_special_dirs_cache(mrb_state* mrb, mrb_value self) {
 #endif
 /* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: g_remove */
+/* sha: a479e49c6b79bc68b363686dd36cedfd05f39fe6d10ae3edb725a155e69c2706 */
+#if BIND_g_remove_FUNCTION
+#define g_remove_REQUIRED_ARGC 1
+#define g_remove_OPTIONAL_ARGC 0
+/* g_remove
+ *
+ * Parameters:
+ * - filename: const gchar *
+ * Return Type: int
+ */
+mrb_value
+mrb_GLib_g_remove(mrb_state* mrb, mrb_value self) {
+  char * native_filename = NULL;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "z", &native_filename);
+
+  /* Invocation */
+  int native_return_value = g_remove(native_filename);
+
+  /* Box the return value */
+  mrb_value return_value = mrb_fixnum_value(native_return_value);
+  
+  return return_value;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_rename */
+/* sha: 973061ac9bc9fb56d02f2e18414ef7df863a66ee22fb06f39ce4898b5943377f */
+#if BIND_g_rename_FUNCTION
+#define g_rename_REQUIRED_ARGC 2
+#define g_rename_OPTIONAL_ARGC 0
+/* g_rename
+ *
+ * Parameters:
+ * - oldfilename: const gchar *
+ * - newfilename: const gchar *
+ * Return Type: int
+ */
+mrb_value
+mrb_GLib_g_rename(mrb_state* mrb, mrb_value self) {
+  char * native_oldfilename = NULL;
+  char * native_newfilename = NULL;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "zz", &native_oldfilename, &native_newfilename);
+
+  /* Invocation */
+  int native_return_value = g_rename(native_oldfilename, native_newfilename);
+
+  /* Box the return value */
+  mrb_value return_value = mrb_fixnum_value(native_return_value);
+  
+  return return_value;
+}
+#endif
+/* MRUBY_BINDING_END */
+
 /* MRUBY_BINDING: g_return_if_fail_warning */
 /* sha: 81ee97b5396c8d7f22821221fddb2c36d7b7f2fb5bb45d79f282ed42e9e28556 */
 #if BIND_g_return_if_fail_warning_FUNCTION
@@ -32443,6 +38252,251 @@ mrb_GLib_g_scanner_warn(mrb_state* mrb, mrb_value self) {
 #endif
 /* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: g_seekable_can_seek */
+/* sha: 3733d957a831ca694e56ea25913096956f28b426170ed2f9f80ec11ca1f4c010 */
+#if BIND_g_seekable_can_seek_FUNCTION
+#define g_seekable_can_seek_REQUIRED_ARGC 1
+#define g_seekable_can_seek_OPTIONAL_ARGC 0
+/* g_seekable_can_seek
+ *
+ * Parameters:
+ * - seekable: GSeekable *
+ * Return Type: gboolean
+ */
+mrb_value
+mrb_GLib_g_seekable_can_seek(mrb_state* mrb, mrb_value self) {
+  mrb_value seekable;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "o", &seekable);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, seekable, GSeekable_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GSeekable expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: seekable */
+  GSeekable * native_seekable = (mrb_nil_p(seekable) ? NULL : mruby_unbox__GSeekable(seekable));
+
+  /* Invocation */
+  gboolean native_return_value = g_seekable_can_seek(native_seekable);
+
+  /* Box the return value */
+  mrb_value return_value = mrb_bool_value(native_return_value);
+  
+  return return_value;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_seekable_can_truncate */
+/* sha: 27e251904c0db5f17e1e75e1e8fddb4b81d96bd4a3c05a860fed95421c0d2639 */
+#if BIND_g_seekable_can_truncate_FUNCTION
+#define g_seekable_can_truncate_REQUIRED_ARGC 1
+#define g_seekable_can_truncate_OPTIONAL_ARGC 0
+/* g_seekable_can_truncate
+ *
+ * Parameters:
+ * - seekable: GSeekable *
+ * Return Type: gboolean
+ */
+mrb_value
+mrb_GLib_g_seekable_can_truncate(mrb_state* mrb, mrb_value self) {
+  mrb_value seekable;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "o", &seekable);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, seekable, GSeekable_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GSeekable expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: seekable */
+  GSeekable * native_seekable = (mrb_nil_p(seekable) ? NULL : mruby_unbox__GSeekable(seekable));
+
+  /* Invocation */
+  gboolean native_return_value = g_seekable_can_truncate(native_seekable);
+
+  /* Box the return value */
+  mrb_value return_value = mrb_bool_value(native_return_value);
+  
+  return return_value;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_seekable_get_type */
+/* sha: 4e19d6e97fc42c88439fdc4f703d52aea7e0ba7286a2828025b269f61b45db98 */
+#if BIND_g_seekable_get_type_FUNCTION
+#define g_seekable_get_type_REQUIRED_ARGC 0
+#define g_seekable_get_type_OPTIONAL_ARGC 0
+/* g_seekable_get_type
+ *
+ * Parameters: None
+ * Return Type: GType
+ */
+mrb_value
+mrb_GLib_g_seekable_get_type(mrb_state* mrb, mrb_value self) {
+  /* Invocation */
+  GType native_return_value = g_seekable_get_type();
+
+  /* Box the return value */
+  mrb_value return_value = TODO_mruby_box_GType(mrb, native_return_value);
+  
+  return return_value;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_seekable_seek */
+/* sha: 72af36df29fefe73fc8df9f9a53ad1ad29f28a351437bb98667d60ccfa7e8ae2 */
+#if BIND_g_seekable_seek_FUNCTION
+#define g_seekable_seek_REQUIRED_ARGC 3
+#define g_seekable_seek_OPTIONAL_ARGC 0
+/* g_seekable_seek
+ *
+ * Parameters:
+ * - seekable: GSeekable *
+ * - offset: goffset
+ * - type: GSeekType
+ * - cancellable: GCancellable *
+ * Return Type: gboolean
+ */
+mrb_value
+mrb_GLib_g_seekable_seek(mrb_state* mrb, mrb_value self) {
+  mrb_value results = mrb_ary_new(mrb);
+  mrb_value seekable;
+  mrb_int native_offset;
+  mrb_int native_type;
+  struct GError * native_error = NULL;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "oii", &seekable, &native_offset, &native_type);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, seekable, GSeekable_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GSeekable expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: seekable */
+  GSeekable * native_seekable = (mrb_nil_p(seekable) ? NULL : mruby_unbox__GSeekable(seekable));
+
+  /* Unbox param: cancellable */
+  void * native_cancellable = NULL; /* Unused parameter */
+
+  /* Invocation */
+  gboolean native_return_value = g_seekable_seek(native_seekable, native_offset, native_type, native_cancellable, &native_error);
+
+  /* Box the return value */
+  mrb_value return_value = mrb_bool_value(native_return_value);
+  mrb_ary_push(mrb, results, return_value);
+  
+  /* Box out param: error */
+  mrb_value error = (native_error == NULL ? mrb_nil_value() : mruby_giftwrap__GError(mrb, native_error));
+
+  /* Add out params to results */
+  mrb_ary_push(mrb, results, error);
+
+  return results;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_seekable_tell */
+/* sha: 40cd595b619ea9e209b9f26e55714cae547baf29e919e12cfc13005796dd66c8 */
+#if BIND_g_seekable_tell_FUNCTION
+#define g_seekable_tell_REQUIRED_ARGC 1
+#define g_seekable_tell_OPTIONAL_ARGC 0
+/* g_seekable_tell
+ *
+ * Parameters:
+ * - seekable: GSeekable *
+ * Return Type: goffset
+ */
+mrb_value
+mrb_GLib_g_seekable_tell(mrb_state* mrb, mrb_value self) {
+  mrb_value seekable;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "o", &seekable);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, seekable, GSeekable_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GSeekable expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: seekable */
+  GSeekable * native_seekable = (mrb_nil_p(seekable) ? NULL : mruby_unbox__GSeekable(seekable));
+
+  /* Invocation */
+  goffset native_return_value = g_seekable_tell(native_seekable);
+
+  /* Box the return value */
+  mrb_value return_value = mrb_fixnum_value(native_return_value);
+  
+  return return_value;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_seekable_truncate */
+/* sha: 5b45393bc74aacce03c1a860011839b61c89d68db0a7150e1fca51b2ad99c8d6 */
+#if BIND_g_seekable_truncate_FUNCTION
+#define g_seekable_truncate_REQUIRED_ARGC 2
+#define g_seekable_truncate_OPTIONAL_ARGC 0
+/* g_seekable_truncate
+ *
+ * Parameters:
+ * - seekable: GSeekable *
+ * - offset: goffset
+ * - cancellable: GCancellable *
+ * Return Type: gboolean
+ */
+mrb_value
+mrb_GLib_g_seekable_truncate(mrb_state* mrb, mrb_value self) {
+  mrb_value results = mrb_ary_new(mrb);
+  mrb_value seekable;
+  mrb_int native_offset;
+  struct GError * native_error = NULL;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "oio", &seekable, &native_offset);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, seekable, GSeekable_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GSeekable expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: seekable */
+  GSeekable * native_seekable = (mrb_nil_p(seekable) ? NULL : mruby_unbox__GSeekable(seekable));
+
+  /* Unbox param: cancellable */
+  void * native_cancellable = NULL; /* Unused parameter */
+
+  /* Invocation */
+  gboolean native_return_value = g_seekable_truncate(native_seekable, native_offset, native_cancellable, &native_error);
+
+  /* Box the return value */
+  mrb_value return_value = mrb_bool_value(native_return_value);
+  mrb_ary_push(mrb, results, return_value);
+  
+  /* Box out param: error */
+  mrb_value error = (native_error == NULL ? mrb_nil_value() : mruby_giftwrap__GError(mrb, native_error));
+
+  /* Add out params to results */
+  mrb_ary_push(mrb, results, error);
+
+  return results;
+}
+#endif
+/* MRUBY_BINDING_END */
+
 /* MRUBY_BINDING: g_set_application_name */
 /* sha: fd168c50bda122ada172d98ef6af86ef666b3b5e484067127d06b34484284f71 */
 #if BIND_g_set_application_name_FUNCTION
@@ -33104,6 +39158,2734 @@ mrb_GLib_g_snprintf(mrb_state* mrb, mrb_value self) {
 
   /* Box the return value */
   mrb_value return_value = mrb_fixnum_value(native_return_value);
+  
+  return return_value;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_socket_accept */
+/* sha: 0d00d8578a6845e3a734880bb9bfaed605bda64c93087eced358d835a9145435 */
+#if BIND_g_socket_accept_FUNCTION
+#define g_socket_accept_REQUIRED_ARGC 2
+#define g_socket_accept_OPTIONAL_ARGC 0
+/* g_socket_accept
+ *
+ * Parameters:
+ * - socket: GSocket *
+ * - cancellable: GCancellable *
+ * Return Type: GSocket *
+ */
+mrb_value
+mrb_GLib_g_socket_accept(mrb_state* mrb, mrb_value self) {
+  mrb_value results = mrb_ary_new(mrb);
+  mrb_value socket;
+  mrb_value cancellable;
+  struct GError * native_error = NULL;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "oo", &socket, &cancellable);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, socket, GSocket_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GSocket expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: socket */
+  GSocket * native_socket = (mrb_nil_p(socket) ? NULL : mruby_unbox__GSocket(socket));
+
+  /* Unbox param: cancellable */
+  void * native_cancellable = NULL; /* Unused parameter */
+
+  /* Invocation */
+  GSocket * native_return_value = g_socket_accept(native_socket, native_cancellable, &native_error);
+
+  /* Box the return value */
+  mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_box__GSocket(mrb, native_return_value));
+  mrb_ary_push(mrb, results, return_value);
+  
+  /* Box out param: error */
+  mrb_value error = (native_error == NULL ? mrb_nil_value() : mruby_giftwrap__GError(mrb, native_error));
+
+  /* Add out params to results */
+  mrb_ary_push(mrb, results, error);
+
+  return results;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_socket_address_get_family */
+/* sha: 91734a6c331ba816322545c38329823e31e221edb57091eb1ed73c1706be792f */
+#if BIND_g_socket_address_get_family_FUNCTION
+#define g_socket_address_get_family_REQUIRED_ARGC 1
+#define g_socket_address_get_family_OPTIONAL_ARGC 0
+/* g_socket_address_get_family
+ *
+ * Parameters:
+ * - address: GSocketAddress *
+ * Return Type: GSocketFamily
+ */
+mrb_value
+mrb_GLib_g_socket_address_get_family(mrb_state* mrb, mrb_value self) {
+  mrb_value address;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "o", &address);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, address, GSocketAddress_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GSocketAddress expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: address */
+  GSocketAddress * native_address = (mrb_nil_p(address) ? NULL : mruby_unbox__GSocketAddress(address));
+
+  /* Invocation */
+  GSocketFamily native_return_value = g_socket_address_get_family(native_address);
+
+  /* Box the return value */
+  mrb_value return_value = mrb_fixnum_value(native_return_value);
+  
+  return return_value;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_socket_address_get_native_size */
+/* sha: 285683089fee5e86873dde6dfbc9d9f05ca427029ebe26d741eedee7c38ffba6 */
+#if BIND_g_socket_address_get_native_size_FUNCTION
+#define g_socket_address_get_native_size_REQUIRED_ARGC 1
+#define g_socket_address_get_native_size_OPTIONAL_ARGC 0
+/* g_socket_address_get_native_size
+ *
+ * Parameters:
+ * - address: GSocketAddress *
+ * Return Type: gssize
+ */
+mrb_value
+mrb_GLib_g_socket_address_get_native_size(mrb_state* mrb, mrb_value self) {
+  mrb_value address;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "o", &address);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, address, GSocketAddress_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GSocketAddress expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: address */
+  GSocketAddress * native_address = (mrb_nil_p(address) ? NULL : mruby_unbox__GSocketAddress(address));
+
+  /* Invocation */
+  gssize native_return_value = g_socket_address_get_native_size(native_address);
+
+  /* Box the return value */
+  mrb_value return_value = mrb_fixnum_value(native_return_value);
+  
+  return return_value;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_socket_address_get_type */
+/* sha: 99e685518a45883ec8bdb8e93fb4fcafffdf3e372598846a5958a2290c82a648 */
+#if BIND_g_socket_address_get_type_FUNCTION
+#define g_socket_address_get_type_REQUIRED_ARGC 0
+#define g_socket_address_get_type_OPTIONAL_ARGC 0
+/* g_socket_address_get_type
+ *
+ * Parameters: None
+ * Return Type: GType
+ */
+mrb_value
+mrb_GLib_g_socket_address_get_type(mrb_state* mrb, mrb_value self) {
+  /* Invocation */
+  GType native_return_value = g_socket_address_get_type();
+
+  /* Box the return value */
+  mrb_value return_value = TODO_mruby_box_GType(mrb, native_return_value);
+  
+  return return_value;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_socket_address_new_from_native */
+/* sha: 6bb8d113b2a535ded0a82ef89598d1ef082e0305befd5ea8b50d8e8da91a28b4 */
+#if BIND_g_socket_address_new_from_native_FUNCTION
+#define g_socket_address_new_from_native_REQUIRED_ARGC 2
+#define g_socket_address_new_from_native_OPTIONAL_ARGC 0
+/* g_socket_address_new_from_native
+ *
+ * Parameters:
+ * - native: gpointer
+ * - len: gsize
+ * Return Type: GSocketAddress *
+ */
+mrb_value
+mrb_GLib_g_socket_address_new_from_native(mrb_state* mrb, mrb_value self) {
+  mrb_value native;
+  mrb_int native_len;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "oi", &native, &native_len);
+
+  /* Type checking */
+  TODO_type_check_gpointer(native);
+
+  /* Unbox param: native */
+  gpointer native_native = TODO_mruby_unbox_gpointer(native);
+
+  /* Invocation */
+  GSocketAddress * native_return_value = g_socket_address_new_from_native(native_native, native_len);
+
+  /* Box the return value */
+  mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_box__GSocketAddress(mrb, native_return_value));
+  
+  return return_value;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_socket_address_to_native */
+/* sha: 4bc39c83c26f484c4b8a44ce0625f7e1e29b60d047e377e790fd85e4bfe55f7d */
+#if BIND_g_socket_address_to_native_FUNCTION
+#define g_socket_address_to_native_REQUIRED_ARGC 3
+#define g_socket_address_to_native_OPTIONAL_ARGC 0
+/* g_socket_address_to_native
+ *
+ * Parameters:
+ * - address: GSocketAddress *
+ * - dest: gpointer
+ * - destlen: gsize
+ * Return Type: gboolean
+ */
+mrb_value
+mrb_GLib_g_socket_address_to_native(mrb_state* mrb, mrb_value self) {
+  mrb_value results = mrb_ary_new(mrb);
+  mrb_value address;
+  mrb_value dest;
+  mrb_int native_destlen;
+  struct GError * native_error = NULL;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "ooi", &address, &dest, &native_destlen);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, address, GSocketAddress_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GSocketAddress expected");
+    return mrb_nil_value();
+  }
+  TODO_type_check_gpointer(dest);
+
+  /* Unbox param: address */
+  GSocketAddress * native_address = (mrb_nil_p(address) ? NULL : mruby_unbox__GSocketAddress(address));
+
+  /* Unbox param: dest */
+  gpointer native_dest = TODO_mruby_unbox_gpointer(dest);
+
+  /* Invocation */
+  gboolean native_return_value = g_socket_address_to_native(native_address, native_dest, native_destlen, &native_error);
+
+  /* Box the return value */
+  mrb_value return_value = mrb_bool_value(native_return_value);
+  mrb_ary_push(mrb, results, return_value);
+  
+  /* Box out param: error */
+  mrb_value error = (native_error == NULL ? mrb_nil_value() : mruby_giftwrap__GError(mrb, native_error));
+
+  /* Add out params to results */
+  mrb_ary_push(mrb, results, error);
+
+  return results;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_socket_bind */
+/* sha: 93aa7b92579a459cef06f5d7b7d0b774a4a5ca83239be9680a24781c66713599 */
+#if BIND_g_socket_bind_FUNCTION
+#define g_socket_bind_REQUIRED_ARGC 3
+#define g_socket_bind_OPTIONAL_ARGC 0
+/* g_socket_bind
+ *
+ * Parameters:
+ * - socket: GSocket *
+ * - address: GSocketAddress *
+ * - allow_reuse: gboolean
+ * Return Type: gboolean
+ */
+mrb_value
+mrb_GLib_g_socket_bind(mrb_state* mrb, mrb_value self) {
+  mrb_value results = mrb_ary_new(mrb);
+  mrb_value socket;
+  mrb_value address;
+  mrb_bool native_allow_reuse;
+  struct GError * native_error = NULL;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "oob", &socket, &address, &native_allow_reuse);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, socket, GSocket_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GSocket expected");
+    return mrb_nil_value();
+  }
+  if (!mrb_obj_is_kind_of(mrb, address, GSocketAddress_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GSocketAddress expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: socket */
+  GSocket * native_socket = (mrb_nil_p(socket) ? NULL : mruby_unbox__GSocket(socket));
+
+  /* Unbox param: address */
+  GSocketAddress * native_address = (mrb_nil_p(address) ? NULL : mruby_unbox__GSocketAddress(address));
+
+  /* Invocation */
+  gboolean native_return_value = g_socket_bind(native_socket, native_address, native_allow_reuse, &native_error);
+
+  /* Box the return value */
+  mrb_value return_value = mrb_bool_value(native_return_value);
+  mrb_ary_push(mrb, results, return_value);
+  
+  /* Box out param: error */
+  mrb_value error = (native_error == NULL ? mrb_nil_value() : mruby_giftwrap__GError(mrb, native_error));
+
+  /* Add out params to results */
+  mrb_ary_push(mrb, results, error);
+
+  return results;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_socket_check_connect_result */
+/* sha: 70c35b630e78b924459823cc4f0bbf6dc15775e3446c2c4d72cbd1fa880d709b */
+#if BIND_g_socket_check_connect_result_FUNCTION
+#define g_socket_check_connect_result_REQUIRED_ARGC 1
+#define g_socket_check_connect_result_OPTIONAL_ARGC 0
+/* g_socket_check_connect_result
+ *
+ * Parameters:
+ * - socket: GSocket *
+ * Return Type: gboolean
+ */
+mrb_value
+mrb_GLib_g_socket_check_connect_result(mrb_state* mrb, mrb_value self) {
+  mrb_value results = mrb_ary_new(mrb);
+  mrb_value socket;
+  struct GError * native_error = NULL;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "o", &socket);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, socket, GSocket_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GSocket expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: socket */
+  GSocket * native_socket = (mrb_nil_p(socket) ? NULL : mruby_unbox__GSocket(socket));
+
+  /* Invocation */
+  gboolean native_return_value = g_socket_check_connect_result(native_socket, &native_error);
+
+  /* Box the return value */
+  mrb_value return_value = mrb_bool_value(native_return_value);
+  mrb_ary_push(mrb, results, return_value);
+  
+  /* Box out param: error */
+  mrb_value error = (native_error == NULL ? mrb_nil_value() : mruby_giftwrap__GError(mrb, native_error));
+
+  /* Add out params to results */
+  mrb_ary_push(mrb, results, error);
+
+  return results;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_socket_close */
+/* sha: da1e3f98cdfda52f92cd498efa175dfb3914c9b4d202ab7ce6f9ae9f440cbd48 */
+#if BIND_g_socket_close_FUNCTION
+#define g_socket_close_REQUIRED_ARGC 1
+#define g_socket_close_OPTIONAL_ARGC 0
+/* g_socket_close
+ *
+ * Parameters:
+ * - socket: GSocket *
+ * Return Type: gboolean
+ */
+mrb_value
+mrb_GLib_g_socket_close(mrb_state* mrb, mrb_value self) {
+  mrb_value results = mrb_ary_new(mrb);
+  mrb_value socket;
+  struct GError * native_error = NULL;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "o", &socket);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, socket, GSocket_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GSocket expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: socket */
+  GSocket * native_socket = (mrb_nil_p(socket) ? NULL : mruby_unbox__GSocket(socket));
+
+  /* Invocation */
+  gboolean native_return_value = g_socket_close(native_socket, &native_error);
+
+  /* Box the return value */
+  mrb_value return_value = mrb_bool_value(native_return_value);
+  mrb_ary_push(mrb, results, return_value);
+  
+  /* Box out param: error */
+  mrb_value error = (native_error == NULL ? mrb_nil_value() : mruby_giftwrap__GError(mrb, native_error));
+
+  /* Add out params to results */
+  mrb_ary_push(mrb, results, error);
+
+  return results;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_socket_condition_check */
+/* sha: 3b736b1760bd94e2c2ed70a64614c329d72a4f50512a9ed04980487586a2499d */
+#if BIND_g_socket_condition_check_FUNCTION
+#define g_socket_condition_check_REQUIRED_ARGC 2
+#define g_socket_condition_check_OPTIONAL_ARGC 0
+/* g_socket_condition_check
+ *
+ * Parameters:
+ * - socket: GSocket *
+ * - condition: GIOCondition
+ * Return Type: GIOCondition
+ */
+mrb_value
+mrb_GLib_g_socket_condition_check(mrb_state* mrb, mrb_value self) {
+  mrb_value socket;
+  mrb_int native_condition;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "oi", &socket, &native_condition);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, socket, GSocket_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GSocket expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: socket */
+  GSocket * native_socket = (mrb_nil_p(socket) ? NULL : mruby_unbox__GSocket(socket));
+
+  /* Invocation */
+  GIOCondition native_return_value = g_socket_condition_check(native_socket, native_condition);
+
+  /* Box the return value */
+  mrb_value return_value = mrb_fixnum_value(native_return_value);
+  
+  return return_value;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_socket_condition_timed_wait */
+/* sha: 14befc6fa3efac7f675767c78634d56e3bb9aab7d4187372e4ce2acf7bd9e189 */
+#if BIND_g_socket_condition_timed_wait_FUNCTION
+#define g_socket_condition_timed_wait_REQUIRED_ARGC 4
+#define g_socket_condition_timed_wait_OPTIONAL_ARGC 0
+/* g_socket_condition_timed_wait
+ *
+ * Parameters:
+ * - socket: GSocket *
+ * - condition: GIOCondition
+ * - timeout: gint64
+ * - cancellable: GCancellable *
+ * Return Type: gboolean
+ */
+mrb_value
+mrb_GLib_g_socket_condition_timed_wait(mrb_state* mrb, mrb_value self) {
+  mrb_value results = mrb_ary_new(mrb);
+  mrb_value socket;
+  mrb_int native_condition;
+  mrb_int native_timeout;
+  mrb_value cancellable;
+  struct GError * native_error = NULL;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "oiio", &socket, &native_condition, &native_timeout, &cancellable);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, socket, GSocket_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GSocket expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: socket */
+  GSocket * native_socket = (mrb_nil_p(socket) ? NULL : mruby_unbox__GSocket(socket));
+
+  /* Unbox param: cancellable */
+  void * native_cancellable = NULL; /* Unused parameter */
+
+  /* Invocation */
+  gboolean native_return_value = g_socket_condition_timed_wait(native_socket, native_condition, native_timeout, native_cancellable, &native_error);
+
+  /* Box the return value */
+  mrb_value return_value = mrb_bool_value(native_return_value);
+  mrb_ary_push(mrb, results, return_value);
+  
+  /* Box out param: error */
+  mrb_value error = (native_error == NULL ? mrb_nil_value() : mruby_giftwrap__GError(mrb, native_error));
+
+  /* Add out params to results */
+  mrb_ary_push(mrb, results, error);
+
+  return results;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_socket_condition_wait */
+/* sha: e2e5094915d106ac847b11978b80ca45986023e6d358427ea9fbdbcc8eb04cca */
+#if BIND_g_socket_condition_wait_FUNCTION
+#define g_socket_condition_wait_REQUIRED_ARGC 3
+#define g_socket_condition_wait_OPTIONAL_ARGC 0
+/* g_socket_condition_wait
+ *
+ * Parameters:
+ * - socket: GSocket *
+ * - condition: GIOCondition
+ * - cancellable: GCancellable *
+ * Return Type: gboolean
+ */
+mrb_value
+mrb_GLib_g_socket_condition_wait(mrb_state* mrb, mrb_value self) {
+  mrb_value results = mrb_ary_new(mrb);
+  mrb_value socket;
+  mrb_int native_condition;
+  mrb_value cancellable;
+  struct GError * native_error = NULL;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "oio", &socket, &native_condition, &cancellable);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, socket, GSocket_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GSocket expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: socket */
+  GSocket * native_socket = (mrb_nil_p(socket) ? NULL : mruby_unbox__GSocket(socket));
+
+  /* Unbox param: cancellable */
+  void * native_cancellable = NULL; /* Unused parameter */
+
+  /* Invocation */
+  gboolean native_return_value = g_socket_condition_wait(native_socket, native_condition, native_cancellable, &native_error);
+
+  /* Box the return value */
+  mrb_value return_value = mrb_bool_value(native_return_value);
+  mrb_ary_push(mrb, results, return_value);
+  
+  /* Box out param: error */
+  mrb_value error = (native_error == NULL ? mrb_nil_value() : mruby_giftwrap__GError(mrb, native_error));
+
+  /* Add out params to results */
+  mrb_ary_push(mrb, results, error);
+
+  return results;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_socket_connect */
+/* sha: a1035462225fe74738e4698636fd79fe3a8de8e6f1e4b0d2c74b89a00f2205f1 */
+#if BIND_g_socket_connect_FUNCTION
+#define g_socket_connect_REQUIRED_ARGC 3
+#define g_socket_connect_OPTIONAL_ARGC 0
+/* g_socket_connect
+ *
+ * Parameters:
+ * - socket: GSocket *
+ * - address: GSocketAddress *
+ * - cancellable: GCancellable *
+ * Return Type: gboolean
+ */
+mrb_value
+mrb_GLib_g_socket_connect(mrb_state* mrb, mrb_value self) {
+  mrb_value results = mrb_ary_new(mrb);
+  mrb_value socket;
+  mrb_value address;
+  mrb_value cancellable;
+  struct GError * native_error = NULL;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "ooo", &socket, &address, &cancellable);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, socket, GSocket_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GSocket expected");
+    return mrb_nil_value();
+  }
+  if (!mrb_obj_is_kind_of(mrb, address, GSocketAddress_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GSocketAddress expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: socket */
+  GSocket * native_socket = (mrb_nil_p(socket) ? NULL : mruby_unbox__GSocket(socket));
+
+  /* Unbox param: address */
+  GSocketAddress * native_address = (mrb_nil_p(address) ? NULL : mruby_unbox__GSocketAddress(address));
+
+  /* Unbox param: cancellable */
+  void * native_cancellable = NULL; /* Unused parameter */
+
+  /* Invocation */
+  gboolean native_return_value = g_socket_connect(native_socket, native_address, native_cancellable, &native_error);
+
+  /* Box the return value */
+  mrb_value return_value = mrb_bool_value(native_return_value);
+  mrb_ary_push(mrb, results, return_value);
+  
+  /* Box out param: error */
+  mrb_value error = (native_error == NULL ? mrb_nil_value() : mruby_giftwrap__GError(mrb, native_error));
+
+  /* Add out params to results */
+  mrb_ary_push(mrb, results, error);
+
+  return results;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_socket_create_source */
+/* sha: 624af5a7289d3f77a9ed2ba8c0b9b5093b5fc6914c6cd672813ef9f6ed0edcb6 */
+#if BIND_g_socket_create_source_FUNCTION
+#define g_socket_create_source_REQUIRED_ARGC 3
+#define g_socket_create_source_OPTIONAL_ARGC 0
+/* g_socket_create_source
+ *
+ * Parameters:
+ * - socket: GSocket *
+ * - condition: GIOCondition
+ * - cancellable: GCancellable *
+ * Return Type: GSource *
+ */
+mrb_value
+mrb_GLib_g_socket_create_source(mrb_state* mrb, mrb_value self) {
+  mrb_value socket;
+  mrb_int native_condition;
+  mrb_value cancellable;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "oio", &socket, &native_condition, &cancellable);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, socket, GSocket_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GSocket expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: socket */
+  GSocket * native_socket = (mrb_nil_p(socket) ? NULL : mruby_unbox__GSocket(socket));
+
+  /* Unbox param: cancellable */
+  void * native_cancellable = NULL; /* Unused parameter */
+
+  /* Invocation */
+  GSource * native_return_value = g_socket_create_source(native_socket, native_condition, native_cancellable);
+
+  /* Box the return value */
+  mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_box__GSource(mrb, native_return_value));
+  
+  return return_value;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_socket_get_available_bytes */
+/* sha: 5b09b4ee1e8a265bde16ba1ff939aaf00c54d9653b2c5700e8f453a80da34ca1 */
+#if BIND_g_socket_get_available_bytes_FUNCTION
+#define g_socket_get_available_bytes_REQUIRED_ARGC 1
+#define g_socket_get_available_bytes_OPTIONAL_ARGC 0
+/* g_socket_get_available_bytes
+ *
+ * Parameters:
+ * - socket: GSocket *
+ * Return Type: gssize
+ */
+mrb_value
+mrb_GLib_g_socket_get_available_bytes(mrb_state* mrb, mrb_value self) {
+  mrb_value socket;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "o", &socket);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, socket, GSocket_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GSocket expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: socket */
+  GSocket * native_socket = (mrb_nil_p(socket) ? NULL : mruby_unbox__GSocket(socket));
+
+  /* Invocation */
+  gssize native_return_value = g_socket_get_available_bytes(native_socket);
+
+  /* Box the return value */
+  mrb_value return_value = mrb_fixnum_value(native_return_value);
+  
+  return return_value;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_socket_get_blocking */
+/* sha: 8c048b92d0104957e03727bff671e45b630826e4470b7ebd7fea24ec0b782ce6 */
+#if BIND_g_socket_get_blocking_FUNCTION
+#define g_socket_get_blocking_REQUIRED_ARGC 1
+#define g_socket_get_blocking_OPTIONAL_ARGC 0
+/* g_socket_get_blocking
+ *
+ * Parameters:
+ * - socket: GSocket *
+ * Return Type: gboolean
+ */
+mrb_value
+mrb_GLib_g_socket_get_blocking(mrb_state* mrb, mrb_value self) {
+  mrb_value socket;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "o", &socket);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, socket, GSocket_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GSocket expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: socket */
+  GSocket * native_socket = (mrb_nil_p(socket) ? NULL : mruby_unbox__GSocket(socket));
+
+  /* Invocation */
+  gboolean native_return_value = g_socket_get_blocking(native_socket);
+
+  /* Box the return value */
+  mrb_value return_value = mrb_bool_value(native_return_value);
+  
+  return return_value;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_socket_get_broadcast */
+/* sha: 2026654fd594924af4af6b2c7d543d04f91fc8a1ecf4b7cb6381674331b9afcf */
+#if BIND_g_socket_get_broadcast_FUNCTION
+#define g_socket_get_broadcast_REQUIRED_ARGC 1
+#define g_socket_get_broadcast_OPTIONAL_ARGC 0
+/* g_socket_get_broadcast
+ *
+ * Parameters:
+ * - socket: GSocket *
+ * Return Type: gboolean
+ */
+mrb_value
+mrb_GLib_g_socket_get_broadcast(mrb_state* mrb, mrb_value self) {
+  mrb_value socket;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "o", &socket);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, socket, GSocket_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GSocket expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: socket */
+  GSocket * native_socket = (mrb_nil_p(socket) ? NULL : mruby_unbox__GSocket(socket));
+
+  /* Invocation */
+  gboolean native_return_value = g_socket_get_broadcast(native_socket);
+
+  /* Box the return value */
+  mrb_value return_value = mrb_bool_value(native_return_value);
+  
+  return return_value;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_socket_get_credentials */
+/* sha: f4dcce04d2b7c7db64942b5068482e40790c821e60d0bf6520f84ed85ae4977a */
+#if BIND_g_socket_get_credentials_FUNCTION
+#define g_socket_get_credentials_REQUIRED_ARGC 1
+#define g_socket_get_credentials_OPTIONAL_ARGC 0
+/* g_socket_get_credentials
+ *
+ * Parameters:
+ * - socket: GSocket *
+ * Return Type: GCredentials *
+ */
+mrb_value
+mrb_GLib_g_socket_get_credentials(mrb_state* mrb, mrb_value self) {
+  mrb_value results = mrb_ary_new(mrb);
+  mrb_value socket;
+  struct GError * native_error = NULL;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "o", &socket);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, socket, GSocket_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GSocket expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: socket */
+  GSocket * native_socket = (mrb_nil_p(socket) ? NULL : mruby_unbox__GSocket(socket));
+
+  /* Invocation */
+  GCredentials * native_return_value = g_socket_get_credentials(native_socket, &native_error);
+
+  /* Box the return value */
+  mrb_value return_value = TODO_mruby_box_GCredentials_PTR(mrb, native_return_value);
+  mrb_ary_push(mrb, results, return_value);
+  
+  /* Box out param: error */
+  mrb_value error = (native_error == NULL ? mrb_nil_value() : mruby_giftwrap__GError(mrb, native_error));
+
+  /* Add out params to results */
+  mrb_ary_push(mrb, results, error);
+
+  return results;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_socket_get_family */
+/* sha: 80d270090d7884fed006ce65699a59f1e8655eaa67a5d8a0ed6c48b5e13c1d6b */
+#if BIND_g_socket_get_family_FUNCTION
+#define g_socket_get_family_REQUIRED_ARGC 1
+#define g_socket_get_family_OPTIONAL_ARGC 0
+/* g_socket_get_family
+ *
+ * Parameters:
+ * - socket: GSocket *
+ * Return Type: GSocketFamily
+ */
+mrb_value
+mrb_GLib_g_socket_get_family(mrb_state* mrb, mrb_value self) {
+  mrb_value socket;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "o", &socket);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, socket, GSocket_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GSocket expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: socket */
+  GSocket * native_socket = (mrb_nil_p(socket) ? NULL : mruby_unbox__GSocket(socket));
+
+  /* Invocation */
+  GSocketFamily native_return_value = g_socket_get_family(native_socket);
+
+  /* Box the return value */
+  mrb_value return_value = mrb_fixnum_value(native_return_value);
+  
+  return return_value;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_socket_get_fd */
+/* sha: 983774a486f722b914686b625e87e642f5bf3158603acfd9d65a11c84abd58e4 */
+#if BIND_g_socket_get_fd_FUNCTION
+#define g_socket_get_fd_REQUIRED_ARGC 1
+#define g_socket_get_fd_OPTIONAL_ARGC 0
+/* g_socket_get_fd
+ *
+ * Parameters:
+ * - socket: GSocket *
+ * Return Type: int
+ */
+mrb_value
+mrb_GLib_g_socket_get_fd(mrb_state* mrb, mrb_value self) {
+  mrb_value socket;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "o", &socket);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, socket, GSocket_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GSocket expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: socket */
+  GSocket * native_socket = (mrb_nil_p(socket) ? NULL : mruby_unbox__GSocket(socket));
+
+  /* Invocation */
+  int native_return_value = g_socket_get_fd(native_socket);
+
+  /* Box the return value */
+  mrb_value return_value = mrb_fixnum_value(native_return_value);
+  
+  return return_value;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_socket_get_keepalive */
+/* sha: fe42c39e174f966a46bda676f45aa82808bd642bbc2810e56b88408cd0c2ccaf */
+#if BIND_g_socket_get_keepalive_FUNCTION
+#define g_socket_get_keepalive_REQUIRED_ARGC 1
+#define g_socket_get_keepalive_OPTIONAL_ARGC 0
+/* g_socket_get_keepalive
+ *
+ * Parameters:
+ * - socket: GSocket *
+ * Return Type: gboolean
+ */
+mrb_value
+mrb_GLib_g_socket_get_keepalive(mrb_state* mrb, mrb_value self) {
+  mrb_value socket;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "o", &socket);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, socket, GSocket_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GSocket expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: socket */
+  GSocket * native_socket = (mrb_nil_p(socket) ? NULL : mruby_unbox__GSocket(socket));
+
+  /* Invocation */
+  gboolean native_return_value = g_socket_get_keepalive(native_socket);
+
+  /* Box the return value */
+  mrb_value return_value = mrb_bool_value(native_return_value);
+  
+  return return_value;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_socket_get_listen_backlog */
+/* sha: cd247baf9be9ce1b8608f3bf2ee3dafbb6d36fd7d355db322c5a1ab861a3a4b7 */
+#if BIND_g_socket_get_listen_backlog_FUNCTION
+#define g_socket_get_listen_backlog_REQUIRED_ARGC 1
+#define g_socket_get_listen_backlog_OPTIONAL_ARGC 0
+/* g_socket_get_listen_backlog
+ *
+ * Parameters:
+ * - socket: GSocket *
+ * Return Type: gint
+ */
+mrb_value
+mrb_GLib_g_socket_get_listen_backlog(mrb_state* mrb, mrb_value self) {
+  mrb_value socket;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "o", &socket);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, socket, GSocket_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GSocket expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: socket */
+  GSocket * native_socket = (mrb_nil_p(socket) ? NULL : mruby_unbox__GSocket(socket));
+
+  /* Invocation */
+  gint native_return_value = g_socket_get_listen_backlog(native_socket);
+
+  /* Box the return value */
+  mrb_value return_value = mrb_fixnum_value(native_return_value);
+  
+  return return_value;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_socket_get_local_address */
+/* sha: f46f9a763c1f8677c7742fe71d7bef87ccc3df9bd59841ee7b72e6b0ae783573 */
+#if BIND_g_socket_get_local_address_FUNCTION
+#define g_socket_get_local_address_REQUIRED_ARGC 1
+#define g_socket_get_local_address_OPTIONAL_ARGC 0
+/* g_socket_get_local_address
+ *
+ * Parameters:
+ * - socket: GSocket *
+ * Return Type: GSocketAddress *
+ */
+mrb_value
+mrb_GLib_g_socket_get_local_address(mrb_state* mrb, mrb_value self) {
+  mrb_value results = mrb_ary_new(mrb);
+  mrb_value socket;
+  struct GError * native_error = NULL;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "o", &socket);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, socket, GSocket_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GSocket expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: socket */
+  GSocket * native_socket = (mrb_nil_p(socket) ? NULL : mruby_unbox__GSocket(socket));
+
+  /* Invocation */
+  GSocketAddress * native_return_value = g_socket_get_local_address(native_socket, &native_error);
+
+  /* Box the return value */
+  mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_box__GSocketAddress(mrb, native_return_value));
+  mrb_ary_push(mrb, results, return_value);
+  
+  /* Box out param: error */
+  mrb_value error = (native_error == NULL ? mrb_nil_value() : mruby_giftwrap__GError(mrb, native_error));
+
+  /* Add out params to results */
+  mrb_ary_push(mrb, results, error);
+
+  return results;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_socket_get_multicast_loopback */
+/* sha: 4762ec96d74bad9b41f53588891ed28833a4dcd4b275f495356b5f630f5e85ee */
+#if BIND_g_socket_get_multicast_loopback_FUNCTION
+#define g_socket_get_multicast_loopback_REQUIRED_ARGC 1
+#define g_socket_get_multicast_loopback_OPTIONAL_ARGC 0
+/* g_socket_get_multicast_loopback
+ *
+ * Parameters:
+ * - socket: GSocket *
+ * Return Type: gboolean
+ */
+mrb_value
+mrb_GLib_g_socket_get_multicast_loopback(mrb_state* mrb, mrb_value self) {
+  mrb_value socket;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "o", &socket);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, socket, GSocket_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GSocket expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: socket */
+  GSocket * native_socket = (mrb_nil_p(socket) ? NULL : mruby_unbox__GSocket(socket));
+
+  /* Invocation */
+  gboolean native_return_value = g_socket_get_multicast_loopback(native_socket);
+
+  /* Box the return value */
+  mrb_value return_value = mrb_bool_value(native_return_value);
+  
+  return return_value;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_socket_get_multicast_ttl */
+/* sha: a1a35509373dedc2b96bb3cc49a0aeffb73fed292028b9003dd5478735c25731 */
+#if BIND_g_socket_get_multicast_ttl_FUNCTION
+#define g_socket_get_multicast_ttl_REQUIRED_ARGC 1
+#define g_socket_get_multicast_ttl_OPTIONAL_ARGC 0
+/* g_socket_get_multicast_ttl
+ *
+ * Parameters:
+ * - socket: GSocket *
+ * Return Type: guint
+ */
+mrb_value
+mrb_GLib_g_socket_get_multicast_ttl(mrb_state* mrb, mrb_value self) {
+  mrb_value socket;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "o", &socket);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, socket, GSocket_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GSocket expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: socket */
+  GSocket * native_socket = (mrb_nil_p(socket) ? NULL : mruby_unbox__GSocket(socket));
+
+  /* Invocation */
+  guint native_return_value = g_socket_get_multicast_ttl(native_socket);
+
+  /* Box the return value */
+  mrb_value return_value = mrb_fixnum_value(native_return_value);
+  
+  return return_value;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_socket_get_option */
+/* sha: b888a5367c264615c902b3a1e500008a5d8189c8b9161278778269c41b296abc */
+#if BIND_g_socket_get_option_FUNCTION
+#define g_socket_get_option_REQUIRED_ARGC 3
+#define g_socket_get_option_OPTIONAL_ARGC 0
+/* g_socket_get_option
+ *
+ * Parameters:
+ * - socket: GSocket *
+ * - level: gint
+ * - optname: gint
+ * Return Type: gboolean
+ */
+mrb_value
+mrb_GLib_g_socket_get_option(mrb_state* mrb, mrb_value self) {
+  mrb_value results = mrb_ary_new(mrb);
+  mrb_value socket;
+  mrb_int native_level;
+  mrb_int native_optname;
+  int native_value;
+  struct GError * native_error = NULL;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "oii", &socket, &native_level, &native_optname);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, socket, GSocket_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GSocket expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: socket */
+  GSocket * native_socket = (mrb_nil_p(socket) ? NULL : mruby_unbox__GSocket(socket));
+
+  /* Invocation */
+  gboolean native_return_value = g_socket_get_option(native_socket, native_level, native_optname, &native_value, &native_error);
+
+  /* Box the return value */
+  mrb_value return_value = mrb_bool_value(native_return_value);
+  mrb_ary_push(mrb, results, return_value);
+  
+  /* Box out param: value */
+  mrb_value value = mrb_fixnum_value(native_value);
+  /* Box out param: error */
+  mrb_value error = (native_error == NULL ? mrb_nil_value() : mruby_giftwrap__GError(mrb, native_error));
+
+  /* Add out params to results */
+  mrb_ary_push(mrb, results, value);
+  mrb_ary_push(mrb, results, error);
+
+  return results;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_socket_get_protocol */
+/* sha: c212f0a08831fbe5126c223bdedd4616ba78811c36b9ac24847cb43d59c37991 */
+#if BIND_g_socket_get_protocol_FUNCTION
+#define g_socket_get_protocol_REQUIRED_ARGC 1
+#define g_socket_get_protocol_OPTIONAL_ARGC 0
+/* g_socket_get_protocol
+ *
+ * Parameters:
+ * - socket: GSocket *
+ * Return Type: GSocketProtocol
+ */
+mrb_value
+mrb_GLib_g_socket_get_protocol(mrb_state* mrb, mrb_value self) {
+  mrb_value socket;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "o", &socket);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, socket, GSocket_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GSocket expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: socket */
+  GSocket * native_socket = (mrb_nil_p(socket) ? NULL : mruby_unbox__GSocket(socket));
+
+  /* Invocation */
+  GSocketProtocol native_return_value = g_socket_get_protocol(native_socket);
+
+  /* Box the return value */
+  mrb_value return_value = mrb_fixnum_value(native_return_value);
+  
+  return return_value;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_socket_get_remote_address */
+/* sha: db8dac7ea237d7f748f3118d10d250b6b43fdc355887b6d6f82b8eb6f1aa8b7a */
+#if BIND_g_socket_get_remote_address_FUNCTION
+#define g_socket_get_remote_address_REQUIRED_ARGC 1
+#define g_socket_get_remote_address_OPTIONAL_ARGC 0
+/* g_socket_get_remote_address
+ *
+ * Parameters:
+ * - socket: GSocket *
+ * Return Type: GSocketAddress *
+ */
+mrb_value
+mrb_GLib_g_socket_get_remote_address(mrb_state* mrb, mrb_value self) {
+  mrb_value results = mrb_ary_new(mrb);
+  mrb_value socket;
+  struct GError * native_error = NULL;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "o", &socket);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, socket, GSocket_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GSocket expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: socket */
+  GSocket * native_socket = (mrb_nil_p(socket) ? NULL : mruby_unbox__GSocket(socket));
+
+  /* Invocation */
+  GSocketAddress * native_return_value = g_socket_get_remote_address(native_socket, &native_error);
+
+  /* Box the return value */
+  mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_box__GSocketAddress(mrb, native_return_value));
+  mrb_ary_push(mrb, results, return_value);
+  
+  /* Box out param: error */
+  mrb_value error = (native_error == NULL ? mrb_nil_value() : mruby_giftwrap__GError(mrb, native_error));
+
+  /* Add out params to results */
+  mrb_ary_push(mrb, results, error);
+
+  return results;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_socket_get_socket_type */
+/* sha: 69fcffda59d83bb5e6affb78e106c17f2f39fdcdb77983d581675cd1658f94f2 */
+#if BIND_g_socket_get_socket_type_FUNCTION
+#define g_socket_get_socket_type_REQUIRED_ARGC 1
+#define g_socket_get_socket_type_OPTIONAL_ARGC 0
+/* g_socket_get_socket_type
+ *
+ * Parameters:
+ * - socket: GSocket *
+ * Return Type: GSocketType
+ */
+mrb_value
+mrb_GLib_g_socket_get_socket_type(mrb_state* mrb, mrb_value self) {
+  mrb_value socket;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "o", &socket);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, socket, GSocket_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GSocket expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: socket */
+  GSocket * native_socket = (mrb_nil_p(socket) ? NULL : mruby_unbox__GSocket(socket));
+
+  /* Invocation */
+  GSocketType native_return_value = g_socket_get_socket_type(native_socket);
+
+  /* Box the return value */
+  mrb_value return_value = mrb_fixnum_value(native_return_value);
+  
+  return return_value;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_socket_get_timeout */
+/* sha: 408bf5bb1e663a71895bd72a91b241141dbdad8624ae3bc28692dbb0d894c3f0 */
+#if BIND_g_socket_get_timeout_FUNCTION
+#define g_socket_get_timeout_REQUIRED_ARGC 1
+#define g_socket_get_timeout_OPTIONAL_ARGC 0
+/* g_socket_get_timeout
+ *
+ * Parameters:
+ * - socket: GSocket *
+ * Return Type: guint
+ */
+mrb_value
+mrb_GLib_g_socket_get_timeout(mrb_state* mrb, mrb_value self) {
+  mrb_value socket;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "o", &socket);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, socket, GSocket_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GSocket expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: socket */
+  GSocket * native_socket = (mrb_nil_p(socket) ? NULL : mruby_unbox__GSocket(socket));
+
+  /* Invocation */
+  guint native_return_value = g_socket_get_timeout(native_socket);
+
+  /* Box the return value */
+  mrb_value return_value = mrb_fixnum_value(native_return_value);
+  
+  return return_value;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_socket_get_ttl */
+/* sha: 29d54fcccb1b82f72d878f9f3c3185aa566bfaa8f4d993caefe1753f4d7049d8 */
+#if BIND_g_socket_get_ttl_FUNCTION
+#define g_socket_get_ttl_REQUIRED_ARGC 1
+#define g_socket_get_ttl_OPTIONAL_ARGC 0
+/* g_socket_get_ttl
+ *
+ * Parameters:
+ * - socket: GSocket *
+ * Return Type: guint
+ */
+mrb_value
+mrb_GLib_g_socket_get_ttl(mrb_state* mrb, mrb_value self) {
+  mrb_value socket;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "o", &socket);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, socket, GSocket_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GSocket expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: socket */
+  GSocket * native_socket = (mrb_nil_p(socket) ? NULL : mruby_unbox__GSocket(socket));
+
+  /* Invocation */
+  guint native_return_value = g_socket_get_ttl(native_socket);
+
+  /* Box the return value */
+  mrb_value return_value = mrb_fixnum_value(native_return_value);
+  
+  return return_value;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_socket_get_type */
+/* sha: 815eba69a06c515c29cca86c5d4b8e37281b3117807d0c64c261abdab82dc8ec */
+#if BIND_g_socket_get_type_FUNCTION
+#define g_socket_get_type_REQUIRED_ARGC 0
+#define g_socket_get_type_OPTIONAL_ARGC 0
+/* g_socket_get_type
+ *
+ * Parameters: None
+ * Return Type: GType
+ */
+mrb_value
+mrb_GLib_g_socket_get_type(mrb_state* mrb, mrb_value self) {
+  /* Invocation */
+  GType native_return_value = g_socket_get_type();
+
+  /* Box the return value */
+  mrb_value return_value = TODO_mruby_box_GType(mrb, native_return_value);
+  
+  return return_value;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_socket_is_closed */
+/* sha: 6c8bf57de964565bef51d36248a6d7adfd3a951ca4a0302682a6676cfbe9e9c4 */
+#if BIND_g_socket_is_closed_FUNCTION
+#define g_socket_is_closed_REQUIRED_ARGC 1
+#define g_socket_is_closed_OPTIONAL_ARGC 0
+/* g_socket_is_closed
+ *
+ * Parameters:
+ * - socket: GSocket *
+ * Return Type: gboolean
+ */
+mrb_value
+mrb_GLib_g_socket_is_closed(mrb_state* mrb, mrb_value self) {
+  mrb_value socket;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "o", &socket);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, socket, GSocket_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GSocket expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: socket */
+  GSocket * native_socket = (mrb_nil_p(socket) ? NULL : mruby_unbox__GSocket(socket));
+
+  /* Invocation */
+  gboolean native_return_value = g_socket_is_closed(native_socket);
+
+  /* Box the return value */
+  mrb_value return_value = mrb_bool_value(native_return_value);
+  
+  return return_value;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_socket_is_connected */
+/* sha: f71272df2e017676151584d2eddea00b71e071fa6fc7268b14a81acd8d2756ac */
+#if BIND_g_socket_is_connected_FUNCTION
+#define g_socket_is_connected_REQUIRED_ARGC 1
+#define g_socket_is_connected_OPTIONAL_ARGC 0
+/* g_socket_is_connected
+ *
+ * Parameters:
+ * - socket: GSocket *
+ * Return Type: gboolean
+ */
+mrb_value
+mrb_GLib_g_socket_is_connected(mrb_state* mrb, mrb_value self) {
+  mrb_value socket;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "o", &socket);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, socket, GSocket_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GSocket expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: socket */
+  GSocket * native_socket = (mrb_nil_p(socket) ? NULL : mruby_unbox__GSocket(socket));
+
+  /* Invocation */
+  gboolean native_return_value = g_socket_is_connected(native_socket);
+
+  /* Box the return value */
+  mrb_value return_value = mrb_bool_value(native_return_value);
+  
+  return return_value;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_socket_join_multicast_group */
+/* sha: fabb5af8508b3957a5519c2f1cf8e27cc3a6f8001b0275b1adb2a8e4c851eb96 */
+#if BIND_g_socket_join_multicast_group_FUNCTION
+#define g_socket_join_multicast_group_REQUIRED_ARGC 4
+#define g_socket_join_multicast_group_OPTIONAL_ARGC 0
+/* g_socket_join_multicast_group
+ *
+ * Parameters:
+ * - socket: GSocket *
+ * - group: GInetAddress *
+ * - source_specific: gboolean
+ * - iface: const gchar *
+ * Return Type: gboolean
+ */
+mrb_value
+mrb_GLib_g_socket_join_multicast_group(mrb_state* mrb, mrb_value self) {
+  mrb_value results = mrb_ary_new(mrb);
+  mrb_value socket;
+  mrb_value group;
+  mrb_bool native_source_specific;
+  char * native_iface = NULL;
+  struct GError * native_error = NULL;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "oobz", &socket, &group, &native_source_specific, &native_iface);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, socket, GSocket_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GSocket expected");
+    return mrb_nil_value();
+  }
+  if (!mrb_obj_is_kind_of(mrb, group, GInetAddress_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GInetAddress expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: socket */
+  GSocket * native_socket = (mrb_nil_p(socket) ? NULL : mruby_unbox__GSocket(socket));
+
+  /* Unbox param: group */
+  GInetAddress * native_group = (mrb_nil_p(group) ? NULL : mruby_unbox__GInetAddress(group));
+
+  /* Invocation */
+  gboolean native_return_value = g_socket_join_multicast_group(native_socket, native_group, native_source_specific, native_iface, &native_error);
+
+  /* Box the return value */
+  mrb_value return_value = mrb_bool_value(native_return_value);
+  mrb_ary_push(mrb, results, return_value);
+  
+  /* Box out param: error */
+  mrb_value error = (native_error == NULL ? mrb_nil_value() : mruby_giftwrap__GError(mrb, native_error));
+
+  /* Add out params to results */
+  mrb_ary_push(mrb, results, error);
+
+  return results;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_socket_leave_multicast_group */
+/* sha: af8d3001fe0e78231d4ddfa7e661dba299af3627ff22924b5262e1b53e166f12 */
+#if BIND_g_socket_leave_multicast_group_FUNCTION
+#define g_socket_leave_multicast_group_REQUIRED_ARGC 4
+#define g_socket_leave_multicast_group_OPTIONAL_ARGC 0
+/* g_socket_leave_multicast_group
+ *
+ * Parameters:
+ * - socket: GSocket *
+ * - group: GInetAddress *
+ * - source_specific: gboolean
+ * - iface: const gchar *
+ * Return Type: gboolean
+ */
+mrb_value
+mrb_GLib_g_socket_leave_multicast_group(mrb_state* mrb, mrb_value self) {
+  mrb_value results = mrb_ary_new(mrb);
+  mrb_value socket;
+  mrb_value group;
+  mrb_bool native_source_specific;
+  char * native_iface = NULL;
+  struct GError * native_error = NULL;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "oobz", &socket, &group, &native_source_specific, &native_iface);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, socket, GSocket_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GSocket expected");
+    return mrb_nil_value();
+  }
+  if (!mrb_obj_is_kind_of(mrb, group, GInetAddress_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GInetAddress expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: socket */
+  GSocket * native_socket = (mrb_nil_p(socket) ? NULL : mruby_unbox__GSocket(socket));
+
+  /* Unbox param: group */
+  GInetAddress * native_group = (mrb_nil_p(group) ? NULL : mruby_unbox__GInetAddress(group));
+
+  /* Invocation */
+  gboolean native_return_value = g_socket_leave_multicast_group(native_socket, native_group, native_source_specific, native_iface, &native_error);
+
+  /* Box the return value */
+  mrb_value return_value = mrb_bool_value(native_return_value);
+  mrb_ary_push(mrb, results, return_value);
+  
+  /* Box out param: error */
+  mrb_value error = (native_error == NULL ? mrb_nil_value() : mruby_giftwrap__GError(mrb, native_error));
+
+  /* Add out params to results */
+  mrb_ary_push(mrb, results, error);
+
+  return results;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_socket_listen */
+/* sha: 71abfe94342877193298d0ceac551bc7a09fbdf0195d5e937be87b992bdd42bb */
+#if BIND_g_socket_listen_FUNCTION
+#define g_socket_listen_REQUIRED_ARGC 1
+#define g_socket_listen_OPTIONAL_ARGC 0
+/* g_socket_listen
+ *
+ * Parameters:
+ * - socket: GSocket *
+ * Return Type: gboolean
+ */
+mrb_value
+mrb_GLib_g_socket_listen(mrb_state* mrb, mrb_value self) {
+  mrb_value results = mrb_ary_new(mrb);
+  mrb_value socket;
+  struct GError * native_error = NULL;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "o", &socket);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, socket, GSocket_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GSocket expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: socket */
+  GSocket * native_socket = (mrb_nil_p(socket) ? NULL : mruby_unbox__GSocket(socket));
+
+  /* Invocation */
+  gboolean native_return_value = g_socket_listen(native_socket, &native_error);
+
+  /* Box the return value */
+  mrb_value return_value = mrb_bool_value(native_return_value);
+  mrb_ary_push(mrb, results, return_value);
+  
+  /* Box out param: error */
+  mrb_value error = (native_error == NULL ? mrb_nil_value() : mruby_giftwrap__GError(mrb, native_error));
+
+  /* Add out params to results */
+  mrb_ary_push(mrb, results, error);
+
+  return results;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_socket_new */
+/* sha: d4410e1fe32d3550cc9ca3965a1b4ca0ab78e28a477efcd53703d3014aceb8be */
+#if BIND_g_socket_new_FUNCTION
+#define g_socket_new_REQUIRED_ARGC 3
+#define g_socket_new_OPTIONAL_ARGC 0
+/* g_socket_new
+ *
+ * Parameters:
+ * - family: GSocketFamily
+ * - type: GSocketType
+ * - protocol: GSocketProtocol
+ * Return Type: GSocket *
+ */
+mrb_value
+mrb_GLib_g_socket_new(mrb_state* mrb, mrb_value self) {
+  mrb_value results = mrb_ary_new(mrb);
+  mrb_int native_family;
+  mrb_int native_type;
+  mrb_int native_protocol;
+  struct GError * native_error = NULL;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "iii", &native_family, &native_type, &native_protocol);
+
+  /* Invocation */
+  GSocket * native_return_value = g_socket_new(native_family, native_type, native_protocol, &native_error);
+
+  /* Box the return value */
+  mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_box__GSocket(mrb, native_return_value));
+  mrb_ary_push(mrb, results, return_value);
+  
+  /* Box out param: error */
+  mrb_value error = (native_error == NULL ? mrb_nil_value() : mruby_giftwrap__GError(mrb, native_error));
+
+  /* Add out params to results */
+  mrb_ary_push(mrb, results, error);
+
+  return results;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_socket_new_from_fd */
+/* sha: f063050390b531bd834fb046572508771762353c57f4e9d23b6c7ffe3869c791 */
+#if BIND_g_socket_new_from_fd_FUNCTION
+#define g_socket_new_from_fd_REQUIRED_ARGC 1
+#define g_socket_new_from_fd_OPTIONAL_ARGC 0
+/* g_socket_new_from_fd
+ *
+ * Parameters:
+ * - fd: gint
+ * Return Type: GSocket *
+ */
+mrb_value
+mrb_GLib_g_socket_new_from_fd(mrb_state* mrb, mrb_value self) {
+  mrb_value results = mrb_ary_new(mrb);
+  mrb_int native_fd;
+  struct GError * native_error = NULL;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "i", &native_fd);
+
+  /* Invocation */
+  GSocket * native_return_value = g_socket_new_from_fd(native_fd, &native_error);
+
+  /* Box the return value */
+  mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_box__GSocket(mrb, native_return_value));
+  mrb_ary_push(mrb, results, return_value);
+  
+  /* Box out param: error */
+  mrb_value error = (native_error == NULL ? mrb_nil_value() : mruby_giftwrap__GError(mrb, native_error));
+
+  /* Add out params to results */
+  mrb_ary_push(mrb, results, error);
+
+  return results;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_socket_receive */
+/* sha: f206528a6e07afb8a0620195df787860878593cec4f890174d35dbf9db6ae852 */
+#if BIND_g_socket_receive_FUNCTION
+#define g_socket_receive_REQUIRED_ARGC 2
+#define g_socket_receive_OPTIONAL_ARGC 0
+/* g_socket_receive
+ *
+ * Parameters:
+ * - socket: GSocket *
+ * - buffer: gchar *
+ * - size: gsize
+ * - cancellable: GCancellable *
+ * Return Type: gssize
+ */
+mrb_value
+mrb_GLib_g_socket_receive(mrb_state* mrb, mrb_value self) {
+  mrb_value results = mrb_ary_new(mrb);
+  mrb_value socket;
+  mrb_int native_size;
+  struct GError * native_error = NULL;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "oi", &socket, &native_size);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, socket, GSocket_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GSocket expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: socket */
+  GSocket * native_socket = (mrb_nil_p(socket) ? NULL : mruby_unbox__GSocket(socket));
+
+  /* Unbox param: buffer */
+  gchar * native_buffer = (gchar*)calloc(native_size, sizeof(gchar));
+
+  /* Unbox param: cancellable */
+  void * native_cancellable = NULL; /* Unused parameter */
+
+  /* Invocation */
+  gssize native_return_value = g_socket_receive(native_socket, native_buffer, native_size, native_cancellable, &native_error);
+
+  /* Box the return value */
+  mrb_value return_value = mrb_fixnum_value(native_return_value);
+  mrb_ary_push(mrb, results, return_value);
+  
+  /* Box out param: buffer */
+  mrb_value buffer = mrb_nil_value();
+  if (native_return_value > 0) {
+    buffer = mrb_str_new(mrb, native_buffer, native_return_value);
+  }
+  free(native_buffer);
+  
+  /* Box out param: error */
+  mrb_value error = (native_error == NULL ? mrb_nil_value() : mruby_giftwrap__GError(mrb, native_error));
+
+  /* Add out params to results */
+  mrb_ary_push(mrb, results, buffer);
+  mrb_ary_push(mrb, results, error);
+
+  return results;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_socket_receive_from */
+/* sha: 67545d47eb1a934a81659fa0473e59b9041bda4e99ba4ab9347ba93e58c0d29c */
+#if BIND_g_socket_receive_from_FUNCTION
+#define g_socket_receive_from_REQUIRED_ARGC 2
+#define g_socket_receive_from_OPTIONAL_ARGC 0
+/* g_socket_receive_from
+ *
+ * Parameters:
+ * - socket: GSocket *
+ * - address: GSocketAddress **
+ * - buffer: gchar *
+ * - size: gsize
+ * - cancellable: GCancellable *
+ * Return Type: gssize
+ */
+mrb_value
+mrb_GLib_g_socket_receive_from(mrb_state* mrb, mrb_value self) {
+  mrb_value results = mrb_ary_new(mrb);
+  mrb_value socket;
+  mrb_int native_size;
+  struct GError * native_error = NULL;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "oi", &socket, &native_size);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, socket, GSocket_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GSocket expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: socket */
+  GSocket * native_socket = (mrb_nil_p(socket) ? NULL : mruby_unbox__GSocket(socket));
+
+  /* Unbox param: cancellable */
+  void * native_cancellable = NULL; /* Unused parameter */
+
+  /* Invocation */
+  gchar * native_buffer = (gchar*)calloc(native_size, sizeof(gchar));
+  GSocketAddress * native_address;
+  gssize native_return_value = g_socket_receive_from(native_socket, &native_address, native_buffer, native_size, native_cancellable, &native_error);
+
+  /* Box the return value */
+  mrb_value return_value = mrb_fixnum_value(native_return_value);
+  mrb_ary_push(mrb, results, return_value);
+  
+  /* Box out param: address */
+  mrb_value address = mruby_giftwrap__GSocketAddress(mrb, native_address);
+  
+  /* Box out param: buffer */
+  mrb_value buffer = mrb_nil_value();
+  if (native_return_value > 0) {
+    buffer = mrb_str_new(mrb, native_buffer, native_return_value);
+  }
+  free(native_buffer);
+  
+  /* Box out param: error */
+  mrb_value error = (native_error == NULL ? mrb_nil_value() : mruby_giftwrap__GError(mrb, native_error));
+
+  /* Add out params to results */
+  mrb_ary_push(mrb, results, address);
+  mrb_ary_push(mrb, results, buffer);
+  mrb_ary_push(mrb, results, error);
+
+  return results;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_socket_receive_message */
+/* sha: 9e435cbfca15a3a82cfec98b16febf1ebb42d25d86f889a3c4a870918adb9624 */
+#if BIND_g_socket_receive_message_FUNCTION
+#define g_socket_receive_message_REQUIRED_ARGC 8
+#define g_socket_receive_message_OPTIONAL_ARGC 0
+/* g_socket_receive_message
+ *
+ * Parameters:
+ * - socket: GSocket *
+ * - address: GSocketAddress **
+ * - vectors: GInputVector *
+ * - num_vectors: gint
+ * - messages: GSocketControlMessage ***
+ * - num_messages: gint *
+ * - flags: gint *
+ * - cancellable: GCancellable *
+ * Return Type: gssize
+ */
+mrb_value
+mrb_GLib_g_socket_receive_message(mrb_state* mrb, mrb_value self) {
+  mrb_value results = mrb_ary_new(mrb);
+  mrb_value socket;
+  mrb_value address;
+  mrb_value vectors;
+  mrb_int native_num_vectors;
+  mrb_value messages;
+  mrb_value num_messages;
+  mrb_value flags;
+  mrb_value cancellable;
+  struct GError * native_error = NULL;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "oooioooo", &socket, &address, &vectors, &native_num_vectors, &messages, &num_messages, &flags, &cancellable);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, socket, GSocket_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GSocket expected");
+    return mrb_nil_value();
+  }
+  TODO_type_check_GSocketAddress_PTR_PTR(address);
+  TODO_type_check_GInputVector_PTR(vectors);
+  TODO_type_check_GSocketControlMessage_PTR_PTR_PTR(messages);
+  TODO_type_check_gint_PTR(num_messages);
+  TODO_type_check_gint_PTR(flags);
+
+  /* Unbox param: socket */
+  GSocket * native_socket = (mrb_nil_p(socket) ? NULL : mruby_unbox__GSocket(socket));
+
+  /* Unbox param: address */
+  GSocketAddress ** native_address = TODO_mruby_unbox_GSocketAddress_PTR_PTR(address);
+
+  /* Unbox param: vectors */
+  GInputVector * native_vectors = TODO_mruby_unbox_GInputVector_PTR(vectors);
+
+  /* Unbox param: messages */
+  GSocketControlMessage *** native_messages = TODO_mruby_unbox_GSocketControlMessage_PTR_PTR_PTR(messages);
+
+  /* Unbox param: num_messages */
+  gint * native_num_messages = TODO_mruby_unbox_gint_PTR(num_messages);
+
+  /* Unbox param: flags */
+  gint * native_flags = TODO_mruby_unbox_gint_PTR(flags);
+
+  /* Unbox param: cancellable */
+  void * native_cancellable = NULL; /* Unused parameter */
+
+  /* Invocation */
+  gssize native_return_value = g_socket_receive_message(native_socket, native_address, native_vectors, native_num_vectors, native_messages, native_num_messages, native_flags, native_cancellable, &native_error);
+
+  /* Box the return value */
+  mrb_value return_value = mrb_fixnum_value(native_return_value);
+  mrb_ary_push(mrb, results, return_value);
+  
+  /* Box out param: error */
+  mrb_value error = (native_error == NULL ? mrb_nil_value() : mruby_giftwrap__GError(mrb, native_error));
+
+  /* Add out params to results */
+  mrb_ary_push(mrb, results, error);
+
+  return results;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_socket_receive_with_blocking */
+/* sha: 8dbd0a7010babdbe81d71b156990b077cfdb64cace0998843b20ea7206fedf58 */
+#if BIND_g_socket_receive_with_blocking_FUNCTION
+#define g_socket_receive_with_blocking_REQUIRED_ARGC 3
+#define g_socket_receive_with_blocking_OPTIONAL_ARGC 0
+/* g_socket_receive_with_blocking
+ *
+ * Parameters:
+ * - socket: GSocket *
+ * - buffer: gchar *
+ * - size: gsize
+ * - blocking: gboolean
+ * - cancellable: GCancellable *
+ * Return Type: gssize
+ */
+mrb_value
+mrb_GLib_g_socket_receive_with_blocking(mrb_state* mrb, mrb_value self) {
+  mrb_value results = mrb_ary_new(mrb);
+  mrb_value socket;
+  mrb_int native_size;
+  mrb_bool native_blocking;
+  struct GError * native_error = NULL;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "oib", &socket, &native_size, &native_blocking);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, socket, GSocket_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GSocket expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: socket */
+  GSocket * native_socket = (mrb_nil_p(socket) ? NULL : mruby_unbox__GSocket(socket));
+
+  /* Unbox param: cancellable */
+  void * native_cancellable = NULL; /* Unused parameter */
+
+  /* Invocation */
+  gchar * native_buffer = (gchar*)calloc(native_size, sizeof(gchar));
+  gssize native_return_value = g_socket_receive_with_blocking(native_socket, native_buffer, native_size, native_blocking, native_cancellable, &native_error);
+
+  /* Box the return value */
+  mrb_value return_value = mrb_fixnum_value(native_return_value);
+  mrb_ary_push(mrb, results, return_value);
+  
+  /* Box out param: buffer */
+  mrb_value buffer = mrb_nil_value();
+  if (native_return_value > 0) {
+    buffer = mrb_str_new(mrb, native_buffer, native_return_value);
+  }
+  free(native_buffer);
+  
+  /* Box out param: error */
+  mrb_value error = (native_error == NULL ? mrb_nil_value() : mruby_giftwrap__GError(mrb, native_error));
+
+  /* Add out params to results */
+  mrb_ary_push(mrb, results, buffer);
+  mrb_ary_push(mrb, results, error);
+
+  return results;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_socket_send */
+/* sha: 1cd44bbe73e1a738201da6f9fe114c0f343667dc07098fe57de5c28949b78b02 */
+#if BIND_g_socket_send_FUNCTION
+#define g_socket_send_REQUIRED_ARGC 4
+#define g_socket_send_OPTIONAL_ARGC 0
+/* g_socket_send
+ *
+ * Parameters:
+ * - socket: GSocket *
+ * - buffer: const gchar *
+ * - size: gsize
+ * - cancellable: GCancellable *
+ * Return Type: gssize
+ */
+mrb_value
+mrb_GLib_g_socket_send(mrb_state* mrb, mrb_value self) {
+  mrb_value results = mrb_ary_new(mrb);
+  mrb_value socket;
+  char * native_buffer = NULL;
+  mrb_int native_size;
+  mrb_value cancellable;
+  struct GError * native_error = NULL;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "ozio", &socket, &native_buffer, &native_size, &cancellable);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, socket, GSocket_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GSocket expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: socket */
+  GSocket * native_socket = (mrb_nil_p(socket) ? NULL : mruby_unbox__GSocket(socket));
+
+  /* Unbox param: cancellable */
+  void * native_cancellable = NULL; /* Unused parameter */
+
+  /* Invocation */
+  gssize native_return_value = g_socket_send(native_socket, native_buffer, native_size, native_cancellable, &native_error);
+
+  /* Box the return value */
+  mrb_value return_value = mrb_fixnum_value(native_return_value);
+  mrb_ary_push(mrb, results, return_value);
+  
+  /* Box out param: error */
+  mrb_value error = (native_error == NULL ? mrb_nil_value() : mruby_giftwrap__GError(mrb, native_error));
+
+  /* Add out params to results */
+  mrb_ary_push(mrb, results, error);
+
+  return results;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_socket_send_message */
+/* sha: 545309904e0cd6405ca84adb58044dbca6b7249df7f45df7ba26fa49938d710e */
+#if BIND_g_socket_send_message_FUNCTION
+#define g_socket_send_message_REQUIRED_ARGC 8
+#define g_socket_send_message_OPTIONAL_ARGC 0
+/* g_socket_send_message
+ *
+ * Parameters:
+ * - socket: GSocket *
+ * - address: GSocketAddress *
+ * - vectors: GOutputVector *
+ * - num_vectors: gint
+ * - messages: GSocketControlMessage **
+ * - num_messages: gint
+ * - flags: gint
+ * - cancellable: GCancellable *
+ * Return Type: gssize
+ */
+mrb_value
+mrb_GLib_g_socket_send_message(mrb_state* mrb, mrb_value self) {
+  mrb_value results = mrb_ary_new(mrb);
+  mrb_value socket;
+  mrb_value address;
+  mrb_value vectors;
+  mrb_int native_num_vectors;
+  mrb_value messages;
+  mrb_int native_num_messages;
+  mrb_int native_flags;
+  mrb_value cancellable;
+  struct GError * native_error = NULL;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "oooioiio", &socket, &address, &vectors, &native_num_vectors, &messages, &native_num_messages, &native_flags, &cancellable);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, socket, GSocket_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GSocket expected");
+    return mrb_nil_value();
+  }
+  if (!mrb_obj_is_kind_of(mrb, address, GSocketAddress_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GSocketAddress expected");
+    return mrb_nil_value();
+  }
+  TODO_type_check_GOutputVector_PTR(vectors);
+  TODO_type_check_GSocketControlMessage_PTR_PTR(messages);
+
+  /* Unbox param: socket */
+  GSocket * native_socket = (mrb_nil_p(socket) ? NULL : mruby_unbox__GSocket(socket));
+
+  /* Unbox param: address */
+  GSocketAddress * native_address = (mrb_nil_p(address) ? NULL : mruby_unbox__GSocketAddress(address));
+
+  /* Unbox param: vectors */
+  GOutputVector * native_vectors = TODO_mruby_unbox_GOutputVector_PTR(vectors);
+
+  /* Unbox param: messages */
+  GSocketControlMessage ** native_messages = TODO_mruby_unbox_GSocketControlMessage_PTR_PTR(messages);
+
+  /* Unbox param: cancellable */
+  void * native_cancellable = NULL; /* Unused parameter */
+
+  /* Invocation */
+  gssize native_return_value = g_socket_send_message(native_socket, native_address, native_vectors, native_num_vectors, native_messages, native_num_messages, native_flags, native_cancellable, &native_error);
+
+  /* Box the return value */
+  mrb_value return_value = mrb_fixnum_value(native_return_value);
+  mrb_ary_push(mrb, results, return_value);
+  
+  /* Box out param: error */
+  mrb_value error = (native_error == NULL ? mrb_nil_value() : mruby_giftwrap__GError(mrb, native_error));
+
+  /* Add out params to results */
+  mrb_ary_push(mrb, results, error);
+
+  return results;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_socket_send_messages */
+/* sha: 615b74dc27dcde6cf221a48db515450b2befcb0a249c0a8958e6702a646f5679 */
+#if BIND_g_socket_send_messages_FUNCTION
+#define g_socket_send_messages_REQUIRED_ARGC 5
+#define g_socket_send_messages_OPTIONAL_ARGC 0
+/* g_socket_send_messages
+ *
+ * Parameters:
+ * - socket: GSocket *
+ * - messages: GOutputMessage *
+ * - num_messages: guint
+ * - flags: gint
+ * - cancellable: GCancellable *
+ * Return Type: gint
+ */
+mrb_value
+mrb_GLib_g_socket_send_messages(mrb_state* mrb, mrb_value self) {
+  mrb_value results = mrb_ary_new(mrb);
+  mrb_value socket;
+  mrb_value messages;
+  mrb_int native_num_messages;
+  mrb_int native_flags;
+  mrb_value cancellable;
+  struct GError * native_error = NULL;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "ooiio", &socket, &messages, &native_num_messages, &native_flags, &cancellable);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, socket, GSocket_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GSocket expected");
+    return mrb_nil_value();
+  }
+  TODO_type_check_GOutputMessage_PTR(messages);
+
+  /* Unbox param: socket */
+  GSocket * native_socket = (mrb_nil_p(socket) ? NULL : mruby_unbox__GSocket(socket));
+
+  /* Unbox param: messages */
+  GOutputMessage * native_messages = TODO_mruby_unbox_GOutputMessage_PTR(messages);
+
+  /* Unbox param: cancellable */
+  void * native_cancellable = NULL; /* Unused parameter */
+
+  /* Invocation */
+  gint native_return_value = g_socket_send_messages(native_socket, native_messages, native_num_messages, native_flags, native_cancellable, &native_error);
+
+  /* Box the return value */
+  mrb_value return_value = mrb_fixnum_value(native_return_value);
+  mrb_ary_push(mrb, results, return_value);
+  
+  /* Box out param: error */
+  mrb_value error = (native_error == NULL ? mrb_nil_value() : mruby_giftwrap__GError(mrb, native_error));
+
+  /* Add out params to results */
+  mrb_ary_push(mrb, results, error);
+
+  return results;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_socket_send_to */
+/* sha: 45d5d8ac07558218e8c281be87fc2a35ff03b2c32b1025274636b1dc4374b4e0 */
+#if BIND_g_socket_send_to_FUNCTION
+#define g_socket_send_to_REQUIRED_ARGC 5
+#define g_socket_send_to_OPTIONAL_ARGC 0
+/* g_socket_send_to
+ *
+ * Parameters:
+ * - socket: GSocket *
+ * - address: GSocketAddress *
+ * - buffer: const gchar *
+ * - size: gsize
+ * - cancellable: GCancellable *
+ * Return Type: gssize
+ */
+mrb_value
+mrb_GLib_g_socket_send_to(mrb_state* mrb, mrb_value self) {
+  mrb_value results = mrb_ary_new(mrb);
+  mrb_value socket;
+  mrb_value address;
+  char * native_buffer = NULL;
+  mrb_int native_size;
+  mrb_value cancellable;
+  struct GError * native_error = NULL;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "oozio", &socket, &address, &native_buffer, &native_size, &cancellable);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, socket, GSocket_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GSocket expected");
+    return mrb_nil_value();
+  }
+  if (!mrb_obj_is_kind_of(mrb, address, GSocketAddress_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GSocketAddress expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: socket */
+  GSocket * native_socket = (mrb_nil_p(socket) ? NULL : mruby_unbox__GSocket(socket));
+
+  /* Unbox param: address */
+  GSocketAddress * native_address = (mrb_nil_p(address) ? NULL : mruby_unbox__GSocketAddress(address));
+
+  /* Unbox param: cancellable */
+  void * native_cancellable = NULL; /* Unused parameter */
+
+  /* Invocation */
+  gssize native_return_value = g_socket_send_to(native_socket, native_address, native_buffer, native_size, native_cancellable, &native_error);
+
+  /* Box the return value */
+  mrb_value return_value = mrb_fixnum_value(native_return_value);
+  mrb_ary_push(mrb, results, return_value);
+  
+  /* Box out param: error */
+  mrb_value error = (native_error == NULL ? mrb_nil_value() : mruby_giftwrap__GError(mrb, native_error));
+
+  /* Add out params to results */
+  mrb_ary_push(mrb, results, error);
+
+  return results;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_socket_send_with_blocking */
+/* sha: 51119a8203d644aec1c2e227ba7b9f7af699b43f510212ae6b02f43a7bab6926 */
+#if BIND_g_socket_send_with_blocking_FUNCTION
+#define g_socket_send_with_blocking_REQUIRED_ARGC 5
+#define g_socket_send_with_blocking_OPTIONAL_ARGC 0
+/* g_socket_send_with_blocking
+ *
+ * Parameters:
+ * - socket: GSocket *
+ * - buffer: const gchar *
+ * - size: gsize
+ * - blocking: gboolean
+ * - cancellable: GCancellable *
+ * Return Type: gssize
+ */
+mrb_value
+mrb_GLib_g_socket_send_with_blocking(mrb_state* mrb, mrb_value self) {
+  mrb_value results = mrb_ary_new(mrb);
+  mrb_value socket;
+  char * native_buffer = NULL;
+  mrb_int native_size;
+  mrb_bool native_blocking;
+  mrb_value cancellable;
+  struct GError * native_error = NULL;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "ozibo", &socket, &native_buffer, &native_size, &native_blocking, &cancellable);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, socket, GSocket_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GSocket expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: socket */
+  GSocket * native_socket = (mrb_nil_p(socket) ? NULL : mruby_unbox__GSocket(socket));
+
+  /* Unbox param: cancellable */
+  void * native_cancellable = NULL; /* Unused parameter */
+
+  /* Invocation */
+  gssize native_return_value = g_socket_send_with_blocking(native_socket, native_buffer, native_size, native_blocking, native_cancellable, &native_error);
+
+  /* Box the return value */
+  mrb_value return_value = mrb_fixnum_value(native_return_value);
+  mrb_ary_push(mrb, results, return_value);
+  
+  /* Box out param: error */
+  mrb_value error = (native_error == NULL ? mrb_nil_value() : mruby_giftwrap__GError(mrb, native_error));
+
+  /* Add out params to results */
+  mrb_ary_push(mrb, results, error);
+
+  return results;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_socket_set_blocking */
+/* sha: 49f98d2fe1f56c2136a59883357d38c7c1a3c8b263135689ebe433743e6d4cf0 */
+#if BIND_g_socket_set_blocking_FUNCTION
+#define g_socket_set_blocking_REQUIRED_ARGC 2
+#define g_socket_set_blocking_OPTIONAL_ARGC 0
+/* g_socket_set_blocking
+ *
+ * Parameters:
+ * - socket: GSocket *
+ * - blocking: gboolean
+ * Return Type: void
+ */
+mrb_value
+mrb_GLib_g_socket_set_blocking(mrb_state* mrb, mrb_value self) {
+  mrb_value socket;
+  mrb_bool native_blocking;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "ob", &socket, &native_blocking);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, socket, GSocket_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GSocket expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: socket */
+  GSocket * native_socket = (mrb_nil_p(socket) ? NULL : mruby_unbox__GSocket(socket));
+
+  /* Invocation */
+  g_socket_set_blocking(native_socket, native_blocking);
+
+  return mrb_nil_value();
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_socket_set_broadcast */
+/* sha: 560ec7a3b9b65f064743d195cbf9fffc3e906b84f162ee1afa798808ff5d156b */
+#if BIND_g_socket_set_broadcast_FUNCTION
+#define g_socket_set_broadcast_REQUIRED_ARGC 2
+#define g_socket_set_broadcast_OPTIONAL_ARGC 0
+/* g_socket_set_broadcast
+ *
+ * Parameters:
+ * - socket: GSocket *
+ * - broadcast: gboolean
+ * Return Type: void
+ */
+mrb_value
+mrb_GLib_g_socket_set_broadcast(mrb_state* mrb, mrb_value self) {
+  mrb_value socket;
+  mrb_bool native_broadcast;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "ob", &socket, &native_broadcast);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, socket, GSocket_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GSocket expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: socket */
+  GSocket * native_socket = (mrb_nil_p(socket) ? NULL : mruby_unbox__GSocket(socket));
+
+  /* Invocation */
+  g_socket_set_broadcast(native_socket, native_broadcast);
+
+  return mrb_nil_value();
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_socket_set_keepalive */
+/* sha: ba62cbe5101bdaabe9687f2373d8fa9908cc6b67d1e07a05510eead88d045ff0 */
+#if BIND_g_socket_set_keepalive_FUNCTION
+#define g_socket_set_keepalive_REQUIRED_ARGC 2
+#define g_socket_set_keepalive_OPTIONAL_ARGC 0
+/* g_socket_set_keepalive
+ *
+ * Parameters:
+ * - socket: GSocket *
+ * - keepalive: gboolean
+ * Return Type: void
+ */
+mrb_value
+mrb_GLib_g_socket_set_keepalive(mrb_state* mrb, mrb_value self) {
+  mrb_value socket;
+  mrb_bool native_keepalive;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "ob", &socket, &native_keepalive);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, socket, GSocket_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GSocket expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: socket */
+  GSocket * native_socket = (mrb_nil_p(socket) ? NULL : mruby_unbox__GSocket(socket));
+
+  /* Invocation */
+  g_socket_set_keepalive(native_socket, native_keepalive);
+
+  return mrb_nil_value();
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_socket_set_listen_backlog */
+/* sha: cf9a7b55661164c778c8c409f37591b2b4dd4c07d55158753ba86a13f6117a7d */
+#if BIND_g_socket_set_listen_backlog_FUNCTION
+#define g_socket_set_listen_backlog_REQUIRED_ARGC 2
+#define g_socket_set_listen_backlog_OPTIONAL_ARGC 0
+/* g_socket_set_listen_backlog
+ *
+ * Parameters:
+ * - socket: GSocket *
+ * - backlog: gint
+ * Return Type: void
+ */
+mrb_value
+mrb_GLib_g_socket_set_listen_backlog(mrb_state* mrb, mrb_value self) {
+  mrb_value socket;
+  mrb_int native_backlog;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "oi", &socket, &native_backlog);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, socket, GSocket_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GSocket expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: socket */
+  GSocket * native_socket = (mrb_nil_p(socket) ? NULL : mruby_unbox__GSocket(socket));
+
+  /* Invocation */
+  g_socket_set_listen_backlog(native_socket, native_backlog);
+
+  return mrb_nil_value();
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_socket_set_multicast_loopback */
+/* sha: 71336c310f952036c079f19a7ac23530047298d7385a26d2c44f0495b185e37b */
+#if BIND_g_socket_set_multicast_loopback_FUNCTION
+#define g_socket_set_multicast_loopback_REQUIRED_ARGC 2
+#define g_socket_set_multicast_loopback_OPTIONAL_ARGC 0
+/* g_socket_set_multicast_loopback
+ *
+ * Parameters:
+ * - socket: GSocket *
+ * - loopback: gboolean
+ * Return Type: void
+ */
+mrb_value
+mrb_GLib_g_socket_set_multicast_loopback(mrb_state* mrb, mrb_value self) {
+  mrb_value socket;
+  mrb_bool native_loopback;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "ob", &socket, &native_loopback);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, socket, GSocket_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GSocket expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: socket */
+  GSocket * native_socket = (mrb_nil_p(socket) ? NULL : mruby_unbox__GSocket(socket));
+
+  /* Invocation */
+  g_socket_set_multicast_loopback(native_socket, native_loopback);
+
+  return mrb_nil_value();
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_socket_set_multicast_ttl */
+/* sha: 67a93e61ff3c3a060e1cbc2d22251c886500408813975b7746c19103ee4ed70b */
+#if BIND_g_socket_set_multicast_ttl_FUNCTION
+#define g_socket_set_multicast_ttl_REQUIRED_ARGC 2
+#define g_socket_set_multicast_ttl_OPTIONAL_ARGC 0
+/* g_socket_set_multicast_ttl
+ *
+ * Parameters:
+ * - socket: GSocket *
+ * - ttl: guint
+ * Return Type: void
+ */
+mrb_value
+mrb_GLib_g_socket_set_multicast_ttl(mrb_state* mrb, mrb_value self) {
+  mrb_value socket;
+  mrb_int native_ttl;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "oi", &socket, &native_ttl);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, socket, GSocket_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GSocket expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: socket */
+  GSocket * native_socket = (mrb_nil_p(socket) ? NULL : mruby_unbox__GSocket(socket));
+
+  /* Invocation */
+  g_socket_set_multicast_ttl(native_socket, native_ttl);
+
+  return mrb_nil_value();
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_socket_set_option */
+/* sha: 47883312e3969f60f3679b5b80def3322c462deebc3467c47a17ec155cc5ca2b */
+#if BIND_g_socket_set_option_FUNCTION
+#define g_socket_set_option_REQUIRED_ARGC 4
+#define g_socket_set_option_OPTIONAL_ARGC 0
+/* g_socket_set_option
+ *
+ * Parameters:
+ * - socket: GSocket *
+ * - level: gint
+ * - optname: gint
+ * - value: gint
+ * Return Type: gboolean
+ */
+mrb_value
+mrb_GLib_g_socket_set_option(mrb_state* mrb, mrb_value self) {
+  mrb_value results = mrb_ary_new(mrb);
+  mrb_value socket;
+  mrb_int native_level;
+  mrb_int native_optname;
+  mrb_int native_value;
+  struct GError * native_error = NULL;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "oiii", &socket, &native_level, &native_optname, &native_value);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, socket, GSocket_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GSocket expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: socket */
+  GSocket * native_socket = (mrb_nil_p(socket) ? NULL : mruby_unbox__GSocket(socket));
+
+  /* Invocation */
+  gboolean native_return_value = g_socket_set_option(native_socket, native_level, native_optname, native_value, &native_error);
+
+  /* Box the return value */
+  mrb_value return_value = mrb_bool_value(native_return_value);
+  mrb_ary_push(mrb, results, return_value);
+  
+  /* Box out param: error */
+  mrb_value error = (native_error == NULL ? mrb_nil_value() : mruby_giftwrap__GError(mrb, native_error));
+
+  /* Add out params to results */
+  mrb_ary_push(mrb, results, error);
+
+  return results;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_socket_set_timeout */
+/* sha: a2d6653cc4cf041dda388184563fa602b14702ec060d12e4bec24e78096de0d4 */
+#if BIND_g_socket_set_timeout_FUNCTION
+#define g_socket_set_timeout_REQUIRED_ARGC 2
+#define g_socket_set_timeout_OPTIONAL_ARGC 0
+/* g_socket_set_timeout
+ *
+ * Parameters:
+ * - socket: GSocket *
+ * - timeout: guint
+ * Return Type: void
+ */
+mrb_value
+mrb_GLib_g_socket_set_timeout(mrb_state* mrb, mrb_value self) {
+  mrb_value socket;
+  mrb_int native_timeout;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "oi", &socket, &native_timeout);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, socket, GSocket_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GSocket expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: socket */
+  GSocket * native_socket = (mrb_nil_p(socket) ? NULL : mruby_unbox__GSocket(socket));
+
+  /* Invocation */
+  g_socket_set_timeout(native_socket, native_timeout);
+
+  return mrb_nil_value();
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_socket_set_ttl */
+/* sha: 02ed64c9c1cbe68add7304d891b2500314e21e170106903705998ded7c7ade23 */
+#if BIND_g_socket_set_ttl_FUNCTION
+#define g_socket_set_ttl_REQUIRED_ARGC 2
+#define g_socket_set_ttl_OPTIONAL_ARGC 0
+/* g_socket_set_ttl
+ *
+ * Parameters:
+ * - socket: GSocket *
+ * - ttl: guint
+ * Return Type: void
+ */
+mrb_value
+mrb_GLib_g_socket_set_ttl(mrb_state* mrb, mrb_value self) {
+  mrb_value socket;
+  mrb_int native_ttl;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "oi", &socket, &native_ttl);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, socket, GSocket_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GSocket expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: socket */
+  GSocket * native_socket = (mrb_nil_p(socket) ? NULL : mruby_unbox__GSocket(socket));
+
+  /* Invocation */
+  g_socket_set_ttl(native_socket, native_ttl);
+
+  return mrb_nil_value();
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_socket_shutdown */
+/* sha: 314c2fe697e97195a5fe8d31b4c6ffb0e687b9140d20cc27008d887d354954bd */
+#if BIND_g_socket_shutdown_FUNCTION
+#define g_socket_shutdown_REQUIRED_ARGC 3
+#define g_socket_shutdown_OPTIONAL_ARGC 0
+/* g_socket_shutdown
+ *
+ * Parameters:
+ * - socket: GSocket *
+ * - shutdown_read: gboolean
+ * - shutdown_write: gboolean
+ * Return Type: gboolean
+ */
+mrb_value
+mrb_GLib_g_socket_shutdown(mrb_state* mrb, mrb_value self) {
+  mrb_value results = mrb_ary_new(mrb);
+  mrb_value socket;
+  mrb_bool native_shutdown_read;
+  mrb_bool native_shutdown_write;
+  struct GError * native_error = NULL;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "obb", &socket, &native_shutdown_read, &native_shutdown_write);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, socket, GSocket_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GSocket expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: socket */
+  GSocket * native_socket = (mrb_nil_p(socket) ? NULL : mruby_unbox__GSocket(socket));
+
+  /* Invocation */
+  gboolean native_return_value = g_socket_shutdown(native_socket, native_shutdown_read, native_shutdown_write, &native_error);
+
+  /* Box the return value */
+  mrb_value return_value = mrb_bool_value(native_return_value);
+  mrb_ary_push(mrb, results, return_value);
+  
+  /* Box out param: error */
+  mrb_value error = (native_error == NULL ? mrb_nil_value() : mruby_giftwrap__GError(mrb, native_error));
+
+  /* Add out params to results */
+  mrb_ary_push(mrb, results, error);
+
+  return results;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_socket_speaks_ipv4 */
+/* sha: c61224fffaa6f9546c9f49290052865d5b8afb792c1336c0632242d8c564bd47 */
+#if BIND_g_socket_speaks_ipv4_FUNCTION
+#define g_socket_speaks_ipv4_REQUIRED_ARGC 1
+#define g_socket_speaks_ipv4_OPTIONAL_ARGC 0
+/* g_socket_speaks_ipv4
+ *
+ * Parameters:
+ * - socket: GSocket *
+ * Return Type: gboolean
+ */
+mrb_value
+mrb_GLib_g_socket_speaks_ipv4(mrb_state* mrb, mrb_value self) {
+  mrb_value socket;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "o", &socket);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, socket, GSocket_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GSocket expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: socket */
+  GSocket * native_socket = (mrb_nil_p(socket) ? NULL : mruby_unbox__GSocket(socket));
+
+  /* Invocation */
+  gboolean native_return_value = g_socket_speaks_ipv4(native_socket);
+
+  /* Box the return value */
+  mrb_value return_value = mrb_bool_value(native_return_value);
   
   return return_value;
 }
@@ -34459,6 +43241,210 @@ mrb_GLib_g_spaced_primes_closest(mrb_state* mrb, mrb_value self) {
 #endif
 /* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: g_spawn_async */
+/* sha: 483bc11c0534dc467fca3e7b19fc0e3d2f3c4267f522b51f7744950cda6fafc8 */
+#if BIND_g_spawn_async_FUNCTION
+#define g_spawn_async_REQUIRED_ARGC 6
+#define g_spawn_async_OPTIONAL_ARGC 0
+/* g_spawn_async
+ *
+ * Parameters:
+ * - working_directory: const gchar *
+ * - argv: gchar **
+ * - envp: gchar **
+ * - flags: GSpawnFlags
+ * - child_setup: GSpawnChildSetupFunc
+ * - user_data: gpointer
+ * Return Type: gboolean
+ */
+mrb_value
+mrb_GLib_g_spawn_async(mrb_state* mrb, mrb_value self) {
+  mrb_value results = mrb_ary_new(mrb);
+  char * native_working_directory = NULL;
+  mrb_value argv;
+  mrb_value envp;
+  mrb_int native_flags;
+  mrb_value child_setup;
+  mrb_value user_data;
+  int native_child_pid;
+  struct GError * native_error = NULL;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "zA!A!ioo", &native_working_directory, &argv, &envp, &native_flags, &child_setup, &user_data);
+
+  /* Unbox param: argv */
+  char ** native_argv = NULL;
+  do {
+    if (mrb_nil_p(argv)) {
+      native_argv = NULL;
+    } else {
+      int len = mrb_ary_len(mrb, argv);
+      native_argv = (char**)calloc((len + 1), sizeof(char*));
+      for (int i = 0; i < len; i++) {
+        mrb_value str = mrb_ary_ref(mrb, argv, i);
+        native_argv[i] = mrb_string_value_cstr(mrb, &str);
+      }
+      native_argv[len] = NULL;
+    }
+  } while (0);
+
+  /* Unbox param: envp */
+  char ** native_envp = NULL;
+  do {
+    if (mrb_nil_p(envp)) {
+      native_envp = NULL;
+    } else {
+      int len = mrb_ary_len(mrb, envp);
+      native_envp = (char**)calloc((len + 1), sizeof(char*));
+      for (int i = 0; i < len; i++) {
+        mrb_value str = mrb_ary_ref(mrb, envp, i);
+        native_envp[i] = mrb_string_value_cstr(mrb, &str);
+      }
+      native_envp[len] = NULL;
+    }
+  } while (0);
+
+  /* Unbox param: child_setup */
+  void * native_child_setup = NULL; /* Unused parameter */
+
+  /* Unbox param: user_data */
+  void * native_user_data = NULL; /* Unused parameter */
+
+  /* Invocation */
+  gboolean native_return_value = g_spawn_async(native_working_directory, native_argv, native_envp, native_flags, native_child_setup, native_user_data, &native_child_pid, &native_error);
+
+  /* Box the return value */
+  mrb_value return_value = mrb_bool_value(native_return_value);
+  mrb_ary_push(mrb, results, return_value);
+  
+  /* Box out param: child_pid */
+  mrb_value child_pid = mrb_fixnum_value(native_child_pid);
+  /* Box out param: error */
+  mrb_value error = (native_error == NULL ? mrb_nil_value() : mruby_giftwrap__GError(mrb, native_error));
+
+  /* Add out params to results */
+  mrb_ary_push(mrb, results, child_pid);
+  mrb_ary_push(mrb, results, error);
+
+  /* Clean in param: argv */
+  if (native_argv != NULL) free(native_argv);
+
+  /* Clean in param: envp */
+  if (native_envp != NULL) free(native_envp);
+
+  return results;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_spawn_async_with_pipes */
+/* sha: 826fd0ff2d69c24fa5138ddf2e65fef9649b0deafccc0d4c52b5983d9928f692 */
+#if BIND_g_spawn_async_with_pipes_FUNCTION
+#define g_spawn_async_with_pipes_REQUIRED_ARGC 6
+#define g_spawn_async_with_pipes_OPTIONAL_ARGC 0
+/* g_spawn_async_with_pipes
+ *
+ * Parameters:
+ * - working_directory: const gchar *
+ * - argv: gchar **
+ * - envp: gchar **
+ * - flags: GSpawnFlags
+ * - child_setup: GSpawnChildSetupFunc
+ * - user_data: gpointer
+ * Return Type: gboolean
+ */
+mrb_value
+mrb_GLib_g_spawn_async_with_pipes(mrb_state* mrb, mrb_value self) {
+  mrb_value results = mrb_ary_new(mrb);
+  char * native_working_directory = NULL;
+  mrb_value argv;
+  mrb_value envp;
+  mrb_int native_flags;
+  mrb_value child_setup;
+  mrb_value user_data;
+  int native_child_pid;
+  int native_standard_input;
+  int native_standard_output;
+  int native_standard_error;
+  struct GError * native_error = NULL;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "zA!A!ioo", &native_working_directory, &argv, &envp, &native_flags, &child_setup, &user_data);
+
+  /* Unbox param: argv */
+  char ** native_argv = NULL;
+  do {
+    if (mrb_nil_p(argv)) {
+      native_argv = NULL;
+    } else {
+      int len = mrb_ary_len(mrb, argv);
+      native_argv = (char**)calloc((len + 1), sizeof(char*));
+      for (int i = 0; i < len; i++) {
+        mrb_value str = mrb_ary_ref(mrb, argv, i);
+        native_argv[i] = mrb_string_value_cstr(mrb, &str);
+      }
+      native_argv[len] = NULL;
+    }
+  } while (0);
+
+  /* Unbox param: envp */
+  char ** native_envp = NULL;
+  do {
+    if (mrb_nil_p(envp)) {
+      native_envp = NULL;
+    } else {
+      int len = mrb_ary_len(mrb, envp);
+      native_envp = (char**)calloc((len + 1), sizeof(char*));
+      for (int i = 0; i < len; i++) {
+        mrb_value str = mrb_ary_ref(mrb, envp, i);
+        native_envp[i] = mrb_string_value_cstr(mrb, &str);
+      }
+      native_envp[len] = NULL;
+    }
+  } while (0);
+
+  /* Unbox param: child_setup */
+  void * native_child_setup = NULL; /* Unused parameter */
+
+  /* Unbox param: user_data */
+  void * native_user_data = NULL; /* Unused parameter */
+
+  /* Invocation */
+  gboolean native_return_value = g_spawn_async_with_pipes(native_working_directory, native_argv, native_envp, native_flags, native_child_setup, native_user_data, &native_child_pid, &native_standard_input, &native_standard_output, &native_standard_error, &native_error);
+
+  /* Box the return value */
+  mrb_value return_value = mrb_bool_value(native_return_value);
+  mrb_ary_push(mrb, results, return_value);
+  
+  /* Box out param: child_pid */
+  mrb_value child_pid = mrb_fixnum_value(native_child_pid);
+  /* Box out param: standard_input */
+  mrb_value standard_input = mrb_fixnum_value(native_standard_input);
+  /* Box out param: standard_output */
+  mrb_value standard_output = mrb_fixnum_value(native_standard_output);
+  /* Box out param: standard_error */
+  mrb_value standard_error = mrb_fixnum_value(native_standard_error);
+  /* Box out param: error */
+  mrb_value error = (native_error == NULL ? mrb_nil_value() : mruby_giftwrap__GError(mrb, native_error));
+
+  /* Add out params to results */
+  mrb_ary_push(mrb, results, child_pid);
+  mrb_ary_push(mrb, results, standard_input);
+  mrb_ary_push(mrb, results, standard_output);
+  mrb_ary_push(mrb, results, standard_error);
+  mrb_ary_push(mrb, results, error);
+
+  /* Clean in param: argv */
+  if (native_argv != NULL) free(native_argv);
+
+  /* Clean in param: envp */
+  if (native_envp != NULL) free(native_envp);
+
+  return results;
+}
+#endif
+/* MRUBY_BINDING_END */
+
 /* MRUBY_BINDING: g_spawn_check_exit_status */
 /* sha: ef0cefdc855b3e51c3b0743e1671ba49c7905a8f29c480cd5c926db6319a9b67 */
 #if BIND_g_spawn_check_exit_status_FUNCTION
@@ -34523,11 +43509,49 @@ mrb_GLib_g_spawn_close_pid(mrb_state* mrb, mrb_value self) {
 #endif
 /* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: g_spawn_command_line_async */
+/* sha: 2b8953b70f8ee73e6cbfd80d09d85577bc07cca547dff3181ab277945b064d8f */
+#if BIND_g_spawn_command_line_async_FUNCTION
+#define g_spawn_command_line_async_REQUIRED_ARGC 1
+#define g_spawn_command_line_async_OPTIONAL_ARGC 0
+/* g_spawn_command_line_async
+ *
+ * Parameters:
+ * - command_line: const gchar *
+ * Return Type: gboolean
+ */
+mrb_value
+mrb_GLib_g_spawn_command_line_async(mrb_state* mrb, mrb_value self) {
+  mrb_value results = mrb_ary_new(mrb);
+  char * native_command_line = NULL;
+  struct GError * native_error = NULL;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "z", &native_command_line);
+
+  /* Invocation */
+  gboolean native_return_value = g_spawn_command_line_async(native_command_line, &native_error);
+
+  /* Box the return value */
+  mrb_value return_value = mrb_bool_value(native_return_value);
+  mrb_ary_push(mrb, results, return_value);
+  
+  /* Box out param: error */
+  mrb_value error = (native_error == NULL ? mrb_nil_value() : mruby_giftwrap__GError(mrb, native_error));
+
+  /* Add out params to results */
+  mrb_ary_push(mrb, results, error);
+
+  return results;
+}
+#endif
+/* MRUBY_BINDING_END */
+
 /* MRUBY_BINDING: g_spawn_command_line_sync */
 /* sha: 79e833db687d994d4576bbbbe94f5a32417686a885be1774c44019e8c87abd8f */
 #if BIND_g_spawn_command_line_sync_FUNCTION
 #define g_spawn_command_line_sync_REQUIRED_ARGC 1
-#define g_spawn_command_line_sync_OPTIONAL_ARGC 0
+#define g_spawn_command_line_sync_OPTIONAL_ARGC 2
 /* g_spawn_command_line_sync
  *
  * Parameters:
@@ -34542,25 +43566,41 @@ mrb_GLib_g_spawn_command_line_sync(mrb_state* mrb, mrb_value self) {
   char * native_standard_error = NULL;
   int native_exit_status;
   struct GError * native_error = NULL;
+  mrb_bool capture_out = FALSE;
+  mrb_bool capture_err = FALSE;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "z", &native_command_line);
+  mrb_get_args(mrb, "z|bb", &native_command_line, &capture_out, &capture_err);
 
   /* Invocation */
-  gboolean native_return_value = g_spawn_command_line_sync(native_command_line, &native_standard_output, &native_standard_error, &native_exit_status, &native_error);
+  gboolean native_return_value = g_spawn_command_line_sync(
+    native_command_line,
+    (capture_out ? &native_standard_output : NULL),
+    (capture_err ? &native_standard_error : NULL),
+    &native_exit_status,
+    &native_error
+  );
 
   /* Box the return value */
   mrb_value return_value = mrb_bool_value(native_return_value);
   mrb_ary_push(mrb, results, return_value);
   
   /* Box out param: standard_output */
-  mrb_value standard_output = mrb_str_new_cstr(mrb, native_standard_output);
-  /* Clean out param: standard_output */
-  free(native_standard_output);
+  mrb_value standard_output = mrb_nil_value();
+  if (capture_out) {
+    standard_output = mrb_str_new_cstr(mrb, native_standard_output);
+    /* Clean out param: standard_output */
+    g_free(native_standard_output);
+  }
+  
   /* Box out param: standard_error */
-  mrb_value standard_error = mrb_str_new_cstr(mrb, native_standard_error);
-  /* Clean out param: standard_error */
-  free(native_standard_error);
+  mrb_value standard_error = mrb_nil_value();
+  if (capture_err) {
+    standard_error = mrb_str_new_cstr(mrb, native_standard_error);
+    /* Clean out param: standard_error */
+    g_free(native_standard_error);
+  }
+  
   /* Box out param: exit_status */
   mrb_value exit_status = mrb_fixnum_value(native_exit_status);
   /* Box out param: error */
@@ -34626,8 +43666,8 @@ mrb_GLib_g_spawn_exit_error_quark(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING: g_spawn_sync */
 /* sha: 47a9e7ff1eaa2c0f7c0c4979d93be334eb8694f8d6f80b01712667c6779b906d */
 #if BIND_g_spawn_sync_FUNCTION
-#define g_spawn_sync_REQUIRED_ARGC 6
-#define g_spawn_sync_OPTIONAL_ARGC 0
+#define g_spawn_sync_REQUIRED_ARGC 4
+#define g_spawn_sync_OPTIONAL_ARGC 2
 /* g_spawn_sync
  *
  * Parameters:
@@ -34652,9 +43692,11 @@ mrb_GLib_g_spawn_sync(mrb_state* mrb, mrb_value self) {
   char * native_standard_error = NULL;
   int native_exit_status;
   struct GError * native_error = NULL;
+  mrb_bool capture_out = FALSE;
+  mrb_bool capture_err = FALSE;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "zA!A!ioo", &native_working_directory, &argv, &envp, &native_flags, &child_setup, &user_data);
+  mrb_get_args(mrb, "z!A!A!i|bb", &native_working_directory, &argv, &envp, &native_flags, &capture_out, &capture_err);
 
   /* Unbox param: argv */
   char ** native_argv = NULL;
@@ -34695,20 +43737,40 @@ mrb_GLib_g_spawn_sync(mrb_state* mrb, mrb_value self) {
   void * native_user_data = NULL; /* Unused parameter */
 
   /* Invocation */
-  gboolean native_return_value = g_spawn_sync(native_working_directory, native_argv, native_envp, native_flags, native_child_setup, native_user_data, &native_standard_output, &native_standard_error, &native_exit_status, &native_error);
+  gboolean native_return_value = g_spawn_sync(
+    native_working_directory,
+    native_argv,
+    native_envp,
+    (native_flags 
+      | (capture_out ? 0 : G_SPAWN_STDOUT_TO_DEV_NULL)
+      | (capture_err ? 0 : G_SPAWN_STDERR_TO_DEV_NULL)
+    ),
+    native_child_setup,
+    native_user_data,
+    (capture_out ? &native_standard_output : NULL),
+    (capture_err ? &native_standard_error : NULL),
+    &native_exit_status,
+    &native_error
+  );
 
   /* Box the return value */
   mrb_value return_value = mrb_bool_value(native_return_value);
   mrb_ary_push(mrb, results, return_value);
   
   /* Box out param: standard_output */
-  mrb_value standard_output = mrb_str_new_cstr(mrb, native_standard_output);
-  /* Clean out param: standard_output */
-  free(native_standard_output);
+  mrb_value standard_output = mrb_nil_value();
+  if (capture_out) {
+    standard_output = mrb_str_new_cstr(mrb, native_standard_output);
+    /* Clean out param: standard_output */
+    free(native_standard_output);
+  }
   /* Box out param: standard_error */
-  mrb_value standard_error = mrb_str_new_cstr(mrb, native_standard_error);
-  /* Clean out param: standard_error */
-  free(native_standard_error);
+  mrb_value standard_error = mrb_nil_value();
+  if (capture_err) {
+    standard_error = mrb_str_new_cstr(mrb, native_standard_error);
+    /* Clean out param: standard_error */
+    free(native_standard_error);
+  }
   /* Box out param: exit_status */
   mrb_value exit_status = mrb_fixnum_value(native_exit_status);
   /* Box out param: error */
@@ -34759,6 +43821,43 @@ mrb_GLib_g_sprintf(mrb_state* mrb, mrb_value self) {
 
   /* Invocation */
   gint native_return_value = g_sprintf(native_string, native_format);
+
+  /* Box the return value */
+  mrb_value return_value = mrb_fixnum_value(native_return_value);
+  
+  return return_value;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_stat */
+/* sha: 7ee09fbccc065a38fc76d49a4872278d7e6f373ccd4158ff7009a2cd01d7c888 */
+#if BIND_g_stat_FUNCTION
+#define g_stat_REQUIRED_ARGC 2
+#define g_stat_OPTIONAL_ARGC 0
+/* g_stat
+ *
+ * Parameters:
+ * - filename: const gchar *
+ * - buf: int *
+ * Return Type: int
+ */
+mrb_value
+mrb_GLib_g_stat(mrb_state* mrb, mrb_value self) {
+  char * native_filename = NULL;
+  mrb_value buf;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "zo", &native_filename, &buf);
+
+  /* Type checking */
+  TODO_type_check_int_PTR(buf);
+
+  /* Unbox param: buf */
+  int * native_buf = TODO_mruby_unbox_int_PTR(buf);
+
+  /* Invocation */
+  int native_return_value = g_stat(native_filename, native_buf);
 
   /* Box the return value */
   mrb_value return_value = mrb_fixnum_value(native_return_value);
@@ -36267,6 +45366,1773 @@ mrb_GLib_g_strv_length(mrb_state* mrb, mrb_value self) {
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
   return return_value;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_subprocess_communicate */
+/* sha: 6f5cee7910b5e9bcb50309e8dd4fb621b08663104ae01f6f105f35861299fae2 */
+#if BIND_g_subprocess_communicate_FUNCTION
+#define g_subprocess_communicate_REQUIRED_ARGC 5
+#define g_subprocess_communicate_OPTIONAL_ARGC 0
+/* g_subprocess_communicate
+ *
+ * Parameters:
+ * - subprocess: GSubprocess *
+ * - stdin_buf: GBytes *
+ * - cancellable: GCancellable *
+ * - stdout_buf: GBytes **
+ * - stderr_buf: GBytes **
+ * Return Type: gboolean
+ */
+mrb_value
+mrb_GLib_g_subprocess_communicate(mrb_state* mrb, mrb_value self) {
+  mrb_value results = mrb_ary_new(mrb);
+  mrb_value subprocess;
+  mrb_value stdin_buf;
+  mrb_value cancellable;
+  mrb_value stdout_buf;
+  mrb_value stderr_buf;
+  struct GError * native_error = NULL;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "ooooo", &subprocess, &stdin_buf, &cancellable, &stdout_buf, &stderr_buf);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, subprocess, GSubprocess_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GSubprocess expected");
+    return mrb_nil_value();
+  }
+  if (!mrb_obj_is_kind_of(mrb, stdin_buf, GBytes_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GBytes expected");
+    return mrb_nil_value();
+  }
+  TODO_type_check_GBytes_PTR_PTR(stdout_buf);
+  TODO_type_check_GBytes_PTR_PTR(stderr_buf);
+
+  /* Unbox param: subprocess */
+  GSubprocess * native_subprocess = (mrb_nil_p(subprocess) ? NULL : mruby_unbox__GSubprocess(subprocess));
+
+  /* Unbox param: stdin_buf */
+  GBytes * native_stdin_buf = (mrb_nil_p(stdin_buf) ? NULL : mruby_unbox__GBytes(stdin_buf));
+
+  /* Unbox param: cancellable */
+  void * native_cancellable = NULL; /* Unused parameter */
+
+  /* Unbox param: stdout_buf */
+  GBytes ** native_stdout_buf = TODO_mruby_unbox_GBytes_PTR_PTR(stdout_buf);
+
+  /* Unbox param: stderr_buf */
+  GBytes ** native_stderr_buf = TODO_mruby_unbox_GBytes_PTR_PTR(stderr_buf);
+
+  /* Invocation */
+  gboolean native_return_value = g_subprocess_communicate(native_subprocess, native_stdin_buf, native_cancellable, native_stdout_buf, native_stderr_buf, &native_error);
+
+  /* Box the return value */
+  mrb_value return_value = mrb_bool_value(native_return_value);
+  mrb_ary_push(mrb, results, return_value);
+  
+  /* Box out param: error */
+  mrb_value error = (native_error == NULL ? mrb_nil_value() : mruby_giftwrap__GError(mrb, native_error));
+
+  /* Add out params to results */
+  mrb_ary_push(mrb, results, error);
+
+  return results;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_subprocess_communicate_async */
+/* sha: 1b578e6b9ef06187161ba6ccca93476404412f4f6cace8d6672c1151701e604e */
+#if BIND_g_subprocess_communicate_async_FUNCTION
+#define g_subprocess_communicate_async_REQUIRED_ARGC 5
+#define g_subprocess_communicate_async_OPTIONAL_ARGC 0
+/* g_subprocess_communicate_async
+ *
+ * Parameters:
+ * - subprocess: GSubprocess *
+ * - stdin_buf: GBytes *
+ * - cancellable: GCancellable *
+ * - callback: GAsyncReadyCallback
+ * - user_data: gpointer
+ * Return Type: void
+ */
+mrb_value
+mrb_GLib_g_subprocess_communicate_async(mrb_state* mrb, mrb_value self) {
+  mrb_value subprocess;
+  mrb_value stdin_buf;
+  mrb_value cancellable;
+  mrb_value callback;
+  mrb_value user_data;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "ooooo", &subprocess, &stdin_buf, &cancellable, &callback, &user_data);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, subprocess, GSubprocess_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GSubprocess expected");
+    return mrb_nil_value();
+  }
+  if (!mrb_obj_is_kind_of(mrb, stdin_buf, GBytes_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GBytes expected");
+    return mrb_nil_value();
+  }
+  TODO_type_check_GAsyncReadyCallback(callback);
+  TODO_type_check_gpointer(user_data);
+
+  /* Unbox param: subprocess */
+  GSubprocess * native_subprocess = (mrb_nil_p(subprocess) ? NULL : mruby_unbox__GSubprocess(subprocess));
+
+  /* Unbox param: stdin_buf */
+  GBytes * native_stdin_buf = (mrb_nil_p(stdin_buf) ? NULL : mruby_unbox__GBytes(stdin_buf));
+
+  /* Unbox param: cancellable */
+  void * native_cancellable = NULL; /* Unused parameter */
+
+  /* Unbox param: callback */
+  GAsyncReadyCallback native_callback = TODO_mruby_unbox_GAsyncReadyCallback(callback);
+
+  /* Unbox param: user_data */
+  gpointer native_user_data = TODO_mruby_unbox_gpointer(user_data);
+
+  /* Invocation */
+  g_subprocess_communicate_async(native_subprocess, native_stdin_buf, native_cancellable, native_callback, native_user_data);
+
+  return mrb_nil_value();
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_subprocess_communicate_utf8 */
+/* sha: 13926d0eb91ec9220c31556386c40680f9829a6769dc69252d5b6e159fc46f18 */
+#if BIND_g_subprocess_communicate_utf8_FUNCTION
+#define g_subprocess_communicate_utf8_REQUIRED_ARGC 5
+#define g_subprocess_communicate_utf8_OPTIONAL_ARGC 0
+/* g_subprocess_communicate_utf8
+ *
+ * Parameters:
+ * - subprocess: GSubprocess *
+ * - stdin_buf: const char *
+ * - cancellable: GCancellable *
+ * - stdout_buf: char **
+ * - stderr_buf: char **
+ * Return Type: gboolean
+ */
+mrb_value
+mrb_GLib_g_subprocess_communicate_utf8(mrb_state* mrb, mrb_value self) {
+  mrb_value results = mrb_ary_new(mrb);
+  mrb_value subprocess;
+  char * native_stdin_buf = NULL;
+  mrb_value cancellable;
+  mrb_value stdout_buf;
+  mrb_value stderr_buf;
+  struct GError * native_error = NULL;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "ozooo", &subprocess, &native_stdin_buf, &cancellable, &stdout_buf, &stderr_buf);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, subprocess, GSubprocess_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GSubprocess expected");
+    return mrb_nil_value();
+  }
+  TODO_type_check_char_PTR_PTR(stdout_buf);
+  TODO_type_check_char_PTR_PTR(stderr_buf);
+
+  /* Unbox param: subprocess */
+  GSubprocess * native_subprocess = (mrb_nil_p(subprocess) ? NULL : mruby_unbox__GSubprocess(subprocess));
+
+  /* Unbox param: cancellable */
+  void * native_cancellable = NULL; /* Unused parameter */
+
+  /* Unbox param: stdout_buf */
+  char ** native_stdout_buf = TODO_mruby_unbox_char_PTR_PTR(stdout_buf);
+
+  /* Unbox param: stderr_buf */
+  char ** native_stderr_buf = TODO_mruby_unbox_char_PTR_PTR(stderr_buf);
+
+  /* Invocation */
+  gboolean native_return_value = g_subprocess_communicate_utf8(native_subprocess, native_stdin_buf, native_cancellable, native_stdout_buf, native_stderr_buf, &native_error);
+
+  /* Box the return value */
+  mrb_value return_value = mrb_bool_value(native_return_value);
+  mrb_ary_push(mrb, results, return_value);
+  
+  /* Box out param: error */
+  mrb_value error = (native_error == NULL ? mrb_nil_value() : mruby_giftwrap__GError(mrb, native_error));
+
+  /* Add out params to results */
+  mrb_ary_push(mrb, results, error);
+
+  return results;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_subprocess_communicate_utf8_async */
+/* sha: aad99b2e95e47af5fb275e49bc025b07e97efba2ec57380068d23ed8e23fa8fb */
+#if BIND_g_subprocess_communicate_utf8_async_FUNCTION
+#define g_subprocess_communicate_utf8_async_REQUIRED_ARGC 5
+#define g_subprocess_communicate_utf8_async_OPTIONAL_ARGC 0
+/* g_subprocess_communicate_utf8_async
+ *
+ * Parameters:
+ * - subprocess: GSubprocess *
+ * - stdin_buf: const char *
+ * - cancellable: GCancellable *
+ * - callback: GAsyncReadyCallback
+ * - user_data: gpointer
+ * Return Type: void
+ */
+mrb_value
+mrb_GLib_g_subprocess_communicate_utf8_async(mrb_state* mrb, mrb_value self) {
+  mrb_value subprocess;
+  char * native_stdin_buf = NULL;
+  mrb_value cancellable;
+  mrb_value callback;
+  mrb_value user_data;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "ozooo", &subprocess, &native_stdin_buf, &cancellable, &callback, &user_data);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, subprocess, GSubprocess_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GSubprocess expected");
+    return mrb_nil_value();
+  }
+  TODO_type_check_GAsyncReadyCallback(callback);
+  TODO_type_check_gpointer(user_data);
+
+  /* Unbox param: subprocess */
+  GSubprocess * native_subprocess = (mrb_nil_p(subprocess) ? NULL : mruby_unbox__GSubprocess(subprocess));
+
+  /* Unbox param: cancellable */
+  void * native_cancellable = NULL; /* Unused parameter */
+
+  /* Unbox param: callback */
+  GAsyncReadyCallback native_callback = TODO_mruby_unbox_GAsyncReadyCallback(callback);
+
+  /* Unbox param: user_data */
+  gpointer native_user_data = TODO_mruby_unbox_gpointer(user_data);
+
+  /* Invocation */
+  g_subprocess_communicate_utf8_async(native_subprocess, native_stdin_buf, native_cancellable, native_callback, native_user_data);
+
+  return mrb_nil_value();
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_subprocess_force_exit */
+/* sha: 08e36bec984acafb68a1771b48be1847aff7efe716342a9ca758df88b30fb3fd */
+#if BIND_g_subprocess_force_exit_FUNCTION
+#define g_subprocess_force_exit_REQUIRED_ARGC 1
+#define g_subprocess_force_exit_OPTIONAL_ARGC 0
+/* g_subprocess_force_exit
+ *
+ * Parameters:
+ * - subprocess: GSubprocess *
+ * Return Type: void
+ */
+mrb_value
+mrb_GLib_g_subprocess_force_exit(mrb_state* mrb, mrb_value self) {
+  mrb_value subprocess;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "o", &subprocess);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, subprocess, GSubprocess_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GSubprocess expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: subprocess */
+  GSubprocess * native_subprocess = (mrb_nil_p(subprocess) ? NULL : mruby_unbox__GSubprocess(subprocess));
+
+  /* Invocation */
+  g_subprocess_force_exit(native_subprocess);
+
+  return mrb_nil_value();
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_subprocess_get_exit_status */
+/* sha: 89993344a74d1a33aaa7a92531c85f0969817fa9b9a9e31eb05f09a8605680d6 */
+#if BIND_g_subprocess_get_exit_status_FUNCTION
+#define g_subprocess_get_exit_status_REQUIRED_ARGC 1
+#define g_subprocess_get_exit_status_OPTIONAL_ARGC 0
+/* g_subprocess_get_exit_status
+ *
+ * Parameters:
+ * - subprocess: GSubprocess *
+ * Return Type: gint
+ */
+mrb_value
+mrb_GLib_g_subprocess_get_exit_status(mrb_state* mrb, mrb_value self) {
+  mrb_value subprocess;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "o", &subprocess);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, subprocess, GSubprocess_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GSubprocess expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: subprocess */
+  GSubprocess * native_subprocess = (mrb_nil_p(subprocess) ? NULL : mruby_unbox__GSubprocess(subprocess));
+
+  /* Invocation */
+  gint native_return_value = g_subprocess_get_exit_status(native_subprocess);
+
+  /* Box the return value */
+  mrb_value return_value = mrb_fixnum_value(native_return_value);
+  
+  return return_value;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_subprocess_get_identifier */
+/* sha: c90e00fdae42d9573d1c98f3a4cd882cf1e5666ef21822f9aa0b03b3b66ed709 */
+#if BIND_g_subprocess_get_identifier_FUNCTION
+#define g_subprocess_get_identifier_REQUIRED_ARGC 1
+#define g_subprocess_get_identifier_OPTIONAL_ARGC 0
+/* g_subprocess_get_identifier
+ *
+ * Parameters:
+ * - subprocess: GSubprocess *
+ * Return Type: const gchar *
+ */
+mrb_value
+mrb_GLib_g_subprocess_get_identifier(mrb_state* mrb, mrb_value self) {
+  mrb_value subprocess;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "o", &subprocess);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, subprocess, GSubprocess_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GSubprocess expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: subprocess */
+  GSubprocess * native_subprocess = (mrb_nil_p(subprocess) ? NULL : mruby_unbox__GSubprocess(subprocess));
+
+  /* Invocation */
+  const gchar * native_return_value = g_subprocess_get_identifier(native_subprocess);
+
+  /* Box the return value */
+  mrb_value return_value = native_return_value == NULL ? mrb_nil_value() : mrb_str_new_cstr(mrb, native_return_value);
+  
+  return return_value;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_subprocess_get_if_exited */
+/* sha: da45672435a911213df4f550428ccafe30aafd4e24bd1cf91f9d80212f31a02a */
+#if BIND_g_subprocess_get_if_exited_FUNCTION
+#define g_subprocess_get_if_exited_REQUIRED_ARGC 1
+#define g_subprocess_get_if_exited_OPTIONAL_ARGC 0
+/* g_subprocess_get_if_exited
+ *
+ * Parameters:
+ * - subprocess: GSubprocess *
+ * Return Type: gboolean
+ */
+mrb_value
+mrb_GLib_g_subprocess_get_if_exited(mrb_state* mrb, mrb_value self) {
+  mrb_value subprocess;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "o", &subprocess);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, subprocess, GSubprocess_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GSubprocess expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: subprocess */
+  GSubprocess * native_subprocess = (mrb_nil_p(subprocess) ? NULL : mruby_unbox__GSubprocess(subprocess));
+
+  /* Invocation */
+  gboolean native_return_value = g_subprocess_get_if_exited(native_subprocess);
+
+  /* Box the return value */
+  mrb_value return_value = mrb_bool_value(native_return_value);
+  
+  return return_value;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_subprocess_get_if_signaled */
+/* sha: 646c03f6a6bcf127fb94038230dff54287a4011f2cedce30d9c439e828bface9 */
+#if BIND_g_subprocess_get_if_signaled_FUNCTION
+#define g_subprocess_get_if_signaled_REQUIRED_ARGC 1
+#define g_subprocess_get_if_signaled_OPTIONAL_ARGC 0
+/* g_subprocess_get_if_signaled
+ *
+ * Parameters:
+ * - subprocess: GSubprocess *
+ * Return Type: gboolean
+ */
+mrb_value
+mrb_GLib_g_subprocess_get_if_signaled(mrb_state* mrb, mrb_value self) {
+  mrb_value subprocess;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "o", &subprocess);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, subprocess, GSubprocess_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GSubprocess expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: subprocess */
+  GSubprocess * native_subprocess = (mrb_nil_p(subprocess) ? NULL : mruby_unbox__GSubprocess(subprocess));
+
+  /* Invocation */
+  gboolean native_return_value = g_subprocess_get_if_signaled(native_subprocess);
+
+  /* Box the return value */
+  mrb_value return_value = mrb_bool_value(native_return_value);
+  
+  return return_value;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_subprocess_get_status */
+/* sha: 40bde50d34e123ed8484b0881d9797c05ee1148a0a115d0ef32ad323364220f6 */
+#if BIND_g_subprocess_get_status_FUNCTION
+#define g_subprocess_get_status_REQUIRED_ARGC 1
+#define g_subprocess_get_status_OPTIONAL_ARGC 0
+/* g_subprocess_get_status
+ *
+ * Parameters:
+ * - subprocess: GSubprocess *
+ * Return Type: gint
+ */
+mrb_value
+mrb_GLib_g_subprocess_get_status(mrb_state* mrb, mrb_value self) {
+  mrb_value subprocess;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "o", &subprocess);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, subprocess, GSubprocess_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GSubprocess expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: subprocess */
+  GSubprocess * native_subprocess = (mrb_nil_p(subprocess) ? NULL : mruby_unbox__GSubprocess(subprocess));
+
+  /* Invocation */
+  gint native_return_value = g_subprocess_get_status(native_subprocess);
+
+  /* Box the return value */
+  mrb_value return_value = mrb_fixnum_value(native_return_value);
+  
+  return return_value;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_subprocess_get_stderr_pipe */
+/* sha: c8132af4208d2a4a15f0d8124ded5cae812cca9ce98a397de5759db3ab9cb246 */
+#if BIND_g_subprocess_get_stderr_pipe_FUNCTION
+#define g_subprocess_get_stderr_pipe_REQUIRED_ARGC 1
+#define g_subprocess_get_stderr_pipe_OPTIONAL_ARGC 0
+/* g_subprocess_get_stderr_pipe
+ *
+ * Parameters:
+ * - subprocess: GSubprocess *
+ * Return Type: GInputStream *
+ */
+mrb_value
+mrb_GLib_g_subprocess_get_stderr_pipe(mrb_state* mrb, mrb_value self) {
+  mrb_value subprocess;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "o", &subprocess);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, subprocess, GSubprocess_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GSubprocess expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: subprocess */
+  GSubprocess * native_subprocess = (mrb_nil_p(subprocess) ? NULL : mruby_unbox__GSubprocess(subprocess));
+
+  /* Invocation */
+  GInputStream * native_return_value = g_subprocess_get_stderr_pipe(native_subprocess);
+
+  /* Box the return value */
+  mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_box__GInputStream(mrb, native_return_value));
+  
+  return return_value;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_subprocess_get_stdin_pipe */
+/* sha: 192b645ccd1de898aea1ab1ce7ede3d8a2e9fc9ff9253ec198c735d9d67597af */
+#if BIND_g_subprocess_get_stdin_pipe_FUNCTION
+#define g_subprocess_get_stdin_pipe_REQUIRED_ARGC 1
+#define g_subprocess_get_stdin_pipe_OPTIONAL_ARGC 0
+/* g_subprocess_get_stdin_pipe
+ *
+ * Parameters:
+ * - subprocess: GSubprocess *
+ * Return Type: GOutputStream *
+ */
+mrb_value
+mrb_GLib_g_subprocess_get_stdin_pipe(mrb_state* mrb, mrb_value self) {
+  mrb_value subprocess;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "o", &subprocess);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, subprocess, GSubprocess_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GSubprocess expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: subprocess */
+  GSubprocess * native_subprocess = (mrb_nil_p(subprocess) ? NULL : mruby_unbox__GSubprocess(subprocess));
+
+  /* Invocation */
+  GOutputStream * native_return_value = g_subprocess_get_stdin_pipe(native_subprocess);
+
+  /* Box the return value */
+  mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_box__GOutputStream(mrb, native_return_value));
+  
+  return return_value;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_subprocess_get_stdout_pipe */
+/* sha: 93f4f171ebadf77c6db1c6e35d26df882c6d740cd4ae7252048a798b046b6cb0 */
+#if BIND_g_subprocess_get_stdout_pipe_FUNCTION
+#define g_subprocess_get_stdout_pipe_REQUIRED_ARGC 1
+#define g_subprocess_get_stdout_pipe_OPTIONAL_ARGC 0
+/* g_subprocess_get_stdout_pipe
+ *
+ * Parameters:
+ * - subprocess: GSubprocess *
+ * Return Type: GInputStream *
+ */
+mrb_value
+mrb_GLib_g_subprocess_get_stdout_pipe(mrb_state* mrb, mrb_value self) {
+  mrb_value subprocess;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "o", &subprocess);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, subprocess, GSubprocess_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GSubprocess expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: subprocess */
+  GSubprocess * native_subprocess = (mrb_nil_p(subprocess) ? NULL : mruby_unbox__GSubprocess(subprocess));
+
+  /* Invocation */
+  GInputStream * native_return_value = g_subprocess_get_stdout_pipe(native_subprocess);
+
+  /* Box the return value */
+  mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_box__GInputStream(mrb, native_return_value));
+  
+  return return_value;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_subprocess_get_successful */
+/* sha: d651bdf9d840aa9a794ec1722d8a1f5d4c94928257e5bea78a46aef27b928aa5 */
+#if BIND_g_subprocess_get_successful_FUNCTION
+#define g_subprocess_get_successful_REQUIRED_ARGC 1
+#define g_subprocess_get_successful_OPTIONAL_ARGC 0
+/* g_subprocess_get_successful
+ *
+ * Parameters:
+ * - subprocess: GSubprocess *
+ * Return Type: gboolean
+ */
+mrb_value
+mrb_GLib_g_subprocess_get_successful(mrb_state* mrb, mrb_value self) {
+  mrb_value subprocess;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "o", &subprocess);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, subprocess, GSubprocess_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GSubprocess expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: subprocess */
+  GSubprocess * native_subprocess = (mrb_nil_p(subprocess) ? NULL : mruby_unbox__GSubprocess(subprocess));
+
+  /* Invocation */
+  gboolean native_return_value = g_subprocess_get_successful(native_subprocess);
+
+  /* Box the return value */
+  mrb_value return_value = mrb_bool_value(native_return_value);
+  
+  return return_value;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_subprocess_get_term_sig */
+/* sha: b79937801fb14b0cbb4954afe09f7198a4a6c9068429a336b8b88d042dc51d38 */
+#if BIND_g_subprocess_get_term_sig_FUNCTION
+#define g_subprocess_get_term_sig_REQUIRED_ARGC 1
+#define g_subprocess_get_term_sig_OPTIONAL_ARGC 0
+/* g_subprocess_get_term_sig
+ *
+ * Parameters:
+ * - subprocess: GSubprocess *
+ * Return Type: gint
+ */
+mrb_value
+mrb_GLib_g_subprocess_get_term_sig(mrb_state* mrb, mrb_value self) {
+  mrb_value subprocess;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "o", &subprocess);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, subprocess, GSubprocess_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GSubprocess expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: subprocess */
+  GSubprocess * native_subprocess = (mrb_nil_p(subprocess) ? NULL : mruby_unbox__GSubprocess(subprocess));
+
+  /* Invocation */
+  gint native_return_value = g_subprocess_get_term_sig(native_subprocess);
+
+  /* Box the return value */
+  mrb_value return_value = mrb_fixnum_value(native_return_value);
+  
+  return return_value;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_subprocess_get_type */
+/* sha: 1a05159d8131871f4cd5b925c88299ee33fa48f9b7789f27293c071a0972b38e */
+#if BIND_g_subprocess_get_type_FUNCTION
+#define g_subprocess_get_type_REQUIRED_ARGC 0
+#define g_subprocess_get_type_OPTIONAL_ARGC 0
+/* g_subprocess_get_type
+ *
+ * Parameters: None
+ * Return Type: GType
+ */
+mrb_value
+mrb_GLib_g_subprocess_get_type(mrb_state* mrb, mrb_value self) {
+  /* Invocation */
+  GType native_return_value = g_subprocess_get_type();
+
+  /* Box the return value */
+  mrb_value return_value = TODO_mruby_box_GType(mrb, native_return_value);
+  
+  return return_value;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_subprocess_launcher_get_type */
+/* sha: 38c1690a38528508d180e6c5a6d1693c6f54bf28d185de2488c5b6823258c136 */
+#if BIND_g_subprocess_launcher_get_type_FUNCTION
+#define g_subprocess_launcher_get_type_REQUIRED_ARGC 0
+#define g_subprocess_launcher_get_type_OPTIONAL_ARGC 0
+/* g_subprocess_launcher_get_type
+ *
+ * Parameters: None
+ * Return Type: GType
+ */
+mrb_value
+mrb_GLib_g_subprocess_launcher_get_type(mrb_state* mrb, mrb_value self) {
+  /* Invocation */
+  GType native_return_value = g_subprocess_launcher_get_type();
+
+  /* Box the return value */
+  mrb_value return_value = TODO_mruby_box_GType(mrb, native_return_value);
+  
+  return return_value;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_subprocess_launcher_getenv */
+/* sha: fe9c27b3f951f862189b552169807701ddd33a8f46e329c231df98e5c5c5cd45 */
+#if BIND_g_subprocess_launcher_getenv_FUNCTION
+#define g_subprocess_launcher_getenv_REQUIRED_ARGC 2
+#define g_subprocess_launcher_getenv_OPTIONAL_ARGC 0
+/* g_subprocess_launcher_getenv
+ *
+ * Parameters:
+ * - c_self: GSubprocessLauncher *
+ * - variable: const gchar *
+ * Return Type: const gchar *
+ */
+mrb_value
+mrb_GLib_g_subprocess_launcher_getenv(mrb_state* mrb, mrb_value self) {
+  mrb_value c_self;
+  char * native_variable = NULL;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "oz", &c_self, &native_variable);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, c_self, GSubprocessLauncher_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GSubprocessLauncher expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: c_self */
+  GSubprocessLauncher * native_c_self = (mrb_nil_p(c_self) ? NULL : mruby_unbox__GSubprocessLauncher(c_self));
+
+  /* Invocation */
+  const gchar * native_return_value = g_subprocess_launcher_getenv(native_c_self, native_variable);
+
+  /* Box the return value */
+  mrb_value return_value = native_return_value == NULL ? mrb_nil_value() : mrb_str_new_cstr(mrb, native_return_value);
+  
+  return return_value;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_subprocess_launcher_new */
+/* sha: 370a343adc4b383a747d40b667244ecad21ae0bf1ea9f93d1098b235376f7a16 */
+#if BIND_g_subprocess_launcher_new_FUNCTION
+#define g_subprocess_launcher_new_REQUIRED_ARGC 1
+#define g_subprocess_launcher_new_OPTIONAL_ARGC 0
+/* g_subprocess_launcher_new
+ *
+ * Parameters:
+ * - flags: GSubprocessFlags
+ * Return Type: GSubprocessLauncher *
+ */
+mrb_value
+mrb_GLib_g_subprocess_launcher_new(mrb_state* mrb, mrb_value self) {
+  mrb_int native_flags;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "i", &native_flags);
+
+  /* Invocation */
+  GSubprocessLauncher * native_return_value = g_subprocess_launcher_new(native_flags);
+
+  /* Box the return value */
+  mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_box__GSubprocessLauncher(mrb, native_return_value));
+  
+  return return_value;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_subprocess_launcher_set_child_setup */
+/* sha: 5c1189db2a549ea25806e9edd161119eb1eec9d38a20e98e3727521d690a2c00 */
+#if BIND_g_subprocess_launcher_set_child_setup_FUNCTION
+#define g_subprocess_launcher_set_child_setup_REQUIRED_ARGC 4
+#define g_subprocess_launcher_set_child_setup_OPTIONAL_ARGC 0
+/* g_subprocess_launcher_set_child_setup
+ *
+ * Parameters:
+ * - c_self: GSubprocessLauncher *
+ * - child_setup: GSpawnChildSetupFunc
+ * - user_data: gpointer
+ * - destroy_notify: GDestroyNotify
+ * Return Type: void
+ */
+mrb_value
+mrb_GLib_g_subprocess_launcher_set_child_setup(mrb_state* mrb, mrb_value self) {
+  mrb_value c_self;
+  mrb_value child_setup;
+  mrb_value user_data;
+  mrb_value destroy_notify;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "oooo", &c_self, &child_setup, &user_data, &destroy_notify);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, c_self, GSubprocessLauncher_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GSubprocessLauncher expected");
+    return mrb_nil_value();
+  }
+  TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_gpointer_RPAREN(child_setup);
+  TODO_type_check_gpointer(user_data);
+  TODO_type_check_GDestroyNotify(destroy_notify);
+
+  /* Unbox param: c_self */
+  GSubprocessLauncher * native_c_self = (mrb_nil_p(c_self) ? NULL : mruby_unbox__GSubprocessLauncher(c_self));
+
+  /* Unbox param: child_setup */
+  void (*native_child_setup)(gpointer) = TODO_mruby_unbox_void_LPAREN_PTR_RPAREN_LPAREN_gpointer_RPAREN(child_setup);
+
+  /* Unbox param: user_data */
+  gpointer native_user_data = TODO_mruby_unbox_gpointer(user_data);
+
+  /* Unbox param: destroy_notify */
+  GDestroyNotify native_destroy_notify = TODO_mruby_unbox_GDestroyNotify(destroy_notify);
+
+  /* Invocation */
+  g_subprocess_launcher_set_child_setup(native_c_self, native_child_setup, native_user_data, native_destroy_notify);
+
+  return mrb_nil_value();
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_subprocess_launcher_set_cwd */
+/* sha: 9f856ef1495cf3e00ca37b37cc0b794ade2a98a4469c0da0f1757bbe5bc27b69 */
+#if BIND_g_subprocess_launcher_set_cwd_FUNCTION
+#define g_subprocess_launcher_set_cwd_REQUIRED_ARGC 2
+#define g_subprocess_launcher_set_cwd_OPTIONAL_ARGC 0
+/* g_subprocess_launcher_set_cwd
+ *
+ * Parameters:
+ * - c_self: GSubprocessLauncher *
+ * - cwd: const gchar *
+ * Return Type: void
+ */
+mrb_value
+mrb_GLib_g_subprocess_launcher_set_cwd(mrb_state* mrb, mrb_value self) {
+  mrb_value c_self;
+  char * native_cwd = NULL;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "oz", &c_self, &native_cwd);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, c_self, GSubprocessLauncher_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GSubprocessLauncher expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: c_self */
+  GSubprocessLauncher * native_c_self = (mrb_nil_p(c_self) ? NULL : mruby_unbox__GSubprocessLauncher(c_self));
+
+  /* Invocation */
+  g_subprocess_launcher_set_cwd(native_c_self, native_cwd);
+
+  return mrb_nil_value();
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_subprocess_launcher_set_environ */
+/* sha: 27e98b8cc3fcec8267cd38870b5f034758638d55cf6d555772766da640064f3c */
+#if BIND_g_subprocess_launcher_set_environ_FUNCTION
+#define g_subprocess_launcher_set_environ_REQUIRED_ARGC 2
+#define g_subprocess_launcher_set_environ_OPTIONAL_ARGC 0
+/* g_subprocess_launcher_set_environ
+ *
+ * Parameters:
+ * - c_self: GSubprocessLauncher *
+ * - env: gchar **
+ * Return Type: void
+ */
+mrb_value
+mrb_GLib_g_subprocess_launcher_set_environ(mrb_state* mrb, mrb_value self) {
+  mrb_value c_self;
+  mrb_value env;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "oA!", &c_self, &env);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, c_self, GSubprocessLauncher_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GSubprocessLauncher expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: c_self */
+  GSubprocessLauncher * native_c_self = (mrb_nil_p(c_self) ? NULL : mruby_unbox__GSubprocessLauncher(c_self));
+
+  /* Unbox param: env */
+  char ** native_env = NULL;
+  do {
+    if (mrb_nil_p(env)) {
+      native_env = NULL;
+    } else {
+      int len = mrb_ary_len(mrb, env);
+      native_env = (char**)calloc((len + 1), sizeof(char*));
+      for (int i = 0; i < len; i++) {
+        mrb_value str = mrb_ary_ref(mrb, env, i);
+        native_env[i] = mrb_string_value_cstr(mrb, &str);
+      }
+      native_env[len] = NULL;
+    }
+  } while (0);
+
+  /* Invocation */
+  g_subprocess_launcher_set_environ(native_c_self, native_env);
+
+  /* Clean in param: env */
+  if (native_env != NULL) free(native_env);
+
+  return mrb_nil_value();
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_subprocess_launcher_set_flags */
+/* sha: c9a8130734300c497caf9c596974198348805bf997406cb1713b20c72879af5a */
+#if BIND_g_subprocess_launcher_set_flags_FUNCTION
+#define g_subprocess_launcher_set_flags_REQUIRED_ARGC 2
+#define g_subprocess_launcher_set_flags_OPTIONAL_ARGC 0
+/* g_subprocess_launcher_set_flags
+ *
+ * Parameters:
+ * - c_self: GSubprocessLauncher *
+ * - flags: GSubprocessFlags
+ * Return Type: void
+ */
+mrb_value
+mrb_GLib_g_subprocess_launcher_set_flags(mrb_state* mrb, mrb_value self) {
+  mrb_value c_self;
+  mrb_int native_flags;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "oi", &c_self, &native_flags);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, c_self, GSubprocessLauncher_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GSubprocessLauncher expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: c_self */
+  GSubprocessLauncher * native_c_self = (mrb_nil_p(c_self) ? NULL : mruby_unbox__GSubprocessLauncher(c_self));
+
+  /* Invocation */
+  g_subprocess_launcher_set_flags(native_c_self, native_flags);
+
+  return mrb_nil_value();
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_subprocess_launcher_set_stderr_file_path */
+/* sha: 828e6975a0324086765add1e2ac117c7c53b512836c9709487ba0f6a437e4ab2 */
+#if BIND_g_subprocess_launcher_set_stderr_file_path_FUNCTION
+#define g_subprocess_launcher_set_stderr_file_path_REQUIRED_ARGC 2
+#define g_subprocess_launcher_set_stderr_file_path_OPTIONAL_ARGC 0
+/* g_subprocess_launcher_set_stderr_file_path
+ *
+ * Parameters:
+ * - c_self: GSubprocessLauncher *
+ * - path: const gchar *
+ * Return Type: void
+ */
+mrb_value
+mrb_GLib_g_subprocess_launcher_set_stderr_file_path(mrb_state* mrb, mrb_value self) {
+  mrb_value c_self;
+  char * native_path = NULL;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "oz", &c_self, &native_path);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, c_self, GSubprocessLauncher_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GSubprocessLauncher expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: c_self */
+  GSubprocessLauncher * native_c_self = (mrb_nil_p(c_self) ? NULL : mruby_unbox__GSubprocessLauncher(c_self));
+
+  /* Invocation */
+  g_subprocess_launcher_set_stderr_file_path(native_c_self, native_path);
+
+  return mrb_nil_value();
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_subprocess_launcher_set_stdin_file_path */
+/* sha: 6a520cd9c9d45db64def8540c1dc70d28aaaccd0bcb950bc04022a4392a75bab */
+#if BIND_g_subprocess_launcher_set_stdin_file_path_FUNCTION
+#define g_subprocess_launcher_set_stdin_file_path_REQUIRED_ARGC 2
+#define g_subprocess_launcher_set_stdin_file_path_OPTIONAL_ARGC 0
+/* g_subprocess_launcher_set_stdin_file_path
+ *
+ * Parameters:
+ * - c_self: GSubprocessLauncher *
+ * - path: const gchar *
+ * Return Type: void
+ */
+mrb_value
+mrb_GLib_g_subprocess_launcher_set_stdin_file_path(mrb_state* mrb, mrb_value self) {
+  mrb_value c_self;
+  char * native_path = NULL;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "oz", &c_self, &native_path);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, c_self, GSubprocessLauncher_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GSubprocessLauncher expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: c_self */
+  GSubprocessLauncher * native_c_self = (mrb_nil_p(c_self) ? NULL : mruby_unbox__GSubprocessLauncher(c_self));
+
+  /* Invocation */
+  g_subprocess_launcher_set_stdin_file_path(native_c_self, native_path);
+
+  return mrb_nil_value();
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_subprocess_launcher_set_stdout_file_path */
+/* sha: 850ec6588df97c4e05bf2f9ab3f9bf3cfaaf2c1e78340fc99f144818139f20a3 */
+#if BIND_g_subprocess_launcher_set_stdout_file_path_FUNCTION
+#define g_subprocess_launcher_set_stdout_file_path_REQUIRED_ARGC 2
+#define g_subprocess_launcher_set_stdout_file_path_OPTIONAL_ARGC 0
+/* g_subprocess_launcher_set_stdout_file_path
+ *
+ * Parameters:
+ * - c_self: GSubprocessLauncher *
+ * - path: const gchar *
+ * Return Type: void
+ */
+mrb_value
+mrb_GLib_g_subprocess_launcher_set_stdout_file_path(mrb_state* mrb, mrb_value self) {
+  mrb_value c_self;
+  char * native_path = NULL;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "oz", &c_self, &native_path);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, c_self, GSubprocessLauncher_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GSubprocessLauncher expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: c_self */
+  GSubprocessLauncher * native_c_self = (mrb_nil_p(c_self) ? NULL : mruby_unbox__GSubprocessLauncher(c_self));
+
+  /* Invocation */
+  g_subprocess_launcher_set_stdout_file_path(native_c_self, native_path);
+
+  return mrb_nil_value();
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_subprocess_launcher_setenv */
+/* sha: 51d569063d079ee8cb575d7991f4c11b67e5f0ceb7ae8a854b36c6c95f804f50 */
+#if BIND_g_subprocess_launcher_setenv_FUNCTION
+#define g_subprocess_launcher_setenv_REQUIRED_ARGC 4
+#define g_subprocess_launcher_setenv_OPTIONAL_ARGC 0
+/* g_subprocess_launcher_setenv
+ *
+ * Parameters:
+ * - c_self: GSubprocessLauncher *
+ * - variable: const gchar *
+ * - value: const gchar *
+ * - overwrite: gboolean
+ * Return Type: void
+ */
+mrb_value
+mrb_GLib_g_subprocess_launcher_setenv(mrb_state* mrb, mrb_value self) {
+  mrb_value c_self;
+  char * native_variable = NULL;
+  char * native_value = NULL;
+  mrb_bool native_overwrite;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "ozzb", &c_self, &native_variable, &native_value, &native_overwrite);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, c_self, GSubprocessLauncher_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GSubprocessLauncher expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: c_self */
+  GSubprocessLauncher * native_c_self = (mrb_nil_p(c_self) ? NULL : mruby_unbox__GSubprocessLauncher(c_self));
+
+  /* Invocation */
+  g_subprocess_launcher_setenv(native_c_self, native_variable, native_value, native_overwrite);
+
+  return mrb_nil_value();
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_subprocess_launcher_spawn */
+/* sha: c0a7bdce611a43062d0b2e2192db091d80d13e831e5863a738affac753b54dce */
+#if BIND_g_subprocess_launcher_spawn_FUNCTION
+#define g_subprocess_launcher_spawn_REQUIRED_ARGC 2
+#define g_subprocess_launcher_spawn_OPTIONAL_ARGC 0
+/* g_subprocess_launcher_spawn
+ *
+ * Parameters:
+ * - c_self: GSubprocessLauncher *
+ * - argv0: const gchar *
+ * Return Type: GSubprocess *
+ */
+mrb_value
+mrb_GLib_g_subprocess_launcher_spawn(mrb_state* mrb, mrb_value self) {
+  mrb_value results = mrb_ary_new(mrb);
+  mrb_value c_self;
+  struct GError * native_error = NULL;
+  char * native_argv0 = NULL;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "oz", &c_self, &native_argv0);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, c_self, GSubprocessLauncher_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GSubprocessLauncher expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: c_self */
+  GSubprocessLauncher * native_c_self = (mrb_nil_p(c_self) ? NULL : mruby_unbox__GSubprocessLauncher(c_self));
+
+  /* Invocation */
+  GSubprocess * native_return_value = g_subprocess_launcher_spawn(native_c_self, &native_error, native_argv0);
+
+  /* Box the return value */
+  mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_box__GSubprocess(mrb, native_return_value));
+  mrb_ary_push(mrb, results, return_value);
+  
+  /* Box out param: error */
+  mrb_value error = (native_error == NULL ? mrb_nil_value() : mruby_giftwrap__GError(mrb, native_error));
+
+  /* Add out params to results */
+  mrb_ary_push(mrb, results, error);
+
+  return results;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_subprocess_launcher_spawnv */
+/* sha: 53afe50c78e7abd9c1dcf1a3bd2e3574ba96fc411522243e8367f965e4414a7a */
+#if BIND_g_subprocess_launcher_spawnv_FUNCTION
+#define g_subprocess_launcher_spawnv_REQUIRED_ARGC 2
+#define g_subprocess_launcher_spawnv_OPTIONAL_ARGC 0
+/* g_subprocess_launcher_spawnv
+ *
+ * Parameters:
+ * - c_self: GSubprocessLauncher *
+ * - argv: const gchar *const *
+ * Return Type: GSubprocess *
+ */
+mrb_value
+mrb_GLib_g_subprocess_launcher_spawnv(mrb_state* mrb, mrb_value self) {
+  mrb_value results = mrb_ary_new(mrb);
+  mrb_value c_self;
+  mrb_value argv;
+  struct GError * native_error = NULL;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "oA!", &c_self, &argv);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, c_self, GSubprocessLauncher_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GSubprocessLauncher expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: c_self */
+  GSubprocessLauncher * native_c_self = (mrb_nil_p(c_self) ? NULL : mruby_unbox__GSubprocessLauncher(c_self));
+
+  /* Unbox param: argv */
+  char ** native_argv = NULL;
+  do {
+    if (mrb_nil_p(argv)) {
+      native_argv = NULL;
+    } else {
+      int len = mrb_ary_len(mrb, argv);
+      native_argv = (char**)calloc((len + 1), sizeof(char*));
+      for (int i = 0; i < len; i++) {
+        mrb_value str = mrb_ary_ref(mrb, argv, i);
+        native_argv[i] = mrb_string_value_cstr(mrb, &str);
+      }
+      native_argv[len] = NULL;
+    }
+  } while (0);
+
+  /* Invocation */
+  GSubprocess * native_return_value = g_subprocess_launcher_spawnv(native_c_self, native_argv, &native_error);
+
+  /* Box the return value */
+  mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_box__GSubprocess(mrb, native_return_value));
+  mrb_ary_push(mrb, results, return_value);
+  
+  /* Box out param: error */
+  mrb_value error = (native_error == NULL ? mrb_nil_value() : mruby_giftwrap__GError(mrb, native_error));
+
+  /* Add out params to results */
+  mrb_ary_push(mrb, results, error);
+
+  /* Clean in param: argv */
+  if (native_argv != NULL) free(native_argv);
+
+  return results;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_subprocess_launcher_take_fd */
+/* sha: 81c8ec2da88a2918a8e620fa2c4977d301c5378da6ed206ab3ec2dbde0ff053c */
+#if BIND_g_subprocess_launcher_take_fd_FUNCTION
+#define g_subprocess_launcher_take_fd_REQUIRED_ARGC 3
+#define g_subprocess_launcher_take_fd_OPTIONAL_ARGC 0
+/* g_subprocess_launcher_take_fd
+ *
+ * Parameters:
+ * - c_self: GSubprocessLauncher *
+ * - source_fd: gint
+ * - target_fd: gint
+ * Return Type: void
+ */
+mrb_value
+mrb_GLib_g_subprocess_launcher_take_fd(mrb_state* mrb, mrb_value self) {
+  mrb_value c_self;
+  mrb_int native_source_fd;
+  mrb_int native_target_fd;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "oii", &c_self, &native_source_fd, &native_target_fd);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, c_self, GSubprocessLauncher_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GSubprocessLauncher expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: c_self */
+  GSubprocessLauncher * native_c_self = (mrb_nil_p(c_self) ? NULL : mruby_unbox__GSubprocessLauncher(c_self));
+
+  /* Invocation */
+  g_subprocess_launcher_take_fd(native_c_self, native_source_fd, native_target_fd);
+
+  return mrb_nil_value();
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_subprocess_launcher_take_stderr_fd */
+/* sha: c30ce774c99ebc4fa9877c9cd28f406c213725640e3d7c6faaac4220df190a60 */
+#if BIND_g_subprocess_launcher_take_stderr_fd_FUNCTION
+#define g_subprocess_launcher_take_stderr_fd_REQUIRED_ARGC 2
+#define g_subprocess_launcher_take_stderr_fd_OPTIONAL_ARGC 0
+/* g_subprocess_launcher_take_stderr_fd
+ *
+ * Parameters:
+ * - c_self: GSubprocessLauncher *
+ * - fd: gint
+ * Return Type: void
+ */
+mrb_value
+mrb_GLib_g_subprocess_launcher_take_stderr_fd(mrb_state* mrb, mrb_value self) {
+  mrb_value c_self;
+  mrb_int native_fd;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "oi", &c_self, &native_fd);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, c_self, GSubprocessLauncher_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GSubprocessLauncher expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: c_self */
+  GSubprocessLauncher * native_c_self = (mrb_nil_p(c_self) ? NULL : mruby_unbox__GSubprocessLauncher(c_self));
+
+  /* Invocation */
+  g_subprocess_launcher_take_stderr_fd(native_c_self, native_fd);
+
+  return mrb_nil_value();
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_subprocess_launcher_take_stdin_fd */
+/* sha: e1debac7b1eed766296ae69f2a76ca8ca9310f3c381dd591541fd75e027a9f58 */
+#if BIND_g_subprocess_launcher_take_stdin_fd_FUNCTION
+#define g_subprocess_launcher_take_stdin_fd_REQUIRED_ARGC 2
+#define g_subprocess_launcher_take_stdin_fd_OPTIONAL_ARGC 0
+/* g_subprocess_launcher_take_stdin_fd
+ *
+ * Parameters:
+ * - c_self: GSubprocessLauncher *
+ * - fd: gint
+ * Return Type: void
+ */
+mrb_value
+mrb_GLib_g_subprocess_launcher_take_stdin_fd(mrb_state* mrb, mrb_value self) {
+  mrb_value c_self;
+  mrb_int native_fd;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "oi", &c_self, &native_fd);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, c_self, GSubprocessLauncher_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GSubprocessLauncher expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: c_self */
+  GSubprocessLauncher * native_c_self = (mrb_nil_p(c_self) ? NULL : mruby_unbox__GSubprocessLauncher(c_self));
+
+  /* Invocation */
+  g_subprocess_launcher_take_stdin_fd(native_c_self, native_fd);
+
+  return mrb_nil_value();
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_subprocess_launcher_take_stdout_fd */
+/* sha: 0ba6719132fa91c7ae504aa2d23adc612e29d1f35eb30c5aa7098b0dcd6f0e4c */
+#if BIND_g_subprocess_launcher_take_stdout_fd_FUNCTION
+#define g_subprocess_launcher_take_stdout_fd_REQUIRED_ARGC 2
+#define g_subprocess_launcher_take_stdout_fd_OPTIONAL_ARGC 0
+/* g_subprocess_launcher_take_stdout_fd
+ *
+ * Parameters:
+ * - c_self: GSubprocessLauncher *
+ * - fd: gint
+ * Return Type: void
+ */
+mrb_value
+mrb_GLib_g_subprocess_launcher_take_stdout_fd(mrb_state* mrb, mrb_value self) {
+  mrb_value c_self;
+  mrb_int native_fd;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "oi", &c_self, &native_fd);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, c_self, GSubprocessLauncher_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GSubprocessLauncher expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: c_self */
+  GSubprocessLauncher * native_c_self = (mrb_nil_p(c_self) ? NULL : mruby_unbox__GSubprocessLauncher(c_self));
+
+  /* Invocation */
+  g_subprocess_launcher_take_stdout_fd(native_c_self, native_fd);
+
+  return mrb_nil_value();
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_subprocess_launcher_unsetenv */
+/* sha: feccb20d6cc09d95989327dcb86ee1fd4ac8916f0600616dd3ba50369843ac41 */
+#if BIND_g_subprocess_launcher_unsetenv_FUNCTION
+#define g_subprocess_launcher_unsetenv_REQUIRED_ARGC 2
+#define g_subprocess_launcher_unsetenv_OPTIONAL_ARGC 0
+/* g_subprocess_launcher_unsetenv
+ *
+ * Parameters:
+ * - c_self: GSubprocessLauncher *
+ * - variable: const gchar *
+ * Return Type: void
+ */
+mrb_value
+mrb_GLib_g_subprocess_launcher_unsetenv(mrb_state* mrb, mrb_value self) {
+  mrb_value c_self;
+  char * native_variable = NULL;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "oz", &c_self, &native_variable);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, c_self, GSubprocessLauncher_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GSubprocessLauncher expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: c_self */
+  GSubprocessLauncher * native_c_self = (mrb_nil_p(c_self) ? NULL : mruby_unbox__GSubprocessLauncher(c_self));
+
+  /* Invocation */
+  g_subprocess_launcher_unsetenv(native_c_self, native_variable);
+
+  return mrb_nil_value();
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_subprocess_new */
+/* sha: 3ebaa9bb71d03e0ed4ab2d2dd76ec4883f580b930f04927b8cd62cd1ccf3faeb */
+#if BIND_g_subprocess_new_FUNCTION
+#define g_subprocess_new_REQUIRED_ARGC 2
+#define g_subprocess_new_OPTIONAL_ARGC 0
+/* g_subprocess_new
+ *
+ * Parameters:
+ * - flags: GSubprocessFlags
+ * - argv0: const gchar *
+ * Return Type: GSubprocess *
+ */
+mrb_value
+mrb_GLib_g_subprocess_new(mrb_state* mrb, mrb_value self) {
+  mrb_value results = mrb_ary_new(mrb);
+  mrb_int native_flags;
+  struct GError * native_error = NULL;
+  char * native_argv0 = NULL;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "iz", &native_flags, &native_argv0);
+
+  /* Invocation */
+  GSubprocess * native_return_value = g_subprocess_new(native_flags, &native_error, native_argv0);
+
+  /* Box the return value */
+  mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_box__GSubprocess(mrb, native_return_value));
+  mrb_ary_push(mrb, results, return_value);
+  
+  /* Box out param: error */
+  mrb_value error = (native_error == NULL ? mrb_nil_value() : mruby_giftwrap__GError(mrb, native_error));
+
+  /* Add out params to results */
+  mrb_ary_push(mrb, results, error);
+
+  return results;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_subprocess_newv */
+/* sha: a1f2ee526d44ea477acd6a1dd0ee7da3f139f8e57785f4ee6a1ada218151fe21 */
+#if BIND_g_subprocess_newv_FUNCTION
+#define g_subprocess_newv_REQUIRED_ARGC 2
+#define g_subprocess_newv_OPTIONAL_ARGC 0
+/* g_subprocess_newv
+ *
+ * Parameters:
+ * - argv: const gchar *const *
+ * - flags: GSubprocessFlags
+ * Return Type: GSubprocess *
+ */
+mrb_value
+mrb_GLib_g_subprocess_newv(mrb_state* mrb, mrb_value self) {
+  mrb_value results = mrb_ary_new(mrb);
+  mrb_value argv;
+  mrb_int native_flags;
+  struct GError * native_error = NULL;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "A!i", &argv, &native_flags);
+
+  /* Unbox param: argv */
+  char ** native_argv = NULL;
+  do {
+    if (mrb_nil_p(argv)) {
+      native_argv = NULL;
+    } else {
+      int len = mrb_ary_len(mrb, argv);
+      native_argv = (char**)calloc((len + 1), sizeof(char*));
+      for (int i = 0; i < len; i++) {
+        mrb_value str = mrb_ary_ref(mrb, argv, i);
+        native_argv[i] = mrb_string_value_cstr(mrb, &str);
+      }
+      native_argv[len] = NULL;
+    }
+  } while (0);
+
+  /* Invocation */
+  GSubprocess * native_return_value = g_subprocess_newv(native_argv, native_flags, &native_error);
+
+  /* Box the return value */
+  mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_box__GSubprocess(mrb, native_return_value));
+  mrb_ary_push(mrb, results, return_value);
+  
+  /* Box out param: error */
+  mrb_value error = (native_error == NULL ? mrb_nil_value() : mruby_giftwrap__GError(mrb, native_error));
+
+  /* Add out params to results */
+  mrb_ary_push(mrb, results, error);
+
+  /* Clean in param: argv */
+  if (native_argv != NULL) free(native_argv);
+
+  return results;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_subprocess_send_signal */
+/* sha: 74d5a19bf815045288caa4379b1c28aa97f58825827eb590197b92ed2f28bfbd */
+#if BIND_g_subprocess_send_signal_FUNCTION
+#define g_subprocess_send_signal_REQUIRED_ARGC 2
+#define g_subprocess_send_signal_OPTIONAL_ARGC 0
+/* g_subprocess_send_signal
+ *
+ * Parameters:
+ * - subprocess: GSubprocess *
+ * - signal_num: gint
+ * Return Type: void
+ */
+mrb_value
+mrb_GLib_g_subprocess_send_signal(mrb_state* mrb, mrb_value self) {
+  mrb_value subprocess;
+  mrb_int native_signal_num;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "oi", &subprocess, &native_signal_num);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, subprocess, GSubprocess_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GSubprocess expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: subprocess */
+  GSubprocess * native_subprocess = (mrb_nil_p(subprocess) ? NULL : mruby_unbox__GSubprocess(subprocess));
+
+  /* Invocation */
+  g_subprocess_send_signal(native_subprocess, native_signal_num);
+
+  return mrb_nil_value();
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_subprocess_wait */
+/* sha: b6c3496a9d680c0330058663dded2e37ace4a3865fd0339252c5f523a4945452 */
+#if BIND_g_subprocess_wait_FUNCTION
+#define g_subprocess_wait_REQUIRED_ARGC 2
+#define g_subprocess_wait_OPTIONAL_ARGC 0
+/* g_subprocess_wait
+ *
+ * Parameters:
+ * - subprocess: GSubprocess *
+ * - cancellable: GCancellable *
+ * Return Type: gboolean
+ */
+mrb_value
+mrb_GLib_g_subprocess_wait(mrb_state* mrb, mrb_value self) {
+  mrb_value results = mrb_ary_new(mrb);
+  mrb_value subprocess;
+  mrb_value cancellable;
+  struct GError * native_error = NULL;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "oo", &subprocess, &cancellable);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, subprocess, GSubprocess_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GSubprocess expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: subprocess */
+  GSubprocess * native_subprocess = (mrb_nil_p(subprocess) ? NULL : mruby_unbox__GSubprocess(subprocess));
+
+  /* Unbox param: cancellable */
+  void * native_cancellable = NULL; /* Unused parameter */
+
+  /* Invocation */
+  gboolean native_return_value = g_subprocess_wait(native_subprocess, native_cancellable, &native_error);
+
+  /* Box the return value */
+  mrb_value return_value = mrb_bool_value(native_return_value);
+  mrb_ary_push(mrb, results, return_value);
+  
+  /* Box out param: error */
+  mrb_value error = (native_error == NULL ? mrb_nil_value() : mruby_giftwrap__GError(mrb, native_error));
+
+  /* Add out params to results */
+  mrb_ary_push(mrb, results, error);
+
+  return results;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_subprocess_wait_async */
+/* sha: 512a956bbca0d68ed8d5b83b9d85e2ffe49cf6e3fe58b9eec591753c3c4828aa */
+#if BIND_g_subprocess_wait_async_FUNCTION
+#define g_subprocess_wait_async_REQUIRED_ARGC 4
+#define g_subprocess_wait_async_OPTIONAL_ARGC 0
+/* g_subprocess_wait_async
+ *
+ * Parameters:
+ * - subprocess: GSubprocess *
+ * - cancellable: GCancellable *
+ * - callback: GAsyncReadyCallback
+ * - user_data: gpointer
+ * Return Type: void
+ */
+mrb_value
+mrb_GLib_g_subprocess_wait_async(mrb_state* mrb, mrb_value self) {
+  mrb_value subprocess;
+  mrb_value cancellable;
+  mrb_value callback;
+  mrb_value user_data;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "oooo", &subprocess, &cancellable, &callback, &user_data);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, subprocess, GSubprocess_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GSubprocess expected");
+    return mrb_nil_value();
+  }
+  TODO_type_check_GAsyncReadyCallback(callback);
+  TODO_type_check_gpointer(user_data);
+
+  /* Unbox param: subprocess */
+  GSubprocess * native_subprocess = (mrb_nil_p(subprocess) ? NULL : mruby_unbox__GSubprocess(subprocess));
+
+  /* Unbox param: cancellable */
+  void * native_cancellable = NULL; /* Unused parameter */
+
+  /* Unbox param: callback */
+  GAsyncReadyCallback native_callback = TODO_mruby_unbox_GAsyncReadyCallback(callback);
+
+  /* Unbox param: user_data */
+  gpointer native_user_data = TODO_mruby_unbox_gpointer(user_data);
+
+  /* Invocation */
+  g_subprocess_wait_async(native_subprocess, native_cancellable, native_callback, native_user_data);
+
+  return mrb_nil_value();
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_subprocess_wait_check */
+/* sha: 4e3846438cfecc93fa7d1df8a92ec4a7fecee45c374fd57a126d9f189de14dbd */
+#if BIND_g_subprocess_wait_check_FUNCTION
+#define g_subprocess_wait_check_REQUIRED_ARGC 2
+#define g_subprocess_wait_check_OPTIONAL_ARGC 0
+/* g_subprocess_wait_check
+ *
+ * Parameters:
+ * - subprocess: GSubprocess *
+ * - cancellable: GCancellable *
+ * Return Type: gboolean
+ */
+mrb_value
+mrb_GLib_g_subprocess_wait_check(mrb_state* mrb, mrb_value self) {
+  mrb_value results = mrb_ary_new(mrb);
+  mrb_value subprocess;
+  mrb_value cancellable;
+  struct GError * native_error = NULL;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "oo", &subprocess, &cancellable);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, subprocess, GSubprocess_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GSubprocess expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: subprocess */
+  GSubprocess * native_subprocess = (mrb_nil_p(subprocess) ? NULL : mruby_unbox__GSubprocess(subprocess));
+
+  /* Unbox param: cancellable */
+  void * native_cancellable = NULL; /* Unused parameter */
+
+  /* Invocation */
+  gboolean native_return_value = g_subprocess_wait_check(native_subprocess, native_cancellable, &native_error);
+
+  /* Box the return value */
+  mrb_value return_value = mrb_bool_value(native_return_value);
+  mrb_ary_push(mrb, results, return_value);
+  
+  /* Box out param: error */
+  mrb_value error = (native_error == NULL ? mrb_nil_value() : mruby_giftwrap__GError(mrb, native_error));
+
+  /* Add out params to results */
+  mrb_ary_push(mrb, results, error);
+
+  return results;
+}
+#endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: g_subprocess_wait_check_async */
+/* sha: f34a1dc795406666c79402e7d2ed68f242b750925e7c3db6ae84ecda8bac1901 */
+#if BIND_g_subprocess_wait_check_async_FUNCTION
+#define g_subprocess_wait_check_async_REQUIRED_ARGC 4
+#define g_subprocess_wait_check_async_OPTIONAL_ARGC 0
+/* g_subprocess_wait_check_async
+ *
+ * Parameters:
+ * - subprocess: GSubprocess *
+ * - cancellable: GCancellable *
+ * - callback: GAsyncReadyCallback
+ * - user_data: gpointer
+ * Return Type: void
+ */
+mrb_value
+mrb_GLib_g_subprocess_wait_check_async(mrb_state* mrb, mrb_value self) {
+  mrb_value subprocess;
+  mrb_value cancellable;
+  mrb_value callback;
+  mrb_value user_data;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "oooo", &subprocess, &cancellable, &callback, &user_data);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, subprocess, GSubprocess_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GSubprocess expected");
+    return mrb_nil_value();
+  }
+  TODO_type_check_GAsyncReadyCallback(callback);
+  TODO_type_check_gpointer(user_data);
+
+  /* Unbox param: subprocess */
+  GSubprocess * native_subprocess = (mrb_nil_p(subprocess) ? NULL : mruby_unbox__GSubprocess(subprocess));
+
+  /* Unbox param: cancellable */
+  void * native_cancellable = NULL; /* Unused parameter */
+
+  /* Unbox param: callback */
+  GAsyncReadyCallback native_callback = TODO_mruby_unbox_GAsyncReadyCallback(callback);
+
+  /* Unbox param: user_data */
+  gpointer native_user_data = TODO_mruby_unbox_gpointer(user_data);
+
+  /* Invocation */
+  g_subprocess_wait_check_async(native_subprocess, native_cancellable, native_callback, native_user_data);
+
+  return mrb_nil_value();
 }
 #endif
 /* MRUBY_BINDING_END */
@@ -40805,6 +51671,43 @@ mrb_GLib_g_utf8_validate(mrb_state* mrb, mrb_value self) {
 #endif
 /* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: g_utime */
+/* sha: 97f14ad3a7a45106ee513da0af632bb2fd658f24de3406a81a4e67a7c416449c */
+#if BIND_g_utime_FUNCTION
+#define g_utime_REQUIRED_ARGC 2
+#define g_utime_OPTIONAL_ARGC 0
+/* g_utime
+ *
+ * Parameters:
+ * - filename: const gchar *
+ * - utb: struct utimbuf *
+ * Return Type: int
+ */
+mrb_value
+mrb_GLib_g_utime(mrb_state* mrb, mrb_value self) {
+  char * native_filename = NULL;
+  mrb_value utb;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "zo", &native_filename, &utb);
+
+  /* Type checking */
+  TODO_type_check_utimbuf_PTR(utb);
+
+  /* Unbox param: utb */
+  struct utimbuf * native_utb = TODO_mruby_unbox_utimbuf_PTR(utb);
+
+  /* Invocation */
+  int native_return_value = g_utime(native_filename, native_utb);
+
+  /* Box the return value */
+  mrb_value return_value = mrb_fixnum_value(native_return_value);
+  
+  return return_value;
+}
+#endif
+/* MRUBY_BINDING_END */
+
 /* MRUBY_BINDING: g_vasprintf */
 /* sha: 05f5a7bc8985b1f13aacf92e9f77a7e6c3a465cd300b7a74a38edb0af304aae5 */
 #if BIND_g_vasprintf_FUNCTION
@@ -41084,6 +51987,8 @@ void mrb_mruby_glib_gem_init(mrb_state* mrb) {
   struct RClass* GLib_module = mrb_define_module(mrb, "GLib");
   mruby_GLib_define_macro_constants(mrb);
 
+/* MRUBY_BINDING: class_initializations */
+/* sha: fd3c92caf991208f57971f6a354e9ea6dba4b81d4252810d3427924906d0f545 */
   /*
    * Initialize class bindings
    */
@@ -41138,6 +52043,15 @@ void mrb_mruby_glib_gem_init(mrb_state* mrb) {
 #if BIND_GFileInfoClass_TYPE
   mrb_GLib_GFileInfoClass_init(mrb);
 #endif
+#if BIND_GFileInputStream_TYPE
+  mrb_GLib_GFileInputStream_init(mrb);
+#endif
+#if BIND_GFileIOStream_TYPE
+  mrb_GLib_GFileIOStream_init(mrb);
+#endif
+#if BIND_GFileOutputStream_TYPE
+  mrb_GLib_GFileOutputStream_init(mrb);
+#endif
 #if BIND_GHashTable_TYPE
   mrb_GLib_GHashTable_init(mrb);
 #endif
@@ -41156,11 +52070,47 @@ void mrb_mruby_glib_gem_init(mrb_state* mrb) {
 #if BIND_GIConv_TYPE
   mrb_GLib_GIConv_init(mrb);
 #endif
+#if BIND_GInetAddress_TYPE
+  mrb_GLib_GInetAddress_init(mrb);
+#endif
+#if BIND_GInetAddressClass_TYPE
+  mrb_GLib_GInetAddressClass_init(mrb);
+#endif
+#if BIND_GInetAddressPrivate_TYPE
+  mrb_GLib_GInetAddressPrivate_init(mrb);
+#endif
+#if BIND_GInetSocketAddress_TYPE
+  mrb_GLib_GInetSocketAddress_init(mrb);
+#endif
+#if BIND_GInetSocketAddressClass_TYPE
+  mrb_GLib_GInetSocketAddressClass_init(mrb);
+#endif
+#if BIND_GInetSocketAddressPrivate_TYPE
+  mrb_GLib_GInetSocketAddressPrivate_init(mrb);
+#endif
+#if BIND_GInputStream_TYPE
+  mrb_GLib_GInputStream_init(mrb);
+#endif
+#if BIND_GInputStreamClass_TYPE
+  mrb_GLib_GInputStreamClass_init(mrb);
+#endif
+#if BIND_GInputStreamPrivate_TYPE
+  mrb_GLib_GInputStreamPrivate_init(mrb);
+#endif
 #if BIND_GIOChannel_TYPE
   mrb_GLib_GIOChannel_init(mrb);
 #endif
 #if BIND_GIOFuncs_TYPE
   mrb_GLib_GIOFuncs_init(mrb);
+#endif
+#if BIND_GIOStream_TYPE
+  mrb_GLib_GIOStream_init(mrb);
+#endif
+#if BIND_GIOStreamClass_TYPE
+  mrb_GLib_GIOStreamClass_init(mrb);
+#endif
+#if BIND_GIOStreamPrivate_TYPE
+  mrb_GLib_GIOStreamPrivate_init(mrb);
 #endif
 #if BIND_GKeyFile_TYPE
   mrb_GLib_GKeyFile_init(mrb);
@@ -41204,6 +52154,15 @@ void mrb_mruby_glib_gem_init(mrb_state* mrb) {
 #if BIND_GOptionGroup_TYPE
   mrb_GLib_GOptionGroup_init(mrb);
 #endif
+#if BIND_GOutputStream_TYPE
+  mrb_GLib_GOutputStream_init(mrb);
+#endif
+#if BIND_GOutputStreamClass_TYPE
+  mrb_GLib_GOutputStreamClass_init(mrb);
+#endif
+#if BIND_GOutputStreamPrivate_TYPE
+  mrb_GLib_GOutputStreamPrivate_init(mrb);
+#endif
 #if BIND_GPatternSpec_TYPE
   mrb_GLib_GPatternSpec_init(mrb);
 #endif
@@ -41237,6 +52196,12 @@ void mrb_mruby_glib_gem_init(mrb_state* mrb) {
 #if BIND_GScannerConfig_TYPE
   mrb_GLib_GScannerConfig_init(mrb);
 #endif
+#if BIND_GSeekable_TYPE
+  mrb_GLib_GSeekable_init(mrb);
+#endif
+#if BIND_GSeekableIface_TYPE
+  mrb_GLib_GSeekableIface_init(mrb);
+#endif
 #if BIND_GSequence_TYPE
   mrb_GLib_GSequence_init(mrb);
 #endif
@@ -41245,6 +52210,21 @@ void mrb_mruby_glib_gem_init(mrb_state* mrb) {
 #endif
 #if BIND_GSList_TYPE
   mrb_GLib_GSList_init(mrb);
+#endif
+#if BIND_GSocket_TYPE
+  mrb_GLib_GSocket_init(mrb);
+#endif
+#if BIND_GSocketAddress_TYPE
+  mrb_GLib_GSocketAddress_init(mrb);
+#endif
+#if BIND_GSocketAddressClass_TYPE
+  mrb_GLib_GSocketAddressClass_init(mrb);
+#endif
+#if BIND_GSocketClass_TYPE
+  mrb_GLib_GSocketClass_init(mrb);
+#endif
+#if BIND_GSocketPrivate_TYPE
+  mrb_GLib_GSocketPrivate_init(mrb);
 #endif
 #if BIND_GSource_TYPE
   mrb_GLib_GSource_init(mrb);
@@ -41263,6 +52243,12 @@ void mrb_mruby_glib_gem_init(mrb_state* mrb) {
 #endif
 #if BIND_GStringChunk_TYPE
   mrb_GLib_GStringChunk_init(mrb);
+#endif
+#if BIND_GSubprocess_TYPE
+  mrb_GLib_GSubprocess_init(mrb);
+#endif
+#if BIND_GSubprocessLauncher_TYPE
+  mrb_GLib_GSubprocessLauncher_init(mrb);
 #endif
 #if BIND_GTestCase_TYPE
   mrb_GLib_GTestCase_init(mrb);
@@ -41315,7 +52301,10 @@ void mrb_mruby_glib_gem_init(mrb_state* mrb) {
 #if BIND_GVariantType_TYPE
   mrb_GLib_GVariantType_init(mrb);
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: global_function_definitions */
+/* sha: 032bb35db019e580cc2b0350504e9a34aac244a8ee37648f62fe3efa66ad030a */
   /*
    * Global Functions
    */
@@ -41381,6 +52370,90 @@ void mrb_mruby_glib_gem_init(mrb_state* mrb) {
 #endif
 #if BIND_g_assertion_message_expr_FUNCTION
   mrb_define_class_method(mrb, GLib_module, "g_assertion_message_expr", mrb_GLib_g_assertion_message_expr, MRB_ARGS_ARG(g_assertion_message_expr_REQUIRED_ARGC, g_assertion_message_expr_OPTIONAL_ARGC));
+#endif
+#if BIND_g_async_queue_length_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_async_queue_length", mrb_GLib_g_async_queue_length, MRB_ARGS_ARG(g_async_queue_length_REQUIRED_ARGC, g_async_queue_length_OPTIONAL_ARGC));
+#endif
+#if BIND_g_async_queue_length_unlocked_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_async_queue_length_unlocked", mrb_GLib_g_async_queue_length_unlocked, MRB_ARGS_ARG(g_async_queue_length_unlocked_REQUIRED_ARGC, g_async_queue_length_unlocked_OPTIONAL_ARGC));
+#endif
+#if BIND_g_async_queue_lock_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_async_queue_lock", mrb_GLib_g_async_queue_lock, MRB_ARGS_ARG(g_async_queue_lock_REQUIRED_ARGC, g_async_queue_lock_OPTIONAL_ARGC));
+#endif
+#if BIND_g_async_queue_new_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_async_queue_new", mrb_GLib_g_async_queue_new, MRB_ARGS_ARG(g_async_queue_new_REQUIRED_ARGC, g_async_queue_new_OPTIONAL_ARGC));
+#endif
+#if BIND_g_async_queue_new_full_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_async_queue_new_full", mrb_GLib_g_async_queue_new_full, MRB_ARGS_ARG(g_async_queue_new_full_REQUIRED_ARGC, g_async_queue_new_full_OPTIONAL_ARGC));
+#endif
+#if BIND_g_async_queue_pop_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_async_queue_pop", mrb_GLib_g_async_queue_pop, MRB_ARGS_ARG(g_async_queue_pop_REQUIRED_ARGC, g_async_queue_pop_OPTIONAL_ARGC));
+#endif
+#if BIND_g_async_queue_pop_unlocked_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_async_queue_pop_unlocked", mrb_GLib_g_async_queue_pop_unlocked, MRB_ARGS_ARG(g_async_queue_pop_unlocked_REQUIRED_ARGC, g_async_queue_pop_unlocked_OPTIONAL_ARGC));
+#endif
+#if BIND_g_async_queue_push_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_async_queue_push", mrb_GLib_g_async_queue_push, MRB_ARGS_ARG(g_async_queue_push_REQUIRED_ARGC, g_async_queue_push_OPTIONAL_ARGC));
+#endif
+#if BIND_g_async_queue_push_front_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_async_queue_push_front", mrb_GLib_g_async_queue_push_front, MRB_ARGS_ARG(g_async_queue_push_front_REQUIRED_ARGC, g_async_queue_push_front_OPTIONAL_ARGC));
+#endif
+#if BIND_g_async_queue_push_front_unlocked_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_async_queue_push_front_unlocked", mrb_GLib_g_async_queue_push_front_unlocked, MRB_ARGS_ARG(g_async_queue_push_front_unlocked_REQUIRED_ARGC, g_async_queue_push_front_unlocked_OPTIONAL_ARGC));
+#endif
+#if BIND_g_async_queue_push_sorted_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_async_queue_push_sorted", mrb_GLib_g_async_queue_push_sorted, MRB_ARGS_ARG(g_async_queue_push_sorted_REQUIRED_ARGC, g_async_queue_push_sorted_OPTIONAL_ARGC));
+#endif
+#if BIND_g_async_queue_push_sorted_unlocked_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_async_queue_push_sorted_unlocked", mrb_GLib_g_async_queue_push_sorted_unlocked, MRB_ARGS_ARG(g_async_queue_push_sorted_unlocked_REQUIRED_ARGC, g_async_queue_push_sorted_unlocked_OPTIONAL_ARGC));
+#endif
+#if BIND_g_async_queue_push_unlocked_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_async_queue_push_unlocked", mrb_GLib_g_async_queue_push_unlocked, MRB_ARGS_ARG(g_async_queue_push_unlocked_REQUIRED_ARGC, g_async_queue_push_unlocked_OPTIONAL_ARGC));
+#endif
+#if BIND_g_async_queue_ref_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_async_queue_ref", mrb_GLib_g_async_queue_ref, MRB_ARGS_ARG(g_async_queue_ref_REQUIRED_ARGC, g_async_queue_ref_OPTIONAL_ARGC));
+#endif
+#if BIND_g_async_queue_ref_unlocked_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_async_queue_ref_unlocked", mrb_GLib_g_async_queue_ref_unlocked, MRB_ARGS_ARG(g_async_queue_ref_unlocked_REQUIRED_ARGC, g_async_queue_ref_unlocked_OPTIONAL_ARGC));
+#endif
+#if BIND_g_async_queue_remove_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_async_queue_remove", mrb_GLib_g_async_queue_remove, MRB_ARGS_ARG(g_async_queue_remove_REQUIRED_ARGC, g_async_queue_remove_OPTIONAL_ARGC));
+#endif
+#if BIND_g_async_queue_remove_unlocked_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_async_queue_remove_unlocked", mrb_GLib_g_async_queue_remove_unlocked, MRB_ARGS_ARG(g_async_queue_remove_unlocked_REQUIRED_ARGC, g_async_queue_remove_unlocked_OPTIONAL_ARGC));
+#endif
+#if BIND_g_async_queue_sort_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_async_queue_sort", mrb_GLib_g_async_queue_sort, MRB_ARGS_ARG(g_async_queue_sort_REQUIRED_ARGC, g_async_queue_sort_OPTIONAL_ARGC));
+#endif
+#if BIND_g_async_queue_sort_unlocked_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_async_queue_sort_unlocked", mrb_GLib_g_async_queue_sort_unlocked, MRB_ARGS_ARG(g_async_queue_sort_unlocked_REQUIRED_ARGC, g_async_queue_sort_unlocked_OPTIONAL_ARGC));
+#endif
+#if BIND_g_async_queue_timed_pop_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_async_queue_timed_pop", mrb_GLib_g_async_queue_timed_pop, MRB_ARGS_ARG(g_async_queue_timed_pop_REQUIRED_ARGC, g_async_queue_timed_pop_OPTIONAL_ARGC));
+#endif
+#if BIND_g_async_queue_timed_pop_unlocked_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_async_queue_timed_pop_unlocked", mrb_GLib_g_async_queue_timed_pop_unlocked, MRB_ARGS_ARG(g_async_queue_timed_pop_unlocked_REQUIRED_ARGC, g_async_queue_timed_pop_unlocked_OPTIONAL_ARGC));
+#endif
+#if BIND_g_async_queue_timeout_pop_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_async_queue_timeout_pop", mrb_GLib_g_async_queue_timeout_pop, MRB_ARGS_ARG(g_async_queue_timeout_pop_REQUIRED_ARGC, g_async_queue_timeout_pop_OPTIONAL_ARGC));
+#endif
+#if BIND_g_async_queue_timeout_pop_unlocked_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_async_queue_timeout_pop_unlocked", mrb_GLib_g_async_queue_timeout_pop_unlocked, MRB_ARGS_ARG(g_async_queue_timeout_pop_unlocked_REQUIRED_ARGC, g_async_queue_timeout_pop_unlocked_OPTIONAL_ARGC));
+#endif
+#if BIND_g_async_queue_try_pop_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_async_queue_try_pop", mrb_GLib_g_async_queue_try_pop, MRB_ARGS_ARG(g_async_queue_try_pop_REQUIRED_ARGC, g_async_queue_try_pop_OPTIONAL_ARGC));
+#endif
+#if BIND_g_async_queue_try_pop_unlocked_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_async_queue_try_pop_unlocked", mrb_GLib_g_async_queue_try_pop_unlocked, MRB_ARGS_ARG(g_async_queue_try_pop_unlocked_REQUIRED_ARGC, g_async_queue_try_pop_unlocked_OPTIONAL_ARGC));
+#endif
+#if BIND_g_async_queue_unlock_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_async_queue_unlock", mrb_GLib_g_async_queue_unlock, MRB_ARGS_ARG(g_async_queue_unlock_REQUIRED_ARGC, g_async_queue_unlock_OPTIONAL_ARGC));
+#endif
+#if BIND_g_async_queue_unref_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_async_queue_unref", mrb_GLib_g_async_queue_unref, MRB_ARGS_ARG(g_async_queue_unref_REQUIRED_ARGC, g_async_queue_unref_OPTIONAL_ARGC));
+#endif
+#if BIND_g_async_queue_unref_and_unlock_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_async_queue_unref_and_unlock", mrb_GLib_g_async_queue_unref_and_unlock, MRB_ARGS_ARG(g_async_queue_unref_and_unlock_REQUIRED_ARGC, g_async_queue_unref_and_unlock_OPTIONAL_ARGC));
 #endif
 #if BIND_g_atexit_FUNCTION
   mrb_define_class_method(mrb, GLib_module, "g_atexit", mrb_GLib_g_atexit, MRB_ARGS_ARG(g_atexit_REQUIRED_ARGC, g_atexit_OPTIONAL_ARGC));
@@ -41687,6 +52760,9 @@ void mrb_mruby_glib_gem_init(mrb_state* mrb) {
 #endif
 #if BIND_g_convert_with_iconv_FUNCTION
   mrb_define_class_method(mrb, GLib_module, "g_convert_with_iconv", mrb_GLib_g_convert_with_iconv, MRB_ARGS_ARG(g_convert_with_iconv_REQUIRED_ARGC, g_convert_with_iconv_OPTIONAL_ARGC));
+#endif
+#if BIND_g_creat_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_creat", mrb_GLib_g_creat, MRB_ARGS_ARG(g_creat_REQUIRED_ARGC, g_creat_OPTIONAL_ARGC));
 #endif
 #if BIND_g_datalist_clear_FUNCTION
   mrb_define_class_method(mrb, GLib_module, "g_datalist_clear", mrb_GLib_g_datalist_clear, MRB_ARGS_ARG(g_datalist_clear_REQUIRED_ARGC, g_datalist_clear_OPTIONAL_ARGC));
@@ -42096,6 +53172,9 @@ void mrb_mruby_glib_gem_init(mrb_state* mrb) {
 #if BIND_g_file_append_to_FUNCTION
   mrb_define_class_method(mrb, GLib_module, "g_file_append_to", mrb_GLib_g_file_append_to, MRB_ARGS_ARG(g_file_append_to_REQUIRED_ARGC, g_file_append_to_OPTIONAL_ARGC));
 #endif
+#if BIND_g_file_append_to_async_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_file_append_to_async", mrb_GLib_g_file_append_to_async, MRB_ARGS_ARG(g_file_append_to_async_REQUIRED_ARGC, g_file_append_to_async_OPTIONAL_ARGC));
+#endif
 #if BIND_g_file_attribute_matcher_enumerate_namespace_FUNCTION
   mrb_define_class_method(mrb, GLib_module, "g_file_attribute_matcher_enumerate_namespace", mrb_GLib_g_file_attribute_matcher_enumerate_namespace, MRB_ARGS_ARG(g_file_attribute_matcher_enumerate_namespace_REQUIRED_ARGC, g_file_attribute_matcher_enumerate_namespace_OPTIONAL_ARGC));
 #endif
@@ -42129,17 +53208,29 @@ void mrb_mruby_glib_gem_init(mrb_state* mrb) {
 #if BIND_g_file_copy_FUNCTION
   mrb_define_class_method(mrb, GLib_module, "g_file_copy", mrb_GLib_g_file_copy, MRB_ARGS_ARG(g_file_copy_REQUIRED_ARGC, g_file_copy_OPTIONAL_ARGC));
 #endif
+#if BIND_g_file_copy_async_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_file_copy_async", mrb_GLib_g_file_copy_async, MRB_ARGS_ARG(g_file_copy_async_REQUIRED_ARGC, g_file_copy_async_OPTIONAL_ARGC));
+#endif
 #if BIND_g_file_copy_attributes_FUNCTION
   mrb_define_class_method(mrb, GLib_module, "g_file_copy_attributes", mrb_GLib_g_file_copy_attributes, MRB_ARGS_ARG(g_file_copy_attributes_REQUIRED_ARGC, g_file_copy_attributes_OPTIONAL_ARGC));
 #endif
 #if BIND_g_file_create_FUNCTION
   mrb_define_class_method(mrb, GLib_module, "g_file_create", mrb_GLib_g_file_create, MRB_ARGS_ARG(g_file_create_REQUIRED_ARGC, g_file_create_OPTIONAL_ARGC));
 #endif
+#if BIND_g_file_create_async_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_file_create_async", mrb_GLib_g_file_create_async, MRB_ARGS_ARG(g_file_create_async_REQUIRED_ARGC, g_file_create_async_OPTIONAL_ARGC));
+#endif
 #if BIND_g_file_create_readwrite_FUNCTION
   mrb_define_class_method(mrb, GLib_module, "g_file_create_readwrite", mrb_GLib_g_file_create_readwrite, MRB_ARGS_ARG(g_file_create_readwrite_REQUIRED_ARGC, g_file_create_readwrite_OPTIONAL_ARGC));
 #endif
+#if BIND_g_file_create_readwrite_async_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_file_create_readwrite_async", mrb_GLib_g_file_create_readwrite_async, MRB_ARGS_ARG(g_file_create_readwrite_async_REQUIRED_ARGC, g_file_create_readwrite_async_OPTIONAL_ARGC));
+#endif
 #if BIND_g_file_delete_FUNCTION
   mrb_define_class_method(mrb, GLib_module, "g_file_delete", mrb_GLib_g_file_delete, MRB_ARGS_ARG(g_file_delete_REQUIRED_ARGC, g_file_delete_OPTIONAL_ARGC));
+#endif
+#if BIND_g_file_delete_async_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_file_delete_async", mrb_GLib_g_file_delete_async, MRB_ARGS_ARG(g_file_delete_async_REQUIRED_ARGC, g_file_delete_async_OPTIONAL_ARGC));
 #endif
 #if BIND_g_file_dup_FUNCTION
   mrb_define_class_method(mrb, GLib_module, "g_file_dup", mrb_GLib_g_file_dup, MRB_ARGS_ARG(g_file_dup_REQUIRED_ARGC, g_file_dup_OPTIONAL_ARGC));
@@ -42153,6 +53244,9 @@ void mrb_mruby_glib_gem_init(mrb_state* mrb) {
 #if BIND_g_file_enumerate_children_FUNCTION
   mrb_define_class_method(mrb, GLib_module, "g_file_enumerate_children", mrb_GLib_g_file_enumerate_children, MRB_ARGS_ARG(g_file_enumerate_children_REQUIRED_ARGC, g_file_enumerate_children_OPTIONAL_ARGC));
 #endif
+#if BIND_g_file_enumerate_children_async_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_file_enumerate_children_async", mrb_GLib_g_file_enumerate_children_async, MRB_ARGS_ARG(g_file_enumerate_children_async_REQUIRED_ARGC, g_file_enumerate_children_async_OPTIONAL_ARGC));
+#endif
 #if BIND_g_file_equal_FUNCTION
   mrb_define_class_method(mrb, GLib_module, "g_file_equal", mrb_GLib_g_file_equal, MRB_ARGS_ARG(g_file_equal_REQUIRED_ARGC, g_file_equal_OPTIONAL_ARGC));
 #endif
@@ -42164,6 +53258,9 @@ void mrb_mruby_glib_gem_init(mrb_state* mrb) {
 #endif
 #if BIND_g_file_find_enclosing_mount_FUNCTION
   mrb_define_class_method(mrb, GLib_module, "g_file_find_enclosing_mount", mrb_GLib_g_file_find_enclosing_mount, MRB_ARGS_ARG(g_file_find_enclosing_mount_REQUIRED_ARGC, g_file_find_enclosing_mount_OPTIONAL_ARGC));
+#endif
+#if BIND_g_file_find_enclosing_mount_async_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_file_find_enclosing_mount_async", mrb_GLib_g_file_find_enclosing_mount_async, MRB_ARGS_ARG(g_file_find_enclosing_mount_async_REQUIRED_ARGC, g_file_find_enclosing_mount_async_OPTIONAL_ARGC));
 #endif
 #if BIND_g_file_get_basename_FUNCTION
   mrb_define_class_method(mrb, GLib_module, "g_file_get_basename", mrb_GLib_g_file_get_basename, MRB_ARGS_ARG(g_file_get_basename_REQUIRED_ARGC, g_file_get_basename_OPTIONAL_ARGC));
@@ -42408,8 +53505,17 @@ void mrb_mruby_glib_gem_init(mrb_state* mrb) {
 #if BIND_g_file_load_contents_FUNCTION
   mrb_define_class_method(mrb, GLib_module, "g_file_load_contents", mrb_GLib_g_file_load_contents, MRB_ARGS_ARG(g_file_load_contents_REQUIRED_ARGC, g_file_load_contents_OPTIONAL_ARGC));
 #endif
+#if BIND_g_file_load_contents_async_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_file_load_contents_async", mrb_GLib_g_file_load_contents_async, MRB_ARGS_ARG(g_file_load_contents_async_REQUIRED_ARGC, g_file_load_contents_async_OPTIONAL_ARGC));
+#endif
+#if BIND_g_file_load_partial_contents_async_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_file_load_partial_contents_async", mrb_GLib_g_file_load_partial_contents_async, MRB_ARGS_ARG(g_file_load_partial_contents_async_REQUIRED_ARGC, g_file_load_partial_contents_async_OPTIONAL_ARGC));
+#endif
 #if BIND_g_file_make_directory_FUNCTION
   mrb_define_class_method(mrb, GLib_module, "g_file_make_directory", mrb_GLib_g_file_make_directory, MRB_ARGS_ARG(g_file_make_directory_REQUIRED_ARGC, g_file_make_directory_OPTIONAL_ARGC));
+#endif
+#if BIND_g_file_make_directory_async_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_file_make_directory_async", mrb_GLib_g_file_make_directory_async, MRB_ARGS_ARG(g_file_make_directory_async_REQUIRED_ARGC, g_file_make_directory_async_OPTIONAL_ARGC));
 #endif
 #if BIND_g_file_make_directory_with_parents_FUNCTION
   mrb_define_class_method(mrb, GLib_module, "g_file_make_directory_with_parents", mrb_GLib_g_file_make_directory_with_parents, MRB_ARGS_ARG(g_file_make_directory_with_parents_REQUIRED_ARGC, g_file_make_directory_with_parents_OPTIONAL_ARGC));
@@ -42419,6 +53525,9 @@ void mrb_mruby_glib_gem_init(mrb_state* mrb) {
 #endif
 #if BIND_g_file_measure_disk_usage_FUNCTION
   mrb_define_class_method(mrb, GLib_module, "g_file_measure_disk_usage", mrb_GLib_g_file_measure_disk_usage, MRB_ARGS_ARG(g_file_measure_disk_usage_REQUIRED_ARGC, g_file_measure_disk_usage_OPTIONAL_ARGC));
+#endif
+#if BIND_g_file_measure_disk_usage_async_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_file_measure_disk_usage_async", mrb_GLib_g_file_measure_disk_usage_async, MRB_ARGS_ARG(g_file_measure_disk_usage_async_REQUIRED_ARGC, g_file_measure_disk_usage_async_OPTIONAL_ARGC));
 #endif
 #if BIND_g_file_monitor_FUNCTION
   mrb_define_class_method(mrb, GLib_module, "g_file_monitor", mrb_GLib_g_file_monitor, MRB_ARGS_ARG(g_file_monitor_REQUIRED_ARGC, g_file_monitor_OPTIONAL_ARGC));
@@ -42456,6 +53565,9 @@ void mrb_mruby_glib_gem_init(mrb_state* mrb) {
 #if BIND_g_file_open_readwrite_FUNCTION
   mrb_define_class_method(mrb, GLib_module, "g_file_open_readwrite", mrb_GLib_g_file_open_readwrite, MRB_ARGS_ARG(g_file_open_readwrite_REQUIRED_ARGC, g_file_open_readwrite_OPTIONAL_ARGC));
 #endif
+#if BIND_g_file_open_readwrite_async_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_file_open_readwrite_async", mrb_GLib_g_file_open_readwrite_async, MRB_ARGS_ARG(g_file_open_readwrite_async_REQUIRED_ARGC, g_file_open_readwrite_async_OPTIONAL_ARGC));
+#endif
 #if BIND_g_file_open_tmp_FUNCTION
   mrb_define_class_method(mrb, GLib_module, "g_file_open_tmp", mrb_GLib_g_file_open_tmp, MRB_ARGS_ARG(g_file_open_tmp_REQUIRED_ARGC, g_file_open_tmp_OPTIONAL_ARGC));
 #endif
@@ -42477,8 +53589,14 @@ void mrb_mruby_glib_gem_init(mrb_state* mrb) {
 #if BIND_g_file_query_filesystem_info_FUNCTION
   mrb_define_class_method(mrb, GLib_module, "g_file_query_filesystem_info", mrb_GLib_g_file_query_filesystem_info, MRB_ARGS_ARG(g_file_query_filesystem_info_REQUIRED_ARGC, g_file_query_filesystem_info_OPTIONAL_ARGC));
 #endif
+#if BIND_g_file_query_filesystem_info_async_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_file_query_filesystem_info_async", mrb_GLib_g_file_query_filesystem_info_async, MRB_ARGS_ARG(g_file_query_filesystem_info_async_REQUIRED_ARGC, g_file_query_filesystem_info_async_OPTIONAL_ARGC));
+#endif
 #if BIND_g_file_query_info_FUNCTION
   mrb_define_class_method(mrb, GLib_module, "g_file_query_info", mrb_GLib_g_file_query_info, MRB_ARGS_ARG(g_file_query_info_REQUIRED_ARGC, g_file_query_info_OPTIONAL_ARGC));
+#endif
+#if BIND_g_file_query_info_async_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_file_query_info_async", mrb_GLib_g_file_query_info_async, MRB_ARGS_ARG(g_file_query_info_async_REQUIRED_ARGC, g_file_query_info_async_OPTIONAL_ARGC));
 #endif
 #if BIND_g_file_query_settable_attributes_FUNCTION
   mrb_define_class_method(mrb, GLib_module, "g_file_query_settable_attributes", mrb_GLib_g_file_query_settable_attributes, MRB_ARGS_ARG(g_file_query_settable_attributes_REQUIRED_ARGC, g_file_query_settable_attributes_OPTIONAL_ARGC));
@@ -42489,17 +53607,32 @@ void mrb_mruby_glib_gem_init(mrb_state* mrb) {
 #if BIND_g_file_read_FUNCTION
   mrb_define_class_method(mrb, GLib_module, "g_file_read", mrb_GLib_g_file_read, MRB_ARGS_ARG(g_file_read_REQUIRED_ARGC, g_file_read_OPTIONAL_ARGC));
 #endif
+#if BIND_g_file_read_async_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_file_read_async", mrb_GLib_g_file_read_async, MRB_ARGS_ARG(g_file_read_async_REQUIRED_ARGC, g_file_read_async_OPTIONAL_ARGC));
+#endif
 #if BIND_g_file_read_link_FUNCTION
   mrb_define_class_method(mrb, GLib_module, "g_file_read_link", mrb_GLib_g_file_read_link, MRB_ARGS_ARG(g_file_read_link_REQUIRED_ARGC, g_file_read_link_OPTIONAL_ARGC));
 #endif
 #if BIND_g_file_replace_FUNCTION
   mrb_define_class_method(mrb, GLib_module, "g_file_replace", mrb_GLib_g_file_replace, MRB_ARGS_ARG(g_file_replace_REQUIRED_ARGC, g_file_replace_OPTIONAL_ARGC));
 #endif
+#if BIND_g_file_replace_async_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_file_replace_async", mrb_GLib_g_file_replace_async, MRB_ARGS_ARG(g_file_replace_async_REQUIRED_ARGC, g_file_replace_async_OPTIONAL_ARGC));
+#endif
 #if BIND_g_file_replace_contents_FUNCTION
   mrb_define_class_method(mrb, GLib_module, "g_file_replace_contents", mrb_GLib_g_file_replace_contents, MRB_ARGS_ARG(g_file_replace_contents_REQUIRED_ARGC, g_file_replace_contents_OPTIONAL_ARGC));
 #endif
+#if BIND_g_file_replace_contents_async_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_file_replace_contents_async", mrb_GLib_g_file_replace_contents_async, MRB_ARGS_ARG(g_file_replace_contents_async_REQUIRED_ARGC, g_file_replace_contents_async_OPTIONAL_ARGC));
+#endif
+#if BIND_g_file_replace_contents_bytes_async_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_file_replace_contents_bytes_async", mrb_GLib_g_file_replace_contents_bytes_async, MRB_ARGS_ARG(g_file_replace_contents_bytes_async_REQUIRED_ARGC, g_file_replace_contents_bytes_async_OPTIONAL_ARGC));
+#endif
 #if BIND_g_file_replace_readwrite_FUNCTION
   mrb_define_class_method(mrb, GLib_module, "g_file_replace_readwrite", mrb_GLib_g_file_replace_readwrite, MRB_ARGS_ARG(g_file_replace_readwrite_REQUIRED_ARGC, g_file_replace_readwrite_OPTIONAL_ARGC));
+#endif
+#if BIND_g_file_replace_readwrite_async_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_file_replace_readwrite_async", mrb_GLib_g_file_replace_readwrite_async, MRB_ARGS_ARG(g_file_replace_readwrite_async_REQUIRED_ARGC, g_file_replace_readwrite_async_OPTIONAL_ARGC));
 #endif
 #if BIND_g_file_resolve_relative_path_FUNCTION
   mrb_define_class_method(mrb, GLib_module, "g_file_resolve_relative_path", mrb_GLib_g_file_resolve_relative_path, MRB_ARGS_ARG(g_file_resolve_relative_path_REQUIRED_ARGC, g_file_resolve_relative_path_OPTIONAL_ARGC));
@@ -42525,6 +53658,9 @@ void mrb_mruby_glib_gem_init(mrb_state* mrb) {
 #if BIND_g_file_set_attribute_uint64_FUNCTION
   mrb_define_class_method(mrb, GLib_module, "g_file_set_attribute_uint64", mrb_GLib_g_file_set_attribute_uint64, MRB_ARGS_ARG(g_file_set_attribute_uint64_REQUIRED_ARGC, g_file_set_attribute_uint64_OPTIONAL_ARGC));
 #endif
+#if BIND_g_file_set_attributes_async_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_file_set_attributes_async", mrb_GLib_g_file_set_attributes_async, MRB_ARGS_ARG(g_file_set_attributes_async_REQUIRED_ARGC, g_file_set_attributes_async_OPTIONAL_ARGC));
+#endif
 #if BIND_g_file_set_attributes_from_info_FUNCTION
   mrb_define_class_method(mrb, GLib_module, "g_file_set_attributes_from_info", mrb_GLib_g_file_set_attributes_from_info, MRB_ARGS_ARG(g_file_set_attributes_from_info_REQUIRED_ARGC, g_file_set_attributes_from_info_OPTIONAL_ARGC));
 #endif
@@ -42533,6 +53669,9 @@ void mrb_mruby_glib_gem_init(mrb_state* mrb) {
 #endif
 #if BIND_g_file_set_display_name_FUNCTION
   mrb_define_class_method(mrb, GLib_module, "g_file_set_display_name", mrb_GLib_g_file_set_display_name, MRB_ARGS_ARG(g_file_set_display_name_REQUIRED_ARGC, g_file_set_display_name_OPTIONAL_ARGC));
+#endif
+#if BIND_g_file_set_display_name_async_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_file_set_display_name_async", mrb_GLib_g_file_set_display_name_async, MRB_ARGS_ARG(g_file_set_display_name_async_REQUIRED_ARGC, g_file_set_display_name_async_OPTIONAL_ARGC));
 #endif
 #if BIND_g_file_start_mountable_FUNCTION
   mrb_define_class_method(mrb, GLib_module, "g_file_start_mountable", mrb_GLib_g_file_start_mountable, MRB_ARGS_ARG(g_file_start_mountable_REQUIRED_ARGC, g_file_start_mountable_OPTIONAL_ARGC));
@@ -42548,6 +53687,9 @@ void mrb_mruby_glib_gem_init(mrb_state* mrb) {
 #endif
 #if BIND_g_file_trash_FUNCTION
   mrb_define_class_method(mrb, GLib_module, "g_file_trash", mrb_GLib_g_file_trash, MRB_ARGS_ARG(g_file_trash_REQUIRED_ARGC, g_file_trash_OPTIONAL_ARGC));
+#endif
+#if BIND_g_file_trash_async_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_file_trash_async", mrb_GLib_g_file_trash_async, MRB_ARGS_ARG(g_file_trash_async_REQUIRED_ARGC, g_file_trash_async_OPTIONAL_ARGC));
 #endif
 #if BIND_g_file_unmount_mountable_FUNCTION
   mrb_define_class_method(mrb, GLib_module, "g_file_unmount_mountable", mrb_GLib_g_file_unmount_mountable, MRB_ARGS_ARG(g_file_unmount_mountable_REQUIRED_ARGC, g_file_unmount_mountable_OPTIONAL_ARGC));
@@ -42576,6 +53718,9 @@ void mrb_mruby_glib_gem_init(mrb_state* mrb) {
 #if BIND_g_find_program_in_path_FUNCTION
   mrb_define_class_method(mrb, GLib_module, "g_find_program_in_path", mrb_GLib_g_find_program_in_path, MRB_ARGS_ARG(g_find_program_in_path_REQUIRED_ARGC, g_find_program_in_path_OPTIONAL_ARGC));
 #endif
+#if BIND_g_fopen_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_fopen", mrb_GLib_g_fopen, MRB_ARGS_ARG(g_fopen_REQUIRED_ARGC, g_fopen_OPTIONAL_ARGC));
+#endif
 #if BIND_g_format_size_FUNCTION
   mrb_define_class_method(mrb, GLib_module, "g_format_size", mrb_GLib_g_format_size, MRB_ARGS_ARG(g_format_size_REQUIRED_ARGC, g_format_size_OPTIONAL_ARGC));
 #endif
@@ -42590,6 +53735,9 @@ void mrb_mruby_glib_gem_init(mrb_state* mrb) {
 #endif
 #if BIND_g_free_FUNCTION
   mrb_define_class_method(mrb, GLib_module, "g_free", mrb_GLib_g_free, MRB_ARGS_ARG(g_free_REQUIRED_ARGC, g_free_OPTIONAL_ARGC));
+#endif
+#if BIND_g_freopen_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_freopen", mrb_GLib_g_freopen, MRB_ARGS_ARG(g_freopen_REQUIRED_ARGC, g_freopen_OPTIONAL_ARGC));
 #endif
 #if BIND_g_get_application_name_FUNCTION
   mrb_define_class_method(mrb, GLib_module, "g_get_application_name", mrb_GLib_g_get_application_name, MRB_ARGS_ARG(g_get_application_name_REQUIRED_ARGC, g_get_application_name_OPTIONAL_ARGC));
@@ -42723,6 +53871,132 @@ void mrb_mruby_glib_gem_init(mrb_state* mrb) {
 #if BIND_g_idle_source_new_FUNCTION
   mrb_define_class_method(mrb, GLib_module, "g_idle_source_new", mrb_GLib_g_idle_source_new, MRB_ARGS_ARG(g_idle_source_new_REQUIRED_ARGC, g_idle_source_new_OPTIONAL_ARGC));
 #endif
+#if BIND_g_inet_address_equal_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_inet_address_equal", mrb_GLib_g_inet_address_equal, MRB_ARGS_ARG(g_inet_address_equal_REQUIRED_ARGC, g_inet_address_equal_OPTIONAL_ARGC));
+#endif
+#if BIND_g_inet_address_get_family_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_inet_address_get_family", mrb_GLib_g_inet_address_get_family, MRB_ARGS_ARG(g_inet_address_get_family_REQUIRED_ARGC, g_inet_address_get_family_OPTIONAL_ARGC));
+#endif
+#if BIND_g_inet_address_get_is_any_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_inet_address_get_is_any", mrb_GLib_g_inet_address_get_is_any, MRB_ARGS_ARG(g_inet_address_get_is_any_REQUIRED_ARGC, g_inet_address_get_is_any_OPTIONAL_ARGC));
+#endif
+#if BIND_g_inet_address_get_is_link_local_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_inet_address_get_is_link_local", mrb_GLib_g_inet_address_get_is_link_local, MRB_ARGS_ARG(g_inet_address_get_is_link_local_REQUIRED_ARGC, g_inet_address_get_is_link_local_OPTIONAL_ARGC));
+#endif
+#if BIND_g_inet_address_get_is_loopback_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_inet_address_get_is_loopback", mrb_GLib_g_inet_address_get_is_loopback, MRB_ARGS_ARG(g_inet_address_get_is_loopback_REQUIRED_ARGC, g_inet_address_get_is_loopback_OPTIONAL_ARGC));
+#endif
+#if BIND_g_inet_address_get_is_mc_global_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_inet_address_get_is_mc_global", mrb_GLib_g_inet_address_get_is_mc_global, MRB_ARGS_ARG(g_inet_address_get_is_mc_global_REQUIRED_ARGC, g_inet_address_get_is_mc_global_OPTIONAL_ARGC));
+#endif
+#if BIND_g_inet_address_get_is_mc_link_local_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_inet_address_get_is_mc_link_local", mrb_GLib_g_inet_address_get_is_mc_link_local, MRB_ARGS_ARG(g_inet_address_get_is_mc_link_local_REQUIRED_ARGC, g_inet_address_get_is_mc_link_local_OPTIONAL_ARGC));
+#endif
+#if BIND_g_inet_address_get_is_mc_node_local_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_inet_address_get_is_mc_node_local", mrb_GLib_g_inet_address_get_is_mc_node_local, MRB_ARGS_ARG(g_inet_address_get_is_mc_node_local_REQUIRED_ARGC, g_inet_address_get_is_mc_node_local_OPTIONAL_ARGC));
+#endif
+#if BIND_g_inet_address_get_is_mc_org_local_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_inet_address_get_is_mc_org_local", mrb_GLib_g_inet_address_get_is_mc_org_local, MRB_ARGS_ARG(g_inet_address_get_is_mc_org_local_REQUIRED_ARGC, g_inet_address_get_is_mc_org_local_OPTIONAL_ARGC));
+#endif
+#if BIND_g_inet_address_get_is_mc_site_local_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_inet_address_get_is_mc_site_local", mrb_GLib_g_inet_address_get_is_mc_site_local, MRB_ARGS_ARG(g_inet_address_get_is_mc_site_local_REQUIRED_ARGC, g_inet_address_get_is_mc_site_local_OPTIONAL_ARGC));
+#endif
+#if BIND_g_inet_address_get_is_multicast_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_inet_address_get_is_multicast", mrb_GLib_g_inet_address_get_is_multicast, MRB_ARGS_ARG(g_inet_address_get_is_multicast_REQUIRED_ARGC, g_inet_address_get_is_multicast_OPTIONAL_ARGC));
+#endif
+#if BIND_g_inet_address_get_is_site_local_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_inet_address_get_is_site_local", mrb_GLib_g_inet_address_get_is_site_local, MRB_ARGS_ARG(g_inet_address_get_is_site_local_REQUIRED_ARGC, g_inet_address_get_is_site_local_OPTIONAL_ARGC));
+#endif
+#if BIND_g_inet_address_get_native_size_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_inet_address_get_native_size", mrb_GLib_g_inet_address_get_native_size, MRB_ARGS_ARG(g_inet_address_get_native_size_REQUIRED_ARGC, g_inet_address_get_native_size_OPTIONAL_ARGC));
+#endif
+#if BIND_g_inet_address_get_type_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_inet_address_get_type", mrb_GLib_g_inet_address_get_type, MRB_ARGS_ARG(g_inet_address_get_type_REQUIRED_ARGC, g_inet_address_get_type_OPTIONAL_ARGC));
+#endif
+#if BIND_g_inet_address_new_any_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_inet_address_new_any", mrb_GLib_g_inet_address_new_any, MRB_ARGS_ARG(g_inet_address_new_any_REQUIRED_ARGC, g_inet_address_new_any_OPTIONAL_ARGC));
+#endif
+#if BIND_g_inet_address_new_from_bytes_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_inet_address_new_from_bytes", mrb_GLib_g_inet_address_new_from_bytes, MRB_ARGS_ARG(g_inet_address_new_from_bytes_REQUIRED_ARGC, g_inet_address_new_from_bytes_OPTIONAL_ARGC));
+#endif
+#if BIND_g_inet_address_new_from_string_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_inet_address_new_from_string", mrb_GLib_g_inet_address_new_from_string, MRB_ARGS_ARG(g_inet_address_new_from_string_REQUIRED_ARGC, g_inet_address_new_from_string_OPTIONAL_ARGC));
+#endif
+#if BIND_g_inet_address_new_loopback_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_inet_address_new_loopback", mrb_GLib_g_inet_address_new_loopback, MRB_ARGS_ARG(g_inet_address_new_loopback_REQUIRED_ARGC, g_inet_address_new_loopback_OPTIONAL_ARGC));
+#endif
+#if BIND_g_inet_address_to_bytes_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_inet_address_to_bytes", mrb_GLib_g_inet_address_to_bytes, MRB_ARGS_ARG(g_inet_address_to_bytes_REQUIRED_ARGC, g_inet_address_to_bytes_OPTIONAL_ARGC));
+#endif
+#if BIND_g_inet_address_to_string_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_inet_address_to_string", mrb_GLib_g_inet_address_to_string, MRB_ARGS_ARG(g_inet_address_to_string_REQUIRED_ARGC, g_inet_address_to_string_OPTIONAL_ARGC));
+#endif
+#if BIND_g_inet_socket_address_get_address_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_inet_socket_address_get_address", mrb_GLib_g_inet_socket_address_get_address, MRB_ARGS_ARG(g_inet_socket_address_get_address_REQUIRED_ARGC, g_inet_socket_address_get_address_OPTIONAL_ARGC));
+#endif
+#if BIND_g_inet_socket_address_get_flowinfo_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_inet_socket_address_get_flowinfo", mrb_GLib_g_inet_socket_address_get_flowinfo, MRB_ARGS_ARG(g_inet_socket_address_get_flowinfo_REQUIRED_ARGC, g_inet_socket_address_get_flowinfo_OPTIONAL_ARGC));
+#endif
+#if BIND_g_inet_socket_address_get_port_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_inet_socket_address_get_port", mrb_GLib_g_inet_socket_address_get_port, MRB_ARGS_ARG(g_inet_socket_address_get_port_REQUIRED_ARGC, g_inet_socket_address_get_port_OPTIONAL_ARGC));
+#endif
+#if BIND_g_inet_socket_address_get_scope_id_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_inet_socket_address_get_scope_id", mrb_GLib_g_inet_socket_address_get_scope_id, MRB_ARGS_ARG(g_inet_socket_address_get_scope_id_REQUIRED_ARGC, g_inet_socket_address_get_scope_id_OPTIONAL_ARGC));
+#endif
+#if BIND_g_inet_socket_address_get_type_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_inet_socket_address_get_type", mrb_GLib_g_inet_socket_address_get_type, MRB_ARGS_ARG(g_inet_socket_address_get_type_REQUIRED_ARGC, g_inet_socket_address_get_type_OPTIONAL_ARGC));
+#endif
+#if BIND_g_inet_socket_address_new_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_inet_socket_address_new", mrb_GLib_g_inet_socket_address_new, MRB_ARGS_ARG(g_inet_socket_address_new_REQUIRED_ARGC, g_inet_socket_address_new_OPTIONAL_ARGC));
+#endif
+#if BIND_g_inet_socket_address_new_from_string_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_inet_socket_address_new_from_string", mrb_GLib_g_inet_socket_address_new_from_string, MRB_ARGS_ARG(g_inet_socket_address_new_from_string_REQUIRED_ARGC, g_inet_socket_address_new_from_string_OPTIONAL_ARGC));
+#endif
+#if BIND_g_input_stream_clear_pending_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_input_stream_clear_pending", mrb_GLib_g_input_stream_clear_pending, MRB_ARGS_ARG(g_input_stream_clear_pending_REQUIRED_ARGC, g_input_stream_clear_pending_OPTIONAL_ARGC));
+#endif
+#if BIND_g_input_stream_close_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_input_stream_close", mrb_GLib_g_input_stream_close, MRB_ARGS_ARG(g_input_stream_close_REQUIRED_ARGC, g_input_stream_close_OPTIONAL_ARGC));
+#endif
+#if BIND_g_input_stream_close_async_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_input_stream_close_async", mrb_GLib_g_input_stream_close_async, MRB_ARGS_ARG(g_input_stream_close_async_REQUIRED_ARGC, g_input_stream_close_async_OPTIONAL_ARGC));
+#endif
+#if BIND_g_input_stream_get_type_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_input_stream_get_type", mrb_GLib_g_input_stream_get_type, MRB_ARGS_ARG(g_input_stream_get_type_REQUIRED_ARGC, g_input_stream_get_type_OPTIONAL_ARGC));
+#endif
+#if BIND_g_input_stream_has_pending_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_input_stream_has_pending", mrb_GLib_g_input_stream_has_pending, MRB_ARGS_ARG(g_input_stream_has_pending_REQUIRED_ARGC, g_input_stream_has_pending_OPTIONAL_ARGC));
+#endif
+#if BIND_g_input_stream_is_closed_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_input_stream_is_closed", mrb_GLib_g_input_stream_is_closed, MRB_ARGS_ARG(g_input_stream_is_closed_REQUIRED_ARGC, g_input_stream_is_closed_OPTIONAL_ARGC));
+#endif
+#if BIND_g_input_stream_read_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_input_stream_read", mrb_GLib_g_input_stream_read, MRB_ARGS_ARG(g_input_stream_read_REQUIRED_ARGC, g_input_stream_read_OPTIONAL_ARGC));
+#endif
+#if BIND_g_input_stream_read_all_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_input_stream_read_all", mrb_GLib_g_input_stream_read_all, MRB_ARGS_ARG(g_input_stream_read_all_REQUIRED_ARGC, g_input_stream_read_all_OPTIONAL_ARGC));
+#endif
+#if BIND_g_input_stream_read_all_async_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_input_stream_read_all_async", mrb_GLib_g_input_stream_read_all_async, MRB_ARGS_ARG(g_input_stream_read_all_async_REQUIRED_ARGC, g_input_stream_read_all_async_OPTIONAL_ARGC));
+#endif
+#if BIND_g_input_stream_read_async_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_input_stream_read_async", mrb_GLib_g_input_stream_read_async, MRB_ARGS_ARG(g_input_stream_read_async_REQUIRED_ARGC, g_input_stream_read_async_OPTIONAL_ARGC));
+#endif
+#if BIND_g_input_stream_read_bytes_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_input_stream_read_bytes", mrb_GLib_g_input_stream_read_bytes, MRB_ARGS_ARG(g_input_stream_read_bytes_REQUIRED_ARGC, g_input_stream_read_bytes_OPTIONAL_ARGC));
+#endif
+#if BIND_g_input_stream_read_bytes_async_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_input_stream_read_bytes_async", mrb_GLib_g_input_stream_read_bytes_async, MRB_ARGS_ARG(g_input_stream_read_bytes_async_REQUIRED_ARGC, g_input_stream_read_bytes_async_OPTIONAL_ARGC));
+#endif
+#if BIND_g_input_stream_set_pending_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_input_stream_set_pending", mrb_GLib_g_input_stream_set_pending, MRB_ARGS_ARG(g_input_stream_set_pending_REQUIRED_ARGC, g_input_stream_set_pending_OPTIONAL_ARGC));
+#endif
+#if BIND_g_input_stream_skip_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_input_stream_skip", mrb_GLib_g_input_stream_skip, MRB_ARGS_ARG(g_input_stream_skip_REQUIRED_ARGC, g_input_stream_skip_OPTIONAL_ARGC));
+#endif
+#if BIND_g_input_stream_skip_async_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_input_stream_skip_async", mrb_GLib_g_input_stream_skip_async, MRB_ARGS_ARG(g_input_stream_skip_async_REQUIRED_ARGC, g_input_stream_skip_async_OPTIONAL_ARGC));
+#endif
 #if BIND_g_int64_equal_FUNCTION
   mrb_define_class_method(mrb, GLib_module, "g_int64_equal", mrb_GLib_g_int64_equal, MRB_ARGS_ARG(g_int64_equal_REQUIRED_ARGC, g_int64_equal_OPTIONAL_ARGC));
 #endif
@@ -42854,6 +54128,36 @@ void mrb_mruby_glib_gem_init(mrb_state* mrb) {
 #endif
 #if BIND_g_io_create_watch_FUNCTION
   mrb_define_class_method(mrb, GLib_module, "g_io_create_watch", mrb_GLib_g_io_create_watch, MRB_ARGS_ARG(g_io_create_watch_REQUIRED_ARGC, g_io_create_watch_OPTIONAL_ARGC));
+#endif
+#if BIND_g_io_stream_clear_pending_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_io_stream_clear_pending", mrb_GLib_g_io_stream_clear_pending, MRB_ARGS_ARG(g_io_stream_clear_pending_REQUIRED_ARGC, g_io_stream_clear_pending_OPTIONAL_ARGC));
+#endif
+#if BIND_g_io_stream_close_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_io_stream_close", mrb_GLib_g_io_stream_close, MRB_ARGS_ARG(g_io_stream_close_REQUIRED_ARGC, g_io_stream_close_OPTIONAL_ARGC));
+#endif
+#if BIND_g_io_stream_close_async_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_io_stream_close_async", mrb_GLib_g_io_stream_close_async, MRB_ARGS_ARG(g_io_stream_close_async_REQUIRED_ARGC, g_io_stream_close_async_OPTIONAL_ARGC));
+#endif
+#if BIND_g_io_stream_get_input_stream_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_io_stream_get_input_stream", mrb_GLib_g_io_stream_get_input_stream, MRB_ARGS_ARG(g_io_stream_get_input_stream_REQUIRED_ARGC, g_io_stream_get_input_stream_OPTIONAL_ARGC));
+#endif
+#if BIND_g_io_stream_get_output_stream_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_io_stream_get_output_stream", mrb_GLib_g_io_stream_get_output_stream, MRB_ARGS_ARG(g_io_stream_get_output_stream_REQUIRED_ARGC, g_io_stream_get_output_stream_OPTIONAL_ARGC));
+#endif
+#if BIND_g_io_stream_get_type_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_io_stream_get_type", mrb_GLib_g_io_stream_get_type, MRB_ARGS_ARG(g_io_stream_get_type_REQUIRED_ARGC, g_io_stream_get_type_OPTIONAL_ARGC));
+#endif
+#if BIND_g_io_stream_has_pending_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_io_stream_has_pending", mrb_GLib_g_io_stream_has_pending, MRB_ARGS_ARG(g_io_stream_has_pending_REQUIRED_ARGC, g_io_stream_has_pending_OPTIONAL_ARGC));
+#endif
+#if BIND_g_io_stream_is_closed_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_io_stream_is_closed", mrb_GLib_g_io_stream_is_closed, MRB_ARGS_ARG(g_io_stream_is_closed_REQUIRED_ARGC, g_io_stream_is_closed_OPTIONAL_ARGC));
+#endif
+#if BIND_g_io_stream_set_pending_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_io_stream_set_pending", mrb_GLib_g_io_stream_set_pending, MRB_ARGS_ARG(g_io_stream_set_pending_REQUIRED_ARGC, g_io_stream_set_pending_OPTIONAL_ARGC));
+#endif
+#if BIND_g_io_stream_splice_async_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_io_stream_splice_async", mrb_GLib_g_io_stream_splice_async, MRB_ARGS_ARG(g_io_stream_splice_async_REQUIRED_ARGC, g_io_stream_splice_async_OPTIONAL_ARGC));
 #endif
 #if BIND_g_key_file_error_quark_FUNCTION
   mrb_define_class_method(mrb, GLib_module, "g_key_file_error_quark", mrb_GLib_g_key_file_error_quark, MRB_ARGS_ARG(g_key_file_error_quark_REQUIRED_ARGC, g_key_file_error_quark_OPTIONAL_ARGC));
@@ -43290,6 +54594,9 @@ void mrb_mruby_glib_gem_init(mrb_state* mrb) {
 #if BIND_g_memdup_FUNCTION
   mrb_define_class_method(mrb, GLib_module, "g_memdup", mrb_GLib_g_memdup, MRB_ARGS_ARG(g_memdup_REQUIRED_ARGC, g_memdup_OPTIONAL_ARGC));
 #endif
+#if BIND_g_mkdir_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_mkdir", mrb_GLib_g_mkdir, MRB_ARGS_ARG(g_mkdir_REQUIRED_ARGC, g_mkdir_OPTIONAL_ARGC));
+#endif
 #if BIND_g_mkdir_with_parents_FUNCTION
   mrb_define_class_method(mrb, GLib_module, "g_mkdir_with_parents", mrb_GLib_g_mkdir_with_parents, MRB_ARGS_ARG(g_mkdir_with_parents_REQUIRED_ARGC, g_mkdir_with_parents_OPTIONAL_ARGC));
 #endif
@@ -43343,6 +54650,9 @@ void mrb_mruby_glib_gem_init(mrb_state* mrb) {
 #endif
 #if BIND_g_once_init_leave_FUNCTION
   mrb_define_class_method(mrb, GLib_module, "g_once_init_leave", mrb_GLib_g_once_init_leave, MRB_ARGS_ARG(g_once_init_leave_REQUIRED_ARGC, g_once_init_leave_OPTIONAL_ARGC));
+#endif
+#if BIND_g_open_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_open", mrb_GLib_g_open, MRB_ARGS_ARG(g_open_REQUIRED_ARGC, g_open_OPTIONAL_ARGC));
 #endif
 #if BIND_g_option_context_add_group_FUNCTION
   mrb_define_class_method(mrb, GLib_module, "g_option_context_add_group", mrb_GLib_g_option_context_add_group, MRB_ARGS_ARG(g_option_context_add_group_REQUIRED_ARGC, g_option_context_add_group_OPTIONAL_ARGC));
@@ -43436,6 +54746,66 @@ void mrb_mruby_glib_gem_init(mrb_state* mrb) {
 #endif
 #if BIND_g_option_group_unref_FUNCTION
   mrb_define_class_method(mrb, GLib_module, "g_option_group_unref", mrb_GLib_g_option_group_unref, MRB_ARGS_ARG(g_option_group_unref_REQUIRED_ARGC, g_option_group_unref_OPTIONAL_ARGC));
+#endif
+#if BIND_g_output_stream_clear_pending_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_output_stream_clear_pending", mrb_GLib_g_output_stream_clear_pending, MRB_ARGS_ARG(g_output_stream_clear_pending_REQUIRED_ARGC, g_output_stream_clear_pending_OPTIONAL_ARGC));
+#endif
+#if BIND_g_output_stream_close_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_output_stream_close", mrb_GLib_g_output_stream_close, MRB_ARGS_ARG(g_output_stream_close_REQUIRED_ARGC, g_output_stream_close_OPTIONAL_ARGC));
+#endif
+#if BIND_g_output_stream_close_async_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_output_stream_close_async", mrb_GLib_g_output_stream_close_async, MRB_ARGS_ARG(g_output_stream_close_async_REQUIRED_ARGC, g_output_stream_close_async_OPTIONAL_ARGC));
+#endif
+#if BIND_g_output_stream_flush_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_output_stream_flush", mrb_GLib_g_output_stream_flush, MRB_ARGS_ARG(g_output_stream_flush_REQUIRED_ARGC, g_output_stream_flush_OPTIONAL_ARGC));
+#endif
+#if BIND_g_output_stream_flush_async_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_output_stream_flush_async", mrb_GLib_g_output_stream_flush_async, MRB_ARGS_ARG(g_output_stream_flush_async_REQUIRED_ARGC, g_output_stream_flush_async_OPTIONAL_ARGC));
+#endif
+#if BIND_g_output_stream_get_type_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_output_stream_get_type", mrb_GLib_g_output_stream_get_type, MRB_ARGS_ARG(g_output_stream_get_type_REQUIRED_ARGC, g_output_stream_get_type_OPTIONAL_ARGC));
+#endif
+#if BIND_g_output_stream_has_pending_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_output_stream_has_pending", mrb_GLib_g_output_stream_has_pending, MRB_ARGS_ARG(g_output_stream_has_pending_REQUIRED_ARGC, g_output_stream_has_pending_OPTIONAL_ARGC));
+#endif
+#if BIND_g_output_stream_is_closed_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_output_stream_is_closed", mrb_GLib_g_output_stream_is_closed, MRB_ARGS_ARG(g_output_stream_is_closed_REQUIRED_ARGC, g_output_stream_is_closed_OPTIONAL_ARGC));
+#endif
+#if BIND_g_output_stream_is_closing_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_output_stream_is_closing", mrb_GLib_g_output_stream_is_closing, MRB_ARGS_ARG(g_output_stream_is_closing_REQUIRED_ARGC, g_output_stream_is_closing_OPTIONAL_ARGC));
+#endif
+#if BIND_g_output_stream_printf_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_output_stream_printf", mrb_GLib_g_output_stream_printf, MRB_ARGS_ARG(g_output_stream_printf_REQUIRED_ARGC, g_output_stream_printf_OPTIONAL_ARGC));
+#endif
+#if BIND_g_output_stream_set_pending_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_output_stream_set_pending", mrb_GLib_g_output_stream_set_pending, MRB_ARGS_ARG(g_output_stream_set_pending_REQUIRED_ARGC, g_output_stream_set_pending_OPTIONAL_ARGC));
+#endif
+#if BIND_g_output_stream_splice_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_output_stream_splice", mrb_GLib_g_output_stream_splice, MRB_ARGS_ARG(g_output_stream_splice_REQUIRED_ARGC, g_output_stream_splice_OPTIONAL_ARGC));
+#endif
+#if BIND_g_output_stream_splice_async_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_output_stream_splice_async", mrb_GLib_g_output_stream_splice_async, MRB_ARGS_ARG(g_output_stream_splice_async_REQUIRED_ARGC, g_output_stream_splice_async_OPTIONAL_ARGC));
+#endif
+#if BIND_g_output_stream_vprintf_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_output_stream_vprintf", mrb_GLib_g_output_stream_vprintf, MRB_ARGS_ARG(g_output_stream_vprintf_REQUIRED_ARGC, g_output_stream_vprintf_OPTIONAL_ARGC));
+#endif
+#if BIND_g_output_stream_write_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_output_stream_write", mrb_GLib_g_output_stream_write, MRB_ARGS_ARG(g_output_stream_write_REQUIRED_ARGC, g_output_stream_write_OPTIONAL_ARGC));
+#endif
+#if BIND_g_output_stream_write_all_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_output_stream_write_all", mrb_GLib_g_output_stream_write_all, MRB_ARGS_ARG(g_output_stream_write_all_REQUIRED_ARGC, g_output_stream_write_all_OPTIONAL_ARGC));
+#endif
+#if BIND_g_output_stream_write_all_async_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_output_stream_write_all_async", mrb_GLib_g_output_stream_write_all_async, MRB_ARGS_ARG(g_output_stream_write_all_async_REQUIRED_ARGC, g_output_stream_write_all_async_OPTIONAL_ARGC));
+#endif
+#if BIND_g_output_stream_write_async_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_output_stream_write_async", mrb_GLib_g_output_stream_write_async, MRB_ARGS_ARG(g_output_stream_write_async_REQUIRED_ARGC, g_output_stream_write_async_OPTIONAL_ARGC));
+#endif
+#if BIND_g_output_stream_write_bytes_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_output_stream_write_bytes", mrb_GLib_g_output_stream_write_bytes, MRB_ARGS_ARG(g_output_stream_write_bytes_REQUIRED_ARGC, g_output_stream_write_bytes_OPTIONAL_ARGC));
+#endif
+#if BIND_g_output_stream_write_bytes_async_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_output_stream_write_bytes_async", mrb_GLib_g_output_stream_write_bytes_async, MRB_ARGS_ARG(g_output_stream_write_bytes_async_REQUIRED_ARGC, g_output_stream_write_bytes_async_OPTIONAL_ARGC));
 #endif
 #if BIND_g_path_get_basename_FUNCTION
   mrb_define_class_method(mrb, GLib_module, "g_path_get_basename", mrb_GLib_g_path_get_basename, MRB_ARGS_ARG(g_path_get_basename_REQUIRED_ARGC, g_path_get_basename_OPTIONAL_ARGC));
@@ -43674,6 +55044,12 @@ void mrb_mruby_glib_gem_init(mrb_state* mrb) {
 #if BIND_g_reload_user_special_dirs_cache_FUNCTION
   mrb_define_class_method(mrb, GLib_module, "g_reload_user_special_dirs_cache", mrb_GLib_g_reload_user_special_dirs_cache, MRB_ARGS_ARG(g_reload_user_special_dirs_cache_REQUIRED_ARGC, g_reload_user_special_dirs_cache_OPTIONAL_ARGC));
 #endif
+#if BIND_g_remove_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_remove", mrb_GLib_g_remove, MRB_ARGS_ARG(g_remove_REQUIRED_ARGC, g_remove_OPTIONAL_ARGC));
+#endif
+#if BIND_g_rename_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_rename", mrb_GLib_g_rename, MRB_ARGS_ARG(g_rename_REQUIRED_ARGC, g_rename_OPTIONAL_ARGC));
+#endif
 #if BIND_g_return_if_fail_warning_FUNCTION
   mrb_define_class_method(mrb, GLib_module, "g_return_if_fail_warning", mrb_GLib_g_return_if_fail_warning, MRB_ARGS_ARG(g_return_if_fail_warning_REQUIRED_ARGC, g_return_if_fail_warning_OPTIONAL_ARGC));
 #endif
@@ -43767,6 +55143,24 @@ void mrb_mruby_glib_gem_init(mrb_state* mrb) {
 #if BIND_g_scanner_warn_FUNCTION
   mrb_define_class_method(mrb, GLib_module, "g_scanner_warn", mrb_GLib_g_scanner_warn, MRB_ARGS_ARG(g_scanner_warn_REQUIRED_ARGC, g_scanner_warn_OPTIONAL_ARGC));
 #endif
+#if BIND_g_seekable_can_seek_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_seekable_can_seek", mrb_GLib_g_seekable_can_seek, MRB_ARGS_ARG(g_seekable_can_seek_REQUIRED_ARGC, g_seekable_can_seek_OPTIONAL_ARGC));
+#endif
+#if BIND_g_seekable_can_truncate_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_seekable_can_truncate", mrb_GLib_g_seekable_can_truncate, MRB_ARGS_ARG(g_seekable_can_truncate_REQUIRED_ARGC, g_seekable_can_truncate_OPTIONAL_ARGC));
+#endif
+#if BIND_g_seekable_get_type_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_seekable_get_type", mrb_GLib_g_seekable_get_type, MRB_ARGS_ARG(g_seekable_get_type_REQUIRED_ARGC, g_seekable_get_type_OPTIONAL_ARGC));
+#endif
+#if BIND_g_seekable_seek_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_seekable_seek", mrb_GLib_g_seekable_seek, MRB_ARGS_ARG(g_seekable_seek_REQUIRED_ARGC, g_seekable_seek_OPTIONAL_ARGC));
+#endif
+#if BIND_g_seekable_tell_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_seekable_tell", mrb_GLib_g_seekable_tell, MRB_ARGS_ARG(g_seekable_tell_REQUIRED_ARGC, g_seekable_tell_OPTIONAL_ARGC));
+#endif
+#if BIND_g_seekable_truncate_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_seekable_truncate", mrb_GLib_g_seekable_truncate, MRB_ARGS_ARG(g_seekable_truncate_REQUIRED_ARGC, g_seekable_truncate_OPTIONAL_ARGC));
+#endif
 #if BIND_g_set_application_name_FUNCTION
   mrb_define_class_method(mrb, GLib_module, "g_set_application_name", mrb_GLib_g_set_application_name, MRB_ARGS_ARG(g_set_application_name_REQUIRED_ARGC, g_set_application_name_OPTIONAL_ARGC));
 #endif
@@ -43826,6 +55220,183 @@ void mrb_mruby_glib_gem_init(mrb_state* mrb) {
 #endif
 #if BIND_g_snprintf_FUNCTION
   mrb_define_class_method(mrb, GLib_module, "g_snprintf", mrb_GLib_g_snprintf, MRB_ARGS_ARG(g_snprintf_REQUIRED_ARGC, g_snprintf_OPTIONAL_ARGC));
+#endif
+#if BIND_g_socket_accept_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_socket_accept", mrb_GLib_g_socket_accept, MRB_ARGS_ARG(g_socket_accept_REQUIRED_ARGC, g_socket_accept_OPTIONAL_ARGC));
+#endif
+#if BIND_g_socket_address_get_family_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_socket_address_get_family", mrb_GLib_g_socket_address_get_family, MRB_ARGS_ARG(g_socket_address_get_family_REQUIRED_ARGC, g_socket_address_get_family_OPTIONAL_ARGC));
+#endif
+#if BIND_g_socket_address_get_native_size_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_socket_address_get_native_size", mrb_GLib_g_socket_address_get_native_size, MRB_ARGS_ARG(g_socket_address_get_native_size_REQUIRED_ARGC, g_socket_address_get_native_size_OPTIONAL_ARGC));
+#endif
+#if BIND_g_socket_address_get_type_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_socket_address_get_type", mrb_GLib_g_socket_address_get_type, MRB_ARGS_ARG(g_socket_address_get_type_REQUIRED_ARGC, g_socket_address_get_type_OPTIONAL_ARGC));
+#endif
+#if BIND_g_socket_address_new_from_native_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_socket_address_new_from_native", mrb_GLib_g_socket_address_new_from_native, MRB_ARGS_ARG(g_socket_address_new_from_native_REQUIRED_ARGC, g_socket_address_new_from_native_OPTIONAL_ARGC));
+#endif
+#if BIND_g_socket_address_to_native_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_socket_address_to_native", mrb_GLib_g_socket_address_to_native, MRB_ARGS_ARG(g_socket_address_to_native_REQUIRED_ARGC, g_socket_address_to_native_OPTIONAL_ARGC));
+#endif
+#if BIND_g_socket_bind_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_socket_bind", mrb_GLib_g_socket_bind, MRB_ARGS_ARG(g_socket_bind_REQUIRED_ARGC, g_socket_bind_OPTIONAL_ARGC));
+#endif
+#if BIND_g_socket_check_connect_result_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_socket_check_connect_result", mrb_GLib_g_socket_check_connect_result, MRB_ARGS_ARG(g_socket_check_connect_result_REQUIRED_ARGC, g_socket_check_connect_result_OPTIONAL_ARGC));
+#endif
+#if BIND_g_socket_close_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_socket_close", mrb_GLib_g_socket_close, MRB_ARGS_ARG(g_socket_close_REQUIRED_ARGC, g_socket_close_OPTIONAL_ARGC));
+#endif
+#if BIND_g_socket_condition_check_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_socket_condition_check", mrb_GLib_g_socket_condition_check, MRB_ARGS_ARG(g_socket_condition_check_REQUIRED_ARGC, g_socket_condition_check_OPTIONAL_ARGC));
+#endif
+#if BIND_g_socket_condition_timed_wait_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_socket_condition_timed_wait", mrb_GLib_g_socket_condition_timed_wait, MRB_ARGS_ARG(g_socket_condition_timed_wait_REQUIRED_ARGC, g_socket_condition_timed_wait_OPTIONAL_ARGC));
+#endif
+#if BIND_g_socket_condition_wait_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_socket_condition_wait", mrb_GLib_g_socket_condition_wait, MRB_ARGS_ARG(g_socket_condition_wait_REQUIRED_ARGC, g_socket_condition_wait_OPTIONAL_ARGC));
+#endif
+#if BIND_g_socket_connect_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_socket_connect", mrb_GLib_g_socket_connect, MRB_ARGS_ARG(g_socket_connect_REQUIRED_ARGC, g_socket_connect_OPTIONAL_ARGC));
+#endif
+#if BIND_g_socket_create_source_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_socket_create_source", mrb_GLib_g_socket_create_source, MRB_ARGS_ARG(g_socket_create_source_REQUIRED_ARGC, g_socket_create_source_OPTIONAL_ARGC));
+#endif
+#if BIND_g_socket_get_available_bytes_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_socket_get_available_bytes", mrb_GLib_g_socket_get_available_bytes, MRB_ARGS_ARG(g_socket_get_available_bytes_REQUIRED_ARGC, g_socket_get_available_bytes_OPTIONAL_ARGC));
+#endif
+#if BIND_g_socket_get_blocking_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_socket_get_blocking", mrb_GLib_g_socket_get_blocking, MRB_ARGS_ARG(g_socket_get_blocking_REQUIRED_ARGC, g_socket_get_blocking_OPTIONAL_ARGC));
+#endif
+#if BIND_g_socket_get_broadcast_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_socket_get_broadcast", mrb_GLib_g_socket_get_broadcast, MRB_ARGS_ARG(g_socket_get_broadcast_REQUIRED_ARGC, g_socket_get_broadcast_OPTIONAL_ARGC));
+#endif
+#if BIND_g_socket_get_credentials_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_socket_get_credentials", mrb_GLib_g_socket_get_credentials, MRB_ARGS_ARG(g_socket_get_credentials_REQUIRED_ARGC, g_socket_get_credentials_OPTIONAL_ARGC));
+#endif
+#if BIND_g_socket_get_family_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_socket_get_family", mrb_GLib_g_socket_get_family, MRB_ARGS_ARG(g_socket_get_family_REQUIRED_ARGC, g_socket_get_family_OPTIONAL_ARGC));
+#endif
+#if BIND_g_socket_get_fd_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_socket_get_fd", mrb_GLib_g_socket_get_fd, MRB_ARGS_ARG(g_socket_get_fd_REQUIRED_ARGC, g_socket_get_fd_OPTIONAL_ARGC));
+#endif
+#if BIND_g_socket_get_keepalive_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_socket_get_keepalive", mrb_GLib_g_socket_get_keepalive, MRB_ARGS_ARG(g_socket_get_keepalive_REQUIRED_ARGC, g_socket_get_keepalive_OPTIONAL_ARGC));
+#endif
+#if BIND_g_socket_get_listen_backlog_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_socket_get_listen_backlog", mrb_GLib_g_socket_get_listen_backlog, MRB_ARGS_ARG(g_socket_get_listen_backlog_REQUIRED_ARGC, g_socket_get_listen_backlog_OPTIONAL_ARGC));
+#endif
+#if BIND_g_socket_get_local_address_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_socket_get_local_address", mrb_GLib_g_socket_get_local_address, MRB_ARGS_ARG(g_socket_get_local_address_REQUIRED_ARGC, g_socket_get_local_address_OPTIONAL_ARGC));
+#endif
+#if BIND_g_socket_get_multicast_loopback_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_socket_get_multicast_loopback", mrb_GLib_g_socket_get_multicast_loopback, MRB_ARGS_ARG(g_socket_get_multicast_loopback_REQUIRED_ARGC, g_socket_get_multicast_loopback_OPTIONAL_ARGC));
+#endif
+#if BIND_g_socket_get_multicast_ttl_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_socket_get_multicast_ttl", mrb_GLib_g_socket_get_multicast_ttl, MRB_ARGS_ARG(g_socket_get_multicast_ttl_REQUIRED_ARGC, g_socket_get_multicast_ttl_OPTIONAL_ARGC));
+#endif
+#if BIND_g_socket_get_option_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_socket_get_option", mrb_GLib_g_socket_get_option, MRB_ARGS_ARG(g_socket_get_option_REQUIRED_ARGC, g_socket_get_option_OPTIONAL_ARGC));
+#endif
+#if BIND_g_socket_get_protocol_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_socket_get_protocol", mrb_GLib_g_socket_get_protocol, MRB_ARGS_ARG(g_socket_get_protocol_REQUIRED_ARGC, g_socket_get_protocol_OPTIONAL_ARGC));
+#endif
+#if BIND_g_socket_get_remote_address_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_socket_get_remote_address", mrb_GLib_g_socket_get_remote_address, MRB_ARGS_ARG(g_socket_get_remote_address_REQUIRED_ARGC, g_socket_get_remote_address_OPTIONAL_ARGC));
+#endif
+#if BIND_g_socket_get_socket_type_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_socket_get_socket_type", mrb_GLib_g_socket_get_socket_type, MRB_ARGS_ARG(g_socket_get_socket_type_REQUIRED_ARGC, g_socket_get_socket_type_OPTIONAL_ARGC));
+#endif
+#if BIND_g_socket_get_timeout_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_socket_get_timeout", mrb_GLib_g_socket_get_timeout, MRB_ARGS_ARG(g_socket_get_timeout_REQUIRED_ARGC, g_socket_get_timeout_OPTIONAL_ARGC));
+#endif
+#if BIND_g_socket_get_ttl_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_socket_get_ttl", mrb_GLib_g_socket_get_ttl, MRB_ARGS_ARG(g_socket_get_ttl_REQUIRED_ARGC, g_socket_get_ttl_OPTIONAL_ARGC));
+#endif
+#if BIND_g_socket_get_type_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_socket_get_type", mrb_GLib_g_socket_get_type, MRB_ARGS_ARG(g_socket_get_type_REQUIRED_ARGC, g_socket_get_type_OPTIONAL_ARGC));
+#endif
+#if BIND_g_socket_is_closed_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_socket_is_closed", mrb_GLib_g_socket_is_closed, MRB_ARGS_ARG(g_socket_is_closed_REQUIRED_ARGC, g_socket_is_closed_OPTIONAL_ARGC));
+#endif
+#if BIND_g_socket_is_connected_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_socket_is_connected", mrb_GLib_g_socket_is_connected, MRB_ARGS_ARG(g_socket_is_connected_REQUIRED_ARGC, g_socket_is_connected_OPTIONAL_ARGC));
+#endif
+#if BIND_g_socket_join_multicast_group_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_socket_join_multicast_group", mrb_GLib_g_socket_join_multicast_group, MRB_ARGS_ARG(g_socket_join_multicast_group_REQUIRED_ARGC, g_socket_join_multicast_group_OPTIONAL_ARGC));
+#endif
+#if BIND_g_socket_leave_multicast_group_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_socket_leave_multicast_group", mrb_GLib_g_socket_leave_multicast_group, MRB_ARGS_ARG(g_socket_leave_multicast_group_REQUIRED_ARGC, g_socket_leave_multicast_group_OPTIONAL_ARGC));
+#endif
+#if BIND_g_socket_listen_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_socket_listen", mrb_GLib_g_socket_listen, MRB_ARGS_ARG(g_socket_listen_REQUIRED_ARGC, g_socket_listen_OPTIONAL_ARGC));
+#endif
+#if BIND_g_socket_new_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_socket_new", mrb_GLib_g_socket_new, MRB_ARGS_ARG(g_socket_new_REQUIRED_ARGC, g_socket_new_OPTIONAL_ARGC));
+#endif
+#if BIND_g_socket_new_from_fd_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_socket_new_from_fd", mrb_GLib_g_socket_new_from_fd, MRB_ARGS_ARG(g_socket_new_from_fd_REQUIRED_ARGC, g_socket_new_from_fd_OPTIONAL_ARGC));
+#endif
+#if BIND_g_socket_receive_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_socket_receive", mrb_GLib_g_socket_receive, MRB_ARGS_ARG(g_socket_receive_REQUIRED_ARGC, g_socket_receive_OPTIONAL_ARGC));
+#endif
+#if BIND_g_socket_receive_from_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_socket_receive_from", mrb_GLib_g_socket_receive_from, MRB_ARGS_ARG(g_socket_receive_from_REQUIRED_ARGC, g_socket_receive_from_OPTIONAL_ARGC));
+#endif
+#if BIND_g_socket_receive_message_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_socket_receive_message", mrb_GLib_g_socket_receive_message, MRB_ARGS_ARG(g_socket_receive_message_REQUIRED_ARGC, g_socket_receive_message_OPTIONAL_ARGC));
+#endif
+#if BIND_g_socket_receive_with_blocking_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_socket_receive_with_blocking", mrb_GLib_g_socket_receive_with_blocking, MRB_ARGS_ARG(g_socket_receive_with_blocking_REQUIRED_ARGC, g_socket_receive_with_blocking_OPTIONAL_ARGC));
+#endif
+#if BIND_g_socket_send_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_socket_send", mrb_GLib_g_socket_send, MRB_ARGS_ARG(g_socket_send_REQUIRED_ARGC, g_socket_send_OPTIONAL_ARGC));
+#endif
+#if BIND_g_socket_send_message_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_socket_send_message", mrb_GLib_g_socket_send_message, MRB_ARGS_ARG(g_socket_send_message_REQUIRED_ARGC, g_socket_send_message_OPTIONAL_ARGC));
+#endif
+#if BIND_g_socket_send_messages_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_socket_send_messages", mrb_GLib_g_socket_send_messages, MRB_ARGS_ARG(g_socket_send_messages_REQUIRED_ARGC, g_socket_send_messages_OPTIONAL_ARGC));
+#endif
+#if BIND_g_socket_send_to_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_socket_send_to", mrb_GLib_g_socket_send_to, MRB_ARGS_ARG(g_socket_send_to_REQUIRED_ARGC, g_socket_send_to_OPTIONAL_ARGC));
+#endif
+#if BIND_g_socket_send_with_blocking_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_socket_send_with_blocking", mrb_GLib_g_socket_send_with_blocking, MRB_ARGS_ARG(g_socket_send_with_blocking_REQUIRED_ARGC, g_socket_send_with_blocking_OPTIONAL_ARGC));
+#endif
+#if BIND_g_socket_set_blocking_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_socket_set_blocking", mrb_GLib_g_socket_set_blocking, MRB_ARGS_ARG(g_socket_set_blocking_REQUIRED_ARGC, g_socket_set_blocking_OPTIONAL_ARGC));
+#endif
+#if BIND_g_socket_set_broadcast_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_socket_set_broadcast", mrb_GLib_g_socket_set_broadcast, MRB_ARGS_ARG(g_socket_set_broadcast_REQUIRED_ARGC, g_socket_set_broadcast_OPTIONAL_ARGC));
+#endif
+#if BIND_g_socket_set_keepalive_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_socket_set_keepalive", mrb_GLib_g_socket_set_keepalive, MRB_ARGS_ARG(g_socket_set_keepalive_REQUIRED_ARGC, g_socket_set_keepalive_OPTIONAL_ARGC));
+#endif
+#if BIND_g_socket_set_listen_backlog_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_socket_set_listen_backlog", mrb_GLib_g_socket_set_listen_backlog, MRB_ARGS_ARG(g_socket_set_listen_backlog_REQUIRED_ARGC, g_socket_set_listen_backlog_OPTIONAL_ARGC));
+#endif
+#if BIND_g_socket_set_multicast_loopback_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_socket_set_multicast_loopback", mrb_GLib_g_socket_set_multicast_loopback, MRB_ARGS_ARG(g_socket_set_multicast_loopback_REQUIRED_ARGC, g_socket_set_multicast_loopback_OPTIONAL_ARGC));
+#endif
+#if BIND_g_socket_set_multicast_ttl_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_socket_set_multicast_ttl", mrb_GLib_g_socket_set_multicast_ttl, MRB_ARGS_ARG(g_socket_set_multicast_ttl_REQUIRED_ARGC, g_socket_set_multicast_ttl_OPTIONAL_ARGC));
+#endif
+#if BIND_g_socket_set_option_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_socket_set_option", mrb_GLib_g_socket_set_option, MRB_ARGS_ARG(g_socket_set_option_REQUIRED_ARGC, g_socket_set_option_OPTIONAL_ARGC));
+#endif
+#if BIND_g_socket_set_timeout_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_socket_set_timeout", mrb_GLib_g_socket_set_timeout, MRB_ARGS_ARG(g_socket_set_timeout_REQUIRED_ARGC, g_socket_set_timeout_OPTIONAL_ARGC));
+#endif
+#if BIND_g_socket_set_ttl_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_socket_set_ttl", mrb_GLib_g_socket_set_ttl, MRB_ARGS_ARG(g_socket_set_ttl_REQUIRED_ARGC, g_socket_set_ttl_OPTIONAL_ARGC));
+#endif
+#if BIND_g_socket_shutdown_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_socket_shutdown", mrb_GLib_g_socket_shutdown, MRB_ARGS_ARG(g_socket_shutdown_REQUIRED_ARGC, g_socket_shutdown_OPTIONAL_ARGC));
+#endif
+#if BIND_g_socket_speaks_ipv4_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_socket_speaks_ipv4", mrb_GLib_g_socket_speaks_ipv4, MRB_ARGS_ARG(g_socket_speaks_ipv4_REQUIRED_ARGC, g_socket_speaks_ipv4_OPTIONAL_ARGC));
 #endif
 #if BIND_g_source_add_child_source_FUNCTION
   mrb_define_class_method(mrb, GLib_module, "g_source_add_child_source", mrb_GLib_g_source_add_child_source, MRB_ARGS_ARG(g_source_add_child_source_REQUIRED_ARGC, g_source_add_child_source_OPTIONAL_ARGC));
@@ -43929,11 +55500,20 @@ void mrb_mruby_glib_gem_init(mrb_state* mrb) {
 #if BIND_g_spaced_primes_closest_FUNCTION
   mrb_define_class_method(mrb, GLib_module, "g_spaced_primes_closest", mrb_GLib_g_spaced_primes_closest, MRB_ARGS_ARG(g_spaced_primes_closest_REQUIRED_ARGC, g_spaced_primes_closest_OPTIONAL_ARGC));
 #endif
+#if BIND_g_spawn_async_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_spawn_async", mrb_GLib_g_spawn_async, MRB_ARGS_ARG(g_spawn_async_REQUIRED_ARGC, g_spawn_async_OPTIONAL_ARGC));
+#endif
+#if BIND_g_spawn_async_with_pipes_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_spawn_async_with_pipes", mrb_GLib_g_spawn_async_with_pipes, MRB_ARGS_ARG(g_spawn_async_with_pipes_REQUIRED_ARGC, g_spawn_async_with_pipes_OPTIONAL_ARGC));
+#endif
 #if BIND_g_spawn_check_exit_status_FUNCTION
   mrb_define_class_method(mrb, GLib_module, "g_spawn_check_exit_status", mrb_GLib_g_spawn_check_exit_status, MRB_ARGS_ARG(g_spawn_check_exit_status_REQUIRED_ARGC, g_spawn_check_exit_status_OPTIONAL_ARGC));
 #endif
 #if BIND_g_spawn_close_pid_FUNCTION
   mrb_define_class_method(mrb, GLib_module, "g_spawn_close_pid", mrb_GLib_g_spawn_close_pid, MRB_ARGS_ARG(g_spawn_close_pid_REQUIRED_ARGC, g_spawn_close_pid_OPTIONAL_ARGC));
+#endif
+#if BIND_g_spawn_command_line_async_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_spawn_command_line_async", mrb_GLib_g_spawn_command_line_async, MRB_ARGS_ARG(g_spawn_command_line_async_REQUIRED_ARGC, g_spawn_command_line_async_OPTIONAL_ARGC));
 #endif
 #if BIND_g_spawn_command_line_sync_FUNCTION
   mrb_define_class_method(mrb, GLib_module, "g_spawn_command_line_sync", mrb_GLib_g_spawn_command_line_sync, MRB_ARGS_ARG(g_spawn_command_line_sync_REQUIRED_ARGC, g_spawn_command_line_sync_OPTIONAL_ARGC));
@@ -43949,6 +55529,9 @@ void mrb_mruby_glib_gem_init(mrb_state* mrb) {
 #endif
 #if BIND_g_sprintf_FUNCTION
   mrb_define_class_method(mrb, GLib_module, "g_sprintf", mrb_GLib_g_sprintf, MRB_ARGS_ARG(g_sprintf_REQUIRED_ARGC, g_sprintf_OPTIONAL_ARGC));
+#endif
+#if BIND_g_stat_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_stat", mrb_GLib_g_stat, MRB_ARGS_ARG(g_stat_REQUIRED_ARGC, g_stat_OPTIONAL_ARGC));
 #endif
 #if BIND_g_steal_pointer_FUNCTION
   mrb_define_class_method(mrb, GLib_module, "g_steal_pointer", mrb_GLib_g_steal_pointer, MRB_ARGS_ARG(g_steal_pointer_REQUIRED_ARGC, g_steal_pointer_OPTIONAL_ARGC));
@@ -44084,6 +55667,129 @@ void mrb_mruby_glib_gem_init(mrb_state* mrb) {
 #endif
 #if BIND_g_strv_length_FUNCTION
   mrb_define_class_method(mrb, GLib_module, "g_strv_length", mrb_GLib_g_strv_length, MRB_ARGS_ARG(g_strv_length_REQUIRED_ARGC, g_strv_length_OPTIONAL_ARGC));
+#endif
+#if BIND_g_subprocess_communicate_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_subprocess_communicate", mrb_GLib_g_subprocess_communicate, MRB_ARGS_ARG(g_subprocess_communicate_REQUIRED_ARGC, g_subprocess_communicate_OPTIONAL_ARGC));
+#endif
+#if BIND_g_subprocess_communicate_async_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_subprocess_communicate_async", mrb_GLib_g_subprocess_communicate_async, MRB_ARGS_ARG(g_subprocess_communicate_async_REQUIRED_ARGC, g_subprocess_communicate_async_OPTIONAL_ARGC));
+#endif
+#if BIND_g_subprocess_communicate_utf8_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_subprocess_communicate_utf8", mrb_GLib_g_subprocess_communicate_utf8, MRB_ARGS_ARG(g_subprocess_communicate_utf8_REQUIRED_ARGC, g_subprocess_communicate_utf8_OPTIONAL_ARGC));
+#endif
+#if BIND_g_subprocess_communicate_utf8_async_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_subprocess_communicate_utf8_async", mrb_GLib_g_subprocess_communicate_utf8_async, MRB_ARGS_ARG(g_subprocess_communicate_utf8_async_REQUIRED_ARGC, g_subprocess_communicate_utf8_async_OPTIONAL_ARGC));
+#endif
+#if BIND_g_subprocess_force_exit_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_subprocess_force_exit", mrb_GLib_g_subprocess_force_exit, MRB_ARGS_ARG(g_subprocess_force_exit_REQUIRED_ARGC, g_subprocess_force_exit_OPTIONAL_ARGC));
+#endif
+#if BIND_g_subprocess_get_exit_status_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_subprocess_get_exit_status", mrb_GLib_g_subprocess_get_exit_status, MRB_ARGS_ARG(g_subprocess_get_exit_status_REQUIRED_ARGC, g_subprocess_get_exit_status_OPTIONAL_ARGC));
+#endif
+#if BIND_g_subprocess_get_identifier_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_subprocess_get_identifier", mrb_GLib_g_subprocess_get_identifier, MRB_ARGS_ARG(g_subprocess_get_identifier_REQUIRED_ARGC, g_subprocess_get_identifier_OPTIONAL_ARGC));
+#endif
+#if BIND_g_subprocess_get_if_exited_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_subprocess_get_if_exited", mrb_GLib_g_subprocess_get_if_exited, MRB_ARGS_ARG(g_subprocess_get_if_exited_REQUIRED_ARGC, g_subprocess_get_if_exited_OPTIONAL_ARGC));
+#endif
+#if BIND_g_subprocess_get_if_signaled_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_subprocess_get_if_signaled", mrb_GLib_g_subprocess_get_if_signaled, MRB_ARGS_ARG(g_subprocess_get_if_signaled_REQUIRED_ARGC, g_subprocess_get_if_signaled_OPTIONAL_ARGC));
+#endif
+#if BIND_g_subprocess_get_status_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_subprocess_get_status", mrb_GLib_g_subprocess_get_status, MRB_ARGS_ARG(g_subprocess_get_status_REQUIRED_ARGC, g_subprocess_get_status_OPTIONAL_ARGC));
+#endif
+#if BIND_g_subprocess_get_stderr_pipe_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_subprocess_get_stderr_pipe", mrb_GLib_g_subprocess_get_stderr_pipe, MRB_ARGS_ARG(g_subprocess_get_stderr_pipe_REQUIRED_ARGC, g_subprocess_get_stderr_pipe_OPTIONAL_ARGC));
+#endif
+#if BIND_g_subprocess_get_stdin_pipe_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_subprocess_get_stdin_pipe", mrb_GLib_g_subprocess_get_stdin_pipe, MRB_ARGS_ARG(g_subprocess_get_stdin_pipe_REQUIRED_ARGC, g_subprocess_get_stdin_pipe_OPTIONAL_ARGC));
+#endif
+#if BIND_g_subprocess_get_stdout_pipe_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_subprocess_get_stdout_pipe", mrb_GLib_g_subprocess_get_stdout_pipe, MRB_ARGS_ARG(g_subprocess_get_stdout_pipe_REQUIRED_ARGC, g_subprocess_get_stdout_pipe_OPTIONAL_ARGC));
+#endif
+#if BIND_g_subprocess_get_successful_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_subprocess_get_successful", mrb_GLib_g_subprocess_get_successful, MRB_ARGS_ARG(g_subprocess_get_successful_REQUIRED_ARGC, g_subprocess_get_successful_OPTIONAL_ARGC));
+#endif
+#if BIND_g_subprocess_get_term_sig_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_subprocess_get_term_sig", mrb_GLib_g_subprocess_get_term_sig, MRB_ARGS_ARG(g_subprocess_get_term_sig_REQUIRED_ARGC, g_subprocess_get_term_sig_OPTIONAL_ARGC));
+#endif
+#if BIND_g_subprocess_get_type_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_subprocess_get_type", mrb_GLib_g_subprocess_get_type, MRB_ARGS_ARG(g_subprocess_get_type_REQUIRED_ARGC, g_subprocess_get_type_OPTIONAL_ARGC));
+#endif
+#if BIND_g_subprocess_launcher_get_type_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_subprocess_launcher_get_type", mrb_GLib_g_subprocess_launcher_get_type, MRB_ARGS_ARG(g_subprocess_launcher_get_type_REQUIRED_ARGC, g_subprocess_launcher_get_type_OPTIONAL_ARGC));
+#endif
+#if BIND_g_subprocess_launcher_getenv_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_subprocess_launcher_getenv", mrb_GLib_g_subprocess_launcher_getenv, MRB_ARGS_ARG(g_subprocess_launcher_getenv_REQUIRED_ARGC, g_subprocess_launcher_getenv_OPTIONAL_ARGC));
+#endif
+#if BIND_g_subprocess_launcher_new_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_subprocess_launcher_new", mrb_GLib_g_subprocess_launcher_new, MRB_ARGS_ARG(g_subprocess_launcher_new_REQUIRED_ARGC, g_subprocess_launcher_new_OPTIONAL_ARGC));
+#endif
+#if BIND_g_subprocess_launcher_set_child_setup_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_subprocess_launcher_set_child_setup", mrb_GLib_g_subprocess_launcher_set_child_setup, MRB_ARGS_ARG(g_subprocess_launcher_set_child_setup_REQUIRED_ARGC, g_subprocess_launcher_set_child_setup_OPTIONAL_ARGC));
+#endif
+#if BIND_g_subprocess_launcher_set_cwd_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_subprocess_launcher_set_cwd", mrb_GLib_g_subprocess_launcher_set_cwd, MRB_ARGS_ARG(g_subprocess_launcher_set_cwd_REQUIRED_ARGC, g_subprocess_launcher_set_cwd_OPTIONAL_ARGC));
+#endif
+#if BIND_g_subprocess_launcher_set_environ_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_subprocess_launcher_set_environ", mrb_GLib_g_subprocess_launcher_set_environ, MRB_ARGS_ARG(g_subprocess_launcher_set_environ_REQUIRED_ARGC, g_subprocess_launcher_set_environ_OPTIONAL_ARGC));
+#endif
+#if BIND_g_subprocess_launcher_set_flags_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_subprocess_launcher_set_flags", mrb_GLib_g_subprocess_launcher_set_flags, MRB_ARGS_ARG(g_subprocess_launcher_set_flags_REQUIRED_ARGC, g_subprocess_launcher_set_flags_OPTIONAL_ARGC));
+#endif
+#if BIND_g_subprocess_launcher_set_stderr_file_path_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_subprocess_launcher_set_stderr_file_path", mrb_GLib_g_subprocess_launcher_set_stderr_file_path, MRB_ARGS_ARG(g_subprocess_launcher_set_stderr_file_path_REQUIRED_ARGC, g_subprocess_launcher_set_stderr_file_path_OPTIONAL_ARGC));
+#endif
+#if BIND_g_subprocess_launcher_set_stdin_file_path_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_subprocess_launcher_set_stdin_file_path", mrb_GLib_g_subprocess_launcher_set_stdin_file_path, MRB_ARGS_ARG(g_subprocess_launcher_set_stdin_file_path_REQUIRED_ARGC, g_subprocess_launcher_set_stdin_file_path_OPTIONAL_ARGC));
+#endif
+#if BIND_g_subprocess_launcher_set_stdout_file_path_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_subprocess_launcher_set_stdout_file_path", mrb_GLib_g_subprocess_launcher_set_stdout_file_path, MRB_ARGS_ARG(g_subprocess_launcher_set_stdout_file_path_REQUIRED_ARGC, g_subprocess_launcher_set_stdout_file_path_OPTIONAL_ARGC));
+#endif
+#if BIND_g_subprocess_launcher_setenv_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_subprocess_launcher_setenv", mrb_GLib_g_subprocess_launcher_setenv, MRB_ARGS_ARG(g_subprocess_launcher_setenv_REQUIRED_ARGC, g_subprocess_launcher_setenv_OPTIONAL_ARGC));
+#endif
+#if BIND_g_subprocess_launcher_spawn_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_subprocess_launcher_spawn", mrb_GLib_g_subprocess_launcher_spawn, MRB_ARGS_ARG(g_subprocess_launcher_spawn_REQUIRED_ARGC, g_subprocess_launcher_spawn_OPTIONAL_ARGC));
+#endif
+#if BIND_g_subprocess_launcher_spawnv_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_subprocess_launcher_spawnv", mrb_GLib_g_subprocess_launcher_spawnv, MRB_ARGS_ARG(g_subprocess_launcher_spawnv_REQUIRED_ARGC, g_subprocess_launcher_spawnv_OPTIONAL_ARGC));
+#endif
+#if BIND_g_subprocess_launcher_take_fd_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_subprocess_launcher_take_fd", mrb_GLib_g_subprocess_launcher_take_fd, MRB_ARGS_ARG(g_subprocess_launcher_take_fd_REQUIRED_ARGC, g_subprocess_launcher_take_fd_OPTIONAL_ARGC));
+#endif
+#if BIND_g_subprocess_launcher_take_stderr_fd_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_subprocess_launcher_take_stderr_fd", mrb_GLib_g_subprocess_launcher_take_stderr_fd, MRB_ARGS_ARG(g_subprocess_launcher_take_stderr_fd_REQUIRED_ARGC, g_subprocess_launcher_take_stderr_fd_OPTIONAL_ARGC));
+#endif
+#if BIND_g_subprocess_launcher_take_stdin_fd_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_subprocess_launcher_take_stdin_fd", mrb_GLib_g_subprocess_launcher_take_stdin_fd, MRB_ARGS_ARG(g_subprocess_launcher_take_stdin_fd_REQUIRED_ARGC, g_subprocess_launcher_take_stdin_fd_OPTIONAL_ARGC));
+#endif
+#if BIND_g_subprocess_launcher_take_stdout_fd_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_subprocess_launcher_take_stdout_fd", mrb_GLib_g_subprocess_launcher_take_stdout_fd, MRB_ARGS_ARG(g_subprocess_launcher_take_stdout_fd_REQUIRED_ARGC, g_subprocess_launcher_take_stdout_fd_OPTIONAL_ARGC));
+#endif
+#if BIND_g_subprocess_launcher_unsetenv_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_subprocess_launcher_unsetenv", mrb_GLib_g_subprocess_launcher_unsetenv, MRB_ARGS_ARG(g_subprocess_launcher_unsetenv_REQUIRED_ARGC, g_subprocess_launcher_unsetenv_OPTIONAL_ARGC));
+#endif
+#if BIND_g_subprocess_new_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_subprocess_new", mrb_GLib_g_subprocess_new, MRB_ARGS_ARG(g_subprocess_new_REQUIRED_ARGC, g_subprocess_new_OPTIONAL_ARGC));
+#endif
+#if BIND_g_subprocess_newv_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_subprocess_newv", mrb_GLib_g_subprocess_newv, MRB_ARGS_ARG(g_subprocess_newv_REQUIRED_ARGC, g_subprocess_newv_OPTIONAL_ARGC));
+#endif
+#if BIND_g_subprocess_send_signal_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_subprocess_send_signal", mrb_GLib_g_subprocess_send_signal, MRB_ARGS_ARG(g_subprocess_send_signal_REQUIRED_ARGC, g_subprocess_send_signal_OPTIONAL_ARGC));
+#endif
+#if BIND_g_subprocess_wait_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_subprocess_wait", mrb_GLib_g_subprocess_wait, MRB_ARGS_ARG(g_subprocess_wait_REQUIRED_ARGC, g_subprocess_wait_OPTIONAL_ARGC));
+#endif
+#if BIND_g_subprocess_wait_async_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_subprocess_wait_async", mrb_GLib_g_subprocess_wait_async, MRB_ARGS_ARG(g_subprocess_wait_async_REQUIRED_ARGC, g_subprocess_wait_async_OPTIONAL_ARGC));
+#endif
+#if BIND_g_subprocess_wait_check_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_subprocess_wait_check", mrb_GLib_g_subprocess_wait_check, MRB_ARGS_ARG(g_subprocess_wait_check_REQUIRED_ARGC, g_subprocess_wait_check_OPTIONAL_ARGC));
+#endif
+#if BIND_g_subprocess_wait_check_async_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_subprocess_wait_check_async", mrb_GLib_g_subprocess_wait_check_async, MRB_ARGS_ARG(g_subprocess_wait_check_async_REQUIRED_ARGC, g_subprocess_wait_check_async_OPTIONAL_ARGC));
 #endif
 #if BIND_g_thread_error_quark_FUNCTION
   mrb_define_class_method(mrb, GLib_module, "g_thread_error_quark", mrb_GLib_g_thread_error_quark, MRB_ARGS_ARG(g_thread_error_quark_REQUIRED_ARGC, g_thread_error_quark_OPTIONAL_ARGC));
@@ -44481,6 +56187,9 @@ void mrb_mruby_glib_gem_init(mrb_state* mrb) {
 #if BIND_g_utf8_validate_FUNCTION
   mrb_define_class_method(mrb, GLib_module, "g_utf8_validate", mrb_GLib_g_utf8_validate, MRB_ARGS_ARG(g_utf8_validate_REQUIRED_ARGC, g_utf8_validate_OPTIONAL_ARGC));
 #endif
+#if BIND_g_utime_FUNCTION
+  mrb_define_class_method(mrb, GLib_module, "g_utime", mrb_GLib_g_utime, MRB_ARGS_ARG(g_utime_REQUIRED_ARGC, g_utime_OPTIONAL_ARGC));
+#endif
 #if BIND_g_vasprintf_FUNCTION
   mrb_define_class_method(mrb, GLib_module, "g_vasprintf", mrb_GLib_g_vasprintf, MRB_ARGS_ARG(g_vasprintf_REQUIRED_ARGC, g_vasprintf_OPTIONAL_ARGC));
 #endif
@@ -44502,11 +56211,27 @@ void mrb_mruby_glib_gem_init(mrb_state* mrb) {
 #if BIND_glib_check_version_FUNCTION
   mrb_define_class_method(mrb, GLib_module, "glib_check_version", mrb_GLib_glib_check_version, MRB_ARGS_ARG(glib_check_version_REQUIRED_ARGC, glib_check_version_OPTIONAL_ARGC));
 #endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: custom_module_init */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
+  mrb_include_module(mrb, GIOStream_class(mrb), GInputStream_class(mrb));
+  mrb_include_module(mrb, GIOStream_class(mrb), GOutputStream_class(mrb));
+  mrb_include_module(mrb, GFileIOStream_class(mrb), GIOStream_class(mrb));
+  mrb_include_module(mrb, GFileIOStream_class(mrb), GSeekable_class(mrb));
+  mrb_include_module(mrb, GFileInputStream_class(mrb), GInputStream_class(mrb));
+  mrb_include_module(mrb, GFileInputStream_class(mrb), GSeekable_class(mrb));
+  mrb_include_module(mrb, GFileOutputStream_class(mrb), GOutputStream_class(mrb));
+  mrb_include_module(mrb, GFileOutputStream_class(mrb), GSeekable_class(mrb));
+/* MRUBY_BINDING_END */
 
 }
 
 void mrb_mruby_glib_gem_final(mrb_state* mrb){
+/* MRUBY_BINDING: custom_module_final */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
 
+/* MRUBY_BINDING_END */
 }
 
 #ifdef __cplusplus

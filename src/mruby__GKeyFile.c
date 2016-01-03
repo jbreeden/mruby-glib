@@ -7,6 +7,11 @@
 
 #if BIND_GKeyFile_TYPE
 
+/* MRUBY_BINDING: custom_header */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
+
+/* MRUBY_BINDING_END */
+
 /*
  * Class Methods
  */
@@ -63,16 +68,30 @@ mrb_GLib_GKeyFile_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_GLib_GKeyFile_init(mrb_state* mrb) {
+/* MRUBY_BINDING: GKeyFile::class_definition */
+/* sha: 5f81e43f1e5036cd43a80be6a69e8e804c69f71c21d83af258049f9543774f1c */
   struct RClass* GKeyFile_class = mrb_define_class_under(mrb, GLib_module(mrb), "GKeyFile", mrb->object_class);
   MRB_SET_INSTANCE_TT(GKeyFile_class, MRB_TT_DATA);
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GKeyFile::class_method_definitions */
+/* sha: 205ea1e17880db663455b9e15df71e72220c249a8e8ba2ae0ed732e0a1128e59 */
 #if BIND_GKeyFile_INITIALIZE
   mrb_define_method(mrb, GKeyFile_class, "initialize", mrb_GLib_GKeyFile_initialize, MRB_ARGS_NONE());
 #endif
   mrb_define_class_method(mrb, GKeyFile_class, "disown", mrb_GLib_GKeyFile_disown, MRB_ARGS_ARG(1, 0));
   mrb_define_class_method(mrb, GKeyFile_class, "belongs_to_ruby?", mrb_GLib_GKeyFile_belongs_to_ruby, MRB_ARGS_ARG(1, 0));
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GKeyFile::attr_definitions */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
 
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: GKeyFile::instance_method_definitions */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
+
+/* MRUBY_BINDING_END */
 }
 
 #endif

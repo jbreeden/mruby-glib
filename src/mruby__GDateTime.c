@@ -7,6 +7,11 @@
 
 #if BIND_GDateTime_TYPE
 
+/* MRUBY_BINDING: custom_header */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
+
+/* MRUBY_BINDING_END */
+
 /*
  * Class Methods
  */
@@ -63,16 +68,30 @@ mrb_GLib_GDateTime_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_GLib_GDateTime_init(mrb_state* mrb) {
+/* MRUBY_BINDING: GDateTime::class_definition */
+/* sha: ffe7095c66b6ef60a6542eeebe83698e5d2a2d9a43900fc5e82779b4021829fa */
   struct RClass* GDateTime_class = mrb_define_class_under(mrb, GLib_module(mrb), "GDateTime", mrb->object_class);
   MRB_SET_INSTANCE_TT(GDateTime_class, MRB_TT_DATA);
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GDateTime::class_method_definitions */
+/* sha: 811140d619e4f34e4ca806f4761880aca8ddc4b757605b53d3d4e64edef033ee */
 #if BIND_GDateTime_INITIALIZE
   mrb_define_method(mrb, GDateTime_class, "initialize", mrb_GLib_GDateTime_initialize, MRB_ARGS_NONE());
 #endif
   mrb_define_class_method(mrb, GDateTime_class, "disown", mrb_GLib_GDateTime_disown, MRB_ARGS_ARG(1, 0));
   mrb_define_class_method(mrb, GDateTime_class, "belongs_to_ruby?", mrb_GLib_GDateTime_belongs_to_ruby, MRB_ARGS_ARG(1, 0));
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GDateTime::attr_definitions */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
 
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: GDateTime::instance_method_definitions */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
+
+/* MRUBY_BINDING_END */
 }
 
 #endif

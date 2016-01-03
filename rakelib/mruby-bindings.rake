@@ -29,7 +29,6 @@ cat #{headers}
 | egrep -v "(FunctionDecl|ParmDecl).*g_hash_table_"
 | egrep -v "(FunctionDecl|ParmDecl).*g_atomic_"
 | egrep -v "(FunctionDecl|ParmDecl).*g_slist_"
-| egrep -v "(FunctionDecl|ParmDecl).*async"
 | egrep -v "(FunctionDecl|ParmDecl).*finish"
 >> #{declarations}
 EOS

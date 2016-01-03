@@ -7,6 +7,11 @@
 
 #if BIND_GBytes_TYPE
 
+/* MRUBY_BINDING: custom_header */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
+
+/* MRUBY_BINDING_END */
+
 /*
  * Class Methods
  */
@@ -63,16 +68,30 @@ mrb_GLib_GBytes_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_GLib_GBytes_init(mrb_state* mrb) {
+/* MRUBY_BINDING: GBytes::class_definition */
+/* sha: 6f4909ec8342d40f9b9f1ec2d123ce16fd909660b3f27d6c99aa457d3280a523 */
   struct RClass* GBytes_class = mrb_define_class_under(mrb, GLib_module(mrb), "GBytes", mrb->object_class);
   MRB_SET_INSTANCE_TT(GBytes_class, MRB_TT_DATA);
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GBytes::class_method_definitions */
+/* sha: 14c317cb04a8280ed5de2bf9b3e5e37c30cd2ee7c7e70f4e10fb8ccccc389e97 */
 #if BIND_GBytes_INITIALIZE
   mrb_define_method(mrb, GBytes_class, "initialize", mrb_GLib_GBytes_initialize, MRB_ARGS_NONE());
 #endif
   mrb_define_class_method(mrb, GBytes_class, "disown", mrb_GLib_GBytes_disown, MRB_ARGS_ARG(1, 0));
   mrb_define_class_method(mrb, GBytes_class, "belongs_to_ruby?", mrb_GLib_GBytes_belongs_to_ruby, MRB_ARGS_ARG(1, 0));
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GBytes::attr_definitions */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
 
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: GBytes::instance_method_definitions */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
+
+/* MRUBY_BINDING_END */
 }
 
 #endif

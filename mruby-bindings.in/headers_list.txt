@@ -72,3 +72,13 @@ glib/gstdio.h
 gio/gioenums.h
 gio/gfile.h
 gio/gfileinfo.h
+gio/ginputstream.h
+gio/goutputstream.h
+gio/giostream.h
+gio/gseekable.h
+gio/gsocketaddress.h
+gio/ginetaddress.h
+gio/ginetsocketaddress.h
+gio/gsocket.h
+gio/gsubprocess.h
+gio/gsubprocesslauncher.h

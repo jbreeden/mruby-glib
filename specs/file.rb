@@ -28,8 +28,8 @@ GLib::TestFixture.new('File') do
   end
 
   describe 'File::absolute_path' do
-    it 'Is implemented' do
-      pending
+    it 'Expands the given relative path' do
+      File.absolute_path('.').include? 'mruby-glib'
     end
   end
 
@@ -41,8 +41,8 @@ GLib::TestFixture.new('File') do
   end
 
   describe 'File::basename' do
-    it 'Is implemented' do
-      pending
+    it 'Returns the final file name from the given path' do
+      File.basename('./sandbox') == 'sandbox'
     end
   end
 
@@ -115,8 +115,8 @@ GLib::TestFixture.new('File') do
   end
 
   describe 'File::dirname' do
-    it 'Is implemented' do
-      pending
+    it 'Returns the directory portion of the given path' do
+      File.dirname('./test') == '.'
     end
   end
 
@@ -138,8 +138,8 @@ GLib::TestFixture.new('File') do
   end
 
   describe 'File::expand_path' do
-    it 'Is implemented' do
-      pending
+    it 'Expands the given relative path' do
+      File.expand_path('.').include? 'mruby-glib'
     end
   end
 
@@ -714,6 +714,15 @@ GLib::TestFixture.new('File') do
         result = f.read(3)
       end
       assert result == 'has'
+    end
+    
+    it 'Returns the current position in the stream' do
+      position = nil
+      File.open(two_line_file) do |f|
+        f.read(5)
+        position = f.seek(5, IO::SEEK_CUR)
+      end
+      assert position == 10
     end
   end
 end

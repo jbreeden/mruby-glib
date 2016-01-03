@@ -7,6 +7,11 @@
 
 #if BIND_GRWLock_TYPE
 
+/* MRUBY_BINDING: custom_header */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
+
+/* MRUBY_BINDING_END */
+
 /*
  * Class Methods
  */
@@ -165,15 +170,23 @@ mrb_GLib_GRWLock_set_i(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_GLib_GRWLock_init(mrb_state* mrb) {
+/* MRUBY_BINDING: GRWLock::class_definition */
+/* sha: 0e7f790412bf1a20af29b0f08e9d7eb77122175736b74dc3b1db184ac98d43f6 */
   struct RClass* GRWLock_class = mrb_define_class_under(mrb, GLib_module(mrb), "GRWLock", mrb->object_class);
   MRB_SET_INSTANCE_TT(GRWLock_class, MRB_TT_DATA);
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GRWLock::class_method_definitions */
+/* sha: 15e3ef65d1cbb20cb7192c12e6a1e66378baca52bbb1c47c3305adbca0c86b91 */
 #if BIND_GRWLock_INITIALIZE
   mrb_define_method(mrb, GRWLock_class, "initialize", mrb_GLib_GRWLock_initialize, MRB_ARGS_NONE());
 #endif
   mrb_define_class_method(mrb, GRWLock_class, "disown", mrb_GLib_GRWLock_disown, MRB_ARGS_ARG(1, 0));
   mrb_define_class_method(mrb, GRWLock_class, "belongs_to_ruby?", mrb_GLib_GRWLock_belongs_to_ruby, MRB_ARGS_ARG(1, 0));
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GRWLock::attr_definitions */
+/* sha: 9e4b096748d13549cd40123d3269115a85aa0222cb39b4e806af6e08502cf676 */
   /*
    * Fields
    */
@@ -189,7 +202,12 @@ void mrb_GLib_GRWLock_init(mrb_state* mrb) {
 #if BIND_GRWLock_i_FIELD_WRITER
   mrb_define_method(mrb, GRWLock_class, "i=", mrb_GLib_GRWLock_set_i, MRB_ARGS_ARG(1, 0));
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GRWLock::instance_method_definitions */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
+
+/* MRUBY_BINDING_END */
 }
 
 #endif

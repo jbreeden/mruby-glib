@@ -7,6 +7,11 @@
 
 #if BIND_GIOChannel_TYPE
 
+/* MRUBY_BINDING: custom_header */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
+
+/* MRUBY_BINDING_END */
+
 /*
  * Class Methods
  */
@@ -1014,15 +1019,23 @@ mrb_GLib_GIOChannel_set_reserved2(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_GLib_GIOChannel_init(mrb_state* mrb) {
+/* MRUBY_BINDING: GIOChannel::class_definition */
+/* sha: 202c40f8dffa6086782aba9468a38eb78014b163c5b9da2922fcc2a1fec84303 */
   struct RClass* GIOChannel_class = mrb_define_class_under(mrb, GLib_module(mrb), "GIOChannel", mrb->object_class);
   MRB_SET_INSTANCE_TT(GIOChannel_class, MRB_TT_DATA);
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GIOChannel::class_method_definitions */
+/* sha: df27f8b44494d7c4eec6edd2a93b569f26ac9e637d869cec4c9871b1d138e09c */
 #if BIND_GIOChannel_INITIALIZE
   mrb_define_method(mrb, GIOChannel_class, "initialize", mrb_GLib_GIOChannel_initialize, MRB_ARGS_NONE());
 #endif
   mrb_define_class_method(mrb, GIOChannel_class, "disown", mrb_GLib_GIOChannel_disown, MRB_ARGS_ARG(1, 0));
   mrb_define_class_method(mrb, GIOChannel_class, "belongs_to_ruby?", mrb_GLib_GIOChannel_belongs_to_ruby, MRB_ARGS_ARG(1, 0));
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GIOChannel::attr_definitions */
+/* sha: 0c6a3fa1c4196b090679962b9753693bdad27e2639097e9f27169722cebcd9a6 */
   /*
    * Fields
    */
@@ -1146,7 +1159,12 @@ void mrb_GLib_GIOChannel_init(mrb_state* mrb) {
 #if BIND_GIOChannel_reserved2_FIELD_WRITER
   mrb_define_method(mrb, GIOChannel_class, "reserved2=", mrb_GLib_GIOChannel_set_reserved2, MRB_ARGS_ARG(1, 0));
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GIOChannel::instance_method_definitions */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
+
+/* MRUBY_BINDING_END */
 }
 
 #endif

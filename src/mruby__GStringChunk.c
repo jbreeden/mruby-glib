@@ -7,6 +7,11 @@
 
 #if BIND_GStringChunk_TYPE
 
+/* MRUBY_BINDING: custom_header */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
+
+/* MRUBY_BINDING_END */
+
 /*
  * Class Methods
  */
@@ -63,16 +68,30 @@ mrb_GLib_GStringChunk_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_GLib_GStringChunk_init(mrb_state* mrb) {
+/* MRUBY_BINDING: GStringChunk::class_definition */
+/* sha: 048ea9dcb65b83c98ed96f5f03e5bd25201e676afcc323889e3ce1700ea9c4c8 */
   struct RClass* GStringChunk_class = mrb_define_class_under(mrb, GLib_module(mrb), "GStringChunk", mrb->object_class);
   MRB_SET_INSTANCE_TT(GStringChunk_class, MRB_TT_DATA);
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GStringChunk::class_method_definitions */
+/* sha: 204ae80e8972aceeba77013ce70c871814a481ebaf8f344d9d3b1fef0cbd89f4 */
 #if BIND_GStringChunk_INITIALIZE
   mrb_define_method(mrb, GStringChunk_class, "initialize", mrb_GLib_GStringChunk_initialize, MRB_ARGS_NONE());
 #endif
   mrb_define_class_method(mrb, GStringChunk_class, "disown", mrb_GLib_GStringChunk_disown, MRB_ARGS_ARG(1, 0));
   mrb_define_class_method(mrb, GStringChunk_class, "belongs_to_ruby?", mrb_GLib_GStringChunk_belongs_to_ruby, MRB_ARGS_ARG(1, 0));
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GStringChunk::attr_definitions */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
 
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: GStringChunk::instance_method_definitions */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
+
+/* MRUBY_BINDING_END */
 }
 
 #endif

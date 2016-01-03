@@ -7,6 +7,11 @@
 
 #if BIND_GHashTableIter_TYPE
 
+/* MRUBY_BINDING: custom_header */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
+
+/* MRUBY_BINDING_END */
+
 /*
  * Class Methods
  */
@@ -351,15 +356,23 @@ mrb_GLib_GHashTableIter_set_dummy6(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_GLib_GHashTableIter_init(mrb_state* mrb) {
+/* MRUBY_BINDING: GHashTableIter::class_definition */
+/* sha: ff693dd32e1ac756bcaec1a20db08a21da9afff642a8ed7531b66a1224fd3c7e */
   struct RClass* GHashTableIter_class = mrb_define_class_under(mrb, GLib_module(mrb), "GHashTableIter", mrb->object_class);
   MRB_SET_INSTANCE_TT(GHashTableIter_class, MRB_TT_DATA);
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GHashTableIter::class_method_definitions */
+/* sha: 88cd1319355f7a834bfba504cff930eb2a95978b8fc86ca385e79cb4163100b6 */
 #if BIND_GHashTableIter_INITIALIZE
   mrb_define_method(mrb, GHashTableIter_class, "initialize", mrb_GLib_GHashTableIter_initialize, MRB_ARGS_NONE());
 #endif
   mrb_define_class_method(mrb, GHashTableIter_class, "disown", mrb_GLib_GHashTableIter_disown, MRB_ARGS_ARG(1, 0));
   mrb_define_class_method(mrb, GHashTableIter_class, "belongs_to_ruby?", mrb_GLib_GHashTableIter_belongs_to_ruby, MRB_ARGS_ARG(1, 0));
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GHashTableIter::attr_definitions */
+/* sha: 44ba8e12edad610ee0a0b6f21eb46c213e529a35b5bbf602d1fa2831fc8f8829 */
   /*
    * Fields
    */
@@ -399,7 +412,12 @@ void mrb_GLib_GHashTableIter_init(mrb_state* mrb) {
 #if BIND_GHashTableIter_dummy6_FIELD_WRITER
   mrb_define_method(mrb, GHashTableIter_class, "dummy6=", mrb_GLib_GHashTableIter_set_dummy6, MRB_ARGS_ARG(1, 0));
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GHashTableIter::instance_method_definitions */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
+
+/* MRUBY_BINDING_END */
 }
 
 #endif

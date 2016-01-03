@@ -7,6 +7,11 @@
 
 #if BIND_GThread_TYPE
 
+/* MRUBY_BINDING: custom_header */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
+
+/* MRUBY_BINDING_END */
+
 /*
  * Class Methods
  */
@@ -63,16 +68,30 @@ mrb_GLib_GThread_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_GLib_GThread_init(mrb_state* mrb) {
+/* MRUBY_BINDING: GThread::class_definition */
+/* sha: 6e95dab463818c4a7511ad234e4a13157feb98cc6d1f519ec4fa2f9b0f4ca04a */
   struct RClass* GThread_class = mrb_define_class_under(mrb, GLib_module(mrb), "GThread", mrb->object_class);
   MRB_SET_INSTANCE_TT(GThread_class, MRB_TT_DATA);
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GThread::class_method_definitions */
+/* sha: 0ce3223629e1123c9baf98d597fd19fb596983e966073a4f657336db46c1dc19 */
 #if BIND_GThread_INITIALIZE
   mrb_define_method(mrb, GThread_class, "initialize", mrb_GLib_GThread_initialize, MRB_ARGS_NONE());
 #endif
   mrb_define_class_method(mrb, GThread_class, "disown", mrb_GLib_GThread_disown, MRB_ARGS_ARG(1, 0));
   mrb_define_class_method(mrb, GThread_class, "belongs_to_ruby?", mrb_GLib_GThread_belongs_to_ruby, MRB_ARGS_ARG(1, 0));
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GThread::attr_definitions */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
 
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: GThread::instance_method_definitions */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
+
+/* MRUBY_BINDING_END */
 }
 
 #endif

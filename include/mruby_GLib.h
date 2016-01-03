@@ -30,6 +30,7 @@
 #include "glib/gstdio.h"
 #include "gio/gio.h"
 #include "gio/giotypes.h"
+#include <fcntl.h>
 
 
 #include "mruby_GLib_functions.h"
@@ -61,14 +62,29 @@
 #define GFileIface_class(mrb) mrb_class_get_under(mrb, GLib_module(mrb), "GFileIface")
 #define GFileInfo_class(mrb) mrb_class_get_under(mrb, GLib_module(mrb), "GFileInfo")
 #define GFileInfoClass_class(mrb) mrb_class_get_under(mrb, GLib_module(mrb), "GFileInfoClass")
+#define GFileInputStream_class(mrb) mrb_class_get_under(mrb, GLib_module(mrb), "GFileInputStream")
+#define GFileIOStream_class(mrb) mrb_class_get_under(mrb, GLib_module(mrb), "GFileIOStream")
+#define GFileOutputStream_class(mrb) mrb_class_get_under(mrb, GLib_module(mrb), "GFileOutputStream")
 #define GHashTable_class(mrb) mrb_class_get_under(mrb, GLib_module(mrb), "GHashTable")
 #define GHashTableIter_class(mrb) mrb_class_get_under(mrb, GLib_module(mrb), "GHashTableIter")
 #define GHmac_class(mrb) mrb_class_get_under(mrb, GLib_module(mrb), "GHmac")
 #define GHook_class(mrb) mrb_class_get_under(mrb, GLib_module(mrb), "GHook")
 #define GHookList_class(mrb) mrb_class_get_under(mrb, GLib_module(mrb), "GHookList")
 #define GIConv_class(mrb) mrb_class_get_under(mrb, GLib_module(mrb), "GIConv")
+#define GInetAddress_class(mrb) mrb_class_get_under(mrb, GLib_module(mrb), "GInetAddress")
+#define GInetAddressClass_class(mrb) mrb_class_get_under(mrb, GLib_module(mrb), "GInetAddressClass")
+#define GInetAddressPrivate_class(mrb) mrb_class_get_under(mrb, GLib_module(mrb), "GInetAddressPrivate")
+#define GInetSocketAddress_class(mrb) mrb_class_get_under(mrb, GLib_module(mrb), "GInetSocketAddress")
+#define GInetSocketAddressClass_class(mrb) mrb_class_get_under(mrb, GLib_module(mrb), "GInetSocketAddressClass")
+#define GInetSocketAddressPrivate_class(mrb) mrb_class_get_under(mrb, GLib_module(mrb), "GInetSocketAddressPrivate")
+#define GInputStream_class(mrb) mrb_class_get_under(mrb, GLib_module(mrb), "GInputStream")
+#define GInputStreamClass_class(mrb) mrb_class_get_under(mrb, GLib_module(mrb), "GInputStreamClass")
+#define GInputStreamPrivate_class(mrb) mrb_class_get_under(mrb, GLib_module(mrb), "GInputStreamPrivate")
 #define GIOChannel_class(mrb) mrb_class_get_under(mrb, GLib_module(mrb), "GIOChannel")
 #define GIOFuncs_class(mrb) mrb_class_get_under(mrb, GLib_module(mrb), "GIOFuncs")
+#define GIOStream_class(mrb) mrb_class_get_under(mrb, GLib_module(mrb), "GIOStream")
+#define GIOStreamClass_class(mrb) mrb_class_get_under(mrb, GLib_module(mrb), "GIOStreamClass")
+#define GIOStreamPrivate_class(mrb) mrb_class_get_under(mrb, GLib_module(mrb), "GIOStreamPrivate")
 #define GKeyFile_class(mrb) mrb_class_get_under(mrb, GLib_module(mrb), "GKeyFile")
 #define GList_class(mrb) mrb_class_get_under(mrb, GLib_module(mrb), "GList")
 #define GMainContext_class(mrb) mrb_class_get_under(mrb, GLib_module(mrb), "GMainContext")
@@ -83,6 +99,9 @@
 #define GOptionContext_class(mrb) mrb_class_get_under(mrb, GLib_module(mrb), "GOptionContext")
 #define GOptionEntry_class(mrb) mrb_class_get_under(mrb, GLib_module(mrb), "GOptionEntry")
 #define GOptionGroup_class(mrb) mrb_class_get_under(mrb, GLib_module(mrb), "GOptionGroup")
+#define GOutputStream_class(mrb) mrb_class_get_under(mrb, GLib_module(mrb), "GOutputStream")
+#define GOutputStreamClass_class(mrb) mrb_class_get_under(mrb, GLib_module(mrb), "GOutputStreamClass")
+#define GOutputStreamPrivate_class(mrb) mrb_class_get_under(mrb, GLib_module(mrb), "GOutputStreamPrivate")
 #define GPatternSpec_class(mrb) mrb_class_get_under(mrb, GLib_module(mrb), "GPatternSpec")
 #define GPollFD_class(mrb) mrb_class_get_under(mrb, GLib_module(mrb), "GPollFD")
 #define GPrivate_class(mrb) mrb_class_get_under(mrb, GLib_module(mrb), "GPrivate")
@@ -94,15 +113,24 @@
 #define GRWLock_class(mrb) mrb_class_get_under(mrb, GLib_module(mrb), "GRWLock")
 #define GScanner_class(mrb) mrb_class_get_under(mrb, GLib_module(mrb), "GScanner")
 #define GScannerConfig_class(mrb) mrb_class_get_under(mrb, GLib_module(mrb), "GScannerConfig")
+#define GSeekable_class(mrb) mrb_class_get_under(mrb, GLib_module(mrb), "GSeekable")
+#define GSeekableIface_class(mrb) mrb_class_get_under(mrb, GLib_module(mrb), "GSeekableIface")
 #define GSequence_class(mrb) mrb_class_get_under(mrb, GLib_module(mrb), "GSequence")
 #define GSequenceNode_class(mrb) mrb_class_get_under(mrb, GLib_module(mrb), "GSequenceNode")
 #define GSList_class(mrb) mrb_class_get_under(mrb, GLib_module(mrb), "GSList")
+#define GSocket_class(mrb) mrb_class_get_under(mrb, GLib_module(mrb), "GSocket")
+#define GSocketAddress_class(mrb) mrb_class_get_under(mrb, GLib_module(mrb), "GSocketAddress")
+#define GSocketAddressClass_class(mrb) mrb_class_get_under(mrb, GLib_module(mrb), "GSocketAddressClass")
+#define GSocketClass_class(mrb) mrb_class_get_under(mrb, GLib_module(mrb), "GSocketClass")
+#define GSocketPrivate_class(mrb) mrb_class_get_under(mrb, GLib_module(mrb), "GSocketPrivate")
 #define GSource_class(mrb) mrb_class_get_under(mrb, GLib_module(mrb), "GSource")
 #define GSourceCallbackFuncs_class(mrb) mrb_class_get_under(mrb, GLib_module(mrb), "GSourceCallbackFuncs")
 #define GSourceFuncs_class(mrb) mrb_class_get_under(mrb, GLib_module(mrb), "GSourceFuncs")
 #define GSourcePrivate_class(mrb) mrb_class_get_under(mrb, GLib_module(mrb), "GSourcePrivate")
 #define GString_class(mrb) mrb_class_get_under(mrb, GLib_module(mrb), "GString")
 #define GStringChunk_class(mrb) mrb_class_get_under(mrb, GLib_module(mrb), "GStringChunk")
+#define GSubprocess_class(mrb) mrb_class_get_under(mrb, GLib_module(mrb), "GSubprocess")
+#define GSubprocessLauncher_class(mrb) mrb_class_get_under(mrb, GLib_module(mrb), "GSubprocessLauncher")
 #define GTestCase_class(mrb) mrb_class_get_under(mrb, GLib_module(mrb), "GTestCase")
 #define GTestConfig_class(mrb) mrb_class_get_under(mrb, GLib_module(mrb), "GTestConfig")
 #define GTestLogBuffer_class(mrb) mrb_class_get_under(mrb, GLib_module(mrb), "GTestLogBuffer")
@@ -180,6 +208,15 @@ void mrb_GLib_GFileInfo_init(mrb_state* mrb);
 #if BIND_GFileInfoClass_TYPE
 void mrb_GLib_GFileInfoClass_init(mrb_state* mrb);
 #endif
+#if BIND_GFileInputStream_TYPE
+void mrb_GLib_GFileInputStream_init(mrb_state* mrb);
+#endif
+#if BIND_GFileIOStream_TYPE
+void mrb_GLib_GFileIOStream_init(mrb_state* mrb);
+#endif
+#if BIND_GFileOutputStream_TYPE
+void mrb_GLib_GFileOutputStream_init(mrb_state* mrb);
+#endif
 #if BIND_GHashTable_TYPE
 void mrb_GLib_GHashTable_init(mrb_state* mrb);
 #endif
@@ -198,11 +235,47 @@ void mrb_GLib_GHookList_init(mrb_state* mrb);
 #if BIND_GIConv_TYPE
 void mrb_GLib_GIConv_init(mrb_state* mrb);
 #endif
+#if BIND_GInetAddress_TYPE
+void mrb_GLib_GInetAddress_init(mrb_state* mrb);
+#endif
+#if BIND_GInetAddressClass_TYPE
+void mrb_GLib_GInetAddressClass_init(mrb_state* mrb);
+#endif
+#if BIND_GInetAddressPrivate_TYPE
+void mrb_GLib_GInetAddressPrivate_init(mrb_state* mrb);
+#endif
+#if BIND_GInetSocketAddress_TYPE
+void mrb_GLib_GInetSocketAddress_init(mrb_state* mrb);
+#endif
+#if BIND_GInetSocketAddressClass_TYPE
+void mrb_GLib_GInetSocketAddressClass_init(mrb_state* mrb);
+#endif
+#if BIND_GInetSocketAddressPrivate_TYPE
+void mrb_GLib_GInetSocketAddressPrivate_init(mrb_state* mrb);
+#endif
+#if BIND_GInputStream_TYPE
+void mrb_GLib_GInputStream_init(mrb_state* mrb);
+#endif
+#if BIND_GInputStreamClass_TYPE
+void mrb_GLib_GInputStreamClass_init(mrb_state* mrb);
+#endif
+#if BIND_GInputStreamPrivate_TYPE
+void mrb_GLib_GInputStreamPrivate_init(mrb_state* mrb);
+#endif
 #if BIND_GIOChannel_TYPE
 void mrb_GLib_GIOChannel_init(mrb_state* mrb);
 #endif
 #if BIND_GIOFuncs_TYPE
 void mrb_GLib_GIOFuncs_init(mrb_state* mrb);
+#endif
+#if BIND_GIOStream_TYPE
+void mrb_GLib_GIOStream_init(mrb_state* mrb);
+#endif
+#if BIND_GIOStreamClass_TYPE
+void mrb_GLib_GIOStreamClass_init(mrb_state* mrb);
+#endif
+#if BIND_GIOStreamPrivate_TYPE
+void mrb_GLib_GIOStreamPrivate_init(mrb_state* mrb);
 #endif
 #if BIND_GKeyFile_TYPE
 void mrb_GLib_GKeyFile_init(mrb_state* mrb);
@@ -246,6 +319,15 @@ void mrb_GLib_GOptionEntry_init(mrb_state* mrb);
 #if BIND_GOptionGroup_TYPE
 void mrb_GLib_GOptionGroup_init(mrb_state* mrb);
 #endif
+#if BIND_GOutputStream_TYPE
+void mrb_GLib_GOutputStream_init(mrb_state* mrb);
+#endif
+#if BIND_GOutputStreamClass_TYPE
+void mrb_GLib_GOutputStreamClass_init(mrb_state* mrb);
+#endif
+#if BIND_GOutputStreamPrivate_TYPE
+void mrb_GLib_GOutputStreamPrivate_init(mrb_state* mrb);
+#endif
 #if BIND_GPatternSpec_TYPE
 void mrb_GLib_GPatternSpec_init(mrb_state* mrb);
 #endif
@@ -279,6 +361,12 @@ void mrb_GLib_GScanner_init(mrb_state* mrb);
 #if BIND_GScannerConfig_TYPE
 void mrb_GLib_GScannerConfig_init(mrb_state* mrb);
 #endif
+#if BIND_GSeekable_TYPE
+void mrb_GLib_GSeekable_init(mrb_state* mrb);
+#endif
+#if BIND_GSeekableIface_TYPE
+void mrb_GLib_GSeekableIface_init(mrb_state* mrb);
+#endif
 #if BIND_GSequence_TYPE
 void mrb_GLib_GSequence_init(mrb_state* mrb);
 #endif
@@ -287,6 +375,21 @@ void mrb_GLib_GSequenceNode_init(mrb_state* mrb);
 #endif
 #if BIND_GSList_TYPE
 void mrb_GLib_GSList_init(mrb_state* mrb);
+#endif
+#if BIND_GSocket_TYPE
+void mrb_GLib_GSocket_init(mrb_state* mrb);
+#endif
+#if BIND_GSocketAddress_TYPE
+void mrb_GLib_GSocketAddress_init(mrb_state* mrb);
+#endif
+#if BIND_GSocketAddressClass_TYPE
+void mrb_GLib_GSocketAddressClass_init(mrb_state* mrb);
+#endif
+#if BIND_GSocketClass_TYPE
+void mrb_GLib_GSocketClass_init(mrb_state* mrb);
+#endif
+#if BIND_GSocketPrivate_TYPE
+void mrb_GLib_GSocketPrivate_init(mrb_state* mrb);
 #endif
 #if BIND_GSource_TYPE
 void mrb_GLib_GSource_init(mrb_state* mrb);
@@ -305,6 +408,12 @@ void mrb_GLib_GString_init(mrb_state* mrb);
 #endif
 #if BIND_GStringChunk_TYPE
 void mrb_GLib_GStringChunk_init(mrb_state* mrb);
+#endif
+#if BIND_GSubprocess_TYPE
+void mrb_GLib_GSubprocess_init(mrb_state* mrb);
+#endif
+#if BIND_GSubprocessLauncher_TYPE
+void mrb_GLib_GSubprocessLauncher_init(mrb_state* mrb);
 #endif
 #if BIND_GTestCase_TYPE
 void mrb_GLib_GTestCase_init(mrb_state* mrb);

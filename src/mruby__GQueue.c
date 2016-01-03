@@ -7,6 +7,11 @@
 
 #if BIND_GQueue_TYPE
 
+/* MRUBY_BINDING: custom_header */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
+
+/* MRUBY_BINDING_END */
+
 /*
  * Class Methods
  */
@@ -215,15 +220,23 @@ mrb_GLib_GQueue_set_length(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_GLib_GQueue_init(mrb_state* mrb) {
+/* MRUBY_BINDING: GQueue::class_definition */
+/* sha: d9c04552eb384efc3c7f1980ae7df83e4286527fa998031f931fa2c957730f51 */
   struct RClass* GQueue_class = mrb_define_class_under(mrb, GLib_module(mrb), "GQueue", mrb->object_class);
   MRB_SET_INSTANCE_TT(GQueue_class, MRB_TT_DATA);
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GQueue::class_method_definitions */
+/* sha: d94c722da71d950bccca02bac5ed63b707b194e0912a78be79db7691fad00983 */
 #if BIND_GQueue_INITIALIZE
   mrb_define_method(mrb, GQueue_class, "initialize", mrb_GLib_GQueue_initialize, MRB_ARGS_NONE());
 #endif
   mrb_define_class_method(mrb, GQueue_class, "disown", mrb_GLib_GQueue_disown, MRB_ARGS_ARG(1, 0));
   mrb_define_class_method(mrb, GQueue_class, "belongs_to_ruby?", mrb_GLib_GQueue_belongs_to_ruby, MRB_ARGS_ARG(1, 0));
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GQueue::attr_definitions */
+/* sha: 54aff497bf8e94711f1f7db0c3610252311fda344c588999db2941c4170867e9 */
   /*
    * Fields
    */
@@ -245,7 +258,12 @@ void mrb_GLib_GQueue_init(mrb_state* mrb) {
 #if BIND_GQueue_length_FIELD_WRITER
   mrb_define_method(mrb, GQueue_class, "length=", mrb_GLib_GQueue_set_length, MRB_ARGS_ARG(1, 0));
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GQueue::instance_method_definitions */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
+
+/* MRUBY_BINDING_END */
 }
 
 #endif

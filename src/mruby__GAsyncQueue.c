@@ -7,6 +7,11 @@
 
 #if BIND_GAsyncQueue_TYPE
 
+/* MRUBY_BINDING: custom_header */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
+
+/* MRUBY_BINDING_END */
+
 /*
  * Class Methods
  */
@@ -63,16 +68,30 @@ mrb_GLib_GAsyncQueue_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_GLib_GAsyncQueue_init(mrb_state* mrb) {
+/* MRUBY_BINDING: GAsyncQueue::class_definition */
+/* sha: f6db5085cf0395ca64a789cfd34433a0f76c30dae87b7e576b177936c9ccf391 */
   struct RClass* GAsyncQueue_class = mrb_define_class_under(mrb, GLib_module(mrb), "GAsyncQueue", mrb->object_class);
   MRB_SET_INSTANCE_TT(GAsyncQueue_class, MRB_TT_DATA);
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GAsyncQueue::class_method_definitions */
+/* sha: 84f19d132da31fdcccd963f6beffa9a4acbd2092994bb0431b0511728ae2054a */
 #if BIND_GAsyncQueue_INITIALIZE
   mrb_define_method(mrb, GAsyncQueue_class, "initialize", mrb_GLib_GAsyncQueue_initialize, MRB_ARGS_NONE());
 #endif
   mrb_define_class_method(mrb, GAsyncQueue_class, "disown", mrb_GLib_GAsyncQueue_disown, MRB_ARGS_ARG(1, 0));
   mrb_define_class_method(mrb, GAsyncQueue_class, "belongs_to_ruby?", mrb_GLib_GAsyncQueue_belongs_to_ruby, MRB_ARGS_ARG(1, 0));
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GAsyncQueue::attr_definitions */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
 
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: GAsyncQueue::instance_method_definitions */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
+
+/* MRUBY_BINDING_END */
 }
 
 #endif

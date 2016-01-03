@@ -3,7 +3,7 @@ class IO
   # Semi-Private Util Functions
   # ---------------------------
 
-  module Util
+  module Private
     def self.ruby_seek_to_glib(seek)
       case seek
       when :SET, SEEK_SET
@@ -89,7 +89,7 @@ class IO
   #   end
   # 
   #   # mode_str_to_apr_flags throws on invalid, so input is sanitized after
-  #   flags = IO::Util.mode_str_to_apr_flags(mode)
+  #   flags = IO::Private.mode_str_to_apr_flags(mode)
   #   child_in_pipe_ends = []
   #   child_out_pipe_ends = []
   #   read_pipe = nil  # These are set while interpretting the mode
@@ -138,23 +138,52 @@ class IO
   #     return bidirectional_pipe
   #   end
   # end
-
-  # Default Implementation of IO Instance Methods
-  # ---------------------------------------------
-
-  # - Subclasses must provide:
-  #   + `read(len = nil)`
-  #   + `write(str)`
-  #   + `eof?`
-  #   + `assert_can_read`
-  #   + `assert_can_write`
+  
+  def initialize
+    @closed = false
+  end
 
   def <<(obj)
     self.write(obj)
   end
+  
+  def assert_can_read
+    if closed? || (@iostream.nil? && @istream.nil?)
+      raise IOError.new 'not opened for reading'
+    end
+  end
+  
+  def assert_can_write
+    if closed? || (@iostream.nil? && @ostream.nil?)
+      raise IOError.new 'not opened for writing'
+    end
+  end
+  
+  def close
+    unless @closed
+      if @iostream
+        GLib.g_io_stream_close(@iostream)
+      else
+        GLib.g_input_stream_close(@istream) if @istream
+        GLib.g_output_stream_close(@ostream) if @ostream
+      end
+      @closed = true
+    end
+  end
+  
+  def closed?
+    @closed
+  end
 
-  def eof
-    self.eof?
+  def eof?
+    assert_can_read
+    @eof
+  end
+  alias eof eof?
+  
+  def flush
+    assert_can_write
+    GLib.raise_error(GLib.g_output_stream_flush(@ostream))
   end
 
   def gets(sep=nil, limit=nil)
@@ -240,13 +269,26 @@ class IO
 
   def getc
     assert_can_read
-    self.read(1)
+    bytes_read, text, err = GLib.g_input_stream_read(@istream, 1)
+    GLib.raise_error(err)
+    if bytes_read == 0
+      @eof = true
+      nil
+    else
+      text[0]
+    end
   end
-
+  
   def getbyte
     assert_can_read
-    char = self.read(1)
-    char.nil? ? nil : char.ord
+    bytes_read, text, err = GLib.g_input_stream_read(@istream, 1)
+    GLib.raise_error(err)
+    if bytes_read == 0
+      @eof = true
+      nil
+    else
+      text[0].ord
+    end
   end
 
   def print(*objs)
@@ -281,10 +323,56 @@ class IO
     end
     nil
   end
+  
+  def read(length = nil)
+    assert_can_read
+  
+    read = ""
+    if length.nil?
+      loop {
+        status, text, err = GLib.g_input_stream_read(@istream, 100)
+        @eof = status == 0
+        GLib.raise_error(err)
+        break if text.nil? || text.length == 0
+        read += text
+      }
+    elsif length > 0
+      status, text, err = GLib.g_input_stream_read(@istream, length)
+      @eof = status == 0
+      GLib.raise_error(err)
+      read += text unless text.nil?
+    end
+  
+    if length.nil?
+      # should be "" if nothing was read (EOF hit)
+      read
+    elsif length == 0
+      # Per ruby documents, return "" on length == 0
+      ""
+    else
+      # length was provided non-zero, so return nil if nothing read
+      read == "" ? nil : read
+    end
+  end
 
   def seek(amount, whence=IO::SEEK_SET)
-    # If seek is not overridden by the subclass,
-    # just default to considering it invalid.
-    raise SystemCallError.new("Illegal seek")
+    whence = Private.ruby_seek_to_glib(whence)
+    actual_stream = @iostream || @istream || @ostream
+    raise SystemCallError.new("Illegal seek") unless GLib.g_seekable_can_seek(actual_stream)
+    status, err = GLib.g_seekable_seek(actual_stream, amount, whence)
+    GLib.raise_error(err, SystemCallError)
+    GLib.g_seekable_tell(actual_stream)
+  end
+  
+  def tell
+    GLib.g_seekable_tell(actual_stream)
+  end
+  
+  def write(str)
+    assert_can_write
+    as_str = str.to_s
+    bytes_written, err = GLib.g_output_stream_write(@ostream, as_str)
+    GLib.raise_error(err)
+    bytes_written
   end
 end

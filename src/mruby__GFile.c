@@ -1,11 +1,16 @@
 /*
  * struct _GFile
- * Defined in file dummy_decls.h @ line 1
+ * Defined in file dummy_decls.h @ line 3
  */
 
 #include "mruby_GLib.h"
 
 #if BIND_GFile_TYPE
+
+/* MRUBY_BINDING: custom_header */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
+
+/* MRUBY_BINDING_END */
 
 /*
  * Class Methods
@@ -63,16 +68,30 @@ mrb_GLib_GFile_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_GLib_GFile_init(mrb_state* mrb) {
+/* MRUBY_BINDING: GFile::class_definition */
+/* sha: 8c284708d2b6b2cba84cd7e74120124b07fb9646cef8b264c0a60c5638350451 */
   struct RClass* GFile_class = mrb_define_class_under(mrb, GLib_module(mrb), "GFile", mrb->object_class);
   MRB_SET_INSTANCE_TT(GFile_class, MRB_TT_DATA);
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GFile::class_method_definitions */
+/* sha: 3ff984b598bc4200a030a62ed6b887212abe2b99c533209176e6d1f019155b3b */
 #if BIND_GFile_INITIALIZE
   mrb_define_method(mrb, GFile_class, "initialize", mrb_GLib_GFile_initialize, MRB_ARGS_NONE());
 #endif
   mrb_define_class_method(mrb, GFile_class, "disown", mrb_GLib_GFile_disown, MRB_ARGS_ARG(1, 0));
   mrb_define_class_method(mrb, GFile_class, "belongs_to_ruby?", mrb_GLib_GFile_belongs_to_ruby, MRB_ARGS_ARG(1, 0));
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GFile::attr_definitions */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
 
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: GFile::instance_method_definitions */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
+
+/* MRUBY_BINDING_END */
 }
 
 #endif

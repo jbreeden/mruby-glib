@@ -7,6 +7,11 @@
 
 #if BIND_GNode_TYPE
 
+/* MRUBY_BINDING: custom_header */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
+
+/* MRUBY_BINDING_END */
+
 /*
  * Class Methods
  */
@@ -324,15 +329,23 @@ mrb_GLib_GNode_set_children(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_GLib_GNode_init(mrb_state* mrb) {
+/* MRUBY_BINDING: GNode::class_definition */
+/* sha: 63dc32bf075b7d218a2fd660b8dcf8046f3a60a09fc092cd3beec62465574ded */
   struct RClass* GNode_class = mrb_define_class_under(mrb, GLib_module(mrb), "GNode", mrb->object_class);
   MRB_SET_INSTANCE_TT(GNode_class, MRB_TT_DATA);
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GNode::class_method_definitions */
+/* sha: 8417948e7663289faf3ed4ae133fab1589ad6abf5ef3d1a8833e4edc89ecee20 */
 #if BIND_GNode_INITIALIZE
   mrb_define_method(mrb, GNode_class, "initialize", mrb_GLib_GNode_initialize, MRB_ARGS_NONE());
 #endif
   mrb_define_class_method(mrb, GNode_class, "disown", mrb_GLib_GNode_disown, MRB_ARGS_ARG(1, 0));
   mrb_define_class_method(mrb, GNode_class, "belongs_to_ruby?", mrb_GLib_GNode_belongs_to_ruby, MRB_ARGS_ARG(1, 0));
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GNode::attr_definitions */
+/* sha: 8b503d6cef0236bdf40a631d4a5b672fffcd080021630896fef40380a8889da4 */
   /*
    * Fields
    */
@@ -366,7 +379,12 @@ void mrb_GLib_GNode_init(mrb_state* mrb) {
 #if BIND_GNode_children_FIELD_WRITER
   mrb_define_method(mrb, GNode_class, "children=", mrb_GLib_GNode_set_children, MRB_ARGS_ARG(1, 0));
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GNode::instance_method_definitions */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
+
+/* MRUBY_BINDING_END */
 }
 
 #endif

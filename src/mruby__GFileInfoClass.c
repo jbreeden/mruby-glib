@@ -7,6 +7,11 @@
 
 #if BIND_GFileInfoClass_TYPE
 
+/* MRUBY_BINDING: custom_header */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
+
+/* MRUBY_BINDING_END */
+
 /*
  * Class Methods
  */
@@ -63,16 +68,30 @@ mrb_GLib_GFileInfoClass_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_GLib_GFileInfoClass_init(mrb_state* mrb) {
+/* MRUBY_BINDING: GFileInfoClass::class_definition */
+/* sha: 39b7dafb760582e51210c8046d16fdad4c071e7830118317ab2e4494a2fecf87 */
   struct RClass* GFileInfoClass_class = mrb_define_class_under(mrb, GLib_module(mrb), "GFileInfoClass", mrb->object_class);
   MRB_SET_INSTANCE_TT(GFileInfoClass_class, MRB_TT_DATA);
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GFileInfoClass::class_method_definitions */
+/* sha: fd321149085916a2555707bdefb5b9bb3f411b08d5f165558784160f5867f955 */
 #if BIND_GFileInfoClass_INITIALIZE
   mrb_define_method(mrb, GFileInfoClass_class, "initialize", mrb_GLib_GFileInfoClass_initialize, MRB_ARGS_NONE());
 #endif
   mrb_define_class_method(mrb, GFileInfoClass_class, "disown", mrb_GLib_GFileInfoClass_disown, MRB_ARGS_ARG(1, 0));
   mrb_define_class_method(mrb, GFileInfoClass_class, "belongs_to_ruby?", mrb_GLib_GFileInfoClass_belongs_to_ruby, MRB_ARGS_ARG(1, 0));
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GFileInfoClass::attr_definitions */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
 
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: GFileInfoClass::instance_method_definitions */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
+
+/* MRUBY_BINDING_END */
 }
 
 #endif

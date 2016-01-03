@@ -1,11 +1,16 @@
 /*
  * struct _GFileIOStream
- * Defined in file giotypes.h @ line 97
+ * Defined in file dummy_decls.h @ line 10
  */
 
 #include "mruby_GLib.h"
 
 #if BIND_GFileIOStream_TYPE
+
+/* MRUBY_BINDING: custom_header */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
+
+/* MRUBY_BINDING_END */
 
 /*
  * Class Methods
@@ -63,16 +68,30 @@ mrb_GLib_GFileIOStream_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_GLib_GFileIOStream_init(mrb_state* mrb) {
+/* MRUBY_BINDING: GFileIOStream::class_definition */
+/* sha: d48d6407808dc580abb86d62952b3ddc0692b8b8d3942633c866306269aa7d3c */
   struct RClass* GFileIOStream_class = mrb_define_class_under(mrb, GLib_module(mrb), "GFileIOStream", mrb->object_class);
   MRB_SET_INSTANCE_TT(GFileIOStream_class, MRB_TT_DATA);
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GFileIOStream::class_method_definitions */
+/* sha: eb983c97d27ad2dc1651097a3fe49ec0c8e7ae43c4d3907d23604fb4e264395a */
 #if BIND_GFileIOStream_INITIALIZE
   mrb_define_method(mrb, GFileIOStream_class, "initialize", mrb_GLib_GFileIOStream_initialize, MRB_ARGS_NONE());
 #endif
   mrb_define_class_method(mrb, GFileIOStream_class, "disown", mrb_GLib_GFileIOStream_disown, MRB_ARGS_ARG(1, 0));
   mrb_define_class_method(mrb, GFileIOStream_class, "belongs_to_ruby?", mrb_GLib_GFileIOStream_belongs_to_ruby, MRB_ARGS_ARG(1, 0));
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GFileIOStream::attr_definitions */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
 
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: GFileIOStream::instance_method_definitions */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
+
+/* MRUBY_BINDING_END */
 }
 
 #endif

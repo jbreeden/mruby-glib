@@ -179,3 +179,19 @@ CTypes.set_fn_return_type('g_filename_to_uri', CTypes['return:gstring'])
 ## gchar * g_filename_to_utf8(const gchar * opsysstring, gssize len, gsize * bytes_read, gsize * bytes_written, GError ** error)
 # Return value (gchar *)
 CTypes.set_fn_return_type('g_filename_to_utf8', CTypes['return:gstring'])
+
+## gboolean g_socket_get_option(GSocket * socket, gint level, gint optname, gint * value, GError ** error)
+# Param: value (gint *)
+CTypes.set_fn_param_type('g_socket_get_option', 'value', CTypes['out:int *'])
+
+## void g_subprocess_launcher_set_environ(GSubprocessLauncher * self, gchar ** env)
+# Param: env (gchar **)
+CTypes.set_fn_param_type('g_subprocess_launcher_set_environ', 'env', CTypes['nullterminated:gstring:array'])
+
+## GSubprocess * g_subprocess_launcher_spawnv(GSubprocessLauncher * self, const gchar *const * argv, GError ** error)
+# Param: argv (const gchar *const *)
+CTypes.set_fn_param_type('g_subprocess_launcher_spawnv', 'argv', CTypes['nullterminated:gstring:array'])
+
+## GSubprocess * g_subprocess_newv(const gchar *const * argv, GSubprocessFlags flags, GError ** error)
+# Param: argv (const gchar *const *)
+CTypes.set_fn_param_type('g_subprocess_newv', 'argv', CTypes['nullterminated:gstring:array'])

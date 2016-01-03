@@ -7,6 +7,11 @@
 
 #if BIND_GChecksum_TYPE
 
+/* MRUBY_BINDING: custom_header */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
+
+/* MRUBY_BINDING_END */
+
 /*
  * Class Methods
  */
@@ -63,16 +68,30 @@ mrb_GLib_GChecksum_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_GLib_GChecksum_init(mrb_state* mrb) {
+/* MRUBY_BINDING: GChecksum::class_definition */
+/* sha: 0b8bb034f5165ad8c5982c8099d2410010c94c12a49bf7ccdae5b685cd5b1d8d */
   struct RClass* GChecksum_class = mrb_define_class_under(mrb, GLib_module(mrb), "GChecksum", mrb->object_class);
   MRB_SET_INSTANCE_TT(GChecksum_class, MRB_TT_DATA);
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GChecksum::class_method_definitions */
+/* sha: 526df16f6d2363c38e4fbeb2d8b7f1f8e5096ae6c8e01eacb00dc6d5c74cb3a0 */
 #if BIND_GChecksum_INITIALIZE
   mrb_define_method(mrb, GChecksum_class, "initialize", mrb_GLib_GChecksum_initialize, MRB_ARGS_NONE());
 #endif
   mrb_define_class_method(mrb, GChecksum_class, "disown", mrb_GLib_GChecksum_disown, MRB_ARGS_ARG(1, 0));
   mrb_define_class_method(mrb, GChecksum_class, "belongs_to_ruby?", mrb_GLib_GChecksum_belongs_to_ruby, MRB_ARGS_ARG(1, 0));
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GChecksum::attr_definitions */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
 
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: GChecksum::instance_method_definitions */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
+
+/* MRUBY_BINDING_END */
 }
 
 #endif

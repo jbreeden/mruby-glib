@@ -7,6 +7,11 @@
 
 #if BIND_GTestSuite_TYPE
 
+/* MRUBY_BINDING: custom_header */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
+
+/* MRUBY_BINDING_END */
+
 /*
  * Class Methods
  */
@@ -63,16 +68,30 @@ mrb_GLib_GTestSuite_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_GLib_GTestSuite_init(mrb_state* mrb) {
+/* MRUBY_BINDING: GTestSuite::class_definition */
+/* sha: 07f7e24870ef5651f562b0bc9c1b676c685944a1adf9d122c0644ede6fbdc66b */
   struct RClass* GTestSuite_class = mrb_define_class_under(mrb, GLib_module(mrb), "GTestSuite", mrb->object_class);
   MRB_SET_INSTANCE_TT(GTestSuite_class, MRB_TT_DATA);
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GTestSuite::class_method_definitions */
+/* sha: b637601b878ae9cd8c43f679d1853ae9fe0f9fb682dcb32403ae148a5d40c974 */
 #if BIND_GTestSuite_INITIALIZE
   mrb_define_method(mrb, GTestSuite_class, "initialize", mrb_GLib_GTestSuite_initialize, MRB_ARGS_NONE());
 #endif
   mrb_define_class_method(mrb, GTestSuite_class, "disown", mrb_GLib_GTestSuite_disown, MRB_ARGS_ARG(1, 0));
   mrb_define_class_method(mrb, GTestSuite_class, "belongs_to_ruby?", mrb_GLib_GTestSuite_belongs_to_ruby, MRB_ARGS_ARG(1, 0));
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GTestSuite::attr_definitions */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
 
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: GTestSuite::instance_method_definitions */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
+
+/* MRUBY_BINDING_END */
 }
 
 #endif

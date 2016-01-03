@@ -7,6 +7,11 @@
 
 #if BIND_GList_TYPE
 
+/* MRUBY_BINDING: custom_header */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
+
+/* MRUBY_BINDING_END */
+
 /*
  * Class Methods
  */
@@ -220,15 +225,23 @@ mrb_GLib_GList_set_prev(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_GLib_GList_init(mrb_state* mrb) {
+/* MRUBY_BINDING: GList::class_definition */
+/* sha: b1e7d46d300a5d81fc192cb9a1acff387fa672aeb46c3e91bd685a0393f981bf */
   struct RClass* GList_class = mrb_define_class_under(mrb, GLib_module(mrb), "GList", mrb->object_class);
   MRB_SET_INSTANCE_TT(GList_class, MRB_TT_DATA);
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GList::class_method_definitions */
+/* sha: 5b8d5c253618d10979eda8bb9283b81d772add39e50930548a643c7a9f92724a */
 #if BIND_GList_INITIALIZE
   mrb_define_method(mrb, GList_class, "initialize", mrb_GLib_GList_initialize, MRB_ARGS_NONE());
 #endif
   mrb_define_class_method(mrb, GList_class, "disown", mrb_GLib_GList_disown, MRB_ARGS_ARG(1, 0));
   mrb_define_class_method(mrb, GList_class, "belongs_to_ruby?", mrb_GLib_GList_belongs_to_ruby, MRB_ARGS_ARG(1, 0));
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GList::attr_definitions */
+/* sha: 695813590efa39db988204724535d56a3cf88150a39c786aa1550ced4f2c86ef */
   /*
    * Fields
    */
@@ -250,7 +263,12 @@ void mrb_GLib_GList_init(mrb_state* mrb) {
 #if BIND_GList_prev_FIELD_WRITER
   mrb_define_method(mrb, GList_class, "prev=", mrb_GLib_GList_set_prev, MRB_ARGS_ARG(1, 0));
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GList::instance_method_definitions */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
+
+/* MRUBY_BINDING_END */
 }
 
 #endif

@@ -7,6 +7,11 @@
 
 #if BIND_GFileIface_TYPE
 
+/* MRUBY_BINDING: custom_header */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
+
+/* MRUBY_BINDING_END */
+
 /*
  * Class Methods
  */
@@ -5158,15 +5163,23 @@ mrb_GLib_GFileIface_set_measure_disk_usage_finish(mrb_state* mrb, mrb_value self
 
 
 void mrb_GLib_GFileIface_init(mrb_state* mrb) {
+/* MRUBY_BINDING: GFileIface::class_definition */
+/* sha: 4cfa2d40974e9720454461cfd7fb431ce6e36a2a3a9c711c6ac92d365b170030 */
   struct RClass* GFileIface_class = mrb_define_class_under(mrb, GLib_module(mrb), "GFileIface", mrb->object_class);
   MRB_SET_INSTANCE_TT(GFileIface_class, MRB_TT_DATA);
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GFileIface::class_method_definitions */
+/* sha: 4f648b2500a0ddea5001d7486104d6cbea01aa2bf341b9a8527de93de4398fce */
 #if BIND_GFileIface_INITIALIZE
   mrb_define_method(mrb, GFileIface_class, "initialize", mrb_GLib_GFileIface_initialize, MRB_ARGS_NONE());
 #endif
   mrb_define_class_method(mrb, GFileIface_class, "disown", mrb_GLib_GFileIface_disown, MRB_ARGS_ARG(1, 0));
   mrb_define_class_method(mrb, GFileIface_class, "belongs_to_ruby?", mrb_GLib_GFileIface_belongs_to_ruby, MRB_ARGS_ARG(1, 0));
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GFileIface::attr_definitions */
+/* sha: fe9ea8f00d298692c2aaf132fa4010cdf454ff4091701ef4604eb6b071eedda1 */
   /*
    * Fields
    */
@@ -5794,7 +5807,12 @@ void mrb_GLib_GFileIface_init(mrb_state* mrb) {
 #if BIND_GFileIface_measure_disk_usage_finish_FIELD_WRITER
   mrb_define_method(mrb, GFileIface_class, "measure_disk_usage_finish=", mrb_GLib_GFileIface_set_measure_disk_usage_finish, MRB_ARGS_ARG(1, 0));
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GFileIface::instance_method_definitions */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
+
+/* MRUBY_BINDING_END */
 }
 
 #endif

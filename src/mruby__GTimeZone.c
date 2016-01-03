@@ -7,6 +7,11 @@
 
 #if BIND_GTimeZone_TYPE
 
+/* MRUBY_BINDING: custom_header */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
+
+/* MRUBY_BINDING_END */
+
 /*
  * Class Methods
  */
@@ -63,16 +68,30 @@ mrb_GLib_GTimeZone_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_GLib_GTimeZone_init(mrb_state* mrb) {
+/* MRUBY_BINDING: GTimeZone::class_definition */
+/* sha: d327dc61df41a8cee7541dbc52430b0ea7bade4edd587c42844e1f243ec9be4b */
   struct RClass* GTimeZone_class = mrb_define_class_under(mrb, GLib_module(mrb), "GTimeZone", mrb->object_class);
   MRB_SET_INSTANCE_TT(GTimeZone_class, MRB_TT_DATA);
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GTimeZone::class_method_definitions */
+/* sha: dcdc9c6a52fffa9b84c36981467dff3b949c4a7c9d82d8f69f6386717c26c0ef */
 #if BIND_GTimeZone_INITIALIZE
   mrb_define_method(mrb, GTimeZone_class, "initialize", mrb_GLib_GTimeZone_initialize, MRB_ARGS_NONE());
 #endif
   mrb_define_class_method(mrb, GTimeZone_class, "disown", mrb_GLib_GTimeZone_disown, MRB_ARGS_ARG(1, 0));
   mrb_define_class_method(mrb, GTimeZone_class, "belongs_to_ruby?", mrb_GLib_GTimeZone_belongs_to_ruby, MRB_ARGS_ARG(1, 0));
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GTimeZone::attr_definitions */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
 
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: GTimeZone::instance_method_definitions */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
+
+/* MRUBY_BINDING_END */
 }
 
 #endif

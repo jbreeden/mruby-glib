@@ -7,6 +7,11 @@
 
 #if BIND_GIConv_TYPE
 
+/* MRUBY_BINDING: custom_header */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
+
+/* MRUBY_BINDING_END */
+
 /*
  * Class Methods
  */
@@ -63,16 +68,30 @@ mrb_GLib_GIConv_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_GLib_GIConv_init(mrb_state* mrb) {
+/* MRUBY_BINDING: GIConv::class_definition */
+/* sha: 40d1705ec5124a78b31d6980a791a456bec407c8775c671c08976ed75a57e8a0 */
   struct RClass* GIConv_class = mrb_define_class_under(mrb, GLib_module(mrb), "GIConv", mrb->object_class);
   MRB_SET_INSTANCE_TT(GIConv_class, MRB_TT_DATA);
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GIConv::class_method_definitions */
+/* sha: ae0bb90e77ef32134f378c47c3befda3dbfccb3f60fc42c3722ed0e7bf3519f4 */
 #if BIND_GIConv_INITIALIZE
   mrb_define_method(mrb, GIConv_class, "initialize", mrb_GLib_GIConv_initialize, MRB_ARGS_NONE());
 #endif
   mrb_define_class_method(mrb, GIConv_class, "disown", mrb_GLib_GIConv_disown, MRB_ARGS_ARG(1, 0));
   mrb_define_class_method(mrb, GIConv_class, "belongs_to_ruby?", mrb_GLib_GIConv_belongs_to_ruby, MRB_ARGS_ARG(1, 0));
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GIConv::attr_definitions */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
 
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: GIConv::instance_method_definitions */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
+
+/* MRUBY_BINDING_END */
 }
 
 #endif

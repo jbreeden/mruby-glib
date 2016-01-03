@@ -7,6 +7,11 @@
 
 #if BIND_GMemVTable_TYPE
 
+/* MRUBY_BINDING: custom_header */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
+
+/* MRUBY_BINDING_END */
+
 /*
  * Class Methods
  */
@@ -361,15 +366,23 @@ mrb_GLib_GMemVTable_set_try_realloc(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_GLib_GMemVTable_init(mrb_state* mrb) {
+/* MRUBY_BINDING: GMemVTable::class_definition */
+/* sha: 5e57f1642d35ac4154e7b9abb11ebb6b2749e1fa30f36f76d45f694bc0944c85 */
   struct RClass* GMemVTable_class = mrb_define_class_under(mrb, GLib_module(mrb), "GMemVTable", mrb->object_class);
   MRB_SET_INSTANCE_TT(GMemVTable_class, MRB_TT_DATA);
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GMemVTable::class_method_definitions */
+/* sha: 2d494451da3bb4dec1be8a7a7a3c4e5edea3f7f19ad22e4ab8629241113b4878 */
 #if BIND_GMemVTable_INITIALIZE
   mrb_define_method(mrb, GMemVTable_class, "initialize", mrb_GLib_GMemVTable_initialize, MRB_ARGS_NONE());
 #endif
   mrb_define_class_method(mrb, GMemVTable_class, "disown", mrb_GLib_GMemVTable_disown, MRB_ARGS_ARG(1, 0));
   mrb_define_class_method(mrb, GMemVTable_class, "belongs_to_ruby?", mrb_GLib_GMemVTable_belongs_to_ruby, MRB_ARGS_ARG(1, 0));
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GMemVTable::attr_definitions */
+/* sha: a2421757ef849cabe4a53616950f0509037bdce6e7046c833ed08baf4eb5fce2 */
   /*
    * Fields
    */
@@ -409,7 +422,12 @@ void mrb_GLib_GMemVTable_init(mrb_state* mrb) {
 #if BIND_GMemVTable_try_realloc_FIELD_WRITER
   mrb_define_method(mrb, GMemVTable_class, "try_realloc=", mrb_GLib_GMemVTable_set_try_realloc, MRB_ARGS_ARG(1, 0));
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GMemVTable::instance_method_definitions */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
+
+/* MRUBY_BINDING_END */
 }
 
 #endif

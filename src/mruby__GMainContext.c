@@ -7,6 +7,11 @@
 
 #if BIND_GMainContext_TYPE
 
+/* MRUBY_BINDING: custom_header */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
+
+/* MRUBY_BINDING_END */
+
 /*
  * Class Methods
  */
@@ -63,16 +68,30 @@ mrb_GLib_GMainContext_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_GLib_GMainContext_init(mrb_state* mrb) {
+/* MRUBY_BINDING: GMainContext::class_definition */
+/* sha: 176638938ba47aa0f8fd65d0efdfd12be1e613729174e889474554c2713f6533 */
   struct RClass* GMainContext_class = mrb_define_class_under(mrb, GLib_module(mrb), "GMainContext", mrb->object_class);
   MRB_SET_INSTANCE_TT(GMainContext_class, MRB_TT_DATA);
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GMainContext::class_method_definitions */
+/* sha: f9d7ffdb333aff857ce3b5f8e191b201b1ddaa07c3627eded44d45d3794a848e */
 #if BIND_GMainContext_INITIALIZE
   mrb_define_method(mrb, GMainContext_class, "initialize", mrb_GLib_GMainContext_initialize, MRB_ARGS_NONE());
 #endif
   mrb_define_class_method(mrb, GMainContext_class, "disown", mrb_GLib_GMainContext_disown, MRB_ARGS_ARG(1, 0));
   mrb_define_class_method(mrb, GMainContext_class, "belongs_to_ruby?", mrb_GLib_GMainContext_belongs_to_ruby, MRB_ARGS_ARG(1, 0));
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GMainContext::attr_definitions */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
 
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: GMainContext::instance_method_definitions */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
+
+/* MRUBY_BINDING_END */
 }
 
 #endif

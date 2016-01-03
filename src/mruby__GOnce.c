@@ -7,6 +7,11 @@
 
 #if BIND_GOnce_TYPE
 
+/* MRUBY_BINDING: custom_header */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
+
+/* MRUBY_BINDING_END */
+
 /*
  * Class Methods
  */
@@ -165,15 +170,23 @@ mrb_GLib_GOnce_set_retval(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_GLib_GOnce_init(mrb_state* mrb) {
+/* MRUBY_BINDING: GOnce::class_definition */
+/* sha: 7241906706ca67cf631ebbc2029fbbe96cc95b511b9d45856f8728408d5606b6 */
   struct RClass* GOnce_class = mrb_define_class_under(mrb, GLib_module(mrb), "GOnce", mrb->object_class);
   MRB_SET_INSTANCE_TT(GOnce_class, MRB_TT_DATA);
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GOnce::class_method_definitions */
+/* sha: 33eeaf3c1baa720f12eedd5f6a5e5594e423364992a7128c19eb1d0d83e4bfe6 */
 #if BIND_GOnce_INITIALIZE
   mrb_define_method(mrb, GOnce_class, "initialize", mrb_GLib_GOnce_initialize, MRB_ARGS_NONE());
 #endif
   mrb_define_class_method(mrb, GOnce_class, "disown", mrb_GLib_GOnce_disown, MRB_ARGS_ARG(1, 0));
   mrb_define_class_method(mrb, GOnce_class, "belongs_to_ruby?", mrb_GLib_GOnce_belongs_to_ruby, MRB_ARGS_ARG(1, 0));
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GOnce::attr_definitions */
+/* sha: b8deab5bd59621098a9d71dac6f4070511ca6a8e3f29ebf8ed500d9532e3403a */
   /*
    * Fields
    */
@@ -189,7 +202,12 @@ void mrb_GLib_GOnce_init(mrb_state* mrb) {
 #if BIND_GOnce_retval_FIELD_WRITER
   mrb_define_method(mrb, GOnce_class, "retval=", mrb_GLib_GOnce_set_retval, MRB_ARGS_ARG(1, 0));
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GOnce::instance_method_definitions */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
+
+/* MRUBY_BINDING_END */
 }
 
 #endif

@@ -26,12 +26,60 @@ class File < IO
   #
   # "t"  Text file mode
   def initialize(filename, mode='r')
+    super()
     @filename = filename
     @mode = mode
-    @closed = false
-    @io, err = GLib.g_io_channel_new_file(@filename, @mode)
-    GLib.g_io_channel_set_close_on_unref(@io, true)
-    GLib.raise_error(err, SystemCallError)
+    # TODO: This way of tracking eof is garbage
+    @eof = File.exists?(filename) && FileTest.zero?(filename)
+    
+    raise ArgumentError.new("Invalid mode: #{mode}") if mode.length > 3
+    if mode.include? 't'
+      @text_mode = true
+      mode = mode.gsub('t', '')
+    end
+    if mode.include? 'b'
+      @binary_mode = true
+      mode = mode.gsub('b', '')
+    end
+    if @text_mode && @binary_mode
+      raise ArgumentError.new("Invalid mode: #{mode} (cannot specify binary and text mode together)")
+    end
+    
+    @gfile = GLib.g_file_new_for_path(filename)
+    case mode
+    when 'r'
+      @iostream = nil
+      @istream, err = GLib.g_file_read(@gfile)
+      GLib.raise_error(err, SystemCallError)
+      @ostream = nil
+    when 'r+'
+      @iostream, err = GLib.g_file_open_readwrite(@gfile)
+      GLib.raise_error(err, SystemCallError)
+      @istream = GLib.g_io_stream_get_input_stream(@iostream)
+      @ostream = GLib.g_io_stream_get_output_stream(@iostream)
+    when 'w'
+      @iostream = nil
+      @istream = nil
+      @ostream, err = GLib.g_file_replace(@gfile, nil, false, GLib::GFileCreateFlags::G_FILE_CREATE_REPLACE_DESTINATION)
+      GLib.raise_error(err, SystemCallError)
+    when 'w+'
+      @iostream, err = GLib.g_file_replace_readwrite(@gfile, nil, false, GLib::GFileCreateFlags::G_FILE_CREATE_REPLACE_DESTINATION)
+      GLib.raise_error(err, SystemCallError)
+      @istream = GLib.g_io_stream_get_input_stream(@iostream)
+      @ostream = GLib.g_io_stream_get_output_stream(@iostream)
+    when 'a'
+      @iostream = nil
+      @istream = nil
+      @ostream, err = GLib.g_file_append_to(@gfile, GLib::GFileCreateFlags::G_FILE_CREATE_REPLACE_DESTINATION)
+      GLib.raise_error(err, SystemCallError)
+    when 'a+'
+      @iostream, err = GLib.g_file_append_to_readwrite(@gfile, GLib::GFileCreateFlags::G_FILE_CREATE_REPLACE_DESTINATION)
+      GLib.raise_error(err, SystemCallError)
+      @istream = GLib.g_io_stream_get_input_stream(@iostream)
+      @ostream = GLib.g_io_stream_get_output_stream(@iostream)
+    else
+      raise ArgumentError.new("Invalid mode: #{mode}")
+    end
   end
 
   def self.open(*args, &block)
@@ -60,14 +108,17 @@ class File < IO
   # end
   
   def self.basename(file_name)
-    file = GLib.g_file_new_for_path(file_name)
-    GLib.g_file_get_basename(file)
+    GLib.g_file_get_basename(GLib.g_file_new_for_path(file_name))
   end
 
   # def self.ctime(path)
   #   stat = File::Stat.new(path)
   #   stat.ctime
   # end
+
+  def self.dirname(path)
+    GLib.g_path_get_dirname(path)
+  end
 
   def self.delete(*paths)
     paths.each do |path|
@@ -142,108 +193,6 @@ class File < IO
   #   end
   # end
   
-  def close
-    GLib.g_io_channel_close(@io)
-    @closed = true
-  end
-  
-  def closed?
-    @closed
-  end
-  
-  def assert_can_read
-    if closed? || (!@mode.include?('r') && !@mode.include?('+'))
-      raise IOError.new 'not opened for reading'
-    end
-  end
-  
-  def assert_can_write
-    if closed? || (!@mode.include?('w') && !@mode.include?('a') && !@mode.include?('+'))
-      raise IOError.new 'not opened for writing'
-    end
-  end
-  
-  def flush
-    assert_can_write
-    GLib.raise_error(GLib.g_io_channel_flush(@io))
-  end
-  
-  # IO Subclass Contract Implementation
-  # -----------------------------------
-  
-  def read(length = nil)
-    assert_can_read
-  
-    read = ""
-    if length.nil?
-      loop {
-        status, text, err = GLib.g_io_channel_read_chars(@io, 100)
-        _set_status(status)
-        GLib.raise_error(err)
-        break if text.nil? || text.length == 0
-        read += text
-      }
-    elsif length > 0
-      status, text, err = GLib.g_io_channel_read_chars(@io, length)
-      _set_status(status)
-      GLib.raise_error(err)
-      read += text unless text.nil?
-    end
-  
-    if length.nil?
-      # should be "" if nothing was read (EOF hit)
-      read
-    elsif length == 0
-      # Per ruby documents, return "" on length == 0
-      ""
-    else
-      # length was provided non-zero, so return nil if nothing read
-      read == "" ? nil : read
-    end
-  end
-  
-  def write(str)
-    assert_can_write
-    as_str = str.to_s
-    status, bytes_written, err = GLib.g_io_channel_write_chars(@io, as_str)
-    _set_status(status)
-    GLib.raise_error(err)
-    bytes_written
-  end
-  
-  def eof?
-    assert_can_read
-    @eof
-  end
-  alias eof eof?
-  
-  # IO Default Overrides
-  # --------------------
-  
-  def getc
-    assert_can_read
-    status, text, len, err = GLib.g_io_channel_read_chars(@io, 1)
-    _set_status(status)
-    GLib.raise_error(err)
-    if status == GLib::GIOStatus::G_IO_STATUS_EOF
-      nil
-    else
-      text[0]
-    end
-  end
-  
-  def getbyte
-    assert_can_read
-    status, text, len, err = GLib.g_io_channel_read_chars(@io, 1)
-    _set_status(status)
-    GLib.raise_error(err)
-    if status == GLib::GIOStatus::G_IO_STATUS_EOF
-      nil
-    else
-      text[0].ord
-    end
-  end
-  
   # def ungetbyte(byte)
   #   assert_can_read
   #   if byte.class == String
@@ -259,18 +208,4 @@ class File < IO
   #   end
   # end
   # alias ungetc ungetbyte # No difference between byte & char in mruby
-  
-  def seek(amount, whence=IO::SEEK_SET)
-    whence = IO::Util.ruby_seek_to_glib(whence)
-    status, err = GLib.g_io_channel_seek_position(@io, amount, whence)
-    _set_status(status)
-    GLib.raise_error(err)
-    # TODO: Should return current position
-  end
-  
-  def _set_status(status)
-    if status == GLib::GIOStatus::G_IO_STATUS_EOF
-      @eof = true
-    end
-  end
 end

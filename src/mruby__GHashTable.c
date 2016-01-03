@@ -7,6 +7,11 @@
 
 #if BIND_GHashTable_TYPE
 
+/* MRUBY_BINDING: custom_header */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
+
+/* MRUBY_BINDING_END */
+
 /*
  * Class Methods
  */
@@ -63,16 +68,30 @@ mrb_GLib_GHashTable_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_GLib_GHashTable_init(mrb_state* mrb) {
+/* MRUBY_BINDING: GHashTable::class_definition */
+/* sha: 2ff4bcac675a989770db2796d742da2cf7571fd0c090348653a9e0543b0f6807 */
   struct RClass* GHashTable_class = mrb_define_class_under(mrb, GLib_module(mrb), "GHashTable", mrb->object_class);
   MRB_SET_INSTANCE_TT(GHashTable_class, MRB_TT_DATA);
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GHashTable::class_method_definitions */
+/* sha: 8a009f97ac86a2c9a5609a982029ebd76dfa4280efc94781e33740f8a5928f78 */
 #if BIND_GHashTable_INITIALIZE
   mrb_define_method(mrb, GHashTable_class, "initialize", mrb_GLib_GHashTable_initialize, MRB_ARGS_NONE());
 #endif
   mrb_define_class_method(mrb, GHashTable_class, "disown", mrb_GLib_GHashTable_disown, MRB_ARGS_ARG(1, 0));
   mrb_define_class_method(mrb, GHashTable_class, "belongs_to_ruby?", mrb_GLib_GHashTable_belongs_to_ruby, MRB_ARGS_ARG(1, 0));
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GHashTable::attr_definitions */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
 
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: GHashTable::instance_method_definitions */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
+
+/* MRUBY_BINDING_END */
 }
 
 #endif

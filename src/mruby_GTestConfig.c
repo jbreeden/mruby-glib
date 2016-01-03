@@ -7,6 +7,11 @@
 
 #if BIND_GTestConfig_TYPE
 
+/* MRUBY_BINDING: custom_header */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
+
+/* MRUBY_BINDING_END */
+
 /*
  * Class Methods
  */
@@ -331,15 +336,23 @@ mrb_GLib_GTestConfig_set_test_undefined(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_GLib_GTestConfig_init(mrb_state* mrb) {
+/* MRUBY_BINDING: GTestConfig::class_definition */
+/* sha: ce2426fe7c5e31c2d917c61c6ee2a954fce79e7c550eb800b59b17f5f31bbb16 */
   struct RClass* GTestConfig_class = mrb_define_class_under(mrb, GLib_module(mrb), "GTestConfig", mrb->object_class);
   MRB_SET_INSTANCE_TT(GTestConfig_class, MRB_TT_DATA);
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GTestConfig::class_method_definitions */
+/* sha: fd729f49f90f578b1bbab621365ae959c0e40dde59b39e4c3af8a74d51bd780a */
 #if BIND_GTestConfig_INITIALIZE
   mrb_define_method(mrb, GTestConfig_class, "initialize", mrb_GLib_GTestConfig_initialize, MRB_ARGS_NONE());
 #endif
   mrb_define_class_method(mrb, GTestConfig_class, "disown", mrb_GLib_GTestConfig_disown, MRB_ARGS_ARG(1, 0));
   mrb_define_class_method(mrb, GTestConfig_class, "belongs_to_ruby?", mrb_GLib_GTestConfig_belongs_to_ruby, MRB_ARGS_ARG(1, 0));
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GTestConfig::attr_definitions */
+/* sha: d10d55d3ac50958080cdc9330876ffc110648aa89b1ddbac3999d51adbc256e0 */
   /*
    * Fields
    */
@@ -379,7 +392,12 @@ void mrb_GLib_GTestConfig_init(mrb_state* mrb) {
 #if BIND_GTestConfig_test_undefined_FIELD_WRITER
   mrb_define_method(mrb, GTestConfig_class, "test_undefined=", mrb_GLib_GTestConfig_set_test_undefined, MRB_ARGS_ARG(1, 0));
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GTestConfig::instance_method_definitions */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
+
+/* MRUBY_BINDING_END */
 }
 
 #endif

@@ -7,6 +7,11 @@
 
 #if BIND_GPrivate_TYPE
 
+/* MRUBY_BINDING: custom_header */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
+
+/* MRUBY_BINDING_END */
+
 /*
  * Class Methods
  */
@@ -214,15 +219,23 @@ mrb_GLib_GPrivate_set_future(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_GLib_GPrivate_init(mrb_state* mrb) {
+/* MRUBY_BINDING: GPrivate::class_definition */
+/* sha: fa6a96b169cdeabab82c601c0997e41baca21e9e1d680279d159daf2a483c103 */
   struct RClass* GPrivate_class = mrb_define_class_under(mrb, GLib_module(mrb), "GPrivate", mrb->object_class);
   MRB_SET_INSTANCE_TT(GPrivate_class, MRB_TT_DATA);
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GPrivate::class_method_definitions */
+/* sha: 496e24dc989f101502b908e9ec363a4ae495d54c393a3c01e27b001c3300d724 */
 #if BIND_GPrivate_INITIALIZE
   mrb_define_method(mrb, GPrivate_class, "initialize", mrb_GLib_GPrivate_initialize, MRB_ARGS_NONE());
 #endif
   mrb_define_class_method(mrb, GPrivate_class, "disown", mrb_GLib_GPrivate_disown, MRB_ARGS_ARG(1, 0));
   mrb_define_class_method(mrb, GPrivate_class, "belongs_to_ruby?", mrb_GLib_GPrivate_belongs_to_ruby, MRB_ARGS_ARG(1, 0));
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GPrivate::attr_definitions */
+/* sha: 873a13d53cbd6e981b8d0f654155ef1074e399cabbb9d97cdad6b9705bbe1543 */
   /*
    * Fields
    */
@@ -244,7 +257,12 @@ void mrb_GLib_GPrivate_init(mrb_state* mrb) {
 #if BIND_GPrivate_future_FIELD_WRITER
   mrb_define_method(mrb, GPrivate_class, "future=", mrb_GLib_GPrivate_set_future, MRB_ARGS_ARG(1, 0));
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GPrivate::instance_method_definitions */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
+
+/* MRUBY_BINDING_END */
 }
 
 #endif

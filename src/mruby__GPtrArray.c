@@ -7,6 +7,11 @@
 
 #if BIND_GPtrArray_TYPE
 
+/* MRUBY_BINDING: custom_header */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
+
+/* MRUBY_BINDING_END */
+
 /*
  * Class Methods
  */
@@ -160,15 +165,23 @@ mrb_GLib_GPtrArray_set_len(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_GLib_GPtrArray_init(mrb_state* mrb) {
+/* MRUBY_BINDING: GPtrArray::class_definition */
+/* sha: b6cabc3c28a4abc8942e560635a3a3246e1c69696987c32918ec6d3f14205bd2 */
   struct RClass* GPtrArray_class = mrb_define_class_under(mrb, GLib_module(mrb), "GPtrArray", mrb->object_class);
   MRB_SET_INSTANCE_TT(GPtrArray_class, MRB_TT_DATA);
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GPtrArray::class_method_definitions */
+/* sha: def0cb15301d856718a9838c593566947fe4285362a09ab116a380ebcabff447 */
 #if BIND_GPtrArray_INITIALIZE
   mrb_define_method(mrb, GPtrArray_class, "initialize", mrb_GLib_GPtrArray_initialize, MRB_ARGS_NONE());
 #endif
   mrb_define_class_method(mrb, GPtrArray_class, "disown", mrb_GLib_GPtrArray_disown, MRB_ARGS_ARG(1, 0));
   mrb_define_class_method(mrb, GPtrArray_class, "belongs_to_ruby?", mrb_GLib_GPtrArray_belongs_to_ruby, MRB_ARGS_ARG(1, 0));
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GPtrArray::attr_definitions */
+/* sha: 5e1535fde9c2d7a79dd45c22e7d0b2b12ae6cedb0281e4fb9798ed24bc3fb97c */
   /*
    * Fields
    */
@@ -184,7 +197,12 @@ void mrb_GLib_GPtrArray_init(mrb_state* mrb) {
 #if BIND_GPtrArray_len_FIELD_WRITER
   mrb_define_method(mrb, GPtrArray_class, "len=", mrb_GLib_GPtrArray_set_len, MRB_ARGS_ARG(1, 0));
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GPtrArray::instance_method_definitions */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
+
+/* MRUBY_BINDING_END */
 }
 
 #endif

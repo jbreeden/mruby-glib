@@ -7,6 +7,11 @@
 
 #if BIND_GByteArray_TYPE
 
+/* MRUBY_BINDING: custom_header */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
+
+/* MRUBY_BINDING_END */
+
 /*
  * Class Methods
  */
@@ -160,15 +165,23 @@ mrb_GLib_GByteArray_set_len(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_GLib_GByteArray_init(mrb_state* mrb) {
+/* MRUBY_BINDING: GByteArray::class_definition */
+/* sha: 488da6a7efa178c4ad7ee6b28faaf24f6b0975d134c43926068cd71a20a41cfd */
   struct RClass* GByteArray_class = mrb_define_class_under(mrb, GLib_module(mrb), "GByteArray", mrb->object_class);
   MRB_SET_INSTANCE_TT(GByteArray_class, MRB_TT_DATA);
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GByteArray::class_method_definitions */
+/* sha: 2599228f42e10e6d7b2bfb6236b10c68e1247ede713a04620e3654fe0844ac6d */
 #if BIND_GByteArray_INITIALIZE
   mrb_define_method(mrb, GByteArray_class, "initialize", mrb_GLib_GByteArray_initialize, MRB_ARGS_NONE());
 #endif
   mrb_define_class_method(mrb, GByteArray_class, "disown", mrb_GLib_GByteArray_disown, MRB_ARGS_ARG(1, 0));
   mrb_define_class_method(mrb, GByteArray_class, "belongs_to_ruby?", mrb_GLib_GByteArray_belongs_to_ruby, MRB_ARGS_ARG(1, 0));
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GByteArray::attr_definitions */
+/* sha: 2103b783dcf7a06184e67ed486bb305b0971c9c63fb362f8b8506e0f5fc3c09e */
   /*
    * Fields
    */
@@ -184,7 +197,12 @@ void mrb_GLib_GByteArray_init(mrb_state* mrb) {
 #if BIND_GByteArray_len_FIELD_WRITER
   mrb_define_method(mrb, GByteArray_class, "len=", mrb_GLib_GByteArray_set_len, MRB_ARGS_ARG(1, 0));
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GByteArray::instance_method_definitions */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
+
+/* MRUBY_BINDING_END */
 }
 
 #endif

@@ -7,6 +7,11 @@
 
 #if BIND_GRecMutex_TYPE
 
+/* MRUBY_BINDING: custom_header */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
+
+/* MRUBY_BINDING_END */
+
 /*
  * Class Methods
  */
@@ -165,15 +170,23 @@ mrb_GLib_GRecMutex_set_i(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_GLib_GRecMutex_init(mrb_state* mrb) {
+/* MRUBY_BINDING: GRecMutex::class_definition */
+/* sha: 2588ea9c3a62ca9686d2c13d8084d1a5a32129c4c3f9298f6a7acb8e64f6eb50 */
   struct RClass* GRecMutex_class = mrb_define_class_under(mrb, GLib_module(mrb), "GRecMutex", mrb->object_class);
   MRB_SET_INSTANCE_TT(GRecMutex_class, MRB_TT_DATA);
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GRecMutex::class_method_definitions */
+/* sha: 87a2a53697442e1a870b74cb69388e237520cbc11fb64f1dc3032ec27e644008 */
 #if BIND_GRecMutex_INITIALIZE
   mrb_define_method(mrb, GRecMutex_class, "initialize", mrb_GLib_GRecMutex_initialize, MRB_ARGS_NONE());
 #endif
   mrb_define_class_method(mrb, GRecMutex_class, "disown", mrb_GLib_GRecMutex_disown, MRB_ARGS_ARG(1, 0));
   mrb_define_class_method(mrb, GRecMutex_class, "belongs_to_ruby?", mrb_GLib_GRecMutex_belongs_to_ruby, MRB_ARGS_ARG(1, 0));
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GRecMutex::attr_definitions */
+/* sha: 20872009fbb5b64284e175c257ce286064cab81bbea08e63c4325c22bcd961ef */
   /*
    * Fields
    */
@@ -189,7 +202,12 @@ void mrb_GLib_GRecMutex_init(mrb_state* mrb) {
 #if BIND_GRecMutex_i_FIELD_WRITER
   mrb_define_method(mrb, GRecMutex_class, "i=", mrb_GLib_GRecMutex_set_i, MRB_ARGS_ARG(1, 0));
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: GRecMutex::instance_method_definitions */
+/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
+
+/* MRUBY_BINDING_END */
 }
 
 #endif
