@@ -190,3 +190,25 @@ Instance Methods:
   - `#shelljoin`
   - `#shellsplit`
   - `#shellwords`
+
+Process
+-------
+
+Class Methods:
+  - `::spawn`
+  - `::wait`
+  - `::waitpid`
+
+
+Process::Status
+---------------
+
+Instance Methods:
+  - `#coredump?`
+  - `#exited?`
+  - `#exitstatus`
+  - `#initialize`
+  - `#pid`
+  - `#signaled?`
+  - `#success?`
+  - `#termsig`
