@@ -1,14 +1,14 @@
 module Kernel
-  # def spawn(*command)
-  #   Process.spawn(*command)
-  # end
-  # 
-  # def system(cmd)
-  #   pid = spawn(cmd)
-  #   Process.wait(pid)
-  #   $?.exitstatus == 0
-  # end
-  # 
+  def spawn(*command)
+    Process.spawn(*command)
+  end
+  
+  def system(cmd)
+    pid = spawn(cmd)
+    Process.wait(pid)
+    $?.success?
+  end
+  
   # def `(command)
   #   r, w = IO.pipe
   #   pid = spawn(command, {out: w})

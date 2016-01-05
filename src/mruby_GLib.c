@@ -46932,7 +46932,7 @@ mrb_GLib_g_subprocess_send_signal(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING: g_subprocess_wait */
 /* sha: b6c3496a9d680c0330058663dded2e37ace4a3865fd0339252c5f523a4945452 */
 #if BIND_g_subprocess_wait_FUNCTION
-#define g_subprocess_wait_REQUIRED_ARGC 2
+#define g_subprocess_wait_REQUIRED_ARGC 1
 #define g_subprocess_wait_OPTIONAL_ARGC 0
 /* g_subprocess_wait
  *
@@ -46945,11 +46945,10 @@ mrb_value
 mrb_GLib_g_subprocess_wait(mrb_state* mrb, mrb_value self) {
   mrb_value results = mrb_ary_new(mrb);
   mrb_value subprocess;
-  mrb_value cancellable;
   struct GError * native_error = NULL;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "oo", &subprocess, &cancellable);
+  mrb_get_args(mrb, "o", &subprocess);
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, subprocess, GSubprocess_class(mrb))) {
