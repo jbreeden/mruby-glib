@@ -1,4 +1,5 @@
 class IO
+  attr_reader :istream, :ostream, :iostream
 
   # Semi-Private Util Functions
   # ---------------------------
@@ -141,6 +142,7 @@ class IO
   
   def initialize
     @closed = false
+    @eof = false
   end
 
   def <<(obj)
@@ -183,7 +185,7 @@ class IO
   
   def flush
     assert_can_write
-    GLib.raise_error(GLib.g_output_stream_flush(@ostream))
+    GLib.raise_error(GLib.g_output_stream_flush(@ostream), SystemCallError)
   end
 
   def gets(sep=nil, limit=nil)
@@ -270,7 +272,7 @@ class IO
   def getc
     assert_can_read
     bytes_read, text, err = GLib.g_input_stream_read(@istream, 1)
-    GLib.raise_error(err)
+    GLib.raise_error(err, SystemCallError)
     if bytes_read == 0
       @eof = true
       nil
@@ -282,7 +284,7 @@ class IO
   def getbyte
     assert_can_read
     bytes_read, text, err = GLib.g_input_stream_read(@istream, 1)
-    GLib.raise_error(err)
+    GLib.raise_error(err, SystemCallError)
     if bytes_read == 0
       @eof = true
       nil
@@ -332,14 +334,14 @@ class IO
       loop {
         status, text, err = GLib.g_input_stream_read(@istream, 100)
         @eof = status == 0
-        GLib.raise_error(err)
+        GLib.raise_error(err, SystemCallError)
         break if text.nil? || text.length == 0
         read += text
       }
     elsif length > 0
       status, text, err = GLib.g_input_stream_read(@istream, length)
       @eof = status == 0
-      GLib.raise_error(err)
+      GLib.raise_error(err, SystemCallError)
       read += text unless text.nil?
     end
   
@@ -364,7 +366,17 @@ class IO
     GLib.g_seekable_tell(actual_stream)
   end
   
+  def truncate(size)
+    assert_can_write
+    actual_stream = @iostream || @ostream
+    raise SystemCallError.new("Illegal truncate") unless GLib.g_seekable_can_truncate(actual_stream)
+    status, err = GLib.g_seekable_truncate(actual_stream, size)
+    GLib.raise_error(err, SystemCallError)
+    GLib.g_seekable_tell(actual_stream)
+  end
+  
   def tell
+    actual_stream = @iostream || @istream || @ostream
     GLib.g_seekable_tell(actual_stream)
   end
   
@@ -372,7 +384,30 @@ class IO
     assert_can_write
     as_str = str.to_s
     bytes_written, err = GLib.g_output_stream_write(@ostream, as_str)
-    GLib.raise_error(err)
+    GLib.raise_error(err, SystemCallError)
     bytes_written
+  end
+end
+
+class IO::GInputStreamWrapper < IO
+  def initialize(istream)
+    super()
+    @istream = istream
+  end
+end
+
+class IO::GOutputStreamWrapper < IO
+  def initialize(ostream)
+    super()
+    @ostream = ostream
+  end
+end
+
+class IO::GIOStreamWrapper < IO
+  def initialize(iostream)
+    super()
+    @iostream = iostream
+    @istream = GLib.g_io_stream_get_input_stream(@iostream)
+    @ostream = GLib.g_io_stream_get_output_stream(@iostream)
   end
 end

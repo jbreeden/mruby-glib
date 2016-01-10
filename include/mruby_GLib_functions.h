@@ -826,7 +826,7 @@
 #define BIND_g_output_stream_printf_FUNCTION TRUE
 #define BIND_g_output_stream_set_pending_FUNCTION TRUE
 #define BIND_g_output_stream_splice_FUNCTION TRUE
-#define BIND_g_output_stream_splice_async_FUNCTION FALSE
+#define BIND_g_output_stream_splice_async_FUNCTION TRUE
 #define BIND_g_output_stream_vprintf_FUNCTION TRUE
 #define BIND_g_output_stream_write_FUNCTION TRUE
 #define BIND_g_output_stream_write_all_FUNCTION TRUE

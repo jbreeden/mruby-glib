@@ -1,4 +1,6 @@
 class File < IO
+  NULL = GLib::OS == 'Windows' ? 'NUL' : '/dev/null'
+  
   # Modes:
   # "r"  Read-only, starts at beginning of file  (default mode).
   #
@@ -29,8 +31,6 @@ class File < IO
     super()
     @filename = filename
     @mode = mode
-    # TODO: This way of tracking eof is garbage
-    @eof = File.exists?(filename) && FileTest.zero?(filename)
     
     raise ArgumentError.new("Invalid mode: #{mode}") if mode.length > 3
     if mode.include? 't'
@@ -60,20 +60,22 @@ class File < IO
     when 'w'
       @iostream = nil
       @istream = nil
-      @ostream, err = GLib.g_file_replace(@gfile, nil, false, GLib::GFileCreateFlags::G_FILE_CREATE_REPLACE_DESTINATION)
+      @ostream, err = GLib.g_file_append_to(@gfile, GLib::GFileCreateFlags::G_FILE_CREATE_REPLACE_DESTINATION)
       GLib.raise_error(err, SystemCallError)
+      truncate(0)
     when 'w+'
-      @iostream, err = GLib.g_file_replace_readwrite(@gfile, nil, false, GLib::GFileCreateFlags::G_FILE_CREATE_REPLACE_DESTINATION)
+      @iostream, err = GLib.g_file_open_readwrite(@gfile)
       GLib.raise_error(err, SystemCallError)
       @istream = GLib.g_io_stream_get_input_stream(@iostream)
       @ostream = GLib.g_io_stream_get_output_stream(@iostream)
+      truncate(0)
     when 'a'
       @iostream = nil
       @istream = nil
-      @ostream, err = GLib.g_file_append_to(@gfile, GLib::GFileCreateFlags::G_FILE_CREATE_REPLACE_DESTINATION)
+      @ostream, err = GLib.g_file_append_to(@gfile, GLib::GFileCreateFlags::G_FILE_CREATE_NONE)
       GLib.raise_error(err, SystemCallError)
     when 'a+'
-      @iostream, err = GLib.g_file_append_to_readwrite(@gfile, GLib::GFileCreateFlags::G_FILE_CREATE_REPLACE_DESTINATION)
+      @iostream, err = GLib.g_file_append_to_readwrite(@gfile, GLib::GFileCreateFlags::G_FILE_CREATE_NONE)
       GLib.raise_error(err, SystemCallError)
       @istream = GLib.g_io_stream_get_input_stream(@iostream)
       @ostream = GLib.g_io_stream_get_output_stream(@iostream)
@@ -208,4 +210,15 @@ class File < IO
   #   end
   # end
   # alias ungetc ungetbyte # No difference between byte & char in mruby
+  
+  def eof?
+    # Matching CRuby's behavior of reporting eof *before* trying to read past it
+    # There is probably a less-shitty way to do this.
+    pos = self.tell
+    self.seek(0, IO::SEEK_END)
+    size = self.tell
+    self.seek(pos, IO::SEEK_SET)
+    pos >= size
+  end
+  alias eof eof?
 end

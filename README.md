@@ -45,7 +45,6 @@ Class Methods:
   - `::tmpdir`
   - `::unlink`
 
-
 File
 ----
 
@@ -63,6 +62,8 @@ Class Methods:
   - `::read`
 
 Instance Methods:
+  - `#eof`
+  - `#eof?`
   - `#initialize`
 
 FileTest
@@ -131,11 +132,15 @@ Instance Methods:
   - `#getc`
   - `#gets`
   - `#initialize`
+  - `#iostream`
+  - `#istream`
+  - `#ostream`
   - `#print`
   - `#puts`
   - `#read`
   - `#seek`
   - `#tell`
+  - `#truncate`
   - `#write`
 
 Observable
@@ -173,6 +178,14 @@ Instance Methods:
   - `#to_h`
   - `#to_s`
 
+Open3
+-----
+
+Class Methods:
+  - `::popen2`
+  - `::popen2e`
+  - `::popen3`
+
 Shellwords
 ----------
 
@@ -198,7 +211,6 @@ Class Methods:
   - `::spawn`
   - `::wait`
   - `::waitpid`
-
 
 Process::Status
 ---------------

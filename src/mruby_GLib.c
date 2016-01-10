@@ -2,7 +2,7 @@
 
 /* MRUBY_BINDING: custom_header */
 /* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
-
+#include <signal.h>
 /* MRUBY_BINDING_END */
 
 #ifdef __cplusplus
@@ -29101,7 +29101,7 @@ mrb_GLib_g_main_loop_new(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "ob", &context, &native_is_running);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, context, GMainContext_class(mrb))) {
+  if (!mrb_obj_is_kind_of(mrb, context, GMainContext_class(mrb)) && !mrb_nil_p(context)) {
     mrb_raise(mrb, E_TYPE_ERROR, "GMainContext expected");
     return mrb_nil_value();
   }
@@ -33533,11 +33533,10 @@ mrb_GLib_g_output_stream_splice(mrb_state* mrb, mrb_value self) {
   mrb_value stream;
   mrb_value source;
   mrb_int native_flags;
-  mrb_value cancellable;
   struct GError * native_error = NULL;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "ooio", &stream, &source, &native_flags, &cancellable);
+  mrb_get_args(mrb, "ooi", &stream, &source, &native_flags);
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, stream, GOutputStream_class(mrb))) {
@@ -33574,12 +33573,64 @@ mrb_GLib_g_output_stream_splice(mrb_state* mrb, mrb_value self) {
   return results;
 }
 #endif
+
+typedef struct _g_output_stream_splice_thread_args {
+  GInputStream* source;
+  GOutputStream* target;
+  int flags;
+} g_output_stream_splice_thread_args;
+
+void *
+g_output_stream_splice_thread(void* data) {
+  g_output_stream_splice_thread_args* args = (g_output_stream_splice_thread_args*)data;
+  g_output_stream_splice(args->target, args->source, args->flags, NULL, NULL);
+  free(args);
+}
+
+mrb_value
+mrb_GLib_g_output_stream_splice_thread(mrb_state* mrb, mrb_value self) {
+  mrb_value results = mrb_ary_new(mrb);
+  mrb_value stream;
+  mrb_value source;
+  mrb_int native_flags;
+  struct GError * native_error = NULL;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "ooi", &stream, &source, &native_flags);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, stream, GOutputStream_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GOutputStream expected");
+    return mrb_nil_value();
+  }
+  if (!mrb_obj_is_kind_of(mrb, source, GInputStream_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "GInputStream expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox param: stream */
+  GOutputStream * native_stream = (mrb_nil_p(stream) ? NULL : mruby_unbox__GOutputStream(stream));
+
+  /* Unbox param: source */
+  GInputStream * native_source = (mrb_nil_p(source) ? NULL : mruby_unbox__GInputStream(source));
+
+  /* Unbox param: cancellable */
+  void * native_cancellable = NULL; /* Unused parameter */
+  
+  g_output_stream_splice_thread_args * args = 
+    (g_output_stream_splice_thread_args*)calloc(1, sizeof(g_output_stream_splice_thread_args));
+  args->source = native_source;
+  args->target = native_stream;
+  args->flags = native_flags;
+  GThread* thread = g_thread_new(NULL, g_output_stream_splice_thread, args);
+  g_thread_unref(thread);
+}
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: g_output_stream_splice_async */
 /* sha: 0b9f6ee1d4ccd16ef875392a64884322c32fc2e83dd2d7c3d5ac1d3f17ea6846 */
 #if BIND_g_output_stream_splice_async_FUNCTION
-#define g_output_stream_splice_async_REQUIRED_ARGC 7
+#define g_output_stream_splice_async_REQUIRED_ARGC 4
 #define g_output_stream_splice_async_OPTIONAL_ARGC 0
 /* g_output_stream_splice_async
  *
@@ -33599,12 +33650,9 @@ mrb_GLib_g_output_stream_splice_async(mrb_state* mrb, mrb_value self) {
   mrb_value source;
   mrb_int native_flags;
   mrb_int native_io_priority;
-  mrb_value cancellable;
-  mrb_value callback;
-  mrb_value user_data;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "ooiiooo", &stream, &source, &native_flags, &native_io_priority, &cancellable, &callback, &user_data);
+  mrb_get_args(mrb, "ooii", &stream, &source, &native_flags, &native_io_priority);
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, stream, GOutputStream_class(mrb))) {
@@ -33615,8 +33663,6 @@ mrb_GLib_g_output_stream_splice_async(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "GInputStream expected");
     return mrb_nil_value();
   }
-  TODO_type_check_GAsyncReadyCallback(callback);
-  TODO_type_check_gpointer(user_data);
 
   /* Unbox param: stream */
   GOutputStream * native_stream = (mrb_nil_p(stream) ? NULL : mruby_unbox__GOutputStream(stream));
@@ -33628,10 +33674,10 @@ mrb_GLib_g_output_stream_splice_async(mrb_state* mrb, mrb_value self) {
   void * native_cancellable = NULL; /* Unused parameter */
 
   /* Unbox param: callback */
-  GAsyncReadyCallback native_callback = TODO_mruby_unbox_GAsyncReadyCallback(callback);
+  GAsyncReadyCallback native_callback = NULL;
 
   /* Unbox param: user_data */
-  gpointer native_user_data = TODO_mruby_unbox_gpointer(user_data);
+  gpointer native_user_data = NULL;
 
   /* Invocation */
   g_output_stream_splice_async(native_stream, native_source, native_flags, native_io_priority, native_cancellable, native_callback, native_user_data);
@@ -38465,7 +38511,7 @@ mrb_GLib_g_seekable_truncate(mrb_state* mrb, mrb_value self) {
   struct GError * native_error = NULL;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "oio", &seekable, &native_offset);
+  mrb_get_args(mrb, "oi", &seekable, &native_offset);
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, seekable, GSeekable_class(mrb))) {
@@ -56214,6 +56260,10 @@ void mrb_mruby_glib_gem_init(mrb_state* mrb) {
 
 /* MRUBY_BINDING: custom_module_init */
 /* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
+
+  /*
+   * Ensure the stream classes can be passed to functions expecting the base type
+   */
   mrb_include_module(mrb, GIOStream_class(mrb), GInputStream_class(mrb));
   mrb_include_module(mrb, GIOStream_class(mrb), GOutputStream_class(mrb));
   mrb_include_module(mrb, GFileIOStream_class(mrb), GIOStream_class(mrb));
@@ -56222,6 +56272,16 @@ void mrb_mruby_glib_gem_init(mrb_state* mrb) {
   mrb_include_module(mrb, GFileInputStream_class(mrb), GSeekable_class(mrb));
   mrb_include_module(mrb, GFileOutputStream_class(mrb), GOutputStream_class(mrb));
   mrb_include_module(mrb, GFileOutputStream_class(mrb), GSeekable_class(mrb));
+  
+  /*
+   * Custom functions
+   */
+   mrb_define_class_method(mrb, GLib_module, "g_output_stream_splice_thread", mrb_GLib_g_output_stream_splice_thread, MRB_ARGS_ARG(g_output_stream_splice_REQUIRED_ARGC, g_output_stream_splice_OPTIONAL_ARGC));
+
+  /*
+   * Handle pipe errors in code, not in a signal handler
+   */
+  signal(SIGPIPE, SIG_IGN);
 /* MRUBY_BINDING_END */
 
 }

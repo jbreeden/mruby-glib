@@ -1,6 +1,13 @@
 module Process
   @@children = {}
   
+  class Test < IO
+    def initialize(istream)
+      @istream = istream
+      super()
+    end
+  end
+  
   module Private
     def self.parse_spawn_args(*command)
       env = nil
@@ -27,10 +34,10 @@ module Process
           argv = ["sh", '-c', command[0]]
         end
 
-        { env: env, argv: argv, options: options }
+        { env: env, argv: argv, options: options || {} }
       # [cmdname, argv0], arg1, ... : command name, argv[0] and zero or more arguments (no shell)
       elsif command[0].class == Array
-        raise NotImplementedError.new('Process::spawn does not yet support this calling convention')
+        raise NotImplementedError.new('Process::spawn does not yet support specifying argv0 separately')
         ## TODO: Need to launch as cmdname, but pass argv0 as argv[0]...
         ##       previous implementation is wrong
         # if command[0].length != 2
@@ -41,7 +48,107 @@ module Process
       # cmdname, arg1, ... : command name and one or more arguments (no shell)
       else
         argv = command
-        { env: env, argv: argv, options: options }
+        { env: env, argv: argv, options: options || {}}
+      end
+    end
+    
+    def self.setup_redirects(options)
+      options[:in_flag] = GLib::GSubprocessFlags::G_SUBPROCESS_FLAGS_STDIN_INHERIT
+      options[:in_io] = nil
+      options[:out_flag] = 0
+      options[:out_io] = nil
+      options[:err_flag] = 0
+      options[:err_io] = nil
+      
+      if options
+        if options[:in]
+          case options[:in]
+          when IO
+            options[:in_flag] = GLib::GSubprocessFlags::G_SUBPROCESS_FLAGS_STDIN_PIPE
+            options[:in_io] = options[:in]
+          when TrueClass
+            options[:in_flag] = GLib::GSubprocessFlags::G_SUBPROCESS_FLAGS_STDIN_PIPE
+          else
+            raise ArgumentError.new("Unsupported value for options[:in] - #{options[:in]}")
+          end
+        end
+        
+        if options[:out]
+          case options[:out]
+          when File::NULL
+            options[:out_flag] = GLib::GSubprocessFlags::G_SUBPROCESS_FLAGS_STDOUT_SILENCE
+          when IO
+            options[:out_flag] = GLib::GSubprocessFlags::G_SUBPROCESS_FLAGS_STDOUT_PIPE
+            options[:out_io] = options[:out]
+          when TrueClass
+            options[:out_flag] = GLib::GSubprocessFlags::G_SUBPROCESS_FLAGS_STDOUT_PIPE
+          else
+            raise ArgumentError.new("Unsupported value for options[:out] - #{options[:out]}")
+          end
+        end
+        
+        if options[:err]
+          case options[:err]
+          when [:child, :out]
+            options[:err_flag] = GLib::GSubprocessFlags::G_SUBPROCESS_FLAGS_STDERR_MERGE
+          when File::NULL
+            options[:err_flag] = GLib::GSubprocessFlags::G_SUBPROCESS_FLAGS_STDERR_SILENCE
+          when IO
+            options[:err_flag] = GLib::GSubprocessFlags::G_SUBPROCESS_FLAGS_STDERR_PIPE
+            options[:err_io] = options[:err]
+          when TrueClass
+            options[:err_flag] = GLib::GSubprocessFlags::G_SUBPROCESS_FLAGS_STDERR_PIPE
+          else
+            raise ArgumentError.new("Unsupported value for options[:err] - #{options[:err]}")
+          end
+        end
+      end
+    end
+    
+    def self.apply_redirects(process, options)
+      case options[:in]
+      when IO
+        ostream = GLib.g_subprocess_get_stdin_pipe(process)
+        raise "Could not get child's input pipe" if ostream.nil?
+        options[:in].assert_can_read
+        # TODO: In user space for now... due to GLib limitations on Windows
+        #  - Should use available API's when on Unix
+        #  - Should write a replacement API for Windows
+        GLib.g_output_stream_splice_thread(
+          ostream,
+          options[:in].istream,
+          GLib::GOutputStreamSpliceFlags::G_OUTPUT_STREAM_SPLICE_CLOSE_TARGET
+        )
+      when TrueClass
+        options[:in_pipe] = IO::GOutputStreamWrapper.new(GLib.g_subprocess_get_stdin_pipe(process))
+      end
+      
+      case options[:out]
+      when IO
+        istream = GLib.g_subprocess_get_stdout_pipe(process)
+        raise "Could not get child's output pipe" if istream.nil?
+        options[:out].assert_can_write
+        GLib.g_output_stream_splice_thread(
+          options[:out].ostream,
+          istream,
+          GLib::GOutputStreamSpliceFlags::G_OUTPUT_STREAM_SPLICE_NONE
+        )
+      when TrueClass
+        options[:out_pipe] = IO::GInputStreamWrapper.new(GLib.g_subprocess_get_stdout_pipe(process))
+      end
+      
+      case options[:err]
+      when IO
+        istream = GLib.g_subprocess_get_stderr_pipe(process)
+        raise "Could not get child's error pipe" if istream.nil?
+        options[:err].assert_can_write
+        GLib.g_output_stream_splice_thread(
+          options[:err].ostream,
+          istream,
+          GLib::GOutputStreamSpliceFlags::G_OUTPUT_STREAM_SPLICE_NONE
+        )
+      when TrueClass
+        options[:err_pipe] = IO::GInputStreamWrapper.new(GLib.g_subprocess_get_stderr_pipe(process))
       end
     end
   end
@@ -53,31 +160,19 @@ module Process
     options = args[:options]
     
     if env
-      # TODO: Configure environment variables from env hash
       raise NotImplementedError.new('Process::spawn does not yet support setting environment variables')
     end
     
-    if options
-      raise NotImplementedError.new('Process::spawn does not yet support any options')
-    end
+    Private.setup_redirects(options)
 
-    # TODO: Set appropriate flags based on options
-    launcher = GLib.g_subprocess_launcher_new(GLib::GSubprocessFlags::G_SUBPROCESS_FLAGS_INHERIT_FDS)
+    launcher = GLib.g_subprocess_launcher_new(options[:in_flag] | options[:out_flag] | options[:err_flag])
 
-    if options
-      if options[:in]
-        # TODO: Redirect stdin based on options[:in]
-      end
-      if options[:out]
-        # TODO: Redirect stdout based on options[:out]
-      end
-      if options[:err]
-        # TODO: Redirect stderr based on options[:err]
-      end
-    end
+    # TODO: Update ENV
 
     process, err = GLib.g_subprocess_launcher_spawnv(launcher, argv)
     GLib.raise_error(err, SystemCallError)
+    
+    Private.apply_redirects(process, options)
 
     id = GLib.g_subprocess_get_identifier(process).to_i
     @@children[id] = process

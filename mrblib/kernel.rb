@@ -9,15 +9,16 @@ module Kernel
     $?.success?
   end
   
-  # def `(command)
-  #   r, w = IO.pipe
-  #   pid = spawn(command, {out: w})
-  #   w.close
-  #   result = r.read
-  #   r.close
-  #   Process.wait(pid)
-  #   result
-  # end
+  def `(command)
+    # non-standard `out` value `true` means grab the pipe from GLib
+    # and store it in spawn_opt[:out_pipe]
+    spawn_opt = {out: true, err: File::NULL}
+    pid = spawn(command.to_s, spawn_opt)
+    result = spawn_opt[:out_pipe].read
+    # Sets $?
+    Process.wait(pid)
+    result
+  end
 
   def load(path)
     raise TypeError unless path.class == String
