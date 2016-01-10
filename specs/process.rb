@@ -1,5 +1,5 @@
 GLib::TestFixture.new('Process') do
-  file_for_writing = "#{$GEM_DIR}/sandbox/file_for_writing.txt"
+  file_for_writing = "sandbox/file_for_writing.txt"
 
   describe 'Process::spawn' do
     it 'Spawns a shell command if given a string' do
@@ -16,22 +16,17 @@ GLib::TestFixture.new('Process') do
         cmd = 'ruby -e "puts \"%I_SHOULD_NOT_BE_PRINTED%\""'
       end
 
-      r, w = IO.pipe
-      pid = Process.spawn(cmd, out: w)
-      w.close
+      opt = {out: true} # non-standard
+      pid = Process.spawn(cmd, opt)
 
-      assert(r.read.strip == 'I should be printed')
-      r.close
+      assert(opt[:out_pipe].read.strip == 'I should be printed')
     end
 
     it 'Interprets shell command arguments correctly' do
       capture_out = proc do |cmd|
-        r, w = IO.pipe
-        pid = Process.spawn(*cmd, out: w)
-        w.close
-        result = r.read
-        r.close
-        result.strip
+        opt = {out: true}
+        pid = Process.spawn(*cmd, opt)
+        opt[:out_pipe].read.strip
       end
 
       # Command with double quotes
@@ -63,11 +58,10 @@ GLib::TestFixture.new('Process') do
         cmd = ['ruby', '-e', 'puts "%I_SHOULD_BE_PRINTED%"']
       end
 
-      r, w = IO.pipe
-      pid = Process.spawn(*cmd, out: w)
-      w.close
+      opt = {out: true}
+      pid = Process.spawn(*cmd, opt)
 
-      result = r.read
+      result = opt[:out_pipe].read
       assert(result.include? 'I_SHOULD_BE_PRINTED')
 
       # TODO Test commands with slashes not preceding quote, slashes preceding quote, and even/odd number of trailing slashes (because windows sucks)
@@ -84,11 +78,10 @@ GLib::TestFixture.new('Process') do
       # the escaped quotes into regular quotes)
       cmd = ['ruby', '-e', 'puts("%I_SHOULD_BE_PRINTED%")']
 
-      r, w = IO.pipe
-      pid = Process.spawn(*cmd, out: w)
-      w.close
+      opt = {out: true}
+      pid = Process.spawn(*cmd, opt)
 
-      result = r.read
+      result = opt[:out_pipe].read
       assert(result.include? 'I_SHOULD_BE_PRINTED')
 
       # TODO Test commands with slashes not preceding quote, slashes preceding quote, and even/odd number of trailing slashes (because windows sucks)
@@ -98,11 +91,10 @@ GLib::TestFixture.new('Process') do
       break unless /windows/i =~ ENV['OS']
       cmd = ["#{$GEM_DIR}/sandbox/windows print three args.exe", 'simple commands don\'t have spaces', '"\'"s', 'or \'"\'s']
 
-      r, w = IO.pipe
-      pid = Process.spawn(*cmd, out: w)
-      w.close
+      opt = {out: true}
+      pid = Process.spawn(*cmd, opt)
 
-      result = r.read
+      result = opt[:out_pipe].read
       assert(result.strip == %q[simple commands don't have spaces, "'"s, or '"'s])
 
       # TODO Test commands with slashes not preceding quote, slashes preceding quote, and even/odd number of trailing slashes (because windows sucks)
@@ -112,11 +104,10 @@ GLib::TestFixture.new('Process') do
       break unless /windows/i =~ ENV['OS']
       cmd = ["#{$GEM_DIR}/sandbox/windows print three args.exe", '1', '2', '3 \\\\']
 
-      r, w = IO.pipe
-      pid = Process.spawn(*cmd, out: w)
-      w.close
+      opt = {out: true}
+      pid = Process.spawn(*cmd, opt)
 
-      result = r.read
+      result = opt[:out_pipe].read
       assert(result.strip == %q[1, 2, 3 \\\\])
     end
 
@@ -124,11 +115,10 @@ GLib::TestFixture.new('Process') do
       break unless /windows/i =~ ENV['OS']
       cmd = ["#{$GEM_DIR}/sandbox/windows print three args.exe", '1', '2', '3 \\\\\\']
 
-      r, w = IO.pipe
-      pid = Process.spawn(*cmd, out: w)
-      w.close
+      opt = {out: true}
+      pid = Process.spawn(*cmd, opt)
 
-      result = r.read
+      result = opt[:out_pipe].read
       assert(result.strip == %q[1, 2, 3 \\\\\\])
     end
 
@@ -136,11 +126,10 @@ GLib::TestFixture.new('Process') do
       break unless /windows/i =~ ENV['OS']
       cmd = ["#{$GEM_DIR}/sandbox/windows print three args.exe", '1', '2', '"\\ \\\\"']
 
-      r, w = IO.pipe
-      pid = Process.spawn(*cmd, out: w)
-      w.close
+      opt = {out: true}
+      pid = Process.spawn(*cmd, opt)
 
-      result = r.read
+      result = opt[:out_pipe].read
       assert(result.strip == %q[1, 2, "\\ \\\\"])
     end
 
@@ -148,11 +137,10 @@ GLib::TestFixture.new('Process') do
       break unless /windows/i =~ ENV['OS']
       cmd = ["#{$GEM_DIR}/sandbox/windows print three args.exe", '1', '2', '"\\"']
 
-      r, w = IO.pipe
-      pid = Process.spawn(*cmd, out: w)
-      w.close
+      opt = {out: true}
+      pid = Process.spawn(*cmd, opt)
 
-      result = r.read
+      result = opt[:out_pipe].read
       assert(result.strip == %q[1, 2, "\\"])
     end
 
@@ -160,29 +148,30 @@ GLib::TestFixture.new('Process') do
       break unless /windows/i =~ ENV['OS']
       cmd = ["#{$GEM_DIR}/sandbox/windows print three args.exe", '1', '2', '\\']
 
-      r, w = IO.pipe
-      pid = Process.spawn(*cmd, out: w)
-      w.close
+      opt = {out: true}
+      pid = Process.spawn(*cmd, opt)
 
-      result = r.read
+      result = opt[:out_pipe].read
       assert(result.strip == %q[1, 2, \\])
     end
 
-    it 'Supports redirecting in, out, & err streams to/from a Pipe\'s created by IO.pipe' do
-      r, w = IO.pipe
-      Process.spawn('ruby -e "puts \'my message\'"', out: w)
-      w.close # Close in parent so we can get EOF
-      msg = r.read
-      r.close # Close read when finished so resources are cleaned up
-      # Stripping because windows might end with \r\n, and unix with \n.
-      assert (msg.strip == "my message")
-    end
+    ## IO.pipe not implemented for mruby-glib yet ##
+    ################################################
+    # it 'Supports redirecting in, out, & err streams to/from a Pipe\'s created by IO.pipe' do
+    #   r, w = IO.pipe
+    #   Process.spawn('ruby -e "puts \'my message\'"', out: w)
+    #   w.close # Close in parent so we can get EOF
+    #   msg = r.read
+    #   r.close # Close read when finished so resources are cleaned up
+    #   # Stripping because windows might end with \r\n, and unix with \n.
+    #   assert (msg.strip == "my message")
+    # end
 
     it 'Supports redirecting to ordinary file objects' do
       out_file = File.open(file_for_writing, 'w')
       pid = Process.spawn("echo my message", out: out_file)
-      out_file.close
       Process.wait(pid)
+      out_file.close
       read = nil
       File.open(file_for_writing) do |f|
         read = f.read
@@ -198,8 +187,12 @@ GLib::TestFixture.new('Process') do
       assert($?.exitstatus == 1)
     end
 
-    it 'If called twice on the same PID, does the right thing... which is...?' do
-      pending
+    it 'Raises a SystemCallError If called twice on the same PID' do
+      pid = Process.spawn('ruby -e "exit 1"')
+      Process.wait pid
+      assert_raises(SystemCallError) do
+        Process.wait pid
+      end
     end
   end
 end
