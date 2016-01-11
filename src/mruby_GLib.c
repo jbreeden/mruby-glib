@@ -6723,7 +6723,7 @@ mrb_GLib_g_error_copy(mrb_state* mrb, mrb_value self) {
   GError * native_return_value = g_error_copy(native_error);
 
   /* Box the return value */
-  mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_box__GError(mrb, native_return_value));
+  mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_giftwrap__GError(mrb, native_return_value));
   
   return return_value;
 }
@@ -6833,7 +6833,7 @@ mrb_GLib_g_error_new(mrb_state* mrb, mrb_value self) {
   GError * native_return_value = g_error_new(native_domain, native_code, native_format);
 
   /* Box the return value */
-  mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_box__GError(mrb, native_return_value));
+  mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_giftwrap__GError(mrb, native_return_value));
   
   return return_value;
 }
@@ -6866,7 +6866,7 @@ mrb_GLib_g_error_new_literal(mrb_state* mrb, mrb_value self) {
   GError * native_return_value = g_error_new_literal(native_domain, native_code, native_message);
 
   /* Box the return value */
-  mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_box__GError(mrb, native_return_value));
+  mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_giftwrap__GError(mrb, native_return_value));
   
   return return_value;
 }
@@ -6901,7 +6901,7 @@ mrb_GLib_g_error_new_valist(mrb_state* mrb, mrb_value self) {
   GError * native_return_value = g_error_new_valist(native_domain, native_code, native_format, native_args);
 
   /* Box the return value */
-  mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_box__GError(mrb, native_return_value));
+  mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_giftwrap__GError(mrb, native_return_value));
   
   return return_value;
 }
@@ -6948,7 +6948,7 @@ mrb_GLib_g_file_append_to(mrb_state* mrb, mrb_value self) {
   GFileOutputStream * native_return_value = g_file_append_to(native_file, native_flags, native_cancellable, &native_error);
 
   /* Box the return value */
-  mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_box__GFileOutputStream(mrb, native_return_value));
+  mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_giftwrap__GFileOutputStream(mrb, native_return_value));
   mrb_ary_push(mrb, results, return_value);
   
   /* Box out param: error */
@@ -7137,7 +7137,7 @@ mrb_GLib_g_file_create(mrb_state* mrb, mrb_value self) {
   GFileOutputStream * native_return_value = g_file_create(native_file, native_flags, native_cancellable, &native_error);
 
   /* Box the return value */
-  mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_box__GFileOutputStream(mrb, native_return_value));
+  mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_giftwrap__GFileOutputStream(mrb, native_return_value));
   mrb_ary_push(mrb, results, return_value);
   
   /* Box out param: error */
@@ -7190,7 +7190,7 @@ mrb_GLib_g_file_create_readwrite(mrb_state* mrb, mrb_value self) {
   GFileIOStream * native_return_value = g_file_create_readwrite(native_file, native_flags, native_cancellable, &native_error);
 
   /* Box the return value */
-  mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_box__GFileIOStream(mrb, native_return_value));
+  mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_giftwrap__GFileIOStream(mrb, native_return_value));
   mrb_ary_push(mrb, results, return_value);
   
   /* Box out param: error */
@@ -10366,7 +10366,7 @@ mrb_GLib_g_file_open_readwrite(mrb_state* mrb, mrb_value self) {
   GFileIOStream * native_return_value = g_file_open_readwrite(native_file, native_cancellable, &native_error);
 
   /* Box the return value */
-  mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_box__GFileIOStream(mrb, native_return_value));
+  mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_giftwrap__GFileIOStream(mrb, native_return_value));
   mrb_ary_push(mrb, results, return_value);
   
   /* Box out param: error */
@@ -10689,7 +10689,7 @@ mrb_GLib_g_file_read(mrb_state* mrb, mrb_value self) {
   GFileInputStream * native_return_value = g_file_read(native_file, native_cancellable, &native_error);
 
   /* Box the return value */
-  mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_box__GFileInputStream(mrb, native_return_value));
+  mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_giftwrap__GFileInputStream(mrb, native_return_value));
   mrb_ary_push(mrb, results, return_value);
   
   /* Box out param: error */
@@ -10786,7 +10786,7 @@ mrb_GLib_g_file_replace(mrb_state* mrb, mrb_value self) {
   GFileOutputStream * native_return_value = g_file_replace(native_file, native_etag, native_make_backup, native_flags, native_cancellable, &native_error);
 
   /* Box the return value */
-  mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_box__GFileOutputStream(mrb, native_return_value));
+  mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_giftwrap__GFileOutputStream(mrb, native_return_value));
   mrb_ary_push(mrb, results, return_value);
   
   /* Box out param: error */
@@ -10843,7 +10843,7 @@ mrb_GLib_g_file_replace_readwrite(mrb_state* mrb, mrb_value self) {
   GFileIOStream * native_return_value = g_file_replace_readwrite(native_file, native_etag, native_make_backup, native_flags, native_cancellable, &native_error);
 
   /* Box the return value */
-  mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_box__GFileIOStream(mrb, native_return_value));
+  mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_giftwrap__GFileIOStream(mrb, native_return_value));
   mrb_ary_push(mrb, results, return_value);
   
   /* Box out param: error */
@@ -13227,7 +13227,7 @@ mrb_GLib_g_inet_socket_address_new(mrb_state* mrb, mrb_value self) {
   GSocketAddress * native_return_value = g_inet_socket_address_new(native_address, native_port);
 
   /* Box the return value */
-  mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_box__GSocketAddress(mrb, native_return_value));
+  mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_giftwrap__GSocketAddress(mrb, native_return_value));
   
   return return_value;
 }
@@ -13258,7 +13258,7 @@ mrb_GLib_g_inet_socket_address_new_from_string(mrb_state* mrb, mrb_value self) {
   GSocketAddress * native_return_value = g_inet_socket_address_new_from_string(native_address, native_port);
 
   /* Box the return value */
-  mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_box__GSocketAddress(mrb, native_return_value));
+  mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_giftwrap__GSocketAddress(mrb, native_return_value));
   
   return return_value;
 }
@@ -14235,7 +14235,7 @@ mrb_GLib_g_io_channel_new_file(mrb_state* mrb, mrb_value self) {
   GIOChannel * native_return_value = g_io_channel_new_file(native_filename, native_mode, &native_error);
 
   /* Box the return value */
-  mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_box__GIOChannel(mrb, native_return_value));
+  mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_giftwrap__GIOChannel(mrb, native_return_value));
   mrb_ary_push(mrb, results, return_value);
   
   /* Box out param: error */
@@ -14973,7 +14973,7 @@ mrb_GLib_g_io_channel_unix_new(mrb_state* mrb, mrb_value self) {
   GIOChannel * native_return_value = g_io_channel_unix_new(native_fd);
 
   /* Box the return value */
-  mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_box__GIOChannel(mrb, native_return_value));
+  mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_giftwrap__GIOChannel(mrb, native_return_value));
   
   return return_value;
 }
@@ -15328,6 +15328,7 @@ mrb_GLib_g_io_stream_get_input_stream(mrb_state* mrb, mrb_value self) {
   GInputStream * native_return_value = g_io_stream_get_input_stream(native_stream);
 
   /* Box the return value */
+  /* BOX! Do not "giftwrap," this object need not be unref'ed */
   mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_box__GInputStream(mrb, native_return_value));
   
   return return_value;
@@ -15366,6 +15367,7 @@ mrb_GLib_g_io_stream_get_output_stream(mrb_state* mrb, mrb_value self) {
   GOutputStream * native_return_value = g_io_stream_get_output_stream(native_stream);
 
   /* Box the return value */
+  /* BOX! Do not "giftwrap," this object need not be unref'ed */
   mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_box__GOutputStream(mrb, native_return_value));
   
   return return_value;
@@ -25949,7 +25951,7 @@ mrb_GLib_g_socket_get_local_address(mrb_state* mrb, mrb_value self) {
   GSocketAddress * native_return_value = g_socket_get_local_address(native_socket, &native_error);
 
   /* Box the return value */
-  mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_box__GSocketAddress(mrb, native_return_value));
+  mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_giftwrap__GSocketAddress(mrb, native_return_value));
   mrb_ary_push(mrb, results, return_value);
   
   /* Box out param: error */
@@ -26165,7 +26167,7 @@ mrb_GLib_g_socket_get_remote_address(mrb_state* mrb, mrb_value self) {
   GSocketAddress * native_return_value = g_socket_get_remote_address(native_socket, &native_error);
 
   /* Box the return value */
-  mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_box__GSocketAddress(mrb, native_return_value));
+  mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_giftwrap__GSocketAddress(mrb, native_return_value));
   mrb_ary_push(mrb, results, return_value);
   
   /* Box out param: error */
@@ -29575,7 +29577,7 @@ mrb_GLib_g_subprocess_get_stderr_pipe(mrb_state* mrb, mrb_value self) {
   GInputStream * native_return_value = g_subprocess_get_stderr_pipe(native_subprocess);
 
   /* Box the return value */
-  mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_box__GInputStream(mrb, native_return_value));
+  mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_giftwrap__GInputStream(mrb, native_return_value));
   
   return return_value;
 }
@@ -29613,7 +29615,7 @@ mrb_GLib_g_subprocess_get_stdin_pipe(mrb_state* mrb, mrb_value self) {
   GOutputStream * native_return_value = g_subprocess_get_stdin_pipe(native_subprocess);
 
   /* Box the return value */
-  mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_box__GOutputStream(mrb, native_return_value));
+  mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_giftwrap__GOutputStream(mrb, native_return_value));
   
   return return_value;
 }
@@ -29651,7 +29653,7 @@ mrb_GLib_g_subprocess_get_stdout_pipe(mrb_state* mrb, mrb_value self) {
   GInputStream * native_return_value = g_subprocess_get_stdout_pipe(native_subprocess);
 
   /* Box the return value */
-  mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_box__GInputStream(mrb, native_return_value));
+  mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_giftwrap__GInputStream(mrb, native_return_value));
   
   return return_value;
 }

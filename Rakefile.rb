@@ -6,7 +6,7 @@ end
 
 task :specs do
   Dir['specs/*'].each do |spec|
-    sh "mruby #{spec}"
+    system "mruby #{spec}"
   end
 end
 

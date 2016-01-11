@@ -5526,7 +5526,7 @@ mruby_unbox__GSubprocess(mrb_value boxed) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: GSubprocessLauncher_boxing */
-/* sha: c963f20f6456ded8461571c58b0507e0859335d83ad72767f2df39305868f22c */
+/* sha: 81ee30c087af043b3317a10e0ed6610d7af9844e8c44530ff5096b268f1de0a3 */
 #if BIND_GSubprocessLauncher_TYPE
 /*
  * Boxing implementation for struct _GSubprocessLauncher
@@ -5536,7 +5536,7 @@ static void free__GSubprocessLauncher(mrb_state* mrb, void* ptr) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)ptr;
   if (box->belongs_to_ruby) {
     if (box->obj != NULL) {
-      free(box->obj);
+      g_object_unref(box->obj);
       box->obj = NULL;
     }
   }
