@@ -91,19 +91,37 @@ EOS
     end
     
     File.open('src/mruby_GLib.c', 'r') do |f|
-      loop {
+      File.open('src/mruby_GLib.c.trimmed', 'w') do |out|
         line = f.gets
-        break if line.nil?
-        
-        if match = line[/MRUBY_BINDING: (\S+)/, 1]
-          if disabled[match]
-            line = f.gets until line =~ /MRUBY_BINDING_END/
-            next
+        loop {
+          break if line.nil?
+          
+          if match = line[/MRUBY_BINDING: (\S+)/, 1]
+            if disabled[match]
+              line = f.gets until line =~ /MRUBY_BINDING_END/
+              line = f.gets
+              line = f.gets until line =~ /^.*\S.*$/ # Overboard...
+              next
+            end
           end
-        end
-        puts line
-      }
+          
+          # Important to keep #if's indented for this guy
+          if match = line[/^#if BIND_(\S+)_FUNCTION/, 1]
+            if disabled[match]
+              line = f.gets until line =~ /^#endif/
+              line = f.gets
+              line = f.gets until line =~ /^.*\S.*$/ # Overboard...
+              next
+            end
+          end
+          
+          out.puts line
+          line = f.gets
+        }
+      end
     end
+    
+    File.rename('src/mruby_GLib.c.trimmed', 'src/mruby_GLib.c')
   end
   
   task :fn_count do
