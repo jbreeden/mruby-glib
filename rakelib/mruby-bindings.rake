@@ -79,6 +79,33 @@ EOS
     sh 'mrbind enable-functions -m GLib -g mruby-glib -o .'
   end
   
+  desc 'Trim disabled functions from the source'
+  task :'trim-functions' do
+    disabled = Hash.new { |h, k| h[k] = false }
+    File.open('include/mruby_GLib_functions.h', 'r') do |f|
+      f.each_line do |line|
+        if (match = line[/#define\s*BIND_(.*)_FUNCTION\s*FALSE/, 1])
+          disabled[match] = true
+        end
+      end
+    end
+    
+    File.open('src/mruby_GLib.c', 'r') do |f|
+      loop {
+        line = f.gets
+        break if line.nil?
+        
+        if match = line[/MRUBY_BINDING: (\S+)/, 1]
+          if disabled[match]
+            line = f.gets until line =~ /MRUBY_BINDING_END/
+            next
+          end
+        end
+        puts line
+      }
+    end
+  end
+  
   task :fn_count do
     sh "cat include/mruby_GLib_functions.h | egrep 'TRUE|FALSE' | wc -l"
   end
