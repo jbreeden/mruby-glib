@@ -26,10 +26,35 @@ This is a work in progress, but the currently supported API is listed below.
 MRuby-GLib
 ==========
 
+Digest::SHA1
+------------
+
+Class Methods:
+  - `::hexdigest`
+
+Digest::SHA256
+--------------
+
+Class Methods:
+  - `::hexdigest`
+
+Digest::SHA512
+--------------
+
+Class Methods:
+  - `::hexdigest`
+
+Digest::MD5
+-----------
+
+Class Methods:
+  - `::hexdigest`
+
 Dir
 ---
 
 Class Methods:
+  - `::[]`
   - `::chdir`
   - `::delete`
   - `::entries`
@@ -37,6 +62,7 @@ Class Methods:
   - `::exists?`
   - `::foreach`
   - `::getcwd`
+  - `::glob`
   - `::home`
   - `::mkdir`
   - `::mktmpdir`
@@ -44,6 +70,16 @@ Class Methods:
   - `::rmdir`
   - `::tmpdir`
   - `::unlink`
+
+ENV
+---
+
+Class Methods:
+  - `::[]`
+  - `::[]=`
+  - `::delete`
+  - `::each`
+  - `::keys`
 
 File
 ----

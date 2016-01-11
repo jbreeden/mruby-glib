@@ -4,7 +4,6 @@ MRuby::Gem::Specification.new('mruby-glib') do |spec|
   spec.author = 'Jared Breeden'
   spec.license = 'MIT'
   spec.summary = 'Bindings for GLib'
-  spec.bins << 'mruby-glib'
   
   spec.rbfiles = %w[
     GLib.rb

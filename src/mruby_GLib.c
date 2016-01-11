@@ -3,6 +3,7 @@
 /* MRUBY_BINDING: custom_header */
 /* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
 #include <signal.h>
+#include <mruby_GLib_glob.h>
 /* MRUBY_BINDING_END */
 
 #ifdef __cplusplus
@@ -35842,11 +35843,16 @@ void mrb_mruby_glib_gem_init(mrb_state* mrb) {
    * Custom functions
    */
    mrb_define_class_method(mrb, GLib_module, "g_output_stream_splice_thread", mrb_GLib_g_output_stream_splice_thread, MRB_ARGS_ARG(g_output_stream_splice_REQUIRED_ARGC, g_output_stream_splice_OPTIONAL_ARGC));
-
+   
   /*
    * Handle pipe errors in code, not in a signal handler
    */
   signal(SIGPIPE, SIG_IGN);
+  
+  /*
+   *
+   */
+  mruby_GLib_glob_init(mrb);
 /* MRUBY_BINDING_END */
 
 }
