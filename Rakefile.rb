@@ -2,7 +2,7 @@ GLIB_HOME = "/usr/local/Cellar/glib/2.46.2"
 
 desc 'Run the low-level binding tests'
 task :test do
-  sh 'mruby test/test_bindings.rb'
+  sh 'mruby smoke_test/test_bindings.rb'
 end
 
 desc 'Run the specs'
