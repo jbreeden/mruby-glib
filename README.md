@@ -10,10 +10,10 @@ Comparison to MRuby-APR
 
 *+1 Glib*
 
-In general `mruby-glib` has a fuller API than `mruby-apr`. Nearly everything in `mruby-apr` has been ported to
-`mruby-glib` - with the exception of the socket classes and `File::Stat`. In most cases the ported
-versions support more standard library features. The IO implementation in `mruby-glib` is cleaner, as is the source
-code in general. (`mruby-apr` was initially generated from an early version of [mruby-bindings](https://github.com/jbreeden/mruby-bindings)... it was pretty ugly.)
+In general `mruby-glib` has a fuller API than `mruby-apr`.
+
+The IO implementation in `mruby-glib` is cleaner, as is the source code in general.
+(`mruby-apr` was initially generated from an early version of [mruby-bindings](https://github.com/jbreeden/mruby-bindings)... it was pretty ugly.)
 
 *+1 APR*
 
