@@ -11,17 +11,16 @@ Comparison to MRuby-APR
 *+1 Glib*
 
 In general `mruby-glib` has a fuller API than `mruby-apr`. Nearly everything in `mruby-apr` has been ported to
-`mruby-glib` - with the exception of the various socket classes and `File::Stat`. In most cases the ported
-versions support more standard library features (especially the `File` class). The IO model in `mruby-glib`
-is cleaner, as is the source code in general. (`mruby-apr` was initially generated from an early version
-of [mruby-bindings](https://github.com/jbreeden/mruby-bindings)... it was pretty ugly.)
+`mruby-glib` - with the exception of the socket classes and `File::Stat`. In most cases the ported
+versions support more standard library features. The IO implementation in `mruby-glib` is cleaner, as is the source
+code in general. (`mruby-apr` was initially generated from an early version of [mruby-bindings](https://github.com/jbreeden/mruby-bindings)... it was pretty ugly.)
 
 *+1 APR*
 
 That said, `mruby-apr` does not require linking to LGPL code, and it easier to distribute as a single
 executable.
 
-*+1, for both*
+*+1 for both*
 
 Both libraries will give you familiar file, directory, and environment access methods. Both can spawn processes.
 Both are cross platform. Both have a quick CRuby compatible `Dir.glob` implementations. Both are free :)
