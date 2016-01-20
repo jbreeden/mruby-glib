@@ -1,30 +1,33 @@
-mruby-glib
-==========
-
-Bindings to GLib. Generated with [mruby-bindings](https://github.com/jbreeden/mruby-bindings)
-
-This gem is being built as an alternative to [mruby-apr](https://github.com/jbreeden/mruby-apr),
-with the same goals in mind. While mruby-apr works well, there are certain characteristics
-of the APR library that can be irritating. Mainly, the fact that all memory must be managed
-in pools. I was able to work around this in most cases, but certain issues could not be avoided.
-For example, every open file creates it's own pool, which is an 8K memory hit.
-
-Besides the memory pool issue, GLib seems to have a fuller API that maps more directly
-to implementing Ruby standard library features. That makes my job easier.
-
-You may want to use mruby-apr if the LGPL license is not suitable, or if you
-wish to deploy to Windows as a single executable. Glib requires distributing,
-for example, separate executables to assist in spawning processes in a more
-unix-like way (with greater control over file descriptors, etc). If you're not
-using the spawn family of functions, that shouldn't be a concern for you.
-
-API
-===
-
-This is a work in progress, but the currently supported API is listed below.
-
 MRuby-GLib
 ==========
+
+Bindings to GLib, providing standard library functionality like `File.open` & `Process.spawn`.
+
+Built as an alternative to [mruby-apr](https://github.com/jbreeden/mruby-apr), with the same goals in mind.
+
+Comparison to MRuby-APR
+-----------------------
+
+*+1 Glib*
+
+In general `mruby-glib` has a fuller API than `mruby-apr`. Nearly everything in `mruby-apr` has been ported to
+`mruby-glib` - with the exception of the various socket classes and `File::Stat`. In most cases the ported
+versions support more standard library features (especially the `File` class). The IO model in `mruby-glib`
+is cleaner, as is the source code in general. (`mruby-apr` was initially generated from an early version
+of [mruby-bindings](https://github.com/jbreeden/mruby-bindings)... it was pretty ugly.)
+
+*+1 APR*
+
+That said, `mruby-apr` does not require linking to LGPL code, and it easier to distribute as a single
+executable.
+
+*+1, for both*
+
+Both libraries will give you familiar file, directory, and environment access methods. Both can spawn processes.
+Both are cross platform. Both have a quick CRuby compatible `Dir.glob` implementations. Both are free :)
+
+MRuby-GLib API
+==============
 
 Digest::SHA1
 ------------
