@@ -12,13 +12,9 @@ Comparison to MRuby-APR
 
 In general `mruby-glib` has a fuller API than `mruby-apr`.
 
-The IO implementation in `mruby-glib` is cleaner, as is the source code in general.
-(`mruby-apr` was initially generated from an early version of [mruby-bindings](https://github.com/jbreeden/mruby-bindings)... it was pretty ugly.)
-
 *+1 APR*
 
-That said, `mruby-apr` does not require linking to LGPL code, and it easier to distribute as a single
-executable.
+`mruby-apr` does not require linking to LGPL code, and is easy to statically link into a single executable.
 
 *+1 for both*
 
