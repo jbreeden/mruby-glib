@@ -14,16 +14,20 @@ GLib maps more directly to the Ruby API's than Apache's APR, thanks mainly to a 
 IO abstraction via `GIOStream`s. Along with the absence of awkward memory pool management, this makes 
 dealing with the code much easier.
 
-While both projects were initially generated with [mruby-bindings](https://github.com/jbreeden/mruby-bindings), the version used for `mruby-glib` was more mature, generating more idiomatic binding code.
+While both projects were initially generated with [mruby-bindings](https://github.com/jbreeden/mruby-bindings), ~~the version used for `mruby-glib` was more mature, generating more idiomatic binding code.~~ (Update: mruby-apr has since
+been upgraded to the latest mruby-bindings version, and these issues have been resolved.)
 
 *+1 APR*
 
 `mruby-apr` does not require linking to LGPL code, and it easier to distribute as a single executable.
 
+`mruby-apr` is also much smaller, and the C code is better maintained. `mruby-glib` still has a lot of code bloat
+leftover from the initial code generation. While this won't hurt you at runtime, your compile times will suffer.
+
 *+1 for both*
 
 Both libraries will give you familiar file, directory, and environment access methods. Both can spawn processes.
-Both are cross platform. Both have a CRuby compatible `Dir.glob` implementation. Both are free :)
+Both are cross platform (at least in theory, though I've yet to build mruby-glib on Windows). Both have a CRuby compatible `Dir.glob` implementation. Both are free :)
 
 MRuby-GLib API
 ==============
