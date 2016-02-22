@@ -1,3 +1,16 @@
+UNMAINTAINED
+============
+
+This gem was an exploration to see if GLib could solve the issues I had with APR in [mruby-apr](https://github.com/jbreeden/mruby-apr). While some of the issues were indeed solved,
+some other were introduced. The minimal (as in none) dependencies of APR and dead simple compilation
+make it a much better fit for my MRuby needs.
+
+My future developments - for the time being - will be with [mruby-apr](https://github.com/jbreeden/mruby-apr).
+
+Original readme follows
+
+---
+
 MRuby-GLib
 ==========
 
